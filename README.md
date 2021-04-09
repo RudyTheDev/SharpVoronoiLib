@@ -1,6 +1,6 @@
 # VoronoiLib
 
-![build workflow](https://github.com/sesopenko/VoronoiLib/actions/workflows/build.yml/badge.svg?branch=master)
+![build workflow](https://github.com/sesopenko/VoronoiLib/actions/workflows/test.yml/badge.svg?branch=master)
 
 C# implementation of Fortune's Algorithm.
 Unlike several implemenations of Fortune's Algorithm, this implementation guarantees O(n ln(n)) performance by way of a specialized Red Black Tree (Credit: Raymond Hill).
