@@ -13,7 +13,7 @@ namespace SharpVoronoiLib.UnitTests
         {
             // Arrange
             
-            List<VoronoiSite> originalPoints = new List<VoronoiSite>
+            List<VoronoiSite> originalSites = new List<VoronoiSite>
             {
                 new VoronoiSite(-100, 300),
                 new VoronoiSite(300, -100),
@@ -21,11 +21,11 @@ namespace SharpVoronoiLib.UnitTests
                 new VoronoiSite(300, 800)
             };
 
-            List<VoronoiSite> points = new List<VoronoiSite>(originalPoints);
+            List<VoronoiSite> sites = new List<VoronoiSite>(originalSites); // copy so any changes to list don't affect the source list 
 
             VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
 
-            plane.SetSites(points);
+            plane.SetSites(sites);
 
             plane.Tessellate();
             
@@ -37,7 +37,7 @@ namespace SharpVoronoiLib.UnitTests
             
             Assert.NotNull(edges);
             Assert.IsNotEmpty(edges);
-            Assert.AreEqual(originalPoints.Count, points.Count);
+            Assert.AreEqual(originalSites.Count, sites.Count);
             // todo: check movement
         }
     }

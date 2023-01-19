@@ -69,13 +69,23 @@ List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(
 Full syntax (leaving a reusable `VoronoiPlane` instance):
 
 ```
-VoronoiPlane plane = new VoronoiPlane(
-    sites, 
-    0, 0, 
-    600, 600
-);
+VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
+
+plane.SetSites(sites);
+
+List<VoronoiEdge> edges = plane.Tessellate();
+```
+
+Lloyds relaxation algorithm for "smoothing" cells:
+
+```
+VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
+
+plane.SetSites(sites);
 
 plane.Tessellate();
+
+List<VoronoiEdge> edges = plane.Relax();
 ```
 
 # Dependencies
