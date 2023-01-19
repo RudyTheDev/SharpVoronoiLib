@@ -2,7 +2,7 @@
 
 C# implementation of generating a Voronoi diagram from a set of points in a plane (using Fortune's Algorithm) with edge clipping and border closure. This implementation guarantees O(n×ln(n)) performance.
 
-TODO: pretty picture here
+![voronoi example](https://user-images.githubusercontent.com/3857299/213494520-4295378c-9759-4864-aeb7-4cd032b0f3d0.png)
 
 The key differences from the [original VoronoiLib repo](https://github.com/Zalgo2462/VoronoiLib)
 * Borders can be closed, that is, edges generated along the boundary
@@ -37,7 +37,10 @@ List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(
 );
 ```
 
-The returned collection contains the generated edges as `VoronoiEdge`s.
+The tesselation result for the given `VoronoiSite`s contains `VoronoiEdge`s and `VoronoiPoint`s. The returned collection contains the generated edges.
+
+![voronoi terms](https://user-images.githubusercontent.com/3857299/213494489-4a6030a2-64d8-4e7e-b556-6f5674d89911.png)
+
 * `VoronoiEdge.Start` and `.End` are the start and end points of the edge.
 * `VoronoiEdge.Right` and `.Left` are the sites the edge encloses. Border edges move clockwise and will only have the `.Right` site. And if no points are within the region, both will be `null`.
 * Edge end `VoronoiPoint`s also contain a `.BorderLocation` specifying if it's on a border and which one.
@@ -49,7 +52,8 @@ The returned collection contains the generated edges as `VoronoiEdge`s.
 * `FortuneSite.Points` (on-demand) contains points of the cell, that is, edge end points / edge nodes.
 * `FortuneSite.ClockwisePoints` (on-demand) contains these points sorted clockwise (starting from the bottom-left "corner").
 
-// TODO: pretty picture(s) pointing out what is what
+![voronoi terms - site](https://user-images.githubusercontent.com/3857299/213494492-18b23ddb-9ca2-41f7-a4ef-73dc28c54e17.png)
+![voronoi terms - edge](https://user-images.githubusercontent.com/3857299/213494501-3a5510dd-072d-422b-bb28-18016857ac53.png)
 
 If closing borders around the boundary is not desired (leaving sites with unclosed cells/polygons):
 
