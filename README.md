@@ -76,7 +76,17 @@ plane.SetSites(sites);
 List<VoronoiEdge> edges = plane.Tessellate();
 ```
 
-Lloyds relaxation algorithm for "smoothing" cells:
+Sites can be quickly randomly-generated:
+
+```
+VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
+
+plane.GenerateRandomSites(1000, PointGenerationMethod.Uniform);
+
+plane.Tessellate();
+```
+
+Lloyds relaxation algorithm can be applied to "smooth" cells:
 
 ```
 VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
@@ -86,6 +96,7 @@ plane.SetSites(sites);
 plane.Tessellate();
 
 List<VoronoiEdge> edges = plane.Relax();
+// List<VoronoiEdge> edges = plane.Relax(3, 0.7f); // relax 3 times with 70% strength each time 
 ```
 
 # Dependencies
