@@ -2157,9 +2157,9 @@ namespace SharpVoronoiLib.UnitTestGenerator
                         {
                             int index = 0;
 
-                            foreach (List<Point> quadrantPoints in site.Points)
+                            foreach (List<Point> quadrantPoints in site.Points.Reverse()) // we are counter-clockwise, so reverse
                             {
-                                List<Point> applicablePoints = quadrantPoints.Where(p => PointMatchesBorderLogic(p, borderLogic)).ToList();
+                                List<Point> applicablePoints = quadrantPoints.Where(p => PointMatchesBorderLogic(p, borderLogic)).Reverse().ToList(); // we are counter-clockwise, so reverse
 
                                 if (applicablePoints.Count > 0)
                                 {
@@ -2641,7 +2641,7 @@ namespace SharpVoronoiLib.UnitTestGenerator
 
             private int GetEdgeSoftIndex(Edge edge, List<Point>[] sitePoints)
             {
-                List<Point> flatPoints = sitePoints.SelectMany(sp => sp).ToList();
+                List<Point> flatPoints = sitePoints.SelectMany(sp => sp).Reverse().ToList();
 
                 int fromIndex = flatPoints.IndexOf(edge.FromPoint);
                 int toIndex = flatPoints.IndexOf(edge.ToPoint);

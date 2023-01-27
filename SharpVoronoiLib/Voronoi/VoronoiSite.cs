@@ -321,8 +321,8 @@ namespace SharpVoronoiLib
             double atan1 = Atan2(point1.Y - y, point1.X - x);
             double atan2 = Atan2(point2.Y - y, point2.X - x);
             
-            if (atan1 < atan2) return -1;
-            if (atan1 > atan2) return 1;
+            if (atan1 > atan2) return -1;
+            if (atan1 < atan2) return 1;
             return 0;
         }
 

@@ -46,11 +46,11 @@ The tesselation result for the given `VoronoiSite`s contains `VoronoiEdge`s and 
 * Edge end `VoronoiPoint`s also contain a `.BorderLocation` specifying if it's on a border and which one.
 * `VoronoiEdge.Neighbours` (on-demand) are edges directly "connecting" to this edge, basically creating a traversable edge graph.
 * `VoronoiEdge.Length` (on-demand) is the distance between its end points.
-* `FortuneSite.Cell` contains the edges that enclose the site (starting from the bottom-left "corner").
-* `FortuneSite.ClockwiseCell` (on-demand) contains these edges sorted clockwise (starting from the bottom-left "corner" end point).
-* `FortuneSite.Neighbors` contains the site's neighbors (in the Delaunay Triangulation), that is, other sites across its edges.
-* `FortuneSite.Points` (on-demand) contains points of the cell, that is, edge end points / edge nodes.
-* `FortuneSite.ClockwisePoints` (on-demand) contains these points sorted clockwise (starting from the bottom-left "corner").
+* `VoronoiSite.Cell` contains the edges that enclose the site (the order is not guaranteed).
+* `VoronoiSite.ClockwiseCell` (on-demand) contains these edges sorted clockwise (starting from the bottom-right "corner" end point).
+* `VoronoiSite.Neighbors` contains the site's neighbors (in the Delaunay Triangulation), that is, other sites across its edges.
+* `VoronoiSite.Points` (on-demand) contains points of the cell, that is, edge end points / edge nodes.
+* `VoronoiSite.ClockwisePoints` (on-demand) contains these points sorted clockwise (starting from the bottom-right "corner").
 
 ![voronoi terms - site](https://user-images.githubusercontent.com/3857299/213494492-18b23ddb-9ca2-41f7-a4ef-73dc28c54e17.png)
 ![voronoi terms - edge](https://user-images.githubusercontent.com/3857299/213494501-3a5510dd-072d-422b-bb28-18016857ac53.png)

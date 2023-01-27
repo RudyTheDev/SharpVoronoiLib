@@ -1760,8 +1760,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 700, 1000, 700)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 300, 1000, 300)); // #2 has C-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 700, 1000, 700)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 300, 1000, 300)); // #2 C-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 300, 1000, 300)); // #2 C-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 700, 1000, 700)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(1, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 300, 1000, 300)); // #3 has C-D
@@ -1930,14 +1930,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 700, 1000, 700)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 500, 1000, 500)); // #2 has C-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 700, 1000, 700)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 500, 1000, 500)); // #2 C-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 500, 1000, 500)); // #2 C-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 700, 1000, 700)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 500, 1000, 500)); // #3 has C-D
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 300, 1000, 300)); // #3 has E-F
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 500, 1000, 500)); // #3 C-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 300, 1000, 300)); // #3 E-F
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 300, 1000, 300)); // #3 E-F
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 500, 1000, 500)); // #3 C-D
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(1, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 0, 300, 1000, 300)); // #4 has E-F
@@ -4028,8 +4028,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 400, 400, 0)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 400, 1000, 1000)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 400, 1000, 1000)); // #3 A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 400, 400, 0)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 400, 400, 0)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 400, 1000, 1000)); // #3 A-D
         }
 
         /// <summary>
@@ -4105,8 +4105,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 600, 400, 1000)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 600, 1000, 0)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 600, 400, 1000)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 600, 1000, 0)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 600, 1000, 0)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 600, 400, 1000)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 600, 400, 1000)); // #2 has A-B
@@ -4194,14 +4194,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 600, 1000, 600)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 600, 0, 0)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 600, 1000, 600)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 600, 0, 0)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 600, 0, 0)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 600, 1000, 600)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 1000, 600)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 600, 1000)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 600, 600, 1000)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 600, 1000, 600)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 600, 1000, 600)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 600, 600, 1000)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 600, 600, 1000)); // #3 has A-C
@@ -4289,14 +4289,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 600, 0)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 1000, 400)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 1000, 400)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 600, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 600, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 1000, 400)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 400, 1000, 400)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 400, 0, 1000)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 400, 0, 1000)); // #3 A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 400, 1000, 400)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 400, 1000, 400)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 400, 0, 1000)); // #3 A-D
         }
 
         [Test]
@@ -4380,8 +4380,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 600, 300, 0)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 600, 700, 1000)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 600, 700, 1000)); // #3 A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 600, 300, 0)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 600, 300, 0)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 600, 700, 1000)); // #3 A-D
         }
 
         /// <summary>
@@ -4457,8 +4457,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 700, 600, 1000)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 700, 1000, 300)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 700, 600, 1000)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 700, 1000, 300)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 700, 1000, 300)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 700, 600, 1000)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 700, 600, 1000)); // #2 has A-B
@@ -4546,14 +4546,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 400, 1000, 400)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 400, 300, 0)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 400, 1000, 400)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 400, 300, 0)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 400, 300, 0)); // #1 A-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 400, 1000, 400)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 400, 1000, 400)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 400, 700, 1000)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 400, 700, 1000)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 400, 1000, 400)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 400, 1000, 400)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 400, 700, 1000)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 700, 400, 700, 1000)); // #3 has A-C
@@ -4641,14 +4641,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 300, 400, 0)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 300, 1000, 300)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 300, 1000, 300)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 300, 400, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 300, 400, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 300, 1000, 300)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 300, 1000, 300)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 300, 0, 700)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 300, 0, 700)); // #3 A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 300, 1000, 300)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 300, 1000, 300)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 300, 0, 700)); // #3 A-D
         }
 
         /// <summary>
@@ -4724,14 +4724,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 600, 1000, 600)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 600, 300, 1000)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 600, 300, 1000)); // #1 A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 600, 1000, 600)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 600, 1000, 600)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 600, 300, 1000)); // #1 A-D
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 600, 1000, 600)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 600, 700, 0)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 600, 1000, 600)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 600, 700, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 600, 700, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 600, 1000, 600)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 700, 600, 700, 0)); // #3 has A-C
@@ -4813,8 +4813,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 300, 600, 0)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 300, 1000, 700)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 300, 1000, 700)); // #1 A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 300, 600, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 300, 600, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 300, 1000, 700)); // #1 A-D
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 300, 600, 0)); // #2 has A-B
@@ -4914,8 +4914,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 400, 300, 1000)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 400, 700, 0)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 400, 300, 1000)); // #3 A-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 400, 700, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 400, 700, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 400, 300, 1000)); // #3 A-C
         }
 
         /// <summary>
@@ -4997,14 +4997,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 700, 400, 1000)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 700, 1000, 700)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 700, 400, 1000)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 700, 1000, 700)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 700, 1000, 700)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 700, 400, 1000)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 700, 1000, 700)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 700, 0, 300)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 700, 1000, 700)); // #3 A-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 700, 0, 300)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 700, 0, 300)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 700, 1000, 700)); // #3 A-C
         }
 
         [Test]
@@ -5082,8 +5082,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 1000, 0)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 500, 1000)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 500, 500, 1000)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 500, 1000, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 500, 1000, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 500, 500, 1000)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 0, 0)); // #3 has A-B
@@ -5171,14 +5171,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 0, 0)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 1000, 500)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 500, 0, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 500, 0, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 0, 1000)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 1000, 500)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 0, 1000)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 0, 1000)); // #3 A-B
         }
 
         /// <summary>
@@ -5266,8 +5266,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 1000, 1000)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 500, 0)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 1000, 1000)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 1000, 1000)); // #3 A-B
         }
 
         /// <summary>
@@ -5343,8 +5343,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 500, 500, 1000, 0)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 500, 500, 1000, 1000)); // #1 has A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 500, 500, 1000, 1000)); // #1 A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 500, 500, 1000, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 500, 500, 1000, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 500, 500, 1000, 1000)); // #1 A-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 1000, 1000)); // #2 has A-C
@@ -5434,8 +5434,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 300, 800, 0)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 300, 500, 1000)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 300, 500, 1000)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 300, 800, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 300, 800, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 300, 500, 1000)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 300, 200, 0)); // #3 has A-B
@@ -5523,14 +5523,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 500, 0, 200)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 500, 1000, 500)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 300, 500, 1000, 500)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 300, 500, 0, 200)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 300, 500, 0, 200)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 300, 500, 1000, 500)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 500, 0, 800)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 500, 1000, 500)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 500, 0, 800)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 500, 1000, 500)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 500, 1000, 500)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 500, 0, 800)); // #3 A-B
         }
 
         /// <summary>
@@ -5618,8 +5618,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 700, 800, 1000)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 700, 500, 0)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 700, 800, 1000)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 700, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 700, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 700, 800, 1000)); // #3 A-B
         }
 
         /// <summary>
@@ -5695,8 +5695,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 500, 1000, 200)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 500, 1000, 800)); // #1 has A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 500, 1000, 800)); // #1 A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 500, 1000, 200)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 500, 1000, 200)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 500, 1000, 800)); // #1 A-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 500, 1000, 800)); // #2 has A-C
@@ -5786,8 +5786,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 700, 1000, 200)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 700, 500, 1000)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 700, 500, 1000)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 700, 1000, 200)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 700, 1000, 200)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 700, 500, 1000)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 700, 0, 200)); // #3 has A-B
@@ -5875,14 +5875,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 500, 200, 0)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 500, 1000, 500)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 500, 1000, 500)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 500, 200, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 500, 200, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 500, 1000, 500)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 700, 500, 200, 1000)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 700, 500, 1000, 500)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 700, 500, 200, 1000)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 700, 500, 1000, 500)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 700, 500, 1000, 500)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 700, 500, 200, 1000)); // #3 A-B
         }
 
         /// <summary>
@@ -5970,8 +5970,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 300, 1000, 800)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 300, 500, 0)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 300, 1000, 800)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 300, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 300, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 300, 1000, 800)); // #3 A-B
         }
 
         /// <summary>
@@ -6047,8 +6047,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 300, 500, 800, 0)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 300, 500, 800, 1000)); // #1 has A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 300, 500, 800, 1000)); // #1 A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 300, 500, 800, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 300, 500, 800, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 300, 500, 800, 1000)); // #1 A-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 500, 800, 1000)); // #2 has A-C
@@ -6156,41 +6156,41 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 400, 600, 400)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 400, 600, 600)); // #1 has C-D
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 600, 400, 600)); // #1 has D-A
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 600, 400, 600)); // #1 D-A
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 400, 600, 400)); // #1 B-C
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 600, 400, 400)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 400, 400, 600, 400)); // #1 B-C
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 600, 600, 400, 600)); // #1 D-A
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 600, 400, 600, 600)); // #1 C-D
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(3, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 600, 400, 400)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 600, 0, 1000)); // #2 has A-E
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 400, 0, 0)); // #2 has B-F
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 600, 0, 1000)); // #2 A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 400, 0, 0)); // #2 B-F
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 400, 0, 0)); // #2 B-F
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 600, 0, 1000)); // #2 A-E
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 400, 600, 400, 400)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(3, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 400, 600, 400)); // #3 has B-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 400, 0, 0)); // #3 has B-F
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 400, 1000, 0)); // #3 has C-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 400, 600, 400)); // #3 B-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 400, 0, 0)); // #3 B-F
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 400, 0, 0)); // #3 B-F
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 400, 600, 400)); // #3 B-C
             Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 600, 400, 1000, 0)); // #3 C-G
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(3, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 400, 600, 600)); // #4 has C-D
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 400, 1000, 0)); // #4 has C-G
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 600, 1000, 1000)); // #4 has D-H
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 600, 600, 1000, 1000)); // #4 D-H
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 600, 400, 1000, 0)); // #4 C-G
             Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 600, 400, 600, 600)); // #4 C-D
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 600, 400, 1000, 0)); // #4 C-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 600, 600, 1000, 1000)); // #4 D-H
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 600, 400, 600)); // #5 has D-A
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 600, 0, 1000)); // #5 has A-E
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 600, 1000, 1000)); // #5 has D-H
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 600, 0, 1000)); // #5 A-E
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 600, 600, 400, 600)); // #5 D-A
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 600, 600, 400, 600)); // #5 D-A
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 600, 0, 1000)); // #5 A-E
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 600, 600, 1000, 1000)); // #5 D-H
         }
 
@@ -6287,41 +6287,41 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 200, 600, 200)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 200, 600, 400)); // #1 has C-D
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 400, 400, 400)); // #1 has D-A
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 400, 400, 400)); // #1 D-A
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 200, 600, 200)); // #1 B-C
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 400, 400, 200)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 400, 200, 600, 200)); // #1 B-C
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 600, 400, 400, 400)); // #1 D-A
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 600, 200, 600, 400)); // #1 C-D
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(3, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 400, 400, 200)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 400, 0, 800)); // #2 has A-E
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 200, 200, 0)); // #2 has B-F
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 400, 0, 800)); // #2 A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 200, 200, 0)); // #2 B-F
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 200, 200, 0)); // #2 B-F
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 400, 0, 800)); // #2 A-E
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 400, 400, 400, 200)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(3, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 200, 600, 200)); // #3 has B-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 200, 200, 0)); // #3 has B-F
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 200, 800, 0)); // #3 has C-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 200, 600, 200)); // #3 B-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 200, 200, 0)); // #3 B-F
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 200, 200, 0)); // #3 B-F
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 200, 600, 200)); // #3 B-C
             Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 600, 200, 800, 0)); // #3 C-G
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(3, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 200, 600, 400)); // #4 has C-D
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 200, 800, 0)); // #4 has C-G
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 400, 1000, 800)); // #4 has D-H
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 600, 400, 1000, 800)); // #4 D-H
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 600, 200, 800, 0)); // #4 C-G
             Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 600, 200, 600, 400)); // #4 C-D
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 600, 200, 800, 0)); // #4 C-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 600, 400, 1000, 800)); // #4 D-H
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 400, 400, 400)); // #5 has D-A
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 400, 0, 800)); // #5 has A-E
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 400, 1000, 800)); // #5 has D-H
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 400, 0, 800)); // #5 A-E
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 600, 400, 400, 400)); // #5 D-A
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 600, 400, 400, 400)); // #5 D-A
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 400, 0, 800)); // #5 A-E
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 600, 400, 1000, 800)); // #5 D-H
         }
 
@@ -6422,42 +6422,42 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 200, 600, 200, 400)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 200, 400, 400, 400)); // #1 has C-D
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 400, 400, 600)); // #1 has D-A
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 600, 200, 600)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 200, 400, 400, 400)); // #1 C-D
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 200, 600, 200, 400)); // #1 B-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 200, 400, 400, 400)); // #1 C-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 400, 600, 200, 600)); // #1 A-B
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 400, 400, 400, 600)); // #1 D-A
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(3, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 600, 200, 600)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 600, 800, 1000)); // #2 has A-E
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 600, 0, 800)); // #2 has B-F
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 600, 0, 800)); // #2 B-F
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 600, 200, 600)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 600, 200, 600)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 600, 0, 800)); // #2 B-F
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 400, 600, 800, 1000)); // #2 A-E
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(3, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 600, 200, 400)); // #3 has B-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 600, 0, 800)); // #3 has B-F
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 400, 0, 200)); // #3 has C-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 200, 600, 0, 800)); // #3 B-F
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 200, 400, 0, 200)); // #3 C-G
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 200, 400, 0, 200)); // #3 C-G
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 200, 600, 0, 800)); // #3 B-F
             Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 200, 600, 200, 400)); // #3 B-C
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(3, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 200, 400, 400, 400)); // #4 has C-D
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 200, 400, 0, 200)); // #4 has C-G
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 400, 800, 0)); // #4 has D-H
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 200, 400, 400, 400)); // #4 C-D
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 200, 400, 0, 200)); // #4 C-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 200, 400, 0, 200)); // #4 C-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 200, 400, 400, 400)); // #4 C-D
             Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 400, 400, 800, 0)); // #4 D-H
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 400, 400, 600)); // #5 has D-A
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 600, 800, 1000)); // #5 has A-E
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 400, 800, 0)); // #5 has D-H
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 600, 800, 1000)); // #5 A-E
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 400, 800, 0)); // #5 D-H
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 400, 400, 600)); // #5 D-A
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 400, 400, 800, 0)); // #5 D-H
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 400, 600, 800, 1000)); // #5 A-E
         }
 
         /// <summary>
@@ -6557,41 +6557,41 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 800, 400, 800)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 800, 400, 600)); // #1 has C-D
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 600, 600, 600)); // #1 has D-A
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 800, 400, 800)); // #1 B-C
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 600, 600, 600)); // #1 D-A
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 800, 400, 600)); // #1 C-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 400, 600, 600, 600)); // #1 D-A
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 600, 800, 400, 800)); // #1 B-C
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 600, 600, 600, 800)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(3, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 600, 800)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 1000, 200)); // #2 has A-E
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 800, 800, 1000)); // #2 has B-F
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 800, 800, 1000)); // #2 B-F
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 600, 1000, 200)); // #2 A-E
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 600, 600, 800)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 600, 600, 1000, 200)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 600, 800, 800, 1000)); // #2 B-F
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(3, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 800, 400, 800)); // #3 has B-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 800, 800, 1000)); // #3 has B-F
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 800, 200, 1000)); // #3 has C-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 800, 200, 1000)); // #3 C-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 800, 400, 800)); // #3 B-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 800, 400, 800)); // #3 B-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 800, 200, 1000)); // #3 C-G
             Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 600, 800, 800, 1000)); // #3 B-F
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(3, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 800, 400, 600)); // #4 has C-D
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 800, 200, 1000)); // #4 has C-G
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 600, 0, 200)); // #4 has D-H
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 800, 200, 1000)); // #4 C-G
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 600, 0, 200)); // #4 D-H
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 600, 0, 200)); // #4 D-H
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 800, 200, 1000)); // #4 C-G
             Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 400, 800, 400, 600)); // #4 C-D
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 600, 600, 600)); // #5 has D-A
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 600, 1000, 200)); // #5 has A-E
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 600, 0, 200)); // #5 has D-H
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 600, 600, 600)); // #5 D-A
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 600, 0, 200)); // #5 D-H
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 600, 0, 200)); // #5 D-H
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 600, 600, 600)); // #5 D-A
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 600, 600, 1000, 200)); // #5 A-E
         }
 
@@ -6692,41 +6692,41 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 800, 400, 800, 600)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 800, 600, 600, 600)); // #1 has C-D
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 600, 600, 400)); // #1 has D-A
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 800, 600, 600, 600)); // #1 C-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 400, 800, 400)); // #1 A-B
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 600, 600, 400)); // #1 D-A
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 600, 400, 800, 400)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 800, 600, 600, 600)); // #1 C-D
             Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 800, 400, 800, 600)); // #1 B-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(3, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 800, 400)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 200, 0)); // #2 has A-E
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 800, 400, 1000, 200)); // #2 has B-F
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 800, 400)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 200, 0)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 200, 0)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 800, 400)); // #2 A-B
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 800, 400, 1000, 200)); // #2 B-F
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(3, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 800, 400, 800, 600)); // #3 has B-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 800, 400, 1000, 200)); // #3 has B-F
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 800, 600, 1000, 800)); // #3 has C-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 800, 600, 1000, 800)); // #3 C-G
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 800, 400, 1000, 200)); // #3 B-F
             Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 800, 400, 800, 600)); // #3 B-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 800, 400, 1000, 200)); // #3 B-F
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 800, 600, 1000, 800)); // #3 C-G
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(3, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 800, 600, 600, 600)); // #4 has C-D
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 800, 600, 1000, 800)); // #4 has C-G
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 600, 200, 1000)); // #4 has D-H
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 600, 600, 200, 1000)); // #4 D-H
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 800, 600, 600, 600)); // #4 C-D
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 800, 600, 600, 600)); // #4 C-D
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 600, 600, 200, 1000)); // #4 D-H
             Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 800, 600, 1000, 800)); // #4 C-G
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 600, 600, 400)); // #5 has D-A
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 400, 200, 0)); // #5 has A-E
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 600, 200, 1000)); // #5 has D-H
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 600, 600, 200, 1000)); // #5 D-H
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 600, 400, 200, 0)); // #5 A-E
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 600, 400, 200, 0)); // #5 A-E
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 600, 600, 200, 1000)); // #5 D-H
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 600, 600, 600, 400)); // #5 D-A
         }
 
@@ -6818,14 +6818,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 500, 0)); // #3 has A-D
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 1000, 500)); // #3 has A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #3 A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #3 A-E
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 500, 500, 1000)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 500, 1000, 500)); // #4 has A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 500, 500, 1000)); // #4 A-B
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 500, 500, 1000)); // #4 A-B
         }
 
         [Test]
@@ -6916,14 +6916,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 500, 0)); // #3 has A-D
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 1000, 500)); // #3 has A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #3 A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 500, 500, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #3 A-E
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 500, 500, 1000)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 500, 1000, 500)); // #4 has A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 500, 500, 1000)); // #4 A-B
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 500, 500, 1000)); // #4 A-B
         }
 
         /// <summary>
@@ -7006,8 +7006,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 500, 500, 1000, 500)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 500, 500, 500, 1000)); // #1 has A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 500, 500, 500, 1000)); // #1 A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 500, 500, 500, 1000)); // #1 A-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 500, 1000)); // #2 has A-C
@@ -7024,8 +7024,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 500, 1000, 500)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 500, 500, 0)); // #4 has A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 500, 1000, 500)); // #4 A-B
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 500, 500, 0)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 500, 500, 0)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 500, 1000, 500)); // #4 A-B
         }
 
         [Test]
@@ -7110,8 +7110,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 1000, 0)); // #2 has A-D
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 1000, 1000)); // #2 has A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 500, 1000, 1000)); // #2 A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 500, 1000, 0)); // #2 A-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 500, 1000, 0)); // #2 A-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 500, 1000, 1000)); // #2 A-E
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 500, 0, 0)); // #3 has A-C
@@ -7214,8 +7214,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 400, 600, 0)); // #3 has A-D
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 400, 1000, 700)); // #3 has A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 400, 1000, 700)); // #3 A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 400, 600, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 400, 600, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 400, 1000, 700)); // #3 A-E
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 400, 100, 1000)); // #4 has A-B
@@ -7322,8 +7322,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 600, 1000, 900)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 600, 700, 0)); // #4 has A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 600, 1000, 900)); // #4 A-B
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 600, 700, 0)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 600, 700, 0)); // #4 A-E
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 600, 1000, 900)); // #4 A-B
         }
 
         /// <summary>
@@ -7406,14 +7406,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 600, 900, 0)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 600, 1000, 800)); // #1 has A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 600, 1000, 800)); // #1 A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 600, 900, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 600, 900, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 600, 1000, 800)); // #1 A-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 1000, 800)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 400, 1000)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 600, 400, 1000)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 600, 1000, 800)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 600, 1000, 800)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 600, 400, 1000)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 600, 400, 1000)); // #3 has A-D
@@ -7514,14 +7514,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 800, 0)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 1000, 600)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 1000, 600)); // #2 A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 800, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 800, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 1000, 600)); // #2 A-D
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 400, 1000, 600)); // #3 has A-D
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 400, 300, 1000)); // #3 has A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 400, 300, 1000)); // #3 A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 400, 1000, 600)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 400, 1000, 600)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 400, 300, 1000)); // #3 A-E
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 400, 0, 100)); // #4 has A-B
@@ -7610,14 +7610,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 400, 900, 1000)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 600, 400, 1000, 200)); // #1 has A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 400, 900, 1000)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 400, 1000, 200)); // #1 A-C
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 600, 400, 1000, 200)); // #1 A-C
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 600, 400, 900, 1000)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 1000, 200)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 400, 400, 0)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 1000, 200)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 400, 0)); // #2 A-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 400, 400, 0)); // #2 A-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 400, 1000, 200)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 400, 400, 0)); // #3 has A-D
@@ -7712,8 +7712,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 400, 1000, 100)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 400, 400, 200, 0)); // #1 has A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 400, 1000, 100)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 400, 200, 0)); // #1 A-C
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 400, 200, 0)); // #1 A-C
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 400, 1000, 100)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 400, 200, 0)); // #2 has A-C
@@ -7730,8 +7730,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 400, 1000, 100)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 400, 700, 1000)); // #4 has A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 400, 700, 1000)); // #4 A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 400, 1000, 100)); // #4 A-B
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 400, 1000, 100)); // #4 A-B
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 400, 700, 1000)); // #4 A-E
         }
 
         /// <summary>
@@ -7826,14 +7826,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 600, 600, 1000)); // #3 has A-D
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 400, 600, 1000, 300)); // #3 has A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 600, 600, 1000)); // #3 A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 600, 1000, 300)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 600, 1000, 300)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 600, 600, 1000)); // #3 A-D
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 600, 100, 0)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 400, 600, 1000, 300)); // #4 has A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 600, 1000, 300)); // #4 A-E
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 600, 100, 0)); // #4 A-B
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 600, 100, 0)); // #4 A-B
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 600, 1000, 300)); // #4 A-E
         }
 
         /// <summary>
@@ -7922,14 +7922,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 800, 1000)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 600, 1000, 400)); // #2 has A-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 600, 800, 1000)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 600, 1000, 400)); // #2 A-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 600, 1000, 400)); // #2 A-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 600, 800, 1000)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 600, 1000, 400)); // #3 has A-D
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 600, 300, 0)); // #3 has A-E
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 600, 1000, 400)); // #3 A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 600, 300, 0)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 600, 300, 0)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 600, 1000, 400)); // #3 A-D
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 600, 0, 900)); // #4 has A-B
@@ -8031,8 +8031,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 400, 500, 700)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 700, 200, 1000)); // #2 has B-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 400, 0, 400)); // #2 has A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 700, 200, 1000)); // #2 B-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 400, 0, 400)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 400, 0, 400)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 700, 200, 1000)); // #2 B-C
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 500, 400, 500, 700)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
@@ -8044,16 +8044,16 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 400, 1000, 400)); // #4 has A-F
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 400, 500, 0)); // #4 has A-G
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 400, 1000, 400)); // #4 A-F
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 400, 500, 0)); // #4 A-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 400, 500, 0)); // #4 A-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 400, 1000, 400)); // #4 A-F
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 400, 500, 700)); // #5 has A-B
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 700, 800, 1000)); // #5 has B-D
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 400, 1000, 400)); // #5 has A-F
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 500, 700, 800, 1000)); // #5 B-D
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 500, 400, 1000, 400)); // #5 A-F
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 500, 400, 500, 700)); // #5 A-B
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 500, 400, 1000, 400)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 500, 700, 800, 1000)); // #5 B-D
         }
 
         /// <summary>
@@ -8146,15 +8146,15 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 500, 1000, 800)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 500, 1000, 200)); // #1 has B-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 500, 1000, 800)); // #1 B-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 500, 1000, 200)); // #1 B-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 500, 1000, 200)); // #1 B-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 500, 1000, 800)); // #1 B-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(3, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 500, 700, 500)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 500, 1000, 800)); // #2 has B-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 400, 500, 400, 1000)); // #2 has A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 500, 400, 1000)); // #2 A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 500, 700, 500)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 500, 700, 500)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 500, 400, 1000)); // #2 A-E
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 700, 500, 1000, 800)); // #2 B-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
@@ -8173,8 +8173,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 500, 700, 500)); // #5 has A-B
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 700, 500, 1000, 200)); // #5 has B-D
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 400, 500, 400, 0)); // #5 has A-F
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 500, 700, 500)); // #5 A-B
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 500, 400, 0)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 500, 400, 0)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 500, 700, 500)); // #5 A-B
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 700, 500, 1000, 200)); // #5 B-D
         }
 
@@ -8275,15 +8275,15 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 600, 500, 300)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 300, 800, 0)); // #2 has B-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 600, 1000, 600)); // #2 has A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 600, 1000, 600)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 300, 800, 0)); // #2 B-C
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 600, 500, 300)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 500, 300, 800, 0)); // #2 B-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 500, 600, 1000, 600)); // #2 A-E
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 600, 1000, 600)); // #3 has A-E
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 600, 500, 1000)); // #3 has A-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 600, 500, 1000)); // #3 A-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 600, 1000, 600)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 600, 1000, 600)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 600, 500, 1000)); // #3 A-G
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 600, 0, 600)); // #4 has A-F
@@ -8295,8 +8295,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 600, 500, 300)); // #5 has A-B
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 300, 200, 0)); // #5 has B-D
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 600, 0, 600)); // #5 has A-F
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 500, 600, 500, 300)); // #5 A-B
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 500, 600, 0, 600)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 500, 600, 0, 600)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 500, 600, 500, 300)); // #5 A-B
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 500, 300, 200, 0)); // #5 B-D
         }
 
@@ -8397,28 +8397,28 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 500, 300, 500)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 500, 0, 200)); // #2 has B-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 600, 500, 600, 0)); // #2 has A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 600, 500, 300, 500)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 300, 500, 0, 200)); // #2 B-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 300, 500, 0, 200)); // #2 B-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 600, 500, 300, 500)); // #2 A-B
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 600, 500, 600, 0)); // #2 A-E
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 500, 600, 0)); // #3 has A-E
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 600, 500, 1000, 500)); // #3 has A-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 500, 1000, 500)); // #3 A-G
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 500, 600, 0)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 600, 500, 600, 0)); // #3 A-E
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 600, 500, 1000, 500)); // #3 A-G
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 500, 600, 1000)); // #4 has A-F
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 600, 500, 1000, 500)); // #4 has A-G
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 600, 500, 600, 1000)); // #4 A-F
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 600, 500, 1000, 500)); // #4 A-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 600, 500, 1000, 500)); // #4 A-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 600, 500, 600, 1000)); // #4 A-F
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 500, 300, 500)); // #5 has A-B
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 300, 500, 0, 800)); // #5 has B-D
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 600, 500, 600, 1000)); // #5 has A-F
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 300, 500, 0, 800)); // #5 B-D
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 600, 500, 300, 500)); // #5 A-B
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 600, 500, 300, 500)); // #5 A-B
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 300, 500, 0, 800)); // #5 B-D
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 600, 500, 600, 1000)); // #5 A-F
         }
 
@@ -8515,8 +8515,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 300, 500, 500)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 0, 1000)); // #2 has B-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 300, 0, 300)); // #2 has A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 500, 0, 1000)); // #2 B-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 300, 0, 300)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 300, 0, 300)); // #2 A-E
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 500, 0, 1000)); // #2 B-C
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 500, 300, 500, 500)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
@@ -8528,16 +8528,16 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 300, 1000, 300)); // #4 has A-F
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 300, 500, 0)); // #4 has A-G
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 300, 1000, 300)); // #4 A-F
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 300, 500, 0)); // #4 A-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 300, 500, 0)); // #4 A-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 300, 1000, 300)); // #4 A-F
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(3, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 300, 500, 500)); // #5 has A-B
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 500, 1000, 1000)); // #5 has B-D
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 300, 1000, 300)); // #5 has A-F
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 500, 500, 1000, 1000)); // #5 B-D
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 500, 300, 1000, 300)); // #5 A-F
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 500, 300, 500, 500)); // #5 A-B
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 500, 300, 1000, 300)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 500, 500, 1000, 1000)); // #5 B-D
         }
 
         /// <summary>
@@ -8630,15 +8630,15 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 500, 500, 1000, 1000)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 500, 500, 1000, 0)); // #1 has B-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 500, 500, 1000, 1000)); // #1 B-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 500, 500, 1000, 0)); // #1 B-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 500, 500, 1000, 0)); // #1 B-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 500, 500, 1000, 1000)); // #1 B-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(3, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 500, 500, 500)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 500, 1000, 1000)); // #2 has B-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 500, 300, 1000)); // #2 has A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 300, 500, 300, 1000)); // #2 A-E
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 300, 500, 500, 500)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 300, 500, 500, 500)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 300, 500, 300, 1000)); // #2 A-E
             Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 500, 500, 1000, 1000)); // #2 B-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
@@ -8657,8 +8657,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 300, 500, 500, 500)); // #5 has A-B
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 500, 1000, 0)); // #5 has B-D
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 300, 500, 300, 0)); // #5 has A-F
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 300, 500, 500, 500)); // #5 A-B
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 300, 500, 300, 0)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 300, 500, 300, 0)); // #5 A-F
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 300, 500, 500, 500)); // #5 A-B
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 500, 500, 1000, 0)); // #5 B-D
         }
 
@@ -8761,24 +8761,24 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 700, 1000, 700)); // #2 has B-G
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 500, 700, 500, 1000)); // #2 has B-H
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 700, 500, 1000)); // #2 B-H
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 700, 1000, 700)); // #2 B-G
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 500, 700, 1000, 700)); // #2 B-G
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 500, 700, 500, 1000)); // #2 B-H
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(3, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 300, 500, 700)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 700, 0, 700)); // #3 has B-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 500, 300, 0, 300)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 700, 0, 700)); // #3 B-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 300, 0, 300)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 500, 300, 0, 300)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 500, 700, 0, 700)); // #3 B-C
             Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 500, 300, 500, 700)); // #3 A-B
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(3, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 300, 500, 700)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 700, 1000, 700)); // #4 has B-G
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 500, 300, 1000, 300)); // #4 has A-F
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 700, 1000, 700)); // #4 B-G
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 500, 300, 1000, 300)); // #4 A-F
             Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 500, 300, 500, 700)); // #4 A-B
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 500, 300, 1000, 300)); // #4 A-F
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 500, 700, 1000, 700)); // #4 B-G
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(2, sites[4].ClockwiseCell.Count()); // #5
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 300, 0, 300)); // #5 has A-D
@@ -8789,8 +8789,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[5].ClockwiseCell.Count()); // #6
             Assert.IsTrue(HasEdge(sites[5].ClockwiseCell, 500, 300, 1000, 300)); // #6 has A-F
             Assert.IsTrue(HasEdge(sites[5].ClockwiseCell, 500, 300, 500, 0)); // #6 has A-E
-            Assert.IsTrue(EdgeIs(sites[5].ClockwiseCell.ElementAt(0), 500, 300, 1000, 300)); // #6 A-F
-            Assert.IsTrue(EdgeIs(sites[5].ClockwiseCell.ElementAt(1), 500, 300, 500, 0)); // #6 A-E
+            Assert.IsTrue(EdgeIs(sites[5].ClockwiseCell.ElementAt(0), 500, 300, 500, 0)); // #6 A-E
+            Assert.IsTrue(EdgeIs(sites[5].ClockwiseCell.ElementAt(1), 500, 300, 1000, 300)); // #6 A-F
         }
 
         /// <summary>
@@ -8890,29 +8890,29 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 500, 700, 1000)); // #1 has B-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 700, 500, 1000, 500)); // #1 has B-H
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 500, 700, 1000)); // #1 B-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 500, 1000, 500)); // #1 B-H
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 700, 500, 1000, 500)); // #1 B-H
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 700, 500, 700, 1000)); // #1 B-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 500, 700, 0)); // #2 has B-G
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 700, 500, 1000, 500)); // #2 has B-H
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 500, 1000, 500)); // #2 B-H
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 500, 700, 0)); // #2 B-G
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 700, 500, 700, 0)); // #2 B-G
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 700, 500, 1000, 500)); // #2 B-H
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(3, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 500, 700, 500)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 700, 500, 700, 1000)); // #3 has B-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 500, 300, 1000)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 500, 300, 1000)); // #3 A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 500, 700, 500)); // #3 A-B
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 300, 500, 700, 500)); // #3 A-B
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 300, 500, 300, 1000)); // #3 A-D
             Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 700, 500, 700, 1000)); // #3 B-C
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(3, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 300, 500, 700, 500)); // #4 has A-B
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 700, 500, 700, 0)); // #4 has B-G
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 300, 500, 300, 0)); // #4 has A-F
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 300, 500, 700, 500)); // #4 A-B
-            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 300, 500, 300, 0)); // #4 A-F
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 300, 500, 300, 0)); // #4 A-F
+            Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 300, 500, 700, 500)); // #4 A-B
             Assert.IsTrue(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 700, 500, 700, 0)); // #4 B-G
             Assert.NotNull(sites[4].ClockwiseCell);
             Assert.AreEqual(2, sites[4].ClockwiseCell.Count()); // #5
@@ -9029,9 +9029,9 @@ namespace SharpVoronoiLib.UnitTests
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 0, 500, 500, 0)); // #5 has B-C
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 500, 0, 1000, 500)); // #5 has C-D
             Assert.IsTrue(HasEdge(sites[4].ClockwiseCell, 1000, 500, 500, 1000)); // #5 has D-A
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 1000, 500, 500, 1000)); // #5 D-A
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 0, 500, 500, 0)); // #5 B-C
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 500, 1000, 0, 500)); // #5 A-B
-            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 0, 500, 500, 0)); // #5 B-C
+            Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 1000, 500, 500, 1000)); // #5 D-A
             Assert.IsTrue(EdgeIs(sites[4].ClockwiseCell.ElementAt(3), 500, 0, 1000, 500)); // #5 C-D
         }
 
@@ -9109,8 +9109,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 500, 1000, 1000)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 500, 1000, 0)); // #3 has A-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 500, 1000, 1000)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 500, 1000, 0)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 500, 1000, 0)); // #3 A-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 500, 1000, 1000)); // #3 A-B
         }
 
         /// <summary>
@@ -9434,8 +9434,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 600, 800, 1000)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 400, 800, 0)); // #3 has D-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 600, 800, 1000)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 400, 800, 0)); // #3 D-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 400, 800, 0)); // #3 D-C
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 600, 800, 1000)); // #3 A-B
         }
 
         /// <summary>
@@ -9600,8 +9600,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 1000, 400, 200, 0)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 1000, 600, 200, 1000)); // #3 has D-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 1000, 600, 200, 1000)); // #3 D-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 1000, 400, 200, 0)); // #3 A-B
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 1000, 400, 200, 0)); // #3 A-B
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 1000, 600, 200, 1000)); // #3 D-C
         }
 
         /// <summary>
@@ -9757,8 +9757,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 0, 600, 1200, 1000)); // #1 has A-C
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 0, 600, 1200, 200)); // #1 has A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 0, 600, 1200, 1000)); // #1 A-C
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 0, 600, 1200, 200)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 0, 600, 1200, 200)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 0, 600, 1200, 1000)); // #1 A-C
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(1, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 600, 1200, 1000)); // #2 has A-C
@@ -10098,8 +10098,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 0, 700, 1200, 1100)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 1200, 100, 0, 500)); // #1 has C-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 0, 700, 1200, 1100)); // #1 A-B
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 1200, 100, 0, 500)); // #1 C-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 1200, 100, 0, 500)); // #1 C-D
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 0, 700, 1200, 1100)); // #1 A-B
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(1, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 700, 1200, 1100)); // #2 has A-B
@@ -10272,8 +10272,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 1200, 500, 0, 100)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 0, 1100, 1200, 700)); // #1 has C-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 0, 1100, 1200, 700)); // #1 C-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 1200, 500, 0, 100)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 1200, 500, 0, 100)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 0, 1100, 1200, 700)); // #1 C-D
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(1, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 1200, 500, 0, 100)); // #2 has A-B
@@ -10446,14 +10446,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 200, 600, 1000)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 200, 1000, 600)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 200, 600, 1000)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 200, 1000, 600)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 200, 1000, 600)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 200, 600, 1000)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 200, 1000, 600)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 200, 0, 0)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 200, 200, 1000, 600)); // #3 A-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 200, 200, 0, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 200, 200, 0, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 200, 200, 1000, 600)); // #3 A-C
         }
 
         /// <summary>
@@ -10529,14 +10529,14 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 200, 800, 1000, 400)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 200, 800, 0, 1000)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 200, 800, 0, 1000)); // #1 A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 200, 800, 1000, 400)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 200, 800, 1000, 400)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 200, 800, 0, 1000)); // #1 A-D
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 800, 1000, 400)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 800, 600, 0)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 800, 1000, 400)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 800, 600, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 800, 600, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 800, 1000, 400)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 800, 600, 0)); // #3 has A-C
@@ -10618,8 +10618,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[0].ClockwiseCell.Count()); // #1
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 800, 800, 400, 0)); // #1 has A-B
             Assert.IsTrue(HasEdge(sites[0].ClockwiseCell, 800, 800, 1000, 1000)); // #1 has A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 800, 800, 1000, 1000)); // #1 A-D
-            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 800, 800, 400, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 800, 800, 400, 0)); // #1 A-B
+            Assert.IsTrue(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 800, 800, 1000, 1000)); // #1 A-D
             Assert.NotNull(sites[1].ClockwiseCell);
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 800, 800, 400, 0)); // #2 has A-B
@@ -10719,8 +10719,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 800, 200, 400, 1000)); // #3 has A-C
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 800, 200, 1000, 0)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 800, 200, 400, 1000)); // #3 A-C
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 800, 200, 1000, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 800, 200, 1000, 0)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 800, 200, 400, 1000)); // #3 A-C
         }
 
         [Test]
@@ -10875,8 +10875,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 1000, 1000, 500)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 1000, 500, 0)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 1000, 1000, 500)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 1000, 500, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 1000, 500, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 1000, 1000, 500)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(1, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 1000, 500, 0)); // #3 has A-C
@@ -11117,8 +11117,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 0, 700, 1000)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 0, 1000, 400)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 0, 700, 1000)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 0, 1000, 400)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 0, 1000, 400)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 0, 700, 1000)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(1, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 0, 1000, 400)); // #3 has A-C
@@ -11199,8 +11199,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 800, 1000, 300)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 800, 400, 0)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 800, 1000, 300)); // #2 A-B
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 800, 400, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 800, 400, 0)); // #2 A-C
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 800, 1000, 300)); // #2 A-B
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(1, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 800, 400, 0)); // #3 has A-C
@@ -11609,8 +11609,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 1000, 700, 0)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 200, 1000, 1000, 600)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 1000, 1000, 600)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 1000, 700, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 200, 1000, 700, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 200, 1000, 1000, 600)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(1, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 200, 1000, 1000, 600)); // #3 has A-C
@@ -11774,8 +11774,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 300, 600, 1200)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 0, 1200, 600)); // #2 has B-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 300, 600, 1200)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 300, 0, 1200, 600)); // #2 B-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 300, 0, 1200, 600)); // #2 B-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 300, 600, 1200)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(1, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 300, 0, 1200, 600)); // #3 has B-D
@@ -11861,8 +11861,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 300, 1200, 1200, 600)); // #2 has A-C
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 900, 600, 0)); // #2 has B-D
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 300, 1200, 1200, 600)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 900, 600, 0)); // #2 B-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 900, 600, 0)); // #2 B-D
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 300, 1200, 1200, 600)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(1, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 900, 600, 0)); // #3 has B-D
@@ -12124,8 +12124,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 0, 900, 900)); // #3 has A-B
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 0, 900, 300)); // #3 has A-D
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 0, 900, 900)); // #3 A-B
-            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 0, 900, 300)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 0, 900, 300)); // #3 A-D
+            Assert.IsTrue(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 0, 900, 900)); // #3 A-B
             Assert.NotNull(sites[3].ClockwiseCell);
             Assert.AreEqual(1, sites[3].ClockwiseCell.Count()); // #4
             Assert.IsTrue(HasEdge(sites[3].ClockwiseCell, 0, 0, 900, 300)); // #4 has A-D
@@ -12211,8 +12211,8 @@ namespace SharpVoronoiLib.UnitTests
             Assert.AreEqual(2, sites[1].ClockwiseCell.Count()); // #2
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 900, 900, 0)); // #2 has A-B
             Assert.IsTrue(HasEdge(sites[1].ClockwiseCell, 0, 900, 900, 600)); // #2 has A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 900, 900, 600)); // #2 A-C
-            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 900, 900, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 0, 900, 900, 0)); // #2 A-B
+            Assert.IsTrue(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 900, 900, 600)); // #2 A-C
             Assert.NotNull(sites[2].ClockwiseCell);
             Assert.AreEqual(2, sites[2].ClockwiseCell.Count()); // #3
             Assert.IsTrue(HasEdge(sites[2].ClockwiseCell, 0, 900, 900, 0)); // #3 has A-B
