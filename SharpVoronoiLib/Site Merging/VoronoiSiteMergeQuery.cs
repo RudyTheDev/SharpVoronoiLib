@@ -12,7 +12,7 @@ namespace SharpVoronoiLib
     public enum VoronoiSiteMergeDecision
     {
         DontMerge,
-        MergeToSite1,
-        MergeToSite2
+        MergeIntoSite1,
+        MergeIntoSite2
     }
 }

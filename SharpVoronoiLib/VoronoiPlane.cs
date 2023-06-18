@@ -182,7 +182,7 @@ namespace SharpVoronoiLib
             if (_siteMergingAlgorithm == null)
                 _siteMergingAlgorithm = new GenericSiteMergingAlgorithm();
 
-            _siteMergingAlgorithm.MergeSites(Sites, mergeQuery);
+            _siteMergingAlgorithm.MergeSites(Sites, Edges, mergeQuery);
 
             return Sites;
         }

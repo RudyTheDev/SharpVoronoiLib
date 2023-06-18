@@ -33,7 +33,7 @@ namespace SharpVoronoiLib
                 if (!_tessellated)
                     throw new VoronoiNotTessellatedException();
                 
-                return _cell;
+                return cell;
             }
         }
 
@@ -51,7 +51,7 @@ namespace SharpVoronoiLib
                 
                 if (_clockwiseCell == null)
                 {
-                    _clockwiseCell = new List<VoronoiEdge>(_cell);
+                    _clockwiseCell = new List<VoronoiEdge>(cell);
                     _clockwiseCell.Sort(SortCellEdgesClockwise);
                 }
 
@@ -70,7 +70,7 @@ namespace SharpVoronoiLib
                 if (!_tessellated)
                     throw new VoronoiNotTessellatedException();
                 
-                return _neighbours;
+                return neighbours;
             }
         }
 
@@ -89,7 +89,7 @@ namespace SharpVoronoiLib
                 {
                     _points = new List<VoronoiPoint>();
 
-                    foreach (VoronoiEdge edge in _cell)
+                    foreach (VoronoiEdge edge in cell)
                     {
                         if (!_points.Contains(edge.Start))
                         {
@@ -188,11 +188,13 @@ namespace SharpVoronoiLib
             }
         }
 
+        
+        internal readonly List<VoronoiEdge> cell;
+        internal readonly List<VoronoiSite> neighbours;
+
 
         private bool _tessellated;
-        
-        private readonly List<VoronoiSite> _neighbours;
-        private readonly List<VoronoiEdge> _cell;
+
         private List<VoronoiPoint>? _points;
         private List<VoronoiPoint>? _clockwisePoints;
         private List<VoronoiEdge>? _clockwiseCell;
@@ -208,8 +210,8 @@ namespace SharpVoronoiLib
             X = x;
             Y = y;
             
-            _cell = new List<VoronoiEdge>();
-            _neighbours = new List<VoronoiSite>();
+            cell = new List<VoronoiEdge>();
+            neighbours = new List<VoronoiSite>();
         }
 
         
@@ -251,7 +253,7 @@ namespace SharpVoronoiLib
 
         internal void AddEdge(VoronoiEdge newEdge)
         {
-            _cell.Add(newEdge);
+            cell.Add(newEdge);
 
             // Set the "flags" whether we are on an edge or corner
 
@@ -283,12 +285,12 @@ namespace SharpVoronoiLib
 
         internal void AddNeighbour(VoronoiSite newNeighbour)
         {
-            _neighbours.Add(newNeighbour);
+            neighbours.Add(newNeighbour);
         }
         
         internal void RemoveNeighbour(VoronoiSite badNeighbour)
         {
-            _neighbours.Remove(badNeighbour);
+            neighbours.Remove(badNeighbour);
         }
         
         internal void Relocate(double newX, double newY)
@@ -301,8 +303,8 @@ namespace SharpVoronoiLib
             
             // Clear all the values we used before
             
-            _cell.Clear();
-            _neighbours.Clear();
+            cell.Clear();
+            neighbours.Clear();
             _points = null;
             _clockwisePoints = null;
             _clockwiseCell = null;
@@ -446,14 +448,14 @@ namespace SharpVoronoiLib
         [Pure]
         private double GetCenterShiftedX()
         {
-            double target = _cell.Sum(c => c.Start.X + c.End.X) / _cell.Count / 2;
+            double target = cell.Sum(c => c.Start.X + c.End.X) / cell.Count / 2;
             return X + (target - X) * shiftAmount;
         }
 
         [Pure]
         private double GetCenterShiftedY()
         {
-            double target = _cell.Sum(c => c.Start.Y + c.End.Y) / _cell.Count / 2;
+            double target = cell.Sum(c => c.Start.Y + c.End.Y) / cell.Count / 2;
             return Y + (target - Y) * shiftAmount;
         }
         
@@ -519,6 +521,27 @@ namespace SharpVoronoiLib
             centroidY /= area;
 
             return new VoronoiPoint(centroidX, centroidY);
+        }
+        
+        
+        internal void InvalidateComputedValues()
+        {
+            _points = null;
+            _clockwisePoints = null;
+            _clockwiseCell = null;
+        }
+        
+        internal void Invalidated()
+        {
+            _tessellated = false;
+            
+            cell.Clear(); // don't cling to any references
+            neighbours.Clear(); // don't cling to any references
+            _centroid = null; // don't cling to any references
+            _liesOnEdge = null; // don't cling to any references
+            _liesOnCorner = null; // don't cling to any references
+
+            InvalidateComputedValues();
         }
 
 
