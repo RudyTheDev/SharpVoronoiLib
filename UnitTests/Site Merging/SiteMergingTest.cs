@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using NUnit.Framework;
@@ -9,6 +10,9 @@ namespace SharpVoronoiLib.UnitTests
     [Parallelizable(ParallelScope.All)]
     public class SiteMergingTest
     {
+        private Random _random = new Random();
+            
+        
         [TestCase(VoronoiSiteMergeDecision.MergeIntoSite1, 0)]
         [TestCase(VoronoiSiteMergeDecision.MergeIntoSite2, 1)]
         public void TwoSites(VoronoiSiteMergeDecision mergeDecision, int expectedRemainingSite)
@@ -143,6 +147,50 @@ namespace SharpVoronoiLib.UnitTests
                 
                 if (mergeDecisions.Any(md => originalSites[i2] == site1 && originalSites[i1] == site2))
                     return VoronoiSiteMergeDecision.MergeIntoSite1;
+            }
+
+            return VoronoiSiteMergeDecision.DontMerge;
+        }
+        
+        [Test]
+        [Repeat(100)]
+        public void RandomSites()
+        {
+            // Arrange
+
+            VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
+
+            int expectedSiteCount = 1000; 
+
+            plane.GenerateRandomSites(expectedSiteCount);
+
+            plane.Tessellate();
+            
+            // Act
+
+            List<VoronoiSite> sites = plane.MergeSites(
+                (_, _) => RandomMergeDecision(ref expectedSiteCount)
+            );
+
+            // Assert
+            
+            Assert.AreEqual(expectedSiteCount, sites.Count);
+        }
+
+        private VoronoiSiteMergeDecision RandomMergeDecision(ref int expectedSiteCount)
+        {
+            float r = _random.NextSingle();
+
+            if (r > 0.9f)
+            {
+                expectedSiteCount--;
+                return VoronoiSiteMergeDecision.MergeIntoSite1;
+            }
+
+            if (r < 0.1f)
+            {
+                expectedSiteCount--;
+                return VoronoiSiteMergeDecision.MergeIntoSite2;
             }
 
             return VoronoiSiteMergeDecision.DontMerge;
