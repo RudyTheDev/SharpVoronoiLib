@@ -54,6 +54,8 @@ namespace SharpVoronoiLib
         
         private IRelaxationAlgorithm? _relaxationAlgorithm;
         
+        private ISiteMergingAlgorithm? _siteMergingAlgorithm;
+        
         private BorderEdgeGeneration _lastBorderGeneration;
 
 
@@ -165,6 +167,20 @@ namespace SharpVoronoiLib
             }
 
             return Edges;
+        }
+
+        [PublicAPI]
+        public List<VoronoiSite> MergeSites()
+        {
+            if (Sites == null) throw new VoronoiDoesntHaveSitesException();
+            if (Edges == null) throw new VoronoiNotTessellatedException();
+
+            if (_siteMergingAlgorithm == null)
+                _siteMergingAlgorithm = new GenericSiteMergingAlgorithm();
+
+            _siteMergingAlgorithm.MergeSites(Sites);
+
+            return Sites;
         }
 
 
