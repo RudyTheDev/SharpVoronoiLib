@@ -5,6 +5,16 @@
         <Nullable>enable</Nullable>
         <LangVersion>8</LangVersion>
         <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+        <Title>SharpVoronoiLib</Title>
+        <Authors>various</Authors>
+        <Description>Generate a Voronoi diagram from a set of points in a plane (using Fortune's Algorithm) with edge clipping and border closure. Includes Lloyds relaxation algorithm. Original version published as VoronoiLib.</Description>
+        <Copyright>MIT License, various authors</Copyright>
+        <PackageProjectUrl>https://github.com/RudyTheDev/SharpVoronoiLib</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/RudyTheDev/SharpVoronoiLib/blob/main/License.md</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/RudyTheDev/SharpVoronoiLib</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>voronoi lloyds fortune's</PackageTags>
+        <PackageReleaseNotes>First release</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
