@@ -101,9 +101,7 @@ List<VoronoiEdge> edges = plane.Relax();
 
 # Dependencies
 
-TODO: Actually version, compile and publish the library
-
-The library is compiled for .NET Standard 1.1 at C# 9.0 and can target compatible platforms/frameworks, like UWP, Mono/Linux or Xamarin/Mac, Unity.
+The library is compiled for .NET (Core) 7.0 at C# 11.0 and targets compatible OSes - Windows, Linux & macOS - and frameworks like Unity.
 
 # Credits
 
