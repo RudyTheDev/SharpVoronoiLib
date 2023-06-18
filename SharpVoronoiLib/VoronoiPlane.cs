@@ -107,6 +107,7 @@ namespace SharpVoronoiLib
         {
             if (Sites == null) throw new VoronoiDoesntHaveSitesException();
 
+            
             _lastBorderGeneration = borderGeneration;
 
             // Tessellate
@@ -150,6 +151,7 @@ namespace SharpVoronoiLib
             if (iterations < 1) throw new ArgumentOutOfRangeException(nameof(iterations));
             if (strength <= 0f || strength > 1f) throw new ArgumentOutOfRangeException(nameof(strength));
 
+            
             if (_relaxationAlgorithm == null)
                 _relaxationAlgorithm = new LloydsRelaxation();
 
@@ -170,15 +172,17 @@ namespace SharpVoronoiLib
         }
 
         [PublicAPI]
-        public List<VoronoiSite> MergeSites()
+        public List<VoronoiSite> MergeSites(VoronoiSiteMergeQuery mergeQuery)
         {
             if (Sites == null) throw new VoronoiDoesntHaveSitesException();
             if (Edges == null) throw new VoronoiNotTessellatedException();
+            if (mergeQuery == null) throw new ArgumentNullException(nameof(mergeQuery));
+            
 
             if (_siteMergingAlgorithm == null)
                 _siteMergingAlgorithm = new GenericSiteMergingAlgorithm();
 
-            _siteMergingAlgorithm.MergeSites(Sites);
+            _siteMergingAlgorithm.MergeSites(Sites, mergeQuery);
 
             return Sites;
         }

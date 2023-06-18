@@ -4,7 +4,7 @@ namespace SharpVoronoiLib
 {
     public class GenericSiteMergingAlgorithm : ISiteMergingAlgorithm
     {
-        public void MergeSites(List<VoronoiSite> sites)
+        public void MergeSites(List<VoronoiSite> sites, VoronoiSiteMergeQuery mergeQuery)
         {
             
         }
