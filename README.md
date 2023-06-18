@@ -1,3 +1,5 @@
+![build_and_test](https://github.com/RudyTheDev/SharpVoronoiLib/actions/workflows/test.yml/badge.svg)
+
 # SharpVoronoiLib
 
 C# implementation of generating a Voronoi diagram from a set of points in a plane (using Fortune's Algorithm) with edge clipping and border closure. This implementation guarantees O(n×ln(n)) performance.
