@@ -90,6 +90,7 @@ namespace SharpVoronoiLib
             {
                 edges.Remove(commonEdge);
                 target.cell.Remove(commonEdge);
+                source.cell.Remove(commonEdge); // we will need to process source cells list later
             }
 
             // Unlink sites from each other
@@ -112,6 +113,12 @@ namespace SharpVoronoiLib
                 }
             }
             
+            // "Transfer" new edges from the old site to the new one
+
+            foreach (VoronoiEdge edge in source.cell)
+                if (!target.cell.Contains(edge))
+                    target.cell.Add(edge);
+
             // Invalidate source site completely - it's no longer part of the plane
             source.Invalidated();
 
