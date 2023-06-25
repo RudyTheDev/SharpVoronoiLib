@@ -267,6 +267,19 @@ namespace SharpVoronoiLib
             
             // Don't bother with slope stuff if we are given explicit coords
         }
+        
+        internal VoronoiEdge(VoronoiPoint start, VoronoiPoint end, VoronoiSite? right, VoronoiSite? left)
+        {
+            Start = start;
+            End = end;
+            Right = right;
+            Left = left;
+        }
+        
+        internal VoronoiEdge Reversed()
+        {
+            return new VoronoiEdge(End, Start, Left, Right);
+        }
 
 
 #if DEBUG
