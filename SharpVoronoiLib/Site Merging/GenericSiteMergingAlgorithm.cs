@@ -115,9 +115,49 @@ namespace SharpVoronoiLib
             
             // "Transfer" new edges from the old site to the new one
 
-            foreach (VoronoiEdge edge in source.cell)
-                if (!target.cell.Contains(edge))
-                    target.cell.Add(edge);
+            // TODO: this doesn't work because (I think) borders are not in the correct orientation
+            
+            do
+            {
+                for (int s = 0; s < source.cell.Count; s++)
+                {
+                    VoronoiEdge sourceEdge = source.cell[s];
+                    
+                    for (int t = 0; t < target.cell.Count; t++)
+                    {
+                        VoronoiEdge targetEdge = target.cell[t];
+
+                        if (targetEdge.End == sourceEdge.Start)
+                        {
+                            target.cell.Insert(t + 1, sourceEdge);
+                            source.cell.RemoveAt(s);
+                            s--;
+                            break;
+                        }
+                        else if (targetEdge.End == sourceEdge.End)
+                        {
+                            target.cell.Insert(t + 1, sourceEdge.Reversed());
+                            source.cell.RemoveAt(s);
+                            s--;
+                            break;
+                        }
+                        else if (targetEdge.Start == sourceEdge.End)
+                        {
+                            target.cell.Insert(t, sourceEdge);
+                            source.cell.RemoveAt(s);
+                            s--;
+                            break;
+                        }
+                        else if (targetEdge.Start == sourceEdge.Start)
+                        {
+                            target.cell.Insert(t, sourceEdge.Reversed());
+                            source.cell.RemoveAt(s);
+                            s--;
+                            break;
+                        }
+                    }
+                }
+            } while (source.cell.Count > 0);
 
             // Invalidate source site completely - it's no longer part of the plane
             source.Invalidated();
@@ -138,9 +178,9 @@ namespace SharpVoronoiLib
             if (_tempEdges.Count != 0) throw new NotImplementedException("Didn't clean up " + nameof(_tempEdges));
 #endif
             
-            foreach (VoronoiEdge edge1 in site1.Cell)
+            foreach (VoronoiEdge edge1 in site1.cell)
             {
-                foreach (VoronoiEdge edge2 in site2.Cell)
+                foreach (VoronoiEdge edge2 in site2.cell)
                 {
                     if (edge1 == edge2)
                         _tempEdges.Add(edge1);
