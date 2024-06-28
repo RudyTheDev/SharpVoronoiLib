@@ -15,12 +15,14 @@ namespace SharpVoronoiLib
     {
         /// <summary>
         /// One of the two points making up this line segment, the other being <see cref="End"/>.
+        /// Note that the order of start/<see cref="End"/> points is random.
         /// </summary>
         [PublicAPI]
         public VoronoiPoint Start { get; internal set; }
         
         /// <summary>
         /// One of the two points making up this line segment, the other being <see cref="Start"/>.
+        /// Note that the order of <see cref="Start"/>/end points is random.
         /// </summary>
         [PublicAPI]
         public VoronoiPoint End { get; internal set; } = null!; // it will be set eventually if not immediatelly from constructor
