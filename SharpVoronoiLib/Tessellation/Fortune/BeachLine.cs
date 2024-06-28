@@ -282,8 +282,10 @@ namespace SharpVoronoiLib
                 next = next.Next;
             }
 
-            section.Data.Edge.End = vertex;
-            section.Next.Data.Edge.End = vertex;
+            if (section.Data.Edge != null)  // happens with same coordinate sites or something, I have no idea how this is supposed to be handled in the original algorithm or if that's even a problem, but since the section is being removed and the edge doesn't exist, it doesn't "need" a value set
+                section.Data.Edge.End = vertex;
+            if (section.Next.Data.Edge != null) // happens with same coordinate sites or something
+                section.Next.Data.Edge.End = vertex;
             section.Data.CircleEvent = null;
 
             //odds are this double writes a few edges but this is clean...
