@@ -209,6 +209,8 @@ namespace SharpVoronoiLib
         {
             if (double.IsNaN(x)) throw new ArgumentException("x cannot be NaN", nameof(x));
             if (double.IsNaN(y)) throw new ArgumentException("y cannot be NaN", nameof(y));
+            if (double.IsInfinity(x)) throw new ArgumentException("x cannot be infinite", nameof(x));
+            if (double.IsInfinity(y)) throw new ArgumentException("y cannot be infinite", nameof(y));
             
             X = x;
             Y = y;
