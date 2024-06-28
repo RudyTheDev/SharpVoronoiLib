@@ -10,6 +10,14 @@ namespace MonoGameExample;
 
 public class VoronoiGame : Game
 {
+    private readonly Color _backgroundColor = new Color(147, 145, 133);
+    
+    private readonly Color _lineColor = new Color(47, 54, 69);
+
+    /// <summary> Margin from viewport edge so we can preview the voronoi edges </summary>
+    private const int edgeDistance = 15;
+
+    
     private readonly GraphicsDeviceManager _graphics;
 
     private SpriteBatch _spriteBatch;
@@ -26,8 +34,11 @@ public class VoronoiGame : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        IsFixedTimeStep = false;
+        Window.AllowUserResizing = true;
         _graphics.PreferredBackBufferWidth = 1280;
         _graphics.PreferredBackBufferHeight = 720;
+        _graphics.SynchronizeWithVerticalRetrace = false;
     }
 
     
@@ -36,7 +47,7 @@ public class VoronoiGame : Game
         base.Initialize();
         
         _pixelTexture = new Texture2D(GraphicsDevice, 1, 1);
-        _pixelTexture.SetData(new[] { Color.White });
+        _pixelTexture.SetData(new[] { _lineColor });
         
         _lastKeyboardState = Keyboard.GetState();
         
@@ -55,6 +66,7 @@ public class VoronoiGame : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
             Exit();
 
+        // todo: temp
         Generate();
         
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
@@ -67,14 +79,14 @@ public class VoronoiGame : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
+        GraphicsDevice.Clear(_backgroundColor);
 
-        _spriteBatch.Begin();
+        _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Opaque, SamplerState.PointWrap);
 
         foreach (VoronoiEdge edge in _edges)
         {
-            Vector2 start = new Vector2((float)edge.Start.X, (float)edge.Start.Y);
-            Vector2 end = new Vector2((float)edge.End.X, (float)edge.End.Y);
+            Vector2 start = new Vector2((float)edge.Start.X + edgeDistance, (float)edge.Start.Y + edgeDistance);
+            Vector2 end = new Vector2((float)edge.End.X + edgeDistance, (float)edge.End.Y + edgeDistance);
             
             float dist = Vector2.Distance(start, end);
             float rotation = (float)Math.Atan2(end.Y - start.Y, end.X - start.X);
@@ -92,7 +104,6 @@ public class VoronoiGame : Game
             );
         }
         
-        
         _spriteBatch.End();
 
         base.Draw(gameTime);
@@ -101,13 +112,17 @@ public class VoronoiGame : Game
     
     private void Generate()
     {
-        int width = _graphics.PreferredBackBufferWidth;
-        int height = _graphics.PreferredBackBufferHeight;
+        // Set to current screen
+        int width = GraphicsDevice.Viewport.Width - (edgeDistance * 2);
+        int height = GraphicsDevice.Viewport.Height - (edgeDistance * 2);
         int numPoints = width * height / 400; // about 2000 points at 1280 x 720
         
         List<VoronoiSite> sites = new List<VoronoiSite>(numPoints);
 
-        Random rand = new Random();
+        int seed = Random.Shared.Next();
+        Console.WriteLine("Seed: " + seed);
+
+        Random rand = new Random(seed);
         for (int i = 0; i < numPoints; i++)
         {
             sites.Add(
