@@ -207,6 +207,9 @@ namespace SharpVoronoiLib
         [PublicAPI]
         public VoronoiSite(double x, double y)
         {
+            if (double.IsNaN(x)) throw new ArgumentException("x cannot be NaN", nameof(x));
+            if (double.IsNaN(y)) throw new ArgumentException("y cannot be NaN", nameof(y));
+            
             X = x;
             Y = y;
             
@@ -354,7 +357,7 @@ namespace SharpVoronoiLib
                 // If we are on either edge then we can't compare directly to that edge,
                 // because angle to the edge is basically "along the edge", i.e. undefined.
                 // We don't know which "direction" the cell will turn, we don't know if the cell is to the right/or left of the edge.
-                // So we "step away" a little bit towards out cell's/polygon's center so that we are no longer on either edge.
+                // So we "step away" a little bit towards our cell's/polygon's center so that we are no longer on either edge.
                 // This means we can now get the correct angle, which is slightly different now, but all we care about is the origin/quadrant.
                 // This is a roundabout way to do this, but it seems to work well enough.
                 

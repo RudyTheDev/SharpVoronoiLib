@@ -203,6 +203,8 @@ namespace SharpVoronoiLib
                 double cx = rightSite.X - ax;
                 double cy = rightSite.Y - ay;
                 double d = bx*cy - by*cx;
+                if (d.ApproxEqual(0)) // otherwise, we get an infinity/NaN for vertex
+                    d = EpsilonUtils.epsilon; // jiggle the point just a tiny bit, which will not impact the results meaningfully, but avoids writing convoluted logic for this edge case
                 double magnitudeB = bx*bx + by*by;
                 double magnitudeC = cx*cx + cy*cy;
                 VoronoiPoint vertex = new VoronoiPoint(
