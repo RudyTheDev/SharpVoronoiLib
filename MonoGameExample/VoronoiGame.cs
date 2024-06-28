@@ -115,11 +115,11 @@ public class VoronoiGame : Game
         // Set to current screen
         int width = GraphicsDevice.Viewport.Width - (edgeDistance * 2);
         int height = GraphicsDevice.Viewport.Height - (edgeDistance * 2);
-        int numPoints = width * height / 400; // about 2000 points at 1280 x 720
+        int numPoints = width * height / 40; // about 20000 points at 1280 x 720
         
         List<VoronoiSite> sites = new List<VoronoiSite>(numPoints);
 
-        int seed = Random.Shared.Next();
+        int seed = 47663815;//Random.Shared.Next();
         Console.WriteLine("Seed: " + seed);
 
         Random rand = new Random(seed);
