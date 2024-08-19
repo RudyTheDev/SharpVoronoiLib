@@ -15,8 +15,8 @@
 
         public int CompareTo(FortuneEvent other)
         {
-            int c = Y.CompareTo(other.Y);
-            return c == 0 ? X.CompareTo(other.X) : c;
+            int c = Y.ApproxCompareTo(other.Y);
+            return c == 0 ? X.ApproxCompareTo(other.X) : c;
         }
 
         public double X => Lowest.X;
