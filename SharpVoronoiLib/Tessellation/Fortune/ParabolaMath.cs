@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace SharpVoronoiLib
 {
-    public static class ParabolaMath
+    internal static class ParabolaMath
     {
         public static double EvalParabola(double focusX, double focusY, double directrix, double x)
         {

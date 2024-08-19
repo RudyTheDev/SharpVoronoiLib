@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using SharpVoronoiLib;
 
 namespace SharpVoronoiLib.UnitTests
 {

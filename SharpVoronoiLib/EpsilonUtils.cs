@@ -1,6 +1,6 @@
 ﻿namespace SharpVoronoiLib
 {
-    public static class EpsilonUtils
+    internal static class EpsilonUtils
     {
         //private const double epsilon = double.Epsilon * 1E100;
         // The above is the original epsilon used for the algorithm.
