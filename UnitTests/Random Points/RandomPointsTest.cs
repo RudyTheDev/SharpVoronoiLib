@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using NUnit.Framework;
 
 namespace SharpVoronoiLib.UnitTests
@@ -25,8 +24,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
             
-            Assert.NotNull(sites);
-            Assert.AreEqual(amount, sites.Count);
+            Assert.That(sites, Is.Not.Null);
+            Assert.That(sites, Has.Count.EqualTo(amount));
             
             foreach (VoronoiSite site in sites)
             {
@@ -53,8 +52,8 @@ namespace SharpVoronoiLib.UnitTests
 
             for (int i = 0; i < bands; i++)
             {
-                Assert.AreEqual((double)amount / bands, countsX[i], (double)amount / bands * tolerance);
-                Assert.AreEqual((double)amount / bands, countsY[i], (double)amount / bands * tolerance);
+                Assert.That(countsX[i], Is.EqualTo((double)amount / bands).Within((double)amount / bands * tolerance));
+                Assert.That(countsY[i], Is.EqualTo((double)amount / bands).Within((double)amount / bands * tolerance));
             }
         }
         
@@ -74,8 +73,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
             
-            Assert.NotNull(sites);
-            Assert.AreEqual(amount, sites.Count);
+            Assert.That(sites, Is.Not.Null);
+            Assert.That(sites, Has.Count.EqualTo(amount));
             
             foreach (VoronoiSite site in sites)
             {
@@ -124,8 +123,8 @@ namespace SharpVoronoiLib.UnitTests
 
                 double expected = amount * distr;
                 
-                Assert.AreEqual(expected, countsX[i], expected * tolerance);
-                Assert.AreEqual(expected, countsY[i], expected * tolerance);
+                Assert.That(countsX[i], Is.EqualTo(expected).Within(expected * tolerance));
+                Assert.That(countsY[i], Is.EqualTo(expected).Within(expected * tolerance));
             }
         }
     }
