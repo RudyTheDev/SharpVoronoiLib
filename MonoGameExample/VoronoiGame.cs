@@ -46,6 +46,8 @@ public class VoronoiGame : Game
     {
         base.Initialize();
         
+        Window.Title = "SharpVoronoiLib MonoGame example"; // doesn't work in ctor
+        
         _pixelTexture = new Texture2D(GraphicsDevice, 1, 1);
         _pixelTexture.SetData(new[] { _lineColor });
         
@@ -66,8 +68,7 @@ public class VoronoiGame : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
             Exit();
 
-        // todo: temp
-        Generate();
+        //Generate();
         
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
             Generate();
@@ -120,7 +121,7 @@ public class VoronoiGame : Game
         List<VoronoiSite> sites = new List<VoronoiSite>(numPoints);
 
         int seed = Random.Shared.Next();
-        Console.WriteLine("Seed: " + seed);
+        //Console.WriteLine("Seed: " + seed);
 
         Random rand = new Random(seed);
         for (int i = 0; i < numPoints; i++)
@@ -148,8 +149,8 @@ public class VoronoiGame : Game
         
         plane.SetSites(sites);
         
-        _edges = plane.Tessellate();
+        plane.Tessellate();
         
-        //_edges = plane.Relax();
+        _edges = plane.Relax();
     }
 }

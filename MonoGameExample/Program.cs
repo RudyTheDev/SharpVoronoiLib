@@ -1,4 +1,4 @@
 ﻿using MonoGameExample;
 
-using VoronoiGame game = new MonoGameExample.VoronoiGame();
+using VoronoiGame game = new VoronoiGame();
 game.Run();
