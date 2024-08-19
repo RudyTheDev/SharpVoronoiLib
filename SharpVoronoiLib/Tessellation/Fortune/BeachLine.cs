@@ -26,7 +26,7 @@ namespace SharpVoronoiLib
             beachLine = new RBTree<BeachSection>();
         }
 
-        internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
+        internal void AddBeachSection(FortuneSiteEvent siteEvent, SortedSet<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
         {
             VoronoiSite site = siteEvent.Site;
             double x = site.X;
@@ -115,7 +115,9 @@ namespace SharpVoronoiLib
                 //remove it
                 if (leftSection.Data.CircleEvent != null)
                 {
-                    deleted.Add(leftSection.Data.CircleEvent);
+                    if (!deleted.Add(leftSection.Data.CircleEvent))
+                        throw new Exception();
+                    
                     leftSection.Data.CircleEvent = null;
                 }
 
@@ -175,13 +177,17 @@ namespace SharpVoronoiLib
                 //remove false alarms
                 if (leftSection.Data.CircleEvent != null)
                 {
-                    deleted.Add(leftSection.Data.CircleEvent);
+                    if (!deleted.Add(leftSection.Data.CircleEvent))
+                        throw new Exception();
+                    
                     leftSection.Data.CircleEvent = null;
                 }
 
                 if (rightSection.Data.CircleEvent != null)
                 {
-                    deleted.Add(rightSection.Data.CircleEvent);
+                    if (!deleted.Add(rightSection.Data.CircleEvent))
+                        throw new Exception();
+                    
                     rightSection.Data.CircleEvent = null;
                 }
 
@@ -248,7 +254,7 @@ namespace SharpVoronoiLib
             }
         }
 
-        internal void RemoveBeachSection(FortuneCircleEvent circle, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
+        internal void RemoveBeachSection(FortuneCircleEvent circle, SortedSet<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
         {
             RBTreeNode<BeachSection> section = circle.ToDelete;
             double x = circle.X;
@@ -286,7 +292,8 @@ namespace SharpVoronoiLib
             {
                 remove.Data.Edge.End = vertex;
                 remove.Next.Data.Edge.End = vertex;
-                deleted.Add(remove.Data.CircleEvent);
+                if (!deleted.Add(remove.Data.CircleEvent))
+                    throw new Exception();
                 remove.Data.CircleEvent = null;
             }
 
@@ -294,12 +301,14 @@ namespace SharpVoronoiLib
             //need to delete all upcoming circle events with this node
             if (prev.Data.CircleEvent != null)
             {
-                deleted.Add(prev.Data.CircleEvent);
+                if (!deleted.Add(prev.Data.CircleEvent))
+                    throw new Exception();
                 prev.Data.CircleEvent = null;
             }
             if (next.Data.CircleEvent != null)
             {
-                deleted.Add(next.Data.CircleEvent);
+                if (!deleted.Add(next.Data.CircleEvent))
+                    throw new Exception();
                 next.Data.CircleEvent = null;
             }
 
@@ -358,7 +367,7 @@ namespace SharpVoronoiLib
             return ParabolaMath.IntersectParabolaX(site.X, site.Y, rightSite.X, rightSite.Y, directrix);
         }
 
-        private static void CheckCircle(RBTreeNode<BeachSection> section, MinHeap<FortuneEvent> eventQueue)
+        private static void CheckCircle(RBTreeNode<BeachSection> section, SortedSet<FortuneEvent> eventQueue)
         {
             //if (section == null)
             //    return;
@@ -408,8 +417,7 @@ namespace SharpVoronoiLib
                 ycenter, section
             );
             section.Data.CircleEvent = circleEvent;
-            if (!eventQueue.Insert(circleEvent, false))
-                throw new Exception();
+            eventQueue.Add(circleEvent); // this is allowed to "fail"
         }
     }
 }

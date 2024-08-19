@@ -21,5 +21,11 @@
 
         public double X => Lowest.X;
         public double Y => Lowest.Y;
+
+
+        public override string ToString()
+        {
+            return "Circle @" + X.ToString("F3") + "," + Y.ToString("F3");
+        }
     }
 }

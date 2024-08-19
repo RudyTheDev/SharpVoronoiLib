@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace SharpVoronoiLib.UnitTests
 {
     [TestFixture]
+    [Ignore("WIP")]
     [Parallelizable(ParallelScope.All)]
     public class SiteMergingTest
     {

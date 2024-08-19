@@ -16,6 +16,11 @@
             int c = Y.CompareTo(other.Y);
             return c == 0 ? X.CompareTo(other.X) : c;
         }
-     
+
+
+        public override string ToString()
+        {
+            return "Site @" + X.ToString("F3") + "," + Y.ToString("F3");
+        }
     }
 }
