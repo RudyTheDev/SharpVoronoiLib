@@ -408,7 +408,8 @@ namespace SharpVoronoiLib
                 ycenter, section
             );
             section.Data.CircleEvent = circleEvent;
-            eventQueue.Insert(circleEvent);
+            if (!eventQueue.Insert(circleEvent))
+                throw new Exception();
         }
     }
 }
