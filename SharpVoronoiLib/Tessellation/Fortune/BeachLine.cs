@@ -203,8 +203,6 @@ namespace SharpVoronoiLib
                 double cx = rightSite.X - ax;
                 double cy = rightSite.Y - ay;
                 double d = bx*cy - by*cx;
-                if (d.ApproxEqual(0)) // otherwise, we get an infinity/NaN for vertex
-                    d = EpsilonUtils.epsilon; // jiggle the point just a tiny bit, which will not impact the results meaningfully, but avoids writing convoluted logic for this edge case
                 double magnitudeB = bx*bx + by*by;
                 double magnitudeC = cx*cx + cy*cy;
                 VoronoiPoint vertex = new VoronoiPoint(
@@ -212,26 +210,23 @@ namespace SharpVoronoiLib
                     (bx*magnitudeC - cx * magnitudeB)/(2*d) + ay);
 
 
-                if (rightSection.Data.Edge != null) // happens with same-location sites, no idea why
+                // If the edge ends up being 0 length (i.e. start and end are the same point),
+                // then this is a location with 4+ equidistant sites.
+                if (rightSection.Data.Edge.Start.ApproxEqual(vertex)) // i.e. what we would set as .End
                 {
-                    // If the edge ends up being 0 length (i.e. start and end are the same point),
-                    // then this is a location with 4+ equidistant sites.
-                    if (rightSection.Data.Edge.Start.ApproxEqual(vertex)) // i.e. what we would set as .End
-                    {
-                        // Reuse vertex (or we will have 2 ongoing points at the same location)
-                        vertex = rightSection.Data.Edge.Start;
+                    // Reuse vertex (or we will have 2 ongoing points at the same location)
+                    vertex = rightSection.Data.Edge.Start;
 
-                        // Discard the edge
-                        edges.Remove(rightSection.Data.Edge);
+                    // Discard the edge
+                    edges.Remove(rightSection.Data.Edge);
 
-                        // Disconnect (delaunay) neighbours
-                        leftSite.RemoveNeighbour(rightSite);
-                        rightSite.RemoveNeighbour(leftSite);
-                    }
-                    else
-                    {
-                        rightSection.Data.Edge.End = vertex;
-                    }
+                    // Disconnect (delaunay) neighbours
+                    leftSite.RemoveNeighbour(rightSite);
+                    rightSite.RemoveNeighbour(leftSite);
+                }
+                else
+                {
+                    rightSection.Data.Edge.End = vertex;
                 }
 
                 //next we create a two new edges
@@ -282,10 +277,8 @@ namespace SharpVoronoiLib
                 next = next.Next;
             }
 
-            if (section.Data.Edge != null)  // happens with same coordinate sites or something, I have no idea how this is supposed to be handled in the original algorithm or if that's even a problem, but since the section is being removed and the edge doesn't exist, it doesn't "need" a value set
-                section.Data.Edge.End = vertex;
-            if (section.Next.Data.Edge != null) // happens with same coordinate sites or something
-                section.Next.Data.Edge.End = vertex;
+            section.Data.Edge.End = vertex;
+            section.Next.Data.Edge.End = vertex;
             section.Data.CircleEvent = null;
 
             //odds are this double writes a few edges but this is clean...

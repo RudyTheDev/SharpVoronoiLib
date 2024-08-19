@@ -69,38 +69,22 @@ namespace SharpVoronoiLib
 
                     if (outcode.HasFlag(Outcode.Top))
                     {
-                        double dy = edge.End.Y - edge.Start.Y;
-                        if (dy.ApproxEqual(0)) // otherwise, we get an infinity/NaN for x
-                            dy = EpsilonUtils.epsilon; // jiggle the difference just a tiny bit, which will not impact the results meaningfully, but avoids writing convoluted logic for this edge case
-                        x = edge.Start.X + (edge.End.X - edge.Start.X) * (maxY - edge.Start.Y) / dy;
-                        if (double.IsNegativeInfinity(x)) x = double.MinValue; else if (double.IsPositiveInfinity(x)) x = double.MaxValue;
+                        x = edge.Start.X + (edge.End.X - edge.Start.X) * (maxY - edge.Start.Y) / (edge.End.Y - edge.Start.Y);
                         y = maxY;
                     }
                     else if (outcode.HasFlag(Outcode.Bottom))
                     {
-                        double dy = edge.End.Y - edge.Start.Y;
-                        if (dy.ApproxEqual(0)) // otherwise, we get an infinity/NaN for x
-                            dy = EpsilonUtils.epsilon; // jiggle the difference just a tiny bit, which will not impact the results meaningfully, but avoids writing convoluted logic for this edge case
-                        x = edge.Start.X + (edge.End.X - edge.Start.X) * (minY - edge.Start.Y) / dy;
-                        if (double.IsNegativeInfinity(x)) x = double.MinValue; else if (double.IsPositiveInfinity(x)) x = double.MaxValue;
+                        x = edge.Start.X + (edge.End.X - edge.Start.X) * (minY - edge.Start.Y) / (edge.End.Y - edge.Start.Y);
                         y = minY;
                     }
                     else if (outcode.HasFlag(Outcode.Right))
                     {
-                        double dx = edge.End.X - edge.Start.X;
-                        if (dx.ApproxEqual(0)) // otherwise, we get an infinity/NaN for y
-                            dx = EpsilonUtils.epsilon; // jiggle the difference just a tiny bit, which will not impact the results meaningfully, but avoids writing convoluted logic for this edge case
-                        y = edge.Start.Y + (edge.End.Y - edge.Start.Y) * (maxX - edge.Start.X) / dx;
-                        if (double.IsNegativeInfinity(y)) y = double.MinValue; else if (double.IsPositiveInfinity(y)) y = double.MaxValue;
+                        y = edge.Start.Y + (edge.End.Y - edge.Start.Y) * (maxX - edge.Start.X) / (edge.End.X - edge.Start.X);
                         x = maxX;
                     }
                     else if (outcode.HasFlag(Outcode.Left))
                     {
-                        double dx = edge.End.X - edge.Start.X;
-                        if (dx.ApproxEqual(0)) // otherwise, we get an infinity/NaN for y
-                            dx = EpsilonUtils.epsilon; // jiggle the difference just a tiny bit, which will not impact the results meaningfully, but avoids writing convoluted logic for this edge case
-                        y = edge.Start.Y + (edge.End.Y - edge.Start.Y) * (minX - edge.Start.X) / dx;
-                        if (double.IsNegativeInfinity(y)) y = double.MinValue; else if (double.IsPositiveInfinity(y)) y = double.MaxValue;
+                        y = edge.Start.Y + (edge.End.Y - edge.Start.Y) * (minX - edge.Start.X) / (edge.End.X - edge.Start.X);
                         x = minX;
                     }
 
