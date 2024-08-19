@@ -133,6 +133,17 @@ public class VoronoiGame : Game
             );
         }
 
+        int duplicates = Random.Shared.Next(numPoints / 20);
+        
+        for (int i = 0; i < duplicates; i++)
+        {
+            int i1 = Random.Shared.Next(numPoints);
+            int i2 = Random.Shared.Next(numPoints);
+            
+            // "Duplicate"
+            sites[i1] = new VoronoiSite(sites[i2].X, sites[i2].Y);
+        }
+
         VoronoiPlane plane = new VoronoiPlane(0, 0, width, height);
         
         plane.SetSites(sites);
