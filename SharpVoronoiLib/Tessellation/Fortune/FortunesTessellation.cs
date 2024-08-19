@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace SharpVoronoiLib
@@ -15,9 +14,8 @@ namespace SharpVoronoiLib
             {
                 if (site == null) throw new ArgumentNullException(nameof(sites));
 
-                site.TessellationStarted(); 
-                
-                eventQueue.Insert(new FortuneSiteEvent(site));
+                if (eventQueue.Insert(new FortuneSiteEvent(site)))
+                    site.Tessellating();
             }
 
 
