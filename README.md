@@ -78,12 +78,14 @@ plane.SetSites(sites);
 List<VoronoiEdge> edges = plane.Tessellate();
 ```
 
-Sites can be quickly randomly-generated:
+(Note that the algorithm will ignore duplicate sites, so check `VoronoiSite.Tesselated` for skipped sites if duplicates are possible in your data.)
+
+Sites can be quickly randomly-generated (this will guarantee no duplicates):
 
 ```
 VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
 
-plane.GenerateRandomSites(1000, PointGenerationMethod.Uniform);
+plane.GenerateRandomSites(1000, PointGenerationMethod.Uniform); // also supports .Gaussian
 
 plane.Tessellate();
 ```
@@ -100,6 +102,12 @@ plane.Tessellate();
 List<VoronoiEdge> edges = plane.Relax();
 // List<VoronoiEdge> edges = plane.Relax(3, 0.7f); // relax 3 times with 70% strength each time 
 ```
+
+# MonoGame example
+
+A very quick MonoGame is included in `MonoGameExample` project:
+
+TODO: IMG
 
 # Dependencies
 
