@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace SharpVoronoiLib
@@ -10,13 +11,15 @@ namespace SharpVoronoiLib
         {
             MinHeap<FortuneEvent> eventQueue = new MinHeap<FortuneEvent>(5 * sites.Count);
 
+            Stopwatch __stopwatch = new Stopwatch();
+
             for (int i = 0; i < sites.Count; i++)
             {
                 VoronoiSite site = sites[i];
                 
                 if (site == null) throw new ArgumentNullException(nameof(sites));
-
-                if (eventQueue.Insert(new FortuneSiteEvent(site), true))
+                
+                if (eventQueue.Insert(new FortuneSiteEvent(site), true, __stopwatch))
                 {
                     site.Tessellating();
                 }
@@ -27,6 +30,8 @@ namespace SharpVoronoiLib
                     //i--;
                 }
             }
+            
+            Console.WriteLine("Time to check duplicates: " + __stopwatch.ElapsedMilliseconds + "ms");
 
 
             //init tree
