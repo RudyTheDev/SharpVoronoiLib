@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -130,8 +131,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         [Test]
@@ -189,8 +190,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -252,8 +253,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -315,8 +316,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -378,8 +379,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         [Test]
@@ -437,8 +438,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -500,8 +501,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -563,8 +564,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -626,8 +627,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         [Test]
@@ -685,9 +686,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 0, 1000, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 0, 1000, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -749,9 +750,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 1000, 1000, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 1000, 1000, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -813,9 +814,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 1000, 0, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 1000, 0, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -877,9 +878,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 0, 0, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 0, 0, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         [Test]
@@ -937,9 +938,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 0, 1000, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 0, 1000, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -1001,9 +1002,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 1000, 1000, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 1000, 1000, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -1065,9 +1066,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 1000, 0, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 1000, 0, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -1129,9 +1130,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 0, 0, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 0, 0, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -1193,9 +1194,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 1000, 1000, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 1000, 1000, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -1257,9 +1258,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 1000, 0, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 1000, 0, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -1321,9 +1322,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 0, 0, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 0, 0, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         /// <summary>
@@ -1385,9 +1386,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].LiesOnEdge); // #1
-            Assert.AreEqual(FindEdge(edges, 0, 1000, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            Assert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
+            ClassicAssert.AreEqual(FindEdge(edges, 0, 1000, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
         }
 
         [Test]
@@ -1445,9 +1446,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.NotNull(sites[0].LiesOnCorner); // #1
-            Assert.AreEqual(FindPoint(edges, 0, 0), sites[0].LiesOnCorner); // #1 on Y
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
+            ClassicAssert.AreEqual(FindPoint(edges, 0, 0), sites[0].LiesOnCorner); // #1 on Y
         }
 
         /// <summary>
@@ -1509,9 +1510,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.NotNull(sites[0].LiesOnCorner); // #1
-            Assert.AreEqual(FindPoint(edges, 0, 1000), sites[0].LiesOnCorner); // #1 on Y
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
+            ClassicAssert.AreEqual(FindPoint(edges, 0, 1000), sites[0].LiesOnCorner); // #1 on Y
         }
 
         /// <summary>
@@ -1573,9 +1574,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.NotNull(sites[0].LiesOnCorner); // #1
-            Assert.AreEqual(FindPoint(edges, 1000, 1000), sites[0].LiesOnCorner); // #1 on Y
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
+            ClassicAssert.AreEqual(FindPoint(edges, 1000, 1000), sites[0].LiesOnCorner); // #1 on Y
         }
 
         /// <summary>
@@ -1637,9 +1638,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.NotNull(sites[0].LiesOnCorner); // #1
-            Assert.AreEqual(FindPoint(edges, 1000, 0), sites[0].LiesOnCorner); // #1 on Y
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
+            ClassicAssert.AreEqual(FindPoint(edges, 1000, 0), sites[0].LiesOnCorner); // #1 on Y
         }
 
         [Test]
@@ -1707,10 +1708,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -1782,10 +1783,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         [Test]
@@ -1853,10 +1854,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -1928,10 +1929,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         [Test]
@@ -2009,12 +2010,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -2096,12 +2097,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -2189,14 +2190,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -2288,14 +2289,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         [Test]
@@ -2359,10 +2360,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -2430,10 +2431,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         [Test]
@@ -2501,10 +2502,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -2576,10 +2577,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -2651,10 +2652,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -2726,10 +2727,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         [Test]
@@ -2793,10 +2794,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -2864,10 +2865,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -2935,10 +2936,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3006,10 +3007,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         [Test]
@@ -3075,10 +3076,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3148,10 +3149,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3221,10 +3222,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3294,10 +3295,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3367,10 +3368,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3440,10 +3441,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3513,10 +3514,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         /// <summary>
@@ -3586,10 +3587,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
         }
 
         [Test]
@@ -3667,12 +3668,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -3754,12 +3755,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -3833,12 +3834,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -3916,12 +3917,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -3999,12 +4000,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -4082,12 +4083,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -4171,14 +4172,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -4266,14 +4267,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         [Test]
@@ -4350,12 +4351,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -4436,12 +4437,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -4522,12 +4523,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -4608,12 +4609,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -4692,12 +4693,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -4780,12 +4781,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -4868,12 +4869,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -4956,12 +4957,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5044,12 +5045,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5132,12 +5133,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5220,12 +5221,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5308,12 +5309,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -5388,12 +5389,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5472,12 +5473,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5556,12 +5557,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5640,12 +5641,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -5724,12 +5725,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5812,12 +5813,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5900,12 +5901,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -5988,12 +5989,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -6072,12 +6073,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -6160,12 +6161,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -6248,12 +6249,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -6336,12 +6337,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -6435,16 +6436,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         [Test]
@@ -6546,16 +6547,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         /// <summary>
@@ -6661,16 +6662,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         /// <summary>
@@ -6776,16 +6777,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         /// <summary>
@@ -6891,16 +6892,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         [Test]
@@ -6987,14 +6988,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         [Test]
@@ -7081,14 +7082,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -7179,14 +7180,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         [Test]
@@ -7265,14 +7266,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         [Test]
@@ -7359,14 +7360,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -7457,14 +7458,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -7555,14 +7556,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -7653,14 +7654,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -7751,14 +7752,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -7849,14 +7850,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -7947,14 +7948,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -8045,14 +8046,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         [Test]
@@ -8150,16 +8151,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         /// <summary>
@@ -8261,16 +8262,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         /// <summary>
@@ -8372,16 +8373,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         /// <summary>
@@ -8483,16 +8484,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         [Test]
@@ -8586,16 +8587,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         /// <summary>
@@ -8693,16 +8694,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         [Test]
@@ -8808,18 +8809,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
-            Assert.Null(sites[5].LiesOnEdge); // #6
-            Assert.Null(sites[5].LiesOnCorner); // #6
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[5].LiesOnEdge); // #6
+            ClassicAssert.Null(sites[5].LiesOnCorner); // #6
         }
 
         /// <summary>
@@ -8929,18 +8930,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
-            Assert.Null(sites[5].LiesOnEdge); // #6
-            Assert.Null(sites[5].LiesOnCorner); // #6
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[5].LiesOnEdge); // #6
+            ClassicAssert.Null(sites[5].LiesOnCorner); // #6
         }
 
         [Test]
@@ -9030,20 +9031,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.NotNull(sites[0].LiesOnCorner); // #1
-            Assert.AreEqual(FindPoint(edges, 0, 1000), sites[0].LiesOnCorner); // #1 on X
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.NotNull(sites[1].LiesOnCorner); // #2
-            Assert.AreEqual(FindPoint(edges, 0, 0), sites[1].LiesOnCorner); // #2 on Y
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.NotNull(sites[2].LiesOnCorner); // #3
-            Assert.AreEqual(FindPoint(edges, 1000, 0), sites[2].LiesOnCorner); // #3 on W
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.NotNull(sites[3].LiesOnCorner); // #4
-            Assert.AreEqual(FindPoint(edges, 1000, 1000), sites[3].LiesOnCorner); // #4 on Z
-            Assert.Null(sites[4].LiesOnEdge); // #5
-            Assert.Null(sites[4].LiesOnCorner); // #5
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
+            ClassicAssert.AreEqual(FindPoint(edges, 0, 1000), sites[0].LiesOnCorner); // #1 on X
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.NotNull(sites[1].LiesOnCorner); // #2
+            ClassicAssert.AreEqual(FindPoint(edges, 0, 0), sites[1].LiesOnCorner); // #2 on Y
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.NotNull(sites[2].LiesOnCorner); // #3
+            ClassicAssert.AreEqual(FindPoint(edges, 1000, 0), sites[2].LiesOnCorner); // #3 on W
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.NotNull(sites[3].LiesOnCorner); // #4
+            ClassicAssert.AreEqual(FindPoint(edges, 1000, 1000), sites[3].LiesOnCorner); // #4 on Z
+            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
+            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
         }
 
         [Test]
@@ -9115,12 +9116,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9196,12 +9197,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9277,12 +9278,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9358,12 +9359,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -9441,12 +9442,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9528,12 +9529,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9615,12 +9616,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9702,12 +9703,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -9787,12 +9788,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9876,12 +9877,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -9965,12 +9966,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10054,12 +10055,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -10141,12 +10142,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10232,12 +10233,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10323,12 +10324,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10414,12 +10415,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -10496,12 +10497,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10582,12 +10583,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10668,12 +10669,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10754,12 +10755,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -10833,12 +10834,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10916,12 +10917,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -10999,12 +11000,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11082,12 +11083,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -11163,12 +11164,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11248,12 +11249,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11333,12 +11334,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11418,12 +11419,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11503,12 +11504,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11588,12 +11589,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11673,12 +11674,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11758,12 +11759,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -11845,12 +11846,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -11936,12 +11937,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -12027,12 +12028,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         /// <summary>
@@ -12118,12 +12119,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
         }
 
         [Test]
@@ -12201,14 +12202,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -12290,14 +12291,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -12379,14 +12380,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
         /// <summary>
@@ -12468,14 +12469,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.Null(sites[0].LiesOnEdge); // #1
-            Assert.Null(sites[0].LiesOnCorner); // #1
-            Assert.Null(sites[1].LiesOnEdge); // #2
-            Assert.Null(sites[1].LiesOnCorner); // #2
-            Assert.Null(sites[2].LiesOnEdge); // #3
-            Assert.Null(sites[2].LiesOnCorner); // #3
-            Assert.Null(sites[3].LiesOnEdge); // #4
-            Assert.Null(sites[3].LiesOnCorner); // #4
+            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
+            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
+            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
+            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
+            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
         }
 
     }

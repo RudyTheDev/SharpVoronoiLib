@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace SharpVoronoiLib.UnitTests
 {
@@ -13,13 +14,13 @@ namespace SharpVoronoiLib.UnitTests
             tree.InsertSuccessor(null, 1);
             tree.InsertSuccessor(tree.Root, 2);
             tree.InsertSuccessor(tree.Root.Right, 3);
-            Assert.AreEqual(2, tree.Root.Data);
-            Assert.AreEqual(1, tree.Root.Left.Data);
-            Assert.AreEqual(3, tree.Root.Right.Data);
-            Assert.AreEqual(tree.Root, tree.Root.Left.Next);
-            Assert.AreEqual(tree.Root.Left, tree.Root.Previous);
-            Assert.AreEqual(tree.Root, tree.Root.Right.Previous);
-            Assert.AreEqual(tree.Root.Right, tree.Root.Next);
+            ClassicAssert.AreEqual(2, tree.Root.Data);
+            ClassicAssert.AreEqual(1, tree.Root.Left.Data);
+            ClassicAssert.AreEqual(3, tree.Root.Right.Data);
+            ClassicAssert.AreEqual(tree.Root, tree.Root.Left.Next);
+            ClassicAssert.AreEqual(tree.Root.Left, tree.Root.Previous);
+            ClassicAssert.AreEqual(tree.Root, tree.Root.Right.Previous);
+            ClassicAssert.AreEqual(tree.Root.Right, tree.Root.Next);
         }
 
         [Test]
@@ -32,26 +33,26 @@ namespace SharpVoronoiLib.UnitTests
             last = tree.InsertSuccessor(last, 'a');
             last = tree.InsertSuccessor(last, 'n');
             last = tree.InsertSuccessor(last, '!');
-            Assert.AreEqual('o', tree.Root.Data);
-            Assert.AreEqual('L', tree.Root.Left.Data);
-            Assert.AreEqual('a', tree.Root.Right.Data);
-            Assert.AreEqual('g', tree.Root.Right.Left.Data);
-            Assert.AreEqual('n', tree.Root.Right.Right.Data);
-            Assert.AreEqual('!', tree.Root.Right.Right.Right.Data);
+            ClassicAssert.AreEqual('o', tree.Root.Data);
+            ClassicAssert.AreEqual('L', tree.Root.Left.Data);
+            ClassicAssert.AreEqual('a', tree.Root.Right.Data);
+            ClassicAssert.AreEqual('g', tree.Root.Right.Left.Data);
+            ClassicAssert.AreEqual('n', tree.Root.Right.Right.Data);
+            ClassicAssert.AreEqual('!', tree.Root.Right.Right.Right.Data);
             RBTreeNode<char> traverse = RBTree<char>.GetFirst(tree.Root);
-            Assert.AreEqual('L', traverse.Data);
+            ClassicAssert.AreEqual('L', traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual('o', traverse.Data);
+            ClassicAssert.AreEqual('o', traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual('g', traverse.Data);
+            ClassicAssert.AreEqual('g', traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual('a', traverse.Data);
+            ClassicAssert.AreEqual('a', traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual('n', traverse.Data);
+            ClassicAssert.AreEqual('n', traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual('!', traverse.Data);
+            ClassicAssert.AreEqual('!', traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual(null, traverse);
+            ClassicAssert.AreEqual(null, traverse);
         }
 
         [Test]
@@ -62,20 +63,20 @@ namespace SharpVoronoiLib.UnitTests
             tree.InsertSuccessor(null, 5);
             tree.InsertSuccessor(null, 3);
             tree.InsertSuccessor(null, 4);
-            Assert.AreEqual(5, tree.Root.Data);
-            Assert.AreEqual(4, tree.Root.Right.Data);
-            Assert.AreEqual(3, tree.Root.Left.Data);
-            Assert.AreEqual(4, tree.Root.Left.Left.Data);
+            ClassicAssert.AreEqual(5, tree.Root.Data);
+            ClassicAssert.AreEqual(4, tree.Root.Right.Data);
+            ClassicAssert.AreEqual(3, tree.Root.Left.Data);
+            ClassicAssert.AreEqual(4, tree.Root.Left.Left.Data);
             RBTreeNode<int> traverse = RBTree<int>.GetFirst(tree.Root);
-            Assert.AreEqual(4, traverse.Data);
+            ClassicAssert.AreEqual(4, traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual(3, traverse.Data);
+            ClassicAssert.AreEqual(3, traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual(5, traverse.Data);
+            ClassicAssert.AreEqual(5, traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual(4, traverse.Data);
+            ClassicAssert.AreEqual(4, traverse.Data);
             traverse = traverse.Next;
-            Assert.AreEqual(null, traverse);
+            ClassicAssert.AreEqual(null, traverse);
         }
 
         [Test]
@@ -85,17 +86,17 @@ namespace SharpVoronoiLib.UnitTests
             RBTreeNode<int> first = tree.InsertSuccessor(null, 1);
             tree.InsertSuccessor(first, -1);
             tree.InsertSuccessor(first, 2);
-            Assert.AreEqual(2, tree.Root.Data);
-            Assert.AreEqual(1, tree.Root.Left.Data);
-            Assert.AreEqual(-1, tree.Root.Right.Data);
+            ClassicAssert.AreEqual(2, tree.Root.Data);
+            ClassicAssert.AreEqual(1, tree.Root.Left.Data);
+            ClassicAssert.AreEqual(-1, tree.Root.Right.Data);
             first = RBTree<int>.GetFirst(tree.Root);
-            Assert.AreEqual(1, first.Data);
+            ClassicAssert.AreEqual(1, first.Data);
             first = first.Next;
-            Assert.AreEqual(2, first.Data);
+            ClassicAssert.AreEqual(2, first.Data);
             first = first.Next;
-            Assert.AreEqual(-1, first.Data);
+            ClassicAssert.AreEqual(-1, first.Data);
             first = first.Next;
-            Assert.AreEqual(null, first);
+            ClassicAssert.AreEqual(null, first);
         }
 
         [Test]
@@ -113,9 +114,9 @@ namespace SharpVoronoiLib.UnitTests
             last = prev.Previous;
             tree.RemoveNode(prev);
             tree.RemoveNode(last);
-            Assert.AreEqual('o', tree.Root.Data);
-            Assert.AreEqual('L', tree.Root.Left.Data);
-            Assert.AreEqual('g', tree.Root.Right.Data);
+            ClassicAssert.AreEqual('o', tree.Root.Data);
+            ClassicAssert.AreEqual('L', tree.Root.Left.Data);
+            ClassicAssert.AreEqual('g', tree.Root.Right.Data);
         }
 
         [Test]
@@ -136,9 +137,9 @@ namespace SharpVoronoiLib.UnitTests
             tree.RemoveNode(first);
             first = last;
             tree.RemoveNode(first);
-            Assert.AreEqual('n', tree.Root.Data);
-            Assert.AreEqual('a', tree.Root.Left.Data);
-            Assert.AreEqual('!', tree.Root.Right.Data);
+            ClassicAssert.AreEqual('n', tree.Root.Data);
+            ClassicAssert.AreEqual('a', tree.Root.Left.Data);
+            ClassicAssert.AreEqual('!', tree.Root.Right.Data);
         }
 
         [Test]
@@ -153,11 +154,11 @@ namespace SharpVoronoiLib.UnitTests
             last = tree.InsertSuccessor(last, '!');
 
             tree.RemoveNode(mid);
-            Assert.AreEqual('o', tree.Root.Data);
-            Assert.AreEqual('L', tree.Root.Left.Data);
-            Assert.AreEqual('n', tree.Root.Right.Data);
-            Assert.AreEqual('a', tree.Root.Right.Left.Data);
-            Assert.AreEqual('!', tree.Root.Right.Right.Data);
+            ClassicAssert.AreEqual('o', tree.Root.Data);
+            ClassicAssert.AreEqual('L', tree.Root.Left.Data);
+            ClassicAssert.AreEqual('n', tree.Root.Right.Data);
+            ClassicAssert.AreEqual('a', tree.Root.Right.Left.Data);
+            ClassicAssert.AreEqual('!', tree.Root.Right.Right.Data);
         }
 
         [Test]
@@ -179,12 +180,12 @@ namespace SharpVoronoiLib.UnitTests
                     RBTreeNode<int> check = RBTree<int>.GetFirst(tree.Root);
                     for (int k = 0; k < j; k++)
                     {
-                        Assert.AreEqual(k, check.Data);
+                        ClassicAssert.AreEqual(k, check.Data);
                         check = check.Next;
                     }
                     for (int k = j; k < i; k++)
                     {
-                        Assert.AreEqual(k + 1, check.Data);
+                        ClassicAssert.AreEqual(k + 1, check.Data);
                         check = check.Next;
                     }
                     //readd

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -70,10 +71,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -131,10 +132,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -192,10 +193,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -257,10 +258,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -322,10 +323,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -387,10 +388,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -448,10 +449,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -513,10 +514,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -578,10 +579,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -643,10 +644,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -704,10 +705,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -769,10 +770,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -834,10 +835,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -899,10 +900,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -960,10 +961,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1025,10 +1026,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1090,10 +1091,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1155,10 +1156,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1220,10 +1221,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1285,10 +1286,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1350,10 +1351,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1415,10 +1416,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -1476,10 +1477,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1541,10 +1542,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1606,10 +1607,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1671,10 +1672,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -1742,12 +1743,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1819,12 +1820,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -1892,12 +1893,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -1969,12 +1970,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -2052,14 +2053,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -2141,14 +2142,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -2236,16 +2237,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -2337,16 +2338,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -2410,10 +2411,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -2481,10 +2482,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         [Test]
@@ -2552,12 +2553,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -2629,12 +2630,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -2706,12 +2707,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -2783,12 +2784,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -2852,10 +2853,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
         }
 
         /// <summary>
@@ -2923,10 +2924,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -2994,10 +2995,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -3065,10 +3066,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
         }
 
         [Test]
@@ -3134,11 +3135,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3208,11 +3209,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3282,11 +3283,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3356,11 +3357,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3430,11 +3431,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3504,11 +3505,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3578,11 +3579,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3652,11 +3653,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -3734,14 +3735,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -3823,14 +3824,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -3904,12 +3905,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -3987,12 +3988,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -4070,12 +4071,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
         }
 
         /// <summary>
@@ -4153,12 +4154,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
         }
 
         [Test]
@@ -4242,14 +4243,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -4337,14 +4338,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         [Test]
@@ -4421,13 +4422,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -4508,13 +4509,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
         }
 
         /// <summary>
@@ -4595,13 +4596,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
         }
 
         /// <summary>
@@ -4682,13 +4683,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         [Test]
@@ -4767,14 +4768,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -4857,14 +4858,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -4947,14 +4948,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -5037,14 +5038,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -5127,14 +5128,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -5217,14 +5218,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -5307,14 +5308,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -5397,14 +5398,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -5479,12 +5480,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
         }
 
         /// <summary>
@@ -5563,12 +5564,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -5647,12 +5648,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -5731,12 +5732,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
         }
 
         [Test]
@@ -5815,14 +5816,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -5905,14 +5906,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -5995,14 +5996,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -6085,14 +6086,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -6171,14 +6172,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -6261,14 +6262,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -6351,14 +6352,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -6441,14 +6442,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -6542,14 +6543,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // H
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // H
         }
 
         [Test]
@@ -6651,18 +6652,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // H
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // H
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -6768,18 +6769,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 600).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 400).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // H
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 600).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 400).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // H
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -6885,18 +6886,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 800).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 800).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // H
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 800).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 800).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // H
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -7002,18 +7003,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 400).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // H
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 400).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // H
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -7100,15 +7101,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -7195,15 +7196,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -7294,15 +7295,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -7381,11 +7382,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // E
         }
 
         [Test]
@@ -7472,15 +7473,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 100, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 100, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -7571,15 +7572,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 900).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 900).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -7670,15 +7671,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 900, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 900, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -7769,15 +7770,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 100).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 100).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -7868,15 +7869,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 900, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 900, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -7967,15 +7968,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 100).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 100).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -8066,15 +8067,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 100, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 100, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -8165,15 +8166,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 900).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 900).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -8271,17 +8272,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -8383,17 +8384,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 400, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -8495,17 +8496,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -8607,17 +8608,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 600, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -8711,15 +8712,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -8817,15 +8818,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         [Test]
@@ -8931,18 +8932,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // H
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 500, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // H
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -9052,18 +9053,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // E
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // F
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // G
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // H
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 300, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 700, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // E
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // F
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // G
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // H
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -9153,14 +9154,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -9232,11 +9233,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
         }
 
         /// <summary>
@@ -9312,11 +9313,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
         }
 
         /// <summary>
@@ -9392,11 +9393,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
         }
 
         /// <summary>
@@ -9472,11 +9473,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
         }
 
         [Test]
@@ -9554,14 +9555,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -9643,14 +9644,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -9732,14 +9733,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -9821,14 +9822,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -9908,13 +9909,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Z
         }
 
         /// <summary>
@@ -9998,13 +9999,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 1000, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 1000, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10088,13 +10089,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 600).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 600).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10178,13 +10179,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 1000, 1200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 1000, 1200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Z
         }
 
         [Test]
@@ -10266,14 +10267,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 1100).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 100).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 1100).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 100).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10359,14 +10360,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 1100, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 100, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1200).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 1100, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 100, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1200).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10452,14 +10453,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 500).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 100).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 1100).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 700).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 500).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 100).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 1100).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 700).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10545,14 +10546,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 100, 1200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 1100, 1200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 100, 1200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 1100, 1200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Z
         }
 
         [Test]
@@ -10629,13 +10630,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10716,13 +10717,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 800).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 200, 800).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10803,13 +10804,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 800).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 800).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -10890,13 +10891,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.NotOnBorder, FindPoint(edges, 800, 200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -10970,12 +10971,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11053,12 +11054,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11136,12 +11137,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 500, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11219,12 +11220,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 500).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 500, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         [Test]
@@ -11300,13 +11301,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 200, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 700, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 400).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11386,13 +11387,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 800).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 300).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 400, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11472,13 +11473,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 800, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11558,13 +11559,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11644,13 +11645,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 800, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1000).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 400).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11730,13 +11731,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 700).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 400, 1000).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11816,13 +11817,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 200, 1000).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 700, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -11902,13 +11903,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1000, 800).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1000, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1000).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1000, 1000).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         [Test]
@@ -11990,14 +11991,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1200).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1200).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Z
         }
 
         /// <summary>
@@ -12083,14 +12084,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1200).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 900).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 1200).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 900).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -12176,14 +12177,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 900).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 900, 1200).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 900).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 900, 1200).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // Z
         }
 
         /// <summary>
@@ -12269,14 +12270,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 900, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 300).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1200).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Y
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Z
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 900, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 1200, 300).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 1200).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 1200, 1200).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 1200, 0).BorderLocation); // Y
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 1200).BorderLocation); // Z
         }
 
         [Test]
@@ -12354,12 +12355,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 900).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 900, 300).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 300, 900).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 900, 300).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // X
         }
 
         /// <summary>
@@ -12441,12 +12442,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 900, 600).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Right, FindPoint(edges, 900, 600).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 300, 0).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // X
         }
 
         /// <summary>
@@ -12528,12 +12529,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Bottom, FindPoint(edges, 600, 0).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 600).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // X
         }
 
         /// <summary>
@@ -12615,12 +12616,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // A
-            Assert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // B
-            Assert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // C
-            Assert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 900).BorderLocation); // D
-            Assert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // W
-            Assert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
+            ClassicAssert.AreEqual(PointBorderLocation.BottomRight, FindPoint(edges, 900, 0).BorderLocation); // A
+            ClassicAssert.AreEqual(PointBorderLocation.TopLeft, FindPoint(edges, 0, 900).BorderLocation); // B
+            ClassicAssert.AreEqual(PointBorderLocation.Left, FindPoint(edges, 0, 300).BorderLocation); // C
+            ClassicAssert.AreEqual(PointBorderLocation.Top, FindPoint(edges, 600, 900).BorderLocation); // D
+            ClassicAssert.AreEqual(PointBorderLocation.TopRight, FindPoint(edges, 900, 900).BorderLocation); // W
+            ClassicAssert.AreEqual(PointBorderLocation.BottomLeft, FindPoint(edges, 0, 0).BorderLocation); // X
         }
 
     }

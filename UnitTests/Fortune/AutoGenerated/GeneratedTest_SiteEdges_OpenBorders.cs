@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -113,8 +114,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         [Test]
@@ -161,8 +162,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -213,8 +214,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -265,8 +266,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -317,8 +318,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         [Test]
@@ -365,8 +366,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -417,8 +418,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -469,8 +470,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -521,8 +522,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         [Test]
@@ -569,8 +570,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -621,8 +622,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -673,8 +674,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -725,8 +726,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         [Test]
@@ -773,8 +774,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -825,8 +826,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -877,8 +878,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -929,8 +930,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -981,8 +982,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -1033,8 +1034,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -1085,8 +1086,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -1137,8 +1138,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         [Test]
@@ -1185,8 +1186,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -1237,8 +1238,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -1289,8 +1290,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         /// <summary>
@@ -1341,8 +1342,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(0, sites[0].Cell.Count()); // #1
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(0, sites[0].Cell.Count()); // #1
         }
 
         [Test]
@@ -1391,12 +1392,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 500, 1000, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 1000, 500)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 500, 1000, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 1000, 500)); // #2 has A-B
         }
 
         /// <summary>
@@ -1449,12 +1450,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 1000, 500, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 1000, 500, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 1000, 500, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 1000, 500, 0)); // #2 has A-B
         }
 
         [Test]
@@ -1503,12 +1504,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1000, 700)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1000, 700)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1000, 700)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1000, 700)); // #2 has A-B
         }
 
         /// <summary>
@@ -1561,12 +1562,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 1000, 700, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 1000, 700, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 1000, 700, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 1000, 700, 0)); // #2 has A-B
         }
 
         [Test]
@@ -1617,16 +1618,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1000, 700)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1000, 700)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 300, 1000, 300)); // #2 has C-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 300, 1000, 300)); // #3 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1000, 700)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1000, 700)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 300, 1000, 300)); // #2 has C-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 300, 1000, 300)); // #3 has C-D
         }
 
         /// <summary>
@@ -1681,16 +1682,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 1000, 700, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 1000, 700, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 1000, 300, 0)); // #2 has C-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 1000, 300, 0)); // #3 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 1000, 700, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 1000, 700, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 1000, 300, 0)); // #2 has C-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 1000, 300, 0)); // #3 has C-D
         }
 
         [Test]
@@ -1743,20 +1744,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1000, 700)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1000, 700)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 1000, 500)); // #2 has C-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 500, 1000, 500)); // #3 has C-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 300, 1000, 300)); // #3 has E-F
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 0, 300, 1000, 300)); // #4 has E-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1000, 700)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1000, 700)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 1000, 500)); // #2 has C-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 500, 1000, 500)); // #3 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 300, 1000, 300)); // #3 has E-F
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 0, 300, 1000, 300)); // #4 has E-F
         }
 
         /// <summary>
@@ -1813,20 +1814,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 1000, 700, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 1000, 700, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 1000, 500, 0)); // #2 has C-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 1000, 500, 0)); // #3 has C-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 1000, 300, 0)); // #3 has E-F
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 300, 1000, 300, 0)); // #4 has E-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 1000, 700, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 1000, 700, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 1000, 500, 0)); // #2 has C-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 1000, 500, 0)); // #3 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 1000, 300, 0)); // #3 has E-F
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 300, 1000, 300, 0)); // #4 has E-F
         }
 
         [Test]
@@ -1875,12 +1876,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 1000, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 1000, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has A-B
         }
 
         /// <summary>
@@ -1933,12 +1934,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has A-B
         }
 
         [Test]
@@ -1987,12 +1988,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 200, 800, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 200, 800, 1000)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 200, 800, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 200, 800, 1000)); // #2 has A-B
         }
 
         /// <summary>
@@ -2045,12 +2046,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 1000, 1000, 200)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 1000, 1000, 200)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 1000, 1000, 200)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 1000, 1000, 200)); // #2 has A-B
         }
 
         /// <summary>
@@ -2103,12 +2104,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 800, 200, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 800, 200, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 800, 200, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 800, 200, 0)); // #2 has A-B
         }
 
         /// <summary>
@@ -2161,12 +2162,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 0, 0, 800)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 0, 0, 800)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 0, 0, 800)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 0, 0, 800)); // #2 has A-B
         }
 
         [Test]
@@ -2215,12 +2216,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has A-B
         }
 
         /// <summary>
@@ -2273,12 +2274,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 0, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 0, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 0)); // #2 has A-B
         }
 
         /// <summary>
@@ -2331,12 +2332,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 0, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 1000)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 0, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 1000)); // #2 has A-B
         }
 
         /// <summary>
@@ -2389,12 +2390,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 1000, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 1000, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has A-B
         }
 
         [Test]
@@ -2443,12 +2444,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 500)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 500)); // #2 has A-B
         }
 
         /// <summary>
@@ -2501,12 +2502,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 500, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 500, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 500, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 500, 0)); // #2 has A-B
         }
 
         /// <summary>
@@ -2559,12 +2560,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 0, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 500)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 0, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 500)); // #2 has A-B
         }
 
         /// <summary>
@@ -2617,12 +2618,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 500, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 500, 1000)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 500, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 500, 1000)); // #2 has A-B
         }
 
         /// <summary>
@@ -2675,12 +2676,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 0, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 500)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 0, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 500)); // #2 has A-B
         }
 
         /// <summary>
@@ -2733,12 +2734,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 500, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 500, 1000)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 500, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 500, 1000)); // #2 has A-B
         }
 
         /// <summary>
@@ -2791,12 +2792,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 1000, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 500)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 1000, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 500)); // #2 has A-B
         }
 
         /// <summary>
@@ -2849,12 +2850,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 500, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 500, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 500, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 500, 0)); // #2 has A-B
         }
 
         [Test]
@@ -2905,16 +2906,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 300, 700, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 300, 700, 1000)); // #2 has A-D
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 0, 1000, 700)); // #2 has B-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 0, 1000, 700)); // #3 has B-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 300, 700, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 300, 700, 1000)); // #2 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 0, 1000, 700)); // #2 has B-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 0, 1000, 700)); // #3 has B-C
         }
 
         /// <summary>
@@ -2969,16 +2970,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 1000, 1000, 300)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 1000, 1000, 300)); // #2 has A-D
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 700, 0)); // #2 has B-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 700, 700, 0)); // #3 has B-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 1000, 1000, 300)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 1000, 1000, 300)); // #2 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 700, 0)); // #2 has B-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 700, 700, 0)); // #3 has B-C
         }
 
         [Test]
@@ -3029,16 +3030,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 400, 600, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 400, 600, 1000)); // #2 has A-D
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has B-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 1000, 1000)); // #3 has B-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 400, 600, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 400, 600, 1000)); // #2 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has B-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 1000, 1000)); // #3 has B-C
         }
 
         /// <summary>
@@ -3093,16 +3094,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 1000, 1000, 400)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 1000, 1000, 400)); // #2 has A-D
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has B-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 1000, 1000, 0)); // #3 has B-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 1000, 1000, 400)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 1000, 1000, 400)); // #2 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has B-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 1000, 1000, 0)); // #3 has B-C
         }
 
         /// <summary>
@@ -3157,16 +3158,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 600, 400, 0)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 600, 400, 0)); // #2 has A-D
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 0)); // #2 has B-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 1000, 0, 0)); // #3 has B-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 600, 400, 0)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 600, 400, 0)); // #2 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 0)); // #2 has B-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 1000, 0, 0)); // #3 has B-C
         }
 
         /// <summary>
@@ -3221,16 +3222,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 0, 0, 600)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 0, 0, 600)); // #2 has A-D
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 1000)); // #2 has B-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 0, 0, 1000)); // #3 has B-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 0, 0, 600)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 0, 0, 600)); // #2 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 1000)); // #2 has B-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 0, 0, 1000)); // #3 has B-C
         }
 
         [Test]
@@ -3283,20 +3284,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 400, 600, 1000)); // #1 has A-F
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 400, 600, 1000)); // #2 has A-F
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has B-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 1000, 1000)); // #3 has B-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 0, 1000, 600)); // #3 has C-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 0, 1000, 600)); // #4 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 400, 600, 1000)); // #1 has A-F
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 400, 600, 1000)); // #2 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 1000)); // #2 has B-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 1000, 1000)); // #3 has B-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 0, 1000, 600)); // #3 has C-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 0, 1000, 600)); // #4 has C-D
         }
 
         /// <summary>
@@ -3353,20 +3354,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 1000, 1000, 400)); // #1 has A-F
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 1000, 1000, 400)); // #2 has A-F
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has B-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 1000, 1000, 0)); // #3 has B-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 600, 600, 0)); // #3 has C-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 0, 600, 600, 0)); // #4 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 1000, 1000, 400)); // #1 has A-F
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 1000, 1000, 400)); // #2 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 0)); // #2 has B-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 1000, 1000, 0)); // #3 has B-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 600, 600, 0)); // #3 has C-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 0, 600, 600, 0)); // #4 has C-D
         }
 
         [Test]
@@ -3418,18 +3419,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 0, 400)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 1000, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 400)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 400, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 400, 0)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 1000, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 0, 400)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 1000, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 400)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 400, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 400, 0)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 1000, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -3485,18 +3486,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 400, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 1000, 0)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 400, 1000)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 600)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 0, 600)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 1000, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 400, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 1000, 0)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 400, 1000)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 600)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 0, 600)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 1000, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -3552,18 +3553,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 1000, 600)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 0, 0)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 600)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 600, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 600, 1000)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 0, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 1000, 600)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 0, 0)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 600)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 600, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 600, 1000)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 0, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -3619,18 +3620,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 600, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 0, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 600, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 1000, 400)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 1000, 400)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 0, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 600, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 0, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 600, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 1000, 400)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 1000, 400)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 0, 1000)); // #3 has A-D
         }
 
         [Test]
@@ -3682,18 +3683,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 600, 0, 600)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 600, 700, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 600, 0, 600)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 600, 300, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 600, 300, 0)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 600, 700, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 600, 0, 600)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 600, 700, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 600, 0, 600)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 600, 300, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 600, 300, 0)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 600, 700, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -3749,18 +3750,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 700, 600, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 700, 1000, 300)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 700, 600, 1000)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 700, 0, 700)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 700, 0, 700)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 700, 1000, 300)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 700, 600, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 700, 1000, 300)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 700, 600, 1000)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 700, 0, 700)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 700, 0, 700)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 700, 1000, 300)); // #3 has A-D
         }
 
         /// <summary>
@@ -3816,18 +3817,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 400, 1000, 400)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 400, 300, 0)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 400, 1000, 400)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 400, 700, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 400, 700, 1000)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 400, 300, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 400, 1000, 400)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 400, 300, 0)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 400, 1000, 400)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 400, 700, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 400, 700, 1000)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 400, 300, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -3883,18 +3884,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 300, 400, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 300, 0, 700)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 300, 400, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 300, 1000, 300)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 300, 1000, 300)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 300, 0, 700)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 300, 400, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 300, 0, 700)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 300, 400, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 300, 1000, 300)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 300, 1000, 300)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 300, 0, 700)); // #3 has A-D
         }
 
         /// <summary>
@@ -3950,18 +3951,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 600, 1000, 600)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 600, 300, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 600, 1000, 600)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 600, 700, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 600, 700, 0)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 600, 300, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 600, 1000, 600)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 600, 300, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 600, 1000, 600)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 600, 700, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 600, 700, 0)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 600, 300, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -4017,18 +4018,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 300, 600, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 300, 1000, 700)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 300, 600, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 300, 0, 300)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 300, 0, 300)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 300, 1000, 700)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 300, 600, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 300, 1000, 700)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 300, 600, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 300, 0, 300)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 300, 0, 300)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 300, 1000, 700)); // #3 has A-D
         }
 
         /// <summary>
@@ -4084,18 +4085,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 400, 0, 400)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 400, 700, 0)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 400, 0, 400)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 400, 300, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 400, 300, 1000)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 400, 700, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 400, 0, 400)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 400, 700, 0)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 400, 0, 400)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 400, 300, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 400, 300, 1000)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 400, 700, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -4151,18 +4152,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 700, 400, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 700, 0, 300)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 700, 400, 1000)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 700, 1000, 700)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 700, 1000, 700)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 700, 0, 300)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 700, 400, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 700, 0, 300)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 700, 400, 1000)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 700, 1000, 700)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 700, 1000, 700)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 700, 0, 300)); // #3 has A-D
         }
 
         [Test]
@@ -4214,18 +4215,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 0)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 1000)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 0)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 1000)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -4281,18 +4282,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 0)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 500)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 1000)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 500)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 0)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 500)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 1000)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 500)); // #3 has A-D
         }
 
         /// <summary>
@@ -4348,18 +4349,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 1000)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 0)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 1000)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 1000)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 0)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 1000)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -4415,18 +4416,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 1000)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 500)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 1000)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 500)); // #3 has A-D
         }
 
         [Test]
@@ -4478,18 +4479,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 200, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 800, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 800, 0)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 500, 1000)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 200, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 200, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 800, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 800, 0)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 500, 1000)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 200, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -4545,18 +4546,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 800)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 200)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 0, 200)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 1000, 500)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 0, 800)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 1000, 500)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 800)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 200)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 0, 200)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 1000, 500)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 0, 800)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 1000, 500)); // #3 has A-D
         }
 
         /// <summary>
@@ -4612,18 +4613,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 800, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 200, 1000)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 200, 1000)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 500, 0)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 800, 1000)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 500, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 800, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 200, 1000)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 200, 1000)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 500, 0)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 800, 1000)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 500, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -4679,18 +4680,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 200)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 800)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 800)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 0, 500)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 1000, 200)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 0, 500)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 200)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 800)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 800)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 0, 500)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 1000, 200)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 0, 500)); // #3 has A-D
         }
 
         [Test]
@@ -4742,18 +4743,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 0, 200)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 1000, 200)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 1000, 200)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 500, 1000)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 0, 200)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 500, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 0, 200)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 1000, 200)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 1000, 200)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 500, 1000)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 0, 200)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 500, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -4809,18 +4810,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 200, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 200, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 200, 0)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 500)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 200, 1000)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 1000, 500)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 200, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 200, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 200, 0)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 500)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 200, 1000)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 1000, 500)); // #3 has A-D
         }
 
         /// <summary>
@@ -4876,18 +4877,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 1000, 800)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 0, 800)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 0, 800)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 500, 0)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 1000, 800)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 1000, 800)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 0, 800)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 0, 800)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 500, 0)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 1000, 800)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -4943,18 +4944,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 800, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 800, 1000)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 800, 1000)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 0, 500)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 800, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 0, 500)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 800, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 800, 1000)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 800, 1000)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 0, 500)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 800, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 0, 500)); // #3 has A-D
         }
 
         [Test]
@@ -5013,32 +5014,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(4, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 400, 400)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 600, 400)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 600, 600)); // #1 has C-D
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 400, 600)); // #1 has D-A
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 400, 400)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 1000)); // #2 has A-E
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 0)); // #2 has B-F
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(3, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 600, 400)); // #3 has B-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 0, 0)); // #3 has B-F
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 1000, 0)); // #3 has C-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(3, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 600, 600)); // #4 has C-D
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 1000, 0)); // #4 has C-G
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 1000, 1000)); // #4 has D-H
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 400, 600)); // #5 has D-A
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 0, 1000)); // #5 has A-E
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 1000, 1000)); // #5 has D-H
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(4, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 400, 400)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 600, 400)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 600, 600)); // #1 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 400, 600)); // #1 has D-A
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 400, 400)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 1000)); // #2 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 0)); // #2 has B-F
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(3, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 600, 400)); // #3 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 0, 0)); // #3 has B-F
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 1000, 0)); // #3 has C-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(3, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 600, 600)); // #4 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 1000, 0)); // #4 has C-G
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 1000, 1000)); // #4 has D-H
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 400, 600)); // #5 has D-A
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 0, 1000)); // #5 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 1000, 1000)); // #5 has D-H
         }
 
         [Test]
@@ -5097,32 +5098,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(4, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 400, 200)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 200, 600, 200)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 200, 600, 400)); // #1 has C-D
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 400, 400)); // #1 has D-A
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 400, 200)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 800)); // #2 has A-E
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 200, 200, 0)); // #2 has B-F
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(3, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 200, 600, 200)); // #3 has B-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 200, 200, 0)); // #3 has B-F
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 200, 800, 0)); // #3 has C-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(3, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 200, 600, 400)); // #4 has C-D
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 200, 800, 0)); // #4 has C-G
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 1000, 800)); // #4 has D-H
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 400, 400, 400)); // #5 has D-A
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 400, 0, 800)); // #5 has A-E
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 400, 1000, 800)); // #5 has D-H
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(4, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 400, 200)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 200, 600, 200)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 200, 600, 400)); // #1 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 400, 400)); // #1 has D-A
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 400, 200)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 800)); // #2 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 200, 200, 0)); // #2 has B-F
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(3, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 200, 600, 200)); // #3 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 200, 200, 0)); // #3 has B-F
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 200, 800, 0)); // #3 has C-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(3, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 200, 600, 400)); // #4 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 200, 800, 0)); // #4 has C-G
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 1000, 800)); // #4 has D-H
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 400, 400, 400)); // #5 has D-A
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 400, 0, 800)); // #5 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 400, 1000, 800)); // #5 has D-H
         }
 
         /// <summary>
@@ -5185,32 +5186,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(4, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 200, 600)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 600, 200, 400)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 400, 400, 400)); // #1 has C-D
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 400, 600)); // #1 has D-A
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 200, 600)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 800, 1000)); // #2 has A-E
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 600, 0, 800)); // #2 has B-F
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(3, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 600, 200, 400)); // #3 has B-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 600, 0, 800)); // #3 has B-F
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 400, 0, 200)); // #3 has C-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(3, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 200, 400, 400, 400)); // #4 has C-D
-            Assert.IsTrue(HasEdge(sites[3].Cell, 200, 400, 0, 200)); // #4 has C-G
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 800, 0)); // #4 has D-H
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 400, 400, 600)); // #5 has D-A
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 800, 1000)); // #5 has A-E
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 400, 800, 0)); // #5 has D-H
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(4, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 200, 600)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 600, 200, 400)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 400, 400, 400)); // #1 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 400, 600)); // #1 has D-A
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 200, 600)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 800, 1000)); // #2 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 600, 0, 800)); // #2 has B-F
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(3, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 600, 200, 400)); // #3 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 600, 0, 800)); // #3 has B-F
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 400, 0, 200)); // #3 has C-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(3, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 200, 400, 400, 400)); // #4 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 200, 400, 0, 200)); // #4 has C-G
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 800, 0)); // #4 has D-H
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 400, 400, 600)); // #5 has D-A
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 800, 1000)); // #5 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 400, 800, 0)); // #5 has D-H
         }
 
         /// <summary>
@@ -5273,32 +5274,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(4, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 600, 800)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 800, 400, 800)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 800, 400, 600)); // #1 has C-D
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 600, 600)); // #1 has D-A
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 600, 800)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 200)); // #2 has A-E
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 800, 800, 1000)); // #2 has B-F
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(3, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 800, 400, 800)); // #3 has B-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 800, 800, 1000)); // #3 has B-F
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 800, 200, 1000)); // #3 has C-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(3, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 800, 400, 600)); // #4 has C-D
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 800, 200, 1000)); // #4 has C-G
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 0, 200)); // #4 has D-H
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 600, 600)); // #5 has D-A
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 1000, 200)); // #5 has A-E
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 0, 200)); // #5 has D-H
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(4, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 600, 800)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 800, 400, 800)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 800, 400, 600)); // #1 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 600, 600)); // #1 has D-A
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 600, 800)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 200)); // #2 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 800, 800, 1000)); // #2 has B-F
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(3, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 800, 400, 800)); // #3 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 800, 800, 1000)); // #3 has B-F
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 800, 200, 1000)); // #3 has C-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(3, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 800, 400, 600)); // #4 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 800, 200, 1000)); // #4 has C-G
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 0, 200)); // #4 has D-H
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 600, 600)); // #5 has D-A
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 1000, 200)); // #5 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 600, 0, 200)); // #5 has D-H
         }
 
         /// <summary>
@@ -5361,32 +5362,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(4, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 800, 400)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 400, 800, 600)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 600, 600, 600)); // #1 has C-D
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 600, 400)); // #1 has D-A
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 800, 400)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 200, 0)); // #2 has A-E
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 400, 1000, 200)); // #2 has B-F
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(3, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 400, 800, 600)); // #3 has B-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 400, 1000, 200)); // #3 has B-F
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 600, 1000, 800)); // #3 has C-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(3, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 800, 600, 600, 600)); // #4 has C-D
-            Assert.IsTrue(HasEdge(sites[3].Cell, 800, 600, 1000, 800)); // #4 has C-G
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 200, 1000)); // #4 has D-H
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 600, 400)); // #5 has D-A
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 400, 200, 0)); // #5 has A-E
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 200, 1000)); // #5 has D-H
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(4, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 800, 400)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 400, 800, 600)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 600, 600, 600)); // #1 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 600, 400)); // #1 has D-A
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 800, 400)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 200, 0)); // #2 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 400, 1000, 200)); // #2 has B-F
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(3, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 400, 800, 600)); // #3 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 400, 1000, 200)); // #3 has B-F
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 600, 1000, 800)); // #3 has C-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(3, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 800, 600, 600, 600)); // #4 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 800, 600, 1000, 800)); // #4 has C-G
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 200, 1000)); // #4 has D-H
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 600, 400)); // #5 has D-A
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 400, 200, 0)); // #5 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 600, 200, 1000)); // #5 has D-H
         }
 
         [Test]
@@ -5440,22 +5441,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 500, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 500)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 0)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 500)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 500, 1000)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 1000, 500)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 500, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 500)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 0)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 500)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 500, 1000)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 1000, 500)); // #4 has A-E
         }
 
         [Test]
@@ -5509,22 +5510,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 500, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 500)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 0)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 500)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 500, 1000)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 1000, 500)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 500, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 500)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 0)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 500)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 500, 1000)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 1000, 500)); // #4 has A-E
         }
 
         /// <summary>
@@ -5582,22 +5583,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 500)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 500, 1000)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 1000)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 500)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 1000, 500)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 500, 0)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 500)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 500, 1000)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 500, 1000)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 500)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 500)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 500, 0)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 1000, 500)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 500, 0)); // #4 has A-E
         }
 
         [Test]
@@ -5651,22 +5652,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has A-E
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 0)); // #2 has A-D
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 1000)); // #2 has A-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 0)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 0)); // #3 has A-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 0, 1000)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 0, 0)); // #4 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has A-E
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 0)); // #2 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 1000)); // #2 has A-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 0, 0)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 500, 1000, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 0, 1000)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 500, 0, 0)); // #4 has A-C
         }
 
         [Test]
@@ -5720,22 +5721,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 100, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 0, 200)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 200)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 600, 0)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 600, 0)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 1000, 700)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 100, 1000)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 1000, 700)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 100, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 0, 200)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 200)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 600, 0)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 600, 0)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 1000, 700)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 100, 1000)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 1000, 700)); // #4 has A-E
         }
 
         /// <summary>
@@ -5793,22 +5794,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 1000, 900)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 200, 1000)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 200, 1000)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 400)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 0, 400)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 700, 0)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 1000, 900)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 700, 0)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 1000, 900)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 200, 1000)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 200, 1000)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 400)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 0, 400)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 700, 0)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 1000, 900)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 700, 0)); // #4 has A-E
         }
 
         /// <summary>
@@ -5866,22 +5867,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 900, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 1000, 800)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 800)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 400, 1000)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 400, 1000)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 0, 300)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 900, 0)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 0, 300)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 900, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 1000, 800)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 800)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 400, 1000)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 400, 1000)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 0, 300)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 900, 0)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 0, 300)); // #4 has A-E
         }
 
         /// <summary>
@@ -5939,22 +5940,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 0, 100)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 800, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 800, 0)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 1000, 600)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 1000, 600)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 300, 1000)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 0, 100)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 300, 1000)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 0, 100)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 800, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 800, 0)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 1000, 600)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 1000, 600)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 300, 1000)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 0, 100)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 300, 1000)); // #4 has A-E
         }
 
         /// <summary>
@@ -6012,22 +6013,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 900, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 1000, 200)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 1000, 200)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 400, 0)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 400, 0)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 0, 700)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 900, 1000)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 0, 700)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 900, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 400, 1000, 200)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 1000, 200)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 400, 400, 0)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 400, 0)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 400, 0, 700)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 900, 1000)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 400, 0, 700)); // #4 has A-E
         }
 
         /// <summary>
@@ -6085,22 +6086,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 1000, 100)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 200, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 200, 0)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 600)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 0, 600)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 700, 1000)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 1000, 100)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 700, 1000)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 1000, 100)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 400, 200, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 200, 0)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 400, 0, 600)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 0, 600)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 400, 700, 1000)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 1000, 100)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 400, 700, 1000)); // #4 has A-E
         }
 
         /// <summary>
@@ -6158,22 +6159,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 100, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 0, 800)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 800)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 600, 1000)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 600, 1000)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 1000, 300)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 100, 0)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 1000, 300)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 100, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 600, 0, 800)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 0, 800)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 600, 600, 1000)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 600, 1000)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 600, 1000, 300)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 100, 0)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 600, 1000, 300)); // #4 has A-E
         }
 
         /// <summary>
@@ -6231,22 +6232,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 0, 900)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 800, 1000)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 800, 1000)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 400)); // #2 has A-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 1000, 400)); // #3 has A-D
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 300, 0)); // #3 has A-E
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 0, 900)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 300, 0)); // #4 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 0, 900)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 600, 800, 1000)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 800, 1000)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 600, 1000, 400)); // #2 has A-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 1000, 400)); // #3 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 600, 300, 0)); // #3 has A-E
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 0, 900)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 600, 300, 0)); // #4 has A-E
         }
 
         [Test]
@@ -6303,28 +6304,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 200, 1000)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 800, 1000)); // #1 has B-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 400, 500, 700)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 200, 1000)); // #2 has B-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 400, 0, 400)); // #2 has A-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 400, 0, 400)); // #3 has A-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 400, 500, 0)); // #3 has A-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 400, 1000, 400)); // #4 has A-F
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 400, 500, 0)); // #4 has A-G
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 400, 500, 700)); // #5 has A-B
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 700, 800, 1000)); // #5 has B-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 400, 1000, 400)); // #5 has A-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 200, 1000)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 800, 1000)); // #1 has B-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 400, 500, 700)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 200, 1000)); // #2 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 400, 0, 400)); // #2 has A-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 400, 0, 400)); // #3 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 400, 500, 0)); // #3 has A-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 400, 1000, 400)); // #4 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 400, 500, 0)); // #4 has A-G
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 400, 500, 700)); // #5 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 700, 800, 1000)); // #5 has B-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 400, 1000, 400)); // #5 has A-F
         }
 
         /// <summary>
@@ -6385,28 +6386,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 800)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 200)); // #1 has B-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 500, 700, 500)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 800)); // #2 has B-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 500, 400, 1000)); // #2 has A-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 500, 400, 1000)); // #3 has A-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 500, 0, 500)); // #3 has A-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 500, 400, 0)); // #4 has A-F
-            Assert.IsTrue(HasEdge(sites[3].Cell, 400, 500, 0, 500)); // #4 has A-G
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 500, 700, 500)); // #5 has A-B
-            Assert.IsTrue(HasEdge(sites[4].Cell, 700, 500, 1000, 200)); // #5 has B-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 400, 500, 400, 0)); // #5 has A-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 800)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 200)); // #1 has B-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 500, 700, 500)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 800)); // #2 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 500, 400, 1000)); // #2 has A-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 500, 400, 1000)); // #3 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 500, 0, 500)); // #3 has A-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 500, 400, 0)); // #4 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 400, 500, 0, 500)); // #4 has A-G
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 500, 700, 500)); // #5 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 700, 500, 1000, 200)); // #5 has B-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 400, 500, 400, 0)); // #5 has A-F
         }
 
         /// <summary>
@@ -6467,28 +6468,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 800, 0)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 200, 0)); // #1 has B-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 600, 500, 300)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 800, 0)); // #2 has B-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 600, 1000, 600)); // #2 has A-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 600, 1000, 600)); // #3 has A-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 600, 500, 1000)); // #3 has A-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 600, 0, 600)); // #4 has A-F
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 600, 500, 1000)); // #4 has A-G
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 600, 500, 300)); // #5 has A-B
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 200, 0)); // #5 has B-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 600, 0, 600)); // #5 has A-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 800, 0)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 300, 200, 0)); // #1 has B-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 600, 500, 300)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 800, 0)); // #2 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 600, 1000, 600)); // #2 has A-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 600, 1000, 600)); // #3 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 600, 500, 1000)); // #3 has A-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 600, 0, 600)); // #4 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 600, 500, 1000)); // #4 has A-G
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 600, 500, 300)); // #5 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 200, 0)); // #5 has B-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 600, 0, 600)); // #5 has A-F
         }
 
         /// <summary>
@@ -6549,28 +6550,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 200)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 800)); // #1 has B-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 500, 300, 500)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 0, 200)); // #2 has B-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 500, 600, 0)); // #2 has A-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 500, 600, 0)); // #3 has A-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 500, 1000, 500)); // #3 has A-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 500, 600, 1000)); // #4 has A-F
-            Assert.IsTrue(HasEdge(sites[3].Cell, 600, 500, 1000, 500)); // #4 has A-G
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 500, 300, 500)); // #5 has A-B
-            Assert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 0, 800)); // #5 has B-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 600, 500, 600, 1000)); // #5 has A-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 200)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 500, 0, 800)); // #1 has B-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 500, 300, 500)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 0, 200)); // #2 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 500, 600, 0)); // #2 has A-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 500, 600, 0)); // #3 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 500, 1000, 500)); // #3 has A-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 500, 600, 1000)); // #4 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 600, 500, 1000, 500)); // #4 has A-G
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 500, 300, 500)); // #5 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 0, 800)); // #5 has B-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 600, 500, 600, 1000)); // #5 has A-F
         }
 
         [Test]
@@ -6627,28 +6628,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has B-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 500, 500)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 1000)); // #2 has B-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 0, 300)); // #2 has A-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 0, 300)); // #3 has A-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 0)); // #3 has A-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 1000, 300)); // #4 has A-F
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 500, 0)); // #4 has A-G
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 500, 500)); // #5 has A-B
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 500, 1000, 1000)); // #5 has B-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 1000, 300)); // #5 has A-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 0, 1000)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has B-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 500, 500)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 0, 1000)); // #2 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 300, 0, 300)); // #2 has A-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 0, 300)); // #3 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 0)); // #3 has A-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 1000, 300)); // #4 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 500, 0)); // #4 has A-G
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 500, 500)); // #5 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 500, 1000, 1000)); // #5 has B-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 1000, 300)); // #5 has A-F
         }
 
         /// <summary>
@@ -6709,28 +6710,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 0)); // #1 has B-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(3, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 500, 500)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 1000)); // #2 has B-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 300, 1000)); // #2 has A-E
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 300, 1000)); // #3 has A-E
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 0, 500)); // #3 has A-G
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(2, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 300, 0)); // #4 has A-F
-            Assert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 0, 500)); // #4 has A-G
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(3, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 500, 500)); // #5 has A-B
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 500, 1000, 0)); // #5 has B-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 300, 0)); // #5 has A-F
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 1000)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 500, 1000, 0)); // #1 has B-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(3, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 500, 500)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 500, 1000, 1000)); // #2 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 500, 300, 1000)); // #2 has A-E
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 300, 1000)); // #3 has A-E
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 0, 500)); // #3 has A-G
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(2, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 300, 0)); // #4 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 0, 500)); // #4 has A-G
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(3, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 500, 500)); // #5 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 500, 1000, 0)); // #5 has B-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 300, 0)); // #5 has A-F
         }
 
         [Test]
@@ -6789,32 +6790,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 0, 700)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 500, 1000)); // #1 has B-H
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 1000, 700)); // #2 has B-G
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 500, 1000)); // #2 has B-H
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(3, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 700)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 0, 700)); // #3 has B-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 0, 300)); // #3 has A-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(3, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 500, 700)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 700, 1000, 700)); // #4 has B-G
-            Assert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 1000, 300)); // #4 has A-F
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(2, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 0, 300)); // #5 has A-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 500, 0)); // #5 has A-E
-            Assert.NotNull(sites[5].Cell);
-            Assert.AreEqual(2, sites[5].Cell.Count()); // #6
-            Assert.IsTrue(HasEdge(sites[5].Cell, 500, 300, 1000, 300)); // #6 has A-F
-            Assert.IsTrue(HasEdge(sites[5].Cell, 500, 300, 500, 0)); // #6 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 0, 700)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 700, 500, 1000)); // #1 has B-H
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 1000, 700)); // #2 has B-G
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 700, 500, 1000)); // #2 has B-H
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(3, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 500, 700)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 700, 0, 700)); // #3 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 300, 0, 300)); // #3 has A-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(3, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 500, 700)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 700, 1000, 700)); // #4 has B-G
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 500, 300, 1000, 300)); // #4 has A-F
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(2, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 0, 300)); // #5 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 300, 500, 0)); // #5 has A-E
+            ClassicAssert.NotNull(sites[5].Cell);
+            ClassicAssert.AreEqual(2, sites[5].Cell.Count()); // #6
+            ClassicAssert.IsTrue(HasEdge(sites[5].Cell, 500, 300, 1000, 300)); // #6 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[5].Cell, 500, 300, 500, 0)); // #6 has A-E
         }
 
         /// <summary>
@@ -6877,32 +6878,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 700, 1000)); // #1 has B-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 500)); // #1 has B-H
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 700, 0)); // #2 has B-G
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 500)); // #2 has B-H
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(3, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 700, 500)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 700, 1000)); // #3 has B-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 300, 1000)); // #3 has A-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(3, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 700, 500)); // #4 has A-B
-            Assert.IsTrue(HasEdge(sites[3].Cell, 700, 500, 700, 0)); // #4 has B-G
-            Assert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 300, 0)); // #4 has A-F
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(2, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 300, 1000)); // #5 has A-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 0, 500)); // #5 has A-E
-            Assert.NotNull(sites[5].Cell);
-            Assert.AreEqual(2, sites[5].Cell.Count()); // #6
-            Assert.IsTrue(HasEdge(sites[5].Cell, 300, 500, 300, 0)); // #6 has A-F
-            Assert.IsTrue(HasEdge(sites[5].Cell, 300, 500, 0, 500)); // #6 has A-E
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 700, 1000)); // #1 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 500, 1000, 500)); // #1 has B-H
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 700, 0)); // #2 has B-G
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 500, 1000, 500)); // #2 has B-H
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(3, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 700, 500)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 700, 500, 700, 1000)); // #3 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 500, 300, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(3, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 700, 500)); // #4 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 700, 500, 700, 0)); // #4 has B-G
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 300, 500, 300, 0)); // #4 has A-F
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(2, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 300, 1000)); // #5 has A-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 300, 500, 0, 500)); // #5 has A-E
+            ClassicAssert.NotNull(sites[5].Cell);
+            ClassicAssert.AreEqual(2, sites[5].Cell.Count()); // #6
+            ClassicAssert.IsTrue(HasEdge(sites[5].Cell, 300, 500, 300, 0)); // #6 has A-F
+            ClassicAssert.IsTrue(HasEdge(sites[5].Cell, 300, 500, 0, 500)); // #6 has A-E
         }
 
         [Test]
@@ -6957,24 +6958,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 1000, 0, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 500, 0)); // #2 has B-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 0, 1000, 500)); // #3 has C-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 1000, 500, 500, 1000)); // #4 has D-A
-            Assert.NotNull(sites[4].Cell);
-            Assert.AreEqual(4, sites[4].Cell.Count()); // #5
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 1000, 0, 500)); // #5 has A-B
-            Assert.IsTrue(HasEdge(sites[4].Cell, 0, 500, 500, 0)); // #5 has B-C
-            Assert.IsTrue(HasEdge(sites[4].Cell, 500, 0, 1000, 500)); // #5 has C-D
-            Assert.IsTrue(HasEdge(sites[4].Cell, 1000, 500, 500, 1000)); // #5 has D-A
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 1000, 0, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 500, 0)); // #2 has B-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 0, 1000, 500)); // #3 has C-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 1000, 500, 500, 1000)); // #4 has D-A
+            ClassicAssert.NotNull(sites[4].Cell);
+            ClassicAssert.AreEqual(4, sites[4].Cell.Count()); // #5
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 1000, 0, 500)); // #5 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 0, 500, 500, 0)); // #5 has B-C
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 500, 0, 1000, 500)); // #5 has C-D
+            ClassicAssert.IsTrue(HasEdge(sites[4].Cell, 1000, 500, 500, 1000)); // #5 has D-A
         }
 
         [Test]
@@ -7025,16 +7026,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 500, 1000, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 1000, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 500, 1000, 1000)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 500, 1000, 0)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 500, 1000, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 500, 1000, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 500, 1000, 1000)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 500, 1000, 0)); // #3 has A-C
         }
 
         /// <summary>
@@ -7089,16 +7090,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 1000, 1000, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 1000, 0, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 1000, 1000, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 1000, 0, 0)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 1000, 1000, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 1000, 0, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 1000, 1000, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 1000, 0, 0)); // #3 has A-C
         }
 
         /// <summary>
@@ -7153,16 +7154,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 500, 0, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 500, 0, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 500, 0, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 500, 0, 1000)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 500, 0, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 500, 0, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 500, 0, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 500, 0, 1000)); // #3 has A-C
         }
 
         /// <summary>
@@ -7217,16 +7218,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 0, 0, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 0, 1000, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 0, 0, 1000)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 500, 0, 1000, 1000)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 0, 0, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 0, 1000, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 0, 0, 1000)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 500, 0, 1000, 1000)); // #3 has A-C
         }
 
         [Test]
@@ -7277,16 +7278,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 600, 800, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 400, 800, 0)); // #2 has D-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 600, 800, 1000)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 400, 800, 0)); // #3 has D-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 600, 800, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 400, 800, 0)); // #2 has D-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 600, 800, 1000)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 400, 800, 0)); // #3 has D-C
         }
 
         /// <summary>
@@ -7341,16 +7342,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 1000, 1000, 200)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 400, 1000, 0, 200)); // #2 has D-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 1000, 1000, 200)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 1000, 0, 200)); // #3 has D-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 1000, 1000, 200)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 400, 1000, 0, 200)); // #2 has D-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 1000, 1000, 200)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 1000, 0, 200)); // #3 has D-C
         }
 
         /// <summary>
@@ -7405,16 +7406,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 400, 200, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 600, 200, 1000)); // #2 has D-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 400, 200, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 600, 200, 1000)); // #3 has D-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 400, 200, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 600, 200, 1000)); // #2 has D-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 400, 200, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 600, 200, 1000)); // #3 has D-C
         }
 
         /// <summary>
@@ -7469,16 +7470,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 400, 0, 0, 800)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 0, 1000, 800)); // #2 has D-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 400, 0, 0, 800)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 0, 1000, 800)); // #3 has D-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 400, 0, 0, 800)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 0, 1000, 800)); // #2 has D-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 400, 0, 0, 800)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 0, 1000, 800)); // #3 has D-C
         }
 
         [Test]
@@ -7533,16 +7534,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 600, 1200, 1000)); // #1 has A-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 600, 1200, 200)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 600, 1200, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 600, 1200, 200)); // #3 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 600, 1200, 1000)); // #1 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 600, 1200, 200)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 600, 1200, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 600, 1200, 200)); // #3 has A-B
         }
 
         /// <summary>
@@ -7601,16 +7602,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 1200, 1000, 0)); // #1 has A-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 1200, 200, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 1200, 1000, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 1200, 200, 0)); // #3 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 1200, 1000, 0)); // #1 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 1200, 200, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 1200, 1000, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 1200, 200, 0)); // #3 has A-B
         }
 
         /// <summary>
@@ -7669,16 +7670,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1200, 600, 0, 200)); // #1 has A-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1200, 600, 0, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1200, 600, 0, 200)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1200, 600, 0, 1000)); // #3 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1200, 600, 0, 200)); // #1 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1200, 600, 0, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1200, 600, 0, 200)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1200, 600, 0, 1000)); // #3 has A-B
         }
 
         /// <summary>
@@ -7737,16 +7738,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 0, 200, 1200)); // #1 has A-C
-            Assert.IsTrue(HasEdge(sites[0].Cell, 600, 0, 1000, 1200)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 600, 0, 200, 1200)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 600, 0, 1000, 1200)); // #3 has A-B
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 0, 200, 1200)); // #1 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 600, 0, 1000, 1200)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 600, 0, 200, 1200)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 600, 0, 1000, 1200)); // #3 has A-B
         }
 
         [Test]
@@ -7801,16 +7802,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1200, 1100)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1200, 100, 0, 500)); // #1 has C-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1200, 1100)); // #2 has A-B
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1200, 100, 0, 500)); // #3 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 700, 1200, 1100)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1200, 100, 0, 500)); // #1 has C-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 700, 1200, 1100)); // #2 has A-B
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1200, 100, 0, 500)); // #3 has C-D
         }
 
         /// <summary>
@@ -7869,16 +7870,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 700, 1200, 1100, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 100, 0, 500, 1200)); // #1 has C-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 700, 1200, 1100, 0)); // #2 has A-B
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 100, 0, 500, 1200)); // #3 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 700, 1200, 1100, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 100, 0, 500, 1200)); // #1 has C-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 700, 1200, 1100, 0)); // #2 has A-B
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 100, 0, 500, 1200)); // #3 has C-D
         }
 
         /// <summary>
@@ -7937,16 +7938,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1200, 500, 0, 100)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 1100, 1200, 700)); // #1 has C-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1200, 500, 0, 100)); // #2 has A-B
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 1100, 1200, 700)); // #3 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1200, 500, 0, 100)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 1100, 1200, 700)); // #1 has C-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1200, 500, 0, 100)); // #2 has A-B
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 1100, 1200, 700)); // #3 has C-D
         }
 
         /// <summary>
@@ -8005,16 +8006,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 500, 0, 100, 1200)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1100, 1200, 700, 0)); // #1 has C-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(1, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 500, 0, 100, 1200)); // #2 has A-B
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1100, 1200, 700, 0)); // #3 has C-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 500, 0, 100, 1200)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1100, 1200, 700, 0)); // #1 has C-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(1, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 500, 0, 100, 1200)); // #2 has A-B
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1100, 1200, 700, 0)); // #3 has C-D
         }
 
         [Test]
@@ -8066,18 +8067,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 200, 600, 1000)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 200, 0, 0)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 200, 600, 1000)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 200, 1000, 600)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 200, 1000, 600)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 200, 0, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 200, 600, 1000)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 200, 0, 0)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 200, 600, 1000)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 200, 1000, 600)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 200, 1000, 600)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 200, 0, 0)); // #3 has A-D
         }
 
         /// <summary>
@@ -8133,18 +8134,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 800, 1000, 400)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 800, 0, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 800, 1000, 400)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 800, 600, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 800, 600, 0)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 800, 0, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 800, 1000, 400)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 800, 0, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 800, 1000, 400)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 800, 600, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 800, 600, 0)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 800, 0, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -8200,18 +8201,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 800, 400, 0)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 800, 1000, 1000)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 800, 400, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 800, 0, 400)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 800, 0, 400)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 800, 1000, 1000)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 800, 400, 0)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 800, 1000, 1000)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 800, 400, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 800, 0, 400)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 800, 0, 400)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 800, 1000, 1000)); // #3 has A-D
         }
 
         /// <summary>
@@ -8267,18 +8268,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(2, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 200, 0, 600)); // #1 has A-B
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 200, 1000, 0)); // #1 has A-D
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 200, 0, 600)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 200, 400, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 200, 400, 1000)); // #3 has A-C
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 200, 1000, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(2, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 200, 0, 600)); // #1 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 200, 1000, 0)); // #1 has A-D
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 200, 0, 600)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 200, 400, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 200, 400, 1000)); // #3 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 200, 1000, 0)); // #3 has A-D
         }
 
         [Test]
@@ -8329,16 +8330,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 500, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 500, 1000)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 500)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 1000, 500)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 500, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 500, 1000)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 1000, 500)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 1000, 500)); // #3 has A-C
         }
 
         /// <summary>
@@ -8393,16 +8394,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 500)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 500, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 1000, 500, 0)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 1000, 1000, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 1000, 500)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 1000, 500, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 1000, 500, 0)); // #3 has A-C
         }
 
         /// <summary>
@@ -8457,16 +8458,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 500, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 500, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 500)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 1000, 0, 500)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 1000, 500, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 500, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 1000, 0, 500)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 1000, 0, 500)); // #3 has A-C
         }
 
         /// <summary>
@@ -8521,16 +8522,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 0, 500)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 500)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 500, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 0, 500, 1000)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 0, 0, 500)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 0, 500)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 0, 500, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 0, 500, 1000)); // #3 has A-C
         }
 
         [Test]
@@ -8581,16 +8582,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 0, 700, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 0, 700, 1000)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 0, 1000, 400)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 0, 1000, 400)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 0, 700, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 0, 700, 1000)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 0, 1000, 400)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 0, 1000, 400)); // #3 has A-C
         }
 
         /// <summary>
@@ -8645,16 +8646,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 800, 1000, 300)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 800, 1000, 300)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 800, 400, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 800, 400, 0)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 800, 1000, 300)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 800, 1000, 300)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 800, 400, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 800, 400, 0)); // #3 has A-C
         }
 
         /// <summary>
@@ -8709,16 +8710,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 1000, 300, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 1000, 300, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 1000, 0, 600)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 1000, 0, 600)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 1000, 300, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 1000, 300, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 1000, 0, 600)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 1000, 0, 600)); // #3 has A-C
         }
 
         /// <summary>
@@ -8773,16 +8774,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 200, 0, 700)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 200, 0, 700)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 200, 600, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 200, 600, 1000)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 200, 0, 700)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 200, 0, 700)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 200, 600, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 200, 600, 1000)); // #3 has A-C
         }
 
         /// <summary>
@@ -8837,16 +8838,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 800, 0, 300, 1000)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 0, 300, 1000)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 800, 0, 0, 400)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 800, 0, 0, 400)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 800, 0, 300, 1000)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 0, 300, 1000)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 800, 0, 0, 400)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 800, 0, 0, 400)); // #3 has A-C
         }
 
         /// <summary>
@@ -8901,16 +8902,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 200, 1000, 700)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 200, 1000, 700)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 200, 400, 1000)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 200, 400, 1000)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 200, 1000, 700)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 200, 1000, 700)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 200, 400, 1000)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 200, 400, 1000)); // #3 has A-C
         }
 
         /// <summary>
@@ -8965,16 +8966,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 200, 1000, 700, 0)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 1000, 700, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 200, 1000, 1000, 600)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 200, 1000, 1000, 600)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 200, 1000, 700, 0)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 1000, 700, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 200, 1000, 1000, 600)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 200, 1000, 1000, 600)); // #3 has A-C
         }
 
         /// <summary>
@@ -9029,16 +9030,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1000, 800, 0, 300)); // #1 has A-B
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 800, 0, 300)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1000, 800, 600, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1000, 800, 600, 0)); // #3 has A-C
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1000, 800, 0, 300)); // #1 has A-B
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 800, 0, 300)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1000, 800, 600, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1000, 800, 600, 0)); // #3 has A-C
         }
 
         [Test]
@@ -9093,16 +9094,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 300, 600, 1200)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 300, 600, 1200)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 0, 1200, 600)); // #2 has B-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 300, 0, 1200, 600)); // #3 has B-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 300, 600, 1200)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 300, 600, 1200)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 0, 1200, 600)); // #2 has B-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 300, 0, 1200, 600)); // #3 has B-D
         }
 
         /// <summary>
@@ -9161,16 +9162,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 300, 1200, 1200, 600)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 300, 1200, 1200, 600)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 900, 600, 0)); // #2 has B-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 900, 600, 0)); // #3 has B-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 300, 1200, 1200, 600)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 300, 1200, 1200, 600)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 900, 600, 0)); // #2 has B-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 900, 600, 0)); // #3 has B-D
         }
 
         /// <summary>
@@ -9229,16 +9230,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 1200, 900, 600, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1200, 900, 600, 0)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 900, 1200, 0, 600)); // #2 has B-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 900, 1200, 0, 600)); // #3 has B-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 1200, 900, 600, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1200, 900, 600, 0)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 900, 1200, 0, 600)); // #2 has B-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 900, 1200, 0, 600)); // #3 has B-D
         }
 
         /// <summary>
@@ -9297,16 +9298,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 900, 0, 0, 600)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 900, 0, 0, 600)); // #2 has A-C
-            Assert.IsTrue(HasEdge(sites[1].Cell, 1200, 300, 600, 1200)); // #2 has B-D
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(1, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 1200, 300, 600, 1200)); // #3 has B-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 900, 0, 0, 600)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 900, 0, 0, 600)); // #2 has A-C
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 1200, 300, 600, 1200)); // #2 has B-D
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(1, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 1200, 300, 600, 1200)); // #3 has B-D
         }
 
         [Test]
@@ -9357,20 +9358,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 300, 900)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 900, 900)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 300, 900)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 900, 900)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 900, 300)); // #3 has A-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 0, 0, 900, 300)); // #4 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 0, 300, 900)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 900, 900)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 0, 300, 900)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 900, 900)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 0, 900, 300)); // #3 has A-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 0, 0, 900, 300)); // #4 has A-D
         }
 
         /// <summary>
@@ -9425,20 +9426,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 0, 900, 900, 600)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 900, 900, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 0, 900, 900, 600)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 900, 900, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 0, 900, 300, 0)); // #3 has A-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 0, 900, 300, 0)); // #4 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 0, 900, 900, 600)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 900, 900, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 0, 900, 900, 600)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 900, 900, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 0, 900, 300, 0)); // #3 has A-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 0, 900, 300, 0)); // #4 has A-D
         }
 
         /// <summary>
@@ -9493,20 +9494,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 900, 900, 600, 0)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 900, 900, 0, 0)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 900, 900, 600, 0)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 900, 900, 0, 0)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 900, 900, 0, 600)); // #3 has A-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 900, 900, 0, 600)); // #4 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 900, 900, 600, 0)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 900, 900, 0, 0)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 900, 900, 600, 0)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 900, 900, 0, 0)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 900, 900, 0, 600)); // #3 has A-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 900, 900, 0, 600)); // #4 has A-D
         }
 
         /// <summary>
@@ -9561,20 +9562,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Cell);
-            Assert.AreEqual(1, sites[0].Cell.Count()); // #1
-            Assert.IsTrue(HasEdge(sites[0].Cell, 900, 0, 0, 300)); // #1 has A-C
-            Assert.NotNull(sites[1].Cell);
-            Assert.AreEqual(2, sites[1].Cell.Count()); // #2
-            Assert.IsTrue(HasEdge(sites[1].Cell, 900, 0, 0, 900)); // #2 has A-B
-            Assert.IsTrue(HasEdge(sites[1].Cell, 900, 0, 0, 300)); // #2 has A-C
-            Assert.NotNull(sites[2].Cell);
-            Assert.AreEqual(2, sites[2].Cell.Count()); // #3
-            Assert.IsTrue(HasEdge(sites[2].Cell, 900, 0, 0, 900)); // #3 has A-B
-            Assert.IsTrue(HasEdge(sites[2].Cell, 900, 0, 600, 900)); // #3 has A-D
-            Assert.NotNull(sites[3].Cell);
-            Assert.AreEqual(1, sites[3].Cell.Count()); // #4
-            Assert.IsTrue(HasEdge(sites[3].Cell, 900, 0, 600, 900)); // #4 has A-D
+            ClassicAssert.NotNull(sites[0].Cell);
+            ClassicAssert.AreEqual(1, sites[0].Cell.Count()); // #1
+            ClassicAssert.IsTrue(HasEdge(sites[0].Cell, 900, 0, 0, 300)); // #1 has A-C
+            ClassicAssert.NotNull(sites[1].Cell);
+            ClassicAssert.AreEqual(2, sites[1].Cell.Count()); // #2
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 900, 0, 0, 900)); // #2 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[1].Cell, 900, 0, 0, 300)); // #2 has A-C
+            ClassicAssert.NotNull(sites[2].Cell);
+            ClassicAssert.AreEqual(2, sites[2].Cell.Count()); // #3
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 900, 0, 0, 900)); // #3 has A-B
+            ClassicAssert.IsTrue(HasEdge(sites[2].Cell, 900, 0, 600, 900)); // #3 has A-D
+            ClassicAssert.NotNull(sites[3].Cell);
+            ClassicAssert.AreEqual(1, sites[3].Cell.Count()); // #4
+            ClassicAssert.IsTrue(HasEdge(sites[3].Cell, 900, 0, 600, 900)); // #4 has A-D
         }
 
     }

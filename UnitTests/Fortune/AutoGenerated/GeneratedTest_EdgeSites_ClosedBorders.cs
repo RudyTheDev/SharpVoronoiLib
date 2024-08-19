@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -119,10 +120,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // Z-X has #1
         }
 
         [Test]
@@ -173,10 +174,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 200, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 200, 500)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 200, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 200, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 200, 500)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 200, 500)); // Z-X has #1
         }
 
         /// <summary>
@@ -231,10 +232,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 800)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 800)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 800)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 800)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 800)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 800)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 800)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 800)); // Z-X has #1
         }
 
         /// <summary>
@@ -289,10 +290,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 800, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 800, 500)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 800, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 800, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 800, 500)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 800, 500)); // Z-X has #1
         }
 
         /// <summary>
@@ -347,10 +348,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 200)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 200)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 200)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 200)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 200)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 200)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 200)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 200)); // Z-X has #1
         }
 
         [Test]
@@ -401,10 +402,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 700)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 200, 700)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 200, 700)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 200, 700)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 700)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 200, 700)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 200, 700)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 200, 700)); // Z-X has #1
         }
 
         /// <summary>
@@ -459,10 +460,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 800)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 700, 800)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 800)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 800)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 800)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 700, 800)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 800)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 800)); // Z-X has #1
         }
 
         /// <summary>
@@ -517,10 +518,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 300)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 800, 300)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 800, 300)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 800, 300)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 300)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 800, 300)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 800, 300)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 800, 300)); // Z-X has #1
         }
 
         /// <summary>
@@ -575,10 +576,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 200)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 300, 200)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 200)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 200)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 200)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 300, 200)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 200)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 200)); // Z-X has #1
         }
 
         [Test]
@@ -629,10 +630,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 500)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 500)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 500)); // Z-X has #1
         }
 
         /// <summary>
@@ -687,10 +688,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 1000)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 1000)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 1000)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 1000)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 1000)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 1000)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 1000)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 1000)); // Z-X has #1
         }
 
         /// <summary>
@@ -745,10 +746,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 500)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 500)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 500)); // Z-X has #1
         }
 
         /// <summary>
@@ -803,10 +804,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 0)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 0)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 0)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 0)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 0)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 0)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 0)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 0)); // Z-X has #1
         }
 
         [Test]
@@ -857,10 +858,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 700)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 700)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 700)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 700)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 700)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 700)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 700)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 700)); // Z-X has #1
         }
 
         /// <summary>
@@ -915,10 +916,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 1000)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 700, 1000)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 1000)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 1000)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 1000)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 700, 1000)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 1000)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 1000)); // Z-X has #1
         }
 
         /// <summary>
@@ -973,10 +974,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 300)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 300)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 300)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 300)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 300)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 300)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 300)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 300)); // Z-X has #1
         }
 
         /// <summary>
@@ -1031,10 +1032,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 0)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 300, 0)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 0)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 0)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 0)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 300, 0)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 0)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 0)); // Z-X has #1
         }
 
         /// <summary>
@@ -1089,10 +1090,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 1000, 700)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 1000, 700)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 1000, 700)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 1000, 700)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 1000, 700)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 1000, 700)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 1000, 700)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 1000, 700)); // Z-X has #1
         }
 
         /// <summary>
@@ -1147,10 +1148,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 700, 0)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 700, 0)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 700, 0)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 700, 0)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 700, 0)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 700, 0)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 700, 0)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 700, 0)); // Z-X has #1
         }
 
         /// <summary>
@@ -1205,10 +1206,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 0, 300)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 0, 300)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 0, 300)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 0, 300)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 0, 300)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 0, 300)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 0, 300)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 0, 300)); // Z-X has #1
         }
 
         /// <summary>
@@ -1263,10 +1264,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 300, 1000)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 300, 1000)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 300, 1000)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 300, 1000)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 300, 1000)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 300, 1000)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 300, 1000)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 300, 1000)); // Z-X has #1
         }
 
         [Test]
@@ -1317,10 +1318,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 0)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 0)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 0)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 0)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 0)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 0)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 0)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 0)); // Z-X has #1
         }
 
         /// <summary>
@@ -1375,10 +1376,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 1000)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 1000)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 1000)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 1000)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 0, 1000)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 0, 1000)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 0, 1000)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 0, 1000)); // Z-X has #1
         }
 
         /// <summary>
@@ -1433,10 +1434,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 1000)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 1000)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 1000)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 1000)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 1000)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 1000)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 1000)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 1000)); // Z-X has #1
         }
 
         /// <summary>
@@ -1491,10 +1492,10 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 0)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 0)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 0)); // W-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 0)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 1000, 0)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 1000, 0)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 1000, 0)); // W-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 1000, 0)); // Z-X has #1
         }
 
         [Test]
@@ -1549,14 +1550,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 700)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 500, 300)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 300)); // W-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 500, 700)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 700)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 500, 300)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 300)); // W-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 500, 700)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // Z-X has #1
         }
 
         /// <summary>
@@ -1615,14 +1616,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 700, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 300, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 500)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 500)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 500)); // W-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 500)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 700, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 300, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 500)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 500)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 500)); // W-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 500)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // Z-X has #1
         }
 
         [Test]
@@ -1677,14 +1678,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 900)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 500, 500)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 700), 500, 500)); // W-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 900)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 900)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 900)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 500, 500)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 700), 500, 500)); // W-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 900)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 900)); // Z-X has #1
         }
 
         /// <summary>
@@ -1743,14 +1744,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 900, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 500)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 500, 500)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 700, 0), 500, 500)); // W-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 900, 500)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 900, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 500)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 500, 500)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 700, 0), 500, 500)); // W-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 900, 500)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 500)); // Z-X has #1
         }
 
         [Test]
@@ -1809,18 +1810,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 500)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 100)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 900)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 300), 500, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 100)); // C-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 100)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 100)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 700), 500, 500)); // D-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 900)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 900)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 500)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 100)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 900)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 300), 500, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 100)); // C-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 100)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 100)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 700), 500, 500)); // D-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 900)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 900)); // Z-X has #1
         }
 
         /// <summary>
@@ -1883,18 +1884,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 900, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 500, 500)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 100, 500)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 500)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 300, 1000), 500, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 100, 500)); // C-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 500)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 500)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 700, 0), 500, 500)); // D-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 900, 500)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 900, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 500, 500)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 100, 500)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 500)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 300, 1000), 500, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 100, 500)); // C-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 500)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 500)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 700, 0), 500, 500)); // D-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 900, 500)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 500)); // Z-X has #1
         }
 
         [Test]
@@ -1957,22 +1958,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 800)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 600)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 400)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 400)); // E-F has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 200)); // E-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 500), 500, 600)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 300), 500, 400)); // C-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 200)); // E-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 200)); // Y-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 200)); // W-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 500), 500, 400)); // F-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 700), 500, 600)); // D-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 800)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 800)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 800)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1000, 700), 500, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 600)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 500), 500, 400)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 400)); // E-F has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 1000, 300), 500, 200)); // E-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 500), 500, 600)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 300), 500, 400)); // C-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 200)); // E-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 200)); // Y-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 200)); // W-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 500), 500, 400)); // F-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 700), 500, 600)); // D-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 800)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 800)); // Z-X has #1
         }
 
         /// <summary>
@@ -2039,22 +2040,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 800, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 600, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 600, 500)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 400, 500)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 400, 500)); // E-F has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 200, 500)); // E-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 800, 500)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 500, 1000), 600, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 300, 1000), 400, 500)); // C-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 200, 500)); // E-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 500)); // Y-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 200, 500)); // W-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 500, 0), 400, 500)); // F-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 700, 0), 600, 500)); // D-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 800, 500)); // B-Z has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 500)); // Z-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 800, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 700, 0), 600, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 600, 500)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 500, 0), 400, 500)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 400, 500)); // E-F has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 300, 0), 200, 500)); // E-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 800, 500)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 500, 1000), 600, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 300, 1000), 400, 500)); // C-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 200, 500)); // E-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 500)); // Y-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 200, 500)); // W-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 500, 0), 400, 500)); // F-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 700, 0), 600, 500)); // D-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 800, 500)); // B-Z has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 500)); // Z-X has #1
         }
 
         [Test]
@@ -2107,12 +2108,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 300, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 700, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 700)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 300)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 300)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 300, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 700, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 700)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 300)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 300)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 700)); // B-X has #1
         }
 
         /// <summary>
@@ -2169,12 +2170,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 700, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 300, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 700)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 300)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 300)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 700, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 300, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 700)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 300)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 300)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 700)); // B-X has #1
         }
 
         [Test]
@@ -2229,14 +2230,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 800, 1000), 200, 800)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 800, 1000), 600, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 200, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 600, 400)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 600, 400)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 400)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 600, 400)); // Z-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 200, 800)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 800, 1000), 200, 800)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 800, 1000), 600, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 200, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 600, 400)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 600, 400)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 400)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 600, 400)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 200, 800)); // B-X has #1
         }
 
         /// <summary>
@@ -2295,14 +2296,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 200), 800, 800)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 200), 400, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 800, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 400, 400)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 400)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 400)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 400, 400)); // Z-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 800, 800)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 200), 800, 800)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 200), 400, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 800, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 400, 400)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 400)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 400)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 400, 400)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 800, 800)); // B-X has #1
         }
 
         /// <summary>
@@ -2361,14 +2362,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 200, 0), 800, 200)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 200, 0), 400, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 800, 200)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 400, 600)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 400, 600)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 600)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 400, 600)); // Z-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 800, 200)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 200, 0), 800, 200)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 200, 0), 400, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 800, 200)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 400, 600)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 400, 600)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 600)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 400, 600)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 800, 200)); // B-X has #1
         }
 
         /// <summary>
@@ -2427,14 +2428,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 800), 200, 200)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 800), 600, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 200, 200)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 600, 600)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 600)); // Y-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 600)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 600, 600)); // Z-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 200, 200)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 800), 200, 200)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 800), 600, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 200, 200)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 600, 600)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 600)); // Y-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 600)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 600, 600)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 200, 200)); // B-X has #1
         }
 
         [Test]
@@ -2487,12 +2488,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 200, 400)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 600, 800)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 400)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 200, 400)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 800)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 800)); // Y-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 200, 400)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 600, 800)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 400)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 200, 400)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 800)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 800)); // Y-A has #2
         }
 
         /// <summary>
@@ -2549,12 +2550,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 400, 800)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 800, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 400, 800)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 800)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 800, 400)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 400)); // Y-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 400, 800)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 800, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 400, 800)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 800)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 800, 400)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 400)); // Y-A has #2
         }
 
         /// <summary>
@@ -2611,12 +2612,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 800, 600)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 400, 200)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 600)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 800, 600)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 200)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 200)); // Y-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 800, 600)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 400, 200)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 800, 600)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 800, 600)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 200)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 200)); // Y-A has #2
         }
 
         /// <summary>
@@ -2673,12 +2674,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 600, 200)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 200, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 600, 200)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 200)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 200, 600)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 600)); // Y-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 600, 200)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 200, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 600, 200)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 200)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 200, 600)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 200, 600)); // Y-A has #2
         }
 
         [Test]
@@ -2732,13 +2733,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 700, 900)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 900)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 900)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 700, 900)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 900)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 900)); // Z-A has #2
         }
 
         /// <summary>
@@ -2796,13 +2797,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 900, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 900, 300)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 300)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 900, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 900, 300)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 300)); // Z-A has #2
         }
 
         /// <summary>
@@ -2860,13 +2861,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 300, 100)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 100)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 100)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 300, 100)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 100)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 100)); // Z-A has #2
         }
 
         /// <summary>
@@ -2924,13 +2925,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 100, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 100, 700)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 700)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 100, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 100, 700)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 700)); // Z-A has #2
         }
 
         /// <summary>
@@ -2988,13 +2989,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 300, 900)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 500), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 1000), 300, 900)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 300, 900)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 300, 900)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 500), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 1000), 300, 900)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 300, 900)); // Z-A has #2
         }
 
         /// <summary>
@@ -3052,13 +3053,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 900, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 1000), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 1000, 1000), 900, 700)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 900, 700)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 900, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 1000), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 1000, 1000), 900, 700)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 900, 700)); // Z-A has #2
         }
 
         /// <summary>
@@ -3116,13 +3117,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 700, 100)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 500), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 0), 700, 100)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 700, 100)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 700, 100)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 500), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 0), 700, 100)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 700, 100)); // Z-A has #2
         }
 
         /// <summary>
@@ -3180,13 +3181,13 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 100, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 500, 500)); // A-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 500, 500)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 0), 500, 500)); // Y-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 0, 0), 100, 300)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 100, 300)); // Z-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 100, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 500, 500)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 500, 500)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 0), 500, 500)); // Y-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 0, 0), 100, 300)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 100, 300)); // Z-A has #2
         }
 
         [Test]
@@ -3245,18 +3246,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 700, 1000), 200, 800)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 700, 1000), 500, 500)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 700), 500, 500)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 700), 800, 200)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 300), 200, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 500)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 500, 500)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 800, 200)); // B-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 700), 800, 200)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 500, 500)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 200, 800)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 700, 1000), 200, 800)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 700, 1000), 500, 500)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 700), 500, 500)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 700), 800, 200)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 300), 200, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 500)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 500, 500)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 800, 200)); // B-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 700), 800, 200)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 500, 500)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 200, 800)); // D-X has #1
         }
 
         /// <summary>
@@ -3319,18 +3320,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 300), 800, 800)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 300), 500, 500)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 700, 0), 500, 500)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 700, 0), 200, 200)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 300, 1000), 800, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 500, 500)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 500)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 200, 200)); // B-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 700, 0), 200, 200)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 500, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 500)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 800, 800)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 300), 800, 800)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 300), 500, 500)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 700, 0), 500, 500)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 700, 0), 200, 200)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 300, 1000), 800, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 500, 500)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 500)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 200, 200)); // B-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 700, 0), 200, 200)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 500, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 500)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 800, 800)); // D-X has #1
         }
 
         [Test]
@@ -3387,16 +3388,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 200, 800)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 400, 600)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 400, 600)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 600, 400)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 200, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 400, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 600, 400)); // B-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 400)); // Y-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 400, 600)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 200, 800)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 200, 800)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 400, 600)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 400, 600)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 600, 400)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 200, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 400, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 600, 400)); // B-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 400)); // Y-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 400, 600)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 200, 800)); // D-X has #1
         }
 
         /// <summary>
@@ -3457,16 +3458,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 800, 800)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 600, 600)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 600, 600)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 400, 400)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 800, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 600, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 400)); // B-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 400)); // Y-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 600, 600)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 800, 800)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 800, 800)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 600, 600)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 600, 600)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 400, 400)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 800, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 600, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 400)); // B-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 400)); // Y-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 600, 600)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 800, 800)); // D-X has #1
         }
 
         /// <summary>
@@ -3527,16 +3528,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 400, 0), 800, 200)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 400, 0), 600, 400)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 600, 400)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 400, 600)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 800, 200)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 600, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 400, 600)); // B-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 600)); // Y-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 600, 400)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 800, 200)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 400, 0), 800, 200)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 400, 0), 600, 400)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 600, 400)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 0), 400, 600)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 800, 200)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 600, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 400, 600)); // B-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 400, 600)); // Y-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 600, 400)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 800, 200)); // D-X has #1
         }
 
         /// <summary>
@@ -3597,16 +3598,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 600), 200, 200)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 600), 400, 400)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 400, 400)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 600, 600)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 200, 200)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 400, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 600)); // B-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 600)); // Y-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 400, 400)); // C-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 200, 200)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 600), 200, 200)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 600), 400, 400)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 400, 400)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 1000), 600, 600)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 200, 200)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 400, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 600, 600)); // B-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 600)); // Y-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 400, 400)); // C-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 200, 200)); // D-X has #1
         }
 
         [Test]
@@ -3667,20 +3668,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 200, 800)); // A-F has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 400, 600)); // A-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 400, 600)); // B-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 600, 400)); // B-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 600), 600, 400)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 600), 800, 200)); // C-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 200, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 400, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 600, 400)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 800, 200)); // C-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 800, 200)); // Y-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 600, 400)); // D-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 400, 600)); // E-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 200, 800)); // F-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 200, 800)); // A-F has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 600, 1000), 400, 600)); // A-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 400, 600)); // B-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 1000), 600, 400)); // B-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 600), 600, 400)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 600), 800, 200)); // C-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 200, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 400, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 600, 400)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 800, 200)); // C-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 800, 200)); // Y-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 600, 400)); // D-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 400, 600)); // E-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 200, 800)); // F-X has #1
         }
 
         /// <summary>
@@ -3745,20 +3746,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 800, 800)); // A-F has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 600, 600)); // A-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 600, 600)); // B-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 400, 400)); // B-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 600, 0), 400, 400)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 600, 0), 200, 200)); // C-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 800, 800)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 600, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 400, 400)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 200, 200)); // C-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 200, 200)); // Y-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 400, 400)); // D-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 600, 600)); // E-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 800, 800)); // F-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 800, 800)); // A-F has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 400), 600, 600)); // A-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 600, 600)); // B-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 0), 400, 400)); // B-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 600, 0), 400, 400)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 600, 0), 200, 200)); // C-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 800, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 600, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 400, 400)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 200, 200)); // C-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 200, 200)); // Y-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 400, 400)); // D-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 600, 600)); // E-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 800, 800)); // F-X has #1
         }
 
         [Test]
@@ -3816,18 +3817,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 400), 300, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 400), 300, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 0), 300, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 0), 500, 300)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 1000), 300, 500)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 1000), 500, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 300, 500)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 300)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 300, 300)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 500, 300)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 300)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 500)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 400), 300, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 400), 300, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 0), 300, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 0), 500, 300)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 1000), 300, 500)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 1000), 500, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 300, 500)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 300)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 300, 300)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 500, 300)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 300)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 500)); // D-X has #1
         }
 
         /// <summary>
@@ -3889,18 +3890,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 1000), 500, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 1000), 300, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 600), 300, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 600), 300, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 0), 500, 700)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 0), 300, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 500, 700)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 300, 700)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 300, 700)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 300, 500)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 500)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 700)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 1000), 500, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 1000), 300, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 600), 300, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 600), 300, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 0), 500, 700)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 0), 300, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 500, 700)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 300, 700)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 300, 700)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 300, 500)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 500)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 700)); // D-X has #1
         }
 
         /// <summary>
@@ -3962,18 +3963,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 600), 700, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 600), 700, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 1000), 700, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 1000), 500, 700)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 0), 700, 500)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 0), 500, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 700, 500)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 700)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 700, 700)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 500, 700)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 700)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 500)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 600), 700, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 600), 700, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 1000), 700, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 1000), 500, 700)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 0), 700, 500)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 0), 500, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 700, 500)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 700)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 700, 700)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 500, 700)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 700)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 500)); // D-X has #1
         }
 
         /// <summary>
@@ -4035,18 +4036,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 0), 500, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 0), 700, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 400), 700, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 400), 700, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 1000), 500, 300)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 1000), 700, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 500, 300)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 700, 300)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 700, 300)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 700, 500)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 500)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 300)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 0), 500, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 0), 700, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 400), 700, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 400), 700, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 1000), 500, 300)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 1000), 700, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 500, 300)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 700, 300)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 700, 300)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 700, 500)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 500)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 300)); // D-X has #1
         }
 
         [Test]
@@ -4105,19 +4106,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 0, 600), 100, 800)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 0, 600), 100, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 300, 0), 100, 400)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 300, 0), 500, 400)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 700, 1000), 100, 800)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 700, 1000), 500, 400)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 100, 800)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 100, 400)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 400)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 500, 400)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 400)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 500, 400)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 100, 800)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 0, 600), 100, 800)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 0, 600), 100, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 300, 0), 100, 400)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 300, 0), 500, 400)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 700, 1000), 100, 800)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 600, 700, 1000), 500, 400)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 100, 800)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 100, 400)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 400)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 500, 400)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 400)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 500, 400)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 100, 800)); // D-X has #1
         }
 
         /// <summary>
@@ -4180,19 +4181,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 600, 1000), 800, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 600, 1000), 400, 900)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 0, 700), 400, 900)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 0, 700), 400, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 1000, 300), 800, 900)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 1000, 300), 400, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 800, 900)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 400, 900)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 400, 900)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 400, 500)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 500)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 400, 500)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 800, 900)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 600, 1000), 800, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 600, 1000), 400, 900)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 0, 700), 400, 900)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 0, 700), 400, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 1000, 300), 800, 900)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 700, 1000, 300), 400, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 800, 900)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 400, 900)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 400, 900)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 400, 500)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 400, 500)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 400, 500)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 800, 900)); // D-X has #1
         }
 
         /// <summary>
@@ -4255,19 +4256,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 1000, 400), 900, 200)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 1000, 400), 900, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 700, 1000), 900, 600)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 700, 1000), 500, 600)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 300, 0), 900, 200)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 300, 0), 500, 600)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 900, 200)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 900, 600)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 600)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 500, 600)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 600)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 500, 600)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 900, 200)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 1000, 400), 900, 200)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 1000, 400), 900, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 700, 1000), 900, 600)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 700, 1000), 500, 600)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 300, 0), 900, 200)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 400, 300, 0), 500, 600)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 900, 200)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 900, 600)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 600)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 500, 600)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 600)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 500, 600)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 900, 200)); // D-X has #1
         }
 
         /// <summary>
@@ -4330,19 +4331,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 400, 0), 200, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 400, 0), 600, 100)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 1000, 300), 600, 100)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 1000, 300), 600, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 0, 700), 200, 100)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 0, 700), 600, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 200, 100)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 600, 100)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 600, 100)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 600, 500)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 500)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 600, 500)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 200, 100)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 400, 0), 200, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 400, 0), 600, 100)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 1000, 300), 600, 100)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 1000, 300), 600, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 0, 700), 200, 100)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 300, 0, 700), 600, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 200, 100)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 600, 100)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 600, 100)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 600, 500)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 600, 500)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 600, 500)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 200, 100)); // D-X has #1
         }
 
         /// <summary>
@@ -4405,19 +4406,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 1000, 600), 900, 800)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 1000, 600), 900, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 700, 0), 900, 400)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 700, 0), 500, 400)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 300, 1000), 900, 800)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 300, 1000), 500, 400)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 600), 900, 800)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 0), 900, 400)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 700, 0), 900, 400)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 0, 0), 500, 400)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 500, 400)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 300, 1000), 500, 400)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 1000), 900, 800)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 1000, 600), 900, 800)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 1000, 600), 900, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 700, 0), 900, 400)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 700, 0), 500, 400)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 300, 1000), 900, 800)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 600, 300, 1000), 500, 400)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 600), 900, 800)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 0), 900, 400)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 700, 0), 900, 400)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 0, 0), 500, 400)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 500, 400)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 300, 1000), 500, 400)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 1000), 900, 800)); // D-X has #1
         }
 
         /// <summary>
@@ -4480,19 +4481,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 600, 0), 800, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 600, 0), 400, 100)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 0, 300), 400, 100)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 0, 300), 400, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 1000, 700), 800, 100)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 1000, 700), 400, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 600, 0), 800, 100)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 0), 400, 100)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 300), 400, 100)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 1000), 400, 500)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 400, 500)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 700), 400, 500)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 0), 800, 100)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 600, 0), 800, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 600, 0), 400, 100)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 0, 300), 400, 100)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 0, 300), 400, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 1000, 700), 800, 100)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 300, 1000, 700), 400, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 600, 0), 800, 100)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 0), 400, 100)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 300), 400, 100)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 1000), 400, 500)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 400, 500)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 700), 400, 500)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 0), 800, 100)); // D-X has #1
         }
 
         /// <summary>
@@ -4555,19 +4556,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 0, 400), 100, 200)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 0, 400), 100, 600)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 300, 1000), 100, 600)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 300, 1000), 500, 600)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 700, 0), 100, 200)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 700, 0), 500, 600)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 400), 100, 200)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 1000), 100, 600)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 300, 1000), 100, 600)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 1000), 500, 600)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 500, 600)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 700, 0), 500, 600)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 0, 0), 100, 200)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 0, 400), 100, 200)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 0, 400), 100, 600)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 300, 1000), 100, 600)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 300, 1000), 500, 600)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 700, 0), 100, 200)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 400, 700, 0), 500, 600)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 400), 100, 200)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 1000), 100, 600)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 300, 1000), 100, 600)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 1000), 500, 600)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 500, 600)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 700, 0), 500, 600)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 0, 0), 100, 200)); // D-X has #1
         }
 
         /// <summary>
@@ -4630,19 +4631,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 400, 1000), 200, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 400, 1000), 600, 900)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 1000, 700), 600, 900)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 1000, 700), 600, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 0, 300), 200, 900)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 0, 300), 600, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 400, 1000), 200, 900)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 1000), 600, 900)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 700), 600, 900)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 0), 600, 500)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 600, 500)); // W-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 300), 600, 500)); // Z-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 1000), 200, 900)); // D-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 400, 1000), 200, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 400, 1000), 600, 900)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 1000, 700), 600, 900)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 1000, 700), 600, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 0, 300), 200, 900)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 700, 0, 300), 600, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 400, 1000), 200, 900)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 1000), 600, 900)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 700), 600, 900)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 0), 600, 500)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 600, 500)); // W-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 300), 600, 500)); // Z-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 1000), 200, 900)); // D-X has #1
         }
 
         [Test]
@@ -4699,17 +4700,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 500, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 300, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 700, 500)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 300, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 500)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 500)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 500, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 300, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 700, 500)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 300, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 500)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 500)); // D-X has #3
         }
 
         /// <summary>
@@ -4770,17 +4771,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 300, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 500, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 500, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 500, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 300)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 500, 700)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 300, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 500, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 500, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 500, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 300)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 500, 700)); // D-X has #3
         }
 
         /// <summary>
@@ -4841,17 +4842,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 300, 500)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 700, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 500)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 500)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 300, 500)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 700, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 500)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 500)); // D-X has #3
         }
 
         /// <summary>
@@ -4912,17 +4913,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 500, 700)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 500, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 700)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 500, 300)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 500, 700)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 500, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 700)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 500, 300)); // D-X has #3
         }
 
         [Test]
@@ -4981,19 +4982,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 500, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 300, 300)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 500, 100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 700, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 1000), 700, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 1000), 300, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 300)); // X-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 300)); // Y-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 800, 0), 500, 100)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 700, 300)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 300)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 300)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 300)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 500, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 300, 300)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 500, 100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 700, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 1000), 700, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 1000), 300, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 300)); // X-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 300)); // Y-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 800, 0), 500, 100)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 700, 300)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 300)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 300)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 300)); // D-X has #3
         }
 
         /// <summary>
@@ -5056,19 +5057,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 100, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 300, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 100, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 300, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 1000, 500), 300, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 1000, 500), 300, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 700)); // X-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 300, 700)); // Y-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 200), 100, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 300)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 300)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 300, 300)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 300, 700)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 100, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 300, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 100, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 300, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 1000, 500), 300, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 1000, 500), 300, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 700)); // X-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 300, 700)); // Y-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 200), 100, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 300)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 300)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 300, 300)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 300, 700)); // D-X has #3
         }
 
         /// <summary>
@@ -5131,19 +5132,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 500, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 700, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 500, 900)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 300, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 0), 300, 700)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 0), 700, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 700)); // X-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 700)); // Y-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 200, 1000), 500, 900)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 300, 700)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 700)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 700)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 700)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 500, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 700, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 500, 900)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 300, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 0), 300, 700)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 0), 700, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 700)); // X-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 700)); // Y-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 200, 1000), 500, 900)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 300, 700)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 700)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 700)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 700)); // D-X has #3
         }
 
         /// <summary>
@@ -5206,19 +5207,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 900, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 700, 300)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 900, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 700, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 0, 500), 700, 700)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 0, 500), 700, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 300)); // X-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 700, 300)); // Y-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 800), 900, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 700)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 700)); // W-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 700, 700)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 700, 300)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 900, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 700, 300)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 900, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 700, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 0, 500), 700, 700)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 0, 500), 700, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 300)); // X-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 700, 300)); // Y-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 800), 900, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 700)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 700)); // W-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 700, 700)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 700, 300)); // D-X has #3
         }
 
         [Test]
@@ -5277,19 +5278,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 200), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 200), 300, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 200), 500, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 200), 700, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 700, 700)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 300, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 300, 700)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 500, 500)); // B-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 500, 500)); // W-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 700, 700)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 700)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 700)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 200), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 200), 300, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 200), 500, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 200), 700, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 700, 700)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 300, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 300, 700)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 500, 500)); // B-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 500, 500)); // W-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 700, 700)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 700)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 700)); // D-X has #3
         }
 
         /// <summary>
@@ -5352,19 +5353,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 1000), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 1000), 700, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 0), 500, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 0), 700, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 700, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 700, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 700, 700)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 500, 500)); // B-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 500, 500)); // W-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 700, 300)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 300)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 700)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 1000), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 1000), 700, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 0), 500, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 200, 0), 700, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 700, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 700, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 700, 700)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 500, 500)); // B-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 500, 500)); // W-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 700, 300)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 300)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 700)); // D-X has #3
         }
 
         /// <summary>
@@ -5427,19 +5428,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 800), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 800), 700, 300)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 800), 500, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 800), 300, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 300, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 700, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 700, 300)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 500, 500)); // B-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 500, 500)); // W-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 300, 300)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 300)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 300)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 800), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 800), 700, 300)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 800), 500, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 800), 300, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 300, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 700, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 700, 300)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 500, 500)); // B-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 500, 500)); // W-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 300, 300)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 300)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 300)); // D-X has #3
         }
 
         /// <summary>
@@ -5502,19 +5503,19 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 0), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 0), 300, 300)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 1000), 500, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 1000), 300, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 300, 700)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 300, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 300, 300)); // X-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 500, 500)); // B-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // Y-W has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 500, 500)); // W-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 300, 700)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 700)); // Z-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 300)); // D-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 0), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 0), 300, 300)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 1000), 500, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 800, 1000), 300, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 300, 700)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 300, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 300, 300)); // X-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 500, 500)); // B-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // Y-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 500, 500)); // W-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 300, 700)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 700)); // Z-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 300)); // D-X has #3
         }
 
         [Test]
@@ -5577,26 +5578,26 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 400), 500, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 400), 300, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 400), 500, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 400), 500, 300)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 600), 500, 500)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 600), 700, 500)); // C-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 600), 500, 500)); // D-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 600), 500, 700)); // D-A has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 1000), 300, 500)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 1000), 500, 700)); // A-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 0), 300, 500)); // B-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 0), 500, 300)); // B-F has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 0), 500, 300)); // C-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 0), 700, 500)); // C-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 1000), 700, 500)); // D-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 1000), 500, 700)); // D-H has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // E-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // F-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // G-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // H-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 400), 500, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 400, 400), 300, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 400), 500, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 400), 500, 300)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 600), 500, 500)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 600, 600), 700, 500)); // C-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 600), 500, 500)); // D-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 600), 500, 700)); // D-A has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 1000), 300, 500)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 1000), 500, 700)); // A-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 0), 300, 500)); // B-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 0), 500, 300)); // B-F has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 0), 500, 300)); // C-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 0), 700, 500)); // C-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 1000), 700, 500)); // D-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 1000), 500, 700)); // D-H has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // E-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // F-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // G-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // H-E has #5
         }
 
         [Test]
@@ -5663,30 +5664,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 200), 500, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 200), 300, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 600, 200), 500, 300)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 600, 200), 500, 100)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 600, 400), 500, 300)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 600, 400), 700, 300)); // C-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 400), 500, 300)); // D-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 400), 500, 500)); // D-A has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 800), 300, 300)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 800), 500, 500)); // A-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 200, 0), 300, 300)); // B-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 200, 0), 500, 100)); // B-F has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 800, 0), 500, 100)); // C-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 800, 0), 700, 300)); // C-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 800), 700, 300)); // D-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 800), 500, 500)); // D-H has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 500, 500)); // X-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 300, 300)); // E-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 300)); // Y-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 800, 0), 500, 100)); // F-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 700, 300)); // G-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 700, 300)); // W-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 500, 500)); // H-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // Z-X has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 200), 500, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 200), 300, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 600, 200), 500, 300)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 600, 200), 500, 100)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 600, 400), 500, 300)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 600, 400), 700, 300)); // C-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 400), 500, 300)); // D-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 400), 500, 500)); // D-A has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 800), 300, 300)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 800), 500, 500)); // A-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 200, 0), 300, 300)); // B-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 200, 200, 0), 500, 100)); // B-F has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 800, 0), 500, 100)); // C-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 200, 800, 0), 700, 300)); // C-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 800), 700, 300)); // D-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 800), 500, 500)); // D-H has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 500, 500)); // X-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 300, 300)); // E-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 300)); // Y-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 800, 0), 500, 100)); // F-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 700, 300)); // G-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 700, 300)); // W-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 500, 500)); // H-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // Z-X has #5
         }
 
         /// <summary>
@@ -5757,30 +5758,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 600), 300, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 600), 300, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 200, 400), 300, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 200, 400), 100, 500)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 400, 400), 300, 500)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 400, 400), 300, 300)); // C-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 600), 300, 500)); // D-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 600), 500, 500)); // D-A has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 800, 1000), 300, 700)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 800, 1000), 500, 500)); // A-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 0, 800), 300, 700)); // B-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 0, 800), 100, 500)); // B-F has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 0, 200), 100, 500)); // C-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 0, 200), 300, 300)); // C-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 800, 0), 300, 300)); // D-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 800, 0), 500, 500)); // D-H has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 500, 500)); // X-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 300, 700)); // E-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 300, 700)); // Y-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 200), 100, 500)); // F-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 300)); // G-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 300, 300)); // W-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 500, 500)); // H-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // Z-X has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 600), 300, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 600), 300, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 200, 400), 300, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 200, 400), 100, 500)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 400, 400), 300, 500)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 400, 400), 300, 300)); // C-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 600), 300, 500)); // D-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 400, 600), 500, 500)); // D-A has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 800, 1000), 300, 700)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 800, 1000), 500, 500)); // A-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 0, 800), 300, 700)); // B-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 600, 0, 800), 100, 500)); // B-F has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 0, 200), 100, 500)); // C-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 400, 0, 200), 300, 300)); // C-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 800, 0), 300, 300)); // D-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 800, 0), 500, 500)); // D-H has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 500, 500)); // X-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 300, 700)); // E-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 300, 700)); // Y-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 200), 100, 500)); // F-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 300)); // G-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 300, 300)); // W-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 500, 500)); // H-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // Z-X has #5
         }
 
         /// <summary>
@@ -5851,30 +5852,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 800), 500, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 800), 700, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 400, 800), 500, 700)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 400, 800), 500, 900)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 400, 600), 500, 700)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 400, 600), 300, 700)); // C-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 600), 500, 700)); // D-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 600), 500, 500)); // D-A has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 200), 700, 700)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 200), 500, 500)); // A-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 800, 1000), 700, 700)); // B-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 800, 1000), 500, 900)); // B-F has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 200, 1000), 500, 900)); // C-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 200, 1000), 300, 700)); // C-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 200), 300, 700)); // D-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 200), 500, 500)); // D-H has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 500, 500)); // X-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 700, 700)); // E-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 700)); // Y-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 200, 1000), 500, 900)); // F-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 300, 700)); // G-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 300, 700)); // W-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 500, 500)); // H-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Z-X has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 800), 500, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 800), 700, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 400, 800), 500, 700)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 400, 800), 500, 900)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 400, 600), 500, 700)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 400, 600), 300, 700)); // C-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 600), 500, 700)); // D-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 600), 500, 500)); // D-A has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 200), 700, 700)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 200), 500, 500)); // A-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 800, 1000), 700, 700)); // B-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 800, 800, 1000), 500, 900)); // B-F has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 200, 1000), 500, 900)); // C-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 800, 200, 1000), 300, 700)); // C-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 200), 300, 700)); // D-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 200), 500, 500)); // D-H has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 500, 500)); // X-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 700, 700)); // E-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 700)); // Y-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 200, 1000), 500, 900)); // F-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 300, 700)); // G-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 300, 700)); // W-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 500, 500)); // H-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // Z-X has #5
         }
 
         /// <summary>
@@ -5945,30 +5946,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 400), 700, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 400), 700, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 800, 600), 700, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 800, 600), 900, 500)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 600, 600), 700, 500)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 600, 600), 700, 700)); // C-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 400), 700, 500)); // D-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 400), 500, 500)); // D-A has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 200, 0), 700, 300)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 200, 0), 500, 500)); // A-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 1000, 200), 700, 300)); // B-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 1000, 200), 900, 500)); // B-F has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 1000, 800), 900, 500)); // C-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 1000, 800), 700, 700)); // C-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 200, 1000), 700, 700)); // D-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 200, 1000), 500, 500)); // D-H has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 500, 500)); // X-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 700, 300)); // E-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 700, 300)); // Y-F has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 800), 900, 500)); // F-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 700)); // G-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 700, 700)); // W-H has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 500, 500)); // H-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // Z-X has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 400), 700, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 400), 700, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 800, 600), 700, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 800, 600), 900, 500)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 600, 600), 700, 500)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 600, 600), 700, 700)); // C-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 400), 700, 500)); // D-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 600, 400), 500, 500)); // D-A has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 200, 0), 700, 300)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 200, 0), 500, 500)); // A-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 1000, 200), 700, 300)); // B-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 400, 1000, 200), 900, 500)); // B-F has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 1000, 800), 900, 500)); // C-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 600, 1000, 800), 700, 700)); // C-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 200, 1000), 700, 700)); // D-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 200, 1000), 500, 500)); // D-H has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 500, 500)); // X-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 700, 300)); // E-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 700, 300)); // Y-F has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 800), 900, 500)); // F-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 700)); // G-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 700, 700)); // W-H has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 500, 500)); // H-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // Z-X has #5
         }
 
         [Test]
@@ -6030,22 +6031,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 300, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 700, 700)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 300, 700)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 300, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 300, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 700, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 700, 300)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 700, 700)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 700)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 300)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 300)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 300)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 300)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 700)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 700)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 300, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 700, 700)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 300, 700)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 300, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 300, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 700, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 700, 300)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 700, 700)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 700)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 300)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 300)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 300)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 300)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 700)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 700)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 700)); // B-X has #1
         }
 
         [Test]
@@ -6107,22 +6108,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 400, 800)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 600, 800)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 400, 800)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 400, 200)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 400, 200)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 600, 200)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 600, 200)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 600, 800)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 400, 800)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 400, 200)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 400, 200)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 600, 200)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 600, 200)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 600, 800)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 600, 800)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 400, 800)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 400, 800)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 600, 800)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 400, 800)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 400, 200)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 400, 200)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 600, 200)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 600, 200)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 600, 800)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 400, 800)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 400, 200)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 400, 200)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 600, 200)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 600, 200)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 600, 800)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 600, 800)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 400, 800)); // B-X has #1
         }
 
         /// <summary>
@@ -6188,22 +6189,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 800, 600)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 800, 400)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 800, 600)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 200, 600)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 200, 600)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 200, 400)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 200, 400)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 800, 400)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 800, 600)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 200, 600)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 200, 600)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 200, 400)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 200, 400)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 800, 400)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 800, 400)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 800, 600)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 800, 600)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 500), 800, 400)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 800, 600)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 1000), 200, 600)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 200, 600)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 500), 200, 400)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 200, 400)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 500, 0), 800, 400)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 800, 600)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 200, 600)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 200, 600)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 200, 400)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 200, 400)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 800, 400)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 800, 400)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 800, 600)); // B-X has #1
         }
 
         [Test]
@@ -6261,18 +6262,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 500, 300)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 300, 500)); // A-C has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // A-E has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // B-C has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // D-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // E-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 500, 300)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 0), 300, 500)); // A-C has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // A-E has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 500)); // B-C has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 300)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // D-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // E-B has #1
         }
 
         [Test]
@@ -6334,22 +6335,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 100, 1000), 100, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 100, 1000), 500, 700)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 200), 100, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 200), 300, 100)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 0), 300, 100)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 0), 700, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 700), 700, 300)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 700), 500, 700)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 100, 500)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 100)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 100)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 700, 300)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 700), 700, 300)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 700)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 100, 1000), 500, 700)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 1000, 0, 1000), 100, 500)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 100, 1000), 100, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 100, 1000), 500, 700)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 200), 100, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 200), 300, 100)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 0), 300, 100)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 600, 0), 700, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 700), 700, 300)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 700), 500, 700)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 100, 500)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 100)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 100)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 700, 300)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 700), 700, 300)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 500, 700)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 100, 1000), 500, 700)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 1000, 0, 1000), 100, 500)); // B-X has #1
         }
 
         /// <summary>
@@ -6415,22 +6416,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 900), 500, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 900), 700, 500)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 1000), 500, 900)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 1000), 100, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 400), 100, 700)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 400), 300, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 700, 0), 300, 300)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 700, 0), 700, 500)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 500, 900)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 100, 700)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 100, 700)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 300)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 700, 0), 300, 300)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 700, 500)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 900), 700, 500)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 900, 1000, 1000), 500, 900)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 900), 500, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 900), 700, 500)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 1000), 500, 900)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 200, 1000), 100, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 400), 100, 700)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 400), 300, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 700, 0), 300, 300)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 700, 0), 700, 500)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 500, 900)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 100, 700)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 100, 700)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 300)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 700, 0), 300, 300)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 700, 500)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 900), 700, 500)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 900, 1000, 1000), 500, 900)); // B-X has #1
         }
 
         /// <summary>
@@ -6496,22 +6497,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 900, 0), 900, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 900, 0), 500, 300)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 800), 900, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 800), 700, 900)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 1000), 700, 900)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 1000), 300, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 300), 300, 700)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 300), 500, 300)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 900, 500)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 900)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 700, 900)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 300, 700)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 300), 300, 700)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 300)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 500, 300)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 1000, 0), 900, 500)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 900, 0), 900, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 900, 0), 500, 300)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 800), 900, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 800), 700, 900)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 1000), 700, 900)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 400, 1000), 300, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 300), 300, 700)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 300), 500, 300)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 900, 500)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 900)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 700, 900)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 300, 700)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 300), 300, 700)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 500, 300)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 500, 300)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 1000, 0), 900, 500)); // B-X has #1
         }
 
         /// <summary>
@@ -6577,22 +6578,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 100), 500, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 100), 300, 500)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 0), 500, 100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 0), 900, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 600), 900, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 600), 700, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 300, 1000), 700, 700)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 300, 1000), 300, 500)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 500, 100)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 900, 300)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 900, 300)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 700)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 300, 1000), 700, 700)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 300, 500)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 100), 300, 500)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 100, 0, 0), 500, 100)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 100), 500, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 100), 300, 500)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 0), 500, 100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 800, 0), 900, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 600), 900, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 600), 700, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 300, 1000), 700, 700)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 300, 1000), 300, 500)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 500, 100)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 900, 300)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 900, 300)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 700)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 300, 1000), 700, 700)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 300, 500)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 100), 300, 500)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 100, 0, 0), 500, 100)); // B-X has #1
         }
 
         /// <summary>
@@ -6658,22 +6659,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 900, 1000), 900, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 900, 1000), 500, 700)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 200), 900, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 200), 700, 100)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 0), 700, 100)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 0), 300, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 700), 300, 300)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 700), 500, 700)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 200), 900, 500)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 0), 700, 100)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 400, 0), 700, 100)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 0, 0), 300, 300)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 700), 300, 300)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 1000), 500, 700)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 900, 1000), 500, 700)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1000, 1000, 1000), 900, 500)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 900, 1000), 900, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 900, 1000), 500, 700)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 200), 900, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 1000, 200), 700, 100)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 0), 700, 100)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 400, 0), 300, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 700), 300, 300)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 400, 0, 700), 500, 700)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 200), 900, 500)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 0), 700, 100)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 400, 0), 700, 100)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 0, 0), 300, 300)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 700), 300, 300)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 1000), 500, 700)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 900, 1000), 500, 700)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1000, 1000, 1000), 900, 500)); // B-X has #1
         }
 
         /// <summary>
@@ -6739,22 +6740,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 100), 500, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 100), 700, 500)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 200, 0), 500, 100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 200, 0), 100, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 600), 100, 300)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 600), 300, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 700, 1000), 300, 700)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 700, 1000), 700, 500)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 200, 0), 500, 100)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 0, 0), 100, 300)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 600), 100, 300)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 1000), 300, 700)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 700, 1000), 300, 700)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 1000, 1000), 700, 500)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 100), 700, 500)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 100, 1000, 0), 500, 100)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 100), 500, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 1000, 100), 700, 500)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 200, 0), 500, 100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 200, 0), 100, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 600), 100, 300)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 0, 600), 300, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 700, 1000), 300, 700)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 400, 700, 1000), 700, 500)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 200, 0), 500, 100)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 0, 0), 100, 300)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 600), 100, 300)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 1000), 300, 700)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 700, 1000), 300, 700)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 1000, 1000), 700, 500)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 100), 700, 500)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 100, 1000, 0), 500, 100)); // B-X has #1
         }
 
         /// <summary>
@@ -6820,22 +6821,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 100, 0), 100, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 100, 0), 500, 300)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 800), 100, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 800), 300, 900)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 1000), 300, 900)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 1000), 700, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 300), 700, 700)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 300), 500, 300)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 800), 100, 500)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 1000), 300, 900)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 600, 1000), 300, 900)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 1000, 1000), 700, 700)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 300), 700, 700)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 0), 500, 300)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 100, 0), 500, 300)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 0, 0), 100, 500)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 100, 0), 100, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 100, 0), 500, 300)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 800), 100, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 0, 800), 300, 900)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 1000), 300, 900)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 600, 1000), 700, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 300), 700, 700)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 600, 1000, 300), 500, 300)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 800), 100, 500)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 1000), 300, 900)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 600, 1000), 300, 900)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 1000, 1000), 700, 700)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 300), 700, 700)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 0), 500, 300)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 100, 0), 500, 300)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 0, 0), 100, 500)); // B-X has #1
         }
 
         /// <summary>
@@ -6901,22 +6902,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 900), 500, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 900), 300, 500)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 800, 1000), 500, 900)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 800, 1000), 900, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 400), 900, 700)); // A-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 400), 700, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 300, 0), 700, 300)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 300, 0), 300, 500)); // A-E has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 800, 1000), 500, 900)); // X-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 1000, 1000), 900, 700)); // C-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 400), 900, 700)); // Y-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 0), 700, 300)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 300, 0), 700, 300)); // W-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 0, 0), 300, 500)); // E-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 900), 300, 500)); // Z-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 1000), 500, 900)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 900), 500, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 0, 900), 300, 500)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 800, 1000), 500, 900)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 800, 1000), 900, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 400), 900, 700)); // A-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 1000, 400), 700, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 300, 0), 700, 300)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 600, 300, 0), 300, 500)); // A-E has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 800, 1000), 500, 900)); // X-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 1000, 1000), 900, 700)); // C-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 400), 900, 700)); // Y-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 0), 700, 300)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 300, 0), 700, 300)); // W-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 0, 0), 300, 500)); // E-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 900), 300, 500)); // Z-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 1000), 500, 900)); // B-X has #1
         }
 
         [Test]
@@ -6982,27 +6983,27 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 700), 300, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 700), 700, 700)); // A-B has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 500, 900)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 300, 700)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 500, 900)); // B-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 700, 700)); // B-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 0, 400), 300, 700)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 0, 400), 300, 100)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 1000, 400), 700, 100)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 1000, 400), 700, 700)); // A-F has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 0), 300, 100)); // A-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 0), 700, 100)); // A-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 300, 700)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 300, 700)); // W-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 100)); // E-X has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 100)); // G-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 700, 100)); // Y-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 700, 700)); // F-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 700)); // Z-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 200, 1000), 500, 900)); // D-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 700), 300, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 700), 700, 700)); // A-B has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 500, 900)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 200, 1000), 300, 700)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 500, 900)); // B-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 800, 1000), 700, 700)); // B-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 0, 400), 300, 700)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 0, 400), 300, 100)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 1000, 400), 700, 100)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 1000, 400), 700, 700)); // A-F has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 0), 300, 100)); // A-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 400, 500, 0), 700, 100)); // A-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 300, 700)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 300, 700)); // W-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 100)); // E-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 100)); // G-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 700, 100)); // Y-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 700, 700)); // F-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 700)); // Z-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 200, 1000), 500, 900)); // D-C has #1
         }
 
         /// <summary>
@@ -7072,27 +7073,27 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 700, 500), 700, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 700, 500), 700, 300)); // A-B has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 900, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 700, 700)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 900, 500)); // B-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 700, 300)); // B-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 1000), 700, 700)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 1000), 100, 700)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 0), 100, 300)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 0), 700, 300)); // A-F has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 0, 500), 100, 700)); // A-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 0, 500), 100, 300)); // A-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 700)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 700, 700)); // W-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 100, 700)); // E-X has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 100, 700)); // X-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // G-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 100, 300)); // Y-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 700, 300)); // F-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 700, 300)); // Z-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 800), 900, 500)); // D-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 700, 500), 700, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 700, 500), 700, 300)); // A-B has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 900, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 800), 700, 700)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 900, 500)); // B-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 200), 700, 300)); // B-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 1000), 700, 700)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 1000), 100, 700)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 0), 100, 300)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 400, 0), 700, 300)); // A-F has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 0, 500), 100, 700)); // A-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 500, 0, 500), 100, 300)); // A-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 700, 700)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 700, 700)); // W-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 100, 700)); // E-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 100, 700)); // X-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // G-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 100, 300)); // Y-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 700, 300)); // F-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 700, 300)); // Z-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 800), 900, 500)); // D-C has #1
         }
 
         /// <summary>
@@ -7162,27 +7163,27 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 300), 700, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 300), 300, 300)); // A-B has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 500, 100)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 700, 300)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 500, 100)); // B-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 300, 300)); // B-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 1000, 600), 700, 300)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 1000, 600), 700, 900)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 0, 600), 300, 900)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 0, 600), 300, 300)); // A-F has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 1000), 700, 900)); // A-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 1000), 300, 900)); // A-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 700, 300)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 700, 300)); // W-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 900)); // E-X has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 900)); // X-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 900)); // G-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 300, 900)); // Y-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 300, 300)); // F-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 300)); // Z-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 800, 0), 500, 100)); // D-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 300), 700, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 300), 300, 300)); // A-B has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 500, 100)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 800, 0), 700, 300)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 500, 100)); // B-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 200, 0), 300, 300)); // B-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 1000, 600), 700, 300)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 1000, 600), 700, 900)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 0, 600), 300, 900)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 0, 600), 300, 300)); // A-F has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 1000), 700, 900)); // A-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 600, 500, 1000), 300, 900)); // A-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 700, 300)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 700, 300)); // W-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 900)); // E-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 900)); // X-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 900)); // G-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 300, 900)); // Y-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 300, 300)); // F-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 300)); // Z-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 800, 0), 500, 100)); // D-C has #1
         }
 
         /// <summary>
@@ -7252,27 +7253,27 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 300, 500), 300, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 300, 500), 300, 700)); // A-B has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 100, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 300, 300)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 100, 500)); // B-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 300, 700)); // B-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 0), 300, 300)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 0), 900, 300)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 1000), 900, 700)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 1000), 300, 700)); // A-F has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 1000, 500), 900, 300)); // A-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 1000, 500), 900, 700)); // A-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 300)); // C-W has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 300)); // W-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 900, 300)); // E-X has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 900, 300)); // X-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 900, 700)); // G-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 900, 700)); // Y-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 300, 700)); // F-Z has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 300, 700)); // Z-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 200), 100, 500)); // D-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 300, 500), 300, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 300, 500), 300, 700)); // A-B has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 100, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 200), 300, 300)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 100, 500)); // B-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 800), 300, 700)); // B-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 0), 300, 300)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 0), 900, 300)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 1000), 900, 700)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 600, 1000), 300, 700)); // A-F has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 1000, 500), 900, 300)); // A-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 500, 1000, 500), 900, 700)); // A-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 300, 300)); // C-W has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 300)); // W-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 900, 300)); // E-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 900, 300)); // X-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 900, 700)); // G-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 900, 700)); // Y-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 300, 700)); // F-Z has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 300, 700)); // Z-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 200), 100, 500)); // D-C has #1
         }
 
         [Test]
@@ -7336,25 +7337,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 500), 300, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 500), 700, 500)); // A-B has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // B-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // B-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 500)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 100)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 100)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 500)); // A-F has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 300, 100)); // A-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 700, 100)); // A-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 300), 300, 500)); // C-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 300, 100)); // E-X has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 100)); // G-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 700, 100)); // Y-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 700, 500)); // F-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // D-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 500), 300, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 500), 700, 500)); // A-B has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 500, 700)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 0, 1000), 300, 500)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // B-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // B-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 500)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 100)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 100)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 500)); // A-F has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 300, 100)); // A-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 700, 100)); // A-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 300), 300, 500)); // C-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 300, 100)); // E-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 100)); // G-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 700, 100)); // Y-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 700, 500)); // F-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 700)); // D-C has #1
         }
 
         /// <summary>
@@ -7422,25 +7423,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 500, 500), 500, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 500, 500), 500, 300)); // A-B has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // B-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // B-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 500, 700)); // A-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 100, 700)); // A-E has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 100, 300)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 500, 300)); // A-F has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 700)); // A-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 300)); // A-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 300, 1000), 500, 700)); // C-E has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 100, 700)); // E-X has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 100, 700)); // X-G has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // G-Y has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 300)); // Y-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 500, 300)); // F-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // D-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 500, 500), 500, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 500, 500), 500, 300)); // A-B has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 700, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 1000), 500, 700)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 700, 500)); // B-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 500, 1000, 0), 500, 300)); // B-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 500, 700)); // A-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 100, 700)); // A-E has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 100, 300)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 500, 300)); // A-F has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 700)); // A-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 300)); // A-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 300, 1000), 500, 700)); // C-E has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 100, 700)); // E-X has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 100, 700)); // X-G has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // G-Y has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 300)); // Y-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 500, 300)); // F-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 500)); // D-C has #1
         }
 
         [Test]
@@ -7509,30 +7510,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 700), 300, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 700), 700, 500)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 700), 300, 900)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 700), 300, 500)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 700), 700, 900)); // B-G has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 700), 700, 500)); // B-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 100)); // A-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 500)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 100)); // A-F has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 300, 100)); // A-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 700, 100)); // A-E has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 300, 900)); // B-H has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 700, 900)); // B-H has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 300, 900)); // W-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 300), 300, 500)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 300, 100)); // D-X has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 100)); // E-Y has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 700, 100)); // Y-F has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 700), 700, 500)); // F-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 700, 900)); // G-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 900)); // Z-H has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 900)); // H-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 700), 300, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 700), 700, 500)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 700), 300, 900)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 0, 700), 300, 500)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 700), 700, 900)); // B-G has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 1000, 700), 700, 500)); // B-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 0, 300), 300, 100)); // A-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 500)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 1000, 300), 700, 100)); // A-F has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 300, 100)); // A-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 300, 500, 0), 700, 100)); // A-E has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 300, 900)); // B-H has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 700, 500, 1000), 700, 900)); // B-H has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 300, 900)); // W-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 300), 300, 500)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 300, 100)); // D-X has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 700, 100)); // E-Y has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 700, 100)); // Y-F has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 700), 700, 500)); // F-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 1000), 700, 900)); // G-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 700, 900)); // Z-H has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 300, 900)); // H-W has #1
         }
 
         /// <summary>
@@ -7605,30 +7606,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 700, 500), 500, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 700, 500), 500, 300)); // A-B has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 1000), 900, 700)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 1000), 500, 700)); // B-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 0), 900, 300)); // B-G has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 0), 500, 300)); // B-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 500, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 100, 700)); // A-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 500, 300)); // A-F has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 100, 300)); // A-F has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 700)); // A-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 300)); // A-E has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 900, 700)); // B-H has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 900, 300)); // B-H has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 700)); // W-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 300, 1000), 500, 700)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 100, 700)); // D-X has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 100, 700)); // X-E has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // E-Y has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 300)); // Y-F has #6
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 700, 0), 500, 300)); // F-G has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 900, 300)); // G-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 900, 300)); // Z-H has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 900, 700)); // H-W has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 700, 500), 500, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 700, 500), 500, 300)); // A-B has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 1000), 900, 700)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 1000), 500, 700)); // B-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 0), 900, 300)); // B-G has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 700, 0), 500, 300)); // B-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 500, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 1000), 100, 700)); // A-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 500, 300)); // A-F has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 300, 0), 100, 300)); // A-F has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 700)); // A-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 500, 0, 500), 100, 300)); // A-E has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 900, 700)); // B-H has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 500, 1000, 500), 900, 300)); // B-H has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 900, 700)); // W-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 300, 1000), 500, 700)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 0, 1000), 100, 700)); // D-X has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 100, 700)); // X-E has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // E-Y has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 300)); // Y-F has #6
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 700, 0), 500, 300)); // F-G has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1000, 0), 900, 300)); // G-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 900, 300)); // Z-H has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 900, 700)); // H-W has #1
         }
 
         [Test]
@@ -7691,22 +7692,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 500), 0, 1000)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 500), 500, 500)); // A-B has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 500, 0), 0, 0)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 500, 0), 500, 500)); // B-C has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 500), 1000, 0)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 500), 500, 500)); // C-D has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 500, 1000), 1000, 1000)); // D-A has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 500, 1000), 500, 500)); // D-A has #5
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 0, 1000)); // X-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 0, 0)); // B-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 0, 0)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 1000, 0)); // C-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 1000, 0)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 1000, 1000)); // D-Z has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 1000, 1000)); // Z-A has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 0, 1000)); // A-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 500), 0, 1000)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 500), 500, 500)); // A-B has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 500, 0), 0, 0)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 500, 0), 500, 500)); // B-C has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 500), 1000, 0)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 500), 500, 500)); // C-D has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 500, 1000), 1000, 1000)); // D-A has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 500, 1000), 500, 500)); // D-A has #5
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 0, 1000)); // X-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 0, 0)); // B-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 0, 0)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 1000, 0)); // C-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 1000, 0)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 1000, 1000)); // D-Z has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 1000, 1000)); // Z-A has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 0, 1000)); // A-X has #1
         }
 
         [Test]
@@ -7762,15 +7763,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 1000), 300, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 1000), 500, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 0), 300, 100)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 0), 500, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 900)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 100)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 100)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // C-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 900)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 1000), 300, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 1000), 500, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 0), 300, 100)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 1000, 0), 500, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 900)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 100)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 100)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 500, 500)); // C-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 900)); // B-X has #1
         }
 
         /// <summary>
@@ -7830,15 +7831,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 1000, 0), 900, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 1000, 0), 500, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 0), 100, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 0), 500, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 900, 700)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 100, 700)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 700)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // C-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 1000, 0), 900, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 1000, 0), 500, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 0), 100, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 0), 500, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 900, 700)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 100, 700)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 700)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 500)); // C-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 700)); // B-X has #1
         }
 
         /// <summary>
@@ -7898,15 +7899,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 0), 700, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 0), 500, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 1000), 700, 900)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 1000), 500, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 900)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 900)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // C-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 100)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 0), 700, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 0), 500, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 1000), 700, 900)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 0, 1000), 500, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 900)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 900)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 500, 500)); // C-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 100)); // B-X has #1
         }
 
         /// <summary>
@@ -7966,15 +7967,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 0, 1000), 100, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 0, 1000), 500, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 1000), 900, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 1000), 500, 500)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 100, 300)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 900, 300)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 300)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // C-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 300)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 0, 1000), 100, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 0, 1000), 500, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 1000), 900, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 1000), 500, 500)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 100, 300)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 900, 300)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 300)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 500)); // C-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 300)); // B-X has #1
         }
 
         [Test]
@@ -8033,18 +8034,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 800, 1000), 100, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 800, 1000), 300, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 800, 0), 100, 100)); // D-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 800, 0), 300, 500)); // D-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 100, 900)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 100, 900)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 400), 300, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 100, 100)); // D-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 100, 100)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 300, 500)); // C-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 300, 500)); // Z-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 300, 500)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 800, 1000), 100, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 800, 1000), 300, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 800, 0), 100, 100)); // D-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 800, 0), 300, 500)); // D-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 100, 900)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 100, 900)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 400), 300, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 100, 100)); // D-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 800, 0), 100, 100)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 1000, 0), 300, 500)); // C-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 300, 500)); // Z-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 300, 500)); // W-B has #3
         }
 
         /// <summary>
@@ -8107,18 +8108,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 1000, 200), 900, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 1000, 200), 500, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 200), 100, 900)); // D-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 200), 500, 700)); // D-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 900, 900)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 900, 900)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 400, 1000), 500, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 100, 900)); // D-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 100, 900)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 500, 700)); // C-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 700)); // Z-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 500, 700)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 1000, 200), 900, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 1000, 200), 500, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 200), 100, 900)); // D-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 200), 500, 700)); // D-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 900, 900)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 900, 900)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 400, 1000), 500, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 100, 900)); // D-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 100, 900)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 500, 700)); // C-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 500, 700)); // Z-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 500, 700)); // W-B has #3
         }
 
         /// <summary>
@@ -8181,18 +8182,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 200, 0), 900, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 200, 0), 700, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 200, 1000), 900, 900)); // D-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 200, 1000), 700, 500)); // D-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 900, 100)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 900, 100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 600), 700, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 900, 900)); // D-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 900, 900)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 700, 500)); // C-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 700, 500)); // Z-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 700, 500)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 200, 0), 900, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 200, 0), 700, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 200, 1000), 900, 900)); // D-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 200, 1000), 700, 500)); // D-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 900, 100)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 900, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 600), 700, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 900, 900)); // D-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 200, 1000), 900, 900)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 0, 1000), 700, 500)); // C-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 700, 500)); // Z-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 700, 500)); // W-B has #3
         }
 
         /// <summary>
@@ -8255,18 +8256,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 0, 800), 100, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 0, 800), 500, 300)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 800), 900, 100)); // D-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 800), 500, 300)); // D-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 100, 100)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 100, 100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 600, 0), 500, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 900, 100)); // D-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 900, 100)); // Y-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 500, 300)); // C-Z has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 300)); // Z-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 500, 300)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 0, 800), 100, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 0, 800), 500, 300)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 800), 900, 100)); // D-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 800), 500, 300)); // D-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 100, 100)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 100, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 600, 0), 500, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 900, 100)); // D-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 800), 900, 100)); // Y-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 1000), 500, 300)); // C-Z has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 500, 300)); // Z-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 500, 300)); // W-B has #3
         }
 
         [Test]
@@ -8328,17 +8329,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 1000), 500, 600)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 1000), 400, 900)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 200), 500, 600)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 200), 400, 300)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 600), 400, 900)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 400, 300)); // A-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 400, 300)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 200), 400, 300)); // W-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 200, 1200, 1000), 500, 600)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1000, 1200, 1200), 400, 900)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 400, 900)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 1000), 500, 600)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 1000), 400, 900)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 200), 500, 600)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 1200, 200), 400, 300)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 600), 400, 900)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 400, 300)); // A-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 400, 300)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 200), 400, 300)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 200, 1200, 1000), 500, 600)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1000, 1200, 1200), 400, 900)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 400, 900)); // Z-X has #2
         }
 
         /// <summary>
@@ -8404,17 +8405,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 1000, 0), 600, 700)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 1000, 0), 900, 800)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 200, 0), 600, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 200, 0), 300, 800)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 600, 1200), 900, 800)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 0, 1200), 300, 800)); // A-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 800)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 800)); // W-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 600, 700)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1200, 0), 900, 800)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 800)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 1000, 0), 600, 700)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 1000, 0), 900, 800)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 200, 0), 600, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 200, 0), 300, 800)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 600, 1200), 900, 800)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 0, 1200), 300, 800)); // A-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 800)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 800)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 600, 700)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1200, 0), 900, 800)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 800)); // Z-X has #2
         }
 
         /// <summary>
@@ -8480,17 +8481,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 200), 700, 600)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 200), 800, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 1000), 700, 600)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 1000), 800, 900)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 600), 800, 300)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 1200, 1200), 800, 900)); // A-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 800, 900)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 1000), 800, 900)); // W-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 700, 600)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 800, 300)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 800, 300)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 200), 700, 600)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 200), 800, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 1000), 700, 600)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 0, 1000), 800, 900)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 600), 800, 300)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 1200, 1200), 800, 900)); // A-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 800, 900)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 1000), 800, 900)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 200), 700, 600)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 0), 800, 300)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 800, 300)); // Z-X has #2
         }
 
         /// <summary>
@@ -8556,17 +8557,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 200, 1200), 600, 500)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 200, 1200), 300, 400)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 1200), 600, 500)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 1200), 900, 400)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 400)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1200, 0), 900, 400)); // A-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 400)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 1000, 1200), 900, 400)); // W-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1200, 200, 1200), 600, 500)); // B-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1200, 0, 1200), 300, 400)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 400)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 200, 1200), 600, 500)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 200, 1200), 300, 400)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 1200), 600, 500)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 1200), 900, 400)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 400)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1200, 0), 900, 400)); // A-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 400)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 1000, 1200), 900, 400)); // W-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1200, 200, 1200), 600, 500)); // B-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1200, 0, 1200), 300, 400)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 400)); // Z-X has #2
         }
 
         [Test]
@@ -8629,18 +8630,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1200, 1100), 200, 600)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1200, 1100), 100, 900)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 100, 0, 500), 200, 600)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 100, 0, 500), 100, 300)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 100, 1200, 1100), 200, 600)); // C-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1100, 1200, 1200), 100, 900)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 100, 900)); // Z-X has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 700), 100, 900)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 500), 200, 600)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // D-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 100, 300)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 100), 100, 300)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1200, 1100), 200, 600)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 1200, 1100), 100, 900)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 100, 0, 500), 200, 600)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 100, 0, 500), 100, 300)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 100, 1200, 1100), 200, 600)); // C-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1100, 1200, 1200), 100, 900)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 100, 900)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 700), 100, 900)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 500), 200, 600)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 100, 300)); // D-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 100, 300)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 100), 100, 300)); // W-C has #3
         }
 
         /// <summary>
@@ -8707,18 +8708,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1200, 1100, 0), 600, 1000)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1200, 1100, 0), 900, 1100)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 500, 1200), 600, 1000)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 500, 1200), 300, 1100)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 1100, 0), 600, 1000)); // C-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 0, 1200, 0), 900, 1100)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 1100)); // Z-X has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 700, 1200), 900, 1100)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1200, 500, 1200), 600, 1000)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1200, 0, 1200), 300, 1100)); // D-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 1100)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 100, 0), 300, 1100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1200, 1100, 0), 600, 1000)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1200, 1100, 0), 900, 1100)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 500, 1200), 600, 1000)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 500, 1200), 300, 1100)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 0, 1100, 0), 600, 1000)); // C-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 0, 1200, 0), 900, 1100)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 1100)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 700, 1200), 900, 1100)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1200, 500, 1200), 600, 1000)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1200, 0, 1200), 300, 1100)); // D-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 1100)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 100, 0), 300, 1100)); // W-C has #3
         }
 
         /// <summary>
@@ -8785,18 +8786,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 500, 0, 100), 1000, 600)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 500, 0, 100), 1100, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1100, 1200, 700), 1000, 600)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1100, 1200, 700), 1100, 900)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1100, 0, 100), 1000, 600)); // C-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 100, 0, 0), 1100, 300)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 1100, 300)); // Z-X has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 500), 1100, 300)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 500, 1200, 700), 1000, 600)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 700, 1200, 1200), 1100, 900)); // D-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 1100, 900)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 1100), 1100, 900)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 500, 0, 100), 1000, 600)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 500, 0, 100), 1100, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1100, 1200, 700), 1000, 600)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1100, 1200, 700), 1100, 900)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1100, 0, 100), 1000, 600)); // C-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 100, 0, 0), 1100, 300)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1200, 0), 1100, 300)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 500), 1100, 300)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 500, 1200, 700), 1000, 600)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 700, 1200, 1200), 1100, 900)); // D-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 0, 1200), 1100, 900)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 1100), 1100, 900)); // W-C has #3
         }
 
         /// <summary>
@@ -8863,18 +8864,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 100, 1200), 600, 200)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 100, 1200), 300, 100)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 1200, 700, 0), 600, 200)); // C-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 1200, 700, 0), 900, 100)); // C-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 1200, 100, 1200), 600, 200)); // C-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 1200, 0, 1200), 300, 100)); // B-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 100)); // Z-X has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-A has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 700, 0), 600, 200)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1200, 0), 900, 100)); // D-Y has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 100)); // Y-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 1100, 1200), 900, 100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 100, 1200), 600, 200)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 100, 1200), 300, 100)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 1200, 700, 0), 600, 200)); // C-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 1200, 700, 0), 900, 100)); // C-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1100, 1200, 100, 1200), 600, 200)); // C-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 100, 1200, 0, 1200), 300, 100)); // B-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 0), 300, 100)); // Z-X has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 300, 100)); // X-A has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 700, 0), 600, 200)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 1200, 0), 900, 100)); // D-Y has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 1200), 900, 100)); // Y-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 1100, 1200), 900, 100)); // W-C has #3
         }
 
         [Test]
@@ -8932,18 +8933,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 600, 1000), 300, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 600, 1000), 700, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 1000, 600), 700, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 1000, 600), 900, 300)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 0, 0), 300, 900)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 0, 0), 900, 300)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 300, 900)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 900)); // X-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 900, 300)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 900, 300)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 700)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 700, 700)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 600, 1000), 300, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 600, 1000), 700, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 1000, 600), 700, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 1000, 600), 900, 300)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 0, 0), 300, 900)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 200, 0, 0), 900, 300)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 300, 900)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 900)); // X-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 900, 300)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 600), 900, 300)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 1000), 700, 700)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 700, 700)); // Z-B has #2
         }
 
         /// <summary>
@@ -9005,18 +9006,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 1000, 400), 900, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 1000, 400), 700, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 600, 0), 700, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 600, 0), 300, 100)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 0, 1000), 900, 700)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 0, 1000), 300, 100)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 900, 700)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 900, 700)); // X-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 100)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 100)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 700, 300)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 700, 300)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 1000, 400), 900, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 1000, 400), 700, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 600, 0), 700, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 600, 0), 300, 100)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 0, 1000), 900, 700)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 800, 0, 1000), 300, 100)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 900, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 900, 700)); // X-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 100)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 300, 100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1000, 0), 700, 300)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 700, 300)); // Z-B has #2
         }
 
         /// <summary>
@@ -9078,18 +9079,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 400, 0), 700, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 400, 0), 300, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 0, 400), 300, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 0, 400), 100, 700)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 1000, 1000), 700, 100)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 1000, 1000), 100, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 700, 100)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 100)); // X-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 100, 700)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 100, 700)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 300)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 300, 300)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 400, 0), 700, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 400, 0), 300, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 0, 400), 300, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 0, 400), 100, 700)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 1000, 1000), 700, 100)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 800, 1000, 1000), 100, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 700, 100)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 100)); // X-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 100, 700)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 400), 100, 700)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 0), 300, 300)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 300, 300)); // Z-B has #2
         }
 
         /// <summary>
@@ -9151,18 +9152,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 0, 600), 100, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 0, 600), 300, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 400, 1000), 300, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 400, 1000), 700, 900)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 1000, 0), 100, 300)); // A-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 1000, 0), 700, 900)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 100, 300)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 100, 300)); // X-D has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 900)); // D-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 700, 900)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 300, 700)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 300, 700)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 0, 600), 100, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 0, 600), 300, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 400, 1000), 300, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 400, 1000), 700, 900)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 1000, 0), 100, 300)); // A-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 200, 1000, 0), 700, 900)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 100, 300)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 100, 300)); // X-D has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 900)); // D-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 400, 1000), 700, 900)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 0, 1000), 300, 700)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 300, 700)); // Z-B has #2
         }
 
         [Test]
@@ -9219,16 +9220,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 100, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 500, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 700, 100)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 100, 700)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 700)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 100)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 100)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 500, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 500, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 100, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 1000), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 500, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 500), 700, 100)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 100, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 700)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 700, 100)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 700, 100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 500, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 500, 500)); // Z-B has #2
         }
 
         /// <summary>
@@ -9289,16 +9290,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 700, 900)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 500, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 100, 300)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 900)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 900)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 300)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 100, 300)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 500, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 700, 900)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 500), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 500, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 500, 0), 100, 300)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 500, 1000, 1000), 700, 900)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 900)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 100, 300)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 100, 300)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 500, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 500), 500, 500)); // Z-B has #2
         }
 
         /// <summary>
@@ -9359,16 +9360,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 900, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 500, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 300, 900)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 900, 300)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 300)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 900)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 900)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 500, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 500, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 900, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 0), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 500, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 500), 300, 900)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 0, 1000, 0), 900, 300)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 300)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 300, 900)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 300, 900)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 500, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 500, 0), 500, 500)); // Z-B has #2
         }
 
         /// <summary>
@@ -9429,16 +9430,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 300, 100)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 500, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 500, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 900, 700)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 100)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 700)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 900, 700)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 500, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 300, 100)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 500), 500, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 500, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 500, 1000), 900, 700)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 500, 0, 0), 300, 100)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 900, 700)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 500, 1000), 900, 700)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 500, 1000, 0, 1000), 500, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 500), 500, 500)); // Z-B has #2
         }
 
         [Test]
@@ -9496,17 +9497,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 700, 1000), 300, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 700, 1000), 700, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 400), 700, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 400), 900, 100)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 300, 700)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 700)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 700)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 900, 100)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 900, 100)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 700, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 700, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 700, 1000), 300, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 700, 1000), 700, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 400), 700, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 400), 900, 100)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 1000, 0, 1000), 300, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 0), 300, 700)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 200, 0), 300, 700)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 0, 1000, 0), 900, 100)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 400), 900, 100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 400, 1000, 1000), 700, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 700, 1000), 700, 500)); // Z-B has #2
         }
 
         /// <summary>
@@ -9568,17 +9569,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 1000, 300), 700, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 1000, 300), 500, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 400, 0), 500, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 400, 0), 100, 100)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 700, 700)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 700)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 700, 700)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 100, 100)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 100, 100)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 500, 300)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 300)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 1000, 300), 700, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 1000, 300), 500, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 400, 0), 500, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 400, 0), 100, 100)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 300, 1000, 1000), 700, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 0, 1000), 700, 700)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 800), 700, 700)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 800, 0, 0), 100, 100)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 400, 0), 100, 100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 0, 1000, 0), 500, 300)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 300), 500, 300)); // Z-B has #2
         }
 
         /// <summary>
@@ -9640,17 +9641,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 300, 0), 700, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 300, 0), 300, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 600), 300, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 600), 100, 900)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 700, 300)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 300)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 300)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 100, 900)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 100, 900)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 300, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 300, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 300, 0), 700, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 300, 0), 300, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 600), 300, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 600), 100, 900)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1000, 0), 700, 300)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 1000), 700, 300)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 800, 1000), 700, 300)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 1000, 0, 1000), 100, 900)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 600), 100, 900)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 300, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 300, 500)); // Z-B has #2
         }
 
         /// <summary>
@@ -9712,17 +9713,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 0, 700), 300, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 0, 700), 500, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 600, 1000), 500, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 600, 1000), 900, 900)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 300, 300)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 300)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 300, 300)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 900, 900)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 900, 900)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 500, 700)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 700)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 0, 700), 300, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 0, 700), 500, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 600, 1000), 500, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 600, 1000), 900, 900)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 700, 0, 0), 300, 300)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 1000, 0), 300, 300)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 1000, 200), 300, 300)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 200, 1000, 1000), 900, 900)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 600, 1000), 900, 900)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1000, 0, 1000), 500, 700)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 0, 700), 500, 700)); // Z-B has #2
         }
 
         /// <summary>
@@ -9784,17 +9785,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 300, 1000), 700, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 300, 1000), 300, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 400), 300, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 400), 100, 100)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 1000), 700, 700)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 700, 700)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 800, 0), 700, 700)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 0), 100, 100)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 400), 100, 100)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 1000), 300, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 300, 1000), 300, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 300, 1000), 700, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 300, 1000), 300, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 400), 300, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 400), 100, 100)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1000, 1000, 1000), 700, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 0), 700, 700)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 800, 0), 700, 700)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 800, 0, 0, 0), 100, 100)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 400), 100, 100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 400, 0, 1000), 300, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 300, 1000), 300, 500)); // Z-B has #2
         }
 
         /// <summary>
@@ -9856,17 +9857,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 1000, 700), 700, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 1000, 700), 500, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 400, 1000), 500, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 400, 1000), 100, 900)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 0), 700, 300)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 700, 300)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 200), 700, 300)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 1000), 100, 900)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 400, 1000), 100, 900)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 1000), 500, 700)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 700), 500, 700)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 1000, 700), 700, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 1000, 700), 500, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 400, 1000), 500, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 400, 1000), 100, 900)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 700, 1000, 0), 700, 300)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 0, 0), 700, 300)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 200), 700, 300)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 200, 0, 1000), 100, 900)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 400, 1000), 100, 900)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 400, 1000, 1000, 1000), 500, 700)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 700), 500, 700)); // Z-B has #2
         }
 
         /// <summary>
@@ -9928,17 +9929,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 700, 0), 300, 300)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 700, 0), 700, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 600), 700, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 600), 900, 900)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 0, 0), 300, 300)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 300, 300)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 200, 1000), 300, 300)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 1000), 900, 900)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 600), 900, 900)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 0), 700, 500)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 700, 0), 700, 500)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 700, 0), 300, 300)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 700, 0), 700, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 600), 700, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 600), 900, 900)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 700, 0, 0, 0), 300, 300)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 1000), 300, 300)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 200, 1000), 300, 300)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 200, 1000, 1000, 1000), 900, 900)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 600), 900, 900)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 600, 1000, 0), 700, 500)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 700, 0), 700, 500)); // Z-B has #2
         }
 
         /// <summary>
@@ -10000,17 +10001,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 0, 300), 300, 700)); // A-B has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 0, 300), 500, 300)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 600, 0), 500, 300)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 600, 0), 900, 100)); // A-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 1000), 300, 700)); // B-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 300, 700)); // X-Y has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 800), 300, 700)); // Y-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 0), 900, 100)); // A-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 600, 0), 900, 100)); // W-C has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 0), 500, 300)); // C-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 300), 500, 300)); // Z-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 0, 300), 300, 700)); // A-B has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 0, 300), 500, 300)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 600, 0), 500, 300)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 600, 0), 900, 100)); // A-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 1000), 300, 700)); // B-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1000, 1000, 1000), 300, 700)); // X-Y has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 1000, 1000, 800), 300, 700)); // Y-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 800, 1000, 0), 900, 100)); // A-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1000, 0, 600, 0), 900, 100)); // W-C has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 0, 0), 500, 300)); // C-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 0, 300), 500, 300)); // Z-B has #2
         }
 
         [Test]
@@ -10073,18 +10074,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 600, 1200), 100, 1100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 600, 1200), 700, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1200, 600), 700, 700)); // B-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1200, 600), 1100, 100)); // B-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 300), 100, 1100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 700, 700)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 700, 700)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1200, 0), 1100, 100)); // B-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 600), 1100, 100)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 1200, 1200), 700, 700)); // D-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 600, 1200), 700, 700)); // Z-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 0, 1200), 100, 1100)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 600, 1200), 100, 1100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 600, 1200), 700, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1200, 600), 700, 700)); // B-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1200, 600), 1100, 100)); // B-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 300), 100, 1100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 700, 700)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 700, 700)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 1200, 0), 1100, 100)); // B-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 600), 1100, 100)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 1200, 1200), 700, 700)); // D-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 600, 1200), 700, 700)); // Z-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 0, 1200), 100, 1100)); // C-X has #1
         }
 
         /// <summary>
@@ -10151,18 +10152,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1200, 1200, 600), 1100, 1100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1200, 1200, 600), 700, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 600, 0), 700, 500)); // B-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 600, 0), 100, 100)); // B-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 300, 1200), 1100, 1100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1200, 0, 1200), 700, 500)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 900), 700, 500)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 0), 100, 100)); // B-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 100, 100)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1200, 0), 700, 500)); // D-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 600), 700, 500)); // Z-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 1200, 1200), 1100, 1100)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1200, 1200, 600), 1100, 1100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1200, 1200, 600), 700, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 600, 0), 700, 500)); // B-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 600, 0), 100, 100)); // B-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 300, 1200), 1100, 1100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 1200, 0, 1200), 700, 500)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 900), 700, 500)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 0), 100, 100)); // B-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 100, 100)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1200, 0), 700, 500)); // D-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 600), 700, 500)); // Z-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 600, 1200, 1200), 1100, 1100)); // C-X has #1
         }
 
         /// <summary>
@@ -10229,18 +10230,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 900, 600, 0), 1100, 100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 900, 600, 0), 500, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1200, 0, 600), 500, 500)); // B-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1200, 0, 600), 100, 1100)); // B-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 900), 1100, 100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 900, 1200, 1200), 500, 500)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 900, 1200), 500, 500)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1200, 0, 1200), 100, 1100)); // B-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 600), 100, 1100)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 500, 500)); // D-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 500, 500)); // Z-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1200, 0), 1100, 100)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 900, 600, 0), 1100, 100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 900, 600, 0), 500, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1200, 0, 600), 500, 500)); // B-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1200, 0, 600), 100, 1100)); // B-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 900), 1100, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 900, 1200, 1200), 500, 500)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 900, 1200), 500, 500)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 1200, 0, 1200), 100, 1100)); // B-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 600), 100, 1100)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 500, 500)); // D-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 500, 500)); // Z-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 1200, 0), 1100, 100)); // C-X has #1
         }
 
         /// <summary>
@@ -10307,18 +10308,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 600), 100, 100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 600), 500, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 300, 600, 1200), 500, 700)); // B-D has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 300, 600, 1200), 1100, 1100)); // B-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 100, 100)); // X-A has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 1200, 0), 500, 700)); // A-Y has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 300), 500, 700)); // Y-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 300, 1200, 1200), 1100, 1100)); // B-W has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 600, 1200), 1100, 1100)); // W-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 0, 1200), 500, 700)); // D-Z has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 600), 500, 700)); // Z-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 100, 100)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 600), 100, 100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 600), 500, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 300, 600, 1200), 500, 700)); // B-D has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 300, 600, 1200), 1100, 1100)); // B-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 100, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 1200, 0), 500, 700)); // A-Y has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 0, 1200, 300), 500, 700)); // Y-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 300, 1200, 1200), 1100, 1100)); // B-W has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 1200, 1200, 600, 1200), 1100, 1100)); // W-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 1200, 0, 1200), 500, 700)); // D-Z has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 1200, 0, 600), 500, 700)); // Z-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 100, 100)); // C-X has #1
         }
 
         [Test]
@@ -10375,18 +10376,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 900), 400, 700)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 900), 700, 400)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 900), 100, 800)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 900), 400, 700)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 300), 700, 400)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 300), 800, 100)); // A-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 800, 100)); // A-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 300), 800, 100)); // W-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 300, 900, 900), 700, 400)); // D-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 300, 900), 400, 700)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 900, 0, 900), 100, 800)); // C-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 0), 100, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 900), 400, 700)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 900), 700, 400)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 900), 100, 800)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 900), 400, 700)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 300), 700, 400)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 300), 800, 100)); // A-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 800, 100)); // A-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 300), 800, 100)); // W-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 300, 900, 900), 700, 400)); // D-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 300, 900), 400, 700)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 900, 0, 900), 100, 800)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 0), 100, 800)); // X-A has #1
         }
 
         /// <summary>
@@ -10447,18 +10448,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 0), 700, 500)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 0), 400, 200)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 600), 800, 800)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 600), 700, 500)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 300, 0), 400, 200)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 300, 0), 100, 100)); // A-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 0), 100, 100)); // A-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 100)); // W-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 900, 0), 400, 200)); // D-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 600), 700, 500)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 600, 900, 900), 800, 800)); // C-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 900), 800, 800)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 0), 700, 500)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 0), 400, 200)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 600), 800, 800)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 900, 600), 700, 500)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 300, 0), 400, 200)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 300, 0), 100, 100)); // A-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 0), 100, 100)); // A-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 300, 0), 100, 100)); // W-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 300, 0, 900, 0), 400, 200)); // D-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 600), 700, 500)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 600, 900, 900), 800, 800)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 900), 800, 800)); // X-A has #1
         }
 
         /// <summary>
@@ -10519,18 +10520,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 0), 500, 200)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 0), 200, 500)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 600, 0), 800, 100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 600, 0), 500, 200)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 600), 200, 500)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 600), 100, 800)); // A-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 900), 100, 800)); // A-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 600), 100, 800)); // W-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 200, 500)); // D-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 500, 200)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 900, 0), 800, 100)); // C-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 900), 800, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 0), 500, 200)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 0), 200, 500)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 600, 0), 800, 100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 600, 0), 500, 200)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 600), 200, 500)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 600), 100, 800)); // A-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 0, 900), 100, 800)); // A-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 600), 100, 800)); // W-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 600, 0, 0), 200, 500)); // D-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 600, 0), 500, 200)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 0, 900, 0), 800, 100)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 900), 800, 100)); // X-A has #1
         }
 
         /// <summary>
@@ -10591,18 +10592,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 900), 200, 400)); // A-B has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 900), 500, 700)); // A-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 300), 100, 100)); // A-C has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 300), 200, 400)); // A-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 600, 900), 500, 700)); // A-D has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 600, 900), 800, 800)); // A-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 900), 800, 800)); // A-W has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 600, 900), 800, 800)); // W-D has #4
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 900, 0, 900), 500, 700)); // D-B has #3
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 300), 200, 400)); // B-C has #2
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 100, 100)); // C-X has #1
-            Assert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 100, 100)); // X-A has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 900), 200, 400)); // A-B has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 900), 500, 700)); // A-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 300), 100, 100)); // A-C has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 0, 300), 200, 400)); // A-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 600, 900), 500, 700)); // A-D has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 600, 900), 800, 800)); // A-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 0, 900, 900), 800, 800)); // A-W has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 900, 900, 600, 900), 800, 800)); // W-D has #4
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 600, 900, 0, 900), 500, 700)); // D-B has #3
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 900, 0, 300), 200, 400)); // B-C has #2
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 300, 0, 0), 100, 100)); // C-X has #1
+            ClassicAssert.IsTrue(EdgeHasSite(FindEdge(edges, 0, 0, 900, 0), 100, 100)); // X-A has #1
         }
 
     }

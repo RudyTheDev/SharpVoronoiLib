@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace SharpVoronoiLib.UnitTests
 {
@@ -45,12 +46,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
             
-            Assert.NotNull(newSites);
-            Assert.IsNotEmpty(newSites);
-            Assert.AreEqual(1, newSites.Count);
-            Assert.AreSame(originalSites[expectedRemainingSite], newSites[0]);
-            Assert.AreEqual(6, newSites[0].Points.Count());
-            Assert.AreEqual(6, newSites[0].Cell.Count());
+            ClassicAssert.NotNull(newSites);
+            ClassicAssert.IsNotEmpty(newSites);
+            ClassicAssert.AreEqual(1, newSites.Count);
+            ClassicAssert.AreSame(originalSites[expectedRemainingSite], newSites[0]);
+            ClassicAssert.AreEqual(6, newSites[0].Points.Count());
+            ClassicAssert.AreEqual(6, newSites[0].Cell.Count());
         }
         
         [TestCase(new[] { 0,1 }, new[] { 1, 2 }, new[] { 6, 4 }, new[] { 6, 4 })]
@@ -87,15 +88,15 @@ namespace SharpVoronoiLib.UnitTests
             
             // Assert
             
-            Assert.NotNull(newSites);
-            Assert.IsNotEmpty(newSites);
-            Assert.AreEqual(expectedRemainingSites.Length, newSites.Count);
+            ClassicAssert.NotNull(newSites);
+            ClassicAssert.IsNotEmpty(newSites);
+            ClassicAssert.AreEqual(expectedRemainingSites.Length, newSites.Count);
             foreach (int expectedRemainingSite in expectedRemainingSites)
-                Assert.IsTrue(newSites.Contains(originalSites[expectedRemainingSite]));
+                ClassicAssert.IsTrue(newSites.Contains(originalSites[expectedRemainingSite]));
             for (int i = 0; i < expectedRemainingPoints.Length; i++)
-                Assert.AreEqual(expectedRemainingPoints[i], originalSites[expectedRemainingSites[i]].Points.Count());
+                ClassicAssert.AreEqual(expectedRemainingPoints[i], originalSites[expectedRemainingSites[i]].Points.Count());
             for (int i = 0; i < expectedRemainingEdges.Length; i++)
-                Assert.AreEqual(expectedRemainingEdges[i], originalSites[expectedRemainingSites[i]].Cell.Count());
+                ClassicAssert.AreEqual(expectedRemainingEdges[i], originalSites[expectedRemainingSites[i]].Cell.Count());
         }
         
         [TestCase(new[] { 0,1 }, new[] { 1, 2 }, new[] { 6, 4 }, new[] { 6, 4 })]
@@ -157,15 +158,15 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
             
-            Assert.NotNull(newSites);
-            Assert.IsNotEmpty(newSites);
-            Assert.AreEqual(expectedRemainingSites.Length, newSites.Count);
+            ClassicAssert.NotNull(newSites);
+            ClassicAssert.IsNotEmpty(newSites);
+            ClassicAssert.AreEqual(expectedRemainingSites.Length, newSites.Count);
             foreach (int expectedRemainingSite in expectedRemainingSites)
-                Assert.IsTrue(newSites.Contains(originalSites[expectedRemainingSite]));
+                ClassicAssert.IsTrue(newSites.Contains(originalSites[expectedRemainingSite]));
             for (int i = 0; i < expectedRemainingPoints.Length; i++)
-                Assert.AreEqual(expectedRemainingPoints[i], originalSites[expectedRemainingSites[i]].Points.Count());
+                ClassicAssert.AreEqual(expectedRemainingPoints[i], originalSites[expectedRemainingSites[i]].Points.Count());
             for (int i = 0; i < expectedRemainingEdges.Length; i++)
-                Assert.AreEqual(expectedRemainingEdges[i], originalSites[expectedRemainingSites[i]].Cell.Count());
+                ClassicAssert.AreEqual(expectedRemainingEdges[i], originalSites[expectedRemainingSites[i]].Cell.Count());
         }
 
 
@@ -188,7 +189,7 @@ namespace SharpVoronoiLib.UnitTests
         }
         
         [Test]
-        [Timeout(100)] // todo: temp - it gets stuck
+        [CancelAfter(100)] // todo: temp - it gets stuck
         [Repeat(1)]
         public void RandomSites()
         {
@@ -210,7 +211,7 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
             
-            Assert.AreEqual(expectedSiteCount, sites.Count);
+            ClassicAssert.AreEqual(expectedSiteCount, sites.Count);
         }
 
         private VoronoiSiteMergeDecision RandomMergeDecision(ref int expectedSiteCount)
