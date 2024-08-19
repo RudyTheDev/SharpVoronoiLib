@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace SharpVoronoiLib
+﻿namespace SharpVoronoiLib
 {
-    interface FortuneEvent : IComparable<FortuneEvent>
+    internal interface FortuneEvent
     {
         double X { get; }
         double Y { get; }
