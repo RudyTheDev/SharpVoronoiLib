@@ -105,9 +105,10 @@ List<VoronoiEdge> edges = plane.Relax();
 
 # MonoGame example
 
-A very quick MonoGame is included in `MonoGameExample` project:
+A very simple MonoGame example is included in `MonoGameExample` project:
 
-TODO: IMG
+![SVL MG](https://github.com/user-attachments/assets/28dfb592-f6b1-4044-96a9-e32110c237a0)
+
 
 # Dependencies
 
