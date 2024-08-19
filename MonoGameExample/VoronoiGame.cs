@@ -148,8 +148,8 @@ public class VoronoiGame : Game
         
         plane.SetSites(sites);
         
-        plane.Tessellate();
+        _edges = plane.Tessellate();
         
-        _edges = plane.Relax();
+        //_edges = plane.Relax();
     }
 }

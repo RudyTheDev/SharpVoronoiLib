@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace SharpVoronoiLib
 {
@@ -20,14 +21,23 @@ namespace SharpVoronoiLib
             Count = 0;
         }
 
-        public bool Insert(T obj, bool checkForDuplicates)
+        public bool Insert(T obj, bool checkForDuplicates, Stopwatch? __stopwatch = null)
         {
             if (Count == Capacity)
                 return false; // todo: should this not be exception? this fails silently because nothing ever uses the result
             
-            if (checkForDuplicates && Contains(obj))
-                return false;
-            
+            if (checkForDuplicates)
+            {
+                __stopwatch?.Start();
+
+                bool contains = Contains(obj);
+
+                __stopwatch?.Stop();
+
+                if (contains)
+                    return false;
+            }
+
             items[Count] = obj;
             Count++;
             PercolateUp(Count - 1);
