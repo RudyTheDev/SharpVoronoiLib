@@ -11,6 +11,9 @@ namespace SharpVoronoiLib
 
             foreach (VoronoiSite site in sites)
             {
+                if (!site.Tesselated)
+                    return;
+                
                 VoronoiPoint centroid = site.Centroid;
 
                 if (fullStrength)

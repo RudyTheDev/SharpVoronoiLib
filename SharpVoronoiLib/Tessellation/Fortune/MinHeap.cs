@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 
 namespace SharpVoronoiLib
 {
@@ -21,13 +20,18 @@ namespace SharpVoronoiLib
             Count = 0;
         }
 
-        public bool Insert(T obj)
+        public bool Insert(T obj, bool checkForDuplicates)
         {
             if (Count == Capacity)
                 return false; // todo: should this not be exception? this fails silently because nothing ever uses the result
+            
+            if (checkForDuplicates && Contains(obj))
+                return false;
+            
             items[Count] = obj;
             Count++;
             PercolateUp(Count - 1);
+            
             return true;
         }
 
@@ -63,9 +67,9 @@ namespace SharpVoronoiLib
                 int right = 2 * index + 2;
                 int largest = index;
 
-                if (left < Count && Compare(left, largest) == Result.LeftLessThanRight)
+                if (left < Count && items[left].CompareTo(items[largest]) == -1)
                     largest = left;
-                if (right < Count && Compare(right, largest) == Result.LeftLessThanRight)
+                if (right < Count && items[right].CompareTo(items[largest]) == -1)
                     largest = right;
                 if (largest == index)
                     return;
@@ -82,7 +86,7 @@ namespace SharpVoronoiLib
                     return;
                 int parent = (index - 1) / 2;
 
-                if (Compare(parent, index) == Result.LeftLessThanRight)
+                if (items[parent].CompareTo(items[index]) == -1)
                     return;
 
                 Swap(index, parent);
@@ -90,23 +94,20 @@ namespace SharpVoronoiLib
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private Result Compare(int left, int right)
-        {
-            int compare = items[left].CompareTo(items[right]);
-            return compare < 0 ? Result.LeftLessThanRight : compare > 0 ? Result.RightLessThanLeft : Result.Equal;
-        }
-
         private void Swap(int left, int right)
         {
             (items[left], items[right]) = (items[right], items[left]);
         }
 
-        private enum Result
+        private bool Contains(T obj)
         {
-            LeftLessThanRight,
-            RightLessThanLeft,
-            Equal
+            // Unfortuantely, min heap isn't guaranteed any sort of sorting for leaves, so the value could be anywhere
+            
+            for (int i = 0; i < Count; i++)
+                if (items[i].CompareTo(obj) == 0)
+                    return true;
+
+            return false;        
         }
     }
 }
