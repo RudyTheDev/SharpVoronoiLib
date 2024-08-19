@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace SharpVoronoiLib.UnitTests
 {
@@ -35,9 +36,9 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
             
-            Assert.NotNull(edges);
-            Assert.IsNotEmpty(edges);
-            Assert.AreEqual(originalSites.Count, sites.Count);
+            ClassicAssert.NotNull(edges);
+            ClassicAssert.IsNotEmpty(edges);
+            ClassicAssert.AreEqual(originalSites.Count, sites.Count);
             // todo: check movement
         }
     }

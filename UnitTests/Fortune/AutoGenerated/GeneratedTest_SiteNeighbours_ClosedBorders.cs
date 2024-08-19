@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -115,8 +116,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         [Test]
@@ -167,8 +168,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -223,8 +224,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -279,8 +280,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -335,8 +336,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         [Test]
@@ -387,8 +388,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -443,8 +444,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -499,8 +500,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -555,8 +556,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         [Test]
@@ -607,8 +608,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -663,8 +664,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -719,8 +720,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -775,8 +776,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         [Test]
@@ -827,8 +828,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -883,8 +884,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -939,8 +940,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -995,8 +996,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -1051,8 +1052,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -1107,8 +1108,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -1163,8 +1164,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -1219,8 +1220,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         [Test]
@@ -1271,8 +1272,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -1327,8 +1328,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -1383,8 +1384,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         /// <summary>
@@ -1439,8 +1440,8 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(0, sites[0].Neighbours.Count());
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(0, sites[0].Neighbours.Count());
         }
 
         [Test]
@@ -1498,12 +1499,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -1565,12 +1566,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         [Test]
@@ -1628,12 +1629,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -1695,12 +1696,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         [Test]
@@ -1765,16 +1766,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -1843,16 +1844,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -1924,20 +1925,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -2013,20 +2014,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         [Test]
@@ -2082,12 +2083,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2147,12 +2148,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         [Test]
@@ -2210,12 +2211,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2277,12 +2278,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2344,12 +2345,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2411,12 +2412,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         [Test]
@@ -2472,12 +2473,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2537,12 +2538,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2602,12 +2603,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2667,12 +2668,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         [Test]
@@ -2729,12 +2730,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2795,12 +2796,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2861,12 +2862,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2927,12 +2928,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -2993,12 +2994,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -3059,12 +3060,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -3125,12 +3126,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         /// <summary>
@@ -3191,12 +3192,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
         }
 
         [Test]
@@ -3261,16 +3262,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -3339,16 +3340,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -3411,16 +3412,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -3487,16 +3488,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -3563,16 +3564,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -3639,16 +3640,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -3718,20 +3719,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -3805,20 +3806,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         [Test]
@@ -3883,18 +3884,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -3963,18 +3964,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4043,18 +4044,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4123,18 +4124,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -4200,18 +4201,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4281,18 +4282,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4362,18 +4363,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4443,18 +4444,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4524,18 +4525,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4605,18 +4606,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4686,18 +4687,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4767,18 +4768,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -4842,18 +4843,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -4921,18 +4922,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5000,18 +5001,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5079,18 +5080,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -5156,18 +5157,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5237,18 +5238,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5318,18 +5319,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5399,18 +5400,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -5476,18 +5477,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5557,18 +5558,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5638,18 +5639,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -5719,18 +5720,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -5809,32 +5810,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(4, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(3, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(3, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(4, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(3, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(3, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         [Test]
@@ -5917,32 +5918,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(4, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(3, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(3, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(4, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(3, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(3, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         /// <summary>
@@ -6029,32 +6030,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(4, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(3, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(3, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(4, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(3, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(3, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         /// <summary>
@@ -6141,32 +6142,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(4, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(3, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(3, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(4, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(3, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(3, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         /// <summary>
@@ -6253,32 +6254,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(4, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(3, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(3, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(4, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(3, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(3, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         [Test]
@@ -6350,22 +6351,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         [Test]
@@ -6437,22 +6438,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -6528,22 +6529,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         [Test]
@@ -6611,22 +6612,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         [Test]
@@ -6698,22 +6699,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -6789,22 +6790,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -6880,22 +6881,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -6971,22 +6972,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -7062,22 +7063,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -7153,22 +7154,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -7244,22 +7245,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -7335,22 +7336,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[3])); // 1 neighbours 4
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[0])); // 4 neighbours 1
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         [Test]
@@ -7430,28 +7431,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         /// <summary>
@@ -7535,28 +7536,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         /// <summary>
@@ -7640,28 +7641,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         /// <summary>
@@ -7745,28 +7746,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         [Test]
@@ -7844,28 +7845,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         /// <summary>
@@ -7947,28 +7948,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(3, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(2, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(3, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(3, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(2, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(3, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         [Test]
@@ -8054,32 +8055,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[3])); // 2 neighbours 4
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(3, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[4])); // 3 neighbours 5
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(3, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[1])); // 4 neighbours 2
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[5])); // 4 neighbours 6
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(2, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[2])); // 5 neighbours 3
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[5])); // 5 neighbours 6
-            Assert.NotNull(sites[5].Neighbours);
-            Assert.AreEqual(2, sites[5].Neighbours.Count());
-            Assert.IsTrue(sites[5].Neighbours.Contains(sites[3])); // 6 neighbours 4
-            Assert.IsTrue(sites[5].Neighbours.Contains(sites[4])); // 6 neighbours 5
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[3])); // 2 neighbours 4
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(3, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[4])); // 3 neighbours 5
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(3, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[1])); // 4 neighbours 2
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[5])); // 4 neighbours 6
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(2, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[2])); // 5 neighbours 3
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[5])); // 5 neighbours 6
+            ClassicAssert.NotNull(sites[5].Neighbours);
+            ClassicAssert.AreEqual(2, sites[5].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[5].Neighbours.Contains(sites[3])); // 6 neighbours 4
+            ClassicAssert.IsTrue(sites[5].Neighbours.Contains(sites[4])); // 6 neighbours 5
         }
 
         /// <summary>
@@ -8169,32 +8170,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[3])); // 2 neighbours 4
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(3, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[4])); // 3 neighbours 5
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(3, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[1])); // 4 neighbours 2
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[5])); // 4 neighbours 6
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(2, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[2])); // 5 neighbours 3
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[5])); // 5 neighbours 6
-            Assert.NotNull(sites[5].Neighbours);
-            Assert.AreEqual(2, sites[5].Neighbours.Count());
-            Assert.IsTrue(sites[5].Neighbours.Contains(sites[3])); // 6 neighbours 4
-            Assert.IsTrue(sites[5].Neighbours.Contains(sites[4])); // 6 neighbours 5
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[3])); // 2 neighbours 4
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(3, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[4])); // 3 neighbours 5
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(3, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[1])); // 4 neighbours 2
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[5])); // 4 neighbours 6
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(2, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[2])); // 5 neighbours 3
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[5])); // 5 neighbours 6
+            ClassicAssert.NotNull(sites[5].Neighbours);
+            ClassicAssert.AreEqual(2, sites[5].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[5].Neighbours.Contains(sites[3])); // 6 neighbours 4
+            ClassicAssert.IsTrue(sites[5].Neighbours.Contains(sites[4])); // 6 neighbours 5
         }
 
         [Test]
@@ -8269,24 +8270,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[4])); // 3 neighbours 5
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
-            Assert.NotNull(sites[4].Neighbours);
-            Assert.AreEqual(4, sites[4].Neighbours.Count());
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[2])); // 5 neighbours 3
-            Assert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[4])); // 1 neighbours 5
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[4])); // 2 neighbours 5
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[4])); // 3 neighbours 5
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[4])); // 4 neighbours 5
+            ClassicAssert.NotNull(sites[4].Neighbours);
+            ClassicAssert.AreEqual(4, sites[4].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[0])); // 5 neighbours 1
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[1])); // 5 neighbours 2
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[2])); // 5 neighbours 3
+            ClassicAssert.IsTrue(sites[4].Neighbours.Contains(sites[3])); // 5 neighbours 4
         }
 
         [Test]
@@ -8348,16 +8349,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -8423,16 +8424,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -8498,16 +8499,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -8573,16 +8574,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -8647,16 +8648,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -8725,16 +8726,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -8803,16 +8804,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -8881,16 +8882,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -8958,16 +8959,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         /// <summary>
@@ -9039,16 +9040,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         /// <summary>
@@ -9120,16 +9121,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         /// <summary>
@@ -9201,16 +9202,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         [Test]
@@ -9279,16 +9280,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         /// <summary>
@@ -9361,16 +9362,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         /// <summary>
@@ -9443,16 +9444,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         /// <summary>
@@ -9525,16 +9526,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(1, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(1, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
         }
 
         [Test]
@@ -9599,18 +9600,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -9679,18 +9680,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -9759,18 +9760,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -9839,18 +9840,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(2, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(2, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[2])); // 1 neighbours 3
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[0])); // 3 neighbours 1
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -9913,16 +9914,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -9989,16 +9990,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10065,16 +10066,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10141,16 +10142,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -10214,16 +10215,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10291,16 +10292,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10368,16 +10369,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10445,16 +10446,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10522,16 +10523,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10599,16 +10600,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10676,16 +10677,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10753,16 +10754,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -10831,16 +10832,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10913,16 +10914,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -10995,16 +10996,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         /// <summary>
@@ -11077,16 +11078,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(1, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(1, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
         }
 
         [Test]
@@ -11152,20 +11153,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -11235,20 +11236,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -11318,20 +11319,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
         /// <summary>
@@ -11401,20 +11402,20 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            Assert.NotNull(sites[0].Neighbours);
-            Assert.AreEqual(1, sites[0].Neighbours.Count());
-            Assert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
-            Assert.NotNull(sites[1].Neighbours);
-            Assert.AreEqual(2, sites[1].Neighbours.Count());
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
-            Assert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
-            Assert.NotNull(sites[2].Neighbours);
-            Assert.AreEqual(2, sites[2].Neighbours.Count());
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
-            Assert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
-            Assert.NotNull(sites[3].Neighbours);
-            Assert.AreEqual(1, sites[3].Neighbours.Count());
-            Assert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
+            ClassicAssert.NotNull(sites[0].Neighbours);
+            ClassicAssert.AreEqual(1, sites[0].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[0].Neighbours.Contains(sites[1])); // 1 neighbours 2
+            ClassicAssert.NotNull(sites[1].Neighbours);
+            ClassicAssert.AreEqual(2, sites[1].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[0])); // 2 neighbours 1
+            ClassicAssert.IsTrue(sites[1].Neighbours.Contains(sites[2])); // 2 neighbours 3
+            ClassicAssert.NotNull(sites[2].Neighbours);
+            ClassicAssert.AreEqual(2, sites[2].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[1])); // 3 neighbours 2
+            ClassicAssert.IsTrue(sites[2].Neighbours.Contains(sites[3])); // 3 neighbours 4
+            ClassicAssert.NotNull(sites[3].Neighbours);
+            ClassicAssert.AreEqual(1, sites[3].Neighbours.Count());
+            ClassicAssert.IsTrue(sites[3].Neighbours.Contains(sites[2])); // 4 neighbours 3
         }
 
     }

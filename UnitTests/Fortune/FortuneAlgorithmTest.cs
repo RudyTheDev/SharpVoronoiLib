@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using NUnit.Framework.Legacy;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
 
 namespace SharpVoronoiLib.UnitTests
@@ -19,7 +20,7 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(0, edges.Count);
+            ClassicAssert.AreEqual(0, edges.Count);
         }
 
         [Test]
@@ -32,7 +33,7 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(0, edges.Count);
+            ClassicAssert.AreEqual(0, edges.Count);
         }
 
         [TestCase(-100, 300)]
@@ -52,8 +53,8 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(0, edges.Count);
-            Assert.AreEqual(0, points[0].Cell.Count());
+            ClassicAssert.AreEqual(0, edges.Count);
+            ClassicAssert.AreEqual(0, points[0].Cell.Count());
         }
 
         [TestCase(-100, 300)]
@@ -74,9 +75,9 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(1, edges.Count);
-            Assert.AreEqual(1, points[0].Cell.Count());
-            Assert.AreEqual(1, points[1].Cell.Count());
+            ClassicAssert.AreEqual(1, edges.Count);
+            ClassicAssert.AreEqual(1, points[0].Cell.Count());
+            ClassicAssert.AreEqual(1, points[1].Cell.Count());
         }
 
         [TestCase(-1000, 300)]
@@ -97,9 +98,9 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(0, edges.Count);
-            Assert.AreEqual(0, points[0].Cell.Count());
-            Assert.AreEqual(0, points[1].Cell.Count());
+            ClassicAssert.AreEqual(0, edges.Count);
+            ClassicAssert.AreEqual(0, points[0].Cell.Count());
+            ClassicAssert.AreEqual(0, points[1].Cell.Count());
         }
 
         [TestCase(0, 300)]
@@ -119,8 +120,8 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(0, edges.Count);
-            Assert.AreEqual(0, points[0].Cell.Count());
+            ClassicAssert.AreEqual(0, edges.Count);
+            ClassicAssert.AreEqual(0, points[0].Cell.Count());
         }
 
         [TestCase(0, 300)]
@@ -141,9 +142,9 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(1, edges.Count);
-            Assert.AreEqual(1, points[0].Cell.Count());
-            Assert.AreEqual(1, points[1].Cell.Count());
+            ClassicAssert.AreEqual(1, edges.Count);
+            ClassicAssert.AreEqual(1, points[0].Cell.Count());
+            ClassicAssert.AreEqual(1, points[1].Cell.Count());
         }
         
         [Test]
@@ -159,7 +160,7 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(4, edges.Count);
+            ClassicAssert.AreEqual(4, edges.Count);
         }
         
         [TestCase(-100, -100, -200, -200)]
@@ -180,7 +181,7 @@ namespace SharpVoronoiLib.UnitTests
 
             List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
             
-            Assert.AreEqual(0, edges.Count);
+            ClassicAssert.AreEqual(0, edges.Count);
         }
 
 #if BRUTE_FORCE_TEST

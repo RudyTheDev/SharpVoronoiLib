@@ -1522,6 +1522,7 @@ namespace SharpVoronoiLib.UnitTestGenerator
                 StringBuilder stringBuilder = new StringBuilder();
 
                 stringBuilder.AppendLine(@"using NUnit.Framework;");
+                stringBuilder.AppendLine(@"using NUnit.Framework.Legacy;");
                 stringBuilder.AppendLine(@"using System.Collections.Generic;");
                 stringBuilder.AppendLine(@"using System.Linq;");
                 stringBuilder.AppendLine(@"using static SharpVoronoiLib.UnitTests.CommonTestUtilities;");
@@ -1970,17 +1971,17 @@ namespace SharpVoronoiLib.UnitTestGenerator
 
             private string GetAssertEqualMethodStart(bool assert)
             {
-                return assert ? @"Assert.AreEqual(" : @"Assume.That(() => ";
+                return assert ? @"ClassicAssert.AreEqual(" : @"Assume.That(() => ";
             }
 
             private string GetAssertNotNullMethodStart(bool assert)
             {
-                return assert ? @"Assert.NotNull(" : @"Assume.That(() => null != ";
+                return assert ? @"ClassicAssert.NotNull(" : @"Assume.That(() => null != ";
             }
 
             private string GetAssertNullMethodStart(bool assert)
             {
-                return assert ? @"Assert.Null(" : @"Assume.That(() => null == ";
+                return assert ? @"ClassicAssert.Null(" : @"Assume.That(() => null == ";
             }
 
             private string GetAssertEqualMethodSeparator(bool assert)
@@ -1990,7 +1991,7 @@ namespace SharpVoronoiLib.UnitTestGenerator
 
             private string GetAssertTrueMethodStart(bool assert)
             {
-                return assert ? @"Assert.IsTrue(" : @"Assume.That(() => ";
+                return assert ? @"ClassicAssert.IsTrue(" : @"Assume.That(() => ";
             }
 
             private List<string> BuildEdgeSiteAssertions(List<Edge> edges, TestBorderLogic borderLogic, bool assert)

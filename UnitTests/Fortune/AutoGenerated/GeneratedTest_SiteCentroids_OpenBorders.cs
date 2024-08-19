@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -112,8 +113,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -161,8 +162,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(200, 500) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -214,8 +215,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(500, 800) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -267,8 +268,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(800, 500) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -320,8 +321,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(500, 200) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -369,8 +370,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(200, 700) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -422,8 +423,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(700, 800) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -475,8 +476,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(800, 300) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -528,8 +529,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(300, 200) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -577,8 +578,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(0, 500) (using generic closed polygon formula)
-            Assert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -630,8 +631,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(500, 1000) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -683,8 +684,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 500) (using generic closed polygon formula)
-            Assert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -736,8 +737,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(500, 0) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -785,8 +786,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(0, 700) (using generic closed polygon formula)
-            Assert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -838,8 +839,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(700, 1000) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -891,8 +892,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 300) (using generic closed polygon formula)
-            Assert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -944,8 +945,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(300, 0) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -997,8 +998,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 700) (using generic closed polygon formula)
-            Assert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1050,8 +1051,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(700, 0) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1103,8 +1104,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(0, 300) (using generic closed polygon formula)
-            Assert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1156,8 +1157,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(300, 1000) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -1205,8 +1206,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(0, 0) (using generic closed polygon formula)
-            Assert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1258,8 +1259,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(0, 1000) (using generic closed polygon formula)
-            Assert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1311,8 +1312,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 1000) (using generic closed polygon formula)
-            Assert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1364,8 +1365,8 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 0) (using generic closed polygon formula)
-            Assert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -1420,11 +1421,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 700) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(500, 300) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1483,11 +1484,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 500) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(300, 500) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -1542,11 +1543,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 900) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1605,11 +1606,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 500) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -1671,14 +1672,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 900) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C-D is at ~(500, 500) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-C is at ~(500, 100) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1744,14 +1745,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 500) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D-B is at ~(500, 500) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-D is at ~(100, 500) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -1820,17 +1821,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 800) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C-D is at ~(500, 600) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-C-E-F is at ~(500, 400) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in F-E is at ~(500, 200) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -1903,17 +1904,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(800, 500) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D-B is at ~(600, 500) (using rectangle formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-E-F-D is at ~(400, 500) (using rectangle formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in E-F is at ~(200, 500) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -1968,11 +1969,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 700) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(700, 300) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2031,11 +2032,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 700) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(300, 300) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -2090,11 +2091,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(200, 800) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(600, 400) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2153,11 +2154,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(800, 800) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(400, 400) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2216,11 +2217,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(800, 200) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(400, 600) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2279,11 +2280,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(200, 200) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(600, 600) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -2338,11 +2339,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(200, 400) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(600, 800) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2401,11 +2402,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(400, 800) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(800, 400) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2464,11 +2465,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(800, 600) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(400, 200) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2527,11 +2528,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(600, 200) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(200, 600) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -2586,11 +2587,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(700, 900) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2649,11 +2650,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(900, 300) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2712,11 +2713,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(300, 100) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2775,11 +2776,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(100, 700) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2838,11 +2839,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(300, 900) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2901,11 +2902,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(900, 700) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -2964,11 +2965,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(700, 100) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3027,11 +3028,11 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(100, 300) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -3093,14 +3094,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A is at ~(200, 800) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A-B is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-B is at ~(800, 200) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3166,14 +3167,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-D is at ~(800, 800) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C-D is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-C is at ~(200, 200) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -3235,14 +3236,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A is at ~(200, 800) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A-B is at ~(408, 592) (using quadrilateral formula)
-            Assert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-B is at ~(600, 400) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3308,14 +3309,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-D is at ~(800, 800) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C-D is at ~(592, 592) (using quadrilateral formula)
-            Assert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-C is at ~(400, 400) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3381,14 +3382,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-D is at ~(800, 200) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C-D is at ~(592, 408) (using quadrilateral formula)
-            Assert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(408.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-C is at ~(400, 600) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3454,14 +3455,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A is at ~(200, 200) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A-B is at ~(408, 408) (using quadrilateral formula)
-            Assert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(408.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-B is at ~(600, 600) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -3530,17 +3531,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in F-A is at ~(200, 800) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in E-F-A-B is at ~(408, 592) (using quadrilateral formula)
-            Assert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-E-B-C is at ~(592, 408) (using quadrilateral formula)
-            Assert.AreEqual(591.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(408.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in D-C is at ~(800, 200) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3613,17 +3614,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-F is at ~(800, 800) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-E-F is at ~(592, 592) (using quadrilateral formula)
-            Assert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-C-D-E is at ~(408, 408) (using quadrilateral formula)
-            Assert.AreEqual(408.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(408.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(408.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in C-D is at ~(200, 200) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -3686,14 +3687,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-B-A is at ~(467, 600) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C is at ~(267, 267) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-A-C is at ~(600, 467) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3760,14 +3761,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(600, 533) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-A is at ~(267, 733) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C-D is at ~(467, 400) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3834,14 +3835,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(533, 400) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B is at ~(733, 733) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-D-A is at ~(400, 533) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -3908,14 +3909,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-D-B is at ~(400, 467) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B is at ~(733, 267) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-A-C is at ~(533, 600) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -3978,14 +3979,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-B-A is at ~(333, 733) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C is at ~(200, 400) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-A-C is at ~(433, 533) (using generic closed polygon formula)
-            Assert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4052,14 +4053,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(733, 667) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-A is at ~(400, 800) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C-D is at ~(533, 567) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4126,14 +4127,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(667, 267) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B is at ~(800, 600) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-D-A is at ~(567, 467) (using generic closed polygon formula)
-            Assert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4200,14 +4201,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-D-B is at ~(267, 333) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B is at ~(600, 200) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-A-C is at ~(467, 433) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4274,14 +4275,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(667, 733) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C is at ~(800, 400) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-C is at ~(567, 533) (using generic closed polygon formula)
-            Assert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4348,14 +4349,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(733, 333) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-B is at ~(400, 200) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-C-A is at ~(533, 433) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4422,14 +4423,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-D is at ~(333, 267) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-B-A is at ~(200, 600) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A-D is at ~(433, 467) (using generic closed polygon formula)
-            Assert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4496,14 +4497,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-D-A is at ~(267, 667) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C is at ~(600, 800) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A-D is at ~(467, 567) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -4566,14 +4567,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(500, 167) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(667, 500) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(333, 500) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4640,14 +4641,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(167, 500) (using triangle formula)
-            Assert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(500, 333) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D is at ~(500, 667) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4714,14 +4715,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(500, 833) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D is at ~(333, 500) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D is at ~(667, 500) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4788,14 +4789,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(833, 500) (using triangle formula)
-            Assert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A is at ~(500, 667) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(500, 333) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -4858,14 +4859,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(500, 100) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(600, 433) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(433.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(400, 433) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -4932,14 +4933,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(100, 500) (using triangle formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(433, 400) (using generic closed polygon formula)
-            Assert.AreEqual(433.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D is at ~(433, 600) (using generic closed polygon formula)
-            Assert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5006,14 +5007,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(500, 900) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D is at ~(400, 567) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D is at ~(600, 567) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5080,14 +5081,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(900, 500) (using triangle formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A is at ~(567, 600) (using generic closed polygon formula)
-            Assert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(567, 400) (using generic closed polygon formula)
-            Assert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -5150,14 +5151,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(500, 367) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(366.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(667, 633) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(333, 633) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5224,14 +5225,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(367, 500) (using generic closed polygon formula)
-            Assert.AreEqual(366.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(633, 333) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D is at ~(633, 667) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5298,14 +5299,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(500, 633) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D is at ~(333, 367) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D is at ~(667, 367) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5372,14 +5373,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(633, 500) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A is at ~(367, 667) (using generic closed polygon formula)
-            Assert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(367, 333) (using generic closed polygon formula)
-            Assert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -5459,20 +5460,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A-B-C is at ~(500, 500) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-E-F-B is at ~(156, 500) (using quadrilateral formula)
-            Assert.AreEqual(155.56, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(155.56, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-B-F-G is at ~(500, 156) (using quadrilateral formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(155.56, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(155.56, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in H-D-C-G is at ~(844, 500) (using quadrilateral formula)
-            Assert.AreEqual(844.44, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(844.44, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in H-E-A-D is at ~(500, 844) (using quadrilateral formula)
-            Assert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(844.44, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(844.44, sites[4].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -5552,20 +5553,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A-B-C is at ~(500, 300) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-E-F-B is at ~(219, 371) (using generic closed polygon formula)
-            Assert.AreEqual(219.05, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(371.43, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(219.05, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(371.43, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-B-F-G is at ~(500, 83) (using quadrilateral formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(83.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(83.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in H-D-C-G is at ~(781, 371) (using generic closed polygon formula)
-            Assert.AreEqual(780.95, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(371.43, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(780.95, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(371.43, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in H-E-A-D is at ~(500, 644) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(644.44, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(644.44, sites[4].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5649,20 +5650,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C-D is at ~(300, 500) (using rectangle formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in E-F-B-A is at ~(371, 781) (using generic closed polygon formula)
-            Assert.AreEqual(371.43, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(780.95, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(371.43, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(780.95, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-F-G-C is at ~(83, 500) (using quadrilateral formula)
-            Assert.AreEqual(83.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(83.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in D-C-G-H is at ~(371, 219) (using generic closed polygon formula)
-            Assert.AreEqual(371.43, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(219.05, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(371.43, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(219.05, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in E-A-D-H is at ~(644, 500) (using generic closed polygon formula)
-            Assert.AreEqual(644.44, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(644.44, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5746,20 +5747,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-D-A is at ~(500, 700) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in F-B-A-E is at ~(781, 629) (using generic closed polygon formula)
-            Assert.AreEqual(780.95, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(628.57, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(780.95, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(628.57, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in F-G-C-B is at ~(500, 917) (using quadrilateral formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(916.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(916.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in C-G-H-D is at ~(219, 629) (using generic closed polygon formula)
-            Assert.AreEqual(219.05, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(628.57, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(219.05, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(628.57, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in A-D-H-E is at ~(500, 356) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(355.56, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(355.56, sites[4].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -5843,20 +5844,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-D-A-B is at ~(700, 500) (using rectangle formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-E-F is at ~(629, 219) (using generic closed polygon formula)
-            Assert.AreEqual(628.57, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(219.05, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(628.57, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(219.05, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in G-C-B-F is at ~(917, 500) (using quadrilateral formula)
-            Assert.AreEqual(916.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(916.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in G-H-D-C is at ~(629, 781) (using generic closed polygon formula)
-            Assert.AreEqual(628.57, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(780.95, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(628.57, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(780.95, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in D-H-E-A is at ~(356, 500) (using generic closed polygon formula)
-            Assert.AreEqual(355.56, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(355.56, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -5925,17 +5926,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(333, 667) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D is at ~(333, 333) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in E-A-D is at ~(667, 333) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in B-A-E is at ~(667, 667) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -6004,17 +6005,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(333, 667) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D is at ~(333, 333) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in E-A-D is at ~(667, 333) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in B-A-E is at ~(667, 667) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6087,17 +6088,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(667, 667) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A is at ~(333, 667) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-E is at ~(333, 333) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in B-A-E is at ~(667, 333) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -6166,17 +6167,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in E-B-A is at ~(500, 833) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in E-A-D is at ~(833, 500) (using triangle formula)
-            Assert.AreEqual(833.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C-D is at ~(500, 167) (using triangle formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(166.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-B-C is at ~(167, 500) (using triangle formula)
-            Assert.AreEqual(166.67, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -6245,17 +6246,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(167, 533) (using generic closed polygon formula)
-            Assert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-D is at ~(333, 200) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in E-A-D is at ~(667, 367) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in E-B-A is at ~(500, 700) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6328,17 +6329,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(533, 833) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D-A is at ~(200, 667) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-E is at ~(367, 333) (using generic closed polygon formula)
-            Assert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in B-A-E is at ~(700, 500) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6411,17 +6412,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(833, 467) (using generic closed polygon formula)
-            Assert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(667, 800) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-E-A is at ~(333, 633) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-E-B is at ~(500, 300) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6494,17 +6495,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(467, 167) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-A-C is at ~(800, 333) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in E-A-D is at ~(633, 667) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in E-B-A is at ~(300, 500) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6577,17 +6578,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A-C is at ~(833, 533) (using generic closed polygon formula)
-            Assert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-D is at ~(667, 200) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-E-D is at ~(333, 367) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in B-E-A is at ~(500, 700) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6660,17 +6661,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A-C is at ~(533, 167) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-D-C is at ~(200, 333) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in E-D-A is at ~(367, 667) (using generic closed polygon formula)
-            Assert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in E-A-B is at ~(700, 500) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6743,17 +6744,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-C-B is at ~(167, 467) (using generic closed polygon formula)
-            Assert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-C-A is at ~(333, 800) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-A-E is at ~(667, 633) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in E-A-B is at ~(500, 300) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -6826,17 +6827,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-B-A is at ~(467, 833) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-D is at ~(800, 667) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-A-E is at ~(633, 333) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-B-E is at ~(300, 500) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -6913,20 +6914,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-C-B is at ~(500, 900) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-E-A is at ~(272, 623) (using generic closed polygon formula)
-            Assert.AreEqual(271.79, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(623.08, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(271.79, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(623.08, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-E-G is at ~(333, 267) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in F-A-G is at ~(667, 267) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in D-B-A-F is at ~(728, 623) (using generic closed polygon formula)
-            Assert.AreEqual(728.21, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(623.08, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(728.21, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(623.08, sites[4].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7007,20 +7008,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-B-D is at ~(900, 500) (using triangle formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-E-A-B is at ~(623, 728) (using generic closed polygon formula)
-            Assert.AreEqual(623.08, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(728.21, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(623.08, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(728.21, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in E-G-A is at ~(267, 667) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-G-F is at ~(267, 333) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in B-A-F-D is at ~(623, 272) (using generic closed polygon formula)
-            Assert.AreEqual(623.08, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(271.79, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(623.08, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(271.79, sites[4].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7101,20 +7102,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-D-C is at ~(500, 100) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in E-A-B-C is at ~(728, 377) (using generic closed polygon formula)
-            Assert.AreEqual(728.21, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(376.92, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(728.21, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(376.92, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in G-A-E is at ~(667, 733) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in G-F-A is at ~(333, 733) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in B-A-F-D is at ~(272, 377) (using generic closed polygon formula)
-            Assert.AreEqual(271.79, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(376.92, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(271.79, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(376.92, sites[4].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7195,20 +7196,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-D-C is at ~(100, 500) (using triangle formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C-E is at ~(377, 272) (using generic closed polygon formula)
-            Assert.AreEqual(376.92, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(271.79, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(376.92, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(271.79, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in G-A-E is at ~(733, 333) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in F-A-G is at ~(733, 667) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in F-D-B-A is at ~(377, 728) (using generic closed polygon formula)
-            Assert.AreEqual(376.92, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(728.21, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(376.92, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(728.21, sites[4].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -7285,20 +7286,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-C-B is at ~(500, 833) (using triangle formula)
-            Assert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-E-A is at ~(204, 548) (using quadrilateral formula)
-            Assert.AreEqual(203.70, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(548.15, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(203.70, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(548.15, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-E-G is at ~(333, 200) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in F-A-G is at ~(667, 200) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in D-B-A-F is at ~(796, 548) (using quadrilateral formula)
-            Assert.AreEqual(796.30, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(548.15, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(796.30, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(548.15, sites[4].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7379,20 +7380,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-B-D is at ~(833, 500) (using triangle formula)
-            Assert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-E-A-B is at ~(548, 796) (using quadrilateral formula)
-            Assert.AreEqual(548.15, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(796.30, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(548.15, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(796.30, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in E-G-A is at ~(200, 667) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-G-F is at ~(200, 333) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in B-A-F-D is at ~(548, 204) (using quadrilateral formula)
-            Assert.AreEqual(548.15, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(203.70, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(548.15, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(203.70, sites[4].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -7475,23 +7476,23 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in H-C-B is at ~(333, 800) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in H-B-G is at ~(667, 800) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-C-D-A is at ~(250, 500) (using rectangle formula)
-            Assert.AreEqual(250.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(250.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in G-B-A-F is at ~(750, 500) (using rectangle formula)
-            Assert.AreEqual(750.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(750.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in A-D-E is at ~(333, 200) (using generic closed polygon formula)
-            Assert.AreEqual(333.33, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[4].Centroid.Y, 0.01);
             // Centroid of #6 in F-A-E is at ~(667, 200) (using generic closed polygon formula)
-            Assert.AreEqual(666.67, sites[5].Centroid.X, 0.01);
-            Assert.AreEqual(200.00, sites[5].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[5].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[5].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7578,23 +7579,23 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-B-H is at ~(800, 667) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in H-B-G is at ~(800, 333) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-D-A-B is at ~(500, 750) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(750.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(750.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in B-A-F-G is at ~(500, 250) (using rectangle formula)
-            Assert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(250.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(250.00, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in D-E-A is at ~(200, 667) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[4].Centroid.Y, 0.01);
             // Centroid of #6 in A-E-F is at ~(200, 333) (using generic closed polygon formula)
-            Assert.AreEqual(200.00, sites[5].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[5].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(200.00, sites[5].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[5].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -7666,20 +7667,20 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(0, 1000) (using generic closed polygon formula)
-            Assert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-B is at ~(0, 0) (using generic closed polygon formula)
-            Assert.AreEqual(0.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(0.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-C is at ~(1000, 0) (using generic closed polygon formula)
-            Assert.AreEqual(1000.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(0.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(0.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-D is at ~(1000, 1000) (using generic closed polygon formula)
-            Assert.AreEqual(1000.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(1000.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1000.00, sites[3].Centroid.Y, 0.01);
             // Centroid of #5 in D-A-B-C is at ~(500, 500) (using quadrilateral formula)
-            Assert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -7740,14 +7741,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 900) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C is at ~(300, 100) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-C is at ~(667, 500) (using triangle formula)
-            Assert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7812,14 +7813,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 700) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C is at ~(100, 700) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C-B is at ~(500, 333) (using triangle formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7884,14 +7885,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 100) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A is at ~(700, 900) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C-B is at ~(333, 500) (using triangle formula)
-            Assert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -7956,14 +7957,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 300) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A is at ~(900, 300) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-B-A is at ~(500, 667) (using triangle formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -8025,14 +8026,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 900) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-C is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D-C is at ~(489, 500) (using generic closed polygon formula)
-            Assert.AreEqual(488.89, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(488.89, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8098,14 +8099,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 900) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-C is at ~(100, 900) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-C-B is at ~(500, 511) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(511.11, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(511.11, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8171,14 +8172,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 100) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D is at ~(900, 900) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-C-B-A is at ~(511, 500) (using generic closed polygon formula)
-            Assert.AreEqual(511.11, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(511.11, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8244,14 +8245,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-D is at ~(900, 100) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-B-A-D is at ~(500, 489) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(488.89, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(488.89, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -8316,14 +8317,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(800, 600) (using triangle formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A is at ~(400, 900) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-B is at ~(400, 300) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8392,14 +8393,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(600, 400) (using triangle formula)
-            Assert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C is at ~(900, 800) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-B is at ~(300, 800) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8468,14 +8469,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(400, 600) (using triangle formula)
-            Assert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C is at ~(800, 300) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A is at ~(800, 900) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8544,14 +8545,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(600, 800) (using triangle formula)
-            Assert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A is at ~(300, 400) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A is at ~(900, 400) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -8617,14 +8618,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A-D-C is at ~(733, 600) (using quadrilateral formula)
-            Assert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(100, 900) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-C is at ~(100, 300) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8694,14 +8695,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-D-C-B is at ~(600, 467) (using quadrilateral formula)
-            Assert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(900, 1100) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(1100.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-C is at ~(300, 1100) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8771,14 +8772,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-C-B-A is at ~(467, 600) (using quadrilateral formula)
-            Assert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B is at ~(1100, 300) (using generic closed polygon formula)
-            Assert.AreEqual(1100.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-D is at ~(1100, 900) (using generic closed polygon formula)
-            Assert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8848,14 +8849,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-B-A-D is at ~(600, 733) (using quadrilateral formula)
-            Assert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A is at ~(300, 100) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-D is at ~(900, 100) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -8918,14 +8919,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-D-A is at ~(267, 400) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C is at ~(600, 600) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A-D is at ~(400, 267) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -8992,14 +8993,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(400, 733) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C is at ~(600, 400) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-C is at ~(267, 600) (using generic closed polygon formula)
-            Assert.AreEqual(266.67, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9066,14 +9067,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(733, 600) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-B is at ~(400, 400) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-C is at ~(600, 733) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(733.33, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9140,14 +9141,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-D-A is at ~(600, 267) (using generic closed polygon formula)
-            Assert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-B-A is at ~(400, 600) (using generic closed polygon formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A-D is at ~(733, 400) (using generic closed polygon formula)
-            Assert.AreEqual(733.33, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(733.33, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -9208,14 +9209,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 700) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A is at ~(700, 100) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9280,14 +9281,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 900) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C is at ~(100, 300) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9352,14 +9353,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 300) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-B is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C is at ~(300, 900) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9424,14 +9425,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 100) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-B-A is at ~(500, 500) (using generic closed polygon formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A is at ~(900, 700) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -9492,14 +9493,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 700) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C is at ~(633, 467) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A is at ~(900, 100) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9564,14 +9565,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 700) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-A-C is at ~(467, 367) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9636,14 +9637,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 300) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-C-B is at ~(367, 533) (using generic closed polygon formula)
-            Assert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C is at ~(100, 900) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9708,14 +9709,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 300) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-B-A is at ~(533, 633) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A is at ~(900, 900) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9780,14 +9781,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(700, 700) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-A is at ~(367, 467) (using generic closed polygon formula)
-            Assert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(466.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9852,14 +9853,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in B-A is at ~(700, 300) (using generic closed polygon formula)
-            Assert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-A is at ~(467, 633) (using generic closed polygon formula)
-            Assert.AreEqual(466.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(466.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in C-A is at ~(100, 900) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9924,14 +9925,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(300, 300) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B is at ~(633, 533) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(533.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C is at ~(900, 900) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -9996,14 +9997,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-B is at ~(300, 700) (using generic closed polygon formula)
-            Assert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C is at ~(533, 367) (using generic closed polygon formula)
-            Assert.AreEqual(533.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(533.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-C is at ~(900, 100) (using generic closed polygon formula)
-            Assert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -10069,14 +10070,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 1100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B-D is at ~(567, 567) (using generic closed polygon formula)
-            Assert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-B is at ~(1100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -10146,14 +10147,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-C is at ~(1100, 1100) (using generic closed polygon formula)
-            Assert.AreEqual(1100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(1100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B-D is at ~(567, 633) (using generic closed polygon formula)
-            Assert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-D is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -10223,14 +10224,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-C is at ~(1100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(1100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-D-C is at ~(633, 633) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-D is at ~(100, 1100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -10300,14 +10301,14 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in D-C-A-B is at ~(633, 567) (using generic closed polygon formula)
-            Assert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-B is at ~(1100, 1100) (using generic closed polygon formula)
-            Assert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
         }
 
         [Test]
@@ -10372,17 +10373,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 800) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-A is at ~(400, 600) (using triangle formula)
-            Assert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in B-A-D is at ~(600, 400) (using triangle formula)
-            Assert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in D-A is at ~(800, 100) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -10451,17 +10452,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-C is at ~(800, 800) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in C-A-B is at ~(600, 500) (using triangle formula)
-            Assert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(400, 300) (using triangle formula)
-            Assert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-D is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -10530,17 +10531,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in A-C is at ~(800, 100) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in A-B-C is at ~(500, 300) (using triangle formula)
-            Assert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in A-D-B is at ~(300, 500) (using triangle formula)
-            Assert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in A-D is at ~(100, 800) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[3].Centroid.Y, 0.01);
         }
 
         /// <summary>
@@ -10609,17 +10610,17 @@ namespace SharpVoronoiLib.UnitTests
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 100) (using generic closed polygon formula)
-            Assert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            Assert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
             // Centroid of #2 in B-C-A is at ~(300, 400) (using triangle formula)
-            Assert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            Assert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
             // Centroid of #3 in D-B-A is at ~(500, 600) (using triangle formula)
-            Assert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            Assert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
             // Centroid of #4 in D-A is at ~(800, 800) (using generic closed polygon formula)
-            Assert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
-            Assert.AreEqual(800.00, sites[3].Centroid.Y, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
+            ClassicAssert.AreEqual(800.00, sites[3].Centroid.Y, 0.01);
         }
 
     }
