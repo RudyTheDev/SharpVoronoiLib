@@ -82,9 +82,7 @@ namespace SharpVoronoiLib.UnitTests
             
             plane.Tessellate();
 
-            List<VoronoiEdge> edges = plane.Relax();
-
-            //Assert.That(plane.Edges);
+            plane.Relax();
         }
     }
 }

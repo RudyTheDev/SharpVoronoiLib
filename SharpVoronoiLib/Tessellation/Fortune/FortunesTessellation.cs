@@ -10,12 +10,22 @@ namespace SharpVoronoiLib
         {
             MinHeap<FortuneEvent> eventQueue = new MinHeap<FortuneEvent>(5 * sites.Count);
 
-            foreach (VoronoiSite site in sites)
+            for (int i = 0; i < sites.Count; i++)
             {
+                VoronoiSite site = sites[i];
+                
                 if (site == null) throw new ArgumentNullException(nameof(sites));
 
-                if (eventQueue.Insert(new FortuneSiteEvent(site)))
+                if (eventQueue.Insert(new FortuneSiteEvent(site), true))
+                {
                     site.Tessellating();
+                }
+                else
+                {
+                    // todo: I am not sure if this is the right approach or not
+                    //sites.RemoveAt(i);
+                    //i--;
+                }
             }
 
 

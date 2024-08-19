@@ -12,11 +12,11 @@ namespace SharpVoronoiLib.UnitTests
         public void Sort5Test()
         {
             MinHeap<int> heap = new MinHeap<int>(5);
-            heap.Insert(5);
-            heap.Insert(4);
-            heap.Insert(3);
-            heap.Insert(2);
-            heap.Insert(1);
+            heap.Insert(5, false);
+            heap.Insert(4, false);
+            heap.Insert(3, false);
+            heap.Insert(2, false);
+            heap.Insert(1, false);
             Assert.That(heap.Pop(), Is.EqualTo(1));
             Assert.That(heap.Pop(), Is.EqualTo(2));
             Assert.That(heap.Pop(), Is.EqualTo(3));
@@ -35,7 +35,7 @@ namespace SharpVoronoiLib.UnitTests
             {
                 double number = 100*random.NextDouble();
                 numbers.Add(number);
-                heap.Insert(number);
+                heap.Insert(number, false);
             }
             numbers.Sort();
             foreach (double number in numbers)
@@ -65,7 +65,7 @@ namespace SharpVoronoiLib.UnitTests
         {
             MinHeap<int> heap = new MinHeap<int>(1);
             
-            bool result = heap.Insert(1);
+            bool result = heap.Insert(1, false);
             
             Assert.That(result, Is.True);
         }
@@ -77,9 +77,9 @@ namespace SharpVoronoiLib.UnitTests
         {
             MinHeap<int> heap = new MinHeap<int>(6);
             for (int i = 0; i < 5; i++)
-                heap.Insert(input[i]);
+                heap.Insert(input[i], false);
             
-            bool result = heap.Insert(d);
+            bool result = heap.Insert(d, true);
             
             Assert.That(result, Is.False);
             for (int i = 0; i < 5; i++)
