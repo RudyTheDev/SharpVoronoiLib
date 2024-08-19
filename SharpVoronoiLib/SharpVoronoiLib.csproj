@@ -3,8 +3,8 @@
     <PropertyGroup>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <LangVersion>8</LangVersion>
-        <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+        <LangVersion>12</LangVersion>
+        <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
         <Title>SharpVoronoiLib</Title>
         <Authors>various</Authors>
         <Description>Generate a Voronoi diagram from a set of points in a plane (using Fortune's Algorithm) with edge clipping and border closure. Includes Lloyds relaxation algorithm. Original version published as VoronoiLib.</Description>
