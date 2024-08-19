@@ -10,24 +10,20 @@ namespace SharpVoronoiLib
         {
             MinHeap<FortuneEvent> eventQueue = new MinHeap<FortuneEvent>(5 * sites.Count);
 
-            for (int i = 0; i < sites.Count; i++)
+            HashSet<VoronoiSite> siteCache = new HashSet<VoronoiSite>(VoronoiSiteComparer.Instance);
+            
+            foreach (VoronoiSite site in sites)
             {
-                VoronoiSite site = sites[i];
-                
+                if (!siteCache.Add(site))
+                    continue;
+
                 if (site == null) throw new ArgumentNullException(nameof(sites));
 
                 FortuneSiteEvent siteEvent = new FortuneSiteEvent(site);
 
-                if (eventQueue.Insert(siteEvent))
-                {
-                    site.Tessellating();
-                }
-                else
-                {
-                    // todo: I am not sure if this is the right approach or not
-                    //sites.RemoveAt(i);
-                    //i--;
-                }
+                eventQueue.Insert(siteEvent);
+                
+                site.Tessellating();
             }
             
             //init tree
@@ -57,6 +53,27 @@ namespace SharpVoronoiLib
 
             return edges.ToList(); 
             // TODO: Build the list directly
+        }
+
+        
+        internal class VoronoiSiteComparer : IEqualityComparer<VoronoiSite>
+        {
+            public static VoronoiSiteComparer Instance { get; } = new VoronoiSiteComparer();
+            private VoronoiSiteComparer() { }
+
+
+            public bool Equals(VoronoiSite a, VoronoiSite b)
+            {
+                return a.X.ApproxEqual(b.X) && a.Y.ApproxEqual(b.Y);
+            }
+
+            public int GetHashCode(VoronoiSite obj)
+            {
+                unchecked
+                {
+                    return (obj.X.GetHashCode() * 397) ^ obj.Y.GetHashCode();
+                }
+            }
         }
     }
 }

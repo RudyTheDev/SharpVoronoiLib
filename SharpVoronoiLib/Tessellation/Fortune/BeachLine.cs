@@ -418,8 +418,7 @@ namespace SharpVoronoiLib
             );
             section.Data.CircleEvent = circleEvent;
 
-            while (!eventQueue.Insert(circleEvent))
-                circleEvent.DuplicateCounter++; // duplicate, but allowed (and expected) in the original algorithm
+            eventQueue.Insert(circleEvent);
         }
     }
 }

@@ -5,8 +5,6 @@
         public double X => Site.X;
         public double Y => Site.Y;
         
-        public int DuplicateCounter { get; set; }
-
         internal VoronoiSite Site { get; }
 
         

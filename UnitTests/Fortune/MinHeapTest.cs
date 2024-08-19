@@ -59,15 +59,5 @@ namespace SharpVoronoiLib.UnitTests
         }
         
         // todo: peek non-empty
-        
-        [Test]
-        public void Insert()
-        {
-            MinHeap<int> heap = new MinHeap<int>(1);
-            
-            bool result = heap.Insert(1);
-            
-            Assert.That(result, Is.True);
-        }
     }
 }
