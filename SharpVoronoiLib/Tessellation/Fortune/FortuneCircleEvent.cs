@@ -13,12 +13,6 @@
             ToDelete = toDelete;
         }
 
-        public int CompareTo(FortuneEvent other)
-        {
-            int c = Y.ApproxCompareTo(other.Y);
-            return c == 0 ? X.ApproxCompareTo(other.X) : c;
-        }
-
         public double X => Lowest.X;
         public double Y => Lowest.Y;
 

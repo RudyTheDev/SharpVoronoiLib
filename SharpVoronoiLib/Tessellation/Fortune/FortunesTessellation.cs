@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace SharpVoronoiLib
@@ -9,9 +8,7 @@ namespace SharpVoronoiLib
     {
         public List<VoronoiEdge> Run(List<VoronoiSite> sites, double minX, double minY, double maxX, double maxY)
         {
-            SortedSet<FortuneEvent> eventQueue = new SortedSet<FortuneEvent>();
-
-            Stopwatch __stopwatch = new Stopwatch();
+            SortedSet<FortuneEvent> eventQueue = new SortedSet<FortuneEvent>(FortuneEventComparer.Instance);
 
             for (int i = 0; i < sites.Count; i++)
             {
@@ -33,9 +30,6 @@ namespace SharpVoronoiLib
                 }
             }
             
-            Console.WriteLine("Time to check duplicates: " + __stopwatch.ElapsedMilliseconds + "ms");
-
-
             //init tree
             BeachLine beachLine = new BeachLine();
             LinkedList<VoronoiEdge> edges = new LinkedList<VoronoiEdge>();
