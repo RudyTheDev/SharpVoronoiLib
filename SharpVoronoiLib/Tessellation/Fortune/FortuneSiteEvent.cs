@@ -4,8 +4,12 @@
     {
         public double X => Site.X;
         public double Y => Site.Y;
+        
+        public int DuplicateCounter { get; set; }
+
         internal VoronoiSite Site { get; }
 
+        
         internal FortuneSiteEvent(VoronoiSite site)
         {
             Site = site;

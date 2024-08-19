@@ -10,8 +10,18 @@ namespace SharpVoronoiLib
 
         public int Compare(FortuneEvent? a, FortuneEvent? b)
         {
+            if (ReferenceEquals(a, b))
+                return 0;
+            
             int c = a!.Y.ApproxCompareTo(b!.Y);
-            return c == 0 ? a.X.ApproxCompareTo(b.X) : c;
+            
+            if (c == 0)
+                c = a.X.ApproxCompareTo(b.X);
+
+            if (c == 0)
+                c = a.DuplicateCounter.CompareTo(b.DuplicateCounter);
+            
+            return c;
         }
     }
 }
