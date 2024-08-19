@@ -4,5 +4,6 @@
     {
         double X { get; }
         double Y { get; }
+        int DuplicateCounter { get; set; }
     }
 }

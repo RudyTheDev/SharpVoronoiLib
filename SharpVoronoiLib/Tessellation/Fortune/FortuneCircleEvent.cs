@@ -6,15 +6,18 @@
         internal double YCenter { get; }
         internal RBTreeNode<BeachSection> ToDelete { get; }
 
+        public int DuplicateCounter { get; set; }
+
+        public double X => Lowest.X;
+        public double Y => Lowest.Y;
+
+        
         internal FortuneCircleEvent(VoronoiPoint lowest, double yCenter, RBTreeNode<BeachSection> toDelete)
         {
             Lowest = lowest;
             YCenter = yCenter;
             ToDelete = toDelete;
         }
-
-        public double X => Lowest.X;
-        public double Y => Lowest.Y;
 
 
         public override string ToString()
