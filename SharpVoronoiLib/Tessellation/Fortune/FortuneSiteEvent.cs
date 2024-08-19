@@ -14,7 +14,14 @@
         {
             Site = site;
         }
-
+        
+        
+        public int CompareTo(FortuneEvent other)
+        {
+            int c = Y.ApproxCompareTo(other.Y);
+            return c == 0 ? X.ApproxCompareTo(other.X) : c;
+        }
+        
 
         public override string ToString()
         {

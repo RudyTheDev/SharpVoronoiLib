@@ -26,7 +26,7 @@ namespace SharpVoronoiLib
             beachLine = new RBTree<BeachSection>();
         }
 
-        internal void AddBeachSection(FortuneSiteEvent siteEvent, SortedSet<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
+        internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
         {
             VoronoiSite site = siteEvent.Site;
             double x = site.X;
@@ -254,7 +254,7 @@ namespace SharpVoronoiLib
             }
         }
 
-        internal void RemoveBeachSection(FortuneCircleEvent circle, SortedSet<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
+        internal void RemoveBeachSection(FortuneCircleEvent circle, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
         {
             RBTreeNode<BeachSection> section = circle.ToDelete;
             double x = circle.X;
@@ -367,7 +367,7 @@ namespace SharpVoronoiLib
             return ParabolaMath.IntersectParabolaX(site.X, site.Y, rightSite.X, rightSite.Y, directrix);
         }
 
-        private static void CheckCircle(RBTreeNode<BeachSection> section, SortedSet<FortuneEvent> eventQueue)
+        private static void CheckCircle(RBTreeNode<BeachSection> section, MinHeap<FortuneEvent> eventQueue)
         {
             //if (section == null)
             //    return;
@@ -418,7 +418,7 @@ namespace SharpVoronoiLib
             );
             section.Data.CircleEvent = circleEvent;
 
-            while (!eventQueue.Add(circleEvent))
+            while (!eventQueue.Insert(circleEvent))
                 circleEvent.DuplicateCounter++; // duplicate, but allowed (and expected) in the original algorithm
         }
     }

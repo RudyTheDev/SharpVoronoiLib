@@ -8,7 +8,7 @@ namespace SharpVoronoiLib
     {
         public List<VoronoiEdge> Run(List<VoronoiSite> sites, double minX, double minY, double maxX, double maxY)
         {
-            SortedSet<FortuneEvent> eventQueue = new SortedSet<FortuneEvent>(FortuneEventComparer.Instance);
+            MinHeap<FortuneEvent> eventQueue = new MinHeap<FortuneEvent>(5 * sites.Count);
 
             for (int i = 0; i < sites.Count; i++)
             {
@@ -18,7 +18,7 @@ namespace SharpVoronoiLib
 
                 FortuneSiteEvent siteEvent = new FortuneSiteEvent(site);
 
-                if (eventQueue.Add(siteEvent))
+                if (eventQueue.Insert(siteEvent))
                 {
                     site.Tessellating();
                 }
@@ -38,9 +38,7 @@ namespace SharpVoronoiLib
             //init edge list
             while (eventQueue.Count != 0)
             {
-                FortuneEvent fEvent = eventQueue.First();
-                if (!eventQueue.Remove(fEvent))
-                    throw new Exception();
+                FortuneEvent fEvent = eventQueue.Pop();
                 
                 if (fEvent is FortuneSiteEvent)
                     beachLine.AddBeachSection((FortuneSiteEvent)fEvent, eventQueue, deleted, edges);
