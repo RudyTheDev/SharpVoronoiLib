@@ -21,16 +21,16 @@ namespace SharpVoronoiLib
             Count = 0;
         }
 
-        public bool Insert(T obj)
+        public void Insert(T obj)
         {
             if (Count == Capacity)
-                return false; // todo: should this not be exception? this fails silently because nothing ever uses the result
+                throw new Exception();
 
             items[Count] = obj;
             Count++;
             PercolateUp(Count - 1);
             
-            return true;
+            return;
         }
 
         public T Pop()

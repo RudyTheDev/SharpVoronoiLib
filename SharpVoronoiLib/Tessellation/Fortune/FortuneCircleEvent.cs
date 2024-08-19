@@ -6,8 +6,6 @@
         internal double YCenter { get; }
         internal RBTreeNode<BeachSection> ToDelete { get; }
 
-        public int DuplicateCounter { get; set; }
-
         public double X => Lowest.X;
         public double Y => Lowest.Y;
 
