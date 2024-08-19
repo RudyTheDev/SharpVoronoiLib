@@ -55,32 +55,6 @@ namespace SharpVoronoiLib
             return items[0];
         }
 
-        //TODO: stop using the remove on the heap as it goes o(N^2)
-
-        public bool Remove(T item)
-        {
-            int index = -1;
-            for (int i = 0; i < Count; i++)
-            {
-                if (items[i].Equals(item))
-                {
-                    index = i;
-                    break;
-                }
-            }
-
-            if (index == -1)
-                return false; // todo: should this not be exception? this fails silently because nothing ever uses the result. and we don't expect to call it for elements we don't have
-
-            Count--;
-            Swap(index, Count);
-            if (Compare(index, (index - 1) / 2) == Result.LeftLessThanRight)
-                PercolateUp(index);
-            else
-                PercolateDown(index);
-            return true;
-        }
-
         private void PercolateDown(int index)
         {
             while (true)

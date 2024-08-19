@@ -25,28 +25,6 @@ namespace SharpVoronoiLib.UnitTests
         }
 
         [Test]
-        public void DeleteTest()
-        {
-            MinHeap<int> heap = new MinHeap<int>(5);
-            for (int i = 1; i <= 5; i++)
-            {
-                //insert 5 through 1
-                for (int j = 5; j >= 1; j--)
-                {
-                    heap.Insert(j);
-                }
-                //remove i
-                heap.Remove(i);
-                //the order of pops should be sorted without i
-                for (int j = 1; j <= 5; j++)
-                {
-                    if (j != i)
-                        Assert.That(heap.Pop(), Is.EqualTo(j));
-                }
-            }
-        }
-
-        [Test]
         public void SortRandom()
         {
             List<double> numbers = new List<double>();
@@ -93,18 +71,19 @@ namespace SharpVoronoiLib.UnitTests
         }
         
         [Test]
-        public void Duplicate([Values(1,2,3,4,5)] int d)
+        public void Duplicate(
+            [Values(new[] {1,2,3,4,5}, new[] {5,4,3,2,1}, new[] {3,4,1,5,2})] int[] input,
+            [Values(1,2,3,4,5)] int d)
         {
             MinHeap<int> heap = new MinHeap<int>(6);
-            heap.Insert(1);
-            heap.Insert(2);
-            heap.Insert(3);
-            heap.Insert(4);
-            heap.Insert(5);
+            for (int i = 0; i < 5; i++)
+                heap.Insert(input[i]);
             
             bool result = heap.Insert(d);
             
             Assert.That(result, Is.False);
+            for (int i = 0; i < 5; i++)
+                Assert.That(heap.Pop(), Is.EqualTo(i + 1));
         }
     }
 }
