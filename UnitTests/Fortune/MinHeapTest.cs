@@ -17,11 +17,11 @@ namespace SharpVoronoiLib.UnitTests
             heap.Insert(3);
             heap.Insert(2);
             heap.Insert(1);
-            Assert.AreEqual(1, heap.Pop());
-            Assert.AreEqual(2, heap.Pop());
-            Assert.AreEqual(3, heap.Pop());
-            Assert.AreEqual(4, heap.Pop());
-            Assert.AreEqual(5, heap.Pop());
+            Assert.That(heap.Pop(), Is.EqualTo(1));
+            Assert.That(heap.Pop(), Is.EqualTo(2));
+            Assert.That(heap.Pop(), Is.EqualTo(3));
+            Assert.That(heap.Pop(), Is.EqualTo(4));
+            Assert.That(heap.Pop(), Is.EqualTo(5));
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace SharpVoronoiLib.UnitTests
                 for (int j = 1; j <= 5; j++)
                 {
                     if (j != i)
-                        Assert.AreEqual(j, heap.Pop());
+                        Assert.That(heap.Pop(), Is.EqualTo(j));
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace SharpVoronoiLib.UnitTests
             numbers.Sort();
             foreach (double number in numbers)
             {
-                Assert.AreEqual(heap.Pop(), number);
+                Assert.That(number, Is.EqualTo(heap.Pop()));
             }
         }
 
@@ -81,5 +81,30 @@ namespace SharpVoronoiLib.UnitTests
         }
         
         // todo: peek non-empty
+        
+        [Test]
+        public void Insert()
+        {
+            MinHeap<int> heap = new MinHeap<int>(1);
+            
+            bool result = heap.Insert(1);
+            
+            Assert.That(result, Is.True);
+        }
+        
+        [Test]
+        public void Duplicate([Values(1,2,3,4,5)] int d)
+        {
+            MinHeap<int> heap = new MinHeap<int>(6);
+            heap.Insert(1);
+            heap.Insert(2);
+            heap.Insert(3);
+            heap.Insert(4);
+            heap.Insert(5);
+            
+            bool result = heap.Insert(d);
+            
+            Assert.That(result, Is.False);
+        }
     }
 }

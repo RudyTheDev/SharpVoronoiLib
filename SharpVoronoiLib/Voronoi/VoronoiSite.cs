@@ -21,6 +21,14 @@ namespace SharpVoronoiLib
         public double Y { get; private set; }
 
         /// <summary>
+        /// The state of this site.
+        /// If may be untesselated, if the algorith hasn't been run yet.
+        /// Or it may be skipped if it's a duplicate to another site.
+        /// </summary>
+        [PublicAPI]
+        public bool Tesselated => _tessellated;
+
+        /// <summary>
         /// The edges that make up this cell.
         /// The vertices of these edges are the <see cref="Points"/>.
         /// These are also known as Thiessen polygons.
@@ -251,7 +259,7 @@ namespace SharpVoronoiLib
         }
 
         
-        internal void TessellationStarted()
+        internal void Tessellating()
         {
             _tessellated = true;
         }

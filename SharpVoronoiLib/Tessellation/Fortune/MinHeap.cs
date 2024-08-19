@@ -15,6 +15,7 @@ namespace SharpVoronoiLib
             {
                 capacity = 2;
             }
+
             Capacity = capacity;
             items = new T[Capacity];
             Count = 0;
@@ -73,7 +74,7 @@ namespace SharpVoronoiLib
 
             Count--;
             Swap(index, Count);
-            if (LeftLessThanRight(index, (index - 1)/2))
+            if (Compare(index, (index - 1) / 2) == Result.LeftLessThanRight)
                 PercolateUp(index);
             else
                 PercolateDown(index);
@@ -84,13 +85,13 @@ namespace SharpVoronoiLib
         {
             while (true)
             {
-                int left = 2*index + 1;
-                int right = 2*index + 2;
+                int left = 2 * index + 1;
+                int right = 2 * index + 2;
                 int largest = index;
 
-                if (left < Count && LeftLessThanRight(left, largest))
+                if (left < Count && Compare(left, largest) == Result.LeftLessThanRight)
                     largest = left;
-                if (right < Count && LeftLessThanRight(right, largest))
+                if (right < Count && Compare(right, largest) == Result.LeftLessThanRight)
                     largest = right;
                 if (largest == index)
                     return;
@@ -105,9 +106,9 @@ namespace SharpVoronoiLib
             {
                 if (index >= Count || index <= 0)
                     return;
-                int parent = (index - 1)/2;
+                int parent = (index - 1) / 2;
 
-                if (LeftLessThanRight(parent, index))
+                if (Compare(parent, index) == Result.LeftLessThanRight)
                     return;
 
                 Swap(index, parent);
@@ -116,16 +117,22 @@ namespace SharpVoronoiLib
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private bool LeftLessThanRight(int left, int right)
+        private Result Compare(int left, int right)
         {
-            return items[left].CompareTo(items[right]) < 0;
+            int compare = items[left].CompareTo(items[right]);
+            return compare < 0 ? Result.LeftLessThanRight : compare > 0 ? Result.RightLessThanLeft : Result.Equal;
         }
 
         private void Swap(int left, int right)
         {
-            T temp = items[left];
-            items[left] = items[right];
-            items[right] = temp;
+            (items[left], items[right]) = (items[right], items[left]);
+        }
+
+        private enum Result
+        {
+            LeftLessThanRight,
+            RightLessThanLeft,
+            Equal
         }
     }
 }
