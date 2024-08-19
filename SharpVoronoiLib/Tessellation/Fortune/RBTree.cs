@@ -2,7 +2,7 @@
 
 namespace SharpVoronoiLib
 {
-    public class RBTreeNode<T>
+    internal class RBTreeNode<T>
     {
         public T Data { get; internal set; }
         public RBTreeNode<T> Left { get; internal set; }
@@ -21,7 +21,7 @@ namespace SharpVoronoiLib
         }
     }
 
-    public class RBTree<T>
+    internal class RBTree<T>
     {
         public RBTreeNode<T> Root { get; private set; }
 
