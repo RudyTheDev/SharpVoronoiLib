@@ -6,18 +6,11 @@ C# implementation of generating a Voronoi diagram from a set of points in a plan
 
 ![voronoi example](https://user-images.githubusercontent.com/3857299/213494520-4295378c-9759-4864-aeb7-4cd032b0f3d0.png)
 
-The key differences from the [original VoronoiLib repo](https://github.com/Zalgo2462/VoronoiLib)
-* Borders can be closed, that is, edges generated along the boundary
-* Edges and points/sites contain additional useful data
-* Multiple critical and annoyingly-rare bugs and edge cases fixes
-* LOTS more unit testing
+# Installation
 
-Known issues:
-* The algorithm uses a lot of allocations, forcing garbage collection
+The library is available as `SharpVoronoiLib` [NuGet package](https://www.nuget.org/packages/SharpVoronoiLib): `dotnet add package SharpVoronoiLib` via CLI or via your preferred NuGet package manager.
 
-# Examples
-
-TODO: several pretty pictures here
+Alternatively, you can download the solution and either copy the `SharpVoronoiLib` project code or build the project and use the `SharpVoronoiLib.dll`.
 
 # Use
 
@@ -104,14 +97,24 @@ List<VoronoiEdge> edges = plane.Relax();
 
 # MonoGame example
 
-A very simple MonoGame example is included in `MonoGameExample` project:
+A very simple [MonoGame](https://github.com/MonoGame/MonoGame) example is included in `MonoGameExample` project:
 
 ![SVL MG](https://github.com/user-attachments/assets/28dfb592-f6b1-4044-96a9-e32110c237a0)
-
 
 # Dependencies
 
 The main library is compiled for .NET 8.0 and .NET Standard 2.0 and targets compatible OSes - Windows, Linux & macOS - and .NET and Mono frameworks - Xamarin, Mono, UWP, Unity, etc.
+
+# Original library
+
+The key differences from the [original VoronoiLib repo](https://github.com/Zalgo2462/VoronoiLib):
+* Borders can be closed, that is, edges generated along the boundary
+* Edges and points/sites contain additional useful data
+* Multiple critical and annoyingly-rare bugs and edge cases fixes
+* LOTS more unit testing
+
+Known issues:
+* The algorithm uses a lot of allocations, forcing garbage collection
 
 # Credits
 
