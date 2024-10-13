@@ -1,4 +1,5 @@
-name: Run Unit Tests
+name: Tests
+# Note: used as badge name
 
 on:
   push:
