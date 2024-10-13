@@ -14,7 +14,6 @@ The key differences from the [original VoronoiLib repo](https://github.com/Zalgo
 
 Known issues:
 * The algorithm uses a lot of allocations, forcing garbage collection
-* There is no visual output/example since the original used MonoGame
 
 # Examples
 
@@ -112,7 +111,7 @@ A very simple MonoGame example is included in `MonoGameExample` project:
 
 # Dependencies
 
-The main library is compiled for .NET (Core) 6.0 and .NET Standard 2.0 at C# 8.0 and targets compatible OSes - Windows, Linux & macOS - and frameworks like Xamarin, Mono, UWP, or Unity.
+The main library is compiled for .NET 8.0 and .NET Standard 2.0 and targets compatible OSes - Windows, Linux & macOS - and .NET and Mono frameworks - Xamarin, Mono, UWP, Unity, etc.
 
 # Credits
 
