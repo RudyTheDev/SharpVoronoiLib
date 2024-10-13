@@ -19,13 +19,13 @@ jobs:
         dotnet-version: '8.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore SharpVoronoiLib/SharpVoronoiLib.csproj
 
     - name: Build the project
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build SharpVoronoiLib/SharpVoronoiLib.csproj --configuration Release --no-restore
 
     - name: Pack the project
-      run: dotnet pack --configuration Release --no-build --output ./nupkg
+      run: dotnet pack SharpVoronoiLib/SharpVoronoiLib.csproj --configuration Release --no-build --output ./nupkg
 
     - name: Publish to GitHub Packages
       run: dotnet nuget push ./nupkg/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
