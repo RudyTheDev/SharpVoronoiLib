@@ -39,11 +39,6 @@ public class KDTree<TDimension, TNode>
     public int Count { get; }
 
     /// <summary>
-    /// The numbers of dimensions that the tree has.
-    /// </summary>
-    public int Dimensions { get; }
-
-    /// <summary>
     /// The array in which the binary tree is stored. Enumerating this array is a level-order traversal of the tree.
     /// </summary>
     public TDimension[][] InternalPointArray { get; }
@@ -77,14 +72,12 @@ public class KDTree<TDimension, TNode>
     /// <summary>
     /// Initializes a new instance of the <see cref="KDTree{TDimension,TNode}"/> class.
     /// </summary>
-    /// <param name="dimensions">The number of dimensions in the data set.</param>
     /// <param name="points">The points to be constructed into a <see cref="KDTree{TDimension,TNode}"/></param>
     /// <param name="nodes">The nodes associated with each point.</param>
     /// <param name="metric">The metric function which implicitly defines the metric space in which the KDTree operates in. This should satisfy the triangle inequality.</param>
     /// <param name="searchWindowMinValue">The minimum value to be used in node searches. If null, we assume that <typeparamref name="TDimension"/> has a static field named "MinValue". All numeric structs have this field.</param>
     /// <param name="searchWindowMaxValue">The maximum value to be used in node searches. If null, we assume that <typeparamref name="TDimension"/> has a static field named "MaxValue". All numeric structs have this field.</param>
     public KDTree(
-        int dimensions,
         TDimension[][] points,
         TNode[] nodes,
         Func<TDimension[], TDimension[], double> metric,
@@ -115,7 +108,6 @@ public class KDTree<TDimension, TNode>
         // Calculate the number of nodes needed to contain the binary tree.
         // This is equivalent to finding the power of 2 greater than the number of points
         int elementCount = (int)Math.Pow(2, (int)(Math.Log(points.Length) / Math.Log(2)) + 1);
-        Dimensions = dimensions;
         InternalPointArray = Enumerable.Repeat(default(TDimension[]), elementCount).ToArray();
         InternalNodeArray = Enumerable.Repeat(default(TNode), elementCount).ToArray();
         Metric = metric;
@@ -132,7 +124,7 @@ public class KDTree<TDimension, TNode>
     public Tuple<TDimension[], TNode>[] NearestNeighbors(TDimension[] point, int neighbors)
     {
         BoundedPriorityList<int, double> nearestNeighborList = new BoundedPriorityList<int, double>(neighbors, true);
-        HyperRect<TDimension> rect = HyperRect<TDimension>.Infinite(Dimensions, MaxValue, MinValue);
+        HyperRect<TDimension> rect = HyperRect<TDimension>.Infinite(2, MaxValue, MinValue);
         SearchForNearestNeighbors(0, point, rect, 0, nearestNeighborList, double.MaxValue);
 
         return nearestNeighborList.ToResultSet(this);
@@ -153,7 +145,7 @@ public class KDTree<TDimension, TNode>
             SearchForNearestNeighbors(
                 0,
                 center,
-                HyperRect<TDimension>.Infinite(Dimensions, MaxValue, MinValue),
+                HyperRect<TDimension>.Infinite(2, MaxValue, MinValue),
                 0,
                 nearestNeighbors,
                 radius);
@@ -163,7 +155,7 @@ public class KDTree<TDimension, TNode>
             SearchForNearestNeighbors(
                 0,
                 center,
-                HyperRect<TDimension>.Infinite(Dimensions, MaxValue, MinValue),
+                HyperRect<TDimension>.Infinite(2, MaxValue, MinValue),
                 0,
                 nearestNeighbors,
                 radius);
@@ -224,7 +216,7 @@ public class KDTree<TDimension, TNode>
         // We new recurse, passing the left and right arrays for arguments.
         // The current node's left and right values become the "roots" for
         // each recursion call. We also forward cycle to the next dimension.
-        int nextDim = (dim + 1) % Dimensions; // select next dimension
+        int nextDim = (dim + 1) % 2; // select next dimension
 
         // We only need to recurse if the point array contains more than one point
         // If the array has no points then the node stay a null value
@@ -280,7 +272,7 @@ public class KDTree<TDimension, TNode>
         }
 
         // Work out the current dimension
-        int dim = dimension % Dimensions;
+        int dim = dimension % 2;
 
         // Split our hyper-rectangle into 2 sub rectangles along the current
         // node's point on the current dimension
