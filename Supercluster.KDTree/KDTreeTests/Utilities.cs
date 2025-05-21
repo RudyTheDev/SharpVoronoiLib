@@ -34,13 +34,13 @@ public static class Utilities
 
     public static double[][] GenerateDoubles(int points, double range, int dimensions)
     {
-        var data = new List<double[]>();
-        var random = new Random();
+        List<double[]> data = new List<double[]>();
+        Random random = new Random();
 
-        for (var i = 0; i < points; i++)
+        for (int i = 0; i < points; i++)
         {
-            var array = new double[dimensions];
-            for (var j = 0; j < dimensions; j++)
+            double[] array = new double[dimensions];
+            for (int j = 0; j < dimensions; j++)
             {
                 array[j] = random.NextDouble() * range;
             }
@@ -52,8 +52,8 @@ public static class Utilities
 
     public static double[][] GenerateDoubles(int points, double range)
     {
-        var data = new List<double[]>();
-        var random = new Random();
+        List<double[]> data = new List<double[]>();
+        Random random = new Random();
 
         for (int i = 0; i < points; i++)
         {
@@ -65,8 +65,8 @@ public static class Utilities
 
     public static float[][] GenerateFloats(int points, double range)
     {
-        var data = new List<float[]>();
-        var random = new Random();
+        List<float[]> data = new List<float[]>();
+        Random random = new Random();
 
         for (int i = 0; i < points; i++)
         {
@@ -78,13 +78,13 @@ public static class Utilities
 
     public static float[][] GenerateFloats(int points, double range, int dimensions)
     {
-        var data = new List<float[]>();
-        var random = new Random();
+        List<float[]> data = new List<float[]>();
+        Random random = new Random();
 
-        for (var i = 0; i < points; i++)
+        for (int i = 0; i < points; i++)
         {
-            var array = new float[dimensions];
-            for (var j = 0; j < dimensions; j++)
+            float[] array = new float[dimensions];
+            for (int j = 0; j < dimensions; j++)
             {
                 array[j] = (float)(random.NextDouble() * range);
             }
@@ -108,12 +108,12 @@ public static class Utilities
     /// <returns></returns>
     public static T[] LinearSearch<T>(T[][] data, T[] point, Func<T[], T[], float> metric)
     {
-        var bestDist = Double.PositiveInfinity;
+        double bestDist = Double.PositiveInfinity;
         T[] bestPoint = null;
 
         for (int i = 0; i < data.Length; i++)
         {
-            var currentDist = metric(point, data[i]);
+            float currentDist = metric(point, data[i]);
             if (bestDist > currentDist)
             {
                 bestDist = currentDist;
@@ -126,12 +126,12 @@ public static class Utilities
 
     public static T[] LinearSearch<T>(T[][] data, T[] point, Func<T[], T[], double> metric)
     {
-        var bestDist = Double.PositiveInfinity;
+        double bestDist = Double.PositiveInfinity;
         T[] bestPoint = null;
 
         for (int i = 0; i < data.Length; i++)
         {
-            var currentDist = metric(point, data[i]);
+            double currentDist = metric(point, data[i]);
             if (bestDist > currentDist)
             {
                 bestDist = currentDist;
@@ -144,12 +144,12 @@ public static class Utilities
 
     public static Tuple<TPoint[], TNode> LinearSearch<TPoint, TNode>(TPoint[][] points, TNode[] nodes, TPoint[] target, Func<TPoint[], TPoint[], double> metric)
     {
-        var bestIndex = 0;
-        var bestDist = Double.MaxValue;
+        int bestIndex = 0;
+        double bestDist = Double.MaxValue;
 
         for (int i = 0; i < points.Length; i++)
         {
-            var currentDist = metric(points[i], target);
+            double currentDist = metric(points[i], target);
             if (bestDist > currentDist)
             {
                 bestDist = currentDist;
@@ -163,11 +163,11 @@ public static class Utilities
 
     public static T[][] LinearRadialSearch<T>(T[][] data, T[] point, Func<T[], T[], double> metric, double radius)
     {
-        var pointsInRadius = new BoundedPriorityList<T[], double>(data.Length, true);
+        BoundedPriorityList<T[], double> pointsInRadius = new BoundedPriorityList<T[], double>(data.Length, true);
 
         for (int i = 0; i < data.Length; i++)
         {
-            var currentDist = metric(point, data[i]);
+            double currentDist = metric(point, data[i]);
             if (radius >= currentDist)
             {
                 pointsInRadius.Add(data[i], currentDist);
@@ -180,11 +180,11 @@ public static class Utilities
 
     public static Tuple<TPoint[], TNode>[] LinearRadialSearch<TPoint, TNode>(TPoint[][] points, TNode[] nodes, TPoint[] target, Func<TPoint[], TPoint[], double> metric, double radius)
     {
-        var pointsInRadius = new BoundedPriorityList<int, double>(points.Length, true);
+        BoundedPriorityList<int, double> pointsInRadius = new BoundedPriorityList<int, double>(points.Length, true);
 
         for (int i = 0; i < points.Length; i++)
         {
-            var currentDist = metric(target, points[i]);
+            double currentDist = metric(target, points[i]);
             if (radius >= currentDist)
             {
                 pointsInRadius.Add(i, currentDist);
