@@ -75,29 +75,11 @@ public class KDTree<TNode>
         double[][] points,
         TNode[] nodes,
         Func<double[], double[], double> metric,
-        double searchWindowMinValue = 0,
-        double searchWindowMaxValue = 0)
+        double searchWindowMinValue = double.MinValue,
+        double searchWindowMaxValue = double.MaxValue)
     {
-        // Attempt find the Min/Max value if null.
-        if (searchWindowMinValue.Equals(0))
-        {
-            Type type = typeof(double);
-            MinValue = (double)type.GetField("MinValue").GetValue(type);
-        }
-        else
-        {
-            MinValue = searchWindowMinValue;
-        }
-
-        if (searchWindowMaxValue.Equals(0))
-        {
-            Type type = typeof(double);
-            MaxValue = (double)type.GetField("MaxValue").GetValue(type);
-        }
-        else
-        {
-            MaxValue = searchWindowMaxValue;
-        }
+        MinValue = searchWindowMinValue;
+        MaxValue = searchWindowMaxValue;
 
         // Calculate the number of nodes needed to contain the binary tree.
         // This is equivalent to finding the power of 2 greater than the number of points
