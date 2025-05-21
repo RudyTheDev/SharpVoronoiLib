@@ -1,16 +1,10 @@
-﻿using KDTreeTests;
-
-using NUnit.Framework;
-
-namespace KDTreeTests;
+﻿namespace KDTreeTests;
 
 using System.Linq;
 
 using NUnit.Framework;
 
 using Supercluster.KDTree;
-using Supercluster.KDTree.Utilities;
-
 using static Supercluster.KDTree.Utilities.BinaryTreeNavigation;
 
 [TestFixture]

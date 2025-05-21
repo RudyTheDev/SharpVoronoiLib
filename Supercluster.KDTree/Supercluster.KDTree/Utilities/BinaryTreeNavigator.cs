@@ -33,8 +33,8 @@ public class BinaryTreeNavigator<TPoint, TNode>
     /// </summary>
     public BinaryTreeNavigator<TPoint, TNode> Left
         =>
-            LeftChildIndex(this.Index) < this.pointArray.Length - 1
-                ? new BinaryTreeNavigator<TPoint, TNode>(this.pointArray, this.nodeArray, LeftChildIndex(this.Index))
+            LeftChildIndex(Index) < pointArray.Length - 1
+                ? new BinaryTreeNavigator<TPoint, TNode>(pointArray, nodeArray, LeftChildIndex(Index))
                 : null;
 
     /// <summary>
@@ -42,24 +42,24 @@ public class BinaryTreeNavigator<TPoint, TNode>
     /// </summary>
     public BinaryTreeNavigator<TPoint, TNode> Right
         =>
-            RightChildIndex(this.Index) < this.pointArray.Length - 1
-                ? new BinaryTreeNavigator<TPoint, TNode>(this.pointArray, this.nodeArray, RightChildIndex(this.Index))
+            RightChildIndex(Index) < pointArray.Length - 1
+                ? new BinaryTreeNavigator<TPoint, TNode>(pointArray, nodeArray, RightChildIndex(Index))
                 : null;
 
     /// <summary>
     /// The parent of the current node.
     /// </summary>
-    public BinaryTreeNavigator<TPoint, TNode> Parent => this.Index == 0 ? null : new BinaryTreeNavigator<TPoint, TNode>(this.pointArray, this.nodeArray, ParentIndex(this.Index));
+    public BinaryTreeNavigator<TPoint, TNode> Parent => Index == 0 ? null : new BinaryTreeNavigator<TPoint, TNode>(pointArray, nodeArray, ParentIndex(Index));
 
     /// <summary>
     /// The current <typeparamref name="TPoint"/>.
     /// </summary>
-    public TPoint Point => this.pointArray[this.Index];
+    public TPoint Point => pointArray[Index];
 
     /// <summary>
     /// The current <typeparamref name="TNode"/>
     /// </summary>
-    public TNode Node => this.nodeArray[this.Index];
+    public TNode Node => nodeArray[Index];
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BinaryTreeNavigator{TPoint, TNode}"/> class.
@@ -69,7 +69,7 @@ public class BinaryTreeNavigator<TPoint, TNode>
     /// <param name="index">The index of the node of interest in the pointArray. If not given, the node navigator start at the 0 index (the root of the tree).</param>
     public BinaryTreeNavigator(TPoint[] pointArray, TNode[] nodeArray, int index = 0)
     {
-        this.Index = index;
+        Index = index;
         this.pointArray = pointArray;
         this.nodeArray = nodeArray;
     }

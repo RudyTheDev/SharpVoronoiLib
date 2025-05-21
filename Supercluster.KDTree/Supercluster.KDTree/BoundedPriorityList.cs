@@ -33,22 +33,22 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <summary>
     /// Gets the element with the largest priority.
     /// </summary>
-    public TElement MaxElement => this.elementList[this.elementList.Count - 1];
+    public TElement MaxElement => elementList[elementList.Count - 1];
 
     /// <summary>
     /// Gets the largest priority.
     /// </summary>
-    public TPriority MaxPriority => this.priorityList[this.priorityList.Count - 1];
+    public TPriority MaxPriority => priorityList[priorityList.Count - 1];
 
     /// <summary>
     /// Gets the element with the lowest priority.
     /// </summary>
-    public TElement MinElement => this.elementList[0];
+    public TElement MinElement => elementList[0];
 
     /// <summary>
     /// Gets the smallest priority.
     /// </summary>
-    public TPriority MinPriority => this.priorityList[0];
+    public TPriority MinPriority => priorityList[0];
 
     /// <summary>
     /// Gets the maximum allows capacity for the <see cref="BoundedPriorityList{TElement,TPriority}"/>
@@ -58,19 +58,19 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <summary>
     /// Returns true if the list is at maximum capacity.
     /// </summary>
-    public bool IsFull => this.Count == this.Capacity;
+    public bool IsFull => Count == Capacity;
 
     /// <summary>
     /// Returns the count of items currently in the list.
     /// </summary>
-    public int Count => this.priorityList.Count;
+    public int Count => priorityList.Count;
 
     /// <summary>
     /// Indexer for the internal element array.
     /// </summary>
     /// <param name="index">The index in the array.</param>
     /// <returns>The element at the specified index.</returns>
-    public TElement this[int index] => this.elementList[index];
+    public TElement this[int index] => elementList[index];
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BoundedPriorityList{TElement, TPriority}"/> class.
@@ -83,16 +83,16 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <param name="allocate">If true, initializes the internal lists for the <see cref="BoundedPriorityList{TElement,TPriority}"/> with an initial capacity of <paramref name="capacity"/>.</param>
     public BoundedPriorityList(int capacity, bool allocate = false)
     {
-        this.Capacity = capacity;
+        Capacity = capacity;
         if (allocate)
         {
-            this.priorityList = new List<TPriority>(capacity);
-            this.elementList = new List<TElement>(capacity);
+            priorityList = new List<TPriority>(capacity);
+            elementList = new List<TElement>(capacity);
         }
         else
         {
-            this.priorityList = new List<TPriority>();
-            this.elementList = new List<TElement>();
+            priorityList = new List<TPriority>();
+            elementList = new List<TElement>();
         }
     }
 
@@ -109,29 +109,29 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Add(TElement item, TPriority priority)
     {
-        if (this.Count >= this.Capacity)
+        if (Count >= Capacity)
         {
-            if (this.priorityList[this.priorityList.Count - 1].CompareTo(priority) < 0)
+            if (priorityList[priorityList.Count - 1].CompareTo(priority) < 0)
             {
                 return;
             }
 
-            var index = this.priorityList.BinarySearch(priority);
+            var index = priorityList.BinarySearch(priority);
             index = index >= 0 ? index : ~index;
 
-            this.priorityList.Insert(index, priority);
-            this.elementList.Insert(index, item);
+            priorityList.Insert(index, priority);
+            elementList.Insert(index, item);
 
-            this.priorityList.RemoveAt(this.priorityList.Count - 1);
-            this.elementList.RemoveAt(this.elementList.Count - 1);
+            priorityList.RemoveAt(priorityList.Count - 1);
+            elementList.RemoveAt(elementList.Count - 1);
         }
         else
         {
-            var index = this.priorityList.BinarySearch(priority);
+            var index = priorityList.BinarySearch(priority);
             index = index >= 0 ? index : ~index;
 
-            this.priorityList.Insert(index, priority);
-            this.elementList.Insert(index, item);
+            priorityList.Insert(index, priority);
+            elementList.Insert(index, item);
         }
     }
 
@@ -141,7 +141,7 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <returns>An enumerator.</returns>
     public IEnumerator<TElement> GetEnumerator()
     {
-        return this.elementList.GetEnumerator();
+        return elementList.GetEnumerator();
     }
 
     /// <summary>
@@ -150,6 +150,6 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <returns>An enumerator.</returns>
     IEnumerator IEnumerable.GetEnumerator()
     {
-        return this.GetEnumerator();
+        return GetEnumerator();
     }
 }
