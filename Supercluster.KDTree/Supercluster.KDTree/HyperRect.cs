@@ -6,25 +6,23 @@ using System.Runtime.CompilerServices;
 /// <summary>
 /// Represents a hyper-rectangle. An N-Dimensional rectangle.
 /// </summary>
-/// <typeparam name="T">The type of "dimension" in the metric space in which the hyper-rectangle lives.</typeparam>
-public struct HyperRect<T>
-    where T : IComparable<T>
+public struct HyperRect
 {
     /// <summary>
     /// Backing field for the <see cref="MinPoint"/> property.
     /// </summary>
-    private T[] minPoint;
+    private double[] minPoint;
 
     /// <summary>
     /// Backing field for the <see cref="MaxPoint"/> property.
     /// </summary>
-    private T[] maxPoint;
+    private double[] maxPoint;
 
     /// <summary>
     /// The minimum point of the hyper-rectangle. One can think of this point as the
     /// bottom-left point of a 2-Dimensional rectangle.
     /// </summary>
-    public T[] MinPoint
+    public double[] MinPoint
     {
         get
         {
@@ -34,7 +32,7 @@ public struct HyperRect<T>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            minPoint = new T[value.Length];
+            minPoint = new double[value.Length];
             value.CopyTo(minPoint, 0);
         }
     }
@@ -43,7 +41,7 @@ public struct HyperRect<T>
     /// The maximum point of the hyper-rectangle. One can think of this point as the
     /// top-right point of a 2-Dimensional rectangle.
     /// </summary>
-    public T[] MaxPoint
+    public double[] MaxPoint
     {
         get
         {
@@ -53,7 +51,7 @@ public struct HyperRect<T>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            maxPoint = new T[value.Length];
+            maxPoint = new double[value.Length];
             value.CopyTo(maxPoint, 0);
         }
     }
@@ -61,18 +59,17 @@ public struct HyperRect<T>
     /// <summary>
     /// Get a hyper rectangle which spans the entire implicit metric space.
     /// </summary>
-    /// <param name="dimensions">The number of dimensions in the hyper-rectangle's metric space.</param>
     /// <param name="positiveInfinity">The smallest possible values in any given dimension.</param>
     /// <param name="negativeInfinity">The largest possible values in any given dimension.</param>
     /// <returns>The hyper-rectangle which spans the entire metric space.</returns>
-    public static HyperRect<T> Infinite(int dimensions, T positiveInfinity, T negativeInfinity)
+    public static HyperRect Infinite(double positiveInfinity, double negativeInfinity)
     {
-        HyperRect<T> rect = default(HyperRect<T>);
+        HyperRect rect = default;
 
-        rect.MinPoint = new T[dimensions];
-        rect.MaxPoint = new T[dimensions];
+        rect.MinPoint = new double[2];
+        rect.MaxPoint = new double[2];
 
-        for (int dimension = 0; dimension < dimensions; dimension++)
+        for (int dimension = 0; dimension < 2; dimension++)
         {
             rect.MinPoint[dimension] = negativeInfinity;
             rect.MaxPoint[dimension] = positiveInfinity;
@@ -90,9 +87,9 @@ public struct HyperRect<T>
     /// <param name="toPoint">We try to find a point in or on the rectangle closest to this point.</param>
     /// <returns>The point on or in the rectangle that is closest to the given point.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public T[] GetClosestPoint(T[] toPoint)
+    public double[] GetClosestPoint(double[] toPoint)
     {
-        T[] closest = new T[toPoint.Length];
+        double[] closest = new double[toPoint.Length];
 
         for (int dimension = 0; dimension < toPoint.Length; dimension++)
         {
@@ -118,11 +115,11 @@ public struct HyperRect<T>
     /// Clones the <see cref="HyperRect{T}"/>.
     /// </summary>
     /// <returns>A clone of the <see cref="HyperRect{T}"/></returns>
-    public HyperRect<T> Clone()
+    public HyperRect Clone()
     {
         // For a discussion of why we don't implement ICloneable
         // see http://stackoverflow.com/questions/536349/why-no-icloneablet
-        HyperRect<T> rect = default(HyperRect<T>);
+        HyperRect rect = default;
         rect.MinPoint = MinPoint;
         rect.MaxPoint = MaxPoint;
         return rect;

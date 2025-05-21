@@ -36,7 +36,7 @@ public class AccuracyTest
         };
 
         string[] nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
-        KDTree<double, string> tree = new KDTree<double, string>(
+        KDTree<string> tree = new KDTree<string>(
             points,
             nodes,
             Utilities.L2Norm_Squared_Double,
@@ -78,7 +78,7 @@ public class AccuracyTest
 
         string[] nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
 
-        KDTree<double, string> tree = new KDTree<double, string>(points, nodes, Utilities.L2Norm_Squared_Double);
+        KDTree<string> tree = new KDTree<string>(points, nodes, Utilities.L2Norm_Squared_Double);
 
         BinaryTreeNavigator<double[], string> nav = tree.Navigator;
 
@@ -114,7 +114,7 @@ public class AccuracyTest
         double[][] testData = Utilities.GenerateDoubles(testDataSize, range);
 
 
-        KDTree<double, string> tree = new KDTree<double, string>(treePoints, treeNodes, Utilities.L2Norm_Squared_Double);
+        KDTree<string> tree = new KDTree<string>(treePoints, treeNodes, Utilities.L2Norm_Squared_Double);
 
         for (int i = 0; i < testDataSize; i++)
         {
@@ -139,7 +139,7 @@ public class AccuracyTest
         double[][] treeData = Utilities.GenerateDoubles(dataSize, range);
         string[] treeNodes = Utilities.GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
         double[][] testData = Utilities.GenerateDoubles(testDataSize, range);
-        KDTree<double, string> tree = new KDTree<double, string>(treeData, treeNodes, Utilities.L2Norm_Squared_Double);
+        KDTree<string> tree = new KDTree<string>(treeData, treeNodes, Utilities.L2Norm_Squared_Double);
 
         for (int i = 0; i < testDataSize; i++)
         {

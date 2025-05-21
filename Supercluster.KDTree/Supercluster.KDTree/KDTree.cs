@@ -10,7 +10,7 @@ using static Utilities.BinaryTreeNavigation;
 /// <summary>
 /// Represents a KD-Tree. KD-Trees are used for fast spatial searches. Searching in a
 /// balanced KD-Tree is O(log n) where linear search is O(n). Points in the KD-Tree are
-/// equi-length arrays of type <typeparamref name="TDimension"/>. The node objects associated
+/// equi-length arrays of doubles. The node objects associated
 /// with the points is an array of type <typeparamref name="TNode"/>.
 /// </summary>
 /// <remarks>
@@ -23,11 +23,9 @@ using static Utilities.BinaryTreeNavigation;
 /// <li> <a href="https://en.wikipedia.org/wiki/K-d_tree"> https://en.wikipedia.org/wiki/K-d_tree</a> </li>
 /// </ul>
 /// </remarks>
-/// <typeparam name="TDimension">The type of the dimension.</typeparam>
 /// <typeparam name="TNode">The type representing the actual node objects.</typeparam>
 [Serializable]
-public class KDTree<TDimension, TNode>
-    where TDimension : IComparable<TDimension>
+public class KDTree<TNode>
 {
     /// <summary>
     /// The number of points in the KDTree
@@ -37,7 +35,7 @@ public class KDTree<TDimension, TNode>
     /// <summary>
     /// The array in which the binary tree is stored. Enumerating this array is a level-order traversal of the tree.
     /// </summary>
-    public TDimension[][] InternalPointArray { get; }
+    public double[][] InternalPointArray { get; }
 
     /// <summary>
     /// The array in which the node objects are stored. There is a one-to-one correspondence with this array and the <see cref="InternalPointArray"/>.
@@ -47,54 +45,54 @@ public class KDTree<TDimension, TNode>
     /// <summary>
     /// The metric function used to calculate distance between points.
     /// </summary>
-    public Func<TDimension[], TDimension[], double> Metric { get; set; }
+    public Func<double[], double[], double> Metric { get; set; }
 
     /// <summary>
     /// Gets a <see cref="BinaryTreeNavigator{TPoint,TNode}"/> that allows for manual tree navigation,
     /// </summary>
-    public BinaryTreeNavigator<TDimension[], TNode> Navigator
-        => new BinaryTreeNavigator<TDimension[], TNode>(InternalPointArray, InternalNodeArray);
+    public BinaryTreeNavigator<double[], TNode> Navigator
+        => new BinaryTreeNavigator<double[], TNode>(InternalPointArray, InternalNodeArray);
 
     /// <summary>
     /// The maximum value along any dimension.
     /// </summary>
-    private TDimension MaxValue { get; }
+    private double MaxValue { get; }
 
     /// <summary>
     /// The minimum value along any dimension.
     /// </summary>
-    private TDimension MinValue { get; }
+    private double MinValue { get; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="KDTree{TDimension,TNode}"/> class.
+    /// Initializes a new instance of the <see cref="KDTree{TNode}"/> class.
     /// </summary>
-    /// <param name="points">The points to be constructed into a <see cref="KDTree{TDimension,TNode}"/></param>
+    /// <param name="points">The points to be constructed into a <see cref="KDTree{TNode}"/></param>
     /// <param name="nodes">The nodes associated with each point.</param>
     /// <param name="metric">The metric function which implicitly defines the metric space in which the KDTree operates in. This should satisfy the triangle inequality.</param>
-    /// <param name="searchWindowMinValue">The minimum value to be used in node searches. If null, we assume that <typeparamref name="TDimension"/> has a static field named "MinValue". All numeric structs have this field.</param>
-    /// <param name="searchWindowMaxValue">The maximum value to be used in node searches. If null, we assume that <typeparamref name="TDimension"/> has a static field named "MaxValue". All numeric structs have this field.</param>
+    /// <param name="searchWindowMinValue">The minimum value to be used in node searches.</param>
+    /// <param name="searchWindowMaxValue">The maximum value to be used in node searches.</param>
     public KDTree(
-        TDimension[][] points,
+        double[][] points,
         TNode[] nodes,
-        Func<TDimension[], TDimension[], double> metric,
-        TDimension searchWindowMinValue = default(TDimension),
-        TDimension searchWindowMaxValue = default(TDimension))
+        Func<double[], double[], double> metric,
+        double searchWindowMinValue = 0,
+        double searchWindowMaxValue = 0)
     {
         // Attempt find the Min/Max value if null.
-        if (searchWindowMinValue.Equals(default(TDimension)))
+        if (searchWindowMinValue.Equals(0))
         {
-            Type type = typeof(TDimension);
-            MinValue = (TDimension)type.GetField("MinValue").GetValue(type);
+            Type type = typeof(double);
+            MinValue = (double)type.GetField("MinValue").GetValue(type);
         }
         else
         {
             MinValue = searchWindowMinValue;
         }
 
-        if (searchWindowMaxValue.Equals(default(TDimension)))
+        if (searchWindowMaxValue.Equals(0))
         {
-            Type type = typeof(TDimension);
-            MaxValue = (TDimension)type.GetField("MaxValue").GetValue(type);
+            Type type = typeof(double);
+            MaxValue = (double)type.GetField("MaxValue").GetValue(type);
         }
         else
         {
@@ -104,7 +102,7 @@ public class KDTree<TDimension, TNode>
         // Calculate the number of nodes needed to contain the binary tree.
         // This is equivalent to finding the power of 2 greater than the number of points
         int elementCount = (int)Math.Pow(2, (int)(Math.Log(points.Length) / Math.Log(2)) + 1);
-        InternalPointArray = Enumerable.Repeat(default(TDimension[]), elementCount).ToArray();
+        InternalPointArray = Enumerable.Repeat(default(double[]), elementCount).ToArray();
         InternalNodeArray = Enumerable.Repeat(default(TNode), elementCount).ToArray();
         Metric = metric;
         Count = points.Length;
@@ -112,15 +110,14 @@ public class KDTree<TDimension, TNode>
     }
 
     /// <summary>
-    /// Finds the nearest neighbors in the <see cref="KDTree{TDimension,TNode}"/> of the given <paramref name="point"/>.
+    /// Finds the nearest neighbors in the <see cref="KDTree{TNode}"/> of the given <paramref name="point"/>.
     /// </summary>
     /// <param name="point">The point whose neighbors we search for.</param>
     /// <param name="neighbors">The number of neighbors to look for.</param>
-    /// <returns>The</returns>
-    public Tuple<TDimension[], TNode>[] NearestNeighbors(TDimension[] point, int neighbors)
+    public Tuple<double[], TNode>[] NearestNeighbors(double[] point, int neighbors)
     {
-        BoundedPriorityList<int, double> nearestNeighborList = new BoundedPriorityList<int, double>(neighbors, true);
-        HyperRect<TDimension> rect = HyperRect<TDimension>.Infinite(2, MaxValue, MinValue);
+        BoundedPriorityList<int> nearestNeighborList = new BoundedPriorityList<int>(neighbors, true);
+        HyperRect rect = HyperRect.Infinite(MaxValue, MinValue);
         SearchForNearestNeighbors(0, point, rect, 0, nearestNeighborList, double.MaxValue);
 
         return nearestNeighborList.ToResultSet(this);
@@ -133,15 +130,15 @@ public class KDTree<TDimension, TNode>
     /// <param name="radius">The radius of the hyper-sphere</param>
     /// <param name="neighboors">The number of neighbors to return.</param>
     /// <returns>The specified number of closest points in the hyper-sphere</returns>
-    public Tuple<TDimension[], TNode>[] RadialSearch(TDimension[] center, double radius, int neighboors = -1)
+    public Tuple<double[], TNode>[] RadialSearch(double[] center, double radius, int neighboors = -1)
     {
-        BoundedPriorityList<int, double> nearestNeighbors = new BoundedPriorityList<int, double>(Count);
+        BoundedPriorityList<int> nearestNeighbors = new BoundedPriorityList<int>(Count);
         if (neighboors == -1)
         {
             SearchForNearestNeighbors(
                 0,
                 center,
-                HyperRect<TDimension>.Infinite(2, MaxValue, MinValue),
+                HyperRect.Infinite(MaxValue, MinValue),
                 0,
                 nearestNeighbors,
                 radius);
@@ -151,7 +148,7 @@ public class KDTree<TDimension, TNode>
             SearchForNearestNeighbors(
                 0,
                 center,
-                HyperRect<TDimension>.Infinite(2, MaxValue, MinValue),
+                HyperRect.Infinite(MaxValue, MinValue),
                 0,
                 nearestNeighbors,
                 radius);
@@ -170,7 +167,7 @@ public class KDTree<TDimension, TNode>
     private void GenerateTree(
         int index,
         int dim,
-        IReadOnlyCollection<TDimension[]> points,
+        IReadOnlyCollection<double[]> points,
         IEnumerable<TNode> nodes)
     {
         // See wikipedia for a good explanation kd-tree construction.
@@ -193,13 +190,13 @@ public class KDTree<TDimension, TNode>
 
         // We now split the sorted points into 2 groups
         // 1st group: points before the median
-        TDimension[][] leftPoints = new TDimension[medianPointIdx][];
+        double[][] leftPoints = new double[medianPointIdx][];
         TNode[] leftNodes = new TNode[medianPointIdx];
         Array.Copy(sortedPoints.Select(z => z.Point).ToArray(), leftPoints, leftPoints.Length);
         Array.Copy(sortedPoints.Select(z => z.Node).ToArray(), leftNodes, leftNodes.Length);
 
         // 2nd group: Points after the median
-        TDimension[][] rightPoints = new TDimension[sortedPoints.Length - (medianPointIdx + 1)][];
+        double[][] rightPoints = new double[sortedPoints.Length - (medianPointIdx + 1)][];
         TNode[] rightNodes = new TNode[sortedPoints.Length - (medianPointIdx + 1)];
         Array.Copy(
             sortedPoints.Select(z => z.Point).ToArray(),
@@ -255,10 +252,10 @@ public class KDTree<TDimension, TNode>
     /// <param name="maxSearchRadiusSquared">The squared radius of the current largest distance to search from the <paramref name="target"/></param>
     private void SearchForNearestNeighbors(
         int nodeIndex,
-        TDimension[] target,
-        HyperRect<TDimension> rect,
+        double[] target,
+        HyperRect rect,
         int dimension,
-        BoundedPriorityList<int, double> nearestNeighbors,
+        BoundedPriorityList<int> nearestNeighbors,
         double maxSearchRadiusSquared)
     {
         if (InternalPointArray.Length <= nodeIndex || nodeIndex < 0
@@ -272,17 +269,17 @@ public class KDTree<TDimension, TNode>
 
         // Split our hyper-rectangle into 2 sub rectangles along the current
         // node's point on the current dimension
-        HyperRect<TDimension> leftRect = rect.Clone();
+        HyperRect leftRect = rect.Clone();
         leftRect.MaxPoint[dim] = InternalPointArray[nodeIndex][dim];
 
-        HyperRect<TDimension> rightRect = rect.Clone();
+        HyperRect rightRect = rect.Clone();
         rightRect.MinPoint[dim] = InternalPointArray[nodeIndex][dim];
 
         // Determine which side the target resides in
         int compare = target[dim].CompareTo(InternalPointArray[nodeIndex][dim]);
 
-        HyperRect<TDimension> nearerRect = compare <= 0 ? leftRect : rightRect;
-        HyperRect<TDimension> furtherRect = compare <= 0 ? rightRect : leftRect;
+        HyperRect nearerRect = compare <= 0 ? leftRect : rightRect;
+        HyperRect furtherRect = compare <= 0 ? rightRect : leftRect;
 
         int nearerNode = compare <= 0 ? LeftChildIndex(nodeIndex) : RightChildIndex(nodeIndex);
         int furtherNode = compare <= 0 ? RightChildIndex(nodeIndex) : LeftChildIndex(nodeIndex);
@@ -299,7 +296,7 @@ public class KDTree<TDimension, TNode>
         // Walk down into the further branch but only if our capacity hasn't been reached
         // OR if there's a region in the further rectangle that's closer to the target than our
         // current furtherest nearest neighbor
-        TDimension[] closestPointInFurtherRect = furtherRect.GetClosestPoint(target);
+        double[] closestPointInFurtherRect = furtherRect.GetClosestPoint(target);
         double distanceSquaredToTarget = Metric(closestPointInFurtherRect, target);
 
         if (distanceSquaredToTarget.CompareTo(maxSearchRadiusSquared) <= 0)
