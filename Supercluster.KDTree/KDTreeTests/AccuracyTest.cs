@@ -1,4 +1,6 @@
-﻿namespace KDTreeTests;
+﻿using Supercluster.KDTree.Utilities;
+
+namespace KDTreeTests;
 
 using System.Linq;
 
@@ -27,14 +29,14 @@ public class AccuracyTest
         //  2,3     4,7   8,1 
 
 
-        var points = new double[][]
+        double[][] points = new double[][]
         {
             new double[] { 7, 2 }, new double[] { 5, 4 }, new double[] { 2, 3 },
             new double[] { 4, 7 }, new double[] { 9, 6 }, new double[] { 8, 1 }
         };
 
-        var nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
-        var tree = new KDTree<double, string>(
+        string[] nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
+        KDTree<double, string> tree = new KDTree<double, string>(
             2,
             points,
             nodes,
@@ -69,17 +71,17 @@ public class AccuracyTest
         //  2,3     4,7   8,1 
 
 
-        var points = new double[][]
+        double[][] points = new double[][]
         {
             new double[] { 7, 2 }, new double[] { 5, 4 }, new double[] { 2, 3 },
             new double[] { 4, 7 }, new double[] { 9, 6 }, new double[] { 8, 1 }
         };
 
-        var nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
+        string[] nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
 
-        var tree = new KDTree<double, string>(2, points, nodes, Utilities.L2Norm_Squared_Double);
+        KDTree<double, string> tree = new KDTree<double, string>(2, points, nodes, Utilities.L2Norm_Squared_Double);
 
-        var nav = tree.Navigator;
+        BinaryTreeNavigator<double[], string> nav = tree.Navigator;
 
         Assert.That(nav.Point, Is.EqualTo(points[0]));
         Assert.That(nav.Left.Point, Is.EqualTo(points[1]));
@@ -104,21 +106,21 @@ public class AccuracyTest
     [Test]
     public void FindNearestNeighborTest()
     {
-        var dataSize = 10000;
-        var testDataSize = 100;
-        var range = 1000;
+        int dataSize = 10000;
+        int testDataSize = 100;
+        int range = 1000;
 
-        var treePoints = Utilities.GenerateDoubles(dataSize, range);
-        var treeNodes = Utilities.GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
-        var testData = Utilities.GenerateDoubles(testDataSize, range);
+        double[][] treePoints = Utilities.GenerateDoubles(dataSize, range);
+        string[] treeNodes = Utilities.GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
+        double[][] testData = Utilities.GenerateDoubles(testDataSize, range);
 
 
-        var tree = new KDTree<double, string>(2, treePoints, treeNodes, Utilities.L2Norm_Squared_Double);
+        KDTree<double, string> tree = new KDTree<double, string>(2, treePoints, treeNodes, Utilities.L2Norm_Squared_Double);
 
         for (int i = 0; i < testDataSize; i++)
         {
-            var treeNearest = tree.NearestNeighbors(testData[i], 1);
-            var linearNearest = Utilities.LinearSearch(treePoints, treeNodes, testData[i], Utilities.L2Norm_Squared_Double);
+            Tuple<double[], string>[] treeNearest = tree.NearestNeighbors(testData[i], 1);
+            Tuple<double[], string> linearNearest = Utilities.LinearSearch(treePoints, treeNodes, testData[i], Utilities.L2Norm_Squared_Double);
 
             Assert.That(Utilities.L2Norm_Squared_Double(testData[i], linearNearest.Item1), Is.EqualTo(Utilities.L2Norm_Squared_Double(testData[i], treeNearest[0].Item1)));
 
@@ -130,20 +132,20 @@ public class AccuracyTest
     [Test]
     public void RadialSearchTest()
     {
-        var dataSize = 10000;
-        var testDataSize = 100;
-        var range = 1000;
-        var radius = 100;
+        int dataSize = 10000;
+        int testDataSize = 100;
+        int range = 1000;
+        int radius = 100;
 
-        var treeData = Utilities.GenerateDoubles(dataSize, range);
-        var treeNodes = Utilities.GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
-        var testData = Utilities.GenerateDoubles(testDataSize, range);
-        var tree = new KDTree<double, string>(2, treeData, treeNodes, Utilities.L2Norm_Squared_Double);
+        double[][] treeData = Utilities.GenerateDoubles(dataSize, range);
+        string[] treeNodes = Utilities.GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
+        double[][] testData = Utilities.GenerateDoubles(testDataSize, range);
+        KDTree<double, string> tree = new KDTree<double, string>(2, treeData, treeNodes, Utilities.L2Norm_Squared_Double);
 
         for (int i = 0; i < testDataSize; i++)
         {
-            var treeRadial = tree.RadialSearch(testData[i], radius);
-            var linearRadial = Utilities.LinearRadialSearch(
+            Tuple<double[], string>[] treeRadial = tree.RadialSearch(testData[i], radius);
+            Tuple<double[], string>[] linearRadial = Utilities.LinearRadialSearch(
                 treeData,
                 treeNodes,
                 testData[i],

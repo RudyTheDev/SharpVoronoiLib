@@ -29,8 +29,8 @@ public static class BoundedPriorityListExtensions
         where TDimension : IComparable<TDimension>
         where TPriority : IComparable<TPriority>
     {
-        var array = new Tuple<TDimension[], TNode>[list.Count];
-        for (var i = 0; i < list.Count; i++)
+        Tuple<TDimension[], TNode>[] array = new Tuple<TDimension[], TNode>[list.Count];
+        for (int i = 0; i < list.Count; i++)
         {
             array[i] = new Tuple<TDimension[], TNode>(
                 tree.InternalPointArray[list[i]],

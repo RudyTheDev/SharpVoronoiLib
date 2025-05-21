@@ -116,7 +116,7 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
                 return;
             }
 
-            var index = priorityList.BinarySearch(priority);
+            int index = priorityList.BinarySearch(priority);
             index = index >= 0 ? index : ~index;
 
             priorityList.Insert(index, priority);
@@ -127,7 +127,7 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
         }
         else
         {
-            var index = priorityList.BinarySearch(priority);
+            int index = priorityList.BinarySearch(priority);
             index = index >= 0 ? index : ~index;
 
             priorityList.Insert(index, priority);

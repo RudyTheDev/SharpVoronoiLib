@@ -10,7 +10,7 @@ public class BoundedPriorityTest
     [Test]
     public void InsertTest()
     {
-        var bp = new BoundedPriorityList<int, double>(3, true)
+        BoundedPriorityList<int, double> bp = new BoundedPriorityList<int, double>(3, true)
         {
             { 34, 98744.90383 },
             { 23, 67.39030 },

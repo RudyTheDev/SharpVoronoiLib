@@ -71,12 +71,12 @@ public struct HyperRect<T>
     /// <returns>The hyper-rectangle which spans the entire metric space.</returns>
     public static HyperRect<T> Infinite(int dimensions, T positiveInfinity, T negativeInfinity)
     {
-        var rect = default(HyperRect<T>);
+        HyperRect<T> rect = default(HyperRect<T>);
 
         rect.MinPoint = new T[dimensions];
         rect.MaxPoint = new T[dimensions];
 
-        for (var dimension = 0; dimension < dimensions; dimension++)
+        for (int dimension = 0; dimension < dimensions; dimension++)
         {
             rect.MinPoint[dimension] = negativeInfinity;
             rect.MaxPoint[dimension] = positiveInfinity;
@@ -96,9 +96,9 @@ public struct HyperRect<T>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public T[] GetClosestPoint(T[] toPoint)
     {
-        var closest = new T[toPoint.Length];
+        T[] closest = new T[toPoint.Length];
 
-        for (var dimension = 0; dimension < toPoint.Length; dimension++)
+        for (int dimension = 0; dimension < toPoint.Length; dimension++)
         {
             if (minPoint[dimension].CompareTo(toPoint[dimension]) > 0)
             {
@@ -126,7 +126,7 @@ public struct HyperRect<T>
     {
         // For a discussion of why we don't implement ICloneable
         // see http://stackoverflow.com/questions/536349/why-no-icloneablet
-        var rect = default(HyperRect<T>);
+        HyperRect<T> rect = default(HyperRect<T>);
         rect.MinPoint = MinPoint;
         rect.MaxPoint = MaxPoint;
         return rect;
