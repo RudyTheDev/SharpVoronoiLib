@@ -43,11 +43,6 @@ public class KDTree<TNode>
     public TNode[] InternalNodeArray { get; }
 
     /// <summary>
-    /// The metric function used to calculate distance between points.
-    /// </summary>
-    public Func<double[], double[], double> Metric { get; set; }
-
-    /// <summary>
     /// Gets a <see cref="BinaryTreeNavigator{TPoint,TNode}"/> that allows for manual tree navigation,
     /// </summary>
     public BinaryTreeNavigator<double[], TNode> Navigator
@@ -68,13 +63,11 @@ public class KDTree<TNode>
     /// </summary>
     /// <param name="points">The points to be constructed into a <see cref="KDTree{TNode}"/></param>
     /// <param name="nodes">The nodes associated with each point.</param>
-    /// <param name="metric">The metric function which implicitly defines the metric space in which the KDTree operates in. This should satisfy the triangle inequality.</param>
     /// <param name="searchWindowMinValue">The minimum value to be used in node searches.</param>
     /// <param name="searchWindowMaxValue">The maximum value to be used in node searches.</param>
     public KDTree(
         double[][] points,
         TNode[] nodes,
-        Func<double[], double[], double> metric,
         double searchWindowMinValue = double.MinValue,
         double searchWindowMaxValue = double.MaxValue)
     {
@@ -86,7 +79,6 @@ public class KDTree<TNode>
         int elementCount = (int)Math.Pow(2, (int)(Math.Log(points.Length) / Math.Log(2)) + 1);
         InternalPointArray = Enumerable.Repeat(default(double[]), elementCount).ToArray();
         InternalNodeArray = Enumerable.Repeat(default(TNode), elementCount).ToArray();
-        Metric = metric;
         Count = points.Length;
         GenerateTree(0, 0, points, nodes);
     }
@@ -245,7 +237,7 @@ public class KDTree<TNode>
         // OR if there's a region in the further rectangle that's closer to the target than our
         // current furtherest nearest neighbor
         double[] closestPointInFurtherRect = furtherRect.GetClosestPoint(target);
-        double distanceSquaredToTarget = Metric(closestPointInFurtherRect, target);
+        double distanceSquaredToTarget = CalculateDistance(closestPointInFurtherRect, target);
 
         if (distanceSquaredToTarget.CompareTo(maxSearchRadiusSquared) <= 0)
         {
@@ -275,10 +267,20 @@ public class KDTree<TNode>
         }
 
         // Try to add the current node to our nearest neighbors list
-        distanceSquaredToTarget = Metric(InternalPointArray[nodeIndex], target);
-        if (distanceSquaredToTarget.CompareTo(maxSearchRadiusSquared) <= 0)
+        if (CalculateDistance(InternalPointArray[nodeIndex], target).CompareTo(maxSearchRadiusSquared) <= 0)
         {
-            nearestNeighbors.Add(nodeIndex, distanceSquaredToTarget);
+            nearestNeighbors.Add(nodeIndex, CalculateDistance(InternalPointArray[nodeIndex], target));
         }
+    }
+
+    private static double CalculateDistance(double[] x, double[] y)
+    {
+        double dist = 0f;
+        for (int i = 0; i < x.Length; i++)
+        {
+            dist += (x[i] - y[i]) * (x[i] - y[i]);
+        }
+
+        return dist;
     }
 }
