@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SharpVoronoiLib
+namespace SharpVoronoiLib;
+
+internal interface ITessellationAlgorithm
 {
-    internal interface ITessellationAlgorithm
-    {
-        List<VoronoiEdge> Run(List<VoronoiSite> sites, double minX, double minY, double maxX, double maxY);
-    }
+    List<VoronoiEdge> Run(List<VoronoiSite> sites, double minX, double minY, double maxX, double maxY);
 }

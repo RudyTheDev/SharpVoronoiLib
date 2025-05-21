@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace SharpVoronoiLib.Exceptions
+namespace SharpVoronoiLib.Exceptions;
+
+public class VoronoiDoesntHaveSitesException : Exception
 {
-    public class VoronoiDoesntHaveSitesException : Exception
+    public VoronoiDoesntHaveSitesException()
+        : base("This data is not ready yet, you must add sites to the plane first.")
     {
-        public VoronoiDoesntHaveSitesException()
-            : base("This data is not ready yet, you must add sites to the plane first.")
-        {
             
-        }
     }
 }

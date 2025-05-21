@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SharpVoronoiLib
+namespace SharpVoronoiLib;
+
+internal interface INearestSiteLookup
 {
-    internal interface INearestSiteLookup
-    {
-        VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y);
-    }
+    VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y);
 }

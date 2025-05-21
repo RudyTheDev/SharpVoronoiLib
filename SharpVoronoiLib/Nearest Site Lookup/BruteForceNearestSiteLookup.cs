@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SharpVoronoiLib
+namespace SharpVoronoiLib;
+
+public class BruteForceNearestSiteLookup : INearestSiteLookup
 {
-    public class BruteForceNearestSiteLookup : INearestSiteLookup
+    public VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y)
     {
-        public VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y)
+        VoronoiSite closestSite = sites[0];
+        double closestDistanceSqr = double.MaxValue;
+
+        foreach (VoronoiSite site in sites)
         {
-            VoronoiSite closestSite = sites[0];
-            double closestDistanceSqr = double.MaxValue;
+            double distance = (site.X - x) * (site.X - x) + (site.Y - y) * (site.Y - y);
 
-            foreach (VoronoiSite site in sites)
+            if (distance < closestDistanceSqr)
             {
-                double distance = (site.X - x) * (site.X - x) + (site.Y - y) * (site.Y - y);
-
-                if (distance < closestDistanceSqr)
-                {
-                    closestDistanceSqr = distance;
-                    closestSite = site;
-                }
+                closestDistanceSqr = distance;
+                closestSite = site;
             }
-
-            return closestSite;
         }
+
+        return closestSite;
     }
 }

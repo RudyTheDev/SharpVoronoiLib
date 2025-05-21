@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SharpVoronoiLib
+namespace SharpVoronoiLib;
+
+internal interface ISiteMergingAlgorithm
 {
-    internal interface ISiteMergingAlgorithm
-    {
-        void MergeSites(List<VoronoiSite> sites, List<VoronoiEdge> edges, VoronoiSiteMergeQuery mergeQuery);
-    }
+    void MergeSites(List<VoronoiSite> sites, List<VoronoiEdge> edges, VoronoiSiteMergeQuery mergeQuery);
 }
