@@ -127,39 +127,6 @@ public class AccuracyTest
             Assert.That(treeNearest[0].Item2, Is.EqualTo(linearNearest.Item2));
         }
     }
-
-    [Test]
-    public void RadialSearchTest()
-    {
-        int dataSize = 10000;
-        int testDataSize = 100;
-        int range = 1000;
-        int radius = 100;
-
-        double[][] treeData = Utilities.GenerateDoubles(dataSize, range);
-        string[] treeNodes = Utilities.GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
-        double[][] testData = Utilities.GenerateDoubles(testDataSize, range);
-        KDTree<string> tree = new KDTree<string>(treeData, treeNodes, Utilities.L2Norm_Squared_Double);
-
-        for (int i = 0; i < testDataSize; i++)
-        {
-            Tuple<double[], string>[] treeRadial = tree.RadialSearch(testData[i], radius);
-            Tuple<double[], string>[] linearRadial = Utilities.LinearRadialSearch(
-                treeData,
-                treeNodes,
-                testData[i],
-                Utilities.L2Norm_Squared_Double,
-                radius);
-
-            for (int j = 0; j < treeRadial.Length; j++)
-            {
-                Assert.That(treeRadial[j].Item1, Is.EqualTo(linearRadial[j].Item1));
-                Assert.That(treeRadial[j].Item2, Is.EqualTo(linearRadial[j].Item2));
-            }
-
-
-        }
-    }
     
     
     /// <summary>

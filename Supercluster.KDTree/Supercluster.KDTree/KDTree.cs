@@ -106,40 +106,6 @@ public class KDTree<TNode>
     }
 
     /// <summary>
-    /// Searches for the closest points in a hyper-sphere around the given center.
-    /// </summary>
-    /// <param name="center">The center of the hyper-sphere</param>
-    /// <param name="radius">The radius of the hyper-sphere</param>
-    /// <param name="neighboors">The number of neighbors to return.</param>
-    /// <returns>The specified number of closest points in the hyper-sphere</returns>
-    public Tuple<double[], TNode>[] RadialSearch(double[] center, double radius, int neighboors = -1)
-    {
-        BoundedPriorityList<int> nearestNeighbors = new BoundedPriorityList<int>(Count);
-        if (neighboors == -1)
-        {
-            SearchForNearestNeighbors(
-                0,
-                center,
-                HyperRect.Infinite(MaxValue, MinValue),
-                0,
-                nearestNeighbors,
-                radius);
-        }
-        else
-        {
-            SearchForNearestNeighbors(
-                0,
-                center,
-                HyperRect.Infinite(MaxValue, MinValue),
-                0,
-                nearestNeighbors,
-                radius);
-        }
-
-        return nearestNeighbors.ToResultSet(this);
-    }
-
-    /// <summary>
     /// Grows a KD tree recursively via median splitting. We find the median by doing a full sort.
     /// </summary>
     /// <param name="index">The array index for the current node.</param>
