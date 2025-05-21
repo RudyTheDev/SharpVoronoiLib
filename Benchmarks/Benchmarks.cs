@@ -44,24 +44,24 @@ public class Benchmarks
         
         BenchmarkRunner.Run<NearestSiteLookupBenchmark>();
         
-        // | Method | PreWarm | LookupMethod | NumberOfSites | NumberOfLookups | Mean         |
-        // |------- |-------- |------------- |-------------- |---------------- |-------------:|
-        // | Lookup | False   | BruteForce   | 500           | 100             |     414.1 us |
-        // | Lookup | False   | KDTree       | 500           | 100             |     779.5 us |
-        // | Lookup | False   | BruteForce   | 500           | 100000          |  32,990.6 us |
-        // | Lookup | False   | KDTree       | 500           | 100000          |  73,251.7 us |
-        // | Lookup | False   | BruteForce   | 5000          | 100             |     337.2 us |
-        // | Lookup | False   | KDTree       | 5000          | 100             |   4,553.1 us |
-        // | Lookup | False   | BruteForce   | 5000          | 100000          | 308,954.6 us |
-        // | Lookup | False   | KDTree       | 5000          | 100000          | 107,869.5 us |
-
-        // | Lookup | True    | BruteForce   | 500           | 100             |     353.1 us |
-        // | Lookup | True    | KDTree       | 500           | 100             |     305.9 us |
-        // | Lookup | True    | BruteForce   | 500           | 100000          |  33,663.3 us |
-        // | Lookup | True    | KDTree       | 500           | 100000          |  70,469.7 us |
-        // | Lookup | True    | BruteForce   | 5000          | 100             |     340.6 us |
-        // | Lookup | True    | KDTree       | 5000          | 100             |     126.1 us |
-        // | Lookup | True    | BruteForce   | 5000          | 100000          | 309,755.2 us |
-        // | Lookup | True    | KDTree       | 5000          | 100000          | 106,434.0 us |
+        // | Method | NumberOfSites | NumberOfLookups | PreWarm | LookupMethod | Mean         |
+        // |------- |-------------- |---------------- |-------- |------------- |-------------:|
+        // | Lookup | 500           | 100             | False   | BruteForce   |     409.8 us |
+        // | Lookup | 500           | 100             | False   | KDTree       |     745.4 us |
+        // | Lookup | 500           | 100000          | False   | BruteForce   |  33,836.6 us |
+        // | Lookup | 500           | 100000          | False   | KDTree       |  69,768.9 us |
+        // | Lookup | 5000          | 100             | False   | BruteForce   |     338.7 us |
+        // | Lookup | 5000          | 100             | False   | KDTree       |   4,324.0 us |
+        // | Lookup | 5000          | 100000          | False   | BruteForce   | 306,600.1 us |
+        // | Lookup | 5000          | 100000          | False   | KDTree       | 105,169.4 us |
+        
+        // | Lookup | 500           | 100             | True    | BruteForce   |     394.2 us |
+        // | Lookup | 500           | 100             | True    | KDTree       |     209.8 us |
+        // | Lookup | 500           | 100000          | True    | BruteForce   |  32,460.3 us |
+        // | Lookup | 500           | 100000          | True    | KDTree       |  68,462.9 us |
+        // | Lookup | 5000          | 100             | True    | BruteForce   |     334.9 us |
+        // | Lookup | 5000          | 100             | True    | KDTree       |     116.3 us |
+        // | Lookup | 5000          | 100000          | True    | BruteForce   | 306,142.8 us |
+        // | Lookup | 5000          | 100000          | True    | KDTree       |  99,907.1 us |
     }
 }
