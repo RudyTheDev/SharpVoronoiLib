@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="b7608782-401b-4f19-9f67-42126defee64" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>This is a sample conceptual topic.  You can use this as a starting point for adding more conceptual
+content to your help project.</para>
+    </introduction>
+    <section>
+      <title>About the Project</title>
+      <content>
+        <para>This is a KD-Tree written completely in C#. It is very fast and very simple to use. This was originally created for machine learning and data mining applications. But the KDTree works well for all applications.</para>
+        <list class="bullet">
+          <listItem>
+            <externalLink>
+              <linkText>Supercluster.KDTree wiki</linkText>
+              <linkUri>https://github.com/MathFerret1013/Supercluster.KDTree/wiki</linkUri>
+            </externalLink>
+          </listItem>
+          <listItem>
+            <externalLink>
+              <linkText>Supercluster.KDTree GitHub Repository</linkText>
+              <linkUri>https://github.com/MathFerret1013/Supercluster.KDTree</linkUri>
+            </externalLink>
+          </listItem>
+          <listItem>
+            <externalLink>
+              <linkText>Supercluster GitHub Repository</linkText>
+              <linkUri>https://github.com/MathFerret1013/Supercluster</linkUri>
+            </externalLink>
+          </listItem>
+        </list>
+      </content>
+    </section>
+  </developerConceptualDocument>
+</topic>
