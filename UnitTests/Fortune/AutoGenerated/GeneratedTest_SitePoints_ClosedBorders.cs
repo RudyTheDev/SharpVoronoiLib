@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -104,12 +103,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         [Test]
@@ -151,12 +150,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -202,12 +201,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -253,12 +252,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -304,12 +303,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         [Test]
@@ -351,12 +350,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -402,12 +401,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -453,12 +452,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -504,12 +503,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         [Test]
@@ -551,12 +550,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -602,12 +601,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -653,12 +652,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -704,12 +703,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         [Test]
@@ -751,12 +750,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -802,12 +801,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -853,12 +852,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -904,12 +903,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -955,12 +954,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -1006,12 +1005,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -1057,12 +1056,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -1108,12 +1107,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         [Test]
@@ -1155,12 +1154,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -1206,12 +1205,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -1257,12 +1256,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         /// <summary>
@@ -1308,12 +1307,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
         }
 
         [Test]
@@ -1356,18 +1355,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         /// <summary>
@@ -1414,18 +1413,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         [Test]
@@ -1468,18 +1467,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         /// <summary>
@@ -1526,18 +1525,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         [Test]
@@ -1581,24 +1580,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -1646,24 +1645,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         [Test]
@@ -1708,30 +1707,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has F"); // #3 has F
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 300), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has W"); // #4 has W
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 0, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
         }
 
         /// <summary>
@@ -1780,30 +1779,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has F"); // #3 has F
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 1000), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has W"); // #4 has W
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 300, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assert.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Y"); // #4 has Y
         }
 
         [Test]
@@ -1846,16 +1845,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         /// <summary>
@@ -1902,16 +1901,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         [Test]
@@ -1954,18 +1953,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2012,18 +2011,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2070,18 +2069,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2128,18 +2127,18 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         [Test]
@@ -2182,16 +2181,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         /// <summary>
@@ -2238,16 +2237,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         /// <summary>
@@ -2294,16 +2293,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         /// <summary>
@@ -2350,16 +2349,16 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
         }
 
         [Test]
@@ -2402,17 +2401,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2459,17 +2458,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2516,17 +2515,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2573,17 +2572,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2630,17 +2629,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2687,17 +2686,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2744,17 +2743,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         /// <summary>
@@ -2801,17 +2800,17 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
         }
 
         [Test]
@@ -2855,24 +2854,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(6, sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -2920,24 +2919,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(6, sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assert.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         [Test]
@@ -2981,22 +2980,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -3044,22 +3043,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -3107,22 +3106,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -3170,22 +3169,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         [Test]
@@ -3230,28 +3229,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has F"); // #1 has F
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has F"); // #2 has F
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 0), "Expected: site #4 has C"); // #4 has C
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 600), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has F"); // #1 has F
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assert.That(HasPoint(sites[3].Points, 1000, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
         }
 
         /// <summary>
@@ -3300,28 +3299,28 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has F"); // #1 has F
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has F"); // #2 has F
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has C"); // #4 has C
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 0), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has F"); // #1 has F
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assert.That(HasPoint(sites[3].Points, 600, 0), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
         }
 
         [Test]
@@ -3365,24 +3364,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -3430,24 +3429,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -3495,24 +3494,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -3560,24 +3559,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         [Test]
@@ -3621,25 +3620,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 300, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 300, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -3687,25 +3686,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 700), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -3753,25 +3752,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 300, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 700, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -3819,25 +3818,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 300), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 300), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 300), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -3885,25 +3884,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 700, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -3951,25 +3950,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 300), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 300), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 300), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -4017,25 +4016,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 300, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 300, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -4083,25 +4082,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 700), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         [Test]
@@ -4145,23 +4144,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         /// <summary>
@@ -4209,23 +4208,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         /// <summary>
@@ -4273,23 +4272,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         /// <summary>
@@ -4337,23 +4336,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         [Test]
@@ -4397,25 +4396,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -4463,25 +4462,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -4529,25 +4528,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -4595,25 +4594,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(5, sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assert.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         [Test]
@@ -4657,25 +4656,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(5, sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         /// <summary>
@@ -4723,25 +4722,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(5, sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         /// <summary>
@@ -4789,25 +4788,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(5, sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         /// <summary>
@@ -4855,25 +4854,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(5, sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assert.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
         }
 
         [Test]
@@ -4919,36 +4918,36 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has F"); // #2 has F
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has F"); // #3 has F
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has C"); // #4 has C
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has H"); // #4 has H
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(4, sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has E"); // #5 has E
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has H"); // #5 has H
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assert.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assert.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assert.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has H"); // #5 has H
         }
 
         [Test]
@@ -4994,40 +4993,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 200), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has F"); // #2 has F
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 200), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 200), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has F"); // #3 has F
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(5, sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 200), "Expected: site #4 has C"); // #4 has C
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 800, 0), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 800), "Expected: site #4 has H"); // #4 has H
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has W"); // #4 has W
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(6, sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 400, 400), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 600, 400), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 800), "Expected: site #5 has E"); // #5 has E
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 800), "Expected: site #5 has H"); // #5 has H
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has X"); // #5 has X
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 400, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 600, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 400, 200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 600, 200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assert.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assert.That(HasPoint(sites[3].Points, 600, 200), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assert.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 1000, 800), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assert.That(HasPoint(sites[4].Points, 400, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 600, 400), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 0, 800), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assert.That(HasPoint(sites[4].Points, 1000, 800), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assert.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assert.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         /// <summary>
@@ -5077,40 +5076,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 600), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 400), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 600), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has F"); // #2 has F
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 600), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 400), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has F"); // #3 has F
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(5, sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 200, 400), "Expected: site #4 has C"); // #4 has C
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 200), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 800, 0), "Expected: site #4 has H"); // #4 has H
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has W"); // #4 has W
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(6, sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 400, 400), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 800, 1000), "Expected: site #5 has E"); // #5 has E
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 800, 0), "Expected: site #5 has H"); // #5 has H
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has X"); // #5 has X
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 200, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 200, 400), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 200, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 200, 600), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 200, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assert.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assert.That(HasPoint(sites[3].Points, 200, 400), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assert.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 0, 200), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assert.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 400, 400), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 800, 1000), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assert.That(HasPoint(sites[4].Points, 800, 0), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assert.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assert.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         /// <summary>
@@ -5160,40 +5159,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 800), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 800), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 800), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has F"); // #2 has F
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 800), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 800), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has F"); // #3 has F
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(5, sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 800), "Expected: site #4 has C"); // #4 has C
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 200, 1000), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 200), "Expected: site #4 has H"); // #4 has H
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has W"); // #4 has W
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(6, sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 200), "Expected: site #5 has E"); // #5 has E
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 200), "Expected: site #5 has H"); // #5 has H
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has X"); // #5 has X
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 400, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 600, 800), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 400, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assert.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assert.That(HasPoint(sites[3].Points, 400, 800), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assert.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 200, 1000), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 0, 200), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assert.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assert.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 1000, 200), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assert.That(HasPoint(sites[4].Points, 0, 200), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assert.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assert.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         /// <summary>
@@ -5243,40 +5242,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 400), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 600), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 400), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has F"); // #2 has F
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 400), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 600), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has F"); // #3 has F
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(5, sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 800, 600), "Expected: site #4 has C"); // #4 has C
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 800), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 200, 1000), "Expected: site #4 has H"); // #4 has H
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has W"); // #4 has W
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(6, sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 600, 400), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 200, 0), "Expected: site #5 has E"); // #5 has E
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 200, 1000), "Expected: site #5 has H"); // #5 has H
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has X"); // #5 has X
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 800, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 800, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 800, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 800, 400), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 800, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assert.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assert.That(HasPoint(sites[3].Points, 800, 600), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assert.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 1000, 800), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 200, 1000), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assert.That(HasPoint(sites[4].Points, 600, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 200, 0), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assert.That(HasPoint(sites[4].Points, 200, 1000), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assert.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assert.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         [Test]
@@ -5321,30 +5320,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         [Test]
@@ -5389,30 +5388,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -5461,30 +5460,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         [Test]
@@ -5529,26 +5528,26 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has E"); // #1 has E
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has C"); // #4 has C
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has E"); // #1 has E
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has C"); // #4 has C
         }
 
         [Test]
@@ -5593,30 +5592,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 100, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 100, 1000), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 700), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 100, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 100, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 1000, 700), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -5665,30 +5664,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 900), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 900), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 700, 0), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 900), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 1000, 900), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 700, 0), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -5737,30 +5736,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 300), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 0, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -5809,30 +5808,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 100), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 100), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 1000), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 0, 100), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 300, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -5881,30 +5880,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 900, 1000), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 700), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 900, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 900, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 0, 700), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -5953,30 +5952,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 100), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 100), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 700, 1000), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 1000, 100), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 700, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -6025,30 +6024,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 100, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 100, 0), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 100, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 100, 0), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         /// <summary>
@@ -6097,30 +6096,30 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has E"); // #4 has E
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
         }
 
         [Test]
@@ -6166,37 +6165,37 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 400), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 400), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 400), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Y"); // #4 has Y
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(5, sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 400), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 700), "Expected: site #5 has B"); // #5 has B
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 800, 1000), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 400), "Expected: site #5 has F"); // #5 has F
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 1000, 400), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assert.That(HasPoint(sites[4].Points, 500, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 500, 700), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assert.That(HasPoint(sites[4].Points, 800, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 1000, 400), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assert.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         /// <summary>
@@ -6246,37 +6245,37 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 400, 0), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 500), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(5, sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 400, 500), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 700, 500), "Expected: site #5 has B"); // #5 has B
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 200), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 400, 0), "Expected: site #5 has F"); // #5 has F
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 400, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 400, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 0, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assert.That(HasPoint(sites[4].Points, 400, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 700, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assert.That(HasPoint(sites[4].Points, 1000, 200), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 400, 0), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assert.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         /// <summary>
@@ -6326,37 +6325,37 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 600), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Y"); // #4 has Y
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(5, sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 600), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has B"); // #5 has B
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 200, 0), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 600), "Expected: site #5 has F"); // #5 has F
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assert.That(HasPoint(sites[4].Points, 500, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assert.That(HasPoint(sites[4].Points, 200, 0), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 0, 600), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assert.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         /// <summary>
@@ -6406,37 +6405,37 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(5, sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 1000), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Y"); // #4 has Y
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(5, sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 600, 500), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has B"); // #5 has B
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 800), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 600, 1000), "Expected: site #5 has F"); // #5 has F
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 600, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 600, 1000), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assert.That(HasPoint(sites[4].Points, 600, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assert.That(HasPoint(sites[4].Points, 0, 800), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 600, 1000), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assert.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
         }
 
         [Test]
@@ -6482,35 +6481,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 300), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Y"); // #4 has Y
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(4, sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 500), "Expected: site #5 has B"); // #5 has B
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 300), "Expected: site #5 has F"); // #5 has F
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 300), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assert.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 500, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assert.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 1000, 300), Is.True, "Expected: site #5 has F"); // #5 has F
         }
 
         /// <summary>
@@ -6560,35 +6559,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has E"); // #2 has E
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has G"); // #3 has G
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 500), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(4, sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 500), "Expected: site #5 has B"); // #5 has B
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 300, 0), "Expected: site #5 has F"); // #5 has F
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 300, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 0, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assert.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 500, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assert.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 300, 0), Is.True, "Expected: site #5 has F"); // #5 has F
         }
 
         [Test]
@@ -6635,42 +6634,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has H"); // #1 has H
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has G"); // #2 has G
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has H"); // #2 has H
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 300), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 700), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 700), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(4, sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 300), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 0), "Expected: site #5 has E"); // #5 has E
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has X"); // #5 has X
-            ClassicAssert.NotNull(sites[5].Points);
-            ClassicAssert.AreEqual(4, sites[5].Points.Count(), "Expected: site #6 point count 4"); // #6
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 500, 300), "Expected: site #6 has A"); // #6 has A
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 500, 0), "Expected: site #6 has E"); // #6 has E
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 1000, 300), "Expected: site #6 has F"); // #6 has F
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 1000, 0), "Expected: site #6 has Y"); // #6 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has H"); // #1 has H
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has G"); // #2 has G
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has H"); // #2 has H
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 300), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 500, 700), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 1000, 700), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assert.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 0, 300), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 500, 0), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assert.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assert.That(sites[5].Points, Is.Not.Null);
+            Assert.That(sites[5].Points.Count(), Is.EqualTo(4), "Expected: site #6 point count 4"); // #6
+            Assert.That(HasPoint(sites[5].Points, 500, 300), Is.True, "Expected: site #6 has A"); // #6 has A
+            Assert.That(HasPoint(sites[5].Points, 500, 0), Is.True, "Expected: site #6 has E"); // #6 has E
+            Assert.That(HasPoint(sites[5].Points, 1000, 300), Is.True, "Expected: site #6 has F"); // #6 has F
+            Assert.That(HasPoint(sites[5].Points, 1000, 0), Is.True, "Expected: site #6 has Y"); // #6 has Y
         }
 
         /// <summary>
@@ -6721,42 +6720,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has H"); // #1 has H
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has G"); // #2 has G
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has H"); // #2 has H
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(4, sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 500), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 700, 500), "Expected: site #4 has B"); // #4 has B
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 700, 0), "Expected: site #4 has G"); // #4 has G
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(4, sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 300, 1000), "Expected: site #5 has D"); // #5 has D
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 500), "Expected: site #5 has E"); // #5 has E
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has X"); // #5 has X
-            ClassicAssert.NotNull(sites[5].Points);
-            ClassicAssert.AreEqual(4, sites[5].Points.Count(), "Expected: site #6 point count 4"); // #6
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 300, 500), "Expected: site #6 has A"); // #6 has A
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 0, 500), "Expected: site #6 has E"); // #6 has E
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 300, 0), "Expected: site #6 has F"); // #6 has F
-            ClassicAssert.IsTrue(HasPoint(sites[5].Points, 0, 0), "Expected: site #6 has Y"); // #6 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has H"); // #1 has H
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has G"); // #2 has G
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has H"); // #2 has H
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assert.That(HasPoint(sites[3].Points, 300, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 700, 500), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assert.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assert.That(HasPoint(sites[3].Points, 700, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assert.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 300, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assert.That(HasPoint(sites[4].Points, 0, 500), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assert.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assert.That(sites[5].Points, Is.Not.Null);
+            Assert.That(sites[5].Points.Count(), Is.EqualTo(4), "Expected: site #6 point count 4"); // #6
+            Assert.That(HasPoint(sites[5].Points, 300, 500), Is.True, "Expected: site #6 has A"); // #6 has A
+            Assert.That(HasPoint(sites[5].Points, 0, 500), Is.True, "Expected: site #6 has E"); // #6 has E
+            Assert.That(HasPoint(sites[5].Points, 300, 0), Is.True, "Expected: site #6 has F"); // #6 has F
+            Assert.That(HasPoint(sites[5].Points, 0, 0), Is.True, "Expected: site #6 has Y"); // #6 has Y
         }
 
         [Test]
@@ -6802,32 +6801,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
-            ClassicAssert.NotNull(sites[4].Points);
-            ClassicAssert.AreEqual(4, sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 1000), "Expected: site #5 has A"); // #5 has A
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 0, 500), "Expected: site #5 has B"); // #5 has B
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 500, 0), "Expected: site #5 has C"); // #5 has C
-            ClassicAssert.IsTrue(HasPoint(sites[4].Points, 1000, 500), "Expected: site #5 has D"); // #5 has D
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
+            Assert.That(sites[4].Points, Is.Not.Null);
+            Assert.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assert.That(HasPoint(sites[4].Points, 500, 1000), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assert.That(HasPoint(sites[4].Points, 0, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assert.That(HasPoint(sites[4].Points, 500, 0), Is.True, "Expected: site #5 has C"); // #5 has C
+            Assert.That(HasPoint(sites[4].Points, 1000, 500), Is.True, "Expected: site #5 has D"); // #5 has D
         }
 
         [Test]
@@ -6871,21 +6870,21 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has C"); // #3 has C
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has C"); // #3 has C
         }
 
         /// <summary>
@@ -6933,21 +6932,21 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
         }
 
         /// <summary>
@@ -6995,21 +6994,21 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has C"); // #3 has C
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
         }
 
         /// <summary>
@@ -7057,21 +7056,21 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has C"); // #3 has C
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
         }
 
         [Test]
@@ -7115,24 +7114,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(6, sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -7180,24 +7179,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(6, sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -7245,24 +7244,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(6, sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         /// <summary>
@@ -7310,24 +7309,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(6, sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assert.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
         }
 
         [Test]
@@ -7375,23 +7374,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 1000), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 200), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1200, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1200, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -7443,23 +7442,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 1200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 1200), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 1200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -7511,23 +7510,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 600), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 600), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1200, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1200, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -7579,23 +7578,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 1200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 1200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1200), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 1200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 200, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 200, 1200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 1200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         [Test]
@@ -7643,24 +7642,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 1100), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 100), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1100), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 100), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1200, 1100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1200, 100), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1200, 1100), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1200, 100), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -7712,24 +7711,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1100, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 100, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1200), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 1200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1100, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 100, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1200), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 700, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1100, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 100, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 500, 1200), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 700, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1100, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 100, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 500, 1200), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -7781,24 +7780,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 500), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 100), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1100), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 700), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 500), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 100), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1100), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 700), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1200, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1100), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1200, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1200, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 100), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 1100), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1200, 700), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         /// <summary>
@@ -7850,24 +7849,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 100, 1200), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1100, 1200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 100, 1200), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has X"); // #2 has X
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1100, 1200), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has W"); // #3 has W
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 100, 1200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1100, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 100, 1200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assert.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1100, 1200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assert.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
         }
 
         [Test]
@@ -7911,24 +7910,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 200), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 200, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 200, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 200, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -7976,24 +7975,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 800), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 800), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 800), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 200, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 200, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 200, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8041,24 +8040,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 800), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 800), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 800), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 800, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 800, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 800, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8106,24 +8105,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(4, sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 200), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 800, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 800, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assert.That(HasPoint(sites[2].Points, 800, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         [Test]
@@ -8167,22 +8166,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8230,22 +8229,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8293,22 +8292,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8356,22 +8355,22 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         [Test]
@@ -8415,23 +8414,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8479,23 +8478,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8543,23 +8542,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 300, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8607,23 +8606,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8671,23 +8670,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8735,23 +8734,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8799,23 +8798,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8863,23 +8862,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(4, sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has B"); // #1 has B
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(4, sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has C"); // #3 has C
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assert.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assert.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         [Test]
@@ -8927,24 +8926,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 1200), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 1200), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(6, sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 600), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 1200), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 1200, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -8996,24 +8995,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 1200), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 600), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 1200), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(6, sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 1200), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 300, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 1200, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1200, 1200), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assert.That(HasPoint(sites[1].Points, 300, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -9065,24 +9064,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 900), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 1200, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(6, sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 900), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 900, 1200), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 900, 1200), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 1200, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 1200, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assert.That(HasPoint(sites[1].Points, 1200, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 900, 1200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 900, 1200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         /// <summary>
@@ -9134,24 +9133,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(6, sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 300), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has D"); // #2 has D
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Y"); // #2 has Y
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Z"); // #2 has Z
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 300), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 1200), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has W"); // #3 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assert.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 1200, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assert.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assert.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 1200, 300), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 600, 1200), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
         }
 
         [Test]
@@ -9194,26 +9193,26 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 300, 900), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 900, 900), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 300, 900), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 900, 900), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 900, 300), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 900, 300), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 300, 900), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 900, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 300, 900), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 900, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 900, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 900, 300), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has W"); // #4 has W
         }
 
         /// <summary>
@@ -9260,26 +9259,26 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 600), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 900), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 900, 600), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 900, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 900, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 900, 900), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 900, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 900, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has W"); // #4 has W
         }
 
         /// <summary>
@@ -9326,26 +9325,26 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 900), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 900, 900), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 900, 900), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 900, 900), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 900, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 900, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 900, 900), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 900, 900), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has W"); // #4 has W
         }
 
         /// <summary>
@@ -9392,26 +9391,26 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].Points);
-            ClassicAssert.AreEqual(3, sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has A"); // #1 has A
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has C"); // #1 has C
-            ClassicAssert.IsTrue(HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            ClassicAssert.NotNull(sites[1].Points);
-            ClassicAssert.AreEqual(3, sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has A"); // #2 has A
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has B"); // #2 has B
-            ClassicAssert.IsTrue(HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            ClassicAssert.NotNull(sites[2].Points);
-            ClassicAssert.AreEqual(3, sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 900, 0), "Expected: site #3 has A"); // #3 has A
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has B"); // #3 has B
-            ClassicAssert.IsTrue(HasPoint(sites[2].Points, 600, 900), "Expected: site #3 has D"); // #3 has D
-            ClassicAssert.NotNull(sites[3].Points);
-            ClassicAssert.AreEqual(3, sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has A"); // #4 has A
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 600, 900), "Expected: site #4 has D"); // #4 has D
-            ClassicAssert.IsTrue(HasPoint(sites[3].Points, 900, 900), "Expected: site #4 has W"); // #4 has W
+            Assert.That(sites[0].Points, Is.Not.Null);
+            Assert.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assert.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assert.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assert.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assert.That(sites[1].Points, Is.Not.Null);
+            Assert.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assert.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assert.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assert.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assert.That(sites[2].Points, Is.Not.Null);
+            Assert.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assert.That(HasPoint(sites[2].Points, 900, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assert.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assert.That(HasPoint(sites[2].Points, 600, 900), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assert.That(sites[3].Points, Is.Not.Null);
+            Assert.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assert.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assert.That(HasPoint(sites[3].Points, 600, 900), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assert.That(HasPoint(sites[3].Points, 900, 900), Is.True, "Expected: site #4 has W"); // #4 has W
         }
 
     }

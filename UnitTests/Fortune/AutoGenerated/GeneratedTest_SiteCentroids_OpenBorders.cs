@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -107,14 +106,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -156,14 +155,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(200, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -209,14 +208,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(500, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
         }
 
         /// <summary>
@@ -262,14 +261,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(800, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -315,14 +314,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(500, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         [Test]
@@ -364,14 +363,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(200, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         /// <summary>
@@ -417,14 +416,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(700, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
         }
 
         /// <summary>
@@ -470,14 +469,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(800, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -523,14 +522,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(300, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         [Test]
@@ -572,14 +571,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(0, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(0.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -625,14 +624,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(500, 1000) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1000.00).Within(0.01));
         }
 
         /// <summary>
@@ -678,14 +677,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(1000.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -731,14 +730,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(500, 0) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(0.00).Within(0.01));
         }
 
         [Test]
@@ -780,14 +779,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(0, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(0.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         /// <summary>
@@ -833,14 +832,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(700, 1000) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1000.00).Within(0.01));
         }
 
         /// <summary>
@@ -886,14 +885,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(1000.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -939,14 +938,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(300, 0) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(0.00).Within(0.01));
         }
 
         /// <summary>
@@ -992,14 +991,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(1000.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         /// <summary>
@@ -1045,14 +1044,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(700, 0) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(0.00).Within(0.01));
         }
 
         /// <summary>
@@ -1098,14 +1097,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(0, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(0.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -1151,14 +1150,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(300, 1000) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1000.00).Within(0.01));
         }
 
         [Test]
@@ -1200,14 +1199,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(0, 0) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(0.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(0.00).Within(0.01));
         }
 
         /// <summary>
@@ -1253,14 +1252,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(0, 1000) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(0.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1000.00).Within(0.01));
         }
 
         /// <summary>
@@ -1306,14 +1305,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 1000) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(1000.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1000.00).Within(0.01));
         }
 
         /// <summary>
@@ -1359,14 +1358,14 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 0 == sites[0].Points.Count(), "Expected: site #1 point count 0"); // #1
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(0), "Expected: site #1 point count 0"); // #1
 
             // Assert
 
             // Centroid of #1 in  is at ~(1000, 0) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(1000.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(0.00).Within(0.01));
         }
 
         [Test]
@@ -1409,23 +1408,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(500, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -1472,23 +1471,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(300, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -1531,23 +1530,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -1594,23 +1593,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -1654,32 +1653,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in B-A-C-D is at ~(500, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in D-C is at ~(500, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -1727,32 +1726,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-C-D-B is at ~(500, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in C-D is at ~(100, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -1797,41 +1796,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 300), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in B-A-C-D is at ~(500, 600) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #3 in D-C-E-F is at ~(500, 400) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #4 in F-E is at ~(500, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         /// <summary>
@@ -1880,41 +1879,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 300, 1000), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 300, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(800, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-C-D-B is at ~(600, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in C-E-F-D is at ~(400, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #4 in E-F is at ~(200, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -1957,23 +1956,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(700, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -2020,23 +2019,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(300, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         [Test]
@@ -2079,23 +2078,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(200, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(600, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         /// <summary>
@@ -2142,23 +2141,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(800, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(400, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         /// <summary>
@@ -2205,23 +2204,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(800, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(400, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         /// <summary>
@@ -2268,23 +2267,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(200, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(600, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         [Test]
@@ -2327,23 +2326,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(200, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(600, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
         }
 
         /// <summary>
@@ -2390,23 +2389,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(400, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(800, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         /// <summary>
@@ -2453,23 +2452,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(800, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(400, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         /// <summary>
@@ -2516,23 +2515,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(600, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(200, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         [Test]
@@ -2575,23 +2574,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(700, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -2638,23 +2637,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(900, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -2701,23 +2700,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(300, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -2764,23 +2763,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(100, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         /// <summary>
@@ -2827,23 +2826,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(300, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -2890,23 +2889,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(900, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         /// <summary>
@@ -2953,23 +2952,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(700, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -3016,23 +3015,23 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(100, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         [Test]
@@ -3076,32 +3075,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in D-A is at ~(200, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in C-D-A-B is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in C-B is at ~(800, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         /// <summary>
@@ -3149,32 +3148,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-D is at ~(800, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in A-B-C-D is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in B-C is at ~(200, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         [Test]
@@ -3218,32 +3217,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in D-A is at ~(200, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in C-D-A-B is at ~(408, 592) (using quadrilateral formula)
-            ClassicAssert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(408.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(591.67).Within(0.01));
             // Centroid of #3 in C-B is at ~(600, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         /// <summary>
@@ -3291,32 +3290,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-D is at ~(800, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in A-B-C-D is at ~(592, 592) (using quadrilateral formula)
-            ClassicAssert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(591.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(591.67).Within(0.01));
             // Centroid of #3 in B-C is at ~(400, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         /// <summary>
@@ -3364,32 +3363,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-D is at ~(800, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #2 in A-B-C-D is at ~(592, 408) (using quadrilateral formula)
-            ClassicAssert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(408.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(591.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(408.33).Within(0.01));
             // Centroid of #3 in B-C is at ~(400, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         /// <summary>
@@ -3437,32 +3436,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in D-A is at ~(200, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #2 in C-D-A-B is at ~(408, 408) (using quadrilateral formula)
-            ClassicAssert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(408.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(408.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(408.33).Within(0.01));
             // Centroid of #3 in C-B is at ~(600, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         [Test]
@@ -3507,41 +3506,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has F"); // #1 has F
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 0), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 600), "Expected: site #4 has D"); // #4 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has F"); // #1 has F
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 1000, 600), Is.True, "Expected: site #4 has D"); // #4 has D
 
             // Assert
 
             // Centroid of #1 in F-A is at ~(200, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in E-F-A-B is at ~(408, 592) (using quadrilateral formula)
-            ClassicAssert.AreEqual(408.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(408.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(591.67).Within(0.01));
             // Centroid of #3 in D-E-B-C is at ~(592, 408) (using quadrilateral formula)
-            ClassicAssert.AreEqual(591.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(408.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(591.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(408.33).Within(0.01));
             // Centroid of #4 in D-C is at ~(800, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         /// <summary>
@@ -3590,41 +3589,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has F"); // #1 has F
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 0), "Expected: site #4 has D"); // #4 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has F"); // #1 has F
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 0), Is.True, "Expected: site #4 has D"); // #4 has D
 
             // Assert
 
             // Centroid of #1 in A-F is at ~(800, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in A-B-E-F is at ~(592, 592) (using quadrilateral formula)
-            ClassicAssert.AreEqual(591.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(591.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(591.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(591.67).Within(0.01));
             // Centroid of #3 in B-C-D-E is at ~(408, 408) (using quadrilateral formula)
-            ClassicAssert.AreEqual(408.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(408.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(408.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(408.33).Within(0.01));
             // Centroid of #4 in C-D is at ~(200, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         [Test]
@@ -3668,33 +3667,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in D-B-A is at ~(467, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #2 in A-B-C is at ~(267, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
             // Centroid of #3 in D-A-C is at ~(600, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
         }
 
         /// <summary>
@@ -3742,33 +3741,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(600, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
             // Centroid of #2 in B-C-A is at ~(267, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #3 in A-C-D is at ~(467, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         /// <summary>
@@ -3816,33 +3815,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(533, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #2 in C-A-B is at ~(733, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #3 in C-D-A is at ~(400, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
         }
 
         /// <summary>
@@ -3890,33 +3889,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-D-B is at ~(400, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
             // Centroid of #2 in C-A-B is at ~(733, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
             // Centroid of #3 in D-A-C is at ~(533, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         [Test]
@@ -3960,33 +3959,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in D-B-A is at ~(333, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #2 in A-B-C is at ~(200, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #3 in D-A-C is at ~(433, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(433.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
         }
 
         /// <summary>
@@ -4034,33 +4033,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(733, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #2 in B-C-A is at ~(400, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #3 in A-C-D is at ~(533, 567) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(566.67).Within(0.01));
         }
 
         /// <summary>
@@ -4108,33 +4107,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 300, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 300, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-A-D is at ~(667, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
             // Centroid of #2 in C-A-B is at ~(800, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #3 in C-D-A is at ~(567, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(566.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
         }
 
         /// <summary>
@@ -4182,33 +4181,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-D-B is at ~(267, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #2 in C-A-B is at ~(600, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #3 in D-A-C is at ~(467, 433) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(433.33).Within(0.01));
         }
 
         /// <summary>
@@ -4256,33 +4255,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(667, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #2 in B-A-C is at ~(800, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #3 in A-D-C is at ~(567, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(566.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
         }
 
         /// <summary>
@@ -4330,33 +4329,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(733, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #2 in A-C-B is at ~(400, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #3 in D-C-A is at ~(533, 433) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(433.33).Within(0.01));
         }
 
         /// <summary>
@@ -4404,33 +4403,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B-D is at ~(333, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
             // Centroid of #2 in C-B-A is at ~(200, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #3 in C-A-D is at ~(433, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(433.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
         }
 
         /// <summary>
@@ -4478,33 +4477,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-D-A is at ~(267, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #2 in B-A-C is at ~(600, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #3 in C-A-D is at ~(467, 567) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(566.67).Within(0.01));
         }
 
         [Test]
@@ -4548,33 +4547,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(500, 167) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(166.67).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(667, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(333, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -4622,33 +4621,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(167, 500) (using triangle formula)
-            ClassicAssert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(166.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(500, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #3 in B-A-D is at ~(500, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
         }
 
         /// <summary>
@@ -4696,33 +4695,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(500, 833) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(833.33).Within(0.01));
             // Centroid of #2 in A-C-D is at ~(333, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in B-A-D is at ~(667, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -4770,33 +4769,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(833, 500) (using triangle formula)
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(833.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in C-D-A is at ~(500, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(500, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
         }
 
         [Test]
@@ -4840,33 +4839,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(500, 100) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(600, 433) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(433.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(433.33).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(400, 433) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(433.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(433.33).Within(0.01));
         }
 
         /// <summary>
@@ -4914,33 +4913,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(100, 500) (using triangle formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(433, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(433.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(433.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #3 in B-A-D is at ~(433, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(433.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(433.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         /// <summary>
@@ -4988,33 +4987,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(500, 900) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in A-C-D is at ~(400, 567) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(566.67).Within(0.01));
             // Centroid of #3 in B-A-D is at ~(600, 567) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(566.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(566.67).Within(0.01));
         }
 
         /// <summary>
@@ -5062,33 +5061,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(900, 500) (using triangle formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in C-D-A is at ~(567, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(566.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(567, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(566.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(566.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         [Test]
@@ -5132,33 +5131,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(500, 367) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(366.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(366.67).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(667, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(333, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
         }
 
         /// <summary>
@@ -5206,33 +5205,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(367, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(366.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(366.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(633, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #3 in B-A-D is at ~(633, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
         }
 
         /// <summary>
@@ -5280,33 +5279,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(500, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #2 in A-C-D is at ~(333, 367) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(366.67).Within(0.01));
             // Centroid of #3 in B-A-D is at ~(667, 367) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(366.67).Within(0.01));
         }
 
         /// <summary>
@@ -5354,33 +5353,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(633, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in C-D-A is at ~(367, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(366.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(367, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(366.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
         }
 
         [Test]
@@ -5426,54 +5425,54 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has H"); // #5 has H
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has H"); // #5 has H
 
             // Assert
 
             // Centroid of #1 in D-A-B-C is at ~(500, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-E-F-B is at ~(156, 500) (using quadrilateral formula)
-            ClassicAssert.AreEqual(155.56, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(155.56).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in C-B-F-G is at ~(500, 156) (using quadrilateral formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(155.56, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(155.56).Within(0.01));
             // Centroid of #4 in H-D-C-G is at ~(844, 500) (using quadrilateral formula)
-            ClassicAssert.AreEqual(844.44, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(844.44).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #5 in H-E-A-D is at ~(500, 844) (using quadrilateral formula)
-            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(844.44, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(844.44).Within(0.01));
         }
 
         [Test]
@@ -5519,54 +5518,54 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 600, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 200), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 200), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 200), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 800, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 800), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 400), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 600, 400), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 800), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 800), "Expected: site #5 has H"); // #5 has H
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 600, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 200), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 1000, 800), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 600, 400), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 800), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 1000, 800), Is.True, "Expected: site #5 has H"); // #5 has H
 
             // Assert
 
             // Centroid of #1 in D-A-B-C is at ~(500, 300) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #2 in A-E-F-B is at ~(219, 371) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(219.05, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(371.43, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(219.05).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(371.43).Within(0.01));
             // Centroid of #3 in C-B-F-G is at ~(500, 83) (using quadrilateral formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(83.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(83.33).Within(0.01));
             // Centroid of #4 in H-D-C-G is at ~(781, 371) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(780.95, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(371.43, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(780.95).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(371.43).Within(0.01));
             // Centroid of #5 in H-E-A-D is at ~(500, 644) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(644.44, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(644.44).Within(0.01));
         }
 
         /// <summary>
@@ -5616,54 +5615,54 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 400), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 600), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 200, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 200, 400), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 0, 200), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 800, 0), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 400, 400), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 800, 1000), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 800, 0), "Expected: site #5 has H"); // #5 has H
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 400), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 600), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 200, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 200, 400), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 0, 200), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 400, 400), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 800, 1000), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 800, 0), Is.True, "Expected: site #5 has H"); // #5 has H
 
             // Assert
 
             // Centroid of #1 in A-B-C-D is at ~(300, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in E-F-B-A is at ~(371, 781) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(371.43, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(780.95, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(371.43).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(780.95).Within(0.01));
             // Centroid of #3 in B-F-G-C is at ~(83, 500) (using quadrilateral formula)
-            ClassicAssert.AreEqual(83.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(83.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #4 in D-C-G-H is at ~(371, 219) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(371.43, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(219.05, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(371.43).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(219.05).Within(0.01));
             // Centroid of #5 in E-A-D-H is at ~(644, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(644.44, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(644.44).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -5713,54 +5712,54 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 400, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 800), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 400, 800), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 800), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 200, 1000), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 0, 200), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 200), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 0, 200), "Expected: site #5 has H"); // #5 has H
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 400, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 800), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 400, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 800), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 200, 1000), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 0, 200), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 1000, 200), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 0, 200), Is.True, "Expected: site #5 has H"); // #5 has H
 
             // Assert
 
             // Centroid of #1 in B-C-D-A is at ~(500, 700) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in F-B-A-E is at ~(781, 629) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(780.95, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(628.57, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(780.95).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(628.57).Within(0.01));
             // Centroid of #3 in F-G-C-B is at ~(500, 917) (using quadrilateral formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(916.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(916.67).Within(0.01));
             // Centroid of #4 in C-G-H-D is at ~(219, 629) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(219.05, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(628.57, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(219.05).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(628.57).Within(0.01));
             // Centroid of #5 in A-D-H-E is at ~(500, 356) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(355.56, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(355.56).Within(0.01));
         }
 
         /// <summary>
@@ -5810,54 +5809,54 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 400), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 800, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 800, 600), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 800), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 200, 1000), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 600, 400), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 200, 0), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 200, 1000), "Expected: site #5 has H"); // #5 has H
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 400), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 800, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 800, 600), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 1000, 800), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 200, 1000), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 600, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 200, 0), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 200, 1000), Is.True, "Expected: site #5 has H"); // #5 has H
 
             // Assert
 
             // Centroid of #1 in C-D-A-B is at ~(700, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in B-A-E-F is at ~(629, 219) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(628.57, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(219.05, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(628.57).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(219.05).Within(0.01));
             // Centroid of #3 in G-C-B-F is at ~(917, 500) (using quadrilateral formula)
-            ClassicAssert.AreEqual(916.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(916.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #4 in G-H-D-C is at ~(629, 781) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(628.57, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(780.95, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(628.57).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(780.95).Within(0.01));
             // Centroid of #5 in D-H-E-A is at ~(356, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(355.56, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(355.56).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -5902,41 +5901,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(333, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #2 in A-C-D is at ~(333, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #3 in E-A-D is at ~(667, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #4 in B-A-E is at ~(667, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
         }
 
         [Test]
@@ -5981,41 +5980,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(333, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #2 in A-C-D is at ~(333, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #3 in E-A-D is at ~(667, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #4 in B-A-E is at ~(667, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
         }
 
         /// <summary>
@@ -6064,41 +6063,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(667, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #2 in C-D-A is at ~(333, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #3 in A-D-E is at ~(333, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #4 in B-A-E is at ~(667, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
         }
 
         [Test]
@@ -6143,41 +6142,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has E"); // #1 has E
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has C"); // #4 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has E"); // #1 has E
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has C"); // #4 has C
 
             // Assert
 
             // Centroid of #1 in E-B-A is at ~(500, 833) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(833.33).Within(0.01));
             // Centroid of #2 in E-A-D is at ~(833, 500) (using triangle formula)
-            ClassicAssert.AreEqual(833.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(833.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in A-C-D is at ~(500, 167) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(166.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(166.67).Within(0.01));
             // Centroid of #4 in A-B-C is at ~(167, 500) (using triangle formula)
-            ClassicAssert.AreEqual(166.67, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(166.67).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -6222,41 +6221,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 100, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 100, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 700), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 100, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 100, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 700), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(167, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(166.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
             // Centroid of #2 in A-C-D is at ~(333, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #3 in E-A-D is at ~(667, 367) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(366.67).Within(0.01));
             // Centroid of #4 in E-B-A is at ~(500, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         /// <summary>
@@ -6305,41 +6304,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 900), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 900), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 700, 0), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 900), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 900), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 700, 0), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(533, 833) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(833.33).Within(0.01));
             // Centroid of #2 in C-D-A is at ~(200, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #3 in A-D-E is at ~(367, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(366.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #4 in B-A-E is at ~(700, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -6388,41 +6387,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 0, 300), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 0, 300), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(833, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(833.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(667, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #3 in D-E-A is at ~(333, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #4 in A-E-B is at ~(500, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -6471,41 +6470,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 100), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 300, 1000), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 100), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 300, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(467, 167) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(166.67).Within(0.01));
             // Centroid of #2 in D-A-C is at ~(800, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #3 in E-A-D is at ~(633, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #4 in E-B-A is at ~(300, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -6554,41 +6553,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 900, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 900, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 0, 700), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 900, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 900, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 0, 700), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in B-A-C is at ~(833, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(833.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
             // Centroid of #2 in C-A-D is at ~(667, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #3 in A-E-D is at ~(333, 367) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(366.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(366.67).Within(0.01));
             // Centroid of #4 in B-E-A is at ~(500, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         /// <summary>
@@ -6637,41 +6636,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 100), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 700, 1000), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 100), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 700, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in B-A-C is at ~(533, 167) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(166.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(166.67).Within(0.01));
             // Centroid of #2 in A-D-C is at ~(200, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #3 in E-D-A is at ~(367, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(366.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(366.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #4 in E-A-B is at ~(700, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -6720,41 +6719,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 100, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 100, 0), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 100, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 100, 0), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in A-C-B is at ~(167, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(166.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(166.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
             // Centroid of #2 in D-C-A is at ~(333, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #3 in D-A-E is at ~(667, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #4 in E-A-B is at ~(500, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -6803,41 +6802,41 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has E"); // #4 has E
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has E"); // #4 has E
 
             // Assert
 
             // Centroid of #1 in C-B-A is at ~(467, 833) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(833.33).Within(0.01));
             // Centroid of #2 in C-A-D is at ~(800, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #3 in D-A-E is at ~(633, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #4 in A-B-E is at ~(300, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -6883,51 +6882,51 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 400), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 400), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 700), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 800, 1000), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 400), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 400), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 700), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 800, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 1000, 400), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
             // Centroid of #1 in D-C-B is at ~(500, 900) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in B-C-E-A is at ~(272, 623) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(271.79, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(623.08, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(271.79).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(623.08).Within(0.01));
             // Centroid of #3 in A-E-G is at ~(333, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
             // Centroid of #4 in F-A-G is at ~(667, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
             // Centroid of #5 in D-B-A-F is at ~(728, 623) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(728.21, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(623.08, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(728.21).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(623.08).Within(0.01));
         }
 
         /// <summary>
@@ -6977,51 +6976,51 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 400, 0), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 0, 500), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 700, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 200), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 400, 0), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 0, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 700, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 1000, 200), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 400, 0), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
             // Centroid of #1 in C-B-D is at ~(900, 500) (using triangle formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in C-E-A-B is at ~(623, 728) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(623.08, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(728.21, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(623.08).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(728.21).Within(0.01));
             // Centroid of #3 in E-G-A is at ~(267, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #4 in A-G-F is at ~(267, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #5 in B-A-F-D is at ~(623, 272) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(623.08, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(271.79, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(623.08).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(271.79).Within(0.01));
         }
 
         /// <summary>
@@ -7071,51 +7070,51 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 200, 0), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 600), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 200, 0), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 600), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
             // Centroid of #1 in B-D-C is at ~(500, 100) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in E-A-B-C is at ~(728, 377) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(728.21, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(376.92, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(728.21).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(376.92).Within(0.01));
             // Centroid of #3 in G-A-E is at ~(667, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #4 in G-F-A is at ~(333, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #5 in B-A-F-D is at ~(272, 377) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(271.79, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(376.92, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(271.79).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(376.92).Within(0.01));
         }
 
         /// <summary>
@@ -7165,51 +7164,51 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 600, 1000), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 600, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 0, 800), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 600, 1000), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 600, 1000), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 600, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 0, 800), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 600, 1000), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
             // Centroid of #1 in B-D-C is at ~(100, 500) (using triangle formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in A-B-C-E is at ~(377, 272) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(376.92, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(271.79, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(376.92).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(271.79).Within(0.01));
             // Centroid of #3 in G-A-E is at ~(733, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #4 in F-A-G is at ~(733, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #5 in F-D-B-A is at ~(377, 728) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(376.92, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(728.21, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(376.92).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(728.21).Within(0.01));
         }
 
         [Test]
@@ -7255,51 +7254,51 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 300), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 300), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 300), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 1000, 300), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
             // Centroid of #1 in D-C-B is at ~(500, 833) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(833.33).Within(0.01));
             // Centroid of #2 in B-C-E-A is at ~(204, 548) (using quadrilateral formula)
-            ClassicAssert.AreEqual(203.70, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(548.15, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(203.70).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(548.15).Within(0.01));
             // Centroid of #3 in A-E-G is at ~(333, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #4 in F-A-G is at ~(667, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #5 in D-B-A-F is at ~(796, 548) (using quadrilateral formula)
-            ClassicAssert.AreEqual(796.30, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(548.15, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(796.30).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(548.15).Within(0.01));
         }
 
         /// <summary>
@@ -7349,51 +7348,51 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 300, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 0, 500), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 300, 0), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 300, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 0, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 300, 0), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
             // Centroid of #1 in C-B-D is at ~(833, 500) (using triangle formula)
-            ClassicAssert.AreEqual(833.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(833.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #2 in C-E-A-B is at ~(548, 796) (using quadrilateral formula)
-            ClassicAssert.AreEqual(548.15, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(796.30, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(548.15).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(796.30).Within(0.01));
             // Centroid of #3 in E-G-A is at ~(200, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #4 in A-G-F is at ~(200, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #5 in B-A-F-D is at ~(548, 204) (using quadrilateral formula)
-            ClassicAssert.AreEqual(548.15, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(203.70, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(548.15).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(203.70).Within(0.01));
         }
 
         [Test]
@@ -7440,59 +7439,59 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has H"); // #1 has H
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has G"); // #2 has G
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has H"); // #2 has H
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 300), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 500, 700), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 700), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 3 == sites[4].Points.Count(), "Expected: site #5 point count 3"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 0, 300), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 500, 0), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => null != sites[5].Points);
-            Assume.That(() => 3 == sites[5].Points.Count(), "Expected: site #6 point count 3"); // #6
-            Assume.That(() => HasPoint(sites[5].Points, 500, 300), "Expected: site #6 has A"); // #6 has A
-            Assume.That(() => HasPoint(sites[5].Points, 500, 0), "Expected: site #6 has E"); // #6 has E
-            Assume.That(() => HasPoint(sites[5].Points, 1000, 300), "Expected: site #6 has F"); // #6 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has H"); // #1 has H
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has G"); // #2 has G
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has H"); // #2 has H
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 300), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 500, 700), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 1000, 700), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(3), "Expected: site #5 point count 3"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 0, 300), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 500, 0), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(sites[5].Points, Is.Not.Null);
+            Assume.That(sites[5].Points.Count(), Is.EqualTo(3), "Expected: site #6 point count 3"); // #6
+            Assume.That(HasPoint(sites[5].Points, 500, 300), Is.True, "Expected: site #6 has A"); // #6 has A
+            Assume.That(HasPoint(sites[5].Points, 500, 0), Is.True, "Expected: site #6 has E"); // #6 has E
+            Assume.That(HasPoint(sites[5].Points, 1000, 300), Is.True, "Expected: site #6 has F"); // #6 has F
 
             // Assert
 
             // Centroid of #1 in H-C-B is at ~(333, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in H-B-G is at ~(667, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #3 in B-C-D-A is at ~(250, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(250.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(250.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #4 in G-B-A-F is at ~(750, 500) (using rectangle formula)
-            ClassicAssert.AreEqual(750.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(750.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #5 in A-D-E is at ~(333, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(333.33, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
             // Centroid of #6 in F-A-E is at ~(667, 200) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(666.67, sites[5].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(200.00, sites[5].Centroid.Y, 0.01);
+            Assert.That(sites[5].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[5].Centroid.Y, Is.EqualTo(200.00).Within(0.01));
         }
 
         /// <summary>
@@ -7543,59 +7542,59 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has H"); // #1 has H
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has G"); // #2 has G
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has H"); // #2 has H
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 300, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 700, 500), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 700, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 3 == sites[4].Points.Count(), "Expected: site #5 point count 3"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 300, 1000), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 500), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => null != sites[5].Points);
-            Assume.That(() => 3 == sites[5].Points.Count(), "Expected: site #6 point count 3"); // #6
-            Assume.That(() => HasPoint(sites[5].Points, 300, 500), "Expected: site #6 has A"); // #6 has A
-            Assume.That(() => HasPoint(sites[5].Points, 0, 500), "Expected: site #6 has E"); // #6 has E
-            Assume.That(() => HasPoint(sites[5].Points, 300, 0), "Expected: site #6 has F"); // #6 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has H"); // #1 has H
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has G"); // #2 has G
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has H"); // #2 has H
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 300, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 700, 500), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 700, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(3), "Expected: site #5 point count 3"); // #5
+            Assume.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 300, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 500), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(sites[5].Points, Is.Not.Null);
+            Assume.That(sites[5].Points.Count(), Is.EqualTo(3), "Expected: site #6 point count 3"); // #6
+            Assume.That(HasPoint(sites[5].Points, 300, 500), Is.True, "Expected: site #6 has A"); // #6 has A
+            Assume.That(HasPoint(sites[5].Points, 0, 500), Is.True, "Expected: site #6 has E"); // #6 has E
+            Assume.That(HasPoint(sites[5].Points, 300, 0), Is.True, "Expected: site #6 has F"); // #6 has F
 
             // Assert
 
             // Centroid of #1 in C-B-H is at ~(800, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #2 in H-B-G is at ~(800, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
             // Centroid of #3 in C-D-A-B is at ~(500, 750) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(750.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(750.00).Within(0.01));
             // Centroid of #4 in B-A-F-G is at ~(500, 250) (using rectangle formula)
-            ClassicAssert.AreEqual(500.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(250.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(250.00).Within(0.01));
             // Centroid of #5 in D-E-A is at ~(200, 667) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
             // Centroid of #6 in A-E-F is at ~(200, 333) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(200.00, sites[5].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[5].Centroid.Y, 0.01);
+            Assert.That(sites[5].Centroid.X, Is.EqualTo(200.00).Within(0.01));
+            Assert.That(sites[5].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
         }
 
         [Test]
@@ -7641,46 +7640,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 1000), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 0, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 500, 0), "Expected: site #5 has C"); // #5 has C
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 500), "Expected: site #5 has D"); // #5 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 1000), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 0, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 500, 0), Is.True, "Expected: site #5 has C"); // #5 has C
+            Assume.That(HasPoint(sites[4].Points, 1000, 500), Is.True, "Expected: site #5 has D"); // #5 has D
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(0, 1000) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(0.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1000.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(0.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1000.00).Within(0.01));
             // Centroid of #2 in C-B is at ~(0, 0) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(0.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(0.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(0.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(0.00).Within(0.01));
             // Centroid of #3 in D-C is at ~(1000, 0) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1000.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(0.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(1000.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(0.00).Within(0.01));
             // Centroid of #4 in A-D is at ~(1000, 1000) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1000.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1000.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(1000.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(1000.00).Within(0.01));
             // Centroid of #5 in D-A-B-C is at ~(500, 500) (using quadrilateral formula)
-            ClassicAssert.AreEqual(500.00, sites[4].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[4].Centroid.Y, 0.01);
+            Assert.That(sites[4].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[4].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         [Test]
@@ -7724,31 +7723,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in A-C is at ~(300, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #3 in B-A-C is at ~(667, 500) (using triangle formula)
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(666.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -7796,31 +7795,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in A-C is at ~(100, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #3 in A-C-B is at ~(500, 333) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
         }
 
         /// <summary>
@@ -7868,31 +7867,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in C-A is at ~(700, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #3 in A-C-B is at ~(333, 500) (using triangle formula)
-            ClassicAssert.AreEqual(333.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -7940,31 +7939,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #2 in C-A is at ~(900, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #3 in C-B-A is at ~(500, 667) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(666.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(666.67).Within(0.01));
         }
 
         [Test]
@@ -8008,32 +8007,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in D-C is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #3 in B-A-D-C is at ~(489, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(488.89, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(488.89).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -8081,32 +8080,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in D-C is at ~(100, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #3 in A-D-C-B is at ~(500, 511) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(511.11, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(511.11).Within(0.01));
         }
 
         /// <summary>
@@ -8154,32 +8153,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in C-D is at ~(900, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #3 in D-C-B-A is at ~(511, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(511.11, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(511.11).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
         }
 
         /// <summary>
@@ -8227,32 +8226,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in C-D is at ~(900, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #3 in C-B-A-D is at ~(500, 489) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(488.89, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(488.89).Within(0.01));
         }
 
         [Test]
@@ -8300,31 +8299,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 200), "Expected: site #3 has B"); // #3 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1200, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1200, 200), Is.True, "Expected: site #3 has B"); // #3 has B
 
             // Assert
 
             // Centroid of #1 in C-A-B is at ~(800, 600) (using triangle formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #2 in C-A is at ~(400, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #3 in A-B is at ~(400, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -8376,31 +8375,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 1200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(600, 400) (using triangle formula)
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #2 in A-C is at ~(900, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #3 in A-B is at ~(300, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
         }
 
         /// <summary>
@@ -8452,31 +8451,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1200, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1200, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
 
             // Assert
 
             // Centroid of #1 in A-B-C is at ~(400, 600) (using triangle formula)
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #2 in A-C is at ~(800, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #3 in B-A is at ~(800, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -8528,31 +8527,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1200), "Expected: site #3 has B"); // #3 has B
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 1200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 1200), Is.True, "Expected: site #3 has B"); // #3 has B
 
             // Assert
 
             // Centroid of #1 in B-C-A is at ~(600, 800) (using triangle formula)
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in C-A is at ~(300, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #3 in B-A is at ~(900, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         [Test]
@@ -8600,32 +8599,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 1100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 100), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1100), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 100), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1200, 1100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1200, 100), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1200, 1100), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1200, 100), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-A-D-C is at ~(733, 600) (using quadrilateral formula)
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #2 in B-A is at ~(100, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #3 in D-C is at ~(100, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -8677,32 +8676,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1100, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 100, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1200), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1100, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 100, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1200), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1100, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 100, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 500, 1200), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1100, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 100, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 500, 1200), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-D-C-B is at ~(600, 467) (using quadrilateral formula)
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
             // Centroid of #2 in A-B is at ~(900, 1100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1100.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(1100.00).Within(0.01));
             // Centroid of #3 in D-C is at ~(300, 1100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(1100.00).Within(0.01));
         }
 
         /// <summary>
@@ -8754,32 +8753,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1100), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 700), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 100), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1100), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 700), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1200, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1100), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1200, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1200, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 100), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1100), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1200, 700), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in D-C-B-A is at ~(467, 600) (using quadrilateral formula)
-            ClassicAssert.AreEqual(466.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #2 in A-B is at ~(1100, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1100.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(1100.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #3 in C-D is at ~(1100, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(1100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -8831,32 +8830,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 100, 1200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1100, 1200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 2 == sites[1].Points.Count(), "Expected: site #2 point count 2"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 100, 1200), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1100, 1200), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 100, 1200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1100, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(2), "Expected: site #2 point count 2"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 100, 1200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1100, 1200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in C-B-A-D is at ~(600, 733) (using quadrilateral formula)
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #2 in B-A is at ~(300, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #3 in C-D is at ~(900, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         [Test]
@@ -8900,33 +8899,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-D-A is at ~(267, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #2 in B-A-C is at ~(600, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #3 in C-A-D is at ~(400, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
         }
 
         /// <summary>
@@ -8974,33 +8973,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(400, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
             // Centroid of #2 in B-A-C is at ~(600, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #3 in A-D-C is at ~(267, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(266.67, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(266.67).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
         }
 
         /// <summary>
@@ -9048,33 +9047,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in D-A-B is at ~(733, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #2 in A-C-B is at ~(400, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #3 in A-D-C is at ~(600, 733) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(733.33, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(733.33).Within(0.01));
         }
 
         /// <summary>
@@ -9122,33 +9121,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in B-D-A is at ~(600, 267) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(600.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(266.67, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(266.67).Within(0.01));
             // Centroid of #2 in C-B-A is at ~(400, 600) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #3 in C-A-D is at ~(733, 400) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(733.33, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(733.33).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
         }
 
         [Test]
@@ -9192,31 +9191,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(100, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in C-B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in C-A is at ~(700, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -9264,31 +9263,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
             // Centroid of #2 in B-A-C is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in A-C is at ~(100, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
         }
 
         /// <summary>
@@ -9336,31 +9335,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(900, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #2 in A-C-B is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in A-C is at ~(300, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -9408,31 +9407,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in C-B-A is at ~(500, 500) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in C-A is at ~(900, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
         }
 
         [Test]
@@ -9476,31 +9475,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in B-A-C is at ~(633, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
             // Centroid of #3 in C-A is at ~(900, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -9548,31 +9547,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in B-A-C is at ~(467, 367) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(366.67).Within(0.01));
             // Centroid of #3 in A-C is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -9620,31 +9619,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 300, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 300, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(700, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #2 in A-C-B is at ~(367, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(366.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
             // Centroid of #3 in A-C is at ~(100, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -9692,31 +9691,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(300, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #2 in C-B-A is at ~(533, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #3 in C-A is at ~(900, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -9764,31 +9763,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(700, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in B-C-A is at ~(367, 467) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(366.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(466.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(366.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
             // Centroid of #3 in C-A is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -9836,31 +9835,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in B-A is at ~(700, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(700.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #2 in B-C-A is at ~(467, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(466.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #3 in C-A is at ~(100, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -9908,31 +9907,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(300, 300) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #2 in C-A-B is at ~(633, 533) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(533.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(533.33).Within(0.01));
             // Centroid of #3 in A-C is at ~(900, 900) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(900.00).Within(0.01));
         }
 
         /// <summary>
@@ -9980,31 +9979,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
             // Centroid of #1 in A-B is at ~(300, 700) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(300.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(700.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(700.00).Within(0.01));
             // Centroid of #2 in A-B-C is at ~(533, 367) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(533.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(366.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(533.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(366.67).Within(0.01));
             // Centroid of #3 in A-C is at ~(900, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(900.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(900.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         [Test]
@@ -10052,32 +10051,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 600), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1200, 600), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 1100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1100.00).Within(0.01));
             // Centroid of #2 in C-A-B-D is at ~(567, 567) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(566.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(566.67).Within(0.01));
             // Centroid of #3 in D-B is at ~(1100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(1100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -10129,32 +10128,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1200, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-C is at ~(1100, 1100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(1100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(1100.00).Within(0.01));
             // Centroid of #2 in C-A-B-D is at ~(567, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(566.67, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(566.67).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #3 in B-D is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -10206,32 +10205,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 900), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 900), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 900, 1200), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 900, 1200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1200, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1200, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 900, 1200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 900, 1200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in A-C is at ~(1100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(1100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in A-B-D-C is at ~(633, 633) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(633.33).Within(0.01));
             // Centroid of #3 in B-D is at ~(100, 1100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(1100.00).Within(0.01));
         }
 
         /// <summary>
@@ -10283,32 +10282,32 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 2 == sites[2].Points.Count(), "Expected: site #3 point count 2"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 300), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1200), "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1200, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(2), "Expected: site #3 point count 2"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1200, 300), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 1200), Is.True, "Expected: site #3 has D"); // #3 has D
 
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in D-C-A-B is at ~(633, 567) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(633.33, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(566.67, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(633.33).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(566.67).Within(0.01));
             // Centroid of #3 in D-B is at ~(1100, 1100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(1100.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(1100.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(1100.00).Within(0.01));
         }
 
         [Test]
@@ -10351,39 +10350,39 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 300, 900), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 900, 900), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 900), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 900, 900), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 900, 300), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 900, 300), "Expected: site #4 has D"); // #4 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 300, 900), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 900, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 900), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 900, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 900, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 900, 300), Is.True, "Expected: site #4 has D"); // #4 has D
 
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in B-C-A is at ~(400, 600) (using triangle formula)
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #3 in B-A-D is at ~(600, 400) (using triangle formula)
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #4 in D-A is at ~(800, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -10430,39 +10429,39 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 900, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 900, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 900, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has D"); // #4 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 900, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 900, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 900, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has D"); // #4 has D
 
             // Assert
 
             // Centroid of #1 in A-C is at ~(800, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
             // Centroid of #2 in C-A-B is at ~(600, 500) (using triangle formula)
-            ClassicAssert.AreEqual(600.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(600.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(400, 300) (using triangle formula)
-            ClassicAssert.AreEqual(400.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(400.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #4 in A-D is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
         }
 
         /// <summary>
@@ -10509,39 +10508,39 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 900, 900), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 900, 900), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 900, 900), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 900, 900), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has D"); // #4 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 900, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 900, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 900, 900), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 900, 900), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has D"); // #4 has D
 
             // Assert
 
             // Centroid of #1 in A-C is at ~(800, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in A-B-C is at ~(500, 300) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(300.00).Within(0.01));
             // Centroid of #3 in A-D-B is at ~(300, 500) (using triangle formula)
-            ClassicAssert.AreEqual(300.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
             // Centroid of #4 in A-D is at ~(100, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
         }
 
         /// <summary>
@@ -10588,39 +10587,39 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 2 == sites[0].Points.Count(), "Expected: site #1 point count 2"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 900, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 900), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 2 == sites[3].Points.Count(), "Expected: site #4 point count 2"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 600, 900), "Expected: site #4 has D"); // #4 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(2), "Expected: site #1 point count 2"); // #1
+            Assume.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 900, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 900), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(2), "Expected: site #4 point count 2"); // #4
+            Assume.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 600, 900), Is.True, "Expected: site #4 has D"); // #4 has D
 
             // Assert
 
             // Centroid of #1 in C-A is at ~(100, 100) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(100.00, sites[0].Centroid.Y, 0.01);
+            Assert.That(sites[0].Centroid.X, Is.EqualTo(100.00).Within(0.01));
+            Assert.That(sites[0].Centroid.Y, Is.EqualTo(100.00).Within(0.01));
             // Centroid of #2 in B-C-A is at ~(300, 400) (using triangle formula)
-            ClassicAssert.AreEqual(300.00, sites[1].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(400.00, sites[1].Centroid.Y, 0.01);
+            Assert.That(sites[1].Centroid.X, Is.EqualTo(300.00).Within(0.01));
+            Assert.That(sites[1].Centroid.Y, Is.EqualTo(400.00).Within(0.01));
             // Centroid of #3 in D-B-A is at ~(500, 600) (using triangle formula)
-            ClassicAssert.AreEqual(500.00, sites[2].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(600.00, sites[2].Centroid.Y, 0.01);
+            Assert.That(sites[2].Centroid.X, Is.EqualTo(500.00).Within(0.01));
+            Assert.That(sites[2].Centroid.Y, Is.EqualTo(600.00).Within(0.01));
             // Centroid of #4 in D-A is at ~(800, 800) (using generic closed polygon formula)
-            ClassicAssert.AreEqual(800.00, sites[3].Centroid.X, 0.01);
-            ClassicAssert.AreEqual(800.00, sites[3].Centroid.Y, 0.01);
+            Assert.That(sites[3].Centroid.X, Is.EqualTo(800.00).Within(0.01));
+            Assert.That(sites[3].Centroid.Y, Is.EqualTo(800.00).Within(0.01));
         }
 
     }
