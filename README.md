@@ -103,7 +103,7 @@ A very simple [MonoGame](https://github.com/MonoGame/MonoGame) example is includ
 
 # Dependencies
 
-The main library is compiled for .NET 8.0 and .NET Standard 2.0 and targets compatible OSes - Windows, Linux & macOS - and .NET and Mono frameworks - Xamarin, Mono, UWP, Unity, etc.
+The main library is compiled for .NET 9.0 and .NET Standard 2.0 and targets compatible OSes - Windows, Linux & macOS - and .NET and Mono frameworks - Xamarin, Mono, UWP, Unity, etc.
 
 # Original library
 
