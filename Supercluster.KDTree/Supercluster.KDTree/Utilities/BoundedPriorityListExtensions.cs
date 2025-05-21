@@ -1,8 +1,4 @@
-﻿// <copyright file="BoundedPriorityListExtensions.cs" company="Eric Regina">
-// Copyright (c) Eric Regina. All rights reserved.
-// </copyright>
-
-namespace Supercluster.KDTree.Utilities;
+﻿namespace Supercluster.KDTree.Utilities;
 
 using System;
 using System.Runtime.CompilerServices;

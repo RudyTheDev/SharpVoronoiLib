@@ -1,8 +1,4 @@
-﻿// <copyright file="KDTree.cs" company="Eric Regina">
-// Copyright (c) Eric Regina. All rights reserved.
-// </copyright>
-
-namespace Supercluster.KDTree;
+﻿namespace Supercluster.KDTree;
 
 using System;
 using System.Collections.Generic;

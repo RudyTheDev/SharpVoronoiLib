@@ -1,7 +1,4 @@
-﻿// <copyright file="BinaryTreeNavigation.cs" company="Eric Regina">
-// Copyright (c) Eric Regina. All rights reserved.
-// </copyright>
-
+﻿
 namespace Supercluster.KDTree.Utilities;
 
 using System.Runtime.CompilerServices;
