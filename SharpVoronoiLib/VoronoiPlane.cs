@@ -56,6 +56,8 @@ namespace SharpVoronoiLib
         
         private ISiteMergingAlgorithm? _siteMergingAlgorithm;
         
+        private INearestSiteLookup? _nearestSiteLookupAlgorithm;
+        
         private BorderEdgeGeneration _lastBorderGeneration;
 
 
@@ -188,26 +190,16 @@ namespace SharpVoronoiLib
         }
 
         [PublicAPI]
-        public VoronoiSite GetClosestSiteTo(double x, double y)
+        public VoronoiSite GetNearestSiteTo(double x, double y)
         {
             if (Sites == null) throw new VoronoiDoesntHaveSitesException();
             if (Edges == null) throw new VoronoiNotTessellatedException();
+            
+            
+            if (_nearestSiteLookupAlgorithm == null)
+                _nearestSiteLookupAlgorithm = new BruteForceNearestSiteLookup();
 
-            VoronoiSite closestSite = Sites[0];
-            double closestDistanceSqr = double.MaxValue;
-
-            foreach (VoronoiSite site in Sites)
-            {
-                double distance = (site.X - x) * (site.X - x) + (site.Y - y) * (site.Y - y);
-
-                if (distance < closestDistanceSqr)
-                {
-                    closestDistanceSqr = distance;
-                    closestSite = site;
-                }
-            }
-
-            return closestSite;
+            return _nearestSiteLookupAlgorithm.GetNearestSiteTo(Sites, x, y);
         }
 
 

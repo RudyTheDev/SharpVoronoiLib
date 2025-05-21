@@ -29,7 +29,7 @@ public class ClosestSitesTests
             double x = Random.Shared.NextDouble() * size * 1.2 - size * 0.1;
             double y = Random.Shared.NextDouble() * size * 1.2 - size * 0.1;
 
-            VoronoiSite site = plane.GetClosestSiteTo(x, y);
+            VoronoiSite site = plane.GetNearestSiteTo(x, y);
             
             VoronoiSite actual = GetClosestSite(sites, x, y);
             
