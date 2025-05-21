@@ -18,6 +18,7 @@
         <PackageTags>voronoi lloyds fortune's tessellation </PackageTags>
         <PackageReleaseNotes></PackageReleaseNotes>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <CETCompat>false</CETCompat>
     </PropertyGroup>
 
     <ItemGroup>
