@@ -5,7 +5,6 @@ using System.Linq;
 using NUnit.Framework;
 
 using Supercluster.KDTree;
-using static Supercluster.KDTree.Utilities.BinaryTreeNavigation;
 
 [TestFixture]
 public class AccuracyTest
@@ -159,5 +158,26 @@ public class AccuracyTest
 
 
         }
+    }
+    
+    
+    /// <summary>
+    /// Computes the index of the right child of the current node-index.
+    /// </summary>
+    /// <param name="index">The index of the current node.</param>
+    /// <returns>The index of the right child.</returns>
+    private static int RightChildIndex(int index)
+    {
+        return (2 * index) + 2;
+    }
+
+    /// <summary>
+    /// Computes the index of the left child of the current node-index.
+    /// </summary>
+    /// <param name="index">The index of the current node.</param>
+    /// <returns>The index of the left child.</returns>
+    private static int LeftChildIndex(int index)
+    {
+        return (2 * index) + 1;
     }
 }
