@@ -108,9 +108,9 @@ public class AccuracyTest
         int testDataSize = 100;
         int range = 1000;
 
-        double[][] treePoints = Utilities.GenerateDoubles(dataSize, range);
-        string[] treeNodes = Utilities.GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
-        double[][] testData = Utilities.GenerateDoubles(testDataSize, range);
+        double[][] treePoints = GenerateDoubles(dataSize, range);
+        string[] treeNodes = GenerateDoubles(dataSize, range).Select(d => d.ToString()).ToArray();
+        double[][] testData = GenerateDoubles(testDataSize, range);
 
 
         KDTree<string> tree = new KDTree<string>(treePoints, treeNodes);
@@ -126,7 +126,20 @@ public class AccuracyTest
             Assert.That(treeNearest[0].Item2, Is.EqualTo(linearNearest.Item2));
         }
     }
-    
+
+
+    private static double[][] GenerateDoubles(int points, double range)
+    {
+        List<double[]> data = new List<double[]>();
+        Random random = new Random();
+
+        for (int i = 0; i < points; i++)
+        {
+            data.Add(new double[] { (random.NextDouble() * range), (random.NextDouble() * range) });
+        }
+
+        return data.ToArray();
+    }
     
     /// <summary>
     /// Computes the index of the right child of the current node-index.
