@@ -40,5 +40,28 @@ public class Benchmarks
         // | Generate |          1000 |              Gaussian |   229.74 us |  11.569 us |  33.747 us |   221.60 us |
         // | Generate |         10000 |               Uniform |   989.62 us |  19.377 us |  32.375 us |   988.90 us |
         // | Generate |         10000 |              Gaussian | 1,535.13 us | 150.404 us | 443.468 us | 1,290.40 us |
+        
+        
+        BenchmarkRunner.Run<NearestSiteLookupBenchmark>();
+        
+        // | Method | PreWarm | LookupMethod | NumberOfSites | NumberOfLookups | Mean         |
+        // |------- |-------- |------------- |-------------- |---------------- |-------------:|
+        // | Lookup | False   | BruteForce   | 500           | 100             |     414.1 us |
+        // | Lookup | False   | KDTree       | 500           | 100             |     779.5 us |
+        // | Lookup | False   | BruteForce   | 500           | 100000          |  32,990.6 us |
+        // | Lookup | False   | KDTree       | 500           | 100000          |  73,251.7 us |
+        // | Lookup | False   | BruteForce   | 5000          | 100             |     337.2 us |
+        // | Lookup | False   | KDTree       | 5000          | 100             |   4,553.1 us |
+        // | Lookup | False   | BruteForce   | 5000          | 100000          | 308,954.6 us |
+        // | Lookup | False   | KDTree       | 5000          | 100000          | 107,869.5 us |
+
+        // | Lookup | True    | BruteForce   | 500           | 100             |     353.1 us |
+        // | Lookup | True    | KDTree       | 500           | 100             |     305.9 us |
+        // | Lookup | True    | BruteForce   | 500           | 100000          |  33,663.3 us |
+        // | Lookup | True    | KDTree       | 500           | 100000          |  70,469.7 us |
+        // | Lookup | True    | BruteForce   | 5000          | 100             |     340.6 us |
+        // | Lookup | True    | KDTree       | 5000          | 100             |     126.1 us |
+        // | Lookup | True    | BruteForce   | 5000          | 100000          | 309,755.2 us |
+        // | Lookup | True    | KDTree       | 5000          | 100000          | 106,434.0 us |
     }
 }

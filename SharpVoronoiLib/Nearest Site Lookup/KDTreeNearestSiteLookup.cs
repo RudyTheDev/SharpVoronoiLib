@@ -13,11 +13,12 @@ public class KDTreeNearestSiteLookup : INearestSiteLookup
     
     public VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y, int version)
     {
-        if (version != _lastVersion)
+        if (_lastVersion != version)
+        {
             _kdTree = new KDTree<VoronoiSite>(PointsFromSites(sites), sites.ToArray());
-        
-        _lastVersion = version;
-        
+            _lastVersion = version;
+        }
+
         Tuple<double[], VoronoiSite>[] nearest = _kdTree.NearestNeighbors([ x, y ], 1);
 
         return nearest[0].Item2;
