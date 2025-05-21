@@ -39,7 +39,6 @@ public class AccuracyTest
         KDTree<string> tree = new KDTree<string>(
             points,
             nodes,
-            Utilities.L2Norm_Squared_Double,
             double.MinValue,
             double.MaxValue);
 
@@ -78,7 +77,7 @@ public class AccuracyTest
 
         string[] nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
 
-        KDTree<string> tree = new KDTree<string>(points, nodes, Utilities.L2Norm_Squared_Double);
+        KDTree<string> tree = new KDTree<string>(points, nodes);
 
         BinaryTreeNavigator<double[], string> nav = tree.Navigator;
 
@@ -114,14 +113,14 @@ public class AccuracyTest
         double[][] testData = Utilities.GenerateDoubles(testDataSize, range);
 
 
-        KDTree<string> tree = new KDTree<string>(treePoints, treeNodes, Utilities.L2Norm_Squared_Double);
+        KDTree<string> tree = new KDTree<string>(treePoints, treeNodes);
 
         for (int i = 0; i < testDataSize; i++)
         {
             Tuple<double[], string>[] treeNearest = tree.NearestNeighbors(testData[i], 1);
-            Tuple<double[], string> linearNearest = Utilities.LinearSearch(treePoints, treeNodes, testData[i], Utilities.L2Norm_Squared_Double);
+            Tuple<double[], string> linearNearest = LinearSearch(treePoints, treeNodes, testData[i]);
 
-            Assert.That(Utilities.L2Norm_Squared_Double(testData[i], linearNearest.Item1), Is.EqualTo(Utilities.L2Norm_Squared_Double(testData[i], treeNearest[0].Item1)));
+            Assert.That(L2Norm_Squared_Double(testData[i], linearNearest.Item1), Is.EqualTo(L2Norm_Squared_Double(testData[i], treeNearest[0].Item1)));
 
             // TODO: wrote linear search for both node and point arrays
             Assert.That(treeNearest[0].Item2, Is.EqualTo(linearNearest.Item2));
@@ -148,4 +147,33 @@ public class AccuracyTest
     {
         return (2 * index) + 1;
     }
+    
+    private static Tuple<double[], TNode> LinearSearch<TNode>(double[][] points, TNode[] nodes, double[] target)
+    {
+        int bestIndex = 0;
+        double bestDist = Double.MaxValue;
+
+        for (int i = 0; i < points.Length; i++)
+        {
+            double currentDist = L2Norm_Squared_Double(points[i], target);
+            if (bestDist > currentDist)
+            {
+                bestDist = currentDist;
+                bestIndex = i;
+            }
+        }
+
+        return new Tuple<double[], TNode>(points[bestIndex], nodes[bestIndex]);
+    }
+    
+    private static Func<double[], double[], double> L2Norm_Squared_Double = (x, y) =>
+    {
+        double dist = 0f;
+        for (int i = 0; i < x.Length; i++)
+        {
+            dist += (x[i] - y[i]) * (x[i] - y[i]);
+        }
+
+        return dist;
+    };
 }

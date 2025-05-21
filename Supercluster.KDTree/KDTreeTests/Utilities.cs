@@ -1,25 +1,7 @@
 ﻿namespace KDTreeTests;
 
-using System.Linq;
-
-using Supercluster.KDTree;
-
 public static class Utilities
 {
-    #region Metrics
-
-    public static Func<double[], double[], double> L2Norm_Squared_Double = (x, y) =>
-    {
-        double dist = 0f;
-        for (int i = 0; i < x.Length; i++)
-        {
-            dist += (x[i] - y[i]) * (x[i] - y[i]);
-        }
-
-        return dist;
-    };
-    #endregion
-
     #region Data Generation
 
     public static double[][] GenerateDoubles(int points, double range)
@@ -35,45 +17,5 @@ public static class Utilities
         return data.ToArray();
     }
     
-    #endregion
-
-
-    #region Searches
-
-    public static Tuple<TPoint[], TNode> LinearSearch<TPoint, TNode>(TPoint[][] points, TNode[] nodes, TPoint[] target, Func<TPoint[], TPoint[], double> metric)
-    {
-        int bestIndex = 0;
-        double bestDist = Double.MaxValue;
-
-        for (int i = 0; i < points.Length; i++)
-        {
-            double currentDist = metric(points[i], target);
-            if (bestDist > currentDist)
-            {
-                bestDist = currentDist;
-                bestIndex = i;
-            }
-        }
-
-        return new Tuple<TPoint[], TNode>(points[bestIndex], nodes[bestIndex]);
-    }
-
-
-    public static Tuple<TPoint[], TNode>[] LinearRadialSearch<TPoint, TNode>(TPoint[][] points, TNode[] nodes, TPoint[] target, Func<TPoint[], TPoint[], double> metric, double radius)
-    {
-        BoundedPriorityList<int> pointsInRadius = new BoundedPriorityList<int>(points.Length, true);
-
-        for (int i = 0; i < points.Length; i++)
-        {
-            double currentDist = metric(target, points[i]);
-            if (radius >= currentDist)
-            {
-                pointsInRadius.Add(i, currentDist);
-            }
-        }
-
-        return pointsInRadius.Select(idx => new Tuple<TPoint[], TNode>(points[idx], nodes[idx])).ToArray();
-    }
-
     #endregion
 }
