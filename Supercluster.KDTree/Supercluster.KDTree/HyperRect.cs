@@ -32,14 +32,14 @@ public struct HyperRect<T>
     {
         get
         {
-            return this.minPoint;
+            return minPoint;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            this.minPoint = new T[value.Length];
-            value.CopyTo(this.minPoint, 0);
+            minPoint = new T[value.Length];
+            value.CopyTo(minPoint, 0);
         }
     }
 
@@ -51,14 +51,14 @@ public struct HyperRect<T>
     {
         get
         {
-            return this.maxPoint;
+            return maxPoint;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            this.maxPoint = new T[value.Length];
-            value.CopyTo(this.maxPoint, 0);
+            maxPoint = new T[value.Length];
+            value.CopyTo(maxPoint, 0);
         }
     }
 
@@ -100,13 +100,13 @@ public struct HyperRect<T>
 
         for (var dimension = 0; dimension < toPoint.Length; dimension++)
         {
-            if (this.minPoint[dimension].CompareTo(toPoint[dimension]) > 0)
+            if (minPoint[dimension].CompareTo(toPoint[dimension]) > 0)
             {
-                closest[dimension] = this.minPoint[dimension];
+                closest[dimension] = minPoint[dimension];
             }
-            else if (this.maxPoint[dimension].CompareTo(toPoint[dimension]) < 0)
+            else if (maxPoint[dimension].CompareTo(toPoint[dimension]) < 0)
             {
-                closest[dimension] = this.maxPoint[dimension];
+                closest[dimension] = maxPoint[dimension];
             }
             else
             {
@@ -127,8 +127,8 @@ public struct HyperRect<T>
         // For a discussion of why we don't implement ICloneable
         // see http://stackoverflow.com/questions/536349/why-no-icloneablet
         var rect = default(HyperRect<T>);
-        rect.MinPoint = this.MinPoint;
-        rect.MaxPoint = this.MaxPoint;
+        rect.MinPoint = MinPoint;
+        rect.MaxPoint = MaxPoint;
         return rect;
     }
 }

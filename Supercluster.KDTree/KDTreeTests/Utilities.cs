@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-
-namespace KDTreeTests;
+﻿namespace KDTreeTests;
 
 using System.Linq;
 
