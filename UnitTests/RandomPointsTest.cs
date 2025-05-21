@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 
 namespace SharpVoronoiLib.UnitTests
 {
@@ -30,10 +29,10 @@ namespace SharpVoronoiLib.UnitTests
             
             foreach (VoronoiSite site in sites)
             {
-                ClassicAssert.Less(site.X, size);
-                ClassicAssert.Greater(site.X, 0.0);
-                ClassicAssert.Less(site.Y, size);
-                ClassicAssert.Greater(site.Y, 0.0);
+                Assert.That(site.X, Is.LessThan(size));
+                Assert.That(site.X, Is.GreaterThan(0.0));
+                Assert.That(site.Y, Is.LessThan(size));
+                Assert.That(site.Y, Is.GreaterThan(0.0));
             }
 
             // Split the range into bands/slices and see how many points are within that slice
@@ -79,10 +78,10 @@ namespace SharpVoronoiLib.UnitTests
             
             foreach (VoronoiSite site in sites)
             {
-                ClassicAssert.Less(site.X, size);
-                ClassicAssert.Greater(site.X, 0.0);
-                ClassicAssert.Less(site.Y, size);
-                ClassicAssert.Greater(site.Y, 0.0);
+                Assert.That(site.X, Is.LessThan(size));
+                Assert.That(site.X, Is.GreaterThan(0.0));
+                Assert.That(site.Y, Is.LessThan(size));
+                Assert.That(site.Y, Is.GreaterThan(0.0));
             }
 
             // Split the range into bands/slices and see how many points are within that slice
