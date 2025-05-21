@@ -35,10 +35,10 @@ namespace SharpVoronoiLib.UnitTests
             List<VoronoiEdge> edges = plane.Relax();
 
             // Assert
-            
-            ClassicAssert.NotNull(edges);
-            ClassicAssert.IsNotEmpty(edges);
-            ClassicAssert.AreEqual(originalSites.Count, sites.Count);
+
+            Assert.That(edges, Is.Not.Null);
+            Assert.That(edges, Is.Not.Empty);
+            Assert.That(sites, Has.Count.EqualTo(originalSites.Count));
             // todo: check movement
         }
     }

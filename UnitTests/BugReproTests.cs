@@ -41,11 +41,11 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assert
 
-            CollectionAssert.AreEquivalent(new[] { site2, site3, site4 }, site0.Neighbours);
-            CollectionAssert.AreEquivalent(new[] { site2 }, site1.Neighbours);
-            CollectionAssert.AreEquivalent(new[] { site0, site1, site3, site4 }, site2.Neighbours);
-            CollectionAssert.AreEquivalent(new[] { site0, site2 }, site3.Neighbours);
-            CollectionAssert.AreEquivalent(new[] { site0, site2 }, site4.Neighbours);
+            Assert.That(site0.Neighbours, Is.EquivalentTo(new[] { site2, site3, site4 }));
+            Assert.That(site1.Neighbours, Is.EquivalentTo(new[] { site2 }));
+            Assert.That(site2.Neighbours, Is.EquivalentTo(new[] { site0, site1, site3, site4 }));
+            Assert.That(site3.Neighbours, Is.EquivalentTo(new[] { site0, site2 }));
+            Assert.That(site4.Neighbours, Is.EquivalentTo(new[] { site0, site2 }));
         }
 
         /// <summary>
