@@ -1533,11 +1533,11 @@ public static class UnitTestGenerator
             stringBuilder.AppendLine();
             List<string> classSummary = BuildClassSummary(purpose, borderLogic);
             foreach (string summaryLine in classSummary)
-                stringBuilder.AppendPaddedLine(1, summaryLine);
-            stringBuilder.AppendPaddedLine(1, @"[Parallelizable(ParallelScope.All)]");
-            stringBuilder.AppendPaddedLine(1, @"[TestFixture]");
-            stringBuilder.AppendPaddedLine(1, @"public class " + className);
-            stringBuilder.AppendPaddedLine(1, @"{");
+                stringBuilder.AppendLine(summaryLine);
+            stringBuilder.AppendLine(@"[Parallelizable(ParallelScope.All)]");
+            stringBuilder.AppendLine(@"[TestFixture]");
+            stringBuilder.AppendLine(@"public class " + className);
+            stringBuilder.AppendLine(@"{");
 
             foreach (Test test in _tests)
             {
@@ -1547,35 +1547,35 @@ public static class UnitTestGenerator
                 {
                     List<string> summary = BuildSummary(repeatedTest.Repeated, repeatedTest.OriginalName);
                     foreach (string summaryLine in summary)
-                        stringBuilder.AppendPaddedLine(2, summaryLine);
+                        stringBuilder.AppendPaddedLine(1, summaryLine);
                 }
 
-                stringBuilder.AppendPaddedLine(2, @"[Test]");
-                stringBuilder.AppendPaddedLine(2, @"public void " + test.Name + @"()");
-                stringBuilder.AppendPaddedLine(2, @"{");
+                stringBuilder.AppendPaddedLine(1, @"[Test]");
+                stringBuilder.AppendPaddedLine(1, @"public void " + test.Name + @"()");
+                stringBuilder.AppendPaddedLine(1, @"{");
 
                 // Arrange
 
-                stringBuilder.AppendPaddedLine(3, @"// Arrange", true);
+                stringBuilder.AppendPaddedLine(2, @"// Arrange", true);
 
-                stringBuilder.AppendPaddedLine(3, @"List<VoronoiSite> sites = new List<VoronoiSite>");
-                stringBuilder.AppendPaddedLine(3, @"{");
+                stringBuilder.AppendPaddedLine(2, @"List<VoronoiSite> sites = new List<VoronoiSite>");
+                stringBuilder.AppendPaddedLine(2, @"{");
                 List<string> siteDefinitions = BuildSiteDefinitions(test.Sites);
                 foreach (string siteDefinition in siteDefinitions)
-                    stringBuilder.AppendPaddedLine(4, siteDefinition);
-                stringBuilder.AppendPaddedLine(3, @"};");
+                    stringBuilder.AppendPaddedLine(3, siteDefinition);
+                stringBuilder.AppendPaddedLine(2, @"};");
                 stringBuilder.AppendLine();
 
                 List<string> visualLayout = BuildVisualLayout(test, borderLogic);
                 foreach (string visualLayoutString in visualLayout)
-                    stringBuilder.AppendPaddedLine(3, visualLayoutString);
+                    stringBuilder.AppendPaddedLine(2, visualLayoutString);
                 stringBuilder.AppendLine();
 
                 // Act
 
-                stringBuilder.AppendPaddedLine(3, @"// Act", true);
+                stringBuilder.AppendPaddedLine(2, @"// Act", true);
 
-                stringBuilder.AppendPaddedLine(3, @"List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, " + test.MinX + @", " + test.MinY + @", " + test.MaxX + @", " + test.MaxY + BorderLogicToRealEnumParam(borderLogic) + @");");
+                stringBuilder.AppendPaddedLine(2, @"List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, " + test.MinX + @", " + test.MinY + @", " + test.MaxX + @", " + test.MaxY + BorderLogicToRealEnumParam(borderLogic) + @");");
                 stringBuilder.AppendLine();
 
                 // Assume + Assert
@@ -1583,99 +1583,99 @@ public static class UnitTestGenerator
                 switch (purpose)
                 {
                     case TestPurpose.AssertEdges:
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, true));
                         break;
 
                     case TestPurpose.AssertSitePoints:
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, true));
                         break;
 
                     case TestPurpose.AssertEdgeSites:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildEdgeSiteAssertions(test.Edges, borderLogic, true));
                         break;
 
                     case TestPurpose.AssertEdgeNeighbours:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildEdgeNeighboursAssertions(test.Edges, borderLogic, true));
                         break;
 
                     case TestPurpose.AssertSiteEdges:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, false, true));
                         break;
 
                     case TestPurpose.AssertSiteCentroids:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildSiteCentroidsAssertions(test.Sites, borderLogic, true));
                         break;
 
                     case TestPurpose.AssertSiteEdgesClockwise:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
                         stringBuilder.AppendLine();
                         AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, true, true));
                         break;
 
                     case TestPurpose.AssertSiteNeighbours:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildSiteNeighboursAssertions(test.Sites, test.Edges, borderLogic, true));
                         break;
 
                     case TestPurpose.AssertSitePointsClockwise:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, true, true));
                         break;
 
                     case TestPurpose.AssertPointBorderLocation:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
                         stringBuilder.AppendLine();
                         AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildPointBorderLocationAssertions(test, test.Edges, borderLogic, true));
                         break;
 
                     case TestPurpose.AssertLiesOnEdgeOrCorner:
-                        stringBuilder.AppendPaddedLine(3, @"// Assume", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                         AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
                         stringBuilder.AppendLine();
                         AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, false));
                         stringBuilder.AppendLine();
 
-                        stringBuilder.AppendPaddedLine(3, @"// Assert", true);
+                        stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                         AppendAssertions(BuildLiesOnEdgeOrCornerAssertions(test.Edges, test.Sites, borderLogic, true));
                         break;
 
@@ -1686,15 +1686,15 @@ public static class UnitTestGenerator
                 void AppendAssertions(IEnumerable<string> assertions)
                 {
                     foreach (string assertion in assertions)
-                        stringBuilder.AppendPaddedLine(3, assertion);
+                        stringBuilder.AppendPaddedLine(2, assertion);
                 }
 
                 // Footer
 
-                stringBuilder.AppendPaddedLine(2, @"}", true);
+                stringBuilder.AppendPaddedLine(1, @"}", true);
             }
 
-            stringBuilder.AppendPaddedLine(1, @"}");
+            stringBuilder.AppendLine(@"}");
 
             return stringBuilder.ToString();
         }
