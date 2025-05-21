@@ -121,7 +121,8 @@ Known issues:
 - [Originally written by Logan Lembke as VoronoiLib](https://github.com/Zalgo2462/VoronoiLib)
 - [Updated with unit tests and nuget package by Sean Esopenko](https://github.com/sesopenko/VoronoiLib)
 - [Improvements by Jeffrey Jones](https://github.com/rurounijones/VoronoiLib)
-- Various code pieces attributed inline
+- Various code pieces attributed inline, notably:
+  - [KD tree algorithm by ericreg](https://github.com/ericreg/Supercluster.KDTree), originally [by codeandcats](https://github.com/codeandcats/KdTree)
 
 Original implementation inspired by:
 - [Ivan Kuckir's project](http://blog.ivank.net/fortunes-algorithm-and-implementation.html)
