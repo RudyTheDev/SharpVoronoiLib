@@ -13,6 +13,7 @@ public class VoronoiGame : Game
     private readonly Color _backgroundColor = new Color(147, 145, 133);
     
     private readonly Color _lineColor = new Color(47, 54, 69);
+    private readonly Color _hoveredLineColor = new Color(240, 24, 222);
 
     /// <summary> Margin from viewport edge so we can preview the voronoi edges </summary>
     private const int edgeDistance = 15;
@@ -26,7 +27,9 @@ public class VoronoiGame : Game
 
     private KeyboardState _lastKeyboardState;
 
-    private List<VoronoiEdge> _edges;
+    private VoronoiPlane _plane;
+
+    private VoronoiSite _hoveredSite;
 
 
     public VoronoiGame()
@@ -49,7 +52,7 @@ public class VoronoiGame : Game
         Window.Title = "SharpVoronoiLib MonoGame example"; // doesn't work in ctor
         
         _pixelTexture = new Texture2D(GraphicsDevice, 1, 1);
-        _pixelTexture.SetData(new[] { _lineColor });
+        _pixelTexture.SetData([ Color.White ]);
         
         _lastKeyboardState = Keyboard.GetState();
         
@@ -74,6 +77,10 @@ public class VoronoiGame : Game
             Generate();
 
         _lastKeyboardState = keyboardState;
+        
+        MouseState mouseState = Mouse.GetState();
+        
+        _hoveredSite = _plane.GetNearestSiteTo(mouseState.X - edgeDistance, mouseState.Y - edgeDistance);
 
         base.Update(gameTime);
     }
@@ -84,19 +91,24 @@ public class VoronoiGame : Game
 
         _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Opaque, SamplerState.PointWrap);
 
-        foreach (VoronoiEdge edge in _edges)
+        foreach (VoronoiEdge edge in _plane.Edges!)
         {
             Vector2 start = new Vector2((float)edge.Start.X + edgeDistance, (float)edge.Start.Y + edgeDistance);
             Vector2 end = new Vector2((float)edge.End.X + edgeDistance, (float)edge.End.Y + edgeDistance);
             
             float dist = Vector2.Distance(start, end);
             float rotation = (float)Math.Atan2(end.Y - start.Y, end.X - start.X);
+
+            Color lineColor = 
+                edge.Left == _hoveredSite || edge.Right == _hoveredSite
+                    ? _hoveredLineColor
+                    : _lineColor;
             
             _spriteBatch.Draw(
                 _pixelTexture,
                 start,
                 null,
-                Color.White,
+                lineColor,
                 rotation,
                 Vector2.Zero,
                 new Vector2(dist, 1),
@@ -145,12 +157,12 @@ public class VoronoiGame : Game
             sites[i1] = new VoronoiSite(sites[i2].X, sites[i2].Y);
         }
 
-        VoronoiPlane plane = new VoronoiPlane(0, 0, width, height);
+        _plane = new VoronoiPlane(0, 0, width, height);
         
-        plane.SetSites(sites);
+        _plane.SetSites(sites);
         
-        plane.Tessellate();
+        _plane.Tessellate();
         
-        _edges = plane.Relax();
+        _plane.Relax();
     }
 }
