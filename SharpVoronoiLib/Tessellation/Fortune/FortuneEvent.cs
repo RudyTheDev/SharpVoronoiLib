@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace SharpVoronoiLib
+namespace SharpVoronoiLib;
+
+internal interface FortuneEvent : IComparable<FortuneEvent>
 {
-    internal interface FortuneEvent : IComparable<FortuneEvent>
-    {
-        double X { get; }
-        double Y { get; }
-    }
+    double X { get; }
+    double Y { get; }
 }

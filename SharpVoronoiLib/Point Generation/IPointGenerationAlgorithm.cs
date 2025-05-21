@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SharpVoronoiLib
+namespace SharpVoronoiLib;
+
+internal interface IPointGenerationAlgorithm
 {
-    internal interface IPointGenerationAlgorithm
-    {
-        List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count);
-    }
+    List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count);
 }

@@ -1,8 +1,7 @@
-﻿namespace SharpVoronoiLib
+﻿namespace SharpVoronoiLib;
+
+public enum PointGenerationMethod
 {
-    public enum PointGenerationMethod
-    {
-        Uniform,
-        Gaussian
-    }
+    Uniform,
+    Gaussian
 }

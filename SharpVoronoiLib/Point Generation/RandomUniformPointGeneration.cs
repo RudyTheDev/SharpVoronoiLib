@@ -1,19 +1,18 @@
 ﻿using System;
 
-namespace SharpVoronoiLib
+namespace SharpVoronoiLib;
+
+internal class RandomUniformPointGeneration : RandomPointGeneration
 {
-    internal class RandomUniformPointGeneration : RandomPointGeneration
+    protected override double GetNextRandomValue(Random random, double min, double max)
     {
-        protected override double GetNextRandomValue(Random random, double min, double max)
+        do
         {
-            do
-            {
-                double value = min + random.NextDouble() * (max - min);
+            double value = min + random.NextDouble() * (max - min);
                 
-                if (value > min && value < max)
-                    return value;
+            if (value > min && value < max)
+                return value;
                 
-            } while (true);
-        }
+        } while (true);
     }
 }
