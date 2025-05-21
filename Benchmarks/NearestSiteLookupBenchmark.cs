@@ -11,7 +11,7 @@ public class NearestSiteLookupBenchmark
     [UsedImplicitly]
     public int NumberOfSites { get; set; }
 
-    [Params(100, 1000, 10000, 100000)]
+    [Params(100, 100000)]
     [UsedImplicitly]
     public int NumberOfLookups { get; set; }
     

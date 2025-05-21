@@ -275,12 +275,6 @@ public class KDTree<TNode>
 
     private static double CalculateDistance(double[] x, double[] y)
     {
-        double dist = 0f;
-        for (int i = 0; i < x.Length; i++)
-        {
-            dist += (x[i] - y[i]) * (x[i] - y[i]);
-        }
-
-        return dist;
+        return (x[0] - y[0]) * (x[0] - y[0]) + (x[1] - y[1]) * (x[1] - y[1]);
     }
 }
