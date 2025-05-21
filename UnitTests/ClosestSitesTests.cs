@@ -10,12 +10,15 @@ public class ClosestSitesTests
 {
     [Test]
     [Repeat(100, true)]
-    public void Test()
+    public void Test([Values(
+                         NearestSiteLookupMethod.BruteForce,
+                         NearestSiteLookupMethod.KDTree
+                     )] NearestSiteLookupMethod lookupMethod)
     {
         // Arrange
 
         const int size = 600;
-            
+
         VoronoiPlane plane = new VoronoiPlane(0, 0, size, size);
 
         List<VoronoiSite> sites = plane.GenerateRandomSites(500);
@@ -29,16 +32,16 @@ public class ClosestSitesTests
             double x = Random.Shared.NextDouble() * size * 1.2 - size * 0.1;
             double y = Random.Shared.NextDouble() * size * 1.2 - size * 0.1;
 
-            VoronoiSite site = plane.GetNearestSiteTo(x, y);
-            
+            VoronoiSite site = plane.GetNearestSiteTo(x, y, lookupMethod);
+
             VoronoiSite actual = GetClosestSite(sites, x, y);
-            
+
             Assert.That(site, Is.Not.Null);
             Assert.That(site, Is.SameAs(actual));
         }
     }
 
-    
+
     private static VoronoiSite GetClosestSite(List<VoronoiSite> sites, double x, double y)
     {
         VoronoiSite closest = null!;

@@ -41,6 +41,8 @@ public class VoronoiPlane
     public double MaxY { get; }
 
 
+    private int version = 0;
+
     private List<VoronoiEdge>? _edges;
 
     private RandomUniformPointGeneration? _randomUniformPointGeneration;
@@ -56,7 +58,8 @@ public class VoronoiPlane
         
     private ISiteMergingAlgorithm? _siteMergingAlgorithm;
         
-    private INearestSiteLookup? _nearestSiteLookupAlgorithm;
+    private BruteForceNearestSiteLookup? _nearestSiteLookupAlgorithm;
+    private KDTreeNearestSiteLookup? _kdTreeNearestSiteLookupAlgorithm;
         
     private BorderEdgeGeneration _lastBorderGeneration;
 
@@ -81,6 +84,8 @@ public class VoronoiPlane
         Sites = sites;
 
         _edges = null;
+
+        version++;
     }
 
     /// <summary>
@@ -101,6 +106,8 @@ public class VoronoiPlane
 
         _edges = null;
             
+        version++;
+        
         return sites;
     }
 
@@ -142,6 +149,8 @@ public class VoronoiPlane
 
         _edges = edges;
             
+        version++;
+            
         return edges;
     }
 
@@ -169,6 +178,8 @@ public class VoronoiPlane
                 Tessellate(_lastBorderGeneration); // will set Edges
             }
         }
+            
+        version++;
 
         return Edges;
     }
@@ -185,21 +196,22 @@ public class VoronoiPlane
             _siteMergingAlgorithm = new GenericSiteMergingAlgorithm();
 
         _siteMergingAlgorithm.MergeSites(Sites, Edges, mergeQuery);
+            
+        version++;
 
         return Sites;
     }
 
     [PublicAPI]
-    public VoronoiSite GetNearestSiteTo(double x, double y)
+    public VoronoiSite GetNearestSiteTo(double x, double y, NearestSiteLookupMethod lookupMethod = NearestSiteLookupMethod.KDTree)
     {
         if (Sites == null) throw new VoronoiDoesntHaveSitesException();
         if (Edges == null) throw new VoronoiNotTessellatedException();
             
             
-        if (_nearestSiteLookupAlgorithm == null)
-            _nearestSiteLookupAlgorithm = new BruteForceNearestSiteLookup();
+        INearestSiteLookup algorithm = GetNearestSiteLookupAlgorithm(lookupMethod);
 
-        return _nearestSiteLookupAlgorithm.GetNearestSiteTo(Sites, x, y);
+        return algorithm.GetNearestSiteTo(Sites, x, y, version);
     }
 
 
@@ -236,6 +248,17 @@ public class VoronoiPlane
         {
             PointGenerationMethod.Uniform  => _randomUniformPointGeneration ??= new RandomUniformPointGeneration(),
             PointGenerationMethod.Gaussian => _randomGaussianPointGeneration ??= new RandomGaussianPointGeneration(),
+
+            _ => throw new ArgumentOutOfRangeException()
+        };
+    }
+    
+    private INearestSiteLookup GetNearestSiteLookupAlgorithm(NearestSiteLookupMethod nearestSiteLookupMethod)
+    {
+        return nearestSiteLookupMethod switch
+        {
+            NearestSiteLookupMethod.BruteForce => _nearestSiteLookupAlgorithm ??= new BruteForceNearestSiteLookup(),
+            NearestSiteLookupMethod.KDTree      => _kdTreeNearestSiteLookupAlgorithm ??= new KDTreeNearestSiteLookup(),
 
             _ => throw new ArgumentOutOfRangeException()
         };

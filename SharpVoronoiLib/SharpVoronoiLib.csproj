@@ -27,4 +27,8 @@
         <None Include="..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Nearest Site Lookup\KDTree\" />
+    </ItemGroup>
+
 </Project>

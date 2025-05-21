@@ -5,7 +5,7 @@ namespace SharpVoronoiLib;
 
 public class BruteForceNearestSiteLookup : INearestSiteLookup
 {
-    public VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y)
+    public VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y, int version)
     {
         VoronoiSite closestSite = sites[0];
         double closestDistanceSqr = double.MaxValue;
