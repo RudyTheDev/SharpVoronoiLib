@@ -10,9 +10,7 @@ using System.Runtime.CompilerServices;
 /// Useful for keeping track of items in nearest neighbor searches. Insert is O(log n). Retrieval is O(1)
 /// </summary>
 /// <typeparam name="TElement">The type of element the list maintains.</typeparam>
-/// <typeparam name="TPriority">The type the elements are prioritized by.</typeparam>
-public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
-    where TPriority : IComparable<TPriority>
+public class BoundedPriorityList<TElement> : IEnumerable<TElement>
 {
     /// <summary>
     /// The list holding the actual elements
@@ -24,7 +22,7 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// There is a one-to-one correspondence between the
     /// priority list ad the element list.
     /// </summary>
-    private readonly List<TPriority> priorityList;
+    private readonly List<double> priorityList;
 
     /// <summary>
     /// Gets the element with the largest priority.
@@ -34,7 +32,7 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <summary>
     /// Gets the largest priority.
     /// </summary>
-    public TPriority MaxPriority => priorityList[priorityList.Count - 1];
+    public double MaxPriority => priorityList[priorityList.Count - 1];
 
     /// <summary>
     /// Gets the element with the lowest priority.
@@ -44,7 +42,7 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <summary>
     /// Gets the smallest priority.
     /// </summary>
-    public TPriority MinPriority => priorityList[0];
+    public double MinPriority => priorityList[0];
 
     /// <summary>
     /// Gets the maximum allows capacity for the <see cref="BoundedPriorityList{TElement,TPriority}"/>
@@ -82,12 +80,12 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
         Capacity = capacity;
         if (allocate)
         {
-            priorityList = new List<TPriority>(capacity);
+            priorityList = new List<double>(capacity);
             elementList = new List<TElement>(capacity);
         }
         else
         {
-            priorityList = new List<TPriority>();
+            priorityList = new List<double>();
             elementList = new List<TElement>();
         }
     }
@@ -103,7 +101,7 @@ public class BoundedPriorityList<TElement, TPriority> : IEnumerable<TElement>
     /// <param name="item">The item to be inserted</param>
     /// <param name="priority">The priority of th given item.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void Add(TElement item, TPriority priority)
+    public void Add(TElement item, double priority)
     {
         if (Count >= Capacity)
         {

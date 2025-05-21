@@ -15,20 +15,17 @@ public static class BoundedPriorityListExtensions
     /// <param name="list">The <see cref="BoundedPriorityList{TElement,TPriority}"/>.</param>
     /// <param name="tree">The</param>
     /// <typeparam name="TPriority">THe type of the priority of the <see cref="BoundedPriorityList{TElement,TPriority}"/></typeparam>
-    /// <typeparam name="TDimension">The type of the dimensions of the <see cref="KDTree{TDimension,TNode}"/></typeparam>
-    /// <typeparam name="TNode">The type of the nodes of the <see cref="KDTree{TDimension,TNode}"/></typeparam>
-    /// <returns>The points and nodes in the <see cref="KDTree{TDimension,TNode}"/> implicitly referenced by the <see cref="BoundedPriorityList{TElement,TPriority}"/>.</returns>
+    /// <typeparam name="TNode">The type of the nodes of the <see cref="KDTree{double,TNode}"/></typeparam>
+    /// <returns>The points and nodes in the <see cref="KDTree{TNode}"/> implicitly referenced by the <see cref="BoundedPriorityList{TElement,TPriority}"/>.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Tuple<TDimension[], TNode>[] ToResultSet<TPriority, TDimension, TNode>(
-        this BoundedPriorityList<int, TPriority> list,
-        KDTree<TDimension, TNode> tree)
-        where TDimension : IComparable<TDimension>
-        where TPriority : IComparable<TPriority>
+    public static Tuple<double[], TNode>[] ToResultSet<TNode>(
+        this BoundedPriorityList<int> list,
+        KDTree<TNode> tree)
     {
-        Tuple<TDimension[], TNode>[] array = new Tuple<TDimension[], TNode>[list.Count];
+        Tuple<double[], TNode>[] array = new Tuple<double[], TNode>[list.Count];
         for (int i = 0; i < list.Count; i++)
         {
-            array[i] = new Tuple<TDimension[], TNode>(
+            array[i] = new Tuple<double[], TNode>(
                 tree.InternalPointArray[list[i]],
                 tree.InternalNodeArray[list[i]]);
         }

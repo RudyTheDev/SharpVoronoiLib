@@ -61,7 +61,7 @@ public static class Utilities
 
     public static Tuple<TPoint[], TNode>[] LinearRadialSearch<TPoint, TNode>(TPoint[][] points, TNode[] nodes, TPoint[] target, Func<TPoint[], TPoint[], double> metric, double radius)
     {
-        BoundedPriorityList<int, double> pointsInRadius = new BoundedPriorityList<int, double>(points.Length, true);
+        BoundedPriorityList<int> pointsInRadius = new BoundedPriorityList<int>(points.Length, true);
 
         for (int i = 0; i < points.Length; i++)
         {
