@@ -71,7 +71,9 @@ public class VoronoiGame : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
             Exit();
 
-        //Generate();
+        if (GraphicsDevice.Viewport.Width != ((int)(_plane.MaxX - _plane.MinX) + edgeDistance * 2) ||
+            GraphicsDevice.Viewport.Height != ((int)(_plane.MaxY - _plane.MinY) + edgeDistance * 2))
+            Generate();
         
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
             Generate();
@@ -128,6 +130,7 @@ public class VoronoiGame : Game
         // Set to current screen
         int width = GraphicsDevice.Viewport.Width - (edgeDistance * 2);
         int height = GraphicsDevice.Viewport.Height - (edgeDistance * 2);
+        if (width <= 0 || height <= 0) return; // prevent exception
         int numPoints = width * height / 400; // about 2000 points at 1280 x 720
         
         List<VoronoiSite> sites = new List<VoronoiSite>(numPoints);
