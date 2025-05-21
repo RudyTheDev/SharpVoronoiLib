@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
@@ -62,12 +61,12 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
 
             // Assert
@@ -115,24 +114,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         [Test]
@@ -174,24 +173,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         /// <summary>
@@ -237,24 +236,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         /// <summary>
@@ -300,24 +299,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         /// <summary>
@@ -363,24 +362,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         [Test]
@@ -422,24 +421,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         /// <summary>
@@ -485,24 +484,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         /// <summary>
@@ -548,24 +547,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         /// <summary>
@@ -611,24 +610,24 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
         }
 
         [Test]
@@ -670,25 +669,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 0, 1000, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 0, 1000, 0, 0))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -734,25 +733,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 1000, 1000, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 1000, 1000, 0, 1000))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -798,25 +797,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 1000, 0, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 1000, 0, 1000, 1000))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -862,25 +861,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 0, 0, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 0, 0, 1000, 0))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         [Test]
@@ -922,25 +921,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 0, 1000, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 0, 1000, 0, 0))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -986,25 +985,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 1000, 1000, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 1000, 1000, 0, 1000))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -1050,25 +1049,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 1000, 0, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 1000, 0, 1000, 1000))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -1114,25 +1113,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 0, 0, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 0, 0, 1000, 0))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -1178,25 +1177,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 1000, 1000, 1000, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 1000, 1000, 1000, 0))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -1242,25 +1241,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 1000, 0, 0, 0), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 1000, 0, 0, 0))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -1306,25 +1305,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 0, 0, 0, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 0, 0, 0, 1000))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         /// <summary>
@@ -1370,25 +1369,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.NotNull(sites[0].LiesOnEdge); // #1
-            ClassicAssert.AreEqual(FindEdge(edges, 0, 1000, 1000, 1000), sites[0].LiesOnEdge); // #1 on X-Y
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
+            Assert.That(sites[0].LiesOnEdge, Is.Not.Null);// #1
+            Assert.That(sites[0].LiesOnEdge, Is.EqualTo(FindEdge(edges, 0, 1000, 1000, 1000))); // #1 on X-Y
+            Assert.That(sites[0].LiesOnCorner, Is.Null); // #1
         }
 
         [Test]
@@ -1430,25 +1429,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
-            ClassicAssert.AreEqual(FindPoint(edges, 0, 0), sites[0].LiesOnCorner); // #1 on Y
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Not.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.EqualTo(FindPoint(edges, 0, 0))); // #1 on Y
         }
 
         /// <summary>
@@ -1494,25 +1493,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
-            ClassicAssert.AreEqual(FindPoint(edges, 0, 1000), sites[0].LiesOnCorner); // #1 on Y
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Not.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.EqualTo(FindPoint(edges, 0, 1000))); // #1 on Y
         }
 
         /// <summary>
@@ -1558,25 +1557,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
-            ClassicAssert.AreEqual(FindPoint(edges, 1000, 1000), sites[0].LiesOnCorner); // #1 on Y
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Not.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.EqualTo(FindPoint(edges, 1000, 1000))); // #1 on Y
         }
 
         /// <summary>
@@ -1622,25 +1621,25 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 4 == edges.Count, "Expected: edge count 4");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(4), "Expected: edge count 4");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
-            ClassicAssert.AreEqual(FindPoint(edges, 1000, 0), sites[0].LiesOnCorner); // #1 on Y
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Not.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.EqualTo(FindPoint(edges, 1000, 0))); // #1 on Y
         }
 
         [Test]
@@ -1683,35 +1682,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 500, 1000, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 500, 1000, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -1758,35 +1757,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 1000, 500, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 1000, 500, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         [Test]
@@ -1829,35 +1828,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 700, 1000, 700), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 700), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 700, 1000, 700), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 700, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 700), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -1904,35 +1903,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 1000, 700, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 700, 1000, 0, 1000), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 700, 0), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 700, 0, 1000, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 1000, 700, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 700, 1000, 0, 1000), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 700, 0), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 700, 0, 1000, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         [Test]
@@ -1976,46 +1975,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 700, 1000, 700), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 300, 1000, 300), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 300), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 700), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 700, 1000, 700), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 300, 1000, 300), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 700, 0, 300), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 700), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -2063,46 +2062,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 1000, 700, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 300, 1000, 300, 0), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 700, 1000, 300, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 1000, 0, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 300, 0, 700, 0), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 700, 0, 1000, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 1000, 700, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 300, 1000, 300, 0), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 700, 1000, 300, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 1000, 0, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 300, 0, 700, 0), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 700, 0, 1000, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -2147,57 +2146,57 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 13 == edges.Count, "Expected: edge count 13");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 700, 1000, 700), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 500, 1000, 500), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 0, 300, 1000, 300), "Expected: has edge E-F"); // E-F
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 500), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 300), "Expected: has edge C-E"); // C-E
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge W-F"); // W-F
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 500), "Expected: has edge F-D"); // F-D
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 700), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(13), "Expected: edge count 13");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 700, 1000, 700), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 500, 1000, 500), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 0, 300, 1000, 300), Is.True, "Expected: has edge E-F"); // E-F
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 700, 0, 500), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 500, 0, 300), Is.True, "Expected: has edge C-E"); // C-E
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge W-F"); // W-F
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 500), Is.True, "Expected: has edge F-D"); // F-D
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 700), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 300), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has W"); // #4 has W
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -2246,57 +2245,57 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 13 == edges.Count, "Expected: edge count 13");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 1000, 700, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 1000, 500, 0), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 300, 1000, 300, 0), "Expected: has edge E-F"); // E-F
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 700, 1000, 500, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 1000, 300, 1000), "Expected: has edge C-E"); // C-E
-            Assume.That(() => HasEdge(edges, 300, 1000, 0, 1000), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge W-F"); // W-F
-            Assume.That(() => HasEdge(edges, 300, 0, 500, 0), "Expected: has edge F-D"); // F-D
-            Assume.That(() => HasEdge(edges, 500, 0, 700, 0), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 700, 0, 1000, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(13), "Expected: edge count 13");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 1000, 700, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 1000, 500, 0), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 300, 1000, 300, 0), Is.True, "Expected: has edge E-F"); // E-F
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 700, 1000, 500, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 1000, 300, 1000), Is.True, "Expected: has edge C-E"); // C-E
+            Assume.That(HasEdge(edges, 300, 1000, 0, 1000), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge W-F"); // W-F
+            Assume.That(HasEdge(edges, 300, 0, 500, 0), Is.True, "Expected: has edge F-D"); // F-D
+            Assume.That(HasEdge(edges, 500, 0, 700, 0), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 700, 0, 1000, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Z"); // #1 has Z
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 300, 1000), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has W"); // #4 has W
-            Assume.That(() => HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Z"); // #1 has Z
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 300, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assume.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Y"); // #4 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         [Test]
@@ -2339,31 +2338,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 5 == edges.Count, "Expected: edge count 5");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(5), "Expected: edge count 5");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -2410,31 +2409,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 5 == edges.Count, "Expected: edge count 5");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(5), "Expected: edge count 5");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         [Test]
@@ -2477,35 +2476,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 200, 800, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 200), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 800, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 200, 800, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 200), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 800, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -2552,35 +2551,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 200, 1000, 1000, 200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 200, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 200, 1000, 1000, 200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 200, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -2627,35 +2626,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 800, 200, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 800), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 200, 0, 1000, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 800, 200, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 800), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 200, 0, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -2702,35 +2701,35 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 800, 0, 0, 800), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 800, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 800, 0, 0, 800), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 800, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 0, 800, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         [Test]
@@ -2773,31 +2772,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 5 == edges.Count, "Expected: edge count 5");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-A"); // Y-A
+            Assume.That(edges.Count, Is.EqualTo(5), "Expected: edge count 5");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-A"); // Y-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -2844,31 +2843,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 5 == edges.Count, "Expected: edge count 5");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-A"); // Y-A
+            Assume.That(edges.Count, Is.EqualTo(5), "Expected: edge count 5");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-A"); // Y-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -2915,31 +2914,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 5 == edges.Count, "Expected: edge count 5");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-A"); // Y-A
+            Assume.That(edges.Count, Is.EqualTo(5), "Expected: edge count 5");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 0, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-A"); // Y-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -2986,31 +2985,31 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 5 == edges.Count, "Expected: edge count 5");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-A"); // Y-A
+            Assume.That(edges.Count, Is.EqualTo(5), "Expected: edge count 5");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-A"); // Y-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         [Test]
@@ -3053,33 +3052,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -3126,33 +3125,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -3199,33 +3198,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 0, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -3272,33 +3271,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 500, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -3345,33 +3344,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 500), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 0, 500), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 0, 500, 0, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -3418,33 +3417,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 500, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 500, 1000), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 500, 1000, 1000, 1000), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 500, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 500, 1000), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 500, 1000, 1000, 1000), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -3491,33 +3490,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 500), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 1000, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 500), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         /// <summary>
@@ -3564,33 +3563,33 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 6 == edges.Count, "Expected: edge count 6");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 500, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge A-X"); // A-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 500, 0), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 500, 0, 0, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge Z-A"); // Z-A
+            Assume.That(edges.Count, Is.EqualTo(6), "Expected: edge count 6");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 500, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge A-X"); // A-X
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 500, 0), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 500, 0, 0, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge Z-A"); // Z-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
         }
 
         [Test]
@@ -3634,46 +3633,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 300, 700, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 300, 0, 1000, 700), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 300), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 300, 0, 1000, 0), "Expected: has edge B-W"); // B-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 700), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 700, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 300, 700, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 300, 0, 1000, 700), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 1000, 0, 300), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 300, 0, 1000, 0), Is.True, "Expected: has edge B-W"); // B-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 700), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 700, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 6 == sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -3721,46 +3720,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 1000, 1000, 300), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 700, 700, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1000, 1000, 300, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 300, 1000, 0, 1000), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 0), "Expected: has edge B-W"); // B-W
-            Assume.That(() => HasEdge(edges, 0, 0, 700, 0), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 700, 0, 1000, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 1000, 1000, 300), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 700, 700, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1000, 1000, 300, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 300, 1000, 0, 1000), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 0, 700, 0, 0), Is.True, "Expected: has edge B-W"); // B-W
+            Assume.That(HasEdge(edges, 0, 0, 700, 0), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 700, 0, 1000, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 6 == sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -3804,42 +3803,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 400, 600, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 400), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 600, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 400, 600, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 1000, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 1000, 0, 400), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 400, 0, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 600, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -3887,42 +3886,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 1000, 1000, 400), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1000, 1000, 400, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 1000, 1000, 400), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1000, 1000, 400, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 400, 1000, 0, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -3970,42 +3969,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 600, 400, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 600), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 600, 400, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 600), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 400, 0, 1000, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -4053,42 +4052,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 0, 0, 600), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 0, 0, 600), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 0, 0, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 600, 0, 1000, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -4133,53 +4132,53 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 11 == edges.Count, "Expected: edge count 11");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 400, 600, 1000), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 1000), "Expected: has edge B-E"); // B-E
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 600), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 400), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 600), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 1000), "Expected: has edge D-E"); // D-E
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge E-F"); // E-F
-            Assume.That(() => HasEdge(edges, 600, 1000, 0, 1000), "Expected: has edge F-X"); // F-X
+            Assume.That(edges.Count, Is.EqualTo(11), "Expected: edge count 11");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 400, 600, 1000), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 0, 0, 1000, 1000), Is.True, "Expected: has edge B-E"); // B-E
+            Assume.That(HasEdge(edges, 400, 0, 1000, 600), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 400), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 400, 0, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 400, 0, 1000, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 600), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 1000), Is.True, "Expected: has edge D-E"); // D-E
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge E-F"); // E-F
+            Assume.That(HasEdge(edges, 600, 1000, 0, 1000), Is.True, "Expected: has edge F-X"); // F-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has F"); // #1 has F
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 0), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has F"); // #1 has F
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 1000, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -4228,53 +4227,53 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 11 == edges.Count, "Expected: edge count 11");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 1000, 1000, 400), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 0), "Expected: has edge B-E"); // B-E
-            Assume.That(() => HasEdge(edges, 0, 600, 600, 0), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 400, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 0), "Expected: has edge D-E"); // D-E
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge E-F"); // E-F
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 1000), "Expected: has edge F-X"); // F-X
+            Assume.That(edges.Count, Is.EqualTo(11), "Expected: edge count 11");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 1000, 1000, 400), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 0), Is.True, "Expected: has edge B-E"); // B-E
+            Assume.That(HasEdge(edges, 0, 600, 600, 0), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 1000, 1000, 400, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 400, 1000, 0, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 600, 0, 1000, 0), Is.True, "Expected: has edge D-E"); // D-E
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge E-F"); // E-F
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 1000), Is.True, "Expected: has edge F-X"); // F-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has F"); // #1 has F
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 0), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has F"); // #1 has F
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 0), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         [Test]
@@ -4318,45 +4317,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 400, 0, 400), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 400, 400, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 400, 1000, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 400), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 400, 0, 400), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 400, 400, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 400, 1000, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 400), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 400, 0, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 400, 0, 1000, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -4404,45 +4403,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 600, 400, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 600, 0, 600), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 600, 1000, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 400, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 600, 400, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 600, 0, 600), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 600, 1000, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 1000, 400, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 400, 1000, 0, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -4490,45 +4489,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 600, 1000, 600), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 600, 600, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 600, 0, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 600), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 600, 1000, 0, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 600, 1000, 600), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 600, 600, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 600, 0, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 600), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 600, 1000, 0, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -4576,45 +4575,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 400, 600, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 400, 1000, 400), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 400, 0, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 400, 600, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 400, 1000, 400), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 400, 0, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 600, 0, 1000, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -4658,47 +4657,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 600, 0, 600), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 300, 600, 300, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 600, 700, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 300, 0, 1000, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 700, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 600, 0, 600), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 300, 600, 300, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 600, 700, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 300, 0, 1000, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 700, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -4746,47 +4745,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 700, 600, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 700, 0, 700), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 700, 1000, 300), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 600, 1000, 0, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 700, 600, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 700, 0, 700), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 700, 1000, 300), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 600, 1000, 0, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 700, 0, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -4834,47 +4833,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 400, 1000, 400), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 700, 400, 700, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 700, 400, 300, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 700, 1000, 0, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 300, 0, 1000, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 400, 1000, 400), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 700, 400, 700, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 700, 400, 300, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 700, 1000, 0, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 300, 0, 1000, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 300, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 300, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -4922,47 +4921,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 300, 400, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 300, 1000, 300), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 300, 0, 700), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 300, 400, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 300, 1000, 300), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 300, 0, 700), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 400, 0, 1000, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 0, 700, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5010,47 +5009,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 600, 1000, 600), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 700, 600, 700, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 700, 600, 300, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 600), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 700, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 700, 0, 0, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 300, 1000), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 300, 1000, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 600, 1000, 600), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 700, 600, 700, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 700, 600, 300, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 600), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 0, 700, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 700, 0, 0, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 300, 1000), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 300, 1000, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5098,47 +5097,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 300, 600, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 300, 0, 300), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 300, 1000, 700), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 600, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 600, 0, 0, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 300), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 700), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 300, 600, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 300, 0, 300), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 300, 1000, 700), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 0, 600, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 600, 0, 0, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 0, 0, 300), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 300, 0, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 700), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5186,47 +5185,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 400, 0, 400), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 300, 400, 300, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 400, 700, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 400), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 300, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 300, 1000, 1000, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 700, 0), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 700, 0, 0, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 400, 0, 400), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 300, 400, 300, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 400, 700, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 0, 400), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 400, 0, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 1000, 300, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 300, 1000, 1000, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 700, 0), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 700, 0, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5274,47 +5273,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 700, 400, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 700, 1000, 700), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 700, 0, 300), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 400, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 400, 1000, 1000, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 700), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 300), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 700, 400, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 700, 1000, 700), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 700, 0, 300), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 1000, 400, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 400, 1000, 1000, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 700), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 0, 300), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 0, 300, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -5358,43 +5357,43 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 0, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 1000, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 500, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5442,43 +5441,43 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 0, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 0, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 1000, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5526,43 +5525,43 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 1000, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 0, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 500, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5610,43 +5609,43 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 1000, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 1000, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 0, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -5690,47 +5689,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 300, 200, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 300, 800, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 300, 500, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 200, 0, 800, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 300, 200, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 300, 800, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 300, 500, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 200, 0, 800, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5778,47 +5777,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 500, 0, 800), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 300, 500, 0, 200), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 500, 1000, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 200), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 500, 0, 800), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 300, 500, 0, 200), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 500, 1000, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 0, 800, 0, 200), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5866,47 +5865,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 700, 800, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 700, 200, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 700, 500, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 800, 1000, 200, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 700, 800, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 700, 200, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 700, 500, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 800, 1000, 200, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -5954,47 +5953,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 500, 1000, 200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 700, 500, 1000, 800), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 700, 500, 0, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 800), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge W-Z"); // W-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 500, 1000, 200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 700, 500, 1000, 800), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 700, 500, 0, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 800), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 5 == sites[2].Points.Count(), "Expected: site #3 point count 5"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -6038,47 +6037,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 700, 0, 200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 700, 1000, 200), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 700, 500, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 200), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 700, 0, 200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 700, 1000, 200), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 700, 500, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 200), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 5 == sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -6126,47 +6125,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 500, 200, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 700, 500, 200, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 700, 500, 1000, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 200, 1000), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 200, 0, 1000, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 500, 200, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 700, 500, 200, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 700, 500, 1000, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 1000, 200, 1000), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 200, 0, 1000, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 5 == sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -6214,47 +6213,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 300, 1000, 800), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 300, 0, 800), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 300, 500, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 800), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 300, 1000, 800), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 300, 0, 800), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 300, 500, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 800), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 0, 800, 0, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 5 == sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -6302,47 +6301,47 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 500, 800, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 300, 500, 800, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 500, 0, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 800, 0), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 800, 1000, 0, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge D-X"); // D-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 500, 800, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 300, 500, 800, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 500, 0, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 800, 0), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 800, 1000, 0, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 5 == sites[0].Points.Count(), "Expected: site #1 point count 5"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -6388,64 +6387,64 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 600, 400, 400), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 400, 600, 400), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 600, 400, 600, 600), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 600, 600, 400, 600), "Expected: has edge D-A"); // D-A
-            Assume.That(() => HasEdge(edges, 400, 600, 0, 1000), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 400, 400, 0, 0), "Expected: has edge B-F"); // B-F
-            Assume.That(() => HasEdge(edges, 600, 400, 1000, 0), "Expected: has edge C-G"); // C-G
-            Assume.That(() => HasEdge(edges, 600, 600, 1000, 1000), "Expected: has edge D-H"); // D-H
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge E-F"); // E-F
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge F-G"); // F-G
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge G-H"); // G-H
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge H-E"); // H-E
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 600, 400, 400), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 400, 600, 400), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 600, 400, 600, 600), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 600, 600, 400, 600), Is.True, "Expected: has edge D-A"); // D-A
+            Assume.That(HasEdge(edges, 400, 600, 0, 1000), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 400, 400, 0, 0), Is.True, "Expected: has edge B-F"); // B-F
+            Assume.That(HasEdge(edges, 600, 400, 1000, 0), Is.True, "Expected: has edge C-G"); // C-G
+            Assume.That(HasEdge(edges, 600, 600, 1000, 1000), Is.True, "Expected: has edge D-H"); // D-H
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge E-F"); // E-F
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge F-G"); // F-G
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge G-H"); // G-H
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge H-E"); // H-E
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has H"); // #5 has H
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has H"); // #5 has H
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         [Test]
@@ -6491,72 +6490,72 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 16 == edges.Count, "Expected: edge count 16");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 400, 400, 200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 200, 600, 200), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 600, 200, 600, 400), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 600, 400, 400, 400), "Expected: has edge D-A"); // D-A
-            Assume.That(() => HasEdge(edges, 400, 400, 0, 800), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 400, 200, 200, 0), "Expected: has edge B-F"); // B-F
-            Assume.That(() => HasEdge(edges, 600, 200, 800, 0), "Expected: has edge C-G"); // C-G
-            Assume.That(() => HasEdge(edges, 600, 400, 1000, 800), "Expected: has edge D-H"); // D-H
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge X-E"); // X-E
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 0), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 200, 0, 800, 0), "Expected: has edge F-G"); // F-G
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge G-W"); // G-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 800), "Expected: has edge W-H"); // W-H
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge H-Z"); // H-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 400, 400, 200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 200, 600, 200), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 600, 200, 600, 400), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 600, 400, 400, 400), Is.True, "Expected: has edge D-A"); // D-A
+            Assume.That(HasEdge(edges, 400, 400, 0, 800), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 400, 200, 200, 0), Is.True, "Expected: has edge B-F"); // B-F
+            Assume.That(HasEdge(edges, 600, 200, 800, 0), Is.True, "Expected: has edge C-G"); // C-G
+            Assume.That(HasEdge(edges, 600, 400, 1000, 800), Is.True, "Expected: has edge D-H"); // D-H
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge X-E"); // X-E
+            Assume.That(HasEdge(edges, 0, 800, 0, 0), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 200, 0, 800, 0), Is.True, "Expected: has edge F-G"); // F-G
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge G-W"); // G-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 800), Is.True, "Expected: has edge W-H"); // W-H
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge H-Z"); // H-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 600, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 200), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 200), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 5 == sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 200), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 800, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 800), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has W"); // #4 has W
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 6 == sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 400), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 600, 400), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 800), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 800), "Expected: site #5 has H"); // #5 has H
-            Assume.That(() => HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has X"); // #5 has X
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 600, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 200), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 1000, 800), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 600, 400), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 800), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 1000, 800), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assume.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assume.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         /// <summary>
@@ -6606,72 +6605,72 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 16 == edges.Count, "Expected: edge count 16");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 600, 200, 600), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 200, 600, 200, 400), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 200, 400, 400, 400), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 400, 400, 400, 600), "Expected: has edge D-A"); // D-A
-            Assume.That(() => HasEdge(edges, 400, 600, 800, 1000), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 200, 600, 0, 800), "Expected: has edge B-F"); // B-F
-            Assume.That(() => HasEdge(edges, 200, 400, 0, 200), "Expected: has edge C-G"); // C-G
-            Assume.That(() => HasEdge(edges, 400, 400, 800, 0), "Expected: has edge D-H"); // D-H
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge X-E"); // X-E
-            Assume.That(() => HasEdge(edges, 800, 1000, 0, 1000), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 200), "Expected: has edge F-G"); // F-G
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge G-W"); // G-W
-            Assume.That(() => HasEdge(edges, 0, 0, 800, 0), "Expected: has edge W-H"); // W-H
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge H-Z"); // H-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 600, 200, 600), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 200, 600, 200, 400), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 200, 400, 400, 400), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 400, 400, 400, 600), Is.True, "Expected: has edge D-A"); // D-A
+            Assume.That(HasEdge(edges, 400, 600, 800, 1000), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 200, 600, 0, 800), Is.True, "Expected: has edge B-F"); // B-F
+            Assume.That(HasEdge(edges, 200, 400, 0, 200), Is.True, "Expected: has edge C-G"); // C-G
+            Assume.That(HasEdge(edges, 400, 400, 800, 0), Is.True, "Expected: has edge D-H"); // D-H
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge X-E"); // X-E
+            Assume.That(HasEdge(edges, 800, 1000, 0, 1000), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 0, 800, 0, 200), Is.True, "Expected: has edge F-G"); // F-G
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge G-W"); // G-W
+            Assume.That(HasEdge(edges, 0, 0, 800, 0), Is.True, "Expected: has edge W-H"); // W-H
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge H-Z"); // H-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 400), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 600), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 200, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 5 == sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 200, 400), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 0, 200), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 800, 0), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has W"); // #4 has W
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 6 == sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 400, 400), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 800, 1000), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 800, 0), "Expected: site #5 has H"); // #5 has H
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has X"); // #5 has X
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 400), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 600), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 200, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assume.That(HasPoint(sites[3].Points, 200, 400), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 0, 200), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 400, 400), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 800, 1000), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 800, 0), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assume.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assume.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         /// <summary>
@@ -6721,72 +6720,72 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 16 == edges.Count, "Expected: edge count 16");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 600, 600, 800), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 800, 400, 800), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 400, 800, 400, 600), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 400, 600, 600, 600), "Expected: has edge D-A"); // D-A
-            Assume.That(() => HasEdge(edges, 600, 600, 1000, 200), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 600, 800, 800, 1000), "Expected: has edge B-F"); // B-F
-            Assume.That(() => HasEdge(edges, 400, 800, 200, 1000), "Expected: has edge C-G"); // C-G
-            Assume.That(() => HasEdge(edges, 400, 600, 0, 200), "Expected: has edge D-H"); // D-H
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge X-E"); // X-E
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 1000), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 800, 1000, 200, 1000), "Expected: has edge F-G"); // F-G
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge G-W"); // G-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 200), "Expected: has edge W-H"); // W-H
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge H-Z"); // H-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 600, 600, 800), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 800, 400, 800), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 400, 800, 400, 600), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 400, 600, 600, 600), Is.True, "Expected: has edge D-A"); // D-A
+            Assume.That(HasEdge(edges, 600, 600, 1000, 200), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 600, 800, 800, 1000), Is.True, "Expected: has edge B-F"); // B-F
+            Assume.That(HasEdge(edges, 400, 800, 200, 1000), Is.True, "Expected: has edge C-G"); // C-G
+            Assume.That(HasEdge(edges, 400, 600, 0, 200), Is.True, "Expected: has edge D-H"); // D-H
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge X-E"); // X-E
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 1000), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 800, 1000, 200, 1000), Is.True, "Expected: has edge F-G"); // F-G
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge G-W"); // G-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 200), Is.True, "Expected: has edge W-H"); // W-H
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge H-Z"); // H-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 400, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 800), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 400, 800), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 5 == sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 800), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 200, 1000), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 0, 200), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has W"); // #4 has W
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 6 == sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 400, 600), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 200), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 0, 200), "Expected: site #5 has H"); // #5 has H
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has X"); // #5 has X
-            Assume.That(() => HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 400, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 800), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 400, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 800), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 200, 1000), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 0, 200), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assume.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 400, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 1000, 200), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 0, 200), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assume.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assume.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         /// <summary>
@@ -6836,72 +6835,72 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 16 == edges.Count, "Expected: edge count 16");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 400, 800, 400), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 800, 400, 800, 600), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 800, 600, 600, 600), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 600, 600, 600, 400), "Expected: has edge D-A"); // D-A
-            Assume.That(() => HasEdge(edges, 600, 400, 200, 0), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 800, 400, 1000, 200), "Expected: has edge B-F"); // B-F
-            Assume.That(() => HasEdge(edges, 800, 600, 1000, 800), "Expected: has edge C-G"); // C-G
-            Assume.That(() => HasEdge(edges, 600, 600, 200, 1000), "Expected: has edge D-H"); // D-H
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge X-E"); // X-E
-            Assume.That(() => HasEdge(edges, 200, 0, 1000, 0), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 800), "Expected: has edge F-G"); // F-G
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge G-W"); // G-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 200, 1000), "Expected: has edge W-H"); // W-H
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge H-Z"); // H-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 400, 800, 400), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 800, 400, 800, 600), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 800, 600, 600, 600), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 600, 600, 600, 400), Is.True, "Expected: has edge D-A"); // D-A
+            Assume.That(HasEdge(edges, 600, 400, 200, 0), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 800, 400, 1000, 200), Is.True, "Expected: has edge B-F"); // B-F
+            Assume.That(HasEdge(edges, 800, 600, 1000, 800), Is.True, "Expected: has edge C-G"); // C-G
+            Assume.That(HasEdge(edges, 600, 600, 200, 1000), Is.True, "Expected: has edge D-H"); // D-H
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge X-E"); // X-E
+            Assume.That(HasEdge(edges, 200, 0, 1000, 0), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 800), Is.True, "Expected: has edge F-G"); // F-G
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge G-W"); // G-W
+            Assume.That(HasEdge(edges, 1000, 1000, 200, 1000), Is.True, "Expected: has edge W-H"); // W-H
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge H-Z"); // H-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has F"); // #2 has F
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 400), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 800, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has F"); // #3 has F
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 5 == sites[3].Points.Count(), "Expected: site #4 point count 5"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 800, 600), "Expected: site #4 has C"); // #4 has C
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 800), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 200, 1000), "Expected: site #4 has H"); // #4 has H
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has W"); // #4 has W
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 6 == sites[4].Points.Count(), "Expected: site #5 point count 6"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 600, 400), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 600, 600), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 200, 0), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 200, 1000), "Expected: site #5 has H"); // #5 has H
-            Assume.That(() => HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has X"); // #5 has X
-            Assume.That(() => HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has F"); // #2 has F
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 400), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 800, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has F"); // #3 has F
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+            Assume.That(HasPoint(sites[3].Points, 800, 600), Is.True, "Expected: site #4 has C"); // #4 has C
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 1000, 800), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 200, 1000), Is.True, "Expected: site #4 has H"); // #4 has H
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(6), "Expected: site #5 point count 6"); // #5
+            Assume.That(HasPoint(sites[4].Points, 600, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 600, 600), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 200, 0), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 200, 1000), Is.True, "Expected: site #5 has H"); // #5 has H
+            Assume.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assume.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         [Test]
@@ -6946,56 +6945,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 500), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 500), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 500, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 0, 500), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 500, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 500, 500, 1000, 500), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         [Test]
@@ -7040,56 +7039,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 500), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 500), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 500, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 0, 500), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 500, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 500, 500, 1000, 500), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -7138,56 +7137,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 500, 500, 500, 0), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 1000, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 500, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 0, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 500, 500, 500, 0), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         [Test]
@@ -7232,48 +7231,48 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 1000), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge D-E"); // D-E
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge E-B"); // E-B
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 500, 0, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 0, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 500, 1000, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 500, 500, 1000, 1000), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge D-E"); // D-E
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge E-B"); // E-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has E"); // #1 has E
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has C"); // #4 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has E"); // #1 has E
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has C"); // #4 has C
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         [Test]
@@ -7318,56 +7317,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 400, 100, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 400, 0, 200), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 400, 600, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 400, 400, 1000, 700), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 200), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 700), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 1000), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 100, 1000), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 100, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 400, 100, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 400, 0, 200), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 400, 600, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 400, 400, 1000, 700), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 0, 1000, 0, 200), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 600, 0, 1000, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 700), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 1000), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 100, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 100, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 100, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 700), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 100, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 700), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 100, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 700), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 100, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 700), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -7416,56 +7415,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 600, 1000, 900), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 600, 200, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 600, 0, 400), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 400, 600, 700, 0), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 1000, 1000, 200, 1000), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 400), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 0, 0, 700, 0), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 700, 0, 1000, 0), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 900), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 1000, 900, 1000, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 600, 1000, 900), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 600, 200, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 600, 0, 400), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 400, 600, 700, 0), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 1000, 1000, 200, 1000), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 400), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 0, 400, 0, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 0, 0, 700, 0), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 700, 0, 1000, 0), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 900), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 1000, 900, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 900), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 900), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 700, 0), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 900), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 900), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 700, 0), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -7514,56 +7513,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 600, 900, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 600, 1000, 800), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 600, 400, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 600, 600, 0, 300), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 800), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 400, 1000), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 1000), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 300), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 900, 0), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 900, 0, 1000, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 600, 900, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 600, 1000, 800), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 600, 400, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 600, 600, 0, 300), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 800), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 400, 1000), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 400, 1000, 0, 1000), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 300), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 0, 0, 900, 0), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 900, 0, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 0, 300), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 0, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -7612,56 +7611,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 400, 0, 100), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 400, 800, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 400, 1000, 600), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 600, 400, 300, 1000), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 0, 0, 800, 0), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 600), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 1000), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 300, 1000), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 300, 1000, 0, 1000), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 100), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 0, 100, 0, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 400, 0, 100), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 400, 800, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 400, 1000, 600), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 600, 400, 300, 1000), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 0, 0, 800, 0), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 600), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 1000), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 1000, 300, 1000), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 300, 1000, 0, 1000), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 100), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 0, 100, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 100), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 300, 1000), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 100), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 300, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -7710,56 +7709,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 400, 900, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 400, 1000, 200), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 400, 400, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 600, 400, 0, 700), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 200), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 400, 0), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 400, 0, 0, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 700), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 1000), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 900, 1000), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 900, 1000, 1000, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 400, 900, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 400, 1000, 200), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 400, 400, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 600, 400, 0, 700), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 200), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 1000, 0, 400, 0), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 400, 0, 0, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 0, 0, 0, 700), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 0, 700, 0, 1000), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 0, 1000, 900, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 900, 1000, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 900, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 900, 1000), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 0, 700), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 900, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 900, 1000), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 0, 700), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -7808,56 +7807,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 400, 1000, 100), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 400, 200, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 400, 0, 600), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 400, 400, 700, 1000), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 1000, 0, 200, 0), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 200, 0, 0, 0), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 600), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 1000), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 700, 1000), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 700, 1000, 1000, 1000), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 100), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 1000, 100, 1000, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 400, 1000, 100), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 400, 200, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 400, 0, 600), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 400, 400, 700, 1000), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 1000, 0, 200, 0), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 200, 0, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 0, 0, 600), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 0, 600, 0, 1000), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 0, 1000, 700, 1000), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 700, 1000, 1000, 1000), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 100), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 1000, 100, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 100), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 700, 1000), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 100), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 700, 1000), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -7906,56 +7905,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 600, 100, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 600, 0, 800), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 400, 600, 600, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 400, 600, 1000, 300), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 800), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 600, 1000), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 600, 1000, 1000, 1000), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 300), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 0), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 100, 0), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 100, 0, 0, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 600, 100, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 600, 0, 800), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 400, 600, 600, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 400, 600, 1000, 300), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 0, 0, 0, 800), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 0, 800, 0, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 0, 1000, 600, 1000), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 600, 1000, 1000, 1000), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 300), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 0), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 1000, 0, 100, 0), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 100, 0, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 100, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 100, 0), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 100, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 100, 0), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -8004,56 +8003,56 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 600, 0, 900), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 600, 800, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 600, 1000, 400), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 600, 600, 300, 0), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 0, 1000, 800, 1000), "Expected: has edge X-C"); // X-C
-            Assume.That(() => HasEdge(edges, 800, 1000, 1000, 1000), "Expected: has edge C-Y"); // C-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 400), "Expected: has edge Y-D"); // Y-D
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 300, 0), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 300, 0, 0, 0), "Expected: has edge E-Z"); // E-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 900), "Expected: has edge Z-B"); // Z-B
-            Assume.That(() => HasEdge(edges, 0, 900, 0, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 600, 0, 900), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 600, 800, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 600, 1000, 400), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 600, 600, 300, 0), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 0, 1000, 800, 1000), Is.True, "Expected: has edge X-C"); // X-C
+            Assume.That(HasEdge(edges, 800, 1000, 1000, 1000), Is.True, "Expected: has edge C-Y"); // C-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 400), Is.True, "Expected: has edge Y-D"); // Y-D
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 0, 300, 0), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 300, 0, 0, 0), Is.True, "Expected: has edge E-Z"); // E-Z
+            Assume.That(HasEdge(edges, 0, 0, 0, 900), Is.True, "Expected: has edge Z-B"); // Z-B
+            Assume.That(HasEdge(edges, 0, 900, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has E"); // #4 has E
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has E"); // #4 has E
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         [Test]
@@ -8099,68 +8098,68 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 15 == edges.Count, "Expected: edge count 15");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 400, 500, 700), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 700, 200, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 500, 700, 800, 1000), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 500, 400, 0, 400), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 500, 400, 1000, 400), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 500, 400, 500, 0), "Expected: has edge A-G"); // A-G
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 400), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 0), "Expected: has edge E-X"); // E-X
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge X-G"); // X-G
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge G-Y"); // G-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 1000), "Expected: has edge F-Z"); // F-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 800, 1000, 200, 1000), "Expected: has edge D-C"); // D-C
+            Assume.That(edges.Count, Is.EqualTo(15), "Expected: edge count 15");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 400, 500, 700), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 700, 200, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 500, 700, 800, 1000), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 500, 400, 0, 400), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 500, 400, 1000, 400), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 500, 400, 500, 0), Is.True, "Expected: has edge A-G"); // A-G
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 400), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 0, 400, 0, 0), Is.True, "Expected: has edge E-X"); // E-X
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge X-G"); // X-G
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge G-Y"); // G-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 1000), Is.True, "Expected: has edge F-Z"); // F-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 800, 1000, 200, 1000), Is.True, "Expected: has edge D-C"); // D-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 400), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 400), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 400), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Y"); // #4 has Y
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 5 == sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 400), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 700), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 800, 1000), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 400), "Expected: site #5 has F"); // #5 has F
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 400), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 400), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 400), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 700), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 800, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 1000, 400), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assume.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         /// <summary>
@@ -8210,68 +8209,68 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 15 == edges.Count, "Expected: edge count 15");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 500, 700, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 700, 500, 1000, 800), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 700, 500, 1000, 200), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 400, 500, 400, 1000), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 400, 500, 400, 0), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 400, 500, 0, 500), "Expected: has edge A-G"); // A-G
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 400, 1000), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 1000), "Expected: has edge E-X"); // E-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-G"); // X-G
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge G-Y"); // G-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 0), "Expected: has edge F-Z"); // F-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 800), "Expected: has edge D-C"); // D-C
+            Assume.That(edges.Count, Is.EqualTo(15), "Expected: edge count 15");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 500, 700, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 700, 500, 1000, 800), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 700, 500, 1000, 200), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 400, 500, 400, 1000), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 400, 500, 400, 0), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 400, 500, 0, 500), Is.True, "Expected: has edge A-G"); // A-G
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 1000, 400, 1000), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 400, 1000, 0, 1000), Is.True, "Expected: has edge E-X"); // E-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-G"); // X-G
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge G-Y"); // G-Y
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 400, 0, 1000, 0), Is.True, "Expected: has edge F-Z"); // F-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 800), Is.True, "Expected: has edge D-C"); // D-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 400, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 400, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 400, 0), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 0, 500), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 5 == sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 400, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 700, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 200), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 400, 0), "Expected: site #5 has F"); // #5 has F
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 400, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 400, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 0, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assume.That(HasPoint(sites[4].Points, 400, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 700, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 1000, 200), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 400, 0), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assume.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         /// <summary>
@@ -8321,68 +8320,68 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 15 == edges.Count, "Expected: edge count 15");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 600, 500, 300), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 300, 800, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 500, 300, 200, 0), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 500, 600, 1000, 600), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 500, 600, 0, 600), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 500, 600, 500, 1000), "Expected: has edge A-G"); // A-G
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 600), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 1000), "Expected: has edge E-X"); // E-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge X-G"); // X-G
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge G-Y"); // G-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge F-Z"); // F-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 200, 0, 800, 0), "Expected: has edge D-C"); // D-C
+            Assume.That(edges.Count, Is.EqualTo(15), "Expected: edge count 15");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 600, 500, 300), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 300, 800, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 500, 300, 200, 0), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 500, 600, 1000, 600), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 500, 600, 0, 600), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 500, 600, 500, 1000), Is.True, "Expected: has edge A-G"); // A-G
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 600), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 1000), Is.True, "Expected: has edge E-X"); // E-X
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge X-G"); // X-G
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge G-Y"); // G-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge F-Z"); // F-Z
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 200, 0, 800, 0), Is.True, "Expected: has edge D-C"); // D-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 300), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 600), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 0, 1000), "Expected: site #4 has Y"); // #4 has Y
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 5 == sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 600), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 200, 0), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 600), "Expected: site #5 has F"); // #5 has F
-            Assume.That(() => HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 600), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 0, 1000), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 600), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 200, 0), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 600), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assume.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         /// <summary>
@@ -8432,68 +8431,68 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 15 == edges.Count, "Expected: edge count 15");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 500, 300, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 300, 500, 0, 200), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 300, 500, 0, 800), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 600, 500, 600, 0), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 600, 500, 600, 1000), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 600, 500, 1000, 500), "Expected: has edge A-G"); // A-G
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge W-E"); // W-E
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 0), "Expected: has edge E-X"); // E-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge X-G"); // X-G
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge G-Y"); // G-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 600, 1000, 0, 1000), "Expected: has edge F-Z"); // F-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge Z-D"); // Z-D
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 200), "Expected: has edge D-C"); // D-C
+            Assume.That(edges.Count, Is.EqualTo(15), "Expected: edge count 15");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 500, 300, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 300, 500, 0, 200), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 300, 500, 0, 800), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 600, 500, 600, 0), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 600, 500, 600, 1000), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 600, 500, 1000, 500), Is.True, "Expected: has edge A-G"); // A-G
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge W-E"); // W-E
+            Assume.That(HasEdge(edges, 600, 0, 1000, 0), Is.True, "Expected: has edge E-X"); // E-X
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge X-G"); // X-G
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge G-Y"); // G-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 600, 1000, 0, 1000), Is.True, "Expected: has edge F-Z"); // F-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge Z-D"); // Z-D
+            Assume.That(HasEdge(edges, 0, 800, 0, 200), Is.True, "Expected: has edge D-C"); // D-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 5 == sites[1].Points.Count(), "Expected: site #2 point count 5"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has W"); // #2 has W
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 600, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 600, 1000), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Y"); // #4 has Y
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 5 == sites[4].Points.Count(), "Expected: site #5 point count 5"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 600, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 0, 800), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 600, 1000), "Expected: site #5 has F"); // #5 has F
-            Assume.That(() => HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has Z"); // #5 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has W"); // #2 has W
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 600, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 600, 1000), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(5), "Expected: site #5 point count 5"); // #5
+            Assume.That(HasPoint(sites[4].Points, 600, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 0, 800), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 600, 1000), Is.True, "Expected: site #5 has F"); // #5 has F
+            Assume.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has Z"); // #5 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         [Test]
@@ -8539,64 +8538,64 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 13 == edges.Count, "Expected: edge count 13");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 300, 500, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 0, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 1000), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 500, 300, 0, 300), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 500, 300, 1000, 300), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 500, 300, 500, 0), "Expected: has edge A-G"); // A-G
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 300), "Expected: has edge C-E"); // C-E
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge E-X"); // E-X
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge X-G"); // X-G
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge G-Y"); // G-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 1000), "Expected: has edge F-D"); // F-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge D-C"); // D-C
+            Assume.That(edges.Count, Is.EqualTo(13), "Expected: edge count 13");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 300, 500, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 0, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 500, 500, 1000, 1000), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 500, 300, 0, 300), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 500, 300, 1000, 300), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 500, 300, 500, 0), Is.True, "Expected: has edge A-G"); // A-G
+            Assume.That(HasEdge(edges, 0, 1000, 0, 300), Is.True, "Expected: has edge C-E"); // C-E
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge E-X"); // E-X
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge X-G"); // X-G
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge G-Y"); // G-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 1000), Is.True, "Expected: has edge F-D"); // F-D
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge D-C"); // D-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 300), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 500, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 0), "Expected: site #4 has Y"); // #4 has Y
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 1000), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 300), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 300), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 500, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 1000, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 1000, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 1000, 300), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         /// <summary>
@@ -8646,64 +8645,64 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 13 == edges.Count, "Expected: edge count 13");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 500, 500, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 500, 500, 1000, 0), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 300, 500, 300, 1000), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 300, 500, 300, 0), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 300, 500, 0, 500), "Expected: has edge A-G"); // A-G
-            Assume.That(() => HasEdge(edges, 1000, 1000, 300, 1000), "Expected: has edge C-E"); // C-E
-            Assume.That(() => HasEdge(edges, 300, 1000, 0, 1000), "Expected: has edge E-X"); // E-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-G"); // X-G
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge G-Y"); // G-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 300, 0, 1000, 0), "Expected: has edge F-D"); // F-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge D-C"); // D-C
+            Assume.That(edges.Count, Is.EqualTo(13), "Expected: edge count 13");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 500, 500, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 500, 1000, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 500, 500, 1000, 0), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 300, 500, 300, 1000), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 300, 500, 300, 0), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 300, 500, 0, 500), Is.True, "Expected: has edge A-G"); // A-G
+            Assume.That(HasEdge(edges, 1000, 1000, 300, 1000), Is.True, "Expected: has edge C-E"); // C-E
+            Assume.That(HasEdge(edges, 300, 1000, 0, 1000), Is.True, "Expected: has edge E-X"); // E-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-G"); // X-G
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge G-Y"); // G-Y
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 300, 0, 1000, 0), Is.True, "Expected: has edge F-D"); // F-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge D-C"); // D-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has E"); // #2 has E
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has E"); // #3 has E
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has G"); // #3 has G
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has X"); // #3 has X
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 300, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 0, 500), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has Y"); // #4 has Y
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 500, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 0), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 300, 0), "Expected: site #5 has F"); // #5 has F
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has E"); // #2 has E
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has E"); // #3 has E
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has G"); // #3 has G
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has X"); // #3 has X
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 300, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 0, 500), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Y"); // #4 has Y
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 500, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 1000, 0), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 300, 0), Is.True, "Expected: site #5 has F"); // #5 has F
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         [Test]
@@ -8750,77 +8749,77 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 17 == edges.Count, "Expected: edge count 17");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 300, 500, 700), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 700, 0, 700), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 500, 700, 1000, 700), "Expected: has edge B-G"); // B-G
-            Assume.That(() => HasEdge(edges, 500, 300, 0, 300), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 500, 300, 1000, 300), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 500, 300, 500, 0), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 500, 700, 500, 1000), "Expected: has edge B-H"); // B-H
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 300), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge D-X"); // D-X
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge X-E"); // X-E
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 700), "Expected: has edge F-G"); // F-G
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 1000), "Expected: has edge G-Z"); // G-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Z-H"); // Z-H
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge H-W"); // H-W
+            Assume.That(edges.Count, Is.EqualTo(17), "Expected: edge count 17");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 300, 500, 700), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 700, 0, 700), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 500, 700, 1000, 700), Is.True, "Expected: has edge B-G"); // B-G
+            Assume.That(HasEdge(edges, 500, 300, 0, 300), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 500, 300, 1000, 300), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 500, 300, 500, 0), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 500, 700, 500, 1000), Is.True, "Expected: has edge B-H"); // B-H
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 0, 700, 0, 300), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge D-X"); // D-X
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge X-E"); // X-E
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 700), Is.True, "Expected: has edge F-G"); // F-G
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 1000), Is.True, "Expected: has edge G-Z"); // G-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Z-H"); // Z-H
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge H-W"); // H-W
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has H"); // #1 has H
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has G"); // #2 has G
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has H"); // #2 has H
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 300), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 700), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 700), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 300), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 300), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 500, 700), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 300), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 700), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 300), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 0, 300), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 500, 0), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 0, 0), "Expected: site #5 has X"); // #5 has X
-            Assume.That(() => null != sites[5].Points);
-            Assume.That(() => 4 == sites[5].Points.Count(), "Expected: site #6 point count 4"); // #6
-            Assume.That(() => HasPoint(sites[5].Points, 500, 300), "Expected: site #6 has A"); // #6 has A
-            Assume.That(() => HasPoint(sites[5].Points, 500, 0), "Expected: site #6 has E"); // #6 has E
-            Assume.That(() => HasPoint(sites[5].Points, 1000, 300), "Expected: site #6 has F"); // #6 has F
-            Assume.That(() => HasPoint(sites[5].Points, 1000, 0), "Expected: site #6 has Y"); // #6 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has H"); // #1 has H
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has G"); // #2 has G
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has H"); // #2 has H
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 300), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 700), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 700), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 300), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 500, 700), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 1000, 300), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 1000, 700), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 300), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 0, 300), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 500, 0), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 0, 0), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assume.That(sites[5].Points, Is.Not.Null);
+            Assume.That(sites[5].Points.Count(), Is.EqualTo(4), "Expected: site #6 point count 4"); // #6
+            Assume.That(HasPoint(sites[5].Points, 500, 300), Is.True, "Expected: site #6 has A"); // #6 has A
+            Assume.That(HasPoint(sites[5].Points, 500, 0), Is.True, "Expected: site #6 has E"); // #6 has E
+            Assume.That(HasPoint(sites[5].Points, 1000, 300), Is.True, "Expected: site #6 has F"); // #6 has F
+            Assume.That(HasPoint(sites[5].Points, 1000, 0), Is.True, "Expected: site #6 has Y"); // #6 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
-            ClassicAssert.Null(sites[5].LiesOnEdge); // #6
-            ClassicAssert.Null(sites[5].LiesOnCorner); // #6
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
+            Assert.That(sites[5].LiesOnEdge, Is.Null); // #6
+            Assert.That(sites[5].LiesOnCorner, Is.Null);// #6
         }
 
         /// <summary>
@@ -8871,77 +8870,77 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 17 == edges.Count, "Expected: edge count 17");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 500, 700, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 700, 500, 700, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 700, 500, 700, 0), "Expected: has edge B-G"); // B-G
-            Assume.That(() => HasEdge(edges, 300, 500, 300, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 300, 500, 300, 0), "Expected: has edge A-F"); // A-F
-            Assume.That(() => HasEdge(edges, 300, 500, 0, 500), "Expected: has edge A-E"); // A-E
-            Assume.That(() => HasEdge(edges, 700, 500, 1000, 500), "Expected: has edge B-H"); // B-H
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 700, 1000, 300, 1000), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 300, 1000, 0, 1000), "Expected: has edge D-X"); // D-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-E"); // X-E
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge E-Y"); // E-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge Y-F"); // Y-F
-            Assume.That(() => HasEdge(edges, 300, 0, 700, 0), "Expected: has edge F-G"); // F-G
-            Assume.That(() => HasEdge(edges, 700, 0, 1000, 0), "Expected: has edge G-Z"); // G-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge Z-H"); // Z-H
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge H-W"); // H-W
+            Assume.That(edges.Count, Is.EqualTo(17), "Expected: edge count 17");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 500, 700, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 700, 500, 700, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 700, 500, 700, 0), Is.True, "Expected: has edge B-G"); // B-G
+            Assume.That(HasEdge(edges, 300, 500, 300, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 300, 500, 300, 0), Is.True, "Expected: has edge A-F"); // A-F
+            Assume.That(HasEdge(edges, 300, 500, 0, 500), Is.True, "Expected: has edge A-E"); // A-E
+            Assume.That(HasEdge(edges, 700, 500, 1000, 500), Is.True, "Expected: has edge B-H"); // B-H
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 700, 1000, 300, 1000), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 300, 1000, 0, 1000), Is.True, "Expected: has edge D-X"); // D-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-E"); // X-E
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge E-Y"); // E-Y
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge Y-F"); // Y-F
+            Assume.That(HasEdge(edges, 300, 0, 700, 0), Is.True, "Expected: has edge F-G"); // F-G
+            Assume.That(HasEdge(edges, 700, 0, 1000, 0), Is.True, "Expected: has edge G-Z"); // G-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge Z-H"); // Z-H
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge H-W"); // H-W
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has H"); // #1 has H
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has W"); // #1 has W
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has G"); // #2 has G
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has H"); // #2 has H
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 700, 500), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 700, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 300, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 4 == sites[3].Points.Count(), "Expected: site #4 point count 4"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 300, 500), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 700, 500), "Expected: site #4 has B"); // #4 has B
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has F"); // #4 has F
-            Assume.That(() => HasPoint(sites[3].Points, 700, 0), "Expected: site #4 has G"); // #4 has G
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 300, 500), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 300, 1000), "Expected: site #5 has D"); // #5 has D
-            Assume.That(() => HasPoint(sites[4].Points, 0, 500), "Expected: site #5 has E"); // #5 has E
-            Assume.That(() => HasPoint(sites[4].Points, 0, 1000), "Expected: site #5 has X"); // #5 has X
-            Assume.That(() => null != sites[5].Points);
-            Assume.That(() => 4 == sites[5].Points.Count(), "Expected: site #6 point count 4"); // #6
-            Assume.That(() => HasPoint(sites[5].Points, 300, 500), "Expected: site #6 has A"); // #6 has A
-            Assume.That(() => HasPoint(sites[5].Points, 0, 500), "Expected: site #6 has E"); // #6 has E
-            Assume.That(() => HasPoint(sites[5].Points, 300, 0), "Expected: site #6 has F"); // #6 has F
-            Assume.That(() => HasPoint(sites[5].Points, 0, 0), "Expected: site #6 has Y"); // #6 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has H"); // #1 has H
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has W"); // #1 has W
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has G"); // #2 has G
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has H"); // #2 has H
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 700, 500), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 700, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 300, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(4), "Expected: site #4 point count 4"); // #4
+            Assume.That(HasPoint(sites[3].Points, 300, 500), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 700, 500), Is.True, "Expected: site #4 has B"); // #4 has B
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has F"); // #4 has F
+            Assume.That(HasPoint(sites[3].Points, 700, 0), Is.True, "Expected: site #4 has G"); // #4 has G
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 300, 500), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 300, 1000), Is.True, "Expected: site #5 has D"); // #5 has D
+            Assume.That(HasPoint(sites[4].Points, 0, 500), Is.True, "Expected: site #5 has E"); // #5 has E
+            Assume.That(HasPoint(sites[4].Points, 0, 1000), Is.True, "Expected: site #5 has X"); // #5 has X
+            Assume.That(sites[5].Points, Is.Not.Null);
+            Assume.That(sites[5].Points.Count(), Is.EqualTo(4), "Expected: site #6 point count 4"); // #6
+            Assume.That(HasPoint(sites[5].Points, 300, 500), Is.True, "Expected: site #6 has A"); // #6 has A
+            Assume.That(HasPoint(sites[5].Points, 0, 500), Is.True, "Expected: site #6 has E"); // #6 has E
+            Assume.That(HasPoint(sites[5].Points, 300, 0), Is.True, "Expected: site #6 has F"); // #6 has F
+            Assume.That(HasPoint(sites[5].Points, 0, 0), Is.True, "Expected: site #6 has Y"); // #6 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
-            ClassicAssert.Null(sites[5].LiesOnEdge); // #6
-            ClassicAssert.Null(sites[5].LiesOnCorner); // #6
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
+            Assert.That(sites[5].LiesOnEdge, Is.Null); // #6
+            Assert.That(sites[5].LiesOnCorner, Is.Null);// #6
         }
 
         [Test]
@@ -8987,64 +8986,64 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 12 == edges.Count, "Expected: edge count 12");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 500, 500, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 500), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 1000, 500, 500, 1000), "Expected: has edge D-A"); // D-A
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-B"); // X-B
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge B-Y"); // B-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge C-W"); // C-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge D-Z"); // D-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Z-A"); // Z-A
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge A-X"); // A-X
+            Assume.That(edges.Count, Is.EqualTo(12), "Expected: edge count 12");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 1000, 0, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 500, 500, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 500, 0, 1000, 500), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 1000, 500, 500, 1000), Is.True, "Expected: has edge D-A"); // D-A
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-B"); // X-B
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge B-Y"); // B-Y
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge C-W"); // C-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge D-Z"); // D-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Z-A"); // Z-A
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge A-X"); // A-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 500, 1000), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 500), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 1000, 1000), "Expected: site #4 has Z"); // #4 has Z
-            Assume.That(() => null != sites[4].Points);
-            Assume.That(() => 4 == sites[4].Points.Count(), "Expected: site #5 point count 4"); // #5
-            Assume.That(() => HasPoint(sites[4].Points, 500, 1000), "Expected: site #5 has A"); // #5 has A
-            Assume.That(() => HasPoint(sites[4].Points, 0, 500), "Expected: site #5 has B"); // #5 has B
-            Assume.That(() => HasPoint(sites[4].Points, 500, 0), "Expected: site #5 has C"); // #5 has C
-            Assume.That(() => HasPoint(sites[4].Points, 1000, 500), "Expected: site #5 has D"); // #5 has D
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 500, 1000), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 1000, 500), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 1000, 1000), Is.True, "Expected: site #4 has Z"); // #4 has Z
+            Assume.That(sites[4].Points, Is.Not.Null);
+            Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+            Assume.That(HasPoint(sites[4].Points, 500, 1000), Is.True, "Expected: site #5 has A"); // #5 has A
+            Assume.That(HasPoint(sites[4].Points, 0, 500), Is.True, "Expected: site #5 has B"); // #5 has B
+            Assume.That(HasPoint(sites[4].Points, 500, 0), Is.True, "Expected: site #5 has C"); // #5 has C
+            Assume.That(HasPoint(sites[4].Points, 1000, 500), Is.True, "Expected: site #5 has D"); // #5 has D
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.NotNull(sites[0].LiesOnCorner); // #1
-            ClassicAssert.AreEqual(FindPoint(edges, 0, 1000), sites[0].LiesOnCorner); // #1 on X
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.NotNull(sites[1].LiesOnCorner); // #2
-            ClassicAssert.AreEqual(FindPoint(edges, 0, 0), sites[1].LiesOnCorner); // #2 on Y
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.NotNull(sites[2].LiesOnCorner); // #3
-            ClassicAssert.AreEqual(FindPoint(edges, 1000, 0), sites[2].LiesOnCorner); // #3 on W
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.NotNull(sites[3].LiesOnCorner); // #4
-            ClassicAssert.AreEqual(FindPoint(edges, 1000, 1000), sites[3].LiesOnCorner); // #4 on Z
-            ClassicAssert.Null(sites[4].LiesOnEdge); // #5
-            ClassicAssert.Null(sites[4].LiesOnCorner); // #5
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Not.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.EqualTo(FindPoint(edges, 0, 1000))); // #1 on X
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Not.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.EqualTo(FindPoint(edges, 0, 0))); // #2 on Y
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Not.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.EqualTo(FindPoint(edges, 1000, 0))); // #3 on W
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Not.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.EqualTo(FindPoint(edges, 1000, 1000))); // #4 on Z
+            Assert.That(sites[4].LiesOnEdge, Is.Null); // #5
+            Assert.That(sites[4].LiesOnCorner, Is.Null);// #5
         }
 
         [Test]
@@ -9088,40 +9087,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 500, 1000, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 500, 1000, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 500, 1000, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 500, 1000, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9169,40 +9168,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 1000, 1000, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 1000, 1000, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 1000, 0, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9250,40 +9249,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 500, 0, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 500, 0, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 500, 0, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 500, 0, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9331,40 +9330,40 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 7 == edges.Count, "Expected: edge count 7");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 0, 0, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge B-X"); // B-X
+            Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 0, 0, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 500, 0, 1000, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has C"); // #3 has C
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -9408,46 +9407,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 600, 800, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 400, 800, 0), "Expected: has edge D-C"); // D-C
-            Assume.That(() => HasEdge(edges, 800, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 400), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 0), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 800, 0), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 800, 0, 1000, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge Z-W"); // Z-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge W-B"); // W-B
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 600, 800, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 400, 800, 0), Is.True, "Expected: has edge D-C"); // D-C
+            Assume.That(HasEdge(edges, 800, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 600, 0, 400), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 400, 0, 0), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 0, 0, 800, 0), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 800, 0, 1000, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge Z-W"); // Z-W
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge W-B"); // W-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 6 == sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9495,46 +9494,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 1000, 1000, 200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 200), "Expected: has edge D-C"); // D-C
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 600, 1000, 400, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 1000), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 200), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge Z-W"); // Z-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge W-B"); // W-B
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 1000, 1000, 200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 400, 1000, 0, 200), Is.True, "Expected: has edge D-C"); // D-C
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 600, 1000, 400, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 400, 1000, 0, 1000), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 200), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge Z-W"); // Z-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge W-B"); // W-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 6 == sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9582,46 +9581,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 400, 200, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 600, 200, 1000), "Expected: has edge D-C"); // D-C
-            Assume.That(() => HasEdge(edges, 200, 0, 1000, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 600), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 1000), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 200, 1000), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 200, 1000, 0, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge Z-W"); // Z-W
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge W-B"); // W-B
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 400, 200, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 600, 200, 1000), Is.True, "Expected: has edge D-C"); // D-C
+            Assume.That(HasEdge(edges, 200, 0, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 600), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 1000), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 200, 1000), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 200, 1000, 0, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge Z-W"); // Z-W
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge W-B"); // W-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 6 == sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9669,46 +9668,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 400, 0, 0, 800), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 800), "Expected: has edge D-C"); // D-C
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 400, 0, 600, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 0), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 800), "Expected: has edge Y-C"); // Y-C
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge Z-W"); // Z-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge W-B"); // W-B
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 400, 0, 0, 800), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 600, 0, 1000, 800), Is.True, "Expected: has edge D-C"); // D-C
+            Assume.That(HasEdge(edges, 0, 800, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 400, 0, 600, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 600, 0, 1000, 0), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 800), Is.True, "Expected: has edge Y-C"); // Y-C
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge Z-W"); // Z-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge W-B"); // W-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 6 == sites[2].Points.Count(), "Expected: site #3 point count 6"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has Z"); // #3 has Z
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(6), "Expected: site #3 point count 6"); // #3
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has Z"); // #3 has Z
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -9756,44 +9755,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 600, 1200, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 600, 1200, 200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 600), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1200, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 200), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 1200, 200, 1200, 1000), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1200, 1000, 1200, 1200), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1200, 1200, 0, 1200), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 600, 1200, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 600, 1200, 200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1200, 0, 600), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 1200, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 200), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 1200, 200, 1200, 1000), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1200, 1000, 1200, 1200), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1200, 1200, 0, 1200), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 1000), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1200, 200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1200, 1000), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1200, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1200, 200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9845,44 +9844,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 1200, 1000, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 1200, 200, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1200, 1200, 600, 1200), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 600, 1200, 0, 1200), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 200, 0, 1000, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 1000, 0, 1200, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 1200), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 1200, 1000, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 1200, 200, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1200, 1200, 600, 1200), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 600, 1200, 0, 1200), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 1200, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 200, 0, 1000, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 1000, 0, 1200, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 1200), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 1200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -9934,44 +9933,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1200, 600, 0, 200), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 1200, 600, 0, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 600), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1200, 600, 1200, 1200), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1200, 1200, 0, 1200), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 1000), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 200), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1200, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1200, 600, 0, 200), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 1200, 600, 0, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 600), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1200, 600, 1200, 1200), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1200, 1200, 0, 1200), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1200, 0, 1000), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 0, 1000, 0, 200), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 200, 0, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 0, 1200, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 600), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 600), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1200, 600), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1200, 600), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10023,44 +10022,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 600, 0, 200, 1200), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 1200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 600, 0, 1200, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 1200), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1200, 1200, 1000, 1200), "Expected: has edge W-B"); // W-B
-            Assume.That(() => HasEdge(edges, 1000, 1200, 200, 1200), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 200, 1200, 0, 1200), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 0), "Expected: has edge Z-X"); // Z-X
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 600, 0, 200, 1200), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 600, 0, 1000, 1200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 600, 0, 1200, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 1200), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1200, 1200, 1000, 1200), Is.True, "Expected: has edge W-B"); // W-B
+            Assume.That(HasEdge(edges, 1000, 1200, 200, 1200), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 200, 1200, 0, 1200), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 1200, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 1200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 200, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 200, 1200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 1200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -10108,46 +10107,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 700, 1200, 1100), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1200, 100, 0, 500), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 1200, 100, 1200, 1100), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 1200, 1100, 1200, 1200), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1200, 1200, 0, 1200), "Expected: has edge Z-X"); // Z-X
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 700), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 500), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 1200, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 100), "Expected: has edge W-C"); // W-C
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 700, 1200, 1100), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1200, 100, 0, 500), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 1200, 100, 1200, 1100), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 1200, 1100, 1200, 1200), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1200, 1200, 0, 1200), Is.True, "Expected: has edge Z-X"); // Z-X
+            Assume.That(HasEdge(edges, 0, 1200, 0, 700), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 700, 0, 500), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 0, 0, 1200, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 100), Is.True, "Expected: has edge W-C"); // W-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 1100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 100), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1100), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 100), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1200, 1100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1200, 100), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1200, 1100), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1200, 100), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10199,46 +10198,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 700, 1200, 1100, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 100, 0, 500, 1200), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 100, 0, 1100, 0), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 1100, 0, 1200, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 1200), "Expected: has edge Z-X"); // Z-X
-            Assume.That(() => HasEdge(edges, 1200, 1200, 700, 1200), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 700, 1200, 500, 1200), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 500, 1200, 0, 1200), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 0), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 0, 100, 0), "Expected: has edge W-C"); // W-C
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 700, 1200, 1100, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 100, 0, 500, 1200), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 100, 0, 1100, 0), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 1100, 0, 1200, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 1200), Is.True, "Expected: has edge Z-X"); // Z-X
+            Assume.That(HasEdge(edges, 1200, 1200, 700, 1200), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 700, 1200, 500, 1200), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 500, 1200, 0, 1200), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 0, 1200, 0, 0), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 0, 100, 0), Is.True, "Expected: has edge W-C"); // W-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1100, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 100, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1200), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1100, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 100, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1200), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 700, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1100, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 100, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 500, 1200), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 700, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1100, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 100, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 500, 1200), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10290,46 +10289,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1200, 500, 0, 100), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1100, 1200, 700), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 0, 1100, 0, 100), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 0, 100, 0, 0), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 1200, 0), "Expected: has edge Z-X"); // Z-X
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 500), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1200, 500, 1200, 700), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1200, 700, 1200, 1200), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 1200, 1200, 0, 1200), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 1100), "Expected: has edge W-C"); // W-C
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1200, 500, 0, 100), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1100, 1200, 700), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 0, 1100, 0, 100), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 0, 100, 0, 0), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 0, 0, 1200, 0), Is.True, "Expected: has edge Z-X"); // Z-X
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 500), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1200, 500, 1200, 700), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1200, 700, 1200, 1200), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 1200, 1200, 0, 1200), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 0, 1200, 0, 1100), Is.True, "Expected: has edge W-C"); // W-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 500), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 100), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1100), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 700), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 500), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 100), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1100), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 700), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1200, 500), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 100), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1100), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1200, 700), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1200, 500), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 100), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1100), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1200, 700), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10381,46 +10380,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 500, 0, 100, 1200), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1100, 1200, 700, 0), "Expected: has edge C-D"); // C-D
-            Assume.That(() => HasEdge(edges, 1100, 1200, 100, 1200), "Expected: has edge C-B"); // C-B
-            Assume.That(() => HasEdge(edges, 100, 1200, 0, 1200), "Expected: has edge B-Z"); // B-Z
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 0), "Expected: has edge Z-X"); // Z-X
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 500, 0, 700, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 700, 0, 1200, 0), "Expected: has edge D-Y"); // D-Y
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 1200), "Expected: has edge Y-W"); // Y-W
-            Assume.That(() => HasEdge(edges, 1200, 1200, 1100, 1200), "Expected: has edge W-C"); // W-C
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 500, 0, 100, 1200), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1100, 1200, 700, 0), Is.True, "Expected: has edge C-D"); // C-D
+            Assume.That(HasEdge(edges, 1100, 1200, 100, 1200), Is.True, "Expected: has edge C-B"); // C-B
+            Assume.That(HasEdge(edges, 100, 1200, 0, 1200), Is.True, "Expected: has edge B-Z"); // B-Z
+            Assume.That(HasEdge(edges, 0, 1200, 0, 0), Is.True, "Expected: has edge Z-X"); // Z-X
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 500, 0, 700, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 700, 0, 1200, 0), Is.True, "Expected: has edge D-Y"); // D-Y
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 1200), Is.True, "Expected: has edge Y-W"); // Y-W
+            Assume.That(HasEdge(edges, 1200, 1200, 1100, 1200), Is.True, "Expected: has edge W-C"); // W-C
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 100, 1200), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1100, 1200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 100, 1200), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has X"); // #2 has X
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1100, 1200), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 700, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has W"); // #3 has W
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has Y"); // #3 has Y
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 100, 1200), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1100, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 100, 1200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has X"); // #2 has X
+            Assume.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1100, 1200), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 700, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
+            Assume.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has Y"); // #3 has Y
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -10464,45 +10463,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 200, 200, 600, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 200, 200, 1000, 600), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 200, 200, 0, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 600, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-D"); // X-D
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 600), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 200, 200, 600, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 200, 200, 1000, 600), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 200, 200, 0, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 600, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-D"); // X-D
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 600), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10550,45 +10549,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 200, 800, 1000, 400), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 200, 800, 600, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 200, 800, 0, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-D"); // X-D
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 600, 0, 1000, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 200, 800, 1000, 400), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 200, 800, 600, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 200, 800, 0, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-D"); // X-D
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 600, 0, 1000, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 400), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10636,45 +10635,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 800, 800, 400, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 800, 800, 0, 400), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 800, 800, 1000, 1000), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-D"); // X-D
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 400), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 800, 800, 400, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 800, 800, 0, 400), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 800, 800, 1000, 1000), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 400, 0, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-D"); // X-D
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 400), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 0, 400, 0, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 400, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10722,45 +10721,45 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 800, 200, 0, 600), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 800, 200, 400, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 800, 200, 1000, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-D"); // X-D
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge D-W"); // D-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 400, 1000), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 400, 1000, 0, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 800, 200, 0, 600), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 800, 200, 400, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 800, 200, 1000, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-D"); // X-D
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge D-W"); // D-W
+            Assume.That(HasEdge(edges, 1000, 1000, 400, 1000), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 400, 1000, 0, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has D"); // #1 has D
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 4 == sites[2].Points.Count(), "Expected: site #3 point count 4"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has D"); // #1 has D
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(4), "Expected: site #3 point count 4"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -10804,42 +10803,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 500), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 500, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 1000, 500), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 500), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 500), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10887,42 +10886,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 1000, 500, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 1000, 500, 1000, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 500), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 1000, 500, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 1000, 500, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 500), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -10970,42 +10969,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 500), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 500, 0, 1000, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 500, 0), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 500), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 500, 0, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 0, 500, 0), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 500, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 500, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 500), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 500, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 500, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 500), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11053,42 +11052,42 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 8 == edges.Count, "Expected: edge count 8");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 500), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 0, 500, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 500, 0, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 500, 1000), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 500, 1000, 0, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 500), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 0, 0, 500), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 0, 500, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 500, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 1000, 1000, 500, 1000), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 500, 1000, 0, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 500), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 500), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 500), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 500, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 500, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 500), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 500), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 500, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 500, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -11132,44 +11131,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 200, 0, 700, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 200, 0, 1000, 400), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 700, 1000, 0, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 200, 0), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 200, 0, 1000, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 400), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 1000, 400, 1000, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 700, 1000), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 200, 0, 700, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 200, 0, 1000, 400), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 700, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 200, 0, 1000, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 400), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 1000, 400, 1000, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 700, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11217,44 +11216,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 800, 1000, 300), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 800, 400, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 1000, 300, 1000, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 800), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 0, 800, 0, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 0, 400, 0), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 400, 0, 1000, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 300), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 800, 1000, 300), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 800, 400, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 1000, 300, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 1000, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 0, 800), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 0, 800, 0, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 0, 400, 0), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 400, 0, 1000, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 300), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 300), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11302,44 +11301,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 800, 1000, 300, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 800, 1000, 0, 600), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 0, 1000, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 800, 1000), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 800, 1000, 0, 1000), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 600), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 800, 1000, 300, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 800, 1000, 0, 600), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 0, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 800, 1000, 0, 1000), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 1000, 0, 600), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 300, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 300, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11387,44 +11386,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 200, 0, 700), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 200, 600, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 700, 0, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 0, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 1000, 200), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 1000, 200, 1000, 1000), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 600, 1000), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 600, 1000, 0, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 0, 700), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 200, 0, 700), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 200, 600, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 700, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 0, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 1000, 200), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 1000, 200, 1000, 1000), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 1000, 1000, 600, 1000), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 600, 1000, 0, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 1000, 0, 700), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11472,44 +11471,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 800, 0, 300, 1000), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 800, 0, 0, 400), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 1000, 1000, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 0, 800, 0), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 800, 0, 0, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 400), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 0, 400, 0, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 1000, 300, 1000), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 800, 0, 300, 1000), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 800, 0, 0, 400), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 1000, 1000, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 0, 800, 0), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 800, 0, 0, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 0, 0, 400), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 0, 400, 0, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 1000, 300, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 800, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1000), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 800, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1000), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 400), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 800, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 400), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 300, 1000), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 1000), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11557,44 +11556,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 200, 1000, 700), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 200, 400, 1000), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 1000, 700, 1000, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 1000, 0, 0, 0), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 200), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 0, 200, 0, 1000), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 1000, 400, 1000), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 400, 1000, 1000, 1000), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 700), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 200, 1000, 700), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 200, 400, 1000), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 1000, 700, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 0, 0, 200), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 0, 200, 0, 1000), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 1000, 400, 1000), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 400, 1000, 1000, 1000), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 700), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 700), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 700), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 400, 1000), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 1000), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 200), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 400, 1000), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1000, 700), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 1000, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1000, 700), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 400, 1000), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 1000), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 200), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 400, 1000), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 0, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11642,44 +11641,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 200, 1000, 700, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 200, 1000, 1000, 600), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 700, 0, 0, 0), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 0, 1000, 200, 1000), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 200, 1000, 1000, 1000), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 600), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 1000, 600, 1000, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 1000, 0, 700, 0), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 200, 1000, 700, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 200, 1000, 1000, 600), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 700, 0, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 0, 0, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 0, 1000, 200, 1000), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 200, 1000, 1000, 1000), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 600), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 1000, 600, 1000, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 1000, 0, 700, 0), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 200, 1000), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 700, 0), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 200, 1000), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 700, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 200, 1000), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 600), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 1000), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 200, 1000), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 700, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 200, 1000), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 700, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1000, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1000, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 200, 1000), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 1000, 600), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 1000), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11727,44 +11726,44 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1000, 800, 0, 300), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 1000, 800, 600, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 1000), "Expected: has edge B-X"); // B-X
-            Assume.That(() => HasEdge(edges, 0, 1000, 1000, 1000), "Expected: has edge X-Y"); // X-Y
-            Assume.That(() => HasEdge(edges, 1000, 1000, 1000, 800), "Expected: has edge Y-A"); // Y-A
-            Assume.That(() => HasEdge(edges, 1000, 800, 1000, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 1000, 0, 600, 0), "Expected: has edge W-C"); // W-C
-            Assume.That(() => HasEdge(edges, 600, 0, 0, 0), "Expected: has edge C-Z"); // C-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 0, 300), "Expected: has edge Z-B"); // Z-B
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1000, 800, 0, 300), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 1000, 800, 600, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 300, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
+            Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge X-Y"); // X-Y
+            Assume.That(HasEdge(edges, 1000, 1000, 1000, 800), Is.True, "Expected: has edge Y-A"); // Y-A
+            Assume.That(HasEdge(edges, 1000, 800, 1000, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 1000, 0, 600, 0), Is.True, "Expected: has edge W-C"); // W-C
+            Assume.That(HasEdge(edges, 600, 0, 0, 0), Is.True, "Expected: has edge C-Z"); // C-Z
+            Assume.That(HasEdge(edges, 0, 0, 0, 300), Is.True, "Expected: has edge Z-B"); // Z-B
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 4 == sites[0].Points.Count(), "Expected: site #1 point count 4"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 800), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has B"); // #1 has B
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1000), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => HasPoint(sites[0].Points, 1000, 1000), "Expected: site #1 has Y"); // #1 has Y
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 4 == sites[1].Points.Count(), "Expected: site #2 point count 4"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1000, 800), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 800), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has C"); // #3 has C
-            Assume.That(() => HasPoint(sites[2].Points, 1000, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(4), "Expected: site #1 point count 4"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1000, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has B"); // #1 has B
+            Assume.That(HasPoint(sites[0].Points, 0, 1000), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(HasPoint(sites[0].Points, 1000, 1000), Is.True, "Expected: site #1 has Y"); // #1 has Y
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(4), "Expected: site #2 point count 4"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1000, 800), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1000, 800), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+            Assume.That(HasPoint(sites[2].Points, 1000, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -11812,46 +11811,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 300, 600, 1200), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 300, 0, 1200, 600), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 300), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 300, 0, 1200, 0), "Expected: has edge B-W"); // B-W
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 600), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 1200, 600, 1200, 1200), "Expected: has edge D-Z"); // D-Z
-            Assume.That(() => HasEdge(edges, 1200, 1200, 600, 1200), "Expected: has edge Z-C"); // Z-C
-            Assume.That(() => HasEdge(edges, 600, 1200, 0, 1200), "Expected: has edge C-X"); // C-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 300, 600, 1200), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 300, 0, 1200, 600), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 0, 1200, 0, 300), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 300, 0, 1200, 0), Is.True, "Expected: has edge B-W"); // B-W
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 600), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 1200, 600, 1200, 1200), Is.True, "Expected: has edge D-Z"); // D-Z
+            Assume.That(HasEdge(edges, 1200, 1200, 600, 1200), Is.True, "Expected: has edge Z-C"); // Z-C
+            Assume.That(HasEdge(edges, 600, 1200, 0, 1200), Is.True, "Expected: has edge C-X"); // C-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 1200), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 1200), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 6 == sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 300, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 1200), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 1200), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 300, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 1200, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1200, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11903,46 +11902,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 300, 1200, 1200, 600), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 900, 600, 0), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 1200, 1200, 300, 1200), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 300, 1200, 0, 1200), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 900), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 0, 900, 0, 0), "Expected: has edge B-W"); // B-W
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 600, 0, 1200, 0), "Expected: has edge D-Z"); // D-Z
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 600), "Expected: has edge Z-C"); // Z-C
-            Assume.That(() => HasEdge(edges, 1200, 600, 1200, 1200), "Expected: has edge C-X"); // C-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 300, 1200, 1200, 600), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 900, 600, 0), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 1200, 1200, 300, 1200), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 300, 1200, 0, 1200), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 0, 1200, 0, 900), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 0, 900, 0, 0), Is.True, "Expected: has edge B-W"); // B-W
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 600, 0, 1200, 0), Is.True, "Expected: has edge D-Z"); // D-Z
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 600), Is.True, "Expected: has edge Z-C"); // Z-C
+            Assume.That(HasEdge(edges, 1200, 600, 1200, 1200), Is.True, "Expected: has edge C-X"); // C-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 300, 1200), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 1200), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 6 == sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 300, 1200), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 300, 1200), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 1200, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1200, 1200), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assume.That(HasPoint(sites[1].Points, 300, 1200), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 1200, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -11994,46 +11993,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 1200, 900, 600, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 900, 1200, 0, 600), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 900), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 1200, 900, 1200, 1200), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1200, 1200, 900, 1200), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 900, 1200, 0, 1200), "Expected: has edge B-W"); // B-W
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 600), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge D-Z"); // D-Z
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge Z-C"); // Z-C
-            Assume.That(() => HasEdge(edges, 600, 0, 1200, 0), "Expected: has edge C-X"); // C-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 1200, 900, 600, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 900, 1200, 0, 600), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 900), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 1200, 900, 1200, 1200), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1200, 1200, 900, 1200), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 900, 1200, 0, 1200), Is.True, "Expected: has edge B-W"); // B-W
+            Assume.That(HasEdge(edges, 0, 1200, 0, 600), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge D-Z"); // D-Z
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge Z-C"); // Z-C
+            Assume.That(HasEdge(edges, 600, 0, 1200, 0), Is.True, "Expected: has edge C-X"); // C-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 900), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 1200, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 6 == sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 900), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 900, 1200), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 1200), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 900, 1200), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 0, 1200), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 1200, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 1200, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assume.That(HasPoint(sites[1].Points, 1200, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 900, 1200), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1200, 1200), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 900, 1200), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 0, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         /// <summary>
@@ -12085,46 +12084,46 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 10 == edges.Count, "Expected: edge count 10");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 900, 0, 0, 600), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 1200, 300, 600, 1200), "Expected: has edge B-D"); // B-D
-            Assume.That(() => HasEdge(edges, 0, 0, 900, 0), "Expected: has edge X-A"); // X-A
-            Assume.That(() => HasEdge(edges, 900, 0, 1200, 0), "Expected: has edge A-Y"); // A-Y
-            Assume.That(() => HasEdge(edges, 1200, 0, 1200, 300), "Expected: has edge Y-B"); // Y-B
-            Assume.That(() => HasEdge(edges, 1200, 300, 1200, 1200), "Expected: has edge B-W"); // B-W
-            Assume.That(() => HasEdge(edges, 1200, 1200, 600, 1200), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 600, 1200, 0, 1200), "Expected: has edge D-Z"); // D-Z
-            Assume.That(() => HasEdge(edges, 0, 1200, 0, 600), "Expected: has edge Z-C"); // Z-C
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge C-X"); // C-X
+            Assume.That(edges.Count, Is.EqualTo(10), "Expected: edge count 10");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 900, 0, 0, 600), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 1200, 300, 600, 1200), Is.True, "Expected: has edge B-D"); // B-D
+            Assume.That(HasEdge(edges, 0, 0, 900, 0), Is.True, "Expected: has edge X-A"); // X-A
+            Assume.That(HasEdge(edges, 900, 0, 1200, 0), Is.True, "Expected: has edge A-Y"); // A-Y
+            Assume.That(HasEdge(edges, 1200, 0, 1200, 300), Is.True, "Expected: has edge Y-B"); // Y-B
+            Assume.That(HasEdge(edges, 1200, 300, 1200, 1200), Is.True, "Expected: has edge B-W"); // B-W
+            Assume.That(HasEdge(edges, 1200, 1200, 600, 1200), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 600, 1200, 0, 1200), Is.True, "Expected: has edge D-Z"); // D-Z
+            Assume.That(HasEdge(edges, 0, 1200, 0, 600), Is.True, "Expected: has edge Z-C"); // Z-C
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge C-X"); // C-X
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 6 == sites[1].Points.Count(), "Expected: site #2 point count 6"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 300), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => HasPoint(sites[1].Points, 600, 1200), "Expected: site #2 has D"); // #2 has D
-            Assume.That(() => HasPoint(sites[1].Points, 1200, 0), "Expected: site #2 has Y"); // #2 has Y
-            Assume.That(() => HasPoint(sites[1].Points, 0, 1200), "Expected: site #2 has Z"); // #2 has Z
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 300), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 1200), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => HasPoint(sites[2].Points, 1200, 1200), "Expected: site #3 has W"); // #3 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(6), "Expected: site #2 point count 6"); // #2
+            Assume.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 1200, 300), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(HasPoint(sites[1].Points, 600, 1200), Is.True, "Expected: site #2 has D"); // #2 has D
+            Assume.That(HasPoint(sites[1].Points, 1200, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+            Assume.That(HasPoint(sites[1].Points, 0, 1200), Is.True, "Expected: site #2 has Z"); // #2 has Z
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 1200, 300), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 1200), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(HasPoint(sites[2].Points, 1200, 1200), Is.True, "Expected: site #3 has W"); // #3 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
         }
 
         [Test]
@@ -12167,49 +12166,49 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 0, 900, 900), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 900), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 0, 900, 300), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 0, 900, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 900, 0, 900, 300), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 900, 300, 900, 900), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 900, 900, 300, 900), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 300, 900, 0, 900), "Expected: has edge C-X"); // C-X
-            Assume.That(() => HasEdge(edges, 0, 900, 0, 0), "Expected: has edge X-A"); // X-A
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 0, 900, 900), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 0, 300, 900), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 0, 900, 300), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 0, 900, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 900, 0, 900, 300), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 900, 300, 900, 900), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 900, 900, 300, 900), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 300, 900, 0, 900), Is.True, "Expected: has edge C-X"); // C-X
+            Assume.That(HasEdge(edges, 0, 900, 0, 0), Is.True, "Expected: has edge X-A"); // X-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 300, 900), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 900, 900), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 300, 900), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 900, 900), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 900, 300), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 900, 300), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 300, 900), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 900, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 300, 900), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 900, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 900, 300), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 900, 300), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has W"); // #4 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -12256,49 +12255,49 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 0, 900, 900, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 0, 900, 900, 600), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 0, 900, 300, 0), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 0, 900, 0, 0), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 0, 300, 0), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 300, 0, 900, 0), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 900, 0, 900, 600), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 900, 600, 900, 900), "Expected: has edge C-X"); // C-X
-            Assume.That(() => HasEdge(edges, 900, 900, 0, 900), "Expected: has edge X-A"); // X-A
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 0, 900, 900, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 0, 900, 900, 600), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 0, 900, 300, 0), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 0, 900, 0, 0), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 0, 300, 0), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 300, 0, 900, 0), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 900, 0, 900, 600), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 900, 600, 900, 900), Is.True, "Expected: has edge C-X"); // C-X
+            Assume.That(HasEdge(edges, 900, 900, 0, 900), Is.True, "Expected: has edge X-A"); // X-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 0, 900), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 900, 600), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 900, 900), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 900, 600), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 900, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 300, 0), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 300, 0), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 0, 0), "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 0, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 900, 600), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 900, 900), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 900, 600), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 900, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 300, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 300, 0), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has W"); // #4 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -12345,49 +12344,49 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 900, 900, 0, 0), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 900, 900, 600, 0), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 900, 900, 0, 600), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 900, 900, 0, 900), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 0, 900, 0, 600), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 0, 600, 0, 0), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 0, 0, 600, 0), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 600, 0, 900, 0), "Expected: has edge C-X"); // C-X
-            Assume.That(() => HasEdge(edges, 900, 0, 900, 900), "Expected: has edge X-A"); // X-A
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 900, 900, 0, 0), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 900, 900, 600, 0), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 900, 900, 0, 600), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 900, 900, 0, 900), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 0, 900, 0, 600), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 0, 600, 0, 0), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 0, 0, 600, 0), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 600, 0, 900, 0), Is.True, "Expected: has edge C-X"); // C-X
+            Assume.That(HasEdge(edges, 900, 0, 900, 900), Is.True, "Expected: has edge X-A"); // X-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 900, 900), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 600, 0), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 900, 900), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 0), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 600, 0), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 900, 900), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 0), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 0, 600), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 900, 900), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 0, 600), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 0, 900), "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 900, 900), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 600, 0), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 900, 900), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 600, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 900, 900), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 0, 600), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 900, 900), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 0, 600), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 0, 900), Is.True, "Expected: site #4 has W"); // #4 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
         /// <summary>
@@ -12434,49 +12433,49 @@ namespace SharpVoronoiLib.UnitTests
 
             // Assume
 
-            Assume.That(() => 9 == edges.Count, "Expected: edge count 9");
-            Assume.That(() => null != edges);
-            Assume.That(() => HasEdge(edges, 900, 0, 0, 900), "Expected: has edge A-B"); // A-B
-            Assume.That(() => HasEdge(edges, 900, 0, 0, 300), "Expected: has edge A-C"); // A-C
-            Assume.That(() => HasEdge(edges, 900, 0, 600, 900), "Expected: has edge A-D"); // A-D
-            Assume.That(() => HasEdge(edges, 900, 0, 900, 900), "Expected: has edge A-W"); // A-W
-            Assume.That(() => HasEdge(edges, 900, 900, 600, 900), "Expected: has edge W-D"); // W-D
-            Assume.That(() => HasEdge(edges, 600, 900, 0, 900), "Expected: has edge D-B"); // D-B
-            Assume.That(() => HasEdge(edges, 0, 900, 0, 300), "Expected: has edge B-C"); // B-C
-            Assume.That(() => HasEdge(edges, 0, 300, 0, 0), "Expected: has edge C-X"); // C-X
-            Assume.That(() => HasEdge(edges, 0, 0, 900, 0), "Expected: has edge X-A"); // X-A
+            Assume.That(edges.Count, Is.EqualTo(9), "Expected: edge count 9");
+            Assume.That(edges, Is.Not.Null);
+            Assume.That(HasEdge(edges, 900, 0, 0, 900), Is.True, "Expected: has edge A-B"); // A-B
+            Assume.That(HasEdge(edges, 900, 0, 0, 300), Is.True, "Expected: has edge A-C"); // A-C
+            Assume.That(HasEdge(edges, 900, 0, 600, 900), Is.True, "Expected: has edge A-D"); // A-D
+            Assume.That(HasEdge(edges, 900, 0, 900, 900), Is.True, "Expected: has edge A-W"); // A-W
+            Assume.That(HasEdge(edges, 900, 900, 600, 900), Is.True, "Expected: has edge W-D"); // W-D
+            Assume.That(HasEdge(edges, 600, 900, 0, 900), Is.True, "Expected: has edge D-B"); // D-B
+            Assume.That(HasEdge(edges, 0, 900, 0, 300), Is.True, "Expected: has edge B-C"); // B-C
+            Assume.That(HasEdge(edges, 0, 300, 0, 0), Is.True, "Expected: has edge C-X"); // C-X
+            Assume.That(HasEdge(edges, 0, 0, 900, 0), Is.True, "Expected: has edge X-A"); // X-A
 
-            Assume.That(() => null != sites[0].Points);
-            Assume.That(() => 3 == sites[0].Points.Count(), "Expected: site #1 point count 3"); // #1
-            Assume.That(() => HasPoint(sites[0].Points, 900, 0), "Expected: site #1 has A"); // #1 has A
-            Assume.That(() => HasPoint(sites[0].Points, 0, 300), "Expected: site #1 has C"); // #1 has C
-            Assume.That(() => HasPoint(sites[0].Points, 0, 0), "Expected: site #1 has X"); // #1 has X
-            Assume.That(() => null != sites[1].Points);
-            Assume.That(() => 3 == sites[1].Points.Count(), "Expected: site #2 point count 3"); // #2
-            Assume.That(() => HasPoint(sites[1].Points, 900, 0), "Expected: site #2 has A"); // #2 has A
-            Assume.That(() => HasPoint(sites[1].Points, 0, 900), "Expected: site #2 has B"); // #2 has B
-            Assume.That(() => HasPoint(sites[1].Points, 0, 300), "Expected: site #2 has C"); // #2 has C
-            Assume.That(() => null != sites[2].Points);
-            Assume.That(() => 3 == sites[2].Points.Count(), "Expected: site #3 point count 3"); // #3
-            Assume.That(() => HasPoint(sites[2].Points, 900, 0), "Expected: site #3 has A"); // #3 has A
-            Assume.That(() => HasPoint(sites[2].Points, 0, 900), "Expected: site #3 has B"); // #3 has B
-            Assume.That(() => HasPoint(sites[2].Points, 600, 900), "Expected: site #3 has D"); // #3 has D
-            Assume.That(() => null != sites[3].Points);
-            Assume.That(() => 3 == sites[3].Points.Count(), "Expected: site #4 point count 3"); // #4
-            Assume.That(() => HasPoint(sites[3].Points, 900, 0), "Expected: site #4 has A"); // #4 has A
-            Assume.That(() => HasPoint(sites[3].Points, 600, 900), "Expected: site #4 has D"); // #4 has D
-            Assume.That(() => HasPoint(sites[3].Points, 900, 900), "Expected: site #4 has W"); // #4 has W
+            Assume.That(sites[0].Points, Is.Not.Null);
+            Assume.That(sites[0].Points.Count(), Is.EqualTo(3), "Expected: site #1 point count 3"); // #1
+            Assume.That(HasPoint(sites[0].Points, 900, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+            Assume.That(HasPoint(sites[0].Points, 0, 300), Is.True, "Expected: site #1 has C"); // #1 has C
+            Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+            Assume.That(sites[1].Points, Is.Not.Null);
+            Assume.That(sites[1].Points.Count(), Is.EqualTo(3), "Expected: site #2 point count 3"); // #2
+            Assume.That(HasPoint(sites[1].Points, 900, 0), Is.True, "Expected: site #2 has A"); // #2 has A
+            Assume.That(HasPoint(sites[1].Points, 0, 900), Is.True, "Expected: site #2 has B"); // #2 has B
+            Assume.That(HasPoint(sites[1].Points, 0, 300), Is.True, "Expected: site #2 has C"); // #2 has C
+            Assume.That(sites[2].Points, Is.Not.Null);
+            Assume.That(sites[2].Points.Count(), Is.EqualTo(3), "Expected: site #3 point count 3"); // #3
+            Assume.That(HasPoint(sites[2].Points, 900, 0), Is.True, "Expected: site #3 has A"); // #3 has A
+            Assume.That(HasPoint(sites[2].Points, 0, 900), Is.True, "Expected: site #3 has B"); // #3 has B
+            Assume.That(HasPoint(sites[2].Points, 600, 900), Is.True, "Expected: site #3 has D"); // #3 has D
+            Assume.That(sites[3].Points, Is.Not.Null);
+            Assume.That(sites[3].Points.Count(), Is.EqualTo(3), "Expected: site #4 point count 3"); // #4
+            Assume.That(HasPoint(sites[3].Points, 900, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+            Assume.That(HasPoint(sites[3].Points, 600, 900), Is.True, "Expected: site #4 has D"); // #4 has D
+            Assume.That(HasPoint(sites[3].Points, 900, 900), Is.True, "Expected: site #4 has W"); // #4 has W
 
             // Assert
 
-            ClassicAssert.Null(sites[0].LiesOnEdge); // #1
-            ClassicAssert.Null(sites[0].LiesOnCorner); // #1
-            ClassicAssert.Null(sites[1].LiesOnEdge); // #2
-            ClassicAssert.Null(sites[1].LiesOnCorner); // #2
-            ClassicAssert.Null(sites[2].LiesOnEdge); // #3
-            ClassicAssert.Null(sites[2].LiesOnCorner); // #3
-            ClassicAssert.Null(sites[3].LiesOnEdge); // #4
-            ClassicAssert.Null(sites[3].LiesOnCorner); // #4
+            Assert.That(sites[0].LiesOnEdge, Is.Null); // #1
+            Assert.That(sites[0].LiesOnCorner, Is.Null);// #1
+            Assert.That(sites[1].LiesOnEdge, Is.Null); // #2
+            Assert.That(sites[1].LiesOnCorner, Is.Null);// #2
+            Assert.That(sites[2].LiesOnEdge, Is.Null); // #3
+            Assert.That(sites[2].LiesOnCorner, Is.Null);// #3
+            Assert.That(sites[3].LiesOnEdge, Is.Null); // #4
+            Assert.That(sites[3].LiesOnCorner, Is.Null);// #4
         }
 
     }

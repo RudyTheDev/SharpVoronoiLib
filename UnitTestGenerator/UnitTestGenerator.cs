@@ -1522,7 +1522,6 @@ namespace SharpVoronoiLib.UnitTestGenerator
                 StringBuilder stringBuilder = new StringBuilder();
 
                 stringBuilder.AppendLine(@"using NUnit.Framework;");
-                stringBuilder.AppendLine(@"using NUnit.Framework.Legacy;");
                 stringBuilder.AppendLine(@"using System.Collections.Generic;");
                 stringBuilder.AppendLine(@"using System.Linq;");
                 stringBuilder.AppendLine(@"using static SharpVoronoiLib.UnitTests.CommonTestUtilities;");
@@ -1956,42 +1955,78 @@ namespace SharpVoronoiLib.UnitTestGenerator
                 List<string> strings = new List<string>();
 
                 int expectedCount = CountExpectedRelevantEdges(edges, borderLogic);
-                strings.Add(GetAssertEqualMethodStart(assert) + expectedCount + GetAssertEqualMethodSeparator(assert) + @"edges.Count, ""Expected: edge count " + expectedCount + @""");");
+                
+                strings.Add(
+                    GetAssertEqualsText(
+                        assert,
+                        expectedCount,
+                        @"edges.Count", "Expected: edge count " + expectedCount
+                    )
+                );
 
-                strings.Add(GetAssertNotNullMethodStart(assert) + @"edges);");
+                strings.Add(
+                    GetAssertNotNullText(
+                        assert,
+                        @"edges"
+                    )
+                );
 
                 foreach (Edge edge in edges.Where(e => EdgeMatchesBorderLogic(e, borderLogic)))
                 {
                     string comment = (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id;
-                    strings.Add(GetAssertTrueMethodStart(assert) + @"HasEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @"), ""Expected: has edge " + comment + @"""); // " + comment);
+                    
+                    strings.Add(
+                        GetAssertTrueText(
+                            assert,
+                            @"HasEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")",
+                            @"Expected: has edge " + comment
+                        ) +
+                        @" // " + comment
+                    );
                 }
 
                 return strings;
             }
 
-            private string GetAssertEqualMethodStart(bool assert)
+            private string GetAssertEqualsText(bool assert, object expected, object actual, string? message = null, object? within = null)
             {
-                return assert ? @"ClassicAssert.AreEqual(" : @"Assume.That(() => ";
+                return
+                    (assert ? @"Assert" : @"Assume") + @".That(" +
+                    actual +
+                    @", Is.EqualTo(" + expected + @")" +
+                    (message != null ? @", """ + message + @"""" : null) +
+                    (within != null ? @".Within(" + within + @")" : null) +
+                    @");";
             }
 
-            private string GetAssertNotNullMethodStart(bool assert)
+            private string GetAssertNotNullText(bool assert, object actual, string? message = null)
             {
-                return assert ? @"ClassicAssert.NotNull(" : @"Assume.That(() => null != ";
+                return
+                    (assert ? @"Assert" : @"Assume") + @".That(" + 
+                    actual + 
+                    @", Is.Not.Null" +
+                    (message != null ? @", """ + message + @"""" : null) +
+                    @");";
             }
 
-            private string GetAssertNullMethodStart(bool assert)
+            private string GetAssertNullText(bool assert, object actual, string? message = null)
             {
-                return assert ? @"ClassicAssert.Null(" : @"Assume.That(() => null == ";
+                return
+                    (assert ? @"Assert" : @"Assume") + @".That(" + 
+                    actual + 
+                    @", Is.Null" +
+                    (message != null ? @", """ + message + @"""" : null) +
+                    @");";
             }
 
-            private string GetAssertEqualMethodSeparator(bool assert)
+            private string GetAssertTrueText(bool assert, object actual, string? message = null)
             {
-                return assert ? @", " : @" == ";
-            }
-
-            private string GetAssertTrueMethodStart(bool assert)
-            {
-                return assert ? @"ClassicAssert.IsTrue(" : @"Assume.That(() => ";
+                return
+                    (assert ? @"Assert" : @"Assume") + @".That(" + 
+                    actual + 
+                    @", Is.True" +
+                    (message != null ? @", """ + message + @"""" : null) +
+                    @");";
             }
 
             private List<string> BuildEdgeSiteAssertions(List<Edge> edges, TestBorderLogic borderLogic, bool assert)
@@ -2006,7 +2041,13 @@ namespace SharpVoronoiLib.UnitTestGenerator
                     {
                         foreach (Site site in edge.EdgeSites)
                         {
-                            strings.Add(GetAssertTrueMethodStart(assert) + @"EdgeHasSite(FindEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @"), " + site.X + @", " + site.Y + @")); // " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id + " has #" + site.Id + @"");
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"EdgeHasSite(FindEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @"), " + site.X + @", " + site.Y + @")"
+                                ) +
+                                @" // " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id + " has #" + site.Id + @""
+                            );
                         }
                     }
                 }
@@ -2047,22 +2088,35 @@ namespace SharpVoronoiLib.UnitTestGenerator
                         strings.Add((first ? nameof(VoronoiEdge) + @" " : "") + @"edge = FindEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @"); // " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id);
                         first = false; // don't redefine the variable again, only set value
 
-                        strings.Add(GetAssertNotNullMethodStart(assert) + @"edge" + @"." + nameof(VoronoiEdge.Neighbours) + @");");
+                        strings.Add(
+                            GetAssertNotNullText(
+                                assert,
+                                "edge." + nameof(VoronoiEdge.Neighbours)
+                            )
+                        );
 
-                        //if (assert)
-                        //    strings.Add(@"Assert.Multiple(() => { // if the count is wrong, we want to know which edge is possibly missing");
-
-                        strings.Add(GetAssertEqualMethodStart(assert) + neighbours.Count + GetAssertEqualMethodSeparator(assert) + @"edge" + @"." + nameof(VoronoiEdge.Neighbours) + @".Count(), ""Expected: edge neighbour count " + neighbours.Count + @""");");
+                        strings.Add(
+                            GetAssertEqualsText(
+                                assert,
+                                neighbours.Count,
+                                @"edge" + @"." + nameof(VoronoiEdge.Neighbours) + @".Count()",
+                                "Expected: edge neighbour count " + neighbours.Count
+                            )
+                        );
 
                         foreach (Edge neighbour in neighbours)
                         {
                             string comment = (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id + " neighbours " + (char)neighbour.FromPoint.Id + @"-" + (char)neighbour.ToPoint.Id;
 
-                            strings.Add(GetAssertTrueMethodStart(assert) + @"edge." + nameof(VoronoiEdge.Neighbours) + @".Contains(FindEdge(edges, " + neighbour.FromPoint.X + @", " + neighbour.FromPoint.Y + @", " + neighbour.ToPoint.X + @", " + neighbour.ToPoint.Y + @")), ""Expected: edge " + comment + @"""); // " + comment);
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"edge." + nameof(VoronoiEdge.Neighbours) + @".Contains(FindEdge(edges, " + neighbour.FromPoint.X + @", " + neighbour.FromPoint.Y + @", " + neighbour.ToPoint.X + @", " + neighbour.ToPoint.Y + @"))",
+                                    "Expected: edge " + comment
+                                ) + 
+                                @" // " + comment
+                            );
                         }
-
-                        //if (assert)
-                        //    strings.Add(@"});");
                     }
                 }
                 else
@@ -2103,13 +2157,30 @@ namespace SharpVoronoiLib.UnitTestGenerator
                                                 .OrderBy(s => s.Id)
                                                 .ToList();
 
-                        strings.Add(GetAssertNotNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.Neighbours) + @");");
+                        strings.Add(
+                            GetAssertNotNullText(
+                                assert,
+                                @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.Neighbours)
+                            )
+                        );
 
-                        strings.Add(GetAssertEqualMethodStart(assert) + neighbours.Count + GetAssertEqualMethodSeparator(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiEdge.Neighbours) + @".Count());");
+                        strings.Add(
+                            GetAssertEqualsText(
+                                assert,
+                                neighbours.Count,
+                                @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiEdge.Neighbours) + @".Count()"
+                            )
+                        );
 
                         foreach (Site neighbour in neighbours)
                         {
-                            strings.Add(GetAssertTrueMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]." + nameof(VoronoiSite.Neighbours) + @".Contains(sites[" + sites.IndexOf(neighbour) + @"])); // " + site.Id + @" neighbours " + neighbour.Id);
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"sites[" + sites.IndexOf(site) + @"]." + nameof(VoronoiSite.Neighbours) + @".Contains(sites[" + sites.IndexOf(neighbour) + @"])"
+                                ) +
+                                @" // " + site.Id + @" neighbours " + neighbour.Id
+                            );
                         }
                     }
                 }
@@ -2144,14 +2215,34 @@ namespace SharpVoronoiLib.UnitTestGenerator
 
                         string listName = clockwise ? nameof(VoronoiSite.ClockwisePoints) : nameof(VoronoiSite.Points);
 
-                        strings.Add(GetAssertNotNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + listName + @");");
+                        strings.Add(
+                            GetAssertNotNullText(
+                                assert,
+                                @"sites[" + sites.IndexOf(site) + @"]" + @"." + listName
+                            )
+                        );
 
-                        strings.Add(GetAssertEqualMethodStart(assert) + points.Count + GetAssertEqualMethodSeparator(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + listName + @".Count(), ""Expected: site #" + site.Id + @" point count " + points.Count + @"""); // #" + site.Id);
+                        strings.Add(
+                            GetAssertEqualsText(
+                                assert,
+                                points.Count,
+                                @"sites[" + sites.IndexOf(site) + @"]" + @"." + listName + @".Count()",
+                                @"Expected: site #" + site.Id + @" point count " + points.Count
+                            ) + 
+                            @" // #" + site.Id
+                        );
 
                         foreach (Point point in points)
                         {
                             string comment = @"#" + site.Id + " has " + (char)point.Id;
-                            strings.Add(GetAssertTrueMethodStart(assert) + @"HasPoint(sites[" + sites.IndexOf(site) + @"]." + listName + @", " + point.X + @", " + point.Y + @"), ""Expected: site " + comment + @"""); // " + comment);
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"HasPoint(sites[" + sites.IndexOf(site) + @"]." + listName + @", " + point.X + @", " + point.Y + @")",
+                                    @"Expected: site " + comment
+                                ) + 
+                                @" // " + comment
+                            );
                         }
 
                         if (clockwise)
@@ -2168,7 +2259,13 @@ namespace SharpVoronoiLib.UnitTestGenerator
                                     {
                                         foreach (Point point in applicablePoints)
                                         {
-                                            strings.Add(GetAssertTrueMethodStart(assert) + @"PointIs(sites[" + sites.IndexOf(site) + @"]" + @"." + listName + @".ElementAt(" + index + @"), " + point.X + @", " + point.Y + @")); // #" + site.Id + @" " + (char)point.Id);
+                                            strings.Add(
+                                                GetAssertTrueText(
+                                                    assert,
+                                                    @"PointIs(sites[" + sites.IndexOf(site) + @"]" + @"." + listName + @".ElementAt(" + index + @"), " + point.X + @", " + point.Y + @")"
+                                                ) +
+                                                @" // #" + site.Id + @" " + (char)point.Id
+                                            );
 
                                             index++;
                                         }
@@ -2183,7 +2280,13 @@ namespace SharpVoronoiLib.UnitTestGenerator
                                             Point point1 = applicablePoints[i];
                                             Point point2 = applicablePoints[i == applicablePoints.Count - 1 ? 0 : i + 1];
 
-                                            strings.Add(GetAssertTrueMethodStart(assert) + @"PointsAreSequential(sites[" + sites.IndexOf(site) + @"]" + @"." + listName + @", " + point1.X + @", " + point1.Y + @", " + point2.X + @", " + point2.Y + @")); // #" + site.Id + @" " + (char)point1.Id + " > " + (char)point2.Id);
+                                            strings.Add(
+                                                GetAssertTrueText(
+                                                    assert,
+                                                    @"PointsAreSequential(sites[" + sites.IndexOf(site) + @"]" + @"." + listName + @", " + point1.X + @", " + point1.Y + @", " + point2.X + @", " + point2.Y + @")"
+                                                ) + 
+                                                @" // #" + site.Id + @" " + (char)point1.Id + " > " + (char)point2.Id
+                                            );
                                         }
                                     }
                                 }
@@ -2220,8 +2323,26 @@ namespace SharpVoronoiLib.UnitTestGenerator
                         (double centroidX, double centroidY) = GetSiteCentroid(site, points, borderLogic, out string formula);
 
                         strings.Add(@"// Centroid of #" + site.Id + @" in " + string.Join("-", points.Select(p => (char)p.Id)) + @" is at ~(" + centroidX.ToString("F0") + @", " + centroidY.ToString("F0") + ") (using " + formula + " formula)");
-                        strings.Add(GetAssertEqualMethodStart(assert) + centroidX.ToString("F2") + GetAssertEqualMethodSeparator(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.Centroid) + @"." + nameof(VoronoiPoint.X) + @", 0.01);");
-                        strings.Add(GetAssertEqualMethodStart(assert) + centroidY.ToString("F2") + GetAssertEqualMethodSeparator(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.Centroid) + @"." + nameof(VoronoiPoint.Y) + @", 0.01);");
+
+                        strings.Add(
+                            GetAssertEqualsText(
+                                assert,
+                                centroidX.ToString("F2"),
+                                @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.Centroid) + @"." + nameof(VoronoiPoint.X),
+                                null,
+                                @"0.01"
+                            )
+                        );
+
+                        strings.Add(
+                            GetAssertEqualsText(
+                                assert,
+                                centroidY.ToString("F2"),
+                                @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.Centroid) + @"." + nameof(VoronoiPoint.Y),
+                                null,
+                                @"0.01"
+                            )
+                        );
                     }
                 }
                 else
@@ -2454,27 +2575,77 @@ namespace SharpVoronoiLib.UnitTestGenerator
                         {
                             case 0:
                                 // Edge - null
-                                strings.Add(GetAssertNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge) + @"); // #" + site.Id);
+                                strings.Add(
+                                    GetAssertNullText(
+                                        assert,
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge)
+                                    ) +
+                                    @" // #" + site.Id
+                                );
                                 // Corner - null
-                                strings.Add(GetAssertNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner) + @"); // #" + site.Id);
+                                strings.Add(
+                                    GetAssertNullText(
+                                        assert,
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner)
+                                    ) +
+                                    @"// #" + site.Id
+                                );
                                 break;
 
                             case 1:
                                 // Edge - set
                                 Edge edge = onEdges[0];
-                                strings.Add(GetAssertNotNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge) + @"); // #" + site.Id);
-                                strings.Add(GetAssertEqualMethodStart(assert) + @"FindEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")" + GetAssertEqualMethodSeparator(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge) + @"); // #" + site.Id + @" on " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id);
+                                strings.Add(
+                                    GetAssertNotNullText(
+                                        assert,
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge)
+                                    ) + 
+                                    @"// #" + site.Id
+                                );
+                                strings.Add(
+                                    GetAssertEqualsText(
+                                        assert,
+                                        @"FindEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")", 
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge)
+                                    ) +
+                                    @" // #" + site.Id + @" on " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id
+                                );
                                 // Corner - null
-                                strings.Add(GetAssertNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner) + @"); // #" + site.Id);
+                                strings.Add(
+                                    GetAssertNullText(
+                                        assert,
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner)
+                                    ) +
+                                    @" // #" + site.Id
+                                );
                                 break;
 
                             case 2:
                                 // Edge - null
-                                strings.Add(GetAssertNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge) + @"); // #" + site.Id);
+                                strings.Add(
+                                    GetAssertNullText(
+                                        assert,
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnEdge)
+                                    ) +
+                                    @" // #" + site.Id
+                                );
                                 // Corner - set
-                                strings.Add(GetAssertNotNullMethodStart(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner) + @"); // #" + site.Id);
+                                strings.Add(
+                                    GetAssertNotNullText(
+                                        assert,
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner)
+                                    ) + 
+                                    @" // #" + site.Id
+                                );
                                 Point point = onEdges[0].FromPoint == onEdges[1].FromPoint || onEdges[0].FromPoint == onEdges[1].ToPoint ? onEdges[0].FromPoint : onEdges[0].ToPoint;
-                                strings.Add(GetAssertEqualMethodStart(assert) + @"FindPoint(edges, " + point.X + @", " + point.Y + @")" + GetAssertEqualMethodSeparator(assert) + @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner) + @"); // #" + site.Id + @" on " + (char)point.Id);
+                                strings.Add(
+                                    GetAssertEqualsText(
+                                        assert,
+                                        @"FindPoint(edges, " + point.X + @", " + point.Y + @")",
+                                        @"sites[" + sites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.LiesOnCorner)
+                                    ) +
+                                    @" // #" + site.Id + @" on " + (char)point.Id
+                                );
                                 break;
 
                             case > 3:
@@ -2524,7 +2695,14 @@ namespace SharpVoronoiLib.UnitTestGenerator
                 {
                     foreach (Point point in points)
                     {
-                        strings.Add(GetAssertEqualMethodStart(assert) + nameof(PointBorderLocation) + @"." + PointLocationToExpectedBorderLocation(test, point) + GetAssertEqualMethodSeparator(assert) + @"FindPoint(edges, " + point.X + @", " + point.Y + @")." + nameof(VoronoiPoint.BorderLocation) + @"); // " + (char)point.Id);
+                        strings.Add(
+                            GetAssertEqualsText(
+                                assert,
+                                nameof(PointBorderLocation) + @"." + PointLocationToExpectedBorderLocation(test, point),
+                                @"FindPoint(edges, " + point.X + @", " + point.Y + @")." + nameof(VoronoiPoint.BorderLocation)
+                            ) +
+                            @"// " + (char)point.Id
+                        );
                     }
 
                 }
@@ -2588,13 +2766,31 @@ namespace SharpVoronoiLib.UnitTestGenerator
 
                         string listName = clockwise ? nameof(VoronoiSite.ClockwiseCell) : nameof(VoronoiSite.Cell);
 
-                        strings.Add(GetAssertNotNullMethodStart(assert) + @"sites[" + allSites.IndexOf(site) + @"]" + @"." + listName + @");");
+                        strings.Add(
+                            GetAssertNotNullText(
+                                assert,
+                                @"sites[" + allSites.IndexOf(site) + @"]" + @"." + listName
+                            )
+                        );
 
-                        strings.Add(GetAssertEqualMethodStart(assert) + siteEdges.Count + GetAssertEqualMethodSeparator(assert) + @"sites[" + allSites.IndexOf(site) + @"]" + @"." + listName + @".Count()); // #" + site.Id);
+                        strings.Add(
+                            GetAssertEqualsText(
+                                assert,
+                                siteEdges.Count,
+                                @"sites[" + allSites.IndexOf(site) + @"]" + @"." + listName + @".Count()"
+                            ) +
+                            @" // #" + site.Id
+                        );
 
                         foreach (Edge siteEdge in siteEdges)
                         {
-                            strings.Add(GetAssertTrueMethodStart(assert) + @"HasEdge(sites[" + allSites.IndexOf(site) + @"]." + listName + @", " + siteEdge.FromPoint.X + @", " + siteEdge.FromPoint.Y + @", " + siteEdge.ToPoint.X + @", " + siteEdge.ToPoint.Y + @")); // #" + site.Id + @" has " + (char)siteEdge.FromPoint.Id + @"-" + (char)siteEdge.ToPoint.Id);
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"HasEdge(sites[" + allSites.IndexOf(site) + @"]." + listName + @", " + siteEdge.FromPoint.X + @", " + siteEdge.FromPoint.Y + @", " + siteEdge.ToPoint.X + @", " + siteEdge.ToPoint.Y + @")"
+                                ) + 
+                                @" // #" + site.Id + @" has " + (char)siteEdge.FromPoint.Id + @"-" + (char)siteEdge.ToPoint.Id
+                            );
                         }
 
                         if (clockwise)
@@ -2609,7 +2805,13 @@ namespace SharpVoronoiLib.UnitTestGenerator
                                     {
                                         Edge edge = orderedEdges[i];
 
-                                        strings.Add(GetAssertTrueMethodStart(assert) + @"EdgeIs(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseCell) + @".ElementAt(" + i + @"), " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")); // #" + site.Id + @" " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id);
+                                        strings.Add(
+                                            GetAssertTrueText(
+                                                assert,
+                                                @"EdgeIs(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseCell) + @".ElementAt(" + i + @"), " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")"
+                                            ) +
+                                            @" // #" + site.Id + @" " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id
+                                        );
                                     }
                                 }
                                 else
@@ -2621,7 +2823,13 @@ namespace SharpVoronoiLib.UnitTestGenerator
                                         Edge edge1 = orderedEdges[i];
                                         Edge edge2 = orderedEdges[i == orderedEdges.Count - 1 ? 0 : i + 1];
 
-                                        strings.Add(GetAssertTrueMethodStart(assert) + @"EdgesAreSequential(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseCell) + @", " + edge1.FromPoint.X + @", " + edge1.FromPoint.Y + @", " + edge1.ToPoint.X + @", " + edge1.ToPoint.Y + @", " + edge2.FromPoint.X + @", " + edge2.FromPoint.Y + @", " + edge2.ToPoint.X + @", " + edge2.ToPoint.Y + @")); // #" + site.Id + @" " + (char)edge1.FromPoint.Id + @"-" + (char)edge1.ToPoint.Id + @" > " + (char)edge2.FromPoint.Id + @"-" + (char)edge2.ToPoint.Id);
+                                        strings.Add(
+                                            GetAssertTrueText(
+                                                assert,
+                                                @"EdgesAreSequential(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseCell) + @", " + edge1.FromPoint.X + @", " + edge1.FromPoint.Y + @", " + edge1.ToPoint.X + @", " + edge1.ToPoint.Y + @", " + edge2.FromPoint.X + @", " + edge2.FromPoint.Y + @", " + edge2.ToPoint.X + @", " + edge2.ToPoint.Y + @")"
+                                            ) +
+                                            @" // #" + site.Id + @" " + (char)edge1.FromPoint.Id + @"-" + (char)edge1.ToPoint.Id + @" > " + (char)edge2.FromPoint.Id + @"-" + (char)edge2.ToPoint.Id
+                                        );
                                     }
                                 }
                             }
