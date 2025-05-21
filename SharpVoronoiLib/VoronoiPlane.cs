@@ -187,6 +187,29 @@ namespace SharpVoronoiLib
             return Sites;
         }
 
+        [PublicAPI]
+        public VoronoiSite GetClosestSiteTo(double x, double y)
+        {
+            if (Sites == null) throw new VoronoiDoesntHaveSitesException();
+            if (Edges == null) throw new VoronoiNotTessellatedException();
+
+            VoronoiSite closestSite = Sites[0];
+            double closestDistanceSqr = double.MaxValue;
+
+            foreach (VoronoiSite site in Sites)
+            {
+                double distance = (site.X - x) * (site.X - x) + (site.Y - y) * (site.Y - y);
+
+                if (distance < closestDistanceSqr)
+                {
+                    closestDistanceSqr = distance;
+                    closestSite = site;
+                }
+            }
+
+            return closestSite;
+        }
+
 
         [PublicAPI]
         public static List<VoronoiEdge> TessellateRandomSitesOnce(int numberOfSites, double minX, double minY, double maxX, double maxY, BorderEdgeGeneration borderGeneration = BorderEdgeGeneration.MakeBorderEdges)
