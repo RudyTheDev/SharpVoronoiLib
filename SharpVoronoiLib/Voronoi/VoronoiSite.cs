@@ -22,11 +22,18 @@ public class VoronoiSite
 
     /// <summary>
     /// The state of this site.
-    /// If may be untesselated, if the algorith hasn't been run yet.
-    /// Or it may be skipped if it's a duplicate to another site.
+    /// It may be untesselated, if the algorithm hasn't been run yet.
+    /// Or it may be skipped if it's a duplicate to another site, in which case <see cref="SkippedAsDuplicate"/> will be true.
     /// </summary>
     [PublicAPI]
     public bool Tesselated => _tessellated;
+
+    /// <summary>
+    /// When not <see cref="Tesselated"/>, but the main <see cref="VoronoiPlane"/> is,
+    /// this may be true if tessellation skipped this site because it duplicates another site.
+    /// </summary>
+    [PublicAPI]
+    public bool SkippedAsDuplicate => _skippedAsDuplicate;
 
     /// <summary>
     /// The edges that make up this cell.
@@ -38,8 +45,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             return cell;
         }
@@ -54,8 +60,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             if (_clockwiseCell == null)
             {
@@ -75,8 +80,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             return neighbours;
         }
@@ -90,8 +94,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             if (_points == null)
             {
@@ -128,8 +131,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             if (_clockwisePoints == null)
             {
@@ -151,8 +153,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             return _liesOnEdge;
         }
@@ -167,8 +168,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             return _liesOnCorner;
         }
@@ -184,8 +184,7 @@ public class VoronoiSite
     {
         get
         {
-            if (!_tessellated)
-                throw new VoronoiNotTessellatedException();
+            ThrowIfUnavailable();
                 
             if (_centroid != null)
                 return _centroid;
@@ -202,6 +201,7 @@ public class VoronoiSite
 
 
     private bool _tessellated;
+    private bool _skippedAsDuplicate;
 
     private List<VoronoiPoint>? _points;
     private List<VoronoiPoint>? _clockwisePoints;
@@ -231,8 +231,7 @@ public class VoronoiSite
     [PublicAPI]
     public bool Contains(double x, double y)
     {
-        if (!_tessellated)
-            throw new VoronoiNotTessellatedException();
+        ThrowIfUnavailable();
             
         // If we don't have points generated yet, do so now (by calling the property that does so when read)
         if (_clockwisePoints == null)
@@ -313,6 +312,9 @@ public class VoronoiSite
             
         // We are no longer part of voronoi
         _tessellated = false;
+        
+        // We are not skipped as duplicate anymore as we have not been tessellated yet
+        _skippedAsDuplicate = false;
             
         // Clear all the values we used before
             
@@ -326,6 +328,10 @@ public class VoronoiSite
         _centroid = null;
     }
 
+    internal void MarkSkippedAsDuplicate()
+    {
+        _skippedAsDuplicate = true;
+    }
 
     [Pure]
     private static int SortPointsClockwise(VoronoiPoint point1, VoronoiPoint point2, double x, double y)
@@ -557,6 +563,18 @@ public class VoronoiSite
         InvalidateComputedValues();
     }
 
+    
+    private void ThrowIfUnavailable()
+    {
+        if (!_tessellated)
+        {
+            if (_skippedAsDuplicate)
+                throw new VoronoiSiteSkippedAsDuplicateException();
+            
+            throw new VoronoiNotTessellatedException();
+        }
+    }
+
 
 #if DEBUG
     public override string ToString()
@@ -565,3 +583,4 @@ public class VoronoiSite
     }
 #endif
 }
+
