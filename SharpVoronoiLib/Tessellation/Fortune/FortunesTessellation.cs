@@ -15,7 +15,10 @@ internal class FortunesTessellation : ITessellationAlgorithm
         foreach (VoronoiSite site in sites)
         {
             if (!siteCache.Add(site))
+            {
+                site.MarkSkippedAsDuplicate();
                 continue;
+            }
 
             if (site == null) throw new ArgumentNullException(nameof(sites));
 
