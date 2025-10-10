@@ -14,6 +14,10 @@ internal class FortunesTessellation : ITessellationAlgorithm
             
         foreach (VoronoiSite site in sites)
         {
+            // If the site has already been marked as a duplicate before (such as prior to relaxing), skip it
+            if (site.SkippedAsDuplicate)
+                continue;
+            
             if (!siteCache.Add(site))
             {
                 site.MarkSkippedAsDuplicate();
