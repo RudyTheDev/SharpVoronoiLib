@@ -18,6 +18,7 @@ public class VoronoiGame : Game
     private readonly Color _lineColor = new Color(47, 54, 69);
     private readonly Color _hoveredLineColor = new Color(240, 24, 222);
     private readonly Color _selectedLineColor = new Color(255, 196, 0);
+    private readonly Color _selectedNeighbouringLineColor = new Color(255, 140, 0);
 
     /// <summary> Small margin from viewport edge to not have the map right at the edge </summary>
     private const int viewportMargin = 15;
@@ -245,25 +246,22 @@ public class VoronoiGame : Game
 
             bool isHoveredEdge = _hoveredSite != null && (edge.Left == _hoveredSite || edge.Right == _hoveredSite);
             bool isSelectedEdge = _selectedSite != null && (edge.Left == _selectedSite || edge.Right == _selectedSite);
+            bool isSelectionNeighbouringEdge = _selectedSite != null && (_selectedSite.Neighbours.Contains(edge.Left) || _selectedSite.Neighbours.Contains(edge.Right));
 
             Color lineColor = _lineColor;
             float lineThickness = 1f; // without anti-aliasing this won't look good no matter what, so stick to 1 pixel
 
-            if (isHoveredEdge && isSelectedEdge)
-            {
-                lineColor = _hoveredLineColor;
+            if (isSelectedEdge)
                 lineThickness = 3.0f;
-            }
             else if (isHoveredEdge)
-            {
-                lineColor = _hoveredLineColor;
                 lineThickness = 1.5f;
-            } 
+
+            if (isHoveredEdge)
+                lineColor = _hoveredLineColor;
             else if (isSelectedEdge)
-            {
                 lineColor = _selectedLineColor;
-                lineThickness = 3.0f;
-            }
+            else if (isSelectionNeighbouringEdge)
+                lineColor = _selectedNeighbouringLineColor;
             
             _spriteBatch.Draw(
                 _pixelTexture,
