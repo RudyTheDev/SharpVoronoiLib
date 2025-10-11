@@ -27,6 +27,9 @@ public class VoronoiGame : Game
     private const float maxZoom = 10.0f;
     private const float zoomStep = 1.3f; // per wheel notch
 
+    // Click vs drag threshold
+    private const int dragThreshold = 5; // px
+
     // Tooltip styling
     private readonly Color _tooltipBackgroundColor = new Color(20, 20, 20, 200);
     private readonly Color _tooltipTextColor = new Color(230, 230, 230, 255);
@@ -61,6 +64,12 @@ public class VoronoiGame : Game
     private float _scale;
     private float _screenCenterX;
     private float _screenCenterY;
+
+    // Mouse interaction state
+    private bool _isLeftMouseDown;
+    private int _leftMouseDownX;
+    private int _leftMouseDownY;
+    private bool _didDragSinceMouseDown;
 
 
     public VoronoiGame()
@@ -153,18 +162,40 @@ public class VoronoiGame : Game
             RecalculateTransform();
         }
 
+        // Track press start to differentiate click vs drag
+        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released)
+        {
+            _isLeftMouseDown = true;
+            _leftMouseDownX = mouseState.X;
+            _leftMouseDownY = mouseState.Y;
+            _didDragSinceMouseDown = false;
+        }
+
         // Handle panning with left mouse button drag
         if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Pressed)
         {
-            int dx = mouseState.X - _lastMouseState.X;
-            int dy = mouseState.Y - _lastMouseState.Y;
-            if (dx != 0 || dy != 0)
+            // Detect if we've exceeded drag threshold since initial press
+            if (_isLeftMouseDown && !_didDragSinceMouseDown)
             {
-                // Move camera center opposite to mouse movement
-                if (_scale <= 0.0001f) _scale = 0.0001f;
-                _cameraCenterX -= dx / _scale;
-                _cameraCenterY -= dy / _scale;
-                RecalculateTransform();
+                int totalDx = mouseState.X - _leftMouseDownX;
+                int totalDy = mouseState.Y - _leftMouseDownY;
+                int sqDist = totalDx * totalDx + totalDy * totalDy;
+                if (sqDist >= dragThreshold * dragThreshold) _didDragSinceMouseDown = true;
+            }
+
+            // Only pan once we've confirmed a drag (beyond threshold)
+            if (_didDragSinceMouseDown)
+            {
+                int dx = mouseState.X - _lastMouseState.X;
+                int dy = mouseState.Y - _lastMouseState.Y;
+                if (dx != 0 || dy != 0)
+                {
+                    // Move camera center opposite to mouse movement
+                    if (_scale <= 0.0001f) _scale = 0.0001f;
+                    _cameraCenterX -= dx / _scale;
+                    _cameraCenterY -= dy / _scale;
+                    RecalculateTransform();
+                }
             }
         }
         
@@ -176,9 +207,15 @@ public class VoronoiGame : Game
         
         _hoveredSite = _plane.GetNearestSiteTo(world.X, world.Y);
 
-        // Selection on left click (press transition)
-        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released)
-            _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
+        // Selection on left click release (no drag)
+        if (mouseState.LeftButton == ButtonState.Released && _lastMouseState.LeftButton == ButtonState.Pressed)
+        {
+            if (_isLeftMouseDown && !_didDragSinceMouseDown)
+                _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
+
+            _isLeftMouseDown = false;
+            _didDragSinceMouseDown = false;
+        }
 
         _lastKeyboardState = keyboardState;
         _lastMouseState = mouseState;
