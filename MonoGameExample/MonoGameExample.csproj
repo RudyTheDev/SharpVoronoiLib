@@ -16,6 +16,9 @@
     <ItemGroup>
         <None Remove="Icon.ico"/>
         <None Remove="Icon.bmp"/>
+        <None Update="Content\LiberationSans-Regular.ttf">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="Icon.ico"/>
@@ -24,6 +27,7 @@
     <ItemGroup>
         <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.3" />
         <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.3" />
+        <PackageReference Include="FontStashSharp.MonoGame" Version="1.4.1" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\SharpVoronoiLib\SharpVoronoiLib.csproj" />
