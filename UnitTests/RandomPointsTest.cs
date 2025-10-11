@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using NUnit.Framework;
-
-namespace SharpVoronoiLib.UnitTests;
+﻿namespace SharpVoronoiLib.UnitTests;
 
 [TestFixture]
 [Parallelizable(ParallelScope.All)]

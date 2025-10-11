@@ -11,27 +11,32 @@ public class KDTreeNearestSiteLookup : INearestSiteLookup
     private KDTree<VoronoiSite> _kdTree = null!;
     
     
-    public VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y, int version)
+    public VoronoiSite GetNearestSiteTo(List<VoronoiSite> sites, double x, double y, int version, int duplicateCount)
     {
         if (_lastVersion != version)
         {
-            _kdTree = new KDTree<VoronoiSite>(PointsFromSites(sites), sites.ToArray());
+            int capacity = sites.Count - duplicateCount;
+
+            double[][] points = new double[capacity][];
+            VoronoiSite[] nodes = new VoronoiSite[capacity];
+
+            int index = 0;
+            foreach (VoronoiSite site in sites)
+            {
+                if (site.SkippedAsDuplicate)
+                    continue;
+
+                points[index] = [ site.X, site.Y ];
+                nodes[index] = site;
+                index++;
+            }
+
+            _kdTree = new KDTree<VoronoiSite>(points, nodes);
             _lastVersion = version;
         }
 
         Tuple<double[], VoronoiSite>[] nearest = _kdTree.NearestNeighbors([ x, y ], 1);
 
         return nearest[0].Item2;
-    }
-
-    
-    private static double[][] PointsFromSites(List<VoronoiSite> sites)
-    {
-        double[][] points = new double[sites.Count][];
-
-        for (int i = 0; i < sites.Count; i++)
-            points[i] = [ sites[i].X, sites[i].Y ];
-
-        return points;
     }
 }

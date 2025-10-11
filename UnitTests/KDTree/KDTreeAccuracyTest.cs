@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Supercluster.KDTree.Utilities;
+﻿using Supercluster.KDTree.Utilities;
 
 namespace KDTreeTests;
-
-using System.Linq;
-
-using NUnit.Framework;
 
 using Supercluster.KDTree;
 

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
-using SharpVoronoiLib.Exceptions;
+﻿using SharpVoronoiLib.Exceptions;
 
 namespace SharpVoronoiLib.UnitTests;
 

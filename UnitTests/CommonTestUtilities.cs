@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace SharpVoronoiLib.UnitTests;
+﻿namespace SharpVoronoiLib.UnitTests;
 
 internal static class CommonTestUtilities
 {
