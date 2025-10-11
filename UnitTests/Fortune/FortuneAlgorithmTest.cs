@@ -9,7 +9,7 @@ public class FortuneAlgorithmTest
     [Test]
     public void NoPoints()
     {
-        List<VoronoiSite> points = new List<VoronoiSite>();
+        List<VoronoiSite> points = [ ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -19,10 +19,7 @@ public class FortuneAlgorithmTest
     [Test]
     public void OnePoint()
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
-            new VoronoiSite(300, 300)
-        };
+        List<VoronoiSite> points = [ new VoronoiSite(300, 300) ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -39,10 +36,7 @@ public class FortuneAlgorithmTest
     [TestCase(-100, 700)]
     public void PointOutsideBoundsAlone(double x, double y)
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
-            new VoronoiSite(x, y)
-        };
+        List<VoronoiSite> points = [ new VoronoiSite(x, y) ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -60,11 +54,11 @@ public class FortuneAlgorithmTest
     [TestCase(-100, 700)]
     public void PointOutsideBoundsAgainstInBoundsPoint(double x, double y)
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
+        List<VoronoiSite> points =
+        [
             new VoronoiSite(x, y),
             new VoronoiSite(300, 300)
-        };
+        ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -83,11 +77,11 @@ public class FortuneAlgorithmTest
     [TestCase(-1000, 7000)]
     public void PointFarOutsideBoundsAgainstInBoundsPoint(double x, double y)
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
+        List<VoronoiSite> points =
+        [
             new VoronoiSite(x, y),
             new VoronoiSite(300, 300)
-        };
+        ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -106,10 +100,7 @@ public class FortuneAlgorithmTest
     [TestCase(0, 600)]
     public void PointOnBoundsAlone(double x, double y)
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
-            new VoronoiSite(x, y)
-        };
+        List<VoronoiSite> points = [ new VoronoiSite(x, y) ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -127,11 +118,11 @@ public class FortuneAlgorithmTest
     [TestCase(0, 600)]
     public void PointOnBoundsAgainstInBoundsPoint(double x, double y)
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
+        List<VoronoiSite> points =
+        [
             new VoronoiSite(x, y),
             new VoronoiSite(300, 300)
-        };
+        ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -143,13 +134,13 @@ public class FortuneAlgorithmTest
     [Test]
     public void FourPointsOutsideBounds()
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
+        List<VoronoiSite> points =
+        [
             new VoronoiSite(-100, 300),
             new VoronoiSite(300, -100),
             new VoronoiSite(800, 300),
             new VoronoiSite(300, 800)
-        };
+        ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
@@ -166,11 +157,11 @@ public class FortuneAlgorithmTest
     [TestCase(300, -100, 300, -200)]
     public void TwoPointsOutsideBoundsTogether(double x1, double y1, double x2, double y2)
     {
-        List<VoronoiSite> points = new List<VoronoiSite>
-        {
+        List<VoronoiSite> points =
+        [
             new VoronoiSite(x1, y1),
             new VoronoiSite(x2, y2)
-        };
+        ];
 
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 

@@ -27,11 +27,11 @@ public class KDTreeAccuracyTest
 
         double[][] points = new double[][]
         {
-            new double[] { 7, 2 }, new double[] { 5, 4 }, new double[] { 2, 3 },
-            new double[] { 4, 7 }, new double[] { 9, 6 }, new double[] { 8, 1 }
+            [ 7, 2 ], [ 5, 4 ], [ 2, 3 ],
+            [ 4, 7 ], [ 9, 6 ], [ 8, 1 ]
         };
 
-        string[] nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
+        string[] nodes = [ "Eric", "Is", "A", "Really", "Stubborn", "Ferret" ];
         KDTree<string> tree = new KDTree<string>(
             points,
             nodes,
@@ -67,11 +67,11 @@ public class KDTreeAccuracyTest
 
         double[][] points = new double[][]
         {
-            new double[] { 7, 2 }, new double[] { 5, 4 }, new double[] { 2, 3 },
-            new double[] { 4, 7 }, new double[] { 9, 6 }, new double[] { 8, 1 }
+            [ 7, 2 ], [ 5, 4 ], [ 2, 3 ],
+            [ 4, 7 ], [ 9, 6 ], [ 8, 1 ]
         };
 
-        string[] nodes = new string[] { "Eric", "Is", "A", "Really", "Stubborn", "Ferret" };
+        string[] nodes = [ "Eric", "Is", "A", "Really", "Stubborn", "Ferret" ];
 
         KDTree<string> tree = new KDTree<string>(points, nodes);
 
@@ -126,12 +126,12 @@ public class KDTreeAccuracyTest
 
     private static double[][] GenerateDoubles(int points, double range)
     {
-        List<double[]> data = new List<double[]>();
+        List<double[]> data = [ ];
         Random random = new Random();
 
         for (int i = 0; i < points; i++)
         {
-            data.Add(new double[] { (random.NextDouble() * range), (random.NextDouble() * range) });
+            data.Add([ (random.NextDouble() * range), (random.NextDouble() * range) ]);
         }
 
         return data.ToArray();

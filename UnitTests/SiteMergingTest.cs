@@ -16,11 +16,11 @@ public class SiteMergingTest
     {
         // Arrange
             
-        List<VoronoiSite> originalSites = new List<VoronoiSite>
-        {
+        List<VoronoiSite> originalSites =
+        [
             new VoronoiSite(100, 300),
             new VoronoiSite(500, 300)
-        };
+        ];
 
         List<VoronoiSite> sites = new List<VoronoiSite>(originalSites); // copy so any changes to list don't affect the source list 
 
@@ -60,12 +60,12 @@ public class SiteMergingTest
     {
         // Arrange
             
-        List<VoronoiSite> originalSites = new List<VoronoiSite>
-        {
+        List<VoronoiSite> originalSites =
+        [
             new VoronoiSite(100, 300),
             new VoronoiSite(300, 300),
             new VoronoiSite(500, 300)
-        };
+        ];
 
         List<VoronoiSite> sites = new List<VoronoiSite>(originalSites); // copy so any changes to list don't affect the source list 
 
@@ -130,12 +130,12 @@ public class SiteMergingTest
         //    0 W------------------------------------------------#D
         //       0  100  200  300  400  500  600  700  800  900 1000 
             
-        List<VoronoiSite> originalSites = new List<VoronoiSite>
-        {
+        List<VoronoiSite> originalSites =
+        [
             new VoronoiSite(500, 700), // #0
             new VoronoiSite(300, 700), // #1
-            new VoronoiSite(300, 500), // #2
-        };
+            new VoronoiSite(300, 500) // #2
+        ];
 
         List<VoronoiSite> sites = new List<VoronoiSite>(originalSites); // copy so any changes to list don't affect the source list 
 

@@ -9,13 +9,13 @@ public class LloydsAlgorithmTest
     {
         // Arrange
             
-        List<VoronoiSite> originalSites = new List<VoronoiSite>
-        {
+        List<VoronoiSite> originalSites =
+        [
             new VoronoiSite(-100, 300),
             new VoronoiSite(300, -100),
             new VoronoiSite(800, 300),
             new VoronoiSite(300, 800)
-        };
+        ];
 
         List<VoronoiSite> sites = new List<VoronoiSite>(originalSites); // copy so any changes to list don't affect the source list 
 
