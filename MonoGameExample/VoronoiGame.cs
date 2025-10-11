@@ -18,8 +18,8 @@ public class VoronoiGame : Game
     private readonly Color _lineColor = new Color(47, 54, 69);
     private readonly Color _hoveredLineColor = new Color(240, 24, 222);
 
-    /// <summary> Margin from viewport edge so we can preview the voronoi edges </summary>
-    private const int edgeDistance = 15;
+    /// <summary> Small margin from viewport edge to not have the map right at the edge </summary>
+    private const int viewportMargin = 15;
 
     // Tooltip styling
     private readonly Color _tooltipBackgroundColor = new Color(20, 20, 20, 200);
@@ -28,18 +28,20 @@ public class VoronoiGame : Game
     
     private readonly GraphicsDeviceManager _graphics;
 
-    private SpriteBatch _spriteBatch;
+    private SpriteBatch _spriteBatch = null!;
     
-    private FontSystem _fontSystem;
-    private SpriteFontBase _font;
+    private SpriteFontBase _font = null!;
     
-    private Texture2D _pixelTexture;
+    private Texture2D _pixelTexture = null!;
 
     private KeyboardState _lastKeyboardState;
 
-    private VoronoiPlane _plane;
+    private VoronoiPlane _plane = null!;
 
-    private VoronoiSite _hoveredSite;
+    private VoronoiSite _hoveredSite = null!;
+
+    // Track whether mouse is inside the world bounds for tooltip display
+    private bool _isMouseInsideWorld;
 
 
     public VoronoiGame()
@@ -99,8 +101,8 @@ public class VoronoiGame : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
             Exit();
 
-        if (GraphicsDevice.Viewport.Width != ((int)(_plane.MaxX - _plane.MinX) + edgeDistance * 2) ||
-            GraphicsDevice.Viewport.Height != ((int)(_plane.MaxY - _plane.MinY) + edgeDistance * 2))
+        if (GraphicsDevice.Viewport.Width != ((int)(_plane.MaxX - _plane.MinX) + viewportMargin * 2) ||
+            GraphicsDevice.Viewport.Height != ((int)(_plane.MaxY - _plane.MinY) + viewportMargin * 2))
             Generate();
         
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
@@ -110,7 +112,16 @@ public class VoronoiGame : Game
         
         MouseState mouseState = Mouse.GetState();
         
-        _hoveredSite = _plane.GetNearestSiteTo(mouseState.X - edgeDistance, mouseState.Y - edgeDistance);
+        // Convert mouse screen position to world coordinates (inverse of Draw transform)
+        float scale = ComputeScale();
+        ComputeOffsets(scale, out float offsetX, out float offsetY);
+        float worldX = (float)(_plane.MinX + (mouseState.X - offsetX) / Math.Max(0.0001f, scale));
+        float worldY = (float)(_plane.MinY + (mouseState.Y - offsetY) / Math.Max(0.0001f, scale));
+        
+        // Track if mouse is inside world bounds for tooltip control
+        _isMouseInsideWorld = worldX >= _plane.MinX && worldX <= _plane.MaxX && worldY >= _plane.MinY && worldY <= _plane.MaxY;
+        
+        _hoveredSite = _plane.GetNearestSiteTo(worldX, worldY);
 
         base.Update(gameTime);
     }
@@ -121,10 +132,19 @@ public class VoronoiGame : Game
 
         _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap);
 
+        float scale = ComputeScale();
+        ComputeOffsets(scale, out float offsetX, out float offsetY);
+        
         foreach (VoronoiEdge edge in _plane.Edges!)
         {
-            Vector2 start = new Vector2((float)edge.Start.X + edgeDistance, (float)edge.Start.Y + edgeDistance);
-            Vector2 end = new Vector2((float)edge.End.X + edgeDistance, (float)edge.End.Y + edgeDistance);
+            // World -> Screen transform preserving aspect ratio with fixed border and centering
+            float sx1 = offsetX + (float)((edge.Start.X - _plane.MinX) * scale);
+            float sy1 = offsetY + (float)((edge.Start.Y - _plane.MinY) * scale);
+            float sx2 = offsetX + (float)((edge.End.X   - _plane.MinX) * scale);
+            float sy2 = offsetY + (float)((edge.End.Y   - _plane.MinY) * scale);
+
+            Vector2 start = new Vector2(sx1, sy1);
+            Vector2 end = new Vector2(sx2, sy2);
             
             float dist = Vector2.Distance(start, end);
             float rotation = (float)Math.Atan2(end.Y - start.Y, end.X - start.X);
@@ -147,7 +167,8 @@ public class VoronoiGame : Game
             );
         }
 
-        DrawTooltip(GetHoveredSiteTooltipLines());
+        if (_isMouseInsideWorld)
+            DrawTooltip(GetHoveredSiteTooltipLines());
         
         
         _spriteBatch.End();
@@ -179,44 +200,44 @@ public class VoronoiGame : Game
     {
         // Text measurement
         
-        float width = 0f;
-        float height = 0f;
+        float tooltipWidth = 0f;
+        float tooltipHeight = 0f;
 
         for (int i = 0; i < lines.Count; i++)
         {
             Vector2 size = _font.MeasureString(lines[i]);
-            if (size.X > width) width = size.X;
-            height += i == lines.Count - 1 ? size.Y : _font.LineHeight;
+            if (size.X > tooltipWidth) tooltipWidth = size.X;
+            tooltipHeight += i == lines.Count - 1 ? size.Y : _font.LineHeight;
         }
         
-        // Get position
+        // Get position (near mouse)
 
         MouseState mouse = Mouse.GetState();
         Vector2 pos = new Vector2(mouse.X + 14, mouse.Y + 16);
 
         // Clamp within viewport
 
-        const int paddingHor = 4;
-        const int paddingVer = 1; // < hor because font already "pad" as vertical spacing basically
+        const int paddingHorizontal = 4;
+        const int paddingVertical = 1; // < horizontal because font already "pads" vertical spacing basically
 
-        int vpW = GraphicsDevice.Viewport.Width;
-        int vpH = GraphicsDevice.Viewport.Height;
-        float boxW = width + paddingHor * 2;
-        float boxH = height + paddingVer * 2;
+        int viewportWidth = GraphicsDevice.Viewport.Width;
+        int viewportHeight = GraphicsDevice.Viewport.Height;
+        float boxWidth = tooltipWidth + paddingHorizontal * 2;
+        float boxHeight = tooltipHeight + paddingVertical * 2;
 
-        if (pos.X + boxW > vpW - 2) pos.X = vpW - 2 - boxW;
-        if (pos.Y + boxH > vpH - 2) pos.Y = vpH - 2 - boxH;
+        if (pos.X + boxWidth > viewportWidth - 2) pos.X = viewportWidth - 2 - boxWidth;
+        if (pos.Y + boxHeight > viewportHeight - 2) pos.Y = viewportHeight - 2 - boxHeight;
         if (pos.X < 2) pos.X = 2;
         if (pos.Y < 2) pos.Y = 2;
 
         // Background
         
-        Rectangle rectangle = new Rectangle((int)pos.X, (int)pos.Y, (int)boxW, (int)boxH);
+        Rectangle rectangle = new Rectangle((int)pos.X, (int)pos.Y, (int)boxWidth, (int)boxHeight);
         _spriteBatch.Draw(_pixelTexture, rectangle, _tooltipBackgroundColor);
 
         // Text
         
-        Vector2 textPos = new Vector2(pos.X + paddingHor, pos.Y + paddingVer);
+        Vector2 textPos = new Vector2(pos.X + paddingHorizontal, pos.Y + paddingVertical);
         for (int i = 0; i < lines.Count; i++)
         {
             _spriteBatch.DrawString(_font, lines[i], textPos, _tooltipTextColor);
@@ -226,10 +247,8 @@ public class VoronoiGame : Game
     
     private void Generate()
     {
-        //List<VoronoiSite>? sites = MakeRandomSites()
-        List<VoronoiSite>? sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
-
-        if (sites == null) return; // prevent exception
+        List<VoronoiSite> sites = MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY);
+        //List<VoronoiSite> sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
         
         _plane = new VoronoiPlane(minX, minY, maxX, maxY);
         
@@ -241,7 +260,7 @@ public class VoronoiGame : Game
     }
 
 
-    private List<VoronoiSite>? LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY)
+    private List<VoronoiSite> LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY)
     {
         string meta = File.ReadAllText("meta.txt");
         string[] metaParts = meta.Split(',');
@@ -260,11 +279,11 @@ public class VoronoiGame : Game
         return sites;
     }
     
-    private List<VoronoiSite>? MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY)
+    private List<VoronoiSite> MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY)
     {
         // Set to current screen
-        int width = GraphicsDevice.Viewport.Width - (edgeDistance * 2);
-        int height = GraphicsDevice.Viewport.Height - (edgeDistance * 2);
+        int width = GraphicsDevice.Viewport.Width - (viewportMargin * 2);
+        int height = GraphicsDevice.Viewport.Height - (viewportMargin * 2);
         
         if (width <= 0 || height <= 0) // prevent exception
         {
@@ -272,7 +291,7 @@ public class VoronoiGame : Game
             minY = 0;
             maxX = 0;
             maxY = 0;
-            return null!;
+            return [];
         }
 
         int numPoints = width * height / 400; // about 2000 points at 1280 x 720
@@ -310,5 +329,66 @@ public class VoronoiGame : Game
         maxY = height;
         
         return sites;
+    }
+
+
+    /// <summary>
+    /// Computes a uniform scale factor to fit the world rectangle (plane bounds) inside the
+    /// viewport rectangle minus a fixed margin, preserving aspect ratio.
+    /// </summary>
+    private float ComputeScale()
+    {
+        // Size of the world (Voronoi plane) in world units
+        double worldWidth = _plane.MaxX - _plane.MinX;
+        double worldHeight = _plane.MaxY - _plane.MinY;
+        if (worldWidth <= 0 || worldHeight <= 0)
+            return 1f; // fallback safe value
+
+        // Space available on screen after subtracting margins on all sides
+        int viewportWidth = GraphicsDevice.Viewport.Width;
+        int viewportHeight = GraphicsDevice.Viewport.Height;
+        double availableWidth = Math.Max(1, viewportWidth - viewportMargin * 2);
+        double availableHeight = Math.Max(1, viewportHeight - viewportMargin * 2);
+
+        // Ratios that would map world to available area along each axis
+        double scaleX = availableWidth / worldWidth;
+        double scaleY = availableHeight / worldHeight;
+
+        // We must preserve aspect ratio, so take the limiting axis
+        double scale = Math.Min(scaleX, scaleY);
+        
+        // Clamp to a tiny positive value to avoid zero/negative or denormals
+        if (scale <= 0.0) scale = 0.01;
+        
+        return (float)scale;
+    }
+
+    /// <summary>
+    /// Computes the offset (top-left) in screen space so the world content is centered inside the
+    /// available viewport area (viewport minus margins) at a given <paramref name="scale"/>.
+    /// </summary>
+    private void ComputeOffsets(float scale, out float offsetX, out float offsetY)
+    {
+        // World size in world units
+        double worldWidth = _plane.MaxX - _plane.MinX;
+        double worldHeight = _plane.MaxY - _plane.MinY;
+
+        // Space available on screen after subtracting margins on all sides
+        int viewportWidth = GraphicsDevice.Viewport.Width;
+        int viewportHeight = GraphicsDevice.Viewport.Height;
+        double availableWidth = Math.Max(1, viewportWidth - viewportMargin * 2);
+        double availableHeight = Math.Max(1, viewportHeight - viewportMargin * 2);
+
+        // How much screen space the world will occupy at the chosen scale
+        double usedWidth = worldWidth * scale;
+        double usedHeight = worldHeight * scale;
+
+        // Leftover space used to center the content inside the available area
+        double extraWidth = Math.Max(0.0, availableWidth - usedWidth);
+        double extraHeight = Math.Max(0.0, availableHeight - usedHeight);
+
+        // Offset includes the fixed margin plus half of the leftover area for centering
+        offsetX = viewportMargin + (float)(extraWidth * 0.5);
+        offsetY = viewportMargin + (float)(extraHeight * 0.5);
     }
 }
