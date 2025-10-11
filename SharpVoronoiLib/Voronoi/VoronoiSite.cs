@@ -98,7 +98,7 @@ public class VoronoiSite
                 
             if (_points == null)
             {
-                _points = new List<VoronoiPoint>();
+                _points = [ ];
 
                 foreach (VoronoiEdge edge in cell)
                 {
@@ -223,8 +223,8 @@ public class VoronoiSite
         X = x;
         Y = y;
             
-        cell = new List<VoronoiEdge>();
-        neighbours = new List<VoronoiSite>();
+        cell = [ ];
+        neighbours = [ ];
     }
 
         

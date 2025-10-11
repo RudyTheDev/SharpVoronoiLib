@@ -1193,8 +1193,8 @@ public static class UnitTestGenerator
                 4: DAW
             ", Repeat.RotateAll);
 
-        List<(string, TestPurpose)> variants = new List<(string, TestPurpose)>()
-        {
+        List<(string, TestPurpose)> variants =
+        [
             ("GeneratedTest_Edges", TestPurpose.AssertEdges),
             ("GeneratedTest_SiteEdges", TestPurpose.AssertSiteEdges),
             ("GeneratedTest_SiteEdgesClockwise", TestPurpose.AssertSiteEdgesClockwise),
@@ -1206,7 +1206,7 @@ public static class UnitTestGenerator
             ("GeneratedTest_PointBorderLocation", TestPurpose.AssertPointBorderLocation),
             ("GeneratedTest_LiesOnEdgeOrCorner", TestPurpose.AssertLiesOnEdgeOrCorner),
             ("GeneratedTest_SiteCentroids", TestPurpose.AssertSiteCentroids)
-        };
+        ];
 
         // todo: edge length
 
@@ -1241,7 +1241,7 @@ public static class UnitTestGenerator
         private readonly int _verPreviewStepSize;
 
 
-        private readonly List<Test> _tests = new List<Test>();
+        private readonly List<Test> _tests = [ ];
 
 
         public TestGenerator(int horStepSize, int verStepSize, int horPreviewStepSize, int verPreviewStepSize)
@@ -1281,8 +1281,8 @@ public static class UnitTestGenerator
 
             if (lines.Length < verSteps + 1) throw new ArgumentException();
 
-            List<Site> sites = new List<Site>();
-            List<Point> points = new List<Point>();
+            List<Site> sites = [ ];
+            List<Point> points = [ ];
 
             for (int y = 0; y < verSteps; y++)
             {
@@ -1333,7 +1333,7 @@ public static class UnitTestGenerator
 
             sites.Sort((s1, s2) => s1.Id.CompareTo(s2.Id));
 
-            List<Edge> edges = new List<Edge>();
+            List<Edge> edges = [ ];
 
             bool seenSite = false;
 
@@ -1374,7 +1374,7 @@ public static class UnitTestGenerator
 
                     if (fromPoint == toPoint) throw new ArgumentException();
 
-                    List<Site> edgeSites = new List<Site>();
+                    List<Site> edgeSites = [ ];
 
                     if (line.Length != 3)
                     {
@@ -1443,9 +1443,9 @@ public static class UnitTestGenerator
                     }
 
                     if (site.UndefinedPointOrder)
-                        site.Points = new[] { new List<Point>() };
+                        site.Points = [ [ ] ];
                     else
-                        site.Points = new[] { new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>() };
+                        site.Points = [ [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ] ];
 
                     for (int c = 0; c < pointSection.Length; c++)
                     {
@@ -1814,9 +1814,10 @@ public static class UnitTestGenerator
 
         private List<string> BuildClassSummary(TestPurpose purpose, TestBorderLogic borderLogic)
         {
-            List<string> strings = new List<string>();
-
-            strings.Add(@"/// <summary>");
+            List<string> strings =
+            [
+                @"/// <summary>"
+            ];
 
             switch (purpose)
             {
@@ -1907,12 +1908,13 @@ public static class UnitTestGenerator
 
         private List<string> BuildSummary(Repeat repeated, string originalName)
         {
-            List<string> strings = new List<string>();
-
-            strings.Add(@"/// <summary>");
-            strings.Add(@"/// This test basically repeats <see cref=""" + originalName + @"""/> above,");
-            strings.Add(@"/// but all coordinates are " + RepeatToExplanation(repeated) + ".");
-            strings.Add(@"/// </summary>");
+            List<string> strings =
+            [
+                @"/// <summary>",
+                @"/// This test basically repeats <see cref=""" + originalName + @"""/> above,",
+                @"/// but all coordinates are " + RepeatToExplanation(repeated) + ".",
+                @"/// </summary>"
+            ];
 
             return strings;
         }
@@ -1939,7 +1941,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildSiteDefinitions(List<Site> sites)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             foreach (Site site in sites)
             {
@@ -1951,7 +1953,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildEdgeAssertions(List<Edge> edges, TestBorderLogic borderLogic, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             int expectedCount = CountExpectedRelevantEdges(edges, borderLogic);
                 
@@ -2030,7 +2032,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildEdgeSiteAssertions(List<Edge> edges, TestBorderLogic borderLogic, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             List<Edge> matchingEdges = edges.Where(e => EdgeMatchesBorderLogic(e, borderLogic)).ToList();
 
@@ -2064,7 +2066,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildEdgeNeighboursAssertions(List<Edge> edges, TestBorderLogic borderLogic, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             bool first = true;
 
@@ -2132,7 +2134,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildSiteNeighboursAssertions(List<Site> sites, List<Edge> edges, TestBorderLogic borderLogic, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             if (sites.Count > 0)
             {
@@ -2197,7 +2199,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildSitePointsAssertions(List<Edge> edges, List<Site> sites, TestBorderLogic borderLogic, bool clockwise, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             if (sites.Count > 0)
             {
@@ -2307,7 +2309,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildSiteCentroidsAssertions(List<Site> sites, TestBorderLogic borderLogic, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             if (sites.Count > 0)
             {
@@ -2558,7 +2560,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildLiesOnEdgeOrCornerAssertions(List<Edge> edges, List<Site> sites, TestBorderLogic borderLogic, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             if (sites.Count > 0)
             {
@@ -2681,7 +2683,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildPointBorderLocationAssertions(Test test, List<Edge> edges, TestBorderLogic borderLogic, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             List<Point> points = edges
                                  .Where(e => EdgeMatchesBorderLogic(e, borderLogic))
@@ -2750,7 +2752,7 @@ public static class UnitTestGenerator
 
         private List<string> BuildSiteEdgeAssertions(List<Edge> edges, List<Site> allSites, TestBorderLogic borderLogic, bool clockwise, bool assert)
         {
-            List<string> strings = new List<string>();
+            List<string> strings = [ ];
 
             List<Site> sites = edges.SelectMany(e => e.EdgeSites).Distinct().OrderBy(s => s.Id).ToList();
 
@@ -2878,7 +2880,7 @@ public static class UnitTestGenerator
             foreach (Edge edge in test.Edges.Where(e => EdgeMatchesBorderLogic(e, borderLogic)))
                 PlaceEdgeOnGrid(ref edgeLines, edge);
 
-            List<string> lines = new List<string>();
+            List<string> lines = [ ];
 
             for (int y = verPreviewSteps - 1; y >= 0; y--)
             {
@@ -3062,7 +3064,7 @@ public static class UnitTestGenerator
             {
                 // Our code
                 if (edgeLines[x, y] == null)
-                    edgeLines[x, y] = new List<Edge>();
+                    edgeLines[x, y] = [ ];
                 edgeLines[x, y]!.Add(edge);
                 // End of our code
                 numerator += shortest;
@@ -3133,9 +3135,9 @@ public static class UnitTestGenerator
                 Width = givenTest.Width;
                 Height = givenTest.Height;
 
-                Sites = new List<Site>();
-                Points = new List<Point>();
-                Edges = new List<Edge>();
+                Sites = [ ];
+                Points = [ ];
+                Edges = [ ];
 
                 foreach (Site site in givenTest.Sites)
                 {
@@ -3154,7 +3156,7 @@ public static class UnitTestGenerator
                 {
                     Point fromPoint = Points[givenTest.Points.IndexOf(edge.FromPoint)];
                     Point toPoint = Points[givenTest.Points.IndexOf(edge.ToPoint)];
-                    List<Site> sites = new List<Site>();
+                    List<Site> sites = [ ];
                     foreach (Site site in edge.EdgeSites)
                         sites.Add(Sites[givenTest.Sites.IndexOf(site)]);
                     Edges.Add(new Edge(fromPoint, toPoint, sites, edge.Border));
@@ -3167,9 +3169,9 @@ public static class UnitTestGenerator
 
                     ourSite.UndefinedPointOrder = givenSite.UndefinedPointOrder;
                     if (ourSite.UndefinedPointOrder)
-                        ourSite.Points = new[] { new List<Point>() };
+                        ourSite.Points = [ [ ] ];
                     else
-                        ourSite.Points = new[] { new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>(), new List<Point>() };
+                        ourSite.Points = [ [ ], [ ], [ ], [ ], [ ], [ ], [ ], [ ] ];
 
                     for (int sourceQuadrant = 0; sourceQuadrant < givenSite.Points.Length; sourceQuadrant++)
                     {
