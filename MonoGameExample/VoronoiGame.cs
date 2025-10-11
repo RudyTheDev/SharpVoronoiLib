@@ -49,8 +49,8 @@ public class VoronoiGame : Game
 
     private VoronoiPlane _plane = null!;
 
-    private VoronoiSite _hoveredSite = null!;
-    private VoronoiSite _selectedSite = null!;
+    private VoronoiSite? _hoveredSite;
+    private VoronoiSite? _selectedSite;
 
     // Track whether mouse is inside the world bounds for tooltip display
     private bool _isMouseInsideWorld;
@@ -105,6 +105,8 @@ public class VoronoiGame : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        // Font
+        
         FontSystemSettings debugFontSettings = new FontSystemSettings
         {
             PremultiplyAlpha = true,
@@ -127,6 +129,21 @@ public class VoronoiGame : Game
     protected override void Update(GameTime gameTime)
     {
         KeyboardState keyboardState = Keyboard.GetState();
+        MouseState mouseState = Mouse.GetState();
+
+        // Ignore all input if the window is not active/focused (anymore)
+        if (!IsActive)
+        {
+            // Clear any ongoing interaction state
+            _isMouseInsideWorld = false;
+            _isLeftMouseDown = false;
+            _didDragSinceMouseDown = false;
+            _lastKeyboardState = keyboardState;
+            _lastMouseState = mouseState;
+            
+            base.Update(gameTime);
+            return;
+        }
         
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
             Exit();
@@ -135,14 +152,17 @@ public class VoronoiGame : Game
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
             Generate();
 
-        MouseState mouseState = Mouse.GetState();
-
         // Recalculate transform at the start of the frame (accounts for resize)
         RecalculateTransform();
 
+        // Determine if mouse is within the current viewport bounds
+        int viewportWidth = GraphicsDevice.Viewport.Width;
+        int viewportHeight = GraphicsDevice.Viewport.Height;
+        bool isMouseInsideViewport = mouseState.X >= 0 && mouseState.Y >= 0 && mouseState.X < viewportWidth && mouseState.Y < viewportHeight;
+
         // Handle zoom via mouse wheel, keeping the world point under cursor stationary
         int wheelDelta = mouseState.ScrollWheelValue - _lastMouseState.ScrollWheelValue;
-        if (wheelDelta != 0)
+        if (wheelDelta != 0 && isMouseInsideViewport)
         {
             float notches = wheelDelta / 120.0f;
             float factor = (float)Math.Pow(zoomStep, notches);
@@ -163,8 +183,8 @@ public class VoronoiGame : Game
             RecalculateTransform();
         }
 
-        // Track press start to differentiate click vs drag
-        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released)
+        // Track press start to differentiate click vs drag (only if inside viewport)
+        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released && isMouseInsideViewport)
         {
             _isLeftMouseDown = true;
             _leftMouseDownX = mouseState.X;
@@ -173,10 +193,12 @@ public class VoronoiGame : Game
         }
 
         // Handle panning with left mouse button drag
+        // Drag start and threshold detection require the cursor to be inside the viewport
+        // Once dragging is confirmed (beyond threshold), panning continues even if the cursor leaves the viewport
         if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Pressed)
         {
-            // Detect if we've exceeded drag threshold since initial press
-            if (_isLeftMouseDown && !_didDragSinceMouseDown)
+            // Detect if we've exceeded drag threshold since initial press (only while inside viewport)
+            if (isMouseInsideViewport && _isLeftMouseDown && !_didDragSinceMouseDown)
             {
                 int totalDx = mouseState.X - _leftMouseDownX;
                 int totalDy = mouseState.Y - _leftMouseDownY;
@@ -184,7 +206,7 @@ public class VoronoiGame : Game
                 if (sqDist >= dragThreshold * dragThreshold) _didDragSinceMouseDown = true;
             }
 
-            // Only pan once we've confirmed a drag (beyond threshold)
+            // Only pan once we've confirmed a drag (beyond threshold) and also continue outside the viewport
             if (_didDragSinceMouseDown)
             {
                 int dx = mouseState.X - _lastMouseState.X;
@@ -200,19 +222,31 @@ public class VoronoiGame : Game
             }
         }
         
-        // Convert mouse screen position to world coordinates
-        Vector2 world = ScreenToWorld(mouseState.X, mouseState.Y);
-        
-        // Track if mouse is inside world bounds for tooltip control
-        _isMouseInsideWorld = world.X >= _plane.MinX && world.X <= _plane.MaxX && world.Y >= _plane.MinY && world.Y <= _plane.MaxY;
-        
-        _hoveredSite = _plane.GetNearestSiteTo(world.X, world.Y);
+        // Convert mouse screen position to world coordinates and update hover/selection state
+        if (isMouseInsideViewport)
+        {
+            Vector2 world = ScreenToWorld(mouseState.X, mouseState.Y);
+            // Track if mouse is inside world bounds for tooltip control
+            _isMouseInsideWorld = world.X >= _plane.MinX && world.X <= _plane.MaxX && world.Y >= _plane.MinY && world.Y <= _plane.MaxY;
+            
+            _hoveredSite = _plane.GetNearestSiteTo(world.X, world.Y);
+        }
+        else
+        {
+            // Outside viewport: ignore hover and tooltip
+            _isMouseInsideWorld = false;
+            _hoveredSite = null;
+        }
 
         // Selection on left click release (no drag)
         if (mouseState.LeftButton == ButtonState.Released && _lastMouseState.LeftButton == ButtonState.Pressed)
         {
-            if (_isLeftMouseDown && !_didDragSinceMouseDown)
+            // but only when inside viewport
+            if (isMouseInsideViewport && _isLeftMouseDown && !_didDragSinceMouseDown)
+            {
+                Vector2 world = ScreenToWorld(mouseState.X, mouseState.Y);
                 _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
+            }
 
             _isLeftMouseDown = false;
             _didDragSinceMouseDown = false;
@@ -244,7 +278,7 @@ public class VoronoiGame : Game
             float dist = Vector2.Distance(start, end);
             float rotation = (float)Math.Atan2(end.Y - start.Y, end.X - start.X);
 
-            bool isHoveredEdge = _hoveredSite != null && (edge.Left == _hoveredSite || edge.Right == _hoveredSite);
+            bool isHoveredEdge = _isMouseInsideWorld && _hoveredSite != null && (edge.Left == _hoveredSite || edge.Right == _hoveredSite);
             bool isSelectedEdge = _selectedSite != null && (edge.Left == _selectedSite || edge.Right == _selectedSite);
             bool isSelectionNeighbouringEdge = _selectedSite != null && (_selectedSite.Neighbours.Contains(edge.Left) || _selectedSite.Neighbours.Contains(edge.Right));
 
@@ -288,7 +322,7 @@ public class VoronoiGame : Game
     private IReadOnlyList<string> GetHoveredSiteTooltipLines()
     {
         // Assign labels to points (A, B, C, ...)
-        Dictionary<VoronoiPoint, char> pointLabels = _hoveredSite.Points
+        Dictionary<VoronoiPoint, char> pointLabels = _hoveredSite!.Points
             .Select((p, i) => new { Point = p, Label = (char)('A' + i) })
             .ToDictionary(x => x.Point, x => x.Label);
 
