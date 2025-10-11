@@ -1,5 +1,3 @@
-using NUnit.Framework;
-
 namespace SharpVoronoiLib.UnitTests;
 
 [TestFixture]

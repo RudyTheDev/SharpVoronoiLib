@@ -6,21 +6,27 @@ namespace SharpVoronoiLib;
 
 internal class FortunesTessellation : ITessellationAlgorithm
 {
-    public List<VoronoiEdge> Run(List<VoronoiSite> sites, double minX, double minY, double maxX, double maxY)
+    public List<VoronoiEdge> Run(List<VoronoiSite> sites, double minX, double minY, double maxX, double maxY, out int duplicateCount)
     {
         MinHeap<FortuneEvent> eventQueue = new MinHeap<FortuneEvent>(5 * sites.Count);
 
         HashSet<VoronoiSite> siteCache = new HashSet<VoronoiSite>(VoronoiSiteComparer.Instance);
+        
+        duplicateCount = 0;
             
         foreach (VoronoiSite site in sites)
         {
-            // If the site has already been marked as a duplicate before (such as prior to relaxing), skip it
+            // If the site has already been marked as a duplicate before (such as prior to relaxing), count and skip it
             if (site.SkippedAsDuplicate)
+            {
+                duplicateCount++;
                 continue;
+            }
             
             if (!siteCache.Add(site))
             {
                 site.MarkSkippedAsDuplicate();
+                duplicateCount++;
                 continue;
             }
 

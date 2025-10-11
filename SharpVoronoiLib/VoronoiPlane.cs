@@ -39,9 +39,22 @@ public class VoronoiPlane
 
     [PublicAPI]
     public double MaxY { get; }
+    
+    
+    [PublicAPI]
+    public int DuplicateCount
+    {
+        get
+        {
+            if (Sites == null) throw new VoronoiDoesntHaveSitesException();
+            if (Edges == null) throw new VoronoiNotTessellatedException();
+
+            return _duplicateSitesCount;
+        }
+    }
 
 
-    private int version = 0;
+    private int _version;
 
     private List<VoronoiEdge>? _edges;
 
@@ -62,6 +75,8 @@ public class VoronoiPlane
     private KDTreeNearestSiteLookup? _kdTreeNearestSiteLookupAlgorithm;
         
     private BorderEdgeGeneration _lastBorderGeneration;
+
+    private int _duplicateSitesCount;
 
 
     public VoronoiPlane(double minX, double minY, double maxX, double maxY)
@@ -84,8 +99,9 @@ public class VoronoiPlane
         Sites = sites;
 
         _edges = null;
+        _duplicateSitesCount = 0; // will be recomputed on tessellation
 
-        version++;
+        _version++;
     }
 
     /// <summary>
@@ -105,8 +121,9 @@ public class VoronoiPlane
         Sites = sites;
 
         _edges = null;
+        _duplicateSitesCount = 0; // will be recomputed on tessellation
             
-        version++;
+        _version++;
         
         return sites;
     }
@@ -124,7 +141,8 @@ public class VoronoiPlane
         if (_tessellationAlgorithm == null)
             _tessellationAlgorithm = new FortunesTessellation();
 
-        List<VoronoiEdge> edges = _tessellationAlgorithm.Run(Sites, MinX, MinY, MaxX, MaxY);
+        List<VoronoiEdge> edges = _tessellationAlgorithm.Run(Sites, MinX, MinY, MaxX, MaxY, out int duplicateCount);
+        _duplicateSitesCount = duplicateCount;
 
         // Clip
 
@@ -149,7 +167,7 @@ public class VoronoiPlane
 
         _edges = edges;
             
-        version++;
+        _version++;
             
         return edges;
     }
@@ -179,7 +197,7 @@ public class VoronoiPlane
             }
         }
             
-        version++;
+        _version++;
 
         return Edges;
     }
@@ -197,7 +215,7 @@ public class VoronoiPlane
 
         _siteMergingAlgorithm.MergeSites(Sites, Edges, mergeQuery);
             
-        version++;
+        _version++;
 
         return Sites;
     }
@@ -211,7 +229,7 @@ public class VoronoiPlane
             
         INearestSiteLookup algorithm = GetNearestSiteLookupAlgorithm(lookupMethod);
 
-        return algorithm.GetNearestSiteTo(Sites, x, y, version);
+        return algorithm.GetNearestSiteTo(Sites, x, y, _version, _duplicateSitesCount);
     }
 
 

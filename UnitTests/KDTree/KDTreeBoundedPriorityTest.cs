@@ -1,7 +1,5 @@
 ﻿namespace KDTreeTests;
 
-using NUnit.Framework;
-
 using Supercluster.KDTree;
 
 [TestFixture]
