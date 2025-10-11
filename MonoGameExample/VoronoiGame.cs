@@ -66,11 +66,8 @@ public class VoronoiGame : Game
     private float _screenCenterX;
     private float _screenCenterY;
 
-    // Mouse interaction state
-    private bool _isLeftMouseDown;
-    private int _leftMouseDownX;
-    private int _leftMouseDownY;
-    private bool _didDragSinceMouseDown;
+    // Encapsulated mouse interaction state
+    private InteractionState _interactionState = new IdleState();
 
 
     public VoronoiGame()
@@ -135,9 +132,9 @@ public class VoronoiGame : Game
         if (!IsActive)
         {
             // Clear any ongoing interaction state
+            if (_interactionState is not IdleState)
+                _interactionState = new IdleState();
             _isMouseInsideWorld = false;
-            _isLeftMouseDown = false;
-            _didDragSinceMouseDown = false;
             _lastKeyboardState = keyboardState;
             _lastMouseState = mouseState;
             
@@ -183,43 +180,52 @@ public class VoronoiGame : Game
             RecalculateTransform();
         }
 
-        // Track press start to differentiate click vs drag (only if inside viewport)
-        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released && isMouseInsideViewport)
+        // Mouse interaction
+        switch (_interactionState)
         {
-            _isLeftMouseDown = true;
-            _leftMouseDownX = mouseState.X;
-            _leftMouseDownY = mouseState.Y;
-            _didDragSinceMouseDown = false;
-        }
+            case IdleState:
+                if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released && isMouseInsideViewport)
+                    _interactionState = new PressedState(mouseState.X, mouseState.Y);
+                break;
 
-        // Handle panning with left mouse button drag
-        // Drag start and threshold detection require the cursor to be inside the viewport
-        // Once dragging is confirmed (beyond threshold), panning continues even if the cursor leaves the viewport
-        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Pressed)
-        {
-            // Detect if we've exceeded drag threshold since initial press (only while inside viewport)
-            if (isMouseInsideViewport && _isLeftMouseDown && !_didDragSinceMouseDown)
-            {
-                int totalDx = mouseState.X - _leftMouseDownX;
-                int totalDy = mouseState.Y - _leftMouseDownY;
-                int sqDist = totalDx * totalDx + totalDy * totalDy;
-                if (sqDist >= dragThreshold * dragThreshold) _didDragSinceMouseDown = true;
-            }
-
-            // Only pan once we've confirmed a drag (beyond threshold) and also continue outside the viewport
-            if (_didDragSinceMouseDown)
-            {
-                int dx = mouseState.X - _lastMouseState.X;
-                int dy = mouseState.Y - _lastMouseState.Y;
-                if (dx != 0 || dy != 0)
+            case PressedState pressed:
+                if (mouseState.LeftButton == ButtonState.Released && _lastMouseState.LeftButton == ButtonState.Pressed)
                 {
-                    // Move camera center opposite to mouse movement
-                    if (_scale <= 0.0001f) _scale = 0.0001f;
-                    _cameraCenterX -= dx / _scale;
-                    _cameraCenterY -= dy / _scale;
-                    RecalculateTransform();
+                    if (isMouseInsideViewport)
+                        SelectNearestSiteUnder(mouseState.X, mouseState.Y);
+                    _interactionState = new IdleState();
                 }
-            }
+                else
+                {
+                    int totalDx = mouseState.X - pressed.StartX;
+                    int totalDy = mouseState.Y - pressed.StartY;
+                    int distSq = totalDx * totalDx + totalDy * totalDy;
+                    
+                    if (distSq >= dragThreshold * dragThreshold)
+                        _interactionState = new DraggingState(mouseState.X, mouseState.Y);
+                }
+                break;
+
+            case DraggingState dragging:
+                if (mouseState.LeftButton == ButtonState.Pressed)
+                {
+                    int dx = mouseState.X - dragging.LastX;
+                    int dy = mouseState.Y - dragging.LastY;
+                    if (dx != 0 || dy != 0)
+                    {
+                        _cameraCenterX -= dx / _scale;
+                        _cameraCenterY -= dy / _scale;
+                        
+                        RecalculateTransform();
+                        
+                        _interactionState = new DraggingState(mouseState.X, mouseState.Y);
+                    }
+                }
+                else if (mouseState.LeftButton == ButtonState.Released && _lastMouseState.LeftButton == ButtonState.Pressed)
+                {
+                    _interactionState = new IdleState();
+                }
+                break;
         }
         
         // Convert mouse screen position to world coordinates and update hover/selection state
@@ -236,20 +242,6 @@ public class VoronoiGame : Game
             // Outside viewport: ignore hover and tooltip
             _isMouseInsideWorld = false;
             _hoveredSite = null;
-        }
-
-        // Selection on left click release (no drag)
-        if (mouseState.LeftButton == ButtonState.Released && _lastMouseState.LeftButton == ButtonState.Pressed)
-        {
-            // but only when inside viewport
-            if (isMouseInsideViewport && _isLeftMouseDown && !_didDragSinceMouseDown)
-            {
-                Vector2 world = ScreenToWorld(mouseState.X, mouseState.Y);
-                _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
-            }
-
-            _isLeftMouseDown = false;
-            _didDragSinceMouseDown = false;
         }
 
         _lastKeyboardState = keyboardState;
@@ -428,8 +420,8 @@ public class VoronoiGame : Game
     private List<VoronoiSite> MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY)
     {
         // Set to current screen
-        int width = GraphicsDevice.Viewport.Width - (viewportMargin * 2);
-        int height = GraphicsDevice.Viewport.Height - (viewportMargin * 2);
+        int width = GraphicsDevice.Viewport.Width - viewportMargin * 2;
+        int height = GraphicsDevice.Viewport.Height - viewportMargin * 2;
         
         if (width <= 0 || height <= 0) // prevent exception
         {
@@ -537,4 +529,22 @@ public class VoronoiGame : Game
         float wy = (float)(_cameraCenterY + (screenY - _screenCenterY) / safeScale);
         return new Vector2(wx, wy);
     }
+
+    /// <summary>
+    /// Selects the nearest site under a screen-space coordinate (if any).
+    /// </summary>
+    private void SelectNearestSiteUnder(int screenX, int screenY)
+    {
+        Vector2 world = ScreenToWorld(screenX, screenY);
+        _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
+    }
+
+    
+    private abstract record InteractionState;
+
+    private sealed record IdleState : InteractionState;
+
+    private sealed record PressedState(int StartX, int StartY) : InteractionState;
+
+    private sealed record DraggingState(int LastX, int LastY) : InteractionState;
 }
