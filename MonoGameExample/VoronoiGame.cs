@@ -52,22 +52,12 @@ public class VoronoiGame : Game
     private VoronoiSite? _hoveredSite;
     private VoronoiSite? _selectedSite;
 
+    private CameraTransform _cameraTransform;
+
+    private InteractionState _interactionState = new IdleState();
+
     // Track whether mouse is inside the world bounds for tooltip display
     private bool _isMouseInsideWorld;
-
-    // Camera state (world center and zoom). Zoom is a multiplier over the fit-to-view scale.
-    private double _cameraCenterX;
-    private double _cameraCenterY;
-    private float _cameraZoom = 1.0f;
-
-    // Cached transform for current frame
-    private float _fitScale; // scale to fit world inside (viewport - margins)
-    private float _scale;
-    private float _screenCenterX;
-    private float _screenCenterY;
-
-    // Encapsulated mouse interaction state
-    private InteractionState _interactionState = new IdleState();
 
 
     public VoronoiGame()
@@ -166,16 +156,16 @@ public class VoronoiGame : Game
 
             Vector2 worldBefore = ScreenToWorld(mouseState.X, mouseState.Y);
 
-            _cameraZoom *= factor;
-            _cameraZoom = Math.Clamp(_cameraZoom, minZoom, maxZoom);
+            _cameraTransform.zoom *= factor;
+            _cameraTransform.zoom = Math.Clamp(_cameraTransform.zoom, minZoom, maxZoom);
 
             RecalculateTransform();
             
             Vector2 worldAfter = ScreenToWorld(mouseState.X, mouseState.Y);
 
             // Adjust center so cursor stays anchored to the same world point
-            _cameraCenterX += worldBefore.X - worldAfter.X;
-            _cameraCenterY += worldBefore.Y - worldAfter.Y;
+            _cameraTransform.centerX += worldBefore.X - worldAfter.X;
+            _cameraTransform.centerY += worldBefore.Y - worldAfter.Y;
 
             RecalculateTransform();
         }
@@ -213,8 +203,8 @@ public class VoronoiGame : Game
                     int dy = mouseState.Y - dragging.LastY;
                     if (dx != 0 || dy != 0)
                     {
-                        _cameraCenterX -= dx / _scale;
-                        _cameraCenterY -= dy / _scale;
+                        _cameraTransform.centerX -= dx / (_cameraTransform.scale <= 0.0001f ? 0.0001f : _cameraTransform.scale);
+                        _cameraTransform.centerY -= dy / (_cameraTransform.scale <= 0.0001f ? 0.0001f : _cameraTransform.scale);
                         
                         RecalculateTransform();
                         
@@ -259,10 +249,10 @@ public class VoronoiGame : Game
         // Draw edges using current camera transform (center + zoom)
         foreach (VoronoiEdge edge in _plane.Edges!)
         {
-            float sx1 = _screenCenterX + (float)((edge.Start.X - _cameraCenterX) * _scale);
-            float sy1 = _screenCenterY + (float)((edge.Start.Y - _cameraCenterY) * _scale);
-            float sx2 = _screenCenterX + (float)((edge.End.X   - _cameraCenterX) * _scale);
-            float sy2 = _screenCenterY + (float)((edge.End.Y   - _cameraCenterY) * _scale);
+            float sx1 = _cameraTransform.screenCenterX + (float)((edge.Start.X - _cameraTransform.centerX) * _cameraTransform.scale);
+            float sy1 = _cameraTransform.screenCenterY + (float)((edge.Start.Y - _cameraTransform.centerY) * _cameraTransform.scale);
+            float sx2 = _cameraTransform.screenCenterX + (float)((edge.End.X   - _cameraTransform.centerX) * _cameraTransform.scale);
+            float sy2 = _cameraTransform.screenCenterY + (float)((edge.End.Y   - _cameraTransform.centerY) * _cameraTransform.scale);
 
             Vector2 start = new Vector2(sx1, sy1);
             Vector2 end = new Vector2(sx2, sy2);
@@ -499,13 +489,13 @@ public class VoronoiGame : Game
         if (fit <= 0.0) fit = 0.01; // numerical safety
 
         // Cache the fit scale and the final scale after applying the current camera zoom
-        _fitScale = (float)fit; // scale that makes entire world visible inside margins at zoom = 1
-        _scale = _fitScale * _cameraZoom; // final pixels-per-world-unit used for rendering
-        if (_scale < 0.0001f) _scale = 0.0001f; // numerical safety
+        _cameraTransform.fitScale = (float)fit; // scale that makes entire world visible inside margins at zoom = 1
+        _cameraTransform.scale = _cameraTransform.fitScale * (_cameraTransform.zoom == 0.0f ? 1.0f : _cameraTransform.zoom); // final pixels-per-world-unit used for rendering
+        if (_cameraTransform.scale < 0.0001f) _cameraTransform.scale = 0.0001f; // numerical safety
 
         // The screen-space center of the drawable area (inside the margins)
-        _screenCenterX = viewportMargin + (float)(availableWidth * 0.5);
-        _screenCenterY = viewportMargin + (float)(availableHeight * 0.5);
+        _cameraTransform.screenCenterX = viewportMargin + (float)(availableWidth * 0.5);
+        _cameraTransform.screenCenterY = viewportMargin + (float)(availableHeight * 0.5);
     }
 
     /// <summary>
@@ -513,9 +503,9 @@ public class VoronoiGame : Game
     /// </summary>
     private void ResetCamera()
     {
-        _cameraCenterX = (_plane.MinX + _plane.MaxX) * 0.5;
-        _cameraCenterY = (_plane.MinY + _plane.MaxY) * 0.5;
-        _cameraZoom = 1.0f;
+        _cameraTransform.centerX = (_plane.MinX + _plane.MaxX) * 0.5;
+        _cameraTransform.centerY = (_plane.MinY + _plane.MaxY) * 0.5;
+        _cameraTransform.zoom = 1.0f;
         RecalculateTransform();
     }
 
@@ -524,9 +514,9 @@ public class VoronoiGame : Game
     /// </summary>
     private Vector2 ScreenToWorld(int screenX, int screenY)
     {
-        float safeScale = _scale <= 0.0001f ? 0.0001f : _scale;
-        float wx = (float)(_cameraCenterX + (screenX - _screenCenterX) / safeScale);
-        float wy = (float)(_cameraCenterY + (screenY - _screenCenterY) / safeScale);
+        float safeScale = _cameraTransform.scale <= 0.0001f ? 0.0001f : _cameraTransform.scale;
+        float wx = (float)(_cameraTransform.centerX + (screenX - _cameraTransform.screenCenterX) / safeScale);
+        float wy = (float)(_cameraTransform.centerY + (screenY - _cameraTransform.screenCenterY) / safeScale);
         return new Vector2(wx, wy);
     }
 
@@ -537,6 +527,31 @@ public class VoronoiGame : Game
     {
         Vector2 world = ScreenToWorld(screenX, screenY);
         _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
+    }
+
+    
+    private struct CameraTransform
+    {
+        /// <summary> World-space X coordinate of the view center </summary>
+        public double centerX;
+        
+        /// <summary> World-space Y coordinate of the view center </summary>
+        public double centerY;
+        
+        /// <summary> User-controlled zoom factor applied on top of the fit-to-view scale </summary>
+        public float zoom;
+        
+        /// <summary> Pixels-per-world-unit that would fit the entire world into the viewport margins </summary>
+        public float fitScale;
+        
+        /// <summary> Final pixels-per-world-unit actually used for transforms this frame (fitScale × zoom) </summary>
+        public float scale;
+        
+        /// <summary> Screen-space X of the drawable area's center (inside margins) </summary>
+        public float screenCenterX;
+        
+        /// <summary> Screen-space Y of the drawable area's center (inside margins) </summary>
+        public float screenCenterY;
     }
 
     
