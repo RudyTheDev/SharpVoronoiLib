@@ -21,6 +21,11 @@ public class VoronoiGame : Game
     /// <summary> Small margin from viewport edge to not have the map right at the edge </summary>
     private const int viewportMargin = 15;
 
+    // Zoom configuration
+    private const float minZoom = 0.2f;
+    private const float maxZoom = 10.0f;
+    private const float zoomStep = 1.3f; // per wheel notch
+
     // Tooltip styling
     private readonly Color _tooltipBackgroundColor = new Color(20, 20, 20, 200);
     private readonly Color _tooltipTextColor = new Color(230, 230, 230, 255);
@@ -35,6 +40,7 @@ public class VoronoiGame : Game
     private Texture2D _pixelTexture = null!;
 
     private KeyboardState _lastKeyboardState;
+    private MouseState _lastMouseState;
 
     private VoronoiPlane _plane = null!;
 
@@ -42,6 +48,17 @@ public class VoronoiGame : Game
 
     // Track whether mouse is inside the world bounds for tooltip display
     private bool _isMouseInsideWorld;
+
+    // Camera state (world center and zoom). Zoom is a multiplier over the fit-to-view scale.
+    private double _cameraCenterX;
+    private double _cameraCenterY;
+    private float _cameraZoom = 1.0f;
+
+    // Cached transform for current frame
+    private float _fitScale; // scale to fit world inside (viewport - margins)
+    private float _scale;
+    private float _screenCenterX;
+    private float _screenCenterY;
 
 
     public VoronoiGame()
@@ -67,6 +84,7 @@ public class VoronoiGame : Game
         _pixelTexture.SetData([ Color.White ]);
         
         _lastKeyboardState = Keyboard.GetState();
+        _lastMouseState = Mouse.GetState();
         
         Generate();
     }
@@ -101,27 +119,63 @@ public class VoronoiGame : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
             Exit();
 
-        if (GraphicsDevice.Viewport.Width != ((int)(_plane.MaxX - _plane.MinX) + viewportMargin * 2) ||
-            GraphicsDevice.Viewport.Height != ((int)(_plane.MaxY - _plane.MinY) + viewportMargin * 2))
-            Generate();
-        
+        // Press Space to (re)generate and reset camera
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
             Generate();
 
-        _lastKeyboardState = keyboardState;
-        
         MouseState mouseState = Mouse.GetState();
+
+        // Recalculate transform at the start of the frame (accounts for resize)
+        RecalculateTransform();
+
+        // Handle zoom via mouse wheel, keeping the world point under cursor stationary
+        int wheelDelta = mouseState.ScrollWheelValue - _lastMouseState.ScrollWheelValue;
+        if (wheelDelta != 0)
+        {
+            float notches = wheelDelta / 120.0f;
+            float factor = (float)Math.Pow(zoomStep, notches);
+
+            Vector2 worldBefore = ScreenToWorld(mouseState.X, mouseState.Y);
+
+            _cameraZoom *= factor;
+            _cameraZoom = Math.Clamp(_cameraZoom, minZoom, maxZoom);
+
+            RecalculateTransform();
+            
+            Vector2 worldAfter = ScreenToWorld(mouseState.X, mouseState.Y);
+
+            // Adjust center so cursor stays anchored to the same world point
+            _cameraCenterX += worldBefore.X - worldAfter.X;
+            _cameraCenterY += worldBefore.Y - worldAfter.Y;
+
+            RecalculateTransform();
+        }
+
+        // Handle panning with left mouse button drag
+        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Pressed)
+        {
+            int dx = mouseState.X - _lastMouseState.X;
+            int dy = mouseState.Y - _lastMouseState.Y;
+            if (dx != 0 || dy != 0)
+            {
+                // Move camera center opposite to mouse movement
+                if (_scale <= 0.0001f) _scale = 0.0001f;
+                _cameraCenterX -= dx / _scale;
+                _cameraCenterY -= dy / _scale;
+                RecalculateTransform();
+            }
+        }
         
-        // Convert mouse screen position to world coordinates (inverse of Draw transform)
-        float scale = ComputeScale();
-        ComputeOffsets(scale, out float offsetX, out float offsetY);
-        float worldX = (float)(_plane.MinX + (mouseState.X - offsetX) / Math.Max(0.0001f, scale));
-        float worldY = (float)(_plane.MinY + (mouseState.Y - offsetY) / Math.Max(0.0001f, scale));
+        // Convert mouse screen position to world coordinates
+        Vector2 world = ScreenToWorld(mouseState.X, mouseState.Y);
         
         // Track if mouse is inside world bounds for tooltip control
-        _isMouseInsideWorld = worldX >= _plane.MinX && worldX <= _plane.MaxX && worldY >= _plane.MinY && worldY <= _plane.MaxY;
+        _isMouseInsideWorld = world.X >= _plane.MinX && world.X <= _plane.MaxX && world.Y >= _plane.MinY && world.Y <= _plane.MaxY;
         
-        _hoveredSite = _plane.GetNearestSiteTo(worldX, worldY);
+        _hoveredSite = _plane.GetNearestSiteTo(world.X, world.Y);
+
+        _lastKeyboardState = keyboardState;
+        _lastMouseState = mouseState;
 
         base.Update(gameTime);
     }
@@ -132,16 +186,13 @@ public class VoronoiGame : Game
 
         _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap);
 
-        float scale = ComputeScale();
-        ComputeOffsets(scale, out float offsetX, out float offsetY);
-        
+        // Draw edges using current camera transform (center + zoom)
         foreach (VoronoiEdge edge in _plane.Edges!)
         {
-            // World -> Screen transform preserving aspect ratio with fixed border and centering
-            float sx1 = offsetX + (float)((edge.Start.X - _plane.MinX) * scale);
-            float sy1 = offsetY + (float)((edge.Start.Y - _plane.MinY) * scale);
-            float sx2 = offsetX + (float)((edge.End.X   - _plane.MinX) * scale);
-            float sy2 = offsetY + (float)((edge.End.Y   - _plane.MinY) * scale);
+            float sx1 = _screenCenterX + (float)((edge.Start.X - _cameraCenterX) * _scale);
+            float sy1 = _screenCenterY + (float)((edge.Start.Y - _cameraCenterY) * _scale);
+            float sx2 = _screenCenterX + (float)((edge.End.X   - _cameraCenterX) * _scale);
+            float sy2 = _screenCenterY + (float)((edge.End.Y   - _cameraCenterY) * _scale);
 
             Vector2 start = new Vector2(sx1, sy1);
             Vector2 end = new Vector2(sx2, sy2);
@@ -247,8 +298,8 @@ public class VoronoiGame : Game
     
     private void Generate()
     {
-        List<VoronoiSite> sites = MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY);
-        //List<VoronoiSite> sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
+        //List<VoronoiSite> sites = MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY);
+        List<VoronoiSite> sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
         
         _plane = new VoronoiPlane(minX, minY, maxX, maxY);
         
@@ -256,7 +307,10 @@ public class VoronoiGame : Game
         
         _plane.Tessellate();
         
-        _plane.Relax();
+        //_plane.Relax();
+
+        // Reset camera after generating new content
+        ResetCamera();
     }
 
 
@@ -333,62 +387,62 @@ public class VoronoiGame : Game
 
 
     /// <summary>
-    /// Computes a uniform scale factor to fit the world rectangle (plane bounds) inside the
-    /// viewport rectangle minus a fixed margin, preserving aspect ratio.
+    /// Recalculates camera transform based on current viewport, world bounds, and camera state.
     /// </summary>
-    private float ComputeScale()
+    private void RecalculateTransform()
     {
-        // Size of the world (Voronoi plane) in world units
+        // World size in world units, derived from current VoronoiPlane bounds
         double worldWidth = _plane.MaxX - _plane.MinX;
         double worldHeight = _plane.MaxY - _plane.MinY;
-        if (worldWidth <= 0 || worldHeight <= 0)
-            return 1f; // fallback safe value
 
-        // Space available on screen after subtracting margins on all sides
+        // Current viewport size in pixels
         int viewportWidth = GraphicsDevice.Viewport.Width;
         int viewportHeight = GraphicsDevice.Viewport.Height;
-        double availableWidth = Math.Max(1, viewportWidth - viewportMargin * 2);
-        double availableHeight = Math.Max(1, viewportHeight - viewportMargin * 2);
+        
+        // Leave a fixed margin on all sides
+        double availableWidth = viewportWidth - viewportMargin * 2;
+        double availableHeight = viewportHeight - viewportMargin * 2;
+        // (ensure dimensions are non-zero just in case)
+        if (availableWidth < 1) availableWidth = 1;
+        if (availableHeight < 1) availableHeight = 1;
 
-        // Ratios that would map world to available area along each axis
+        // Pixels-per-world-unit along each axis if we were to fit exactly on that axis
         double scaleX = availableWidth / worldWidth;
         double scaleY = availableHeight / worldHeight;
+        
+        // Uniform scale that fits the world into the available area (letterbox/pillarbox as needed)
+        double fit = Math.Min(scaleX, scaleY);
+        if (fit <= 0.0) fit = 0.01; // numerical safety
 
-        // We must preserve aspect ratio, so take the limiting axis
-        double scale = Math.Min(scaleX, scaleY);
-        
-        // Clamp to a tiny positive value to avoid zero/negative or denormals
-        if (scale <= 0.0) scale = 0.01;
-        
-        return (float)scale;
+        // Cache the fit scale and the final scale after applying the current camera zoom
+        _fitScale = (float)fit; // scale that makes entire world visible inside margins at zoom = 1
+        _scale = _fitScale * _cameraZoom; // final pixels-per-world-unit used for rendering
+        if (_scale < 0.0001f) _scale = 0.0001f; // numerical safety
+
+        // The screen-space center of the drawable area (inside the margins)
+        _screenCenterX = viewportMargin + (float)(availableWidth * 0.5);
+        _screenCenterY = viewportMargin + (float)(availableHeight * 0.5);
     }
 
     /// <summary>
-    /// Computes the offset (top-left) in screen space so the world content is centered inside the
-    /// available viewport area (viewport minus margins) at a given <paramref name="scale"/>.
+    /// Resets camera to show the whole world, centered.
     /// </summary>
-    private void ComputeOffsets(float scale, out float offsetX, out float offsetY)
+    private void ResetCamera()
     {
-        // World size in world units
-        double worldWidth = _plane.MaxX - _plane.MinX;
-        double worldHeight = _plane.MaxY - _plane.MinY;
+        _cameraCenterX = (_plane.MinX + _plane.MaxX) * 0.5;
+        _cameraCenterY = (_plane.MinY + _plane.MaxY) * 0.5;
+        _cameraZoom = 1.0f;
+        RecalculateTransform();
+    }
 
-        // Space available on screen after subtracting margins on all sides
-        int viewportWidth = GraphicsDevice.Viewport.Width;
-        int viewportHeight = GraphicsDevice.Viewport.Height;
-        double availableWidth = Math.Max(1, viewportWidth - viewportMargin * 2);
-        double availableHeight = Math.Max(1, viewportHeight - viewportMargin * 2);
-
-        // How much screen space the world will occupy at the chosen scale
-        double usedWidth = worldWidth * scale;
-        double usedHeight = worldHeight * scale;
-
-        // Leftover space used to center the content inside the available area
-        double extraWidth = Math.Max(0.0, availableWidth - usedWidth);
-        double extraHeight = Math.Max(0.0, availableHeight - usedHeight);
-
-        // Offset includes the fixed margin plus half of the leftover area for centering
-        offsetX = viewportMargin + (float)(extraWidth * 0.5);
-        offsetY = viewportMargin + (float)(extraHeight * 0.5);
+    /// <summary>
+    /// Converts screen coordinates to world coordinates using current camera transform.
+    /// </summary>
+    private Vector2 ScreenToWorld(int screenX, int screenY)
+    {
+        float safeScale = _scale <= 0.0001f ? 0.0001f : _scale;
+        float wx = (float)(_cameraCenterX + (screenX - _screenCenterX) / safeScale);
+        float wy = (float)(_cameraCenterY + (screenY - _screenCenterY) / safeScale);
+        return new Vector2(wx, wy);
     }
 }
