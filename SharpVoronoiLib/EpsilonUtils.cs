@@ -11,7 +11,7 @@ internal static class EpsilonUtils
     // In fact, anything less than e^-12 will immediatelly fail some coordinate comparisons because of all the compounding precision losses.
     // Of course, numbers too large will start failing again since we can't exactly compare significant digits (cheaply).
 
-    private const double epsilon = 1E-12;
+    internal const double epsilon = 1E-12;
     // todo: make ParabolaTest use this too
 
 
