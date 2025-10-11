@@ -20,10 +20,15 @@ public class VoronoiGame : Game
     /// <summary> Margin from viewport edge so we can preview the voronoi edges </summary>
     private const int edgeDistance = 15;
 
+    // Tooltip styling
+    private readonly Color _tooltipBackgroundColor = new Color(20, 20, 20, 200);
+    private readonly Color _tooltipTextColor = new Color(230, 230, 230, 255);
+
     
     private readonly GraphicsDeviceManager _graphics;
 
     private SpriteBatch _spriteBatch;
+    private SpriteFont _font;
     
     private Texture2D _pixelTexture;
 
@@ -64,6 +69,7 @@ public class VoronoiGame : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        _font = Content.Load<SpriteFont>("DefaultFont");
     }
 
     protected override void Update(GameTime gameTime)
@@ -93,7 +99,7 @@ public class VoronoiGame : Game
     {
         GraphicsDevice.Clear(_backgroundColor);
 
-        _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Opaque, SamplerState.PointWrap);
+        _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap);
 
         foreach (VoronoiEdge edge in _plane.Edges!)
         {
@@ -120,12 +126,83 @@ public class VoronoiGame : Game
                 0.0f
             );
         }
+
+        DrawTooltip(GetHoveredSiteTooltipLines());
+        
         
         _spriteBatch.End();
 
         base.Draw(gameTime);
     }
 
+    private IReadOnlyList<string> GetHoveredSiteTooltipLines()
+    {
+        // Assign labels to points (A, B, C, ...)
+        Dictionary<VoronoiPoint, char> pointLabels = _hoveredSite.Points
+            .Select((p, i) => new { Point = p, Label = (char)('A' + i) })
+            .ToDictionary(x => x.Point, x => x.Label);
+
+        string floatFormat = "F2";
+        
+        List<string> lines =
+        [
+            "Site " + _hoveredSite,
+            "Points " + string.Join(", ", pointLabels.Select(kv => kv.Value + " " + kv.Key.ToString(floatFormat))),
+            "Edges " + string.Join(", ", _hoveredSite.Cell.Select(e => pointLabels[e.Start] + "-" + pointLabels[e.End])),
+            "Neighbours " + string.Join(", ", _hoveredSite.Neighbours.Select(n => n.ToString(floatFormat)))
+        ];
+
+        return lines;
+    }
+
+    private void DrawTooltip(IReadOnlyList<string> lines)
+    {
+        // Text measurement
+        
+        float width = 0f;
+        float height = 0f;
+
+        for (int i = 0; i < lines.Count; i++)
+        {
+            Vector2 size = _font.MeasureString(lines[i]);
+            if (size.X > width) width = size.X;
+            height += i == lines.Count - 1 ? size.Y : _font.LineSpacing;
+        }
+        
+        // Get position
+
+        MouseState mouse = Mouse.GetState();
+        Vector2 pos = new Vector2(mouse.X + 14, mouse.Y + 16);
+
+        // Clamp within viewport
+
+        const int paddingHor = 4;
+        const int paddingVer = 1; // < hor because font already "pad" as vertical spacing basically
+
+        int vpW = GraphicsDevice.Viewport.Width;
+        int vpH = GraphicsDevice.Viewport.Height;
+        float boxW = width + paddingHor * 2;
+        float boxH = height + paddingVer * 2;
+
+        if (pos.X + boxW > vpW - 2) pos.X = vpW - 2 - boxW;
+        if (pos.Y + boxH > vpH - 2) pos.Y = vpH - 2 - boxH;
+        if (pos.X < 2) pos.X = 2;
+        if (pos.Y < 2) pos.Y = 2;
+
+        // Background
+        
+        Rectangle rectangle = new Rectangle((int)pos.X, (int)pos.Y, (int)boxW, (int)boxH);
+        _spriteBatch.Draw(_pixelTexture, rectangle, _tooltipBackgroundColor);
+
+        // Text
+        
+        Vector2 textPos = new Vector2(pos.X + paddingHor, pos.Y + paddingVer);
+        for (int i = 0; i < lines.Count; i++)
+        {
+            _spriteBatch.DrawString(_font, lines[i], textPos, _tooltipTextColor);
+            textPos.Y += i == lines.Count - 1 ? _font.MeasureString(lines[i]).Y : _font.LineSpacing;
+        }
+    }
     
     private void Generate()
     {
