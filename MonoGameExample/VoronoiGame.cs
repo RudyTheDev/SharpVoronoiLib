@@ -17,6 +17,7 @@ public class VoronoiGame : Game
     
     private readonly Color _lineColor = new Color(47, 54, 69);
     private readonly Color _hoveredLineColor = new Color(240, 24, 222);
+    private readonly Color _selectedLineColor = new Color(255, 196, 0);
 
     /// <summary> Small margin from viewport edge to not have the map right at the edge </summary>
     private const int viewportMargin = 15;
@@ -45,6 +46,7 @@ public class VoronoiGame : Game
     private VoronoiPlane _plane = null!;
 
     private VoronoiSite _hoveredSite = null!;
+    private VoronoiSite _selectedSite = null!;
 
     // Track whether mouse is inside the world bounds for tooltip display
     private bool _isMouseInsideWorld;
@@ -174,6 +176,10 @@ public class VoronoiGame : Game
         
         _hoveredSite = _plane.GetNearestSiteTo(world.X, world.Y);
 
+        // Selection on left click (press transition)
+        if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released)
+            _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
+
         _lastKeyboardState = keyboardState;
         _lastMouseState = mouseState;
 
@@ -200,10 +206,27 @@ public class VoronoiGame : Game
             float dist = Vector2.Distance(start, end);
             float rotation = (float)Math.Atan2(end.Y - start.Y, end.X - start.X);
 
-            Color lineColor = 
-                edge.Left == _hoveredSite || edge.Right == _hoveredSite
-                    ? _hoveredLineColor
-                    : _lineColor;
+            bool isHoveredEdge = _hoveredSite != null && (edge.Left == _hoveredSite || edge.Right == _hoveredSite);
+            bool isSelectedEdge = _selectedSite != null && (edge.Left == _selectedSite || edge.Right == _selectedSite);
+
+            Color lineColor = _lineColor;
+            float lineThickness = 1f; // without anti-aliasing this won't look good no matter what, so stick to 1 pixel
+
+            if (isHoveredEdge && isSelectedEdge)
+            {
+                lineColor = _hoveredLineColor;
+                lineThickness = 3.0f;
+            }
+            else if (isHoveredEdge)
+            {
+                lineColor = _hoveredLineColor;
+                lineThickness = 1.5f;
+            } 
+            else if (isSelectedEdge)
+            {
+                lineColor = _selectedLineColor;
+                lineThickness = 3.0f;
+            }
             
             _spriteBatch.Draw(
                 _pixelTexture,
@@ -212,7 +235,7 @@ public class VoronoiGame : Game
                 lineColor,
                 rotation,
                 Vector2.Zero,
-                new Vector2(dist, 1),
+                new Vector2(dist, lineThickness),
                 SpriteEffects.None,
                 0.0f
             );
