@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -127,17 +129,62 @@ public class VoronoiGame : Game
     
     private void Generate()
     {
+        //List<VoronoiSite>? sites = MakeRandomSites()
+        List<VoronoiSite>? sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
+
+        if (sites == null) return; // prevent exception
+        
+        _plane = new VoronoiPlane(minX, minY, maxX, maxY);
+        
+        _plane.SetSites(sites);
+        
+        _plane.Tessellate();
+        
+        _plane.Relax();
+    }
+
+
+    private List<VoronoiSite>? LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY)
+    {
+        string meta = File.ReadAllText("meta.txt");
+        string[] metaParts = meta.Split(',');
+        minX = float.Parse(metaParts[0]);
+        minY = float.Parse(metaParts[1]);
+        maxX = float.Parse(metaParts[2]);
+        maxY = float.Parse(metaParts[3]);
+        
+        string[] sitesRaw = File.ReadAllLines("out.txt");
+        List<VoronoiSite> sites = sitesRaw.Select(line =>
+        {
+            string[] parts = line.Split(',');
+            return new VoronoiSite(float.Parse(parts[0]), float.Parse(parts[1]));
+        }).ToList();
+
+        return sites;
+    }
+    
+    private List<VoronoiSite>? MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY)
+    {
         // Set to current screen
         int width = GraphicsDevice.Viewport.Width - (edgeDistance * 2);
         int height = GraphicsDevice.Viewport.Height - (edgeDistance * 2);
-        if (width <= 0 || height <= 0) return; // prevent exception
+        
+        if (width <= 0 || height <= 0) // prevent exception
+        {
+            minX = 0;
+            minY = 0;
+            maxX = 0;
+            maxY = 0;
+            return null!;
+        }
+
         int numPoints = width * height / 400; // about 2000 points at 1280 x 720
         
         List<VoronoiSite> sites = new List<VoronoiSite>(numPoints);
-
+        
         int seed = Random.Shared.Next();
         //Console.WriteLine("Seed: " + seed);
-
+        
         Random rand = new Random(seed);
         for (int i = 0; i < numPoints; i++)
         {
@@ -148,7 +195,7 @@ public class VoronoiGame : Game
                 )
             );
         }
-
+        
         int duplicates = Random.Shared.Next(numPoints / 20);
         
         for (int i = 0; i < duplicates; i++)
@@ -160,12 +207,11 @@ public class VoronoiGame : Game
             sites[i1] = new VoronoiSite(sites[i2].X, sites[i2].Y);
         }
 
-        _plane = new VoronoiPlane(0, 0, width, height);
+        minX = 0;
+        minY = 0;
+        maxX = width;
+        maxY = height;
         
-        _plane.SetSites(sites);
-        
-        _plane.Tessellate();
-        
-        _plane.Relax();
+        return sites;
     }
 }
