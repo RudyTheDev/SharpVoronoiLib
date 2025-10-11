@@ -284,15 +284,16 @@ public class VoronoiEdge
     }
 
 
-#if DEBUG
-    public override string ToString()
+    public override string ToString() => ToString("F3");
+
+    [PublicAPI]
+    public string ToString(string floatFormat)
     {
-        return (Start?.ToString() ?? "NONE") + "->" + (End?.ToString() ?? "NONE");
-    }
+        // ReSharper disable ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
+        // Start and End values are only null during debug before algorithm completes, so this just stops mid-run debug calls from failing
         
-    public string ToString(string format)
-    {
-        return (Start?.ToString(format) ?? "NONE") + "->" + (End?.ToString(format) ?? "NONE");
+        return (Start?.ToString(floatFormat) ?? "NONE") + "->" + (End?.ToString(floatFormat) ?? "NONE");
+        
+        // ReSharper restore ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
     }
-#endif
 }

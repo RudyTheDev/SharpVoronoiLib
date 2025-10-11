@@ -49,25 +49,16 @@ public class VoronoiPoint
     }
 
 
-#if DEBUG
-    public override string ToString()
-    {
-        return
-            "("
-            + (X == double.MinValue ? "-∞" : X == double.MaxValue ? "+∞" : X.ToString("F3"))
-            + ","
-            + (Y == double.MinValue ? "-∞" : Y == double.MaxValue ? "+∞" : Y.ToString("F3"))
-            + ")"
-            + BorderLocationToString(BorderLocation);
-    }
+    public override string ToString() => ToString("F3");
 
-    public string ToString(string format)
+    [PublicAPI]
+    public string ToString(string floatFormat)
     {
         return
             "("
-            + (X == double.MinValue ? "-∞" : X == double.MaxValue ? "+∞" : X.ToString(format))
+            + (X == double.MinValue ? "-∞" : X == double.MaxValue ? "+∞" : X.ToString(floatFormat))
             + ","
-            + (Y == double.MinValue ? "-∞" : Y == double.MaxValue ? "+∞" : Y.ToString(format))
+            + (Y == double.MinValue ? "-∞" : Y == double.MaxValue ? "+∞" : Y.ToString(floatFormat))
             + ")"
             + BorderLocationToString(BorderLocation);
     }
@@ -98,7 +89,6 @@ public class VoronoiPoint
                 return "?";
         }
     }
-#endif
 }
     
     

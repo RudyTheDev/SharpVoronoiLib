@@ -576,11 +576,12 @@ public class VoronoiSite
     }
 
 
-#if DEBUG
-    public override string ToString()
+    public override string ToString() => ToString("F3");
+
+    [PublicAPI]
+    public string ToString(string floatFormat)
     {
-        return "(" + X.ToString("F3") + "," + Y.ToString("F3") + ")";
+        return "(" + X.ToString(floatFormat) + "," + Y.ToString(floatFormat) + ")";
     }
-#endif
 }
 

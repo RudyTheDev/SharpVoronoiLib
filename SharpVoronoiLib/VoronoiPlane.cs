@@ -263,6 +263,19 @@ public class VoronoiPlane
             _ => throw new ArgumentOutOfRangeException()
         };
     }
+
+
+    public override string ToString()
+        => ToString("F3");
+
+    [PublicAPI]
+    public string ToString(string floatFormat)
+    {
+        return
+            "(" + MinX.ToString(floatFormat) + "," + MinY.ToString(floatFormat) + ") -> (" + MaxX.ToString(floatFormat) + "," + MaxY.ToString(floatFormat) + ")" +
+            (Sites != null ? " with " + Sites.Count + " sites" : "") +
+            (Edges != null ? (Sites != null ? ", " : " with ") + Edges.Count + " edges" : "");
+    }
 }
 
 
