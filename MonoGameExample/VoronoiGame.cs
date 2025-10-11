@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SharpVoronoiLib;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
+using FontStashSharp;
 
 namespace MonoGameExample;
 
@@ -28,7 +29,9 @@ public class VoronoiGame : Game
     private readonly GraphicsDeviceManager _graphics;
 
     private SpriteBatch _spriteBatch;
-    private SpriteFont _font;
+    
+    private FontSystem _fontSystem;
+    private SpriteFontBase _font;
     
     private Texture2D _pixelTexture;
 
@@ -69,7 +72,24 @@ public class VoronoiGame : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        _font = Content.Load<SpriteFont>("DefaultFont");
+
+        FontSystemSettings debugFontSettings = new FontSystemSettings
+        {
+            PremultiplyAlpha = true,
+            FontResolutionFactor = 8f,
+            KernelWidth = 3,
+            KernelHeight = 3
+        };
+
+        FontSystem fontSystem = new FontSystem(debugFontSettings);
+        
+        string appFolder = AppContext.BaseDirectory;
+        
+        string fontFolder = Path.Combine(appFolder, "Content");
+
+        fontSystem.AddFont(File.ReadAllBytes(Path.Combine(fontFolder, "LiberationSans-Regular.ttf")));
+
+        _font = fontSystem.GetFont(16);
     }
 
     protected override void Update(GameTime gameTime)
@@ -166,7 +186,7 @@ public class VoronoiGame : Game
         {
             Vector2 size = _font.MeasureString(lines[i]);
             if (size.X > width) width = size.X;
-            height += i == lines.Count - 1 ? size.Y : _font.LineSpacing;
+            height += i == lines.Count - 1 ? size.Y : _font.LineHeight;
         }
         
         // Get position
@@ -200,7 +220,7 @@ public class VoronoiGame : Game
         for (int i = 0; i < lines.Count; i++)
         {
             _spriteBatch.DrawString(_font, lines[i], textPos, _tooltipTextColor);
-            textPos.Y += i == lines.Count - 1 ? _font.MeasureString(lines[i]).Y : _font.LineSpacing;
+            textPos.Y += i == lines.Count - 1 ? _font.MeasureString(lines[i]).Y : _font.LineHeight;
         }
     }
     
