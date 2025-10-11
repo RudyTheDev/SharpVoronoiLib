@@ -861,7 +861,7 @@ public static class UnitTestGenerator
                 3: AEXG
                 4: FAGY
                 5: DBAF
-            ", Repeat.Rotate90);
+            ", Repeat.RotateAll);
 
         testGenerator.AddTest("SixPointsInADoubleCross", @"
                 10
@@ -901,6 +901,43 @@ public static class UnitTestGenerator
                 5: ADXE
                 6: FAEY
             ", Repeat.Rotate90);
+
+        testGenerator.AddTest("FivePointsInAKite", @"
+                10
+                X · · · · A · · · · Z 10
+                · · · · · x · · · · · 9
+                · · 1 · · E · · 4 · · 8
+                · · · · x · x · · · · 7
+                · · · x · · · x · · · 6
+                B x F · · 5 · · H x D 5
+                · · · x · · · x · · · 4
+                · · · · x · x · · · · 3
+                · · 2 · · G · · 3 · · 2
+                · · · · · x · · · · · 1
+                Y · · · · C · · · · W 0
+                0 1 2 3 4 5 6 7 8 9 10
+                A-E: 1,4
+                D-H: 4,3
+                C-G: 3,2
+                B-F: 2,1
+                E-H: 4,5
+                H-G: 3,5
+                G-F: 2,5
+                F-E: 1,5
+                X-A: 1
+                A-Z: 4
+                Z-D: 4
+                D-W: 3
+                W-C: 3
+                C-Y: 2
+                Y-B: 2
+                B-X: 1
+                1: EAXBF
+                2: GFBYC
+                3: DHGCW
+                4: ZAEHD
+                5: HEFG
+            ");
 
         testGenerator.AddTest("FivePointsInABorderTouchingKite", @"
                 10
