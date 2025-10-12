@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 internal static class ParabolaMath
 {

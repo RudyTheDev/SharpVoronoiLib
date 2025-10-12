@@ -18,16 +18,16 @@ public class Benchmarks
         // } while (!Console.KeyAvailable);
             
             
-        //BenchmarkRunner.Run<TesselationBenchmark>();
+        BenchmarkRunner.Run<TesselationBenchmark>();
             
-        // |     Method | NumberOfSites | BorderEdgeGeneration |       Mean |     Error |    StdDev |     Median |
-        // |----------- |-------------- |--------------------- |-----------:|----------:|----------:|-----------:|
-        // | Tessellate |           100 | DoNotMakeBorderEdges |   593.9 us |  24.18 us |  68.58 us |   576.1 us |
-        // | Tessellate |           100 |      MakeBorderEdges |   650.0 us |  23.20 us |  67.67 us |   639.2 us |
-        // | Tessellate |           500 | DoNotMakeBorderEdges | 2,723.4 us | 282.20 us | 832.06 us | 2,329.7 us |
-        // | Tessellate |           500 |      MakeBorderEdges | 2,707.7 us | 260.85 us | 769.12 us | 2,368.1 us |
-        // | Tessellate |          2000 | DoNotMakeBorderEdges | 9,498.0 us | 182.53 us | 415.72 us | 9,462.5 us |
-        // | Tessellate |          2000 |      MakeBorderEdges | 9,619.9 us | 181.31 us | 496.34 us | 9,482.5 us |
+        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error     | StdDev      | Median     |
+        // |----------- |-------------- |--------------------- |-----------:|----------:|------------:|-----------:|
+        // | Tessellate | 100           | DoNotMakeBorderEdges |   389.9 us |   7.71 us |    10.81 us |   386.8 us |
+        // | Tessellate | 100           | MakeBorderEdges      |   414.0 us |   7.99 us |    11.96 us |   412.4 us |
+        // | Tessellate | 500           | DoNotMakeBorderEdges | 2,125.4 us |  42.02 us |    48.39 us | 2,113.4 us |
+        // | Tessellate | 500           | MakeBorderEdges      | 2,179.2 us |  43.25 us |    59.20 us | 2,189.1 us |
+        // | Tessellate | 2000          | DoNotMakeBorderEdges | 4,965.0 us | 748.51 us | 2,111.19 us | 3,916.7 us |
+        // | Tessellate | 2000          | MakeBorderEdges      | 4,304.5 us | 276.50 us |   713.73 us | 3,997.8 us |
             
             
         //BenchmarkRunner.Run<RandomPointGenerationBenchmark>();
@@ -42,7 +42,7 @@ public class Benchmarks
         // | Generate |         10000 |              Gaussian | 1,535.13 us | 150.404 us | 443.468 us | 1,290.40 us |
         
         
-        BenchmarkRunner.Run<NearestSiteLookupBenchmark>();
+        //BenchmarkRunner.Run<NearestSiteLookupBenchmark>();
         
         // | Method | NumberOfSites | NumberOfLookups | PreWarm | LookupMethod | Mean         |
         // |------- |-------------- |---------------- |-------- |------------- |-------------:|
