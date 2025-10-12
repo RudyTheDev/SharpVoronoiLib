@@ -22,7 +22,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations" Version="2024.3.0">
+        <PackageReference Include="JetBrains.Annotations" Version="2025.2.2">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <None Include="..\README.md" Pack="true" PackagePath="\"/>
