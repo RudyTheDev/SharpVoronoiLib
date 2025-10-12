@@ -241,9 +241,11 @@ public class TestLayoutParser
             }
         }
 
+        // Base version of the test
         Test newTest = new Test(
             minX, minY, maxX, maxY, name,
-            sites, points, edges
+            sites, points, edges,
+            null, null
         );
 
         _tests.Add(newTest);
@@ -254,30 +256,30 @@ public class TestLayoutParser
             {
                 case LayoutRepeat.Rotate90:
                     if (width != height) throw new InvalidOperationException();
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
                     break;
 
                 case LayoutRepeat.Mirror:
                     if (width != height) throw new InvalidOperationException();
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Mirror, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Mirror, minX, minY, maxX, maxY));
                     break;
 
                 case LayoutRepeat.RotateAll:
                     if (width != height) throw new InvalidOperationException();
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Rotate180, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Rotate270, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate180, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate270, minX, minY, maxX, maxY));
                     break;
 
                 case LayoutRepeat.RotateAndMirrorAll:
                     if (width != height) throw new InvalidOperationException();
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Rotate180, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Rotate270, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.Mirror, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.MirrorAndRotate90, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.MirrorAndRotate180, minX, minY, maxX, maxY));
-                    _tests.Add(new RepeatedTest(newTest, LayoutRepeat.MirrorAndRotate270, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate180, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate270, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.Mirror, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.MirrorAndRotate90, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.MirrorAndRotate180, minX, minY, maxX, maxY));
+                    _tests.Add(newTest.Repeat(LayoutRepeat.MirrorAndRotate270, minX, minY, maxX, maxY));
                     break;
 
                 default:
@@ -286,7 +288,7 @@ public class TestLayoutParser
         }
     }
 
-    internal string GenerateCode(string className, TestPurpose purpose, TestBorderLogic borderLogic, TestOffset offset)
+    internal string GenerateCode(string className, TestPurpose purpose, TestBorderLogic borderLogic)
     {
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -312,9 +314,9 @@ public class TestLayoutParser
         {
             // Header
 
-            if (test is RepeatedTest repeatedTest)
+            if (test.Repeated != null)
             {
-                List<string> summary = BuildSummary(repeatedTest.Repeated, repeatedTest.OriginalName);
+                List<string> summary = BuildSummary(test.Repeated!.Value, test.OriginalName!);
                 foreach (string summaryLine in summary)
                     stringBuilder.AppendPaddedLine(1, summaryLine);
             }
@@ -1864,9 +1866,15 @@ public class TestLayoutParser
         public List<Point> Points { get; protected init; } = null!;
         public List<Edge> Edges { get; protected init; } = null!;
         public string Name { get; protected init; } = null!;
+        
+        public LayoutRepeat? Repeated { get; }
+        public string? OriginalName { get; }
 
 
-        public Test(int minX, int minY, int maxX, int maxY, string name, List<Site> sites, List<Point> points, List<Edge> edges)
+        public Test(
+            int minX, int minY, int maxX, int maxY, string name, 
+            List<Site> sites, List<Point> points, List<Edge> edges, 
+            LayoutRepeat? repeated, string? originalName)
         {
             MinX = minX;
             MinY = minY;
@@ -1875,66 +1883,50 @@ public class TestLayoutParser
             Sites = sites;
             Points = points;
             Edges = edges;
+            Repeated = repeated;
+            OriginalName = originalName;
             Name = name;
+            Repeated = repeated;
+            OriginalName = originalName;
 
             Width = maxX - minX;
             Height = maxY - minY;
         }
 
-        protected Test()
+
+        public Test Repeat(LayoutRepeat repeat, int minX, int minY, int maxX, int maxY)
         {
-        }
-    }
+            List<Site> newSites = [ ];
+            List<Point> newPoints = [ ];
+            List<Edge> newEdges = [ ];
 
-    private class RepeatedTest : Test
-    {
-        public LayoutRepeat Repeated { get; }
-        public string OriginalName { get; }
-
-
-        public RepeatedTest(Test givenTest, LayoutRepeat repeat, int minX, int minY, int maxX, int maxY)
-        {
-            Repeated = repeat;
-            OriginalName = givenTest.Name;
-
-            MinX = givenTest.MinX;
-            MinY = givenTest.MinY;
-            MaxX = givenTest.MaxX;
-            MaxY = givenTest.MaxY;
-            Width = givenTest.Width;
-            Height = givenTest.Height;
-
-            Sites = [ ];
-            Points = [ ];
-            Edges = [ ];
-
-            foreach (Site site in givenTest.Sites)
+            foreach (Site site in Sites)
             {
                 (int x, int y) = TransformCoord(site.X, site.Y, repeat, minX, minY, maxX, maxY);
                 Site newSite = new Site(x, y, site.Id);
-                Sites.Add(newSite);
+                newSites.Add(newSite);
             }
 
-            foreach (Point point in givenTest.Points)
+            foreach (Point point in Points)
             {
                 (int x, int y) = TransformCoord(point.X, point.Y, repeat, minX, minY, maxX, maxY);
-                Points.Add(new Point(x, y, point.Id, point.Corner));
+                newPoints.Add(new Point(x, y, point.Id, point.Corner));
             }
 
-            foreach (Edge edge in givenTest.Edges)
+            foreach (Edge edge in Edges)
             {
-                Point fromPoint = Points[givenTest.Points.IndexOf(edge.FromPoint)];
-                Point toPoint = Points[givenTest.Points.IndexOf(edge.ToPoint)];
+                Point fromPoint = newPoints[Points.IndexOf(edge.FromPoint)];
+                Point toPoint = newPoints[Points.IndexOf(edge.ToPoint)];
                 List<Site> sites = [ ];
                 foreach (Site site in edge.EdgeSites)
-                    sites.Add(Sites[givenTest.Sites.IndexOf(site)]);
-                Edges.Add(new Edge(fromPoint, toPoint, sites, edge.Border));
+                    sites.Add(newSites[Sites.IndexOf(site)]);
+                newEdges.Add(new Edge(fromPoint, toPoint, sites, edge.Border));
             }
 
-            for (int s = 0; s < Sites.Count; s++)
+            for (int s = 0; s < newSites.Count; s++)
             {
-                Site ourSite = Sites[s];
-                Site givenSite = givenTest.Sites[s];
+                Site ourSite = newSites[s];
+                Site givenSite = Sites[s];
 
                 ourSite.UndefinedPointOrder = givenSite.UndefinedPointOrder;
                 if (ourSite.UndefinedPointOrder)
@@ -1953,7 +1945,7 @@ public class TestLayoutParser
                     for (int p = 0; p < givenSite.Points[sourceQuadrant].Count; p++)
                     {
                         Point givenPoint = givenSite.Points[sourceQuadrant][p];
-                        Point ourPoint = Points[givenTest.Points.IndexOf(givenPoint)];
+                        Point ourPoint = newPoints[Points.IndexOf(givenPoint)];
                         ourSite.Points[targetQuadrant].Add(ourPoint);
                     }
 
@@ -1962,176 +1954,183 @@ public class TestLayoutParser
                 }
             }
 
-            Name = TransformName(givenTest.Name, repeat);
-        }
+            string name = TransformName(Name, repeat);
 
-
-        private static int TransformQuadrantIndex(int quadrant, LayoutRepeat repeat)
-        {
-            if (DoesRepeatMirror(repeat))
-                quadrant = MirrorAcrossY(quadrant);
-
-            switch (repeat)
+            return new Test(
+                MinX, MinY, MaxX, MaxY,
+                name,
+                newSites, newPoints, newEdges,
+                repeat, Name
+            );
+            
+            
+            static int TransformQuadrantIndex(int quadrant, LayoutRepeat repeat)
             {
-                case LayoutRepeat.Rotate90:           quadrant -= 2; break;
-                case LayoutRepeat.Rotate180:          quadrant -= 4; break;
-                case LayoutRepeat.Rotate270:          quadrant -= 6; break;
-                case LayoutRepeat.Mirror:             break;
-                case LayoutRepeat.MirrorAndRotate90:  quadrant -= 2; break;
-                case LayoutRepeat.MirrorAndRotate180: quadrant -= 4; break;
-                case LayoutRepeat.MirrorAndRotate270: quadrant -= 6; break;
+                if (DoesRepeatMirror(repeat))
+                    quadrant = MirrorAcrossY(quadrant);
 
-                case LayoutRepeat.RotateAll:
-                case LayoutRepeat.RotateAndMirrorAll:
-                    throw new InvalidOperationException();
+                switch (repeat)
+                {
+                    case LayoutRepeat.Rotate90:           quadrant -= 2; break;
+                    case LayoutRepeat.Rotate180:          quadrant -= 4; break;
+                    case LayoutRepeat.Rotate270:          quadrant -= 6; break;
+                    case LayoutRepeat.Mirror:             break;
+                    case LayoutRepeat.MirrorAndRotate90:  quadrant -= 2; break;
+                    case LayoutRepeat.MirrorAndRotate180: quadrant -= 4; break;
+                    case LayoutRepeat.MirrorAndRotate270: quadrant -= 6; break;
 
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                    case LayoutRepeat.RotateAll:
+                    case LayoutRepeat.RotateAndMirrorAll:
+                        throw new InvalidOperationException();
+
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                }
+
+                if (quadrant < 0)
+                    quadrant += 8;
+
+                if (quadrant >= 8)
+                    quadrant -= 8;
+
+                return quadrant;
             }
 
-            if (quadrant < 0)
-                quadrant += 8;
-
-            if (quadrant >= 8)
-                quadrant -= 8;
-
-            return quadrant;
-        }
-
-        private static int MirrorAcrossY(int quadrant)
-        {
-            //            ^
-            //            |
-            //         3  2  1
-            //      3     |     1
-            //     3      |      1
-            // ---4-------+-------0-->
-            //     5      |      7
-            //      5     |     7
-            //         5  6  7
-            //            |
-            // mirrors to
-            //            ^
-            //            |
-            //         1  2  3
-            //      1     |     3
-            //     1      |      3
-            // ---0-------+-------4-->
-            //     7      |      5
-            //      7     |     5
-            //         7  6  5
-            //            |
-
-            return quadrant switch
+            static int MirrorAcrossY(int quadrant)
             {
-                0 => 4,
-                1 => 3,
-                2 => 2,
-                3 => 1,
-                4 => 0,
-                5 => 7,
-                6 => 6,
-                7 => 5,
-                _ => throw new InvalidOperationException()
-            };
-        }
+                //            ^
+                //            |
+                //         3  2  1
+                //      3     |     1
+                //     3      |      1
+                // ---4-------+-------0-->
+                //     5      |      7
+                //      5     |     7
+                //         5  6  7
+                //            |
+                // mirrors to
+                //            ^
+                //            |
+                //         1  2  3
+                //      1     |     3
+                //     1      |      3
+                // ---0-------+-------4-->
+                //     7      |      5
+                //      7     |     5
+                //         7  6  5
+                //            |
 
-        private static (int x, int y) TransformCoord(int siteX, int siteY, LayoutRepeat repeat, int minX, int minY, int maxX, int maxY)
-        {
-            int x0 = minX;
-            int y0 = minY;
-            int x1 = maxX;
-            int y1 = maxY;
-            int xc = siteX;
-            int yc = siteY;
-
-            if (DoesRepeatMirror(repeat))
-            {
-                xc = x1 - xc + x0;
-                //yc = y1 - yc + y0; -- we only mirror horizontally
+                return quadrant switch
+                {
+                    0 => 4,
+                    1 => 3,
+                    2 => 2,
+                    3 => 1,
+                    4 => 0,
+                    5 => 7,
+                    6 => 6,
+                    7 => 5,
+                    _ => throw new InvalidOperationException()
+                };
             }
 
-            switch (repeat)
+            static (int x, int y) TransformCoord(int siteX, int siteY, LayoutRepeat repeat, int minX, int minY, int maxX, int maxY)
             {
-                case LayoutRepeat.Mirror:
-                    return (xc, yc); // no change except what mirror already applied
+                int x0 = minX;
+                int y0 = minY;
+                int x1 = maxX;
+                int y1 = maxY;
+                int xc = siteX;
+                int yc = siteY;
 
-                case LayoutRepeat.Rotate90:
-                case LayoutRepeat.MirrorAndRotate90:
-                    return (x0 + yc, y1 - xc);
+                if (DoesRepeatMirror(repeat))
+                {
+                    xc = x1 - xc + x0;
+                    //yc = y1 - yc + y0; -- we only mirror horizontally
+                }
 
-                case LayoutRepeat.Rotate180:
-                case LayoutRepeat.MirrorAndRotate180:
-                    return (x1 - xc, y1 - yc);
+                switch (repeat)
+                {
+                    case LayoutRepeat.Mirror:
+                        return (xc, yc); // no change except what mirror already applied
 
-                case LayoutRepeat.Rotate270:
-                case LayoutRepeat.MirrorAndRotate270:
-                    return (x1 - yc, y0 + xc);
+                    case LayoutRepeat.Rotate90:
+                    case LayoutRepeat.MirrorAndRotate90:
+                        return (x0 + yc, y1 - xc);
 
-                case LayoutRepeat.RotateAll:
-                case LayoutRepeat.RotateAndMirrorAll:
-                    throw new InvalidOperationException();
+                    case LayoutRepeat.Rotate180:
+                    case LayoutRepeat.MirrorAndRotate180:
+                        return (x1 - xc, y1 - yc);
 
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                    case LayoutRepeat.Rotate270:
+                    case LayoutRepeat.MirrorAndRotate270:
+                        return (x1 - yc, y0 + xc);
+
+                    case LayoutRepeat.RotateAll:
+                    case LayoutRepeat.RotateAndMirrorAll:
+                        throw new InvalidOperationException();
+
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                }
             }
-        }
 
-        private static bool DoesRepeatMirror(LayoutRepeat repeat)
-        {
-            switch (repeat)
+            static bool DoesRepeatMirror(LayoutRepeat repeat)
             {
-                case LayoutRepeat.Rotate90:
-                case LayoutRepeat.Rotate180:
-                case LayoutRepeat.Rotate270:
-                    return false;
+                switch (repeat)
+                {
+                    case LayoutRepeat.Rotate90:
+                    case LayoutRepeat.Rotate180:
+                    case LayoutRepeat.Rotate270:
+                        return false;
 
-                case LayoutRepeat.Mirror:
-                case LayoutRepeat.MirrorAndRotate90:
-                case LayoutRepeat.MirrorAndRotate180:
-                case LayoutRepeat.MirrorAndRotate270:
-                    return true;
+                    case LayoutRepeat.Mirror:
+                    case LayoutRepeat.MirrorAndRotate90:
+                    case LayoutRepeat.MirrorAndRotate180:
+                    case LayoutRepeat.MirrorAndRotate270:
+                        return true;
 
-                case LayoutRepeat.RotateAndMirrorAll:
-                case LayoutRepeat.RotateAll:
-                    throw new InvalidOperationException();
+                    case LayoutRepeat.RotateAndMirrorAll:
+                    case LayoutRepeat.RotateAll:
+                        throw new InvalidOperationException();
 
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                }
             }
-        }
 
-        private string TransformName(string givenName, LayoutRepeat repeat)
-        {
-            if (repeat == LayoutRepeat.Rotate90)
-                if (givenName.Contains("Horizontal"))
-                    return givenName.Replace("Horizontal", "Vertical");
-
-            if (repeat == LayoutRepeat.Rotate90)
-                if (givenName.Contains("Vertical"))
-                    return givenName.Replace("Vertical", "Horizontal");
-
-            return givenName + "_" + RepeatToNameSuffix(repeat);
-        }
-
-        private static string RepeatToNameSuffix(LayoutRepeat repeat)
-        {
-            switch (repeat)
+            string TransformName(string givenName, LayoutRepeat repeat)
             {
-                case LayoutRepeat.Rotate90:           return "Rotated90";
-                case LayoutRepeat.Rotate180:          return "Rotated180";
-                case LayoutRepeat.Rotate270:          return "Rotated270";
-                case LayoutRepeat.Mirror:             return "Mirrored";
-                case LayoutRepeat.MirrorAndRotate90:  return "MirroredAndRotated90";
-                case LayoutRepeat.MirrorAndRotate180: return "MirroredAndRotated180";
-                case LayoutRepeat.MirrorAndRotate270: return "MirroredAndRotated270";
+                if (repeat == LayoutRepeat.Rotate90)
+                    if (givenName.Contains("Horizontal"))
+                        return givenName.Replace("Horizontal", "Vertical");
 
-                case LayoutRepeat.RotateAll:
-                case LayoutRepeat.RotateAndMirrorAll:
-                    throw new InvalidOperationException();
+                if (repeat == LayoutRepeat.Rotate90)
+                    if (givenName.Contains("Vertical"))
+                        return givenName.Replace("Vertical", "Horizontal");
 
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                return givenName + "_" + RepeatToNameSuffix(repeat);
+            }
+
+            static string RepeatToNameSuffix(LayoutRepeat repeat)
+            {
+                switch (repeat)
+                {
+                    case LayoutRepeat.Rotate90:           return "Rotated90";
+                    case LayoutRepeat.Rotate180:          return "Rotated180";
+                    case LayoutRepeat.Rotate270:          return "Rotated270";
+                    case LayoutRepeat.Mirror:             return "Mirrored";
+                    case LayoutRepeat.MirrorAndRotate90:  return "MirroredAndRotated90";
+                    case LayoutRepeat.MirrorAndRotate180: return "MirroredAndRotated180";
+                    case LayoutRepeat.MirrorAndRotate270: return "MirroredAndRotated270";
+
+                    case LayoutRepeat.RotateAll:
+                    case LayoutRepeat.RotateAndMirrorAll:
+                        throw new InvalidOperationException();
+
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(repeat), repeat, null);
+                }
             }
         }
     }
