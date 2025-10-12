@@ -11589,7 +11589,7 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     }
 
     [Test]
-    public void FivePointsInAKite()
+    public void FivePointsInARegularKite()
     {
         // Arrange
 
@@ -11748,7 +11748,7 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     }
 
     [Test]
-    public void FivePointsInABorderTouchingKite()
+    public void FivePointsInABorderTouchingRegularKite()
     {
         // Arrange
 
@@ -11880,6 +11880,638 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
         Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 500, 1000, 0, 500), Is.True); // #5 A-B
         Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 1000, 500, 500, 1000), Is.True); // #5 D-A
         Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(3), 500, 0, 1000, 500), Is.True); // #5 C-D
+    }
+
+    [Test]
+    public void FivePointsInASkewedKite()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(200, 600), // #1
+            new VoronoiSite(200, 200), // #2
+            new VoronoiSite(600, 200), // #3
+            new VoronoiSite(600, 600), // #4
+            new VoronoiSite(500, 300), // #5
+        };
+
+        //  800 X-------------------A-------------------Z
+        //      |                   |                   |
+        //  700 |                   |                   |
+        //      |                   |                   |
+        //  600 |         1         |         4         |
+        //      |                   |                   |
+        //  500 |                  ,E,,,                |
+        //      |                ,'     '''··,,,        |
+        //  400 B--------------F'               ''#H----D
+        //      |               ·               ,'      |
+        //  300 |                ·       5   ,·'        |
+        //      |                ·         ,'           |
+        //  200 |         2       ·     ,·'   3         |
+        //      |                  ·  ,'                |
+        //  100 |                   G'                  |
+        //      |                   |                   |
+        //    0 Y-------------------C-------------------W
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+        Assume.That(edges, Is.Not.Null);
+        Assume.That(HasEdge(edges, 400, 800, 400, 500), Is.True, "Expected: has edge A-E"); // A-E
+        Assume.That(HasEdge(edges, 800, 400, 700, 400), Is.True, "Expected: has edge D-H"); // D-H
+        Assume.That(HasEdge(edges, 400, 0, 400, 100), Is.True, "Expected: has edge C-G"); // C-G
+        Assume.That(HasEdge(edges, 0, 400, 300, 400), Is.True, "Expected: has edge B-F"); // B-F
+        Assume.That(HasEdge(edges, 400, 500, 700, 400), Is.True, "Expected: has edge E-H"); // E-H
+        Assume.That(HasEdge(edges, 700, 400, 400, 100), Is.True, "Expected: has edge H-G"); // H-G
+        Assume.That(HasEdge(edges, 400, 100, 300, 400), Is.True, "Expected: has edge G-F"); // G-F
+        Assume.That(HasEdge(edges, 300, 400, 400, 500), Is.True, "Expected: has edge F-E"); // F-E
+        Assume.That(HasEdge(edges, 0, 800, 400, 800), Is.True, "Expected: has edge X-A"); // X-A
+        Assume.That(HasEdge(edges, 400, 800, 800, 800), Is.True, "Expected: has edge A-Z"); // A-Z
+        Assume.That(HasEdge(edges, 800, 800, 800, 400), Is.True, "Expected: has edge Z-D"); // Z-D
+        Assume.That(HasEdge(edges, 800, 400, 800, 0), Is.True, "Expected: has edge D-W"); // D-W
+        Assume.That(HasEdge(edges, 800, 0, 400, 0), Is.True, "Expected: has edge W-C"); // W-C
+        Assume.That(HasEdge(edges, 400, 0, 0, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+        Assume.That(HasEdge(edges, 0, 0, 0, 400), Is.True, "Expected: has edge Y-B"); // Y-B
+        Assume.That(HasEdge(edges, 0, 400, 0, 800), Is.True, "Expected: has edge B-X"); // B-X
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 400, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 400, 500), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 300, 400), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 300, 400), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 400, 100), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 800, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 400, 100), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 700, 400), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 400, 800), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 800, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 400, 500), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 700, 400), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 800, 800), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 400, 500), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 300, 400), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 400, 100), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 700, 400), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        Assert.That(sites[0].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[0].ClockwiseCell.Count(), Is.EqualTo(5)); // #1
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 800, 400, 500), Is.True); // #1 has A-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 0, 400, 300, 400), Is.True); // #1 has B-F
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 300, 400, 400, 500), Is.True); // #1 has F-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 0, 800, 400, 800), Is.True); // #1 has X-A
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 0, 400, 0, 800), Is.True); // #1 has B-X
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 300, 400, 400, 500), Is.True); // #1 F-E
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 0, 400, 300, 400), Is.True); // #1 B-F
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 0, 400, 0, 800), Is.True); // #1 B-X
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 0, 800, 400, 800), Is.True); // #1 X-A
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(4), 400, 800, 400, 500), Is.True); // #1 A-E
+        Assert.That(sites[1].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[1].ClockwiseCell.Count(), Is.EqualTo(5)); // #2
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 0, 400, 100), Is.True); // #2 has C-G
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 0, 400, 300, 400), Is.True); // #2 has B-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 100, 300, 400), Is.True); // #2 has G-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 0, 0, 0), Is.True); // #2 has C-Y
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 0, 0, 0, 400), Is.True); // #2 has Y-B
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 400, 0, 400, 100), Is.True); // #2 C-G
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 0, 0, 0), Is.True); // #2 C-Y
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 0, 0, 0, 400), Is.True); // #2 Y-B
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(3), 0, 400, 300, 400), Is.True); // #2 B-F
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(4), 400, 100, 300, 400), Is.True); // #2 G-F
+        Assert.That(sites[2].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[2].ClockwiseCell.Count(), Is.EqualTo(5)); // #3
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 800, 400, 700, 400), Is.True); // #3 has D-H
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 0, 400, 100), Is.True); // #3 has C-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 700, 400, 400, 100), Is.True); // #3 has H-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 800, 400, 800, 0), Is.True); // #3 has D-W
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 800, 0, 400, 0), Is.True); // #3 has W-C
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 800, 0, 400, 0), Is.True); // #3 W-C
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 0, 400, 100), Is.True); // #3 C-G
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 700, 400, 400, 100), Is.True); // #3 H-G
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(3), 800, 400, 700, 400), Is.True); // #3 D-H
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(4), 800, 400, 800, 0), Is.True); // #3 D-W
+        Assert.That(sites[3].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[3].ClockwiseCell.Count(), Is.EqualTo(5)); // #4
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 800, 400, 500), Is.True); // #4 has A-E
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 800, 400, 700, 400), Is.True); // #4 has D-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 500, 700, 400), Is.True); // #4 has E-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 800, 800, 800), Is.True); // #4 has A-Z
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 800, 800, 800, 400), Is.True); // #4 has Z-D
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 800, 400, 700, 400), Is.True); // #4 D-H
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 500, 700, 400), Is.True); // #4 E-H
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 400, 800, 400, 500), Is.True); // #4 A-E
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(3), 400, 800, 800, 800), Is.True); // #4 A-Z
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(4), 800, 800, 800, 400), Is.True); // #4 Z-D
+        Assert.That(sites[4].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[4].ClockwiseCell.Count(), Is.EqualTo(4)); // #5
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 500, 700, 400), Is.True); // #5 has E-H
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 700, 400, 400, 100), Is.True); // #5 has H-G
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 100, 300, 400), Is.True); // #5 has G-F
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 300, 400, 400, 500), Is.True); // #5 has F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 100, 300, 400), Is.True); // #5 G-F
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 300, 400, 400, 500), Is.True); // #5 F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 400, 500, 700, 400), Is.True); // #5 E-H
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(3), 700, 400, 400, 100), Is.True); // #5 H-G
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 90° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated90()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(600, 600), // #1
+            new VoronoiSite(200, 600), // #2
+            new VoronoiSite(200, 200), // #3
+            new VoronoiSite(600, 200), // #4
+            new VoronoiSite(300, 300), // #5
+        };
+
+        //  800 Y-------------------B-------------------X
+        //      |                   |                   |
+        //  700 |                   |                   |
+        //      |                   |                   |
+        //  600 |         2         |         1         |
+        //      |                   |                   |
+        //  500 |                ,,,F,                  |
+        //      |        ,,,··'''     ',                |
+        //  400 C----G#''               'E--------------A
+        //      |      ',               ·               |
+        //  300 |        '·,   5       ·                |
+        //      |           ',        ·                 |
+        //  200 |         3   '·,     ·       4         |
+        //      |                ',  ·                  |
+        //  100 |                  'H                   |
+        //      |                   |                   |
+        //    0 W-------------------D-------------------Z
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+        Assume.That(edges, Is.Not.Null);
+        Assume.That(HasEdge(edges, 800, 400, 500, 400), Is.True, "Expected: has edge A-E"); // A-E
+        Assume.That(HasEdge(edges, 400, 0, 400, 100), Is.True, "Expected: has edge D-H"); // D-H
+        Assume.That(HasEdge(edges, 0, 400, 100, 400), Is.True, "Expected: has edge C-G"); // C-G
+        Assume.That(HasEdge(edges, 400, 800, 400, 500), Is.True, "Expected: has edge B-F"); // B-F
+        Assume.That(HasEdge(edges, 500, 400, 400, 100), Is.True, "Expected: has edge E-H"); // E-H
+        Assume.That(HasEdge(edges, 400, 100, 100, 400), Is.True, "Expected: has edge H-G"); // H-G
+        Assume.That(HasEdge(edges, 100, 400, 400, 500), Is.True, "Expected: has edge G-F"); // G-F
+        Assume.That(HasEdge(edges, 400, 500, 500, 400), Is.True, "Expected: has edge F-E"); // F-E
+        Assume.That(HasEdge(edges, 800, 800, 800, 400), Is.True, "Expected: has edge X-A"); // X-A
+        Assume.That(HasEdge(edges, 800, 400, 800, 0), Is.True, "Expected: has edge A-Z"); // A-Z
+        Assume.That(HasEdge(edges, 800, 0, 400, 0), Is.True, "Expected: has edge Z-D"); // Z-D
+        Assume.That(HasEdge(edges, 400, 0, 0, 0), Is.True, "Expected: has edge D-W"); // D-W
+        Assume.That(HasEdge(edges, 0, 0, 0, 400), Is.True, "Expected: has edge W-C"); // W-C
+        Assume.That(HasEdge(edges, 0, 400, 0, 800), Is.True, "Expected: has edge C-Y"); // C-Y
+        Assume.That(HasEdge(edges, 0, 800, 400, 800), Is.True, "Expected: has edge Y-B"); // Y-B
+        Assume.That(HasEdge(edges, 400, 800, 800, 800), Is.True, "Expected: has edge B-X"); // B-X
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 800, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 400, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 500, 400), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 400, 500), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 800, 800), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 400, 800), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 400, 500), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 100, 400), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 100, 400), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 400, 100), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 800, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 500, 400), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 400, 100), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 500, 400), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 400, 500), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 100, 400), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 400, 100), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        Assert.That(sites[0].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[0].ClockwiseCell.Count(), Is.EqualTo(5)); // #1
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 800, 400, 500, 400), Is.True); // #1 has A-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 800, 400, 500), Is.True); // #1 has B-F
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 500, 500, 400), Is.True); // #1 has F-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 800, 800, 800, 400), Is.True); // #1 has X-A
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 800, 800, 800), Is.True); // #1 has B-X
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 800, 400, 500, 400), Is.True); // #1 A-E
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 500, 500, 400), Is.True); // #1 F-E
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 400, 800, 400, 500), Is.True); // #1 B-F
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 400, 800, 800, 800), Is.True); // #1 B-X
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(4), 800, 800, 800, 400), Is.True); // #1 X-A
+        Assert.That(sites[1].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[1].ClockwiseCell.Count(), Is.EqualTo(5)); // #2
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 0, 400, 100, 400), Is.True); // #2 has C-G
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 800, 400, 500), Is.True); // #2 has B-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 100, 400, 400, 500), Is.True); // #2 has G-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 0, 400, 0, 800), Is.True); // #2 has C-Y
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 0, 800, 400, 800), Is.True); // #2 has Y-B
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 100, 400, 400, 500), Is.True); // #2 G-F
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 0, 400, 100, 400), Is.True); // #2 C-G
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 0, 400, 0, 800), Is.True); // #2 C-Y
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(3), 0, 800, 400, 800), Is.True); // #2 Y-B
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(4), 400, 800, 400, 500), Is.True); // #2 B-F
+        Assert.That(sites[2].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[2].ClockwiseCell.Count(), Is.EqualTo(5)); // #3
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 0, 400, 100), Is.True); // #3 has D-H
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 0, 400, 100, 400), Is.True); // #3 has C-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 100, 100, 400), Is.True); // #3 has H-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 0, 0, 0), Is.True); // #3 has D-W
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 0, 0, 0, 400), Is.True); // #3 has W-C
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 400, 0, 400, 100), Is.True); // #3 D-H
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 0, 0, 0), Is.True); // #3 D-W
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 0, 0, 0, 400), Is.True); // #3 W-C
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(3), 0, 400, 100, 400), Is.True); // #3 C-G
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(4), 400, 100, 100, 400), Is.True); // #3 H-G
+        Assert.That(sites[3].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[3].ClockwiseCell.Count(), Is.EqualTo(5)); // #4
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 800, 400, 500, 400), Is.True); // #4 has A-E
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 0, 400, 100), Is.True); // #4 has D-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 500, 400, 400, 100), Is.True); // #4 has E-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 800, 400, 800, 0), Is.True); // #4 has A-Z
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 800, 0, 400, 0), Is.True); // #4 has Z-D
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 800, 0, 400, 0), Is.True); // #4 Z-D
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 400, 0, 400, 100), Is.True); // #4 D-H
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 500, 400, 400, 100), Is.True); // #4 E-H
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(3), 800, 400, 500, 400), Is.True); // #4 A-E
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(4), 800, 400, 800, 0), Is.True); // #4 A-Z
+        Assert.That(sites[4].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[4].ClockwiseCell.Count(), Is.EqualTo(4)); // #5
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 500, 400, 400, 100), Is.True); // #5 has E-H
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 100, 100, 400), Is.True); // #5 has H-G
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 100, 400, 400, 500), Is.True); // #5 has G-F
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 500, 500, 400), Is.True); // #5 has F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 400, 100, 100, 400), Is.True); // #5 H-G
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 100, 400, 400, 500), Is.True); // #5 G-F
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 400, 500, 500, 400), Is.True); // #5 F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(3), 500, 400, 400, 100), Is.True); // #5 E-H
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 180° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated180()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(600, 200), // #1
+            new VoronoiSite(600, 600), // #2
+            new VoronoiSite(200, 600), // #3
+            new VoronoiSite(200, 200), // #4
+            new VoronoiSite(300, 500), // #5
+        };
+
+        //  800 W-------------------C-------------------Y
+        //      |                   |                   |
+        //  700 |                  ,G                   |
+        //      |                ,'  ·                  |
+        //  600 |         3   ,·'     ·       2         |
+        //      |           ,'         ·                |
+        //  500 |        ,·'   5       ·                |
+        //      |      ,'               ·               |
+        //  400 D----H#,,               ,F--------------B
+        //      |        '''··,,,     ,'                |
+        //  300 |                '''E'                  |
+        //      |                   |                   |
+        //  200 |         4         |         1         |
+        //      |                   |                   |
+        //  100 |                   |                   |
+        //      |                   |                   |
+        //    0 Z-------------------A-------------------X
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+        Assume.That(edges, Is.Not.Null);
+        Assume.That(HasEdge(edges, 400, 0, 400, 300), Is.True, "Expected: has edge A-E"); // A-E
+        Assume.That(HasEdge(edges, 0, 400, 100, 400), Is.True, "Expected: has edge D-H"); // D-H
+        Assume.That(HasEdge(edges, 400, 800, 400, 700), Is.True, "Expected: has edge C-G"); // C-G
+        Assume.That(HasEdge(edges, 800, 400, 500, 400), Is.True, "Expected: has edge B-F"); // B-F
+        Assume.That(HasEdge(edges, 400, 300, 100, 400), Is.True, "Expected: has edge E-H"); // E-H
+        Assume.That(HasEdge(edges, 100, 400, 400, 700), Is.True, "Expected: has edge H-G"); // H-G
+        Assume.That(HasEdge(edges, 400, 700, 500, 400), Is.True, "Expected: has edge G-F"); // G-F
+        Assume.That(HasEdge(edges, 500, 400, 400, 300), Is.True, "Expected: has edge F-E"); // F-E
+        Assume.That(HasEdge(edges, 800, 0, 400, 0), Is.True, "Expected: has edge X-A"); // X-A
+        Assume.That(HasEdge(edges, 400, 0, 0, 0), Is.True, "Expected: has edge A-Z"); // A-Z
+        Assume.That(HasEdge(edges, 0, 0, 0, 400), Is.True, "Expected: has edge Z-D"); // Z-D
+        Assume.That(HasEdge(edges, 0, 400, 0, 800), Is.True, "Expected: has edge D-W"); // D-W
+        Assume.That(HasEdge(edges, 0, 800, 400, 800), Is.True, "Expected: has edge W-C"); // W-C
+        Assume.That(HasEdge(edges, 400, 800, 800, 800), Is.True, "Expected: has edge C-Y"); // C-Y
+        Assume.That(HasEdge(edges, 800, 800, 800, 400), Is.True, "Expected: has edge Y-B"); // Y-B
+        Assume.That(HasEdge(edges, 800, 400, 800, 0), Is.True, "Expected: has edge B-X"); // B-X
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 800, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 400, 300), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 500, 400), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 800, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 400, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 500, 400), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 400, 700), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 800, 800), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 400, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 400, 700), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 100, 400), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 0, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 400, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 100, 400), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 400, 300), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 500, 400), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 400, 700), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 100, 400), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        Assert.That(sites[0].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[0].ClockwiseCell.Count(), Is.EqualTo(5)); // #1
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 0, 400, 300), Is.True); // #1 has A-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 800, 400, 500, 400), Is.True); // #1 has B-F
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 500, 400, 400, 300), Is.True); // #1 has F-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 800, 0, 400, 0), Is.True); // #1 has X-A
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 800, 400, 800, 0), Is.True); // #1 has B-X
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 800, 0, 400, 0), Is.True); // #1 X-A
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 400, 0, 400, 300), Is.True); // #1 A-E
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 500, 400, 400, 300), Is.True); // #1 F-E
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 800, 400, 500, 400), Is.True); // #1 B-F
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(4), 800, 400, 800, 0), Is.True); // #1 B-X
+        Assert.That(sites[1].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[1].ClockwiseCell.Count(), Is.EqualTo(5)); // #2
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 800, 400, 700), Is.True); // #2 has C-G
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 800, 400, 500, 400), Is.True); // #2 has B-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 700, 500, 400), Is.True); // #2 has G-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 800, 800, 800), Is.True); // #2 has C-Y
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 800, 800, 800, 400), Is.True); // #2 has Y-B
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 800, 400, 500, 400), Is.True); // #2 B-F
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 700, 500, 400), Is.True); // #2 G-F
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 400, 800, 400, 700), Is.True); // #2 C-G
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(3), 400, 800, 800, 800), Is.True); // #2 C-Y
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(4), 800, 800, 800, 400), Is.True); // #2 Y-B
+        Assert.That(sites[2].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[2].ClockwiseCell.Count(), Is.EqualTo(5)); // #3
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 0, 400, 100, 400), Is.True); // #3 has D-H
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 800, 400, 700), Is.True); // #3 has C-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 100, 400, 400, 700), Is.True); // #3 has H-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 0, 400, 0, 800), Is.True); // #3 has D-W
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 0, 800, 400, 800), Is.True); // #3 has W-C
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 0, 400, 100, 400), Is.True); // #3 D-H
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 0, 400, 0, 800), Is.True); // #3 D-W
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 0, 800, 400, 800), Is.True); // #3 W-C
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(3), 400, 800, 400, 700), Is.True); // #3 C-G
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(4), 100, 400, 400, 700), Is.True); // #3 H-G
+        Assert.That(sites[3].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[3].ClockwiseCell.Count(), Is.EqualTo(5)); // #4
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 0, 400, 300), Is.True); // #4 has A-E
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 0, 400, 100, 400), Is.True); // #4 has D-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 300, 100, 400), Is.True); // #4 has E-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 0, 0, 0), Is.True); // #4 has A-Z
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 0, 0, 0, 400), Is.True); // #4 has Z-D
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 400, 0, 0, 0), Is.True); // #4 A-Z
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 0, 0, 0, 400), Is.True); // #4 Z-D
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 0, 400, 100, 400), Is.True); // #4 D-H
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(3), 400, 300, 100, 400), Is.True); // #4 E-H
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(4), 400, 0, 400, 300), Is.True); // #4 A-E
+        Assert.That(sites[4].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[4].ClockwiseCell.Count(), Is.EqualTo(4)); // #5
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 300, 100, 400), Is.True); // #5 has E-H
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 100, 400, 400, 700), Is.True); // #5 has H-G
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 700, 500, 400), Is.True); // #5 has G-F
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 500, 400, 400, 300), Is.True); // #5 has F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 500, 400, 400, 300), Is.True); // #5 F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 300, 100, 400), Is.True); // #5 E-H
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 100, 400, 400, 700), Is.True); // #5 H-G
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(3), 400, 700, 500, 400), Is.True); // #5 G-F
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 270° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated270()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(200, 200), // #1
+            new VoronoiSite(600, 200), // #2
+            new VoronoiSite(600, 600), // #3
+            new VoronoiSite(200, 600), // #4
+            new VoronoiSite(500, 500), // #5
+        };
+
+        //  800 Z-------------------D-------------------W
+        //      |                   |                   |
+        //  700 |                   H,                  |
+        //      |                  ·  ',                |
+        //  600 |         4       ·     '·,   3         |
+        //      |                 ·        ',           |
+        //  500 |                ·       5   '·,        |
+        //      |               ·               ',      |
+        //  400 A--------------E,               ,,#G----C
+        //      |                ',     ,,,··'''        |
+        //  300 |                  'F'''                |
+        //      |                   |                   |
+        //  200 |         1         |         2         |
+        //      |                   |                   |
+        //  100 |                   |                   |
+        //      |                   |                   |
+        //    0 X-------------------B-------------------Y
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(edges.Count, Is.EqualTo(16), "Expected: edge count 16");
+        Assume.That(edges, Is.Not.Null);
+        Assume.That(HasEdge(edges, 0, 400, 300, 400), Is.True, "Expected: has edge A-E"); // A-E
+        Assume.That(HasEdge(edges, 400, 800, 400, 700), Is.True, "Expected: has edge D-H"); // D-H
+        Assume.That(HasEdge(edges, 800, 400, 700, 400), Is.True, "Expected: has edge C-G"); // C-G
+        Assume.That(HasEdge(edges, 400, 0, 400, 300), Is.True, "Expected: has edge B-F"); // B-F
+        Assume.That(HasEdge(edges, 300, 400, 400, 700), Is.True, "Expected: has edge E-H"); // E-H
+        Assume.That(HasEdge(edges, 400, 700, 700, 400), Is.True, "Expected: has edge H-G"); // H-G
+        Assume.That(HasEdge(edges, 700, 400, 400, 300), Is.True, "Expected: has edge G-F"); // G-F
+        Assume.That(HasEdge(edges, 400, 300, 300, 400), Is.True, "Expected: has edge F-E"); // F-E
+        Assume.That(HasEdge(edges, 0, 0, 0, 400), Is.True, "Expected: has edge X-A"); // X-A
+        Assume.That(HasEdge(edges, 0, 400, 0, 800), Is.True, "Expected: has edge A-Z"); // A-Z
+        Assume.That(HasEdge(edges, 0, 800, 400, 800), Is.True, "Expected: has edge Z-D"); // Z-D
+        Assume.That(HasEdge(edges, 400, 800, 800, 800), Is.True, "Expected: has edge D-W"); // D-W
+        Assume.That(HasEdge(edges, 800, 800, 800, 400), Is.True, "Expected: has edge W-C"); // W-C
+        Assume.That(HasEdge(edges, 800, 400, 800, 0), Is.True, "Expected: has edge C-Y"); // C-Y
+        Assume.That(HasEdge(edges, 800, 0, 400, 0), Is.True, "Expected: has edge Y-B"); // Y-B
+        Assume.That(HasEdge(edges, 400, 0, 0, 0), Is.True, "Expected: has edge B-X"); // B-X
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 300, 400), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 400, 300), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 800, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 400, 300), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 700, 400), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 800, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 400, 800), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 700, 400), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 400, 700), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 800, 800), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 0, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 400, 800), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 300, 400), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 400, 700), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 0, 800), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 300, 400), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 400, 300), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 700, 400), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 400, 700), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        Assert.That(sites[0].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[0].ClockwiseCell.Count(), Is.EqualTo(5)); // #1
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 0, 400, 300, 400), Is.True); // #1 has A-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 0, 400, 300), Is.True); // #1 has B-F
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 300, 300, 400), Is.True); // #1 has F-E
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 0, 0, 0, 400), Is.True); // #1 has X-A
+        Assert.That(HasEdge(sites[0].ClockwiseCell, 400, 0, 0, 0), Is.True); // #1 has B-X
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(0), 400, 0, 0, 0), Is.True); // #1 B-X
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(1), 0, 0, 0, 400), Is.True); // #1 X-A
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(2), 0, 400, 300, 400), Is.True); // #1 A-E
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(3), 400, 300, 300, 400), Is.True); // #1 F-E
+        Assert.That(EdgeIs(sites[0].ClockwiseCell.ElementAt(4), 400, 0, 400, 300), Is.True); // #1 B-F
+        Assert.That(sites[1].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[1].ClockwiseCell.Count(), Is.EqualTo(5)); // #2
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 800, 400, 700, 400), Is.True); // #2 has C-G
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 400, 0, 400, 300), Is.True); // #2 has B-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 700, 400, 400, 300), Is.True); // #2 has G-F
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 800, 400, 800, 0), Is.True); // #2 has C-Y
+        Assert.That(HasEdge(sites[1].ClockwiseCell, 800, 0, 400, 0), Is.True); // #2 has Y-B
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(0), 800, 0, 400, 0), Is.True); // #2 Y-B
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(1), 400, 0, 400, 300), Is.True); // #2 B-F
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(2), 700, 400, 400, 300), Is.True); // #2 G-F
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(3), 800, 400, 700, 400), Is.True); // #2 C-G
+        Assert.That(EdgeIs(sites[1].ClockwiseCell.ElementAt(4), 800, 400, 800, 0), Is.True); // #2 C-Y
+        Assert.That(sites[2].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[2].ClockwiseCell.Count(), Is.EqualTo(5)); // #3
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 800, 400, 700), Is.True); // #3 has D-H
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 800, 400, 700, 400), Is.True); // #3 has C-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 700, 700, 400), Is.True); // #3 has H-G
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 400, 800, 800, 800), Is.True); // #3 has D-W
+        Assert.That(HasEdge(sites[2].ClockwiseCell, 800, 800, 800, 400), Is.True); // #3 has W-C
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(0), 800, 400, 700, 400), Is.True); // #3 C-G
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(1), 400, 700, 700, 400), Is.True); // #3 H-G
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(2), 400, 800, 400, 700), Is.True); // #3 D-H
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(3), 400, 800, 800, 800), Is.True); // #3 D-W
+        Assert.That(EdgeIs(sites[2].ClockwiseCell.ElementAt(4), 800, 800, 800, 400), Is.True); // #3 W-C
+        Assert.That(sites[3].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[3].ClockwiseCell.Count(), Is.EqualTo(5)); // #4
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 0, 400, 300, 400), Is.True); // #4 has A-E
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 400, 800, 400, 700), Is.True); // #4 has D-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 300, 400, 400, 700), Is.True); // #4 has E-H
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 0, 400, 0, 800), Is.True); // #4 has A-Z
+        Assert.That(HasEdge(sites[3].ClockwiseCell, 0, 800, 400, 800), Is.True); // #4 has Z-D
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(0), 0, 400, 300, 400), Is.True); // #4 A-E
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(1), 0, 400, 0, 800), Is.True); // #4 A-Z
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(2), 0, 800, 400, 800), Is.True); // #4 Z-D
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(3), 400, 800, 400, 700), Is.True); // #4 D-H
+        Assert.That(EdgeIs(sites[3].ClockwiseCell.ElementAt(4), 300, 400, 400, 700), Is.True); // #4 E-H
+        Assert.That(sites[4].ClockwiseCell, Is.Not.Null);
+        Assert.That(sites[4].ClockwiseCell.Count(), Is.EqualTo(4)); // #5
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 300, 400, 400, 700), Is.True); // #5 has E-H
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 700, 700, 400), Is.True); // #5 has H-G
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 700, 400, 400, 300), Is.True); // #5 has G-F
+        Assert.That(HasEdge(sites[4].ClockwiseCell, 400, 300, 300, 400), Is.True); // #5 has F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(0), 700, 400, 400, 300), Is.True); // #5 G-F
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(1), 400, 300, 300, 400), Is.True); // #5 F-E
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(2), 300, 400, 400, 700), Is.True); // #5 E-H
+        Assert.That(EdgeIs(sites[4].ClockwiseCell.ElementAt(3), 400, 700, 700, 400), Is.True); // #5 H-G
     }
 
     [Test]
