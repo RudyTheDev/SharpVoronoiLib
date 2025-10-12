@@ -2,13 +2,14 @@
 
 internal class GenericClipping : IBorderClippingAlgorithm
 {
+    [MustUseReturnValue]
     public List<VoronoiEdge> Clip(List<VoronoiEdge> edges, double minX, double minY, double maxX, double maxY)
     {
         for (int i = 0; i < edges.Count; i++)
         {
             VoronoiEdge edge = edges[i];
                 
-            bool valid = ClipEdge(edge, minX, minY, maxX, maxY);
+            bool valid = ClipEdge(edge, false, minX, minY, maxX, maxY);
                 
             if (valid)
             {
@@ -34,14 +35,15 @@ internal class GenericClipping : IBorderClippingAlgorithm
     /// <summary>
     /// Combination of personal ray clipping alg and cohen sutherland
     /// </summary>
-    private static bool ClipEdge(VoronoiEdge edge, double minX, double minY, double maxX, double maxY)
+    [MustUseReturnValue]
+    private static bool ClipEdge(VoronoiEdge edge, bool asNeighbour, double minX, double minY, double maxX, double maxY)
     {
         bool accept = false;
 
         // If it's a ray
         if (edge.End == null!)
         {
-            accept = ClipRay(edge, minX, minY, maxX, maxY);
+            accept = ClipRay(edge, asNeighbour, minX, minY, maxX, maxY);
         }
         else
         {
@@ -96,12 +98,17 @@ internal class GenericClipping : IBorderClippingAlgorithm
                         edge.End.BorderLocation = finalPoint.BorderLocation;
                         // (point is shared between edges, so we are basically setting this for all the other edges)
                         
-                        // The neighbours in-between (ray away outside the border) are not actually connected
-                        edge.Left!.RemoveNeighbour(edge.Right!);
-                        edge.Right!.RemoveNeighbour(edge.Left!);
+                        if (!asNeighbour && edge.LastBeachLineNeighbor == null)
+                        {
+                            // The neighbours in-between (ray away outside the border) are not actually connected
+                            // (unless we were a sibling to a valid edge, in which case we preserve neighbours in the sites) 
+                            edge.Left!.RemoveNeighbour(edge.Right!);
+                            edge.Right!.RemoveNeighbour(edge.Left!);
+                        }
 
-                        // Not a valid edge
-                        return false;
+                        // Not a valid edge by itself, but we may be able to merge with neighbour below
+                        accept = false;
+                        break;
                     }
                         
                     edge.Start = finalPoint;
@@ -116,12 +123,17 @@ internal class GenericClipping : IBorderClippingAlgorithm
                         edge.Start.BorderLocation = finalPoint.BorderLocation;
                         // (point is shared between edges, so we are basically setting this for all the other edges)
                         
-                        // The neighbours in-between (ray away outside the border) are not actually connected
-                        edge.Left!.RemoveNeighbour(edge.Right!);
-                        edge.Right!.RemoveNeighbour(edge.Left!);
-                        
-                        // Not a valid edge
-                        return false;
+                        if (!asNeighbour && edge.LastBeachLineNeighbor == null)
+                        {
+                            // The neighbours in-between (ray away outside the border) are not actually connected
+                            // (unless we were a sibling to a valid edge, in which case we preserve neighbours in the sites) 
+                            edge.Left!.RemoveNeighbour(edge.Right!);
+                            edge.Right!.RemoveNeighbour(edge.Left!);
+                        }
+
+                        // Not a valid edge by itself, but we may be able to merge with neighbour below
+                        accept = false;
+                        break;
                     }
                         
                     edge.End = finalPoint;
@@ -134,7 +146,7 @@ internal class GenericClipping : IBorderClippingAlgorithm
         if (edge.LastBeachLineNeighbor != null)
         {
             // Check it
-            bool valid = ClipEdge(edge.LastBeachLineNeighbor, minX, minY, maxX, maxY);
+            bool valid = ClipEdge(edge.LastBeachLineNeighbor, true, minX, minY, maxX, maxY);
                 
             // Both are valid
             if (accept && valid)
@@ -153,33 +165,34 @@ internal class GenericClipping : IBorderClippingAlgorithm
         }
             
         return accept;
-            
-            
-        static Outcode ComputeOutCode(double x, double y, double minX, double minY, double maxX, double maxY)
-        {
-            Outcode code = Outcode.None;
-            if (x.ApproxEqual(minX) || x.ApproxEqual(maxX))
-            { }
-            else if (x < minX)
-                code |= Outcode.Left;
-            else if (x > maxX)
-                code |= Outcode.Right;
-
-            if (y.ApproxEqual(minY) || y.ApproxEqual(maxY))
-            { }
-            else if (y < minY)
-                code |= Outcode.Bottom;
-            else if (y > maxY)
-                code |= Outcode.Top;
-            return code;
-        }
     }
 
-    private static bool ClipRay(VoronoiEdge edge, double minX, double minY, double maxX, double maxY)
+    [Pure]
+    private static Outcode ComputeOutCode(double x, double y, double minX, double minY, double maxX, double maxY)
+    {
+        Outcode code = Outcode.None;
+        if (x.ApproxEqual(minX) || x.ApproxEqual(maxX))
+        { }
+        else if (x < minX)
+            code |= Outcode.Left;
+        else if (x > maxX)
+            code |= Outcode.Right;
+
+        if (y.ApproxEqual(minY) || y.ApproxEqual(maxY))
+        { }
+        else if (y < minY)
+            code |= Outcode.Bottom;
+        else if (y > maxY)
+            code |= Outcode.Top;
+        return code;
+    }
+
+    [Pure]
+    private static bool ClipRay(VoronoiEdge edge, bool asNeighbour, double minX, double minY, double maxX, double maxY)
     {
         VoronoiPoint start = edge.Start;
             
-        //horizontal ray
+        // Horizontal ray
         if (edge.SlopeRise.ApproxEqual(0))
         {
             if (!Within(start.Y, minY, maxY))
@@ -195,7 +208,7 @@ internal class GenericClipping : IBorderClippingAlgorithm
             {
                 VoronoiPoint endPoint = 
                     edge.SlopeRun.ApproxGreaterThan(0) ? 
-                        new VoronoiPoint(maxX, start.Y, PointBorderLocation.Right) : 
+                        new VoronoiPoint(maxX, start.Y, PointBorderLocation.Right) : // never BottomRight or TopRight
                         new VoronoiPoint(minX, start.Y, start.Y.ApproxEqual(minY) ? PointBorderLocation.BottomLeft : start.Y.ApproxEqual(maxY) ? PointBorderLocation.TopLeft : PointBorderLocation.Left);
 
                 // If we are a 0-length edge after clipping, then we are a "connector" between more than 2 equidistant sites 
@@ -205,9 +218,13 @@ internal class GenericClipping : IBorderClippingAlgorithm
                     start.BorderLocation = endPoint.BorderLocation;
                     // (point is shared between edges, so we are basically setting this for all the other edges)
                         
-                    // The neighbours in-between (ray away outside the border) are not actually connected
-                    edge.Left!.RemoveNeighbour(edge.Right!);
-                    edge.Right!.RemoveNeighbour(edge.Left!);
+                    if (!asNeighbour && edge.LastBeachLineNeighbor == null)
+                    {
+                        // The neighbours in-between (ray away outside the border) are not actually connected
+                        // (unless we were a sibling to a valid edge, in which case we preserve neighbours in the sites) 
+                        edge.Left!.RemoveNeighbour(edge.Right!);
+                        edge.Right!.RemoveNeighbour(edge.Left!);
+                    }
                         
                     // Not a valid edge
                     return false;
@@ -232,7 +249,7 @@ internal class GenericClipping : IBorderClippingAlgorithm
             return true;
         }
 
-        //vertical ray
+        // Vertical ray
         if (edge.SlopeRun.ApproxEqual(0))
         {
             if (start.X.ApproxLessThan(minX) || start.X.ApproxGreaterThan(maxX))
@@ -249,7 +266,7 @@ internal class GenericClipping : IBorderClippingAlgorithm
                 VoronoiPoint endPoint = 
                     edge.SlopeRise.ApproxGreaterThan(0) ?
                         new VoronoiPoint(start.X, maxY, start.X.ApproxEqual(minX) ? PointBorderLocation.TopLeft : start.X.ApproxEqual(maxX) ? PointBorderLocation.TopRight : PointBorderLocation.Top) :
-                        new VoronoiPoint(start.X, minY, PointBorderLocation.Bottom);
+                        new VoronoiPoint(start.X, minY, PointBorderLocation.Bottom); // never BottomLeft or BottomRight
 
                 // If we are a 0-length edge after clipping, then we are a "connector" between more than 2 equidistant sites 
                 if (endPoint.ApproxEqual(edge.Start))
@@ -258,9 +275,13 @@ internal class GenericClipping : IBorderClippingAlgorithm
                     start.BorderLocation = endPoint.BorderLocation;
                     // (point is shared between edges, so we are basically setting this for all the other edges)
                         
-                    // The neighbours in-between (ray away outside the border) are not actually connected
-                    edge.Left!.RemoveNeighbour(edge.Right!);
-                    edge.Right!.RemoveNeighbour(edge.Left!);
+                    if (!asNeighbour && edge.LastBeachLineNeighbor == null)
+                    {
+                        // The neighbours in-between (ray away outside the border) are not actually connected
+                        // (unless we were a sibling to a valid edge, in which case we preserve neighbours in the sites) 
+                        edge.Left!.RemoveNeighbour(edge.Right!);
+                        edge.Right!.RemoveNeighbour(edge.Left!);
+                    }
                         
                     // Not a valid edge
                     return false;
@@ -284,7 +305,7 @@ internal class GenericClipping : IBorderClippingAlgorithm
             return true;
         }
             
-        //works for outside
+        // Works for outside
 
         double topXValue = CalcX(edge.Slope!.Value, maxY, edge.Intercept!.Value);
         VoronoiPoint topX = new VoronoiPoint(topXValue, maxY, topXValue.ApproxEqual(minX) ? PointBorderLocation.TopLeft : topXValue.ApproxEqual(maxX) ? PointBorderLocation.TopRight : PointBorderLocation.Top);
@@ -303,9 +324,9 @@ internal class GenericClipping : IBorderClippingAlgorithm
         // We can optimize slightly since we are adding them one at a time and only "neighbouring" points can be the same,
         // e.g. topX and rightY can but not topX and bottomX.
             
-        //reject intersections not within bounds
+        // Reject intersections not within bounds
             
-        List<VoronoiPoint> candidates = new List<VoronoiPoint>();
+        List<VoronoiPoint> candidates = [ ];
 
         bool withinTopX = Within(topX.X, minX, maxX);
         bool withinRightY = Within(rightY.Y, minY, maxY);
@@ -327,12 +348,9 @@ internal class GenericClipping : IBorderClippingAlgorithm
             if (!withinTopX || !leftY.ApproxEqual(topX))
                 if (!withinBottomX || !leftY.ApproxEqual(bottomX))
                     candidates.Add(leftY);
+        
 
-        // This also works as a condition above, but is slower and checks against redundant values
-        // if (candidates.All(c => !c.X.ApproxEqual(leftY.X) || !c.Y.ApproxEqual(leftY.Y)))
-            
-
-        //reject candidates which don't align with the slope
+        // Reject candidates which don't align with the slope
         for (int i = candidates.Count - 1; i >= 0; i--)
         {
             VoronoiPoint candidate = candidates[i];
@@ -410,22 +428,17 @@ internal class GenericClipping : IBorderClippingAlgorithm
         return edge.End != null!; // can be null for now until we fully clip it
             
             
-        static bool Within(double x, double a, double b)
-        {
-            return x.ApproxGreaterThanOrEqualTo(a) && x.ApproxLessThanOrEqualTo(b);
-        }
+        [Pure]
+        static bool Within(double x, double a, double b) => x.ApproxGreaterThanOrEqualTo(a) && x.ApproxLessThanOrEqualTo(b);
 
-        static double CalcY(double m, double x, double b)
-        {
-            return m * x + b;
-        }
+        [Pure]
+        static double CalcY(double m, double x, double b) => m * x + b;
 
-        static double CalcX(double m, double y, double b)
-        {
-            return (y - b) / m;
-        }
+        [Pure]
+        static double CalcX(double m, double y, double b) => (y - b) / m;
     }
 
+    [Pure]
     private static PointBorderLocation GetBorderLocationForCoordinate(double x, double y, double minX, double minY, double maxX, double maxY)
     {
         if (x.ApproxEqual(minX) && y.ApproxEqual(minY)) return PointBorderLocation.BottomLeft;

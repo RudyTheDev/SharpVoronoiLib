@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using SharpVoronoiLib.Exceptions;
+﻿using SharpVoronoiLib.Exceptions;
 
 namespace SharpVoronoiLib;
 

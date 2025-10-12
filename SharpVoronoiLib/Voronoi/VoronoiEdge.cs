@@ -1,6 +1,4 @@
-﻿using JetBrains.Annotations;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 /// <summary>
 /// The line segment making the Voronoi cells, i.e. the points equidistant to the two nearest Voronoi sites.
