@@ -245,25 +245,34 @@ public class TestLayoutParser
         Test newTest = new Test(
             minX, minY, maxX, maxY, name,
             sites, points, edges,
-            null, null
+            null, null, null
         );
 
         // Test variants
         
-        List<LayoutTransform?> transforms = TransformToTranformsList();
+        List<LayoutTransform?> transforms = TransformToTransformsList();
+        List<LayoutOffset?> offsets = [ null, LayoutOffset.CenteredAtOrigin, LayoutOffset.ShiftedTowardsOrigin, LayoutOffset.ShiftwedAwayFromOrigin ];
 
         foreach (LayoutTransform? wantedTransform in transforms)
         {
-            if (wantedTransform != null)
-                _tests.Add(newTest.Transform(wantedTransform.Value, minX, minY, maxX, maxY));
-            else
-                _tests.Add(newTest);
+            foreach (LayoutOffset? offset in offsets)
+            {
+                Test test = newTest;
+                
+                if (wantedTransform != null)
+                    test = test.Transform(wantedTransform.Value);
+
+                if (offset != null)
+                    test = test.Shift(offset.Value);
+                    
+                _tests.Add(test);
+            }
         }
 
         return;
 
         
-        List<LayoutTransform?> TransformToTranformsList()
+        List<LayoutTransform?> TransformToTransformsList()
         {
             if (transform == null) // we are not repeating
                 return [ null ]; // just the original test
@@ -1643,10 +1652,14 @@ public class TestLayoutParser
         int horPreviewSteps = test.Width / _horPreviewStepSize + 1;
         int verPreviewSteps = test.Height / _verPreviewStepSize + 1;
 
+        // Shift back element indices to origin (because offsetting tests means we cannot cleanly assume 0..width/step)
+        int indexShiftX = -test.MinX / _horPreviewStepSize;
+        int indexShiftY = -test.MinY / _verPreviewStepSize;
+
         List<Edge>?[,] edgeLines = new List<Edge>[horPreviewSteps, verPreviewSteps];
 
         foreach (Edge edge in test.Edges.Where(e => EdgeMatchesBorderLogic(e, borderLogic)))
-            PlaceEdgeOnGrid(ref edgeLines, edge);
+            PlaceEdgeOnGrid(ref edgeLines, edge, indexShiftX, indexShiftY);
 
         List<string> lines = [ ];
 
@@ -1654,7 +1667,7 @@ public class TestLayoutParser
         {
             string str = "// ";
 
-            int verValue = y * _verPreviewStepSize;
+            int verValue = y * _verPreviewStepSize - indexShiftY * _verPreviewStepSize;
 
             if (verValue % 100 == 0)
                 str += $"{verValue,4}";
@@ -1665,7 +1678,7 @@ public class TestLayoutParser
 
             for (int x = 0; x < horPreviewSteps; x++)
             {
-                int horValue = x * _horPreviewStepSize;
+                int horValue = x * _horPreviewStepSize - indexShiftX * _horPreviewStepSize;
 
                 Site? site = test.Sites.FirstOrDefault(s => s.X == horValue && s.Y == verValue);
 
@@ -1727,7 +1740,7 @@ public class TestLayoutParser
 
         for (int x = 0; x < horPreviewSteps; x++)
         {
-            int horValue = x * _horPreviewStepSize;
+            int horValue = x * _horPreviewStepSize - indexShiftX * _horPreviewStepSize;
 
             if (horValue % 100 == 0)
                 fs += $"{horValue,4} ";
@@ -1797,7 +1810,7 @@ public class TestLayoutParser
         return symbol;
     }
 
-    private void PlaceEdgeOnGrid(ref List<Edge>?[,] edgeLines, Edge edge)
+    private void PlaceEdgeOnGrid(ref List<Edge>?[,] edgeLines, Edge edge, int indexShiftX, int indexShiftY)
     {
         int x = edge.FromPoint.X / _horPreviewStepSize;
         int y = edge.FromPoint.Y / _verPreviewStepSize;
@@ -1831,9 +1844,11 @@ public class TestLayoutParser
         for (int i = 0; i <= longest; i++)
         {
             // Our code
-            if (edgeLines[x, y] == null)
-                edgeLines[x, y] = [ ];
-            edgeLines[x, y]!.Add(edge);
+            int sx = x + indexShiftX;
+            int sy = y + indexShiftY;
+            if (edgeLines[sx, sy] == null)
+                edgeLines[sx, sy] = [ ];
+            edgeLines[sx, sy]!.Add(edge);
             // End of our code
             numerator += shortest;
             if (!(numerator < longest))
@@ -1865,13 +1880,13 @@ public class TestLayoutParser
         public string Name { get; }
         
         public LayoutTransform? Transformed { get; }
+        public LayoutOffset? Offset { get; }
         public string? OriginalName { get; }
 
 
-        public Test(
-            int minX, int minY, int maxX, int maxY, string name, 
-            List<Site> sites, List<Point> points, List<Edge> edges, 
-            LayoutTransform? transformed, string? originalName)
+        public Test(int minX, int minY, int maxX, int maxY, string name,
+                    List<Site> sites, List<Point> points, List<Edge> edges,
+                    LayoutTransform? transformed, LayoutOffset? offset, string? originalName)
         {
             MinX = minX;
             MinY = minY;
@@ -1885,28 +1900,32 @@ public class TestLayoutParser
             Name = name;
             Transformed = transformed;
             OriginalName = originalName;
+            Offset = offset;
 
             Width = maxX - minX;
             Height = maxY - minY;
         }
 
 
-        public Test Transform(LayoutTransform transform, int minX, int minY, int maxX, int maxY)
+        public Test Transform(LayoutTransform transform)
         {
+            if (Transformed != null) throw new InvalidOperationException();
+            
+            
             List<Site> newSites = [ ];
             List<Point> newPoints = [ ];
             List<Edge> newEdges = [ ];
 
             foreach (Site site in Sites)
             {
-                (int x, int y) = TransformCoord(site.X, site.Y, transform, minX, minY, maxX, maxY);
+                (int x, int y) = TransformCoord(site.X, site.Y, transform, MinX, MinY, MaxX, MaxY);
                 Site newSite = new Site(x, y, site.Id);
                 newSites.Add(newSite);
             }
 
             foreach (Point point in Points)
             {
-                (int x, int y) = TransformCoord(point.X, point.Y, transform, minX, minY, maxX, maxY);
+                (int x, int y) = TransformCoord(point.X, point.Y, transform, MinX, MinY, MaxX, MaxY);
                 newPoints.Add(new Point(x, y, point.Id, point.Corner));
             }
 
@@ -1957,7 +1976,7 @@ public class TestLayoutParser
                 MinX, MinY, MaxX, MaxY,
                 name,
                 newSites, newPoints, newEdges,
-                transform, Name
+                transform, Offset, Name
             );
             
             
@@ -2110,6 +2129,107 @@ public class TestLayoutParser
                     LayoutTransform.MirrorAndRotate270 => "MirroredAndRotated270",
 
                     _ => throw new ArgumentOutOfRangeException(nameof(transform), transform, null)
+                };
+            }
+        }
+
+        public Test Shift(LayoutOffset offset)
+        {
+            if (Offset != null) throw new InvalidOperationException();
+            
+            
+            List<Site> newSites = [ ];
+            List<Point> newPoints = [ ];
+            List<Edge> newEdges = [ ];
+
+            foreach (Point point in Points)
+            {
+                (int x, int y) = TransformCoord(point.X, point.Y, offset, MinX, MinY, MaxX, MaxY);
+                newPoints.Add(new Point(x, y, point.Id, point.Corner));
+            }
+
+            foreach (Site site in Sites)
+            {
+                (int x, int y) = TransformCoord(site.X, site.Y, offset, MinX, MinY, MaxX, MaxY);
+                Site newSite = new Site(x, y, site.Id);
+                List<Point>[] newSitePoints = new List<Point>[site.Points.Length];
+                for (int i = 0; i < site.Points.Length; i++)
+                {
+                    newSitePoints[i] = [ ];
+                    foreach (Point point in site.Points[i])
+                    {
+                        Point newPoint = newPoints[Points.IndexOf(point)];
+                        newSitePoints[i].Add(newPoint);
+                    }
+                }
+                newSite.Points = newSitePoints;
+                newSite.UndefinedPointOrder = site.UndefinedPointOrder;
+                newSites.Add(newSite);
+            }
+
+            foreach (Edge edge in Edges)
+            {
+                Point fromPoint = newPoints[Points.IndexOf(edge.FromPoint)];
+                Point toPoint = newPoints[Points.IndexOf(edge.ToPoint)];
+                List<Site> sites = [ ];
+                foreach (Site site in edge.EdgeSites)
+                    sites.Add(newSites[Sites.IndexOf(site)]);
+                newEdges.Add(new Edge(fromPoint, toPoint, sites, edge.Border));
+            }
+            
+            string name = OffsetName(Name, offset);
+            
+            (int minX, int minY) = TransformCoord(MinX, MinY, offset, MinX, MinY, MaxX, MaxY);
+            (int maxX, int maxY) = TransformCoord(MaxX, MaxY, offset, MinX, MinY, MaxX, MaxY);
+            
+            return new Test(
+                minX, minY, maxX, maxY,
+                name,
+                newSites, newPoints, newEdges,
+                Transformed, offset, Name
+            );
+            
+            static (int x, int y) TransformCoord(int siteX, int siteY, LayoutOffset offset, int minX, int minY, int maxX, int maxY)
+            {
+                switch (offset)
+                {
+                    case LayoutOffset.CenteredAtOrigin:
+                        // Center of the layout becomes 0,0
+                        int centerX = (minX + maxX) / 2;
+                        int centerY = (minY + maxY) / 2;
+                        return (siteX - centerX, siteY - centerY);
+
+                    case LayoutOffset.ShiftedTowardsOrigin:
+                        // Layout is shifted by quarter towards 0,0, so it gets into negatives but doesn't center on origin
+                        const int shiftX = -200;
+                        const int shiftY = -200;
+                        return (siteX + shiftX, siteY + shiftY);
+                    
+                    case LayoutOffset.ShiftwedAwayFromOrigin:
+                        // Layout is shifted by quarter away from 0,0, so it gets further into positives
+                        const int shiftX2 = 200;
+                        const int shiftY2 = 200;
+                        return (siteX + shiftX2, siteY + shiftY2);
+                    
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(offset), offset, null);
+                }
+            }
+
+            static string OffsetName(string givenName, LayoutOffset offset)
+            {
+                return givenName + "_" + OffsetToNameSuffix(offset);
+            }
+
+            static string OffsetToNameSuffix(LayoutOffset offset)
+            {
+                return offset switch
+                {
+                    LayoutOffset.CenteredAtOrigin => "CenteredAtOrigin",
+                    LayoutOffset.ShiftedTowardsOrigin => "ShiftedTowardsOrigin",
+                    LayoutOffset.ShiftwedAwayFromOrigin => "ShiftedAwayFromOrigin",
+
+                    _ => throw new ArgumentOutOfRangeException(nameof(offset), offset, null)
                 };
             }
         }
