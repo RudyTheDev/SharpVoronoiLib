@@ -105,4 +105,22 @@ public class BugReproTests
 
         Assert.That(sites[0].Neighbours.Count(), Is.EqualTo(3));
     }
+
+    [Test]
+    public void MissingNeighbourSimplified()
+    {
+        List<VoronoiSite> sites =
+        [
+            new VoronoiSite(0, 0),
+            new VoronoiSite(0, 6)
+        ];
+
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 10, 10);
+            
+        plane.SetSites(sites);
+            
+        plane.Tessellate();
+
+        Assert.That(sites[0].Neighbours.Count(), Is.EqualTo(1));
+    }
 }

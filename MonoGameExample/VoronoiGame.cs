@@ -464,18 +464,18 @@ public class VoronoiGame : Game
     {
         List<VoronoiSite> sites =
         [
-            new VoronoiSite(-8, -8),
-            new VoronoiSite(8, -8),
-            new VoronoiSite(-8, 8),
-            new VoronoiSite(6.282, 6.282),
-            new VoronoiSite(8, 5.427),
-            new VoronoiSite(5.427, 8),
+            new VoronoiSite(0, 0),
+            //new VoronoiSite(8, -8),
+            new VoronoiSite(0, 6),
+            //new VoronoiSite(6, 6),
+            //new VoronoiSite(8, 5),
+            //new VoronoiSite(5, 8),
         ];
 
-        minX = -8;
-        minY = -8;
-        maxX = 272;
-        maxY = 272;
+        minX = 0;
+        minY = 0;
+        maxX = 10;
+        maxY = 10;
         
         return sites;
     }
