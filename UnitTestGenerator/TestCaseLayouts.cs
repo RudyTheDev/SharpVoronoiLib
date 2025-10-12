@@ -361,6 +361,130 @@ public static class TestCaseLayouts
                 2: ZAB
             ", LayoutTransforms.RotateAndMirrorAll);
 
+        yield return new RawTestLayout("TwoPointsOnEdge", @"
+                10
+                X · · · · · · · · · Z 10
+                · · · · · · · · · · · 9
+                1 · · · · · · · · · · 8
+                · · · · · · · · · · · 7
+                · · · · · · · · · · · 6
+                A x x x x x x x x x B 5
+                · · · · · · · · · · · 4
+                · · · · · · · · · · · 3
+                2 · · · · · · · · · · 2
+                · · · · · · · · · · · 1
+                Y · · · · · · · · · W 0
+                0 1 2 3 4 5 6 7 8 9 10
+                A-B: 1,2
+                X-A: 1
+                B-Z: 1
+                Z-X: 1
+                A-Y: 2
+                Y-W: 2
+                W-B: 2
+                1: ZXAB !
+                2: BAYW !
+            ", LayoutTransforms.RotateAll);
+
+        yield return new RawTestLayout("TwoPointsInAdjacentCorners", @"
+                10
+                1X· · · · · · · · · Z 10
+                · · · · · · · · · · · 9
+                · · · · · · · · · · · 8
+                · · · · · · · · · · · 7
+                · · · · · · · · · · · 6
+                A x x x x x x x x x B 5
+                · · · · · · · · · · · 4
+                · · · · · · · · · · · 3
+                · · · · · · · · · · · 2
+                · · · · · · · · · · · 1
+                2Y· · · · · · · · · W 0
+                0 1 2 3 4 5 6 7 8 9 10
+                A-B: 1,2
+                X-A: 1
+                B-Z: 1
+                Z-X: 1
+                A-Y: 2
+                Y-W: 2
+                W-B: 2
+                1: ZXAB !
+                2: BAYW !
+            ", LayoutTransforms.RotateAll);
+        
+        yield return new RawTestLayout("TwoPointsOnEdgeAndCorner", @"
+                10
+                1X· · · · · · · · · Z 10
+                · · · · · · · · · · · 9
+                · · · · · · · · · · · 8
+                · · · · · · · · · · · 7
+                A x x x x x x x x x B 6
+                · · · · · · · · · · · 5
+                · · · · · · · · · · · 4
+                · · · · · · · · · · · 3
+                2 · · · · · · · · · · 2
+                · · · · · · · · · · · 1
+                Y · · · · · · · · · W 0
+                0 1 2 3 4 5 6 7 8 9 10
+                A-B: 1,2
+                X-A: 1
+                B-Z: 1
+                Z-X: 1
+                A-Y: 2
+                Y-W: 2
+                W-B: 2
+                1: ZXAB !
+                2: BAYW !
+            ", LayoutTransforms.RotateAndMirrorAll);
+        
+        yield return new RawTestLayout("TwoPointsInOppositeCorners", @"
+                10
+                1X· · · · · · · · · B 10
+                · · · · · · · · · x · 9
+                · · · · · · · · x · · 8
+                · · · · · · · x · · · 7
+                · · · · · · x · · · · 6
+                · · · · · x · · · · · 5
+                · · · · x · · · · · · 4
+                · · · x · · · · · · · 3
+                · · x · · · · · · · · 2
+                · x · · · · · · · · · 1
+                A · · · · · · · · · 2Y0
+                0 1 2 3 4 5 6 7 8 9 10
+                A-B: 1,2
+                A-X: 1
+                X-B: 1
+                A-Y: 2
+                Y-B: 2
+                1: BXA !
+                2: YBA !
+            ", LayoutTransforms.Rotate90);
+        
+        yield return new RawTestLayout("TwoPointsOnOppositeEdges", @"
+                10
+                X · · · · · · · B · Z 10
+                · · · · · · · ·x· · · 9
+                1 · · · · · · x · · · 8
+                · · · · · · ·x· · · · 7
+                · · · · · ·x· · · · · 6
+                · · · · · x · · · · · 5
+                · · · · ·x· · · · · · 4
+                · · · ·x· · · · · · · 3
+                · · · x · · · · · · 2 2
+                · · ·x· · · · · · · · 1
+                Y · A · · · · · · · W 0
+                0 1 2 3 4 5 6 7 8 9 10
+                A-B: 1,2
+                B-X: 1
+                X-Y: 1
+                Y-A: 1
+                Z-B: 2
+                B-A: 2
+                A-W: 2
+                W-Z: 2
+                1: BXYA !
+                2: ZBAW !
+            ", LayoutTransforms.MirrorAndRotate90);
+
         yield return new RawTestLayout("ThreeConcentricPointsDiagonalAroundMiddle", @"
                 10
                 X · · · · · · D · · Z 10
