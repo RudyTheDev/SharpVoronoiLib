@@ -1,6 +1,5 @@
 ﻿namespace Supercluster.KDTree.Utilities;
 
-using System;
 using System.Runtime.CompilerServices;
 
 /// <summary>

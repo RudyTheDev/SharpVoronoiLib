@@ -1,5 +1,3 @@
-using System;
-
 namespace SharpVoronoiLib.Exceptions;
 
 public class VoronoiSiteSkippedAsDuplicateException() 

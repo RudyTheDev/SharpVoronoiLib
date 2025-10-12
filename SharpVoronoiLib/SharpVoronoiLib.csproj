@@ -3,7 +3,7 @@
     <PropertyGroup>
         <Version>1.0.7</Version>
         <AssemblyVersion>1.0.0</AssemblyVersion>
-        <ImplicitUsings>disable</ImplicitUsings>
+        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>13</LangVersion>
         <TargetFrameworks>netstandard2.0;net9.0</TargetFrameworks>
@@ -25,7 +25,7 @@
         <PackageReference Include="JetBrains.Annotations" Version="2025.2.2">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <None Include="..\README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>

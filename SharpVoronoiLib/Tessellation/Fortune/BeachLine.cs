@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 /// <summary>
 /// Represents a single arc (parabolic segment) on the beach line associated with a <see cref="VoronoiSite"/>.

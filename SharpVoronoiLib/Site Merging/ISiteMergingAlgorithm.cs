@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 internal interface ISiteMergingAlgorithm
 {
