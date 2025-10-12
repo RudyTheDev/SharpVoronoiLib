@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 
 namespace SharpVoronoiLib.UnitTestGenerator;
 
@@ -288,7 +286,7 @@ public class TestLayoutParser
         }
     }
 
-    internal string GenerateCode(string className, TestPurpose purpose, TestBorderLogic borderLogic)
+    internal string GenerateCode(string className, TestPurpose purpose, TestBorderLogic borderLogic, TestOffset offset)
     {
         StringBuilder stringBuilder = new StringBuilder();
 
