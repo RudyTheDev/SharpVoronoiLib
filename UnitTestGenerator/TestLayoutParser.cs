@@ -22,7 +22,7 @@ public class TestLayoutParser
     }
 
 
-    public void AddTestLayout(string name, string layout, LayoutTransform? transform = null)
+    public void AddTestLayout(string name, string layout, LayoutTransforms? transform = null)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name cannot be empty", nameof(name));
         if (string.IsNullOrWhiteSpace(layout)) throw new ArgumentException("Layout cannot be empty", nameof(layout));
@@ -272,15 +272,15 @@ public class TestLayoutParser
 
             return transform.Value switch
             {
-                LayoutTransform.Rotate90           => [ null, LayoutTransform.Rotate90 ],
-                LayoutTransform.Rotate180          => [ null, LayoutTransform.Rotate180 ],
-                LayoutTransform.Rotate270          => [ null, LayoutTransform.Rotate270 ],
-                LayoutTransform.Mirror             => [ null, LayoutTransform.Mirror ],
-                LayoutTransform.RotateAll          => [ null, LayoutTransform.Rotate90, LayoutTransform.Rotate180, LayoutTransform.Rotate270 ],
-                LayoutTransform.RotateAndMirrorAll => [ null, LayoutTransform.Rotate90, LayoutTransform.Rotate180, LayoutTransform.Rotate270, LayoutTransform.Mirror, LayoutTransform.MirrorAndRotate90, LayoutTransform.MirrorAndRotate180, LayoutTransform.MirrorAndRotate270 ],
-                LayoutTransform.MirrorAndRotate90  => [ null, LayoutTransform.MirrorAndRotate90 ],
-                LayoutTransform.MirrorAndRotate180 => [ null, LayoutTransform.MirrorAndRotate180 ],
-                LayoutTransform.MirrorAndRotate270 => [ null, LayoutTransform.MirrorAndRotate270 ],
+                LayoutTransforms.Rotate90           => [ null, LayoutTransform.Rotate90 ],
+                LayoutTransforms.Rotate180          => [ null, LayoutTransform.Rotate180 ],
+                LayoutTransforms.Rotate270          => [ null, LayoutTransform.Rotate270 ],
+                LayoutTransforms.Mirror             => [ null, LayoutTransform.Mirror ],
+                LayoutTransforms.RotateAll          => [ null, LayoutTransform.Rotate90, LayoutTransform.Rotate180, LayoutTransform.Rotate270 ],
+                LayoutTransforms.RotateAndMirrorAll => [ null, LayoutTransform.Rotate90, LayoutTransform.Rotate180, LayoutTransform.Rotate270, LayoutTransform.Mirror, LayoutTransform.MirrorAndRotate90, LayoutTransform.MirrorAndRotate180, LayoutTransform.MirrorAndRotate270 ],
+                LayoutTransforms.MirrorAndRotate90  => [ null, LayoutTransform.MirrorAndRotate90 ],
+                LayoutTransforms.MirrorAndRotate180 => [ null, LayoutTransform.MirrorAndRotate180 ],
+                LayoutTransforms.MirrorAndRotate270 => [ null, LayoutTransform.MirrorAndRotate270 ],
 
                 _ => throw new ArgumentOutOfRangeException()
             };
@@ -702,9 +702,6 @@ public class TestLayoutParser
             case LayoutTransform.MirrorAndRotate180: return "mirrored horizontally and then rotated 180° around the center of the boundary";
             case LayoutTransform.MirrorAndRotate270: return "mirrored horizontally and then rotated 270° around the center of the boundary";
 
-            case LayoutTransform.RotateAll:
-            case LayoutTransform.RotateAndMirrorAll:
-                throw new InvalidOperationException();
             default:
                 throw new ArgumentOutOfRangeException(nameof(transform), transform, null);
         }
@@ -1979,10 +1976,6 @@ public class TestLayoutParser
                     case LayoutTransform.MirrorAndRotate180: quadrant -= 4; break;
                     case LayoutTransform.MirrorAndRotate270: quadrant -= 6; break;
 
-                    case LayoutTransform.RotateAll:
-                    case LayoutTransform.RotateAndMirrorAll:
-                        throw new InvalidOperationException();
-
                     default:
                         throw new ArgumentOutOfRangeException(nameof(transform), transform, null);
                 }
@@ -2066,10 +2059,6 @@ public class TestLayoutParser
                     case LayoutTransform.MirrorAndRotate270:
                         return (x1 - yc, y0 + xc);
 
-                    case LayoutTransform.RotateAll:
-                    case LayoutTransform.RotateAndMirrorAll:
-                        throw new InvalidOperationException();
-
                     default:
                         throw new ArgumentOutOfRangeException(nameof(transform), transform, null);
                 }
@@ -2089,10 +2078,6 @@ public class TestLayoutParser
                     case LayoutTransform.MirrorAndRotate180:
                     case LayoutTransform.MirrorAndRotate270:
                         return true;
-
-                    case LayoutTransform.RotateAndMirrorAll:
-                    case LayoutTransform.RotateAll:
-                        throw new InvalidOperationException();
 
                     default:
                         throw new ArgumentOutOfRangeException(nameof(transform), transform, null);
@@ -2114,23 +2099,18 @@ public class TestLayoutParser
 
             static string TransformToNameSuffix(LayoutTransform transform)
             {
-                switch (transform)
+                return transform switch
                 {
-                    case LayoutTransform.Rotate90:           return "Rotated90";
-                    case LayoutTransform.Rotate180:          return "Rotated180";
-                    case LayoutTransform.Rotate270:          return "Rotated270";
-                    case LayoutTransform.Mirror:             return "Mirrored";
-                    case LayoutTransform.MirrorAndRotate90:  return "MirroredAndRotated90";
-                    case LayoutTransform.MirrorAndRotate180: return "MirroredAndRotated180";
-                    case LayoutTransform.MirrorAndRotate270: return "MirroredAndRotated270";
+                    LayoutTransform.Rotate90           => "Rotated90",
+                    LayoutTransform.Rotate180          => "Rotated180",
+                    LayoutTransform.Rotate270          => "Rotated270",
+                    LayoutTransform.Mirror             => "Mirrored",
+                    LayoutTransform.MirrorAndRotate90  => "MirroredAndRotated90",
+                    LayoutTransform.MirrorAndRotate180 => "MirroredAndRotated180",
+                    LayoutTransform.MirrorAndRotate270 => "MirroredAndRotated270",
 
-                    case LayoutTransform.RotateAll:
-                    case LayoutTransform.RotateAndMirrorAll:
-                        throw new InvalidOperationException();
-
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(transform), transform, null);
-                }
+                    _ => throw new ArgumentOutOfRangeException(nameof(transform), transform, null)
+                };
             }
         }
     }

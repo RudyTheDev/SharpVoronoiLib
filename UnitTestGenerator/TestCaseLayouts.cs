@@ -68,7 +68,7 @@ public static class TestCaseLayouts
                 W-Z: 1
                 Z-X: 1
                 1: ZXYW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("OnePointArbitrary", @"
                 10
@@ -89,7 +89,7 @@ public static class TestCaseLayouts
                 W-Z: 1
                 Z-X: 1
                 1: ZXYW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("OnePointOnBorderCentered", @"
                 10
@@ -110,7 +110,7 @@ public static class TestCaseLayouts
                 W-Z: 1
                 Z-X: 1
                 1: YWZX !
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("OnePointOnBorderOffset", @"
                 10
@@ -131,7 +131,7 @@ public static class TestCaseLayouts
                 W-Z: 1
                 Z-X: 1
                 1: YWZX !
-            ", LayoutTransform.RotateAndMirrorAll);
+            ", LayoutTransforms.RotateAndMirrorAll);
 
         yield return new RawTestLayout("OnePointInCorner", @"
                 10
@@ -152,7 +152,7 @@ public static class TestCaseLayouts
                 W-Z: 1
                 Z-X: 1
                 1: YWZX !
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("TwoPointsVerticalAroundMiddle", @"
                 10
@@ -177,7 +177,7 @@ public static class TestCaseLayouts
                 Z-X: 1
                 1: ZXAB
                 2: BAYW
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("TwoPointsVerticalOffsetFromMiddle", @"
                 10
@@ -202,7 +202,7 @@ public static class TestCaseLayouts
                 Z-X: 1
                 1: ZXAB
                 2: BAYW
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("ThreeConcentricPointsVerticalAroundMiddle", @"
                 10
@@ -231,7 +231,7 @@ public static class TestCaseLayouts
                 1: ZXAB
                 2: BACD
                 3: DCYW
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("FourConcentricPointsVerticalAroundMiddle", @"
                 10
@@ -264,7 +264,7 @@ public static class TestCaseLayouts
                 2: BACD
                 3: DCEF
                 4: FEYW
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("TwoDiagonalPointsAroundMiddle", @"
                 10
@@ -287,7 +287,7 @@ public static class TestCaseLayouts
                 B-X: 1
                 1: BXA
                 2: BAY
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("TwoDiagonalPointsOffsetFromMiddle", @"
                 10
@@ -312,7 +312,7 @@ public static class TestCaseLayouts
                 B-X: 1
                 1: BXA
                 2: ZBAYW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("TwoPointsAgainstCorner", @"
                 10
@@ -335,7 +335,7 @@ public static class TestCaseLayouts
                 Y-A: 2
                 1: AXB
                 2: YAB
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("TwoPointsAgainstCornerSlanted", @"
                 10
@@ -359,7 +359,7 @@ public static class TestCaseLayouts
                 Z-A: 2
                 1: BAXY
                 2: ZAB
-            ", LayoutTransform.RotateAndMirrorAll);
+            ", LayoutTransforms.RotateAndMirrorAll);
 
         yield return new RawTestLayout("ThreeConcentricPointsDiagonalAroundMiddle", @"
                 10
@@ -388,7 +388,7 @@ public static class TestCaseLayouts
                 1: DXA
                 2: CZDAYB
                 3: CBW
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("ThreeConcentricPointsDiagonalOffsetFromMiddle", @"
                 10
@@ -415,7 +415,7 @@ public static class TestCaseLayouts
                 1: DXA
                 2: CDAB
                 3: CBY
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("FourConcentricPointsDiagonalAroundMiddle", @"
                 10
@@ -446,7 +446,7 @@ public static class TestCaseLayouts
                 2: EFAB
                 3: DEBC
                 4: DCY
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("ThreePointsInAWedgeTowardsCorner", @"
                 10
@@ -474,7 +474,7 @@ public static class TestCaseLayouts
                 1: DXBA
                 2: ABYC
                 3: DACW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("ThreePointsInAWedgeTowardsCornerOffset", @"
                 10
@@ -503,7 +503,7 @@ public static class TestCaseLayouts
                 1: DXBA
                 2: ABYC
                 3: ZDACW
-            ", LayoutTransform.RotateAndMirrorAll);
+            ", LayoutTransforms.RotateAndMirrorAll);
 
         // todo: offset to side a bit, then mirror too
 
@@ -532,7 +532,7 @@ public static class TestCaseLayouts
                 1: ABC
                 2: YDAC
                 3: ADXB
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("ThreePointsInAWedgeTowardsSideOffsetFromMiddle", @"
                 10
@@ -561,7 +561,7 @@ public static class TestCaseLayouts
                 1: ABC
                 2: ZDACW
                 3: ADXYB
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("ThreePointsInAWedgeTowardsSideOffsetIntoMiddle", @"
                 10
@@ -590,7 +590,7 @@ public static class TestCaseLayouts
                 1: ABYWC
                 2: ZDAC
                 3: ADXB
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("FourPointsSurroundingAPointInMiddle", @"
                 10
@@ -660,7 +660,7 @@ public static class TestCaseLayouts
                 3: CBFG
                 4: HDCGW
                 5: HZXEAD
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("FourEquidistantPointsInASquareAroundMiddle", @"
                 10
@@ -724,7 +724,7 @@ public static class TestCaseLayouts
                 2: ACYD
                 3: EADW
                 4: ZBAE
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("FourEquidistantPointsInAKiteAroundMiddle", @"
                 10
@@ -784,7 +784,7 @@ public static class TestCaseLayouts
                 2: ACYD
                 3: EADW
                 4: EZBA
-            ", LayoutTransform.RotateAndMirrorAll);
+            ", LayoutTransforms.RotateAndMirrorAll);
 
         yield return new RawTestLayout("FivePointsInAForkedTallCross", @"
                 10
@@ -820,7 +820,7 @@ public static class TestCaseLayouts
                 3: AEXG
                 4: FAGY
                 5: ZDBAF
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("FivePointsInAForkedStubbyCross", @"
                 10
@@ -854,7 +854,7 @@ public static class TestCaseLayouts
                 3: AEXG
                 4: FAGY
                 5: DBAF
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("SixPointsInADoubleCross", @"
                 10
@@ -893,7 +893,7 @@ public static class TestCaseLayouts
                 4: GBAF
                 5: ADXE
                 6: FAEY
-            ", LayoutTransform.Rotate90);
+            ", LayoutTransforms.Rotate90);
 
         yield return new RawTestLayout("FivePointsInARegularKite", @"
                 10
@@ -998,7 +998,7 @@ public static class TestCaseLayouts
                 3: DHGCW
                 4: ZAEHD
                 5: HEFG
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("ThreePointsMeetingAtBorderPerpendicularly", @"
                 10
@@ -1024,7 +1024,7 @@ public static class TestCaseLayouts
                 1: BXA
                 2: AYC 
                 3: BAC
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("ThreePointsMeetingPastBorderPerpendicularly", @"
                 10
@@ -1053,7 +1053,7 @@ public static class TestCaseLayouts
                 1: BXA
                 2: DYC 
                 3: WBADCZ
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("ThreePointsMeetingSharplyAtBorderPerpendicularly", @"
                 12
@@ -1083,7 +1083,7 @@ public static class TestCaseLayouts
                 1: CAB
                 2: CZXA
                 3: AYWB
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("ThreePointsMeetingSharplyPastBorderPerpendicularly", @"
                 12
@@ -1114,7 +1114,7 @@ public static class TestCaseLayouts
                 1: BADC
                 2: BZXA
                 3: DYWC
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
             
         yield return new RawTestLayout("ThreePointsMeetingSharplyTowardsCorner", @"
                 10
@@ -1142,7 +1142,7 @@ public static class TestCaseLayouts
                 1: BXDA
                 2: ZBAC
                 3: CADW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
             
         yield return new RawTestLayout("ThreePointsMeetingAtCorner", @"
                 10
@@ -1169,7 +1169,7 @@ public static class TestCaseLayouts
                 1: BXA
                 2: CZBA
                 3: CAW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
             
         yield return new RawTestLayout("ThreePointsMeetingAtBorderAngled", @"
                 10
@@ -1197,7 +1197,7 @@ public static class TestCaseLayouts
                 1: BXYA
                 2: ZBAC
                 3: CAW
-            ", LayoutTransform.RotateAndMirrorAll);
+            ", LayoutTransforms.RotateAndMirrorAll);
             
         yield return new RawTestLayout("ThreePointsMeetingPastCorner", @"
                 12
@@ -1228,7 +1228,7 @@ public static class TestCaseLayouts
                 1: CXA
                 2: ZCAYBD
                 3: DBW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
             
         yield return new RawTestLayout("FourPointsMeetingAtCorner", @"
                 9
@@ -1256,9 +1256,9 @@ public static class TestCaseLayouts
                 2: BCA 
                 3: BAD
                 4: DAW
-            ", LayoutTransform.RotateAll);
+            ", LayoutTransforms.RotateAll);
     }
 
 
-    public record RawTestLayout(string Name, string Layout, LayoutTransform? Transform = null);
+    public record RawTestLayout(string Name, string Layout, LayoutTransforms? Transform = null);
 }

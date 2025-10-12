@@ -6,13 +6,12 @@
 /// </summary>
 public enum LayoutTransform
 {
+    None,
     Rotate90,
     Rotate180,
     Rotate270,
-    RotateAll,
     Mirror,
     MirrorAndRotate90,
     MirrorAndRotate180,
     MirrorAndRotate270,
-    RotateAndMirrorAll
 }
