@@ -248,43 +248,43 @@ public class TestLayoutParser
             null, null
         );
 
-        _tests.Add(newTest);
+        // Test variants
+        
+        List<LayoutRepeat?> wantedRepeats = RepeatsToWantedRepeatsList();
 
-        if (repeat != null)
+        foreach (LayoutRepeat? wantedRepeat in wantedRepeats)
         {
-            switch (repeat.Value)
+            if (wantedRepeat != null)
+                _tests.Add(newTest.Repeat(wantedRepeat.Value, minX, minY, maxX, maxY));
+            else
+                _tests.Add(newTest);
+        }
+
+        return;
+
+        
+        List<LayoutRepeat?> RepeatsToWantedRepeatsList()
+        {
+            if (repeat == null) // we are not repeating
+                return [ null ]; // just the original test
+            
+            if (width != height) throw new InvalidOperationException();
+
+            return repeat.Value switch
             {
-                case LayoutRepeat.Rotate90:
-                    if (width != height) throw new InvalidOperationException();
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
-                    break;
+                LayoutRepeat.Rotate90           => [ null, LayoutRepeat.Rotate90 ],
+                LayoutRepeat.Rotate180          => [ null, LayoutRepeat.Rotate180 ],
+                LayoutRepeat.Rotate270          => [ null, LayoutRepeat.Rotate270 ],
+                LayoutRepeat.Mirror             => [ null, LayoutRepeat.Mirror ],
+                LayoutRepeat.RotateAll          => [ null, LayoutRepeat.Rotate90, LayoutRepeat.Rotate180, LayoutRepeat.Rotate270 ],
+                LayoutRepeat.RotateAndMirrorAll => [ null, LayoutRepeat.Rotate90, LayoutRepeat.Rotate180, LayoutRepeat.Rotate270, LayoutRepeat.Mirror, LayoutRepeat.MirrorAndRotate90, LayoutRepeat.MirrorAndRotate180, LayoutRepeat.MirrorAndRotate270 ],
+                LayoutRepeat.MirrorAndRotate90  => [ null, LayoutRepeat.MirrorAndRotate90 ],
+                LayoutRepeat.MirrorAndRotate180 => [ null, LayoutRepeat.MirrorAndRotate180 ],
+                LayoutRepeat.MirrorAndRotate270 => [ null, LayoutRepeat.MirrorAndRotate270 ],
 
-                case LayoutRepeat.Mirror:
-                    if (width != height) throw new InvalidOperationException();
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Mirror, minX, minY, maxX, maxY));
-                    break;
+                _ => throw new ArgumentOutOfRangeException()
+            };
 
-                case LayoutRepeat.RotateAll:
-                    if (width != height) throw new InvalidOperationException();
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate180, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate270, minX, minY, maxX, maxY));
-                    break;
-
-                case LayoutRepeat.RotateAndMirrorAll:
-                    if (width != height) throw new InvalidOperationException();
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate90, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate180, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Rotate270, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.Mirror, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.MirrorAndRotate90, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.MirrorAndRotate180, minX, minY, maxX, maxY));
-                    _tests.Add(newTest.Repeat(LayoutRepeat.MirrorAndRotate270, minX, minY, maxX, maxY));
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
         }
     }
 
