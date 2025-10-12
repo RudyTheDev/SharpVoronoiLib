@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 public class MinHeap<T> where T : IComparable<T>
 {

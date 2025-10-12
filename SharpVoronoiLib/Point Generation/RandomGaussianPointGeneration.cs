@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 internal class RandomGaussianPointGeneration : RandomPointGeneration
 {

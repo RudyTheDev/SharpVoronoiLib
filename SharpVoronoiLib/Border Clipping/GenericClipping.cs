@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 internal class GenericClipping : IBorderClippingAlgorithm
 {

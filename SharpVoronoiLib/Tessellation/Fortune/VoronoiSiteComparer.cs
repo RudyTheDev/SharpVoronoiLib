@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 internal class VoronoiSiteComparer : IEqualityComparer<VoronoiSite>
 {
@@ -8,16 +6,20 @@ internal class VoronoiSiteComparer : IEqualityComparer<VoronoiSite>
     private VoronoiSiteComparer() { }
 
 
-    public bool Equals(VoronoiSite a, VoronoiSite b)
+    public bool Equals(VoronoiSite? a, VoronoiSite? b)
     {
-        return a.X.ApproxEqual(b.X) && a.Y.ApproxEqual(b.Y);
+        return a!.X.ApproxEqual(b!.X) && a.Y.ApproxEqual(b.Y);
     }
 
     public int GetHashCode(VoronoiSite obj)
     {
+#if NET8_0_OR_GREATER
+        return HashCode.Combine(obj.X, obj.Y);
+#else
         unchecked
         {
             return (obj.X.GetHashCode() * 397) ^ obj.Y.GetHashCode();
         }
+#endif
     }
 }

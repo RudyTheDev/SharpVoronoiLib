@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Supercluster.KDTree;
+﻿using Supercluster.KDTree;
 
 namespace SharpVoronoiLib;
 

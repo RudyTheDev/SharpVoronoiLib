@@ -1,7 +1,5 @@
 ﻿namespace Supercluster.KDTree.Utilities;
 
-using System;
-
 using static BinaryTreeNavigation;
 
 /// <summary>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 internal class FortunesTessellation : ITessellationAlgorithm
 {

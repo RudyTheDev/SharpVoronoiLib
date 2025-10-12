@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using SharpVoronoiLib.Exceptions;
 
 namespace SharpVoronoiLib;
