@@ -1,7 +1,6 @@
 ﻿namespace Supercluster.KDTree;
 
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 /// <summary>
 /// A list of limited length that remains sorted by <typeparamref name="TPriority"/>.

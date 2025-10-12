@@ -15,32 +15,38 @@ internal static class EpsilonUtils
     // todo: make ParabolaTest use this too
 
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool ApproxEqual(this double value1, double value2)
     {
         return value1 - value2 < epsilon && 
                value2 - value1 < epsilon;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool ApproxGreaterThan(this double value1, double value2)
     {
         return value1 > value2 + epsilon;
     }
         
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool ApproxGreaterThanOrEqualTo(this double value1, double value2)
     {
         return value1 > value2 - epsilon;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool ApproxLessThan(this double value1, double value2)
     {
         return value1 < value2 - epsilon;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool ApproxLessThanOrEqualTo(this double value1, double value2)
     {
         return value1 < value2 + epsilon;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int ApproxCompareTo(this double value1, double value2)
     {
         if (ApproxGreaterThan(value1, value2))

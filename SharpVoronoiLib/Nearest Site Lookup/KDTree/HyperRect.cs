@@ -1,7 +1,5 @@
 ﻿namespace Supercluster.KDTree;
 
-using System.Runtime.CompilerServices;
-
 /// <summary>
 /// Represents a hyper-rectangle. An N-Dimensional rectangle.
 /// </summary>

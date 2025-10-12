@@ -1,7 +1,5 @@
 ﻿namespace Supercluster.KDTree.Utilities;
 
-using System.Runtime.CompilerServices;
-
 /// <summary>
 /// Contains extension methods for <see cref="BoundedPriorityList{TElement,TPriority}"/> class.
 /// </summary>

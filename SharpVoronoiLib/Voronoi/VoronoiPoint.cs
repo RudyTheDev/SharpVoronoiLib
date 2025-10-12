@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 /// <summary>
 /// The vertices/nodes of the Voronoi cells, i.e. the points equidistant to three or more Voronoi sites.
