@@ -3,13 +3,25 @@ using System.Collections.Generic;
 
 namespace SharpVoronoiLib;
 
+/// <summary>
+/// Represents a single arc (parabolic segment) on the beach line associated with a <see cref="VoronoiSite"/>.
+/// </summary>
 internal class BeachSection
 {
+    /// <summary>
+    /// The site (focus) that defines this arc.
+    /// </summary>
     internal VoronoiSite Site { get;}
+
+    /// <summary>
+    /// The Voronoi edge currently associated with this arc (may be updated as events occur).
+    /// </summary>
     internal VoronoiEdge Edge { get; set; }
-    //NOTE: this will change
+
+    // NOTE: this will change
     internal FortuneCircleEvent CircleEvent { get; set; }
 
+    
     internal BeachSection(VoronoiSite site)
     {
         Site = site;
@@ -17,146 +29,93 @@ internal class BeachSection
     }
 }
 
+
+/// <summary>
+/// The dynamic structure (implemented as a red-black tree) that stores the sequence of arcs in Fortune's algorithm.
+/// </summary>
 internal class BeachLine
 {
-    private readonly RBTree<BeachSection> beachLine;
+    private readonly RBTree<BeachSection> _beachLine;
 
+    
     internal BeachLine()
     {
-        beachLine = new RBTree<BeachSection>();
+        _beachLine = new RBTree<BeachSection>();
     }
 
+    
+    /// <summary>
+    /// Inserts a new arc for the given site event into the beach line and creates any edges/circle events implied by the insertion.
+    /// </summary>
+    /// <param name="siteEvent">The new site event</param>
+    /// <param name="eventQueue">Global event queue to which new circle events are added</param>
+    /// <param name="deleted">A set of circle events that have been invalidated and must be ignored when popped</param>
+    /// <param name="edges">A list of Voronoi edges under construction (head contains most recent edges)</param>
     internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
     {
         VoronoiSite site = siteEvent.Site;
         double x = site.X;
         double directrix = site.Y;
 
-        RBTreeNode<BeachSection> leftSection = null;
-        RBTreeNode<BeachSection> rightSection = null;
-        RBTreeNode<BeachSection> node = beachLine.Root;
+        FindSectionsForInsertion(x, directrix, out RBTreeNode<BeachSection> leftSection, out RBTreeNode<BeachSection> rightSection);
 
-        //find the parabola(s) above this site
-        while (node != null && leftSection == null && rightSection == null)
-        {
-            double distanceLeft = LeftBreakpoint(node, directrix) - x;
-            if (distanceLeft > 0)
-            {
-                //the new site is before the left breakpoint
-                if (node.Left == null)
-                {
-                    // TODO: this is never covered by unit tests; need to figure out what triggers this and add a test, or if this is unreachable?
-                    rightSection = node;
-                }
-                else
-                {
-                    node = node.Left;
-                }
-                continue;
-            }
-
-            double distanceRight = x - RightBreakpoint(node, directrix);
-            if (distanceRight > 0)
-            {
-                //the new site is after the right breakpoint
-                if (node.Right == null)
-                {
-                    leftSection = node;
-                }
-                else
-                {
-                    node = node.Right;
-                }
-                continue;
-            }
-
-            //the point lies below the left breakpoint
-            if (distanceLeft.ApproxEqual(0))
-            {
-                leftSection = node.Previous;
-                rightSection = node;
-                continue;
-            }
-
-            //the point lies below the right breakpoint
-            if (distanceRight.ApproxEqual(0))
-            {
-                leftSection = node;
-                rightSection = node.Next;
-                continue;
-            }
-
-            // distance Right < 0 and distance Left < 0
-            // this section is above the new site
-            leftSection = rightSection = node;
-        }
-
-        //our goal is to insert the new node between the
-        //left and right sections
+        // Our goal is to insert the new node between the left and right sections.
         BeachSection section = new BeachSection(site);
 
-        //left section could be null, in which case this node is the first
-        //in the tree
-        RBTreeNode<BeachSection> newSection = beachLine.InsertSuccessor(leftSection, section);
+        // Left section could be null, in which case this node is the first in the tree.
+        RBTreeNode<BeachSection> newSection = _beachLine.InsertSuccessor(leftSection, section);
 
-        //new beach section is the first beach section to be added
+        // New beach section is the first beach section to be added.
         if (leftSection == null && rightSection == null)
         {
             return;
         }
 
-        //main case:
-        //if both left section and right section point to the same valid arc
-        //we need to split the arc into a left arc and a right arc with our
-        //new arc sitting in the middle
+        // Main case: if both left section and right section point to the same valid arc
+        // we need to split the arc into a left arc and a right arc with our new arc sitting in the middle.
         if (leftSection != null && leftSection == rightSection)
         {
-            //if the arc has a circle event, it was a false alarm.
-            //remove it
+            // If the arc has a circle event, it was a false alarm: remove it
             if (leftSection.Data.CircleEvent != null)
             {
-                if (!deleted.Add(leftSection.Data.CircleEvent))
-                    throw new Exception();
-                    
-                leftSection.Data.CircleEvent = null;
+                CancelCircleEventIfPresent(leftSection, deleted);
             }
 
-            //we leave the existing arc as the left section in the tree
-            //however we need to insert the right section defined by the arc
+            // We leave the existing arc as the left section in the tree, however we need to insert the
+            // right section defined by the arc.
             BeachSection copy = new BeachSection(leftSection.Data.Site);
-            rightSection = beachLine.InsertSuccessor(newSection, copy);
+            rightSection = _beachLine.InsertSuccessor(newSection, copy);
 
-            //grab the projection of this site onto the parabola
+            // Grab the projection of this site onto the parabola.
             double y = ParabolaMath.EvalParabola(leftSection.Data.Site.X, leftSection.Data.Site.Y, directrix, x);
             VoronoiPoint intersection = new VoronoiPoint(x, y);
 
-            //create the two half edges corresponding to this intersection
+            // Create the two half edges corresponding to this intersection
             VoronoiEdge leftEdge = new VoronoiEdge(intersection, site, leftSection.Data.Site);
             VoronoiEdge rightEdge = new VoronoiEdge(intersection, leftSection.Data.Site, site);
             leftEdge.LastBeachLineNeighbor = rightEdge;
 
-            //put the edge in the list
+            // Put the edge in the list
             edges.AddFirst(leftEdge);
 
-            //store the left edge on each arc section
+            // Store the left edge on each arc section
             newSection.Data.Edge = leftEdge;
             rightSection.Data.Edge = rightEdge;
 
-            //store neighbors for delaunay
+            // Store neighbors for Delaunay triangulation
             leftSection.Data.Site.AddNeighbour(newSection.Data.Site);
             newSection.Data.Site.AddNeighbour(leftSection.Data.Site);
 
-            //create circle events
+            // Create circle events
             CheckCircle(leftSection, eventQueue);
             CheckCircle(rightSection, eventQueue);
         }
 
-        //site is the last beach section on the beach line
-        //this can only happen if all previous sites
-        //had the same y value
+        // Site is the last beach section on the beach line
+        // This can only happen if all previous sites had the same y value
         else if (leftSection != null && rightSection == null)
         {
-            VoronoiPoint start = new VoronoiPoint((leftSection.Data.Site.X + site.X)/ 2, double.MinValue);
+            VoronoiPoint start = new VoronoiPoint((leftSection.Data.Site.X + site.X) / 2, double.MinValue);
             VoronoiEdge infEdge = new VoronoiEdge(start, leftSection.Data.Site, site);
             VoronoiEdge newEdge = new VoronoiEdge(start, site, leftSection.Data.Site);
 
@@ -168,37 +127,28 @@ internal class BeachLine
 
             newSection.Data.Edge = newEdge;
 
-            //cant check circles since they are colinear
+            // Can't check circles since they are colinear
         }
 
-        //site is directly above a break point
+        // Site is directly above a break point
         else if (leftSection != null && leftSection != rightSection)
         {
-            //remove false alarms
+            // Remove false alarms.
             if (leftSection.Data.CircleEvent != null)
             {
-                if (!deleted.Add(leftSection.Data.CircleEvent))
-                    throw new Exception();
-                    
-                leftSection.Data.CircleEvent = null;
+                CancelCircleEventIfPresent(leftSection, deleted);
             }
 
             if (rightSection.Data.CircleEvent != null)
             {
-                if (!deleted.Add(rightSection.Data.CircleEvent))
-                    throw new Exception();
-                    
-                rightSection.Data.CircleEvent = null;
+                CancelCircleEventIfPresent(rightSection, deleted);
             }
 
-            //the breakpoint will dissapear if we add this site
-            //which means we will create an edge
-            //we treat this very similar to a circle event since
-            //an edge is finishing at the center of the circle
-            //created by circumscribing the left center and right
-            //sites
+            // The breakpoint will disappear if we add this site which means we will create an edge.
+            // We treat this very similar to a circle event since an edge is finishing at the center of the circle
+            // created by circumscribing the left center and right sites.
 
-            //bring a to the origin
+            // Bring A to the origin
             VoronoiSite leftSite = leftSection.Data.Site;
             double ax = leftSite.X;
             double ay = leftSite.Y;
@@ -208,13 +158,12 @@ internal class BeachLine
             VoronoiSite rightSite = rightSection.Data.Site;
             double cx = rightSite.X - ax;
             double cy = rightSite.Y - ay;
-            double d = bx*cy - by*cx;
-            double magnitudeB = bx*bx + by*by;
-            double magnitudeC = cx*cx + cy*cy;
+            double d = bx * cy - by * cx;
+            double magnitudeB = bx * bx + by * by;
+            double magnitudeC = cx * cx + cy * cy;
             VoronoiPoint vertex = new VoronoiPoint(
-                (cy*magnitudeB - by * magnitudeC)/(2*d) + ax,
-                (bx*magnitudeC - cx * magnitudeB)/(2*d) + ay);
-
+                (cy * magnitudeB - by * magnitudeC) / (2 * d) + ax,
+                (bx * magnitudeC - cx * magnitudeB) / (2 * d) + ay);
 
             // If the edge ends up being 0 length (i.e. start and end are the same point),
             // then this is a location with 4+ equidistant sites.
@@ -226,7 +175,7 @@ internal class BeachLine
                 // Discard the edge
                 edges.Remove(rightSection.Data.Edge);
 
-                // Disconnect (delaunay) neighbours
+                // Disconnect (Delaunay) neighbours
                 leftSite.RemoveNeighbour(rightSite);
                 rightSite.RemoveNeighbour(leftSite);
             }
@@ -235,14 +184,14 @@ internal class BeachLine
                 rightSection.Data.Edge.End = vertex;
             }
 
-            //next we create a two new edges
+            // Next we create two new edges
             newSection.Data.Edge = new VoronoiEdge(vertex, site, leftSection.Data.Site);
             rightSection.Data.Edge = new VoronoiEdge(vertex, rightSection.Data.Site, site);
 
             edges.AddFirst(newSection.Data.Edge);
             edges.AddFirst(rightSection.Data.Edge);
 
-            //add neighbors for delaunay
+            // Add neighbors for Delaunay triangulation
             newSection.Data.Site.AddNeighbour(leftSection.Data.Site);
             leftSection.Data.Site.AddNeighbour(newSection.Data.Site);
 
@@ -254,6 +203,9 @@ internal class BeachLine
         }
     }
 
+    /// <summary>
+    /// Removes the disappearing arc at a circle event from the beach line and finalizes edges
+    /// </summary>
     internal void RemoveBeachSection(FortuneCircleEvent circle, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
     {
         RBTreeNode<BeachSection> section = circle.ToDelete;
@@ -261,10 +213,10 @@ internal class BeachLine
         double y = circle.YCenter;
         VoronoiPoint vertex = new VoronoiPoint(x, y);
 
-        //multiple edges could end here
-        List<RBTreeNode<BeachSection>> toBeRemoved = new List<RBTreeNode<BeachSection>>();
+        // Multiple edges could end here
+        List<RBTreeNode<BeachSection>> toBeRemoved = [ ];
 
-        //look left
+        // Look left
         RBTreeNode<BeachSection> prev = section.Previous;
         while (prev.Data.CircleEvent != null &&
                x.ApproxEqual(prev.Data.CircleEvent.X) &&
@@ -287,7 +239,8 @@ internal class BeachLine
         section.Next.Data.Edge.End = vertex;
         section.Data.CircleEvent = null;
 
-        //odds are this double writes a few edges but this is clean...
+        // TODO: what does this mean - this sounds like a bug or something
+        // Odds are this double writes a few edges but this is clean...
         foreach (RBTreeNode<BeachSection> remove in toBeRemoved)
         {
             remove.Data.Edge.End = vertex;
@@ -297,52 +250,49 @@ internal class BeachLine
             remove.Data.CircleEvent = null;
         }
 
-
-        //need to delete all upcoming circle events with this node
+        // Need to delete all upcoming circle events with this node
         if (prev.Data.CircleEvent != null)
         {
-            if (!deleted.Add(prev.Data.CircleEvent))
-                throw new Exception();
-            prev.Data.CircleEvent = null;
+            CancelCircleEventIfPresent(prev, deleted);
         }
         if (next.Data.CircleEvent != null)
         {
-            if (!deleted.Add(next.Data.CircleEvent))
-                throw new Exception();
-            next.Data.CircleEvent = null;
+            CancelCircleEventIfPresent(next, deleted);
         }
 
-
-        //create a new edge with start point at the vertex and assign it to next
+        // Create a new edge with start point at the vertex and assign it to next
         VoronoiEdge newEdge = new VoronoiEdge(vertex, next.Data.Site, prev.Data.Site);
         next.Data.Edge = newEdge;
         edges.AddFirst(newEdge);
 
-        //add neighbors for delaunay
+        // Add neighbors for Delaunay triangulation
         prev.Data.Site.AddNeighbour(next.Data.Site);
         next.Data.Site.AddNeighbour(prev.Data.Site);
 
-        //remove the sectionfrom the tree
-        beachLine.RemoveNode(section);
+        // Remove the section from the tree
+        _beachLine.RemoveNode(section);
         foreach (RBTreeNode<BeachSection> remove in toBeRemoved)
         {
-            beachLine.RemoveNode(remove);
+            _beachLine.RemoveNode(remove);
         }
 
         CheckCircle(prev, eventQueue);
         CheckCircle(next, eventQueue);
     }
 
+    /// <summary>
+    /// Computes the x-coordinate of the left breakpoint between the given node's arc and its left neighbor for the provided directrix.
+    /// </summary>
     private static double LeftBreakpoint(RBTreeNode<BeachSection> node, double directrix)
     {
         RBTreeNode<BeachSection> leftNode = node.Previous;
-        //degenerate parabola
+        // Degenerate parabola
         if ((node.Data.Site.Y - directrix).ApproxEqual(0))
             return node.Data.Site.X;
-        //node is the first piece of the beach line
+        // Node is the first piece of the beach line
         if (leftNode == null)
             return double.NegativeInfinity;
-        //left node is degenerate
+        // Left node is degenerate
         if ((leftNode.Data.Site.Y - directrix).ApproxEqual(0))
             return leftNode.Data.Site.X;
         VoronoiSite site = node.Data.Site;
@@ -350,16 +300,19 @@ internal class BeachLine
         return ParabolaMath.IntersectParabolaX(leftSite.X, leftSite.Y, site.X, site.Y, directrix);
     }
 
+    /// <summary>
+    /// Computes the x-coordinate of the right breakpoint between the given node's arc and its right neighbor for the provided directrix.
+    /// </summary>
     private static double RightBreakpoint(RBTreeNode<BeachSection> node, double directrix)
     {
         RBTreeNode<BeachSection> rightNode = node.Next;
-        //degenerate parabola
+        // Degenerate parabola
         if ((node.Data.Site.Y - directrix).ApproxEqual(0))
             return node.Data.Site.X;
-        //node is the last piece of the beach line
+        // Node is the last piece of the beach line
         if (rightNode == null)
             return double.PositiveInfinity;
-        //left node is degenerate
+        // Right node is degenerate
         if ((rightNode.Data.Site.Y - directrix).ApproxEqual(0))
             return rightNode.Data.Site.X;
         VoronoiSite site = node.Data.Site;
@@ -367,10 +320,11 @@ internal class BeachLine
         return ParabolaMath.IntersectParabolaX(site.X, site.Y, rightSite.X, rightSite.Y, directrix);
     }
 
+    /// <summary>
+    /// Creates a circle event for the given center section if appropriate, queuing it for processing
+    /// </summary>
     private static void CheckCircle(RBTreeNode<BeachSection> section, MinHeap<FortuneEvent> eventQueue)
     {
-        //if (section == null)
-        //    return;
         RBTreeNode<BeachSection> left = section.Previous;
         RBTreeNode<BeachSection> right = section.Next;
         if (left == null || right == null)
@@ -380,17 +334,14 @@ internal class BeachLine
         VoronoiSite centerSite = section.Data.Site;
         VoronoiSite rightSite = right.Data.Site;
 
-        //if the left arc and right arc are defined by the same
-        //focus, the two arcs cannot converge
+        // If the left arc and right arc are defined by the same focus, the two arcs cannot converge
         if (leftSite == rightSite)
         {
             // TODO: this is never covered by unit tests; need to figure out what triggers this and add a test, or if this is unreachable?
             return;
         }
 
-        //MATH HACKS: place center at origin and
-        //draw vectors a and c to
-        //left and right respectively
+        // MATH HACKS: place center at origin and draw vectors a and c to left and right respectively
         double bx = centerSite.X,
             by = centerSite.Y,
             ax = leftSite.X - bx,
@@ -398,20 +349,19 @@ internal class BeachLine
             cx = rightSite.X - bx,
             cy = rightSite.Y - by;
 
-        //The center beach section can only dissapear when
-        //the angle between a and c is negative
-        double d = ax*cy - ay*cx;
+        // The center beach section can only disappear when the angle between a and c is negative
+        double d = ax * cy - ay * cx;
         if (d.ApproxGreaterThanOrEqualTo(0))
             return;
 
-        double magnitudeA = ax*ax + ay*ay;
-        double magnitudeC = cx*cx + cy*cy;
-        double x = (cy*magnitudeA - ay*magnitudeC)/(2*d);
-        double y = (ax*magnitudeC - cx*magnitudeA)/(2*d);
+        double magnitudeA = ax * ax + ay * ay;
+        double magnitudeC = cx * cx + cy * cy;
+        double x = (cy * magnitudeA - ay * magnitudeC) / (2 * d);
+        double y = (ax * magnitudeC - cx * magnitudeA) / (2 * d);
 
-        //add back offset
+        // Add back offset
         double ycenter = y + by;
-        //y center is off
+        // y center is off
         FortuneCircleEvent circleEvent = new FortuneCircleEvent(
             new VoronoiPoint(x + bx, ycenter + Math.Sqrt(x * x + y * y)),
             ycenter, section
@@ -419,5 +369,85 @@ internal class BeachLine
         section.Data.CircleEvent = circleEvent;
 
         eventQueue.Insert(circleEvent);
+    }
+
+    /// <summary>
+    /// Finds the immediate left and right beach sections above the site (x, directrix).
+    /// </summary>
+    private void FindSectionsForInsertion(double x, double directrix, out RBTreeNode<BeachSection> leftSection, out RBTreeNode<BeachSection> rightSection)
+    {
+        leftSection = null;
+        rightSection = null;
+
+        RBTreeNode<BeachSection> node = _beachLine.Root;
+
+        // Find the parabola(s) above this site.
+        while (node != null && leftSection == null && rightSection == null)
+        {
+            double distanceLeft = LeftBreakpoint(node, directrix) - x;
+            if (distanceLeft > 0)
+            {
+                // The new site is before the left breakpoint.
+                if (node.Left == null)
+                {
+                    // TODO: this is never covered by unit tests; need to figure out what triggers this and add a test, or if this is unreachable?
+                    rightSection = node;
+                }
+                else
+                {
+                    node = node.Left;
+                }
+                continue;
+            }
+
+            double distanceRight = x - RightBreakpoint(node, directrix);
+            if (distanceRight > 0)
+            {
+                // The new site is after the right breakpoint.
+                if (node.Right == null)
+                {
+                    leftSection = node;
+                }
+                else
+                {
+                    node = node.Right;
+                }
+                continue;
+            }
+
+            // The point lies below the left breakpoint.
+            if (distanceLeft.ApproxEqual(0))
+            {
+                leftSection = node.Previous;
+                rightSection = node;
+                continue;
+            }
+
+            // The point lies below the right breakpoint.
+            if (distanceRight.ApproxEqual(0))
+            {
+                leftSection = node;
+                rightSection = node.Next;
+                continue;
+            }
+
+            // distanceRight < 0 and distanceLeft < 0 => this section is above the new site.
+            leftSection = rightSection = node;
+        }
+    }
+
+    /// <summary>
+    /// Cancel and null the circle event on a beach section, marking it as deleted in the global set.
+    /// </summary>
+    private static void CancelCircleEventIfPresent(RBTreeNode<BeachSection> section, HashSet<FortuneCircleEvent> deleted)
+    {
+        if (section.Data.CircleEvent == null)
+            return;
+
+        // TODO: why is this in realease build
+        if (!deleted.Add(section.Data.CircleEvent))
+            throw new Exception();
+
+        section.Data.CircleEvent = null;
     }
 }
