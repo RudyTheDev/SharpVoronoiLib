@@ -478,7 +478,6 @@ public static class TestCaseLayouts
                 X-Y: 1
                 Y-A: 1
                 Z-B: 2
-                B-A: 2
                 A-W: 2
                 W-Z: 2
                 1: BXYA !

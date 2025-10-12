@@ -19759,25 +19759,25 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         };
 
         // 1000 X---------------------------------------B---------Z
-        //      |                                     ##          |
-        //  900 |                                    #            |
-        //      |                                  ##             |
-        //  800 1                                 #               |
-        //      |                               ##                |
-        //  700 |                              #                  |
-        //      |                            ##                   |
-        //  600 |                           #                     |
-        //      |                         ##                      |
-        //  500 |                        #                        |
-        //      |                      ##                         |
-        //  400 |                     #                           |
-        //      |                   ##                            |
-        //  300 |                  #                              |
-        //      |                ##                               |
-        //  200 |               #                                 2
-        //      |             ##                                  |
-        //  100 |            #                                    |
-        //      |          ##                                     |
+        //      |                                     ,'          |
+        //  900 |                                    ·            |
+        //      |                                  ,'             |
+        //  800 1                                 ·               |
+        //      |                               ,'                |
+        //  700 |                              ·                  |
+        //      |                            ,'                   |
+        //  600 |                           ·                     |
+        //      |                         ,'                      |
+        //  500 |                        ·                        |
+        //      |                      ,'                         |
+        //  400 |                     ·                           |
+        //      |                   ,'                            |
+        //  300 |                  ·                              |
+        //      |                ,'                               |
+        //  200 |               ·                                 2
+        //      |             ,'                                  |
+        //  100 |            ·                                    |
+        //      |          ,'                                     |
         //    0 Y---------A---------------------------------------W
         //       0  100  200  300  400  500  600  700  800  900 1000 
 
@@ -19787,14 +19787,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, 200, 0, 800, 1000), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 800, 1000, 0, 1000), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, 0, 1000, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, 0, 0, 200, 0), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 1000, 1000, 800, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 800, 1000, 200, 0), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, 200, 0, 1000, 0), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, 1000, 0, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
 
@@ -19833,25 +19832,25 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         };
 
         //  500 X---------------------------------------B---------Z
-        //      |                                     ##          |
-        //  400 |                                    #            |
-        //      |                                  ##             |
-        //  300 1                                 #               |
-        //      |                               ##                |
-        //  200 |                              #                  |
-        //      |                            ##                   |
-        //  100 |                           #                     |
-        //      |                         ##                      |
-        //    0 |                        #                        |
-        //      |                      ##                         |
-        // -100 |                     #                           |
-        //      |                   ##                            |
-        // -200 |                  #                              |
-        //      |                ##                               |
-        // -300 |               #                                 2
-        //      |             ##                                  |
-        // -400 |            #                                    |
-        //      |          ##                                     |
+        //      |                                     ,'          |
+        //  400 |                                    ·            |
+        //      |                                  ,'             |
+        //  300 1                                 ·               |
+        //      |                               ,'                |
+        //  200 |                              ·                  |
+        //      |                            ,'                   |
+        //  100 |                           ·                     |
+        //      |                         ,'                      |
+        //    0 |                        ·                        |
+        //      |                      ,'                         |
+        // -100 |                     ·                           |
+        //      |                   ,'                            |
+        // -200 |                  ·                              |
+        //      |                ,'                               |
+        // -300 |               ·                                 2
+        //      |             ,'                                  |
+        // -400 |            ·                                    |
+        //      |          ,'                                     |
         // -500 Y---------A---------------------------------------W
         //    -500 -400 -300 -200 -100    0  100  200  300  400  500 
 
@@ -19861,14 +19860,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, -300, -500, 300, 500), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 300, 500, -500, 500), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, -500, 500, -500, -500), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, -500, -500, -300, -500), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 500, 500, 300, 500), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 300, 500, -300, -500), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, -300, -500, 500, -500), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, 500, -500, 500, 500), Is.True, "Expected: has edge W-Z"); // W-Z
 
@@ -19907,25 +19905,25 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         };
 
         //  800 X---------------------------------------B---------Z
-        //      |                                     ##          |
-        //  700 |                                    #            |
-        //      |                                  ##             |
-        //  600 1                                 #               |
-        //      |                               ##                |
-        //  500 |                              #                  |
-        //      |                            ##                   |
-        //  400 |                           #                     |
-        //      |                         ##                      |
-        //  300 |                        #                        |
-        //      |                      ##                         |
-        //  200 |                     #                           |
-        //      |                   ##                            |
-        //  100 |                  #                              |
-        //      |                ##                               |
-        //    0 |         ●     #                                 2
-        //      |             ##                                  |
-        // -100 |            #                                    |
-        //      |          ##                                     |
+        //      |                                     ,'          |
+        //  700 |                                    ·            |
+        //      |                                  ,'             |
+        //  600 1                                 ·               |
+        //      |                               ,'                |
+        //  500 |                              ·                  |
+        //      |                            ,'                   |
+        //  400 |                           ·                     |
+        //      |                         ,'                      |
+        //  300 |                        ·                        |
+        //      |                      ,'                         |
+        //  200 |                     ·                           |
+        //      |                   ,'                            |
+        //  100 |                  ·                              |
+        //      |                ,'                               |
+        //    0 |         ●     ·                                 2
+        //      |             ,'                                  |
+        // -100 |            ·                                    |
+        //      |          ,'                                     |
         // -200 Y---------A---------------------------------------W
         //    -200 -100    0  100  200  300  400  500  600  700  800 
 
@@ -19935,14 +19933,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, 0, -200, 600, 800), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 600, 800, -200, 800), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, -200, 800, -200, -200), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, -200, -200, 0, -200), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 800, 800, 600, 800), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 600, 800, 0, -200), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, 0, -200, 800, -200), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, 800, -200, 800, 800), Is.True, "Expected: has edge W-Z"); // W-Z
 
@@ -19981,25 +19978,25 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         };
 
         // 1200 X---------------------------------------B---------Z
-        //      |                                     ##          |
-        // 1100 |                                    #            |
-        //      |                                  ##             |
-        // 1000 1                                 #               |
-        //      |                               ##                |
-        //  900 |                              #                  |
-        //      |                            ##                   |
-        //  800 |                           #                     |
-        //      |                         ##                      |
-        //  700 |                        #                        |
-        //      |                      ##                         |
-        //  600 |                     #                           |
-        //      |                   ##                            |
-        //  500 |                  #                              |
-        //      |                ##                               |
-        //  400 |               #                                 2
-        //      |             ##                                  |
-        //  300 |            #                                    |
-        //      |          ##                                     |
+        //      |                                     ,'          |
+        // 1100 |                                    ·            |
+        //      |                                  ,'             |
+        // 1000 1                                 ·               |
+        //      |                               ,'                |
+        //  900 |                              ·                  |
+        //      |                            ,'                   |
+        //  800 |                           ·                     |
+        //      |                         ,'                      |
+        //  700 |                        ·                        |
+        //      |                      ,'                         |
+        //  600 |                     ·                           |
+        //      |                   ,'                            |
+        //  500 |                  ·                              |
+        //      |                ,'                               |
+        //  400 |               ·                                 2
+        //      |             ,'                                  |
+        //  300 |            ·                                    |
+        //      |          ,'                                     |
         //  200 Y---------A---------------------------------------W
         //     200  300  400  500  600  700  800  900 1000 1100 1200 
 
@@ -20009,14 +20006,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, 400, 200, 1000, 1200), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 1000, 1200, 200, 1200), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, 200, 1200, 200, 200), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, 200, 200, 400, 200), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 1200, 1200, 1000, 1200), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 1000, 1200, 400, 200), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, 400, 200, 1200, 200), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, 1200, 200, 1200, 1200), Is.True, "Expected: has edge W-Z"); // W-Z
 
@@ -20062,19 +20058,19 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         //      |                                                 |
         //  900 |                                                 |
         //      |                                                 |
-        //  800 |                                               ##B
-        //      |                                           ####  |
-        //  700 |                                       ####      |
-        //      |                                   ####          |
-        //  600 |                               ####              |
-        //      |                           ####                  |
-        //  500 |                      #####                      |
-        //      |                  ####                           |
-        //  400 |              ####                               |
-        //      |          ####                                   |
-        //  300 |      ####                                       |
-        //      |  ####                                           |
-        //  200 A##                                               |
+        //  800 |                                               ,,B
+        //      |                                           ,,·'  |
+        //  700 |                                       ,,·'      |
+        //      |                                   ,,''          |
+        //  600 |                               ,·''              |
+        //      |                           ,·''                  |
+        //  500 |                      ,,·''                      |
+        //      |                  ,,·'                           |
+        //  400 |              ,,·'                               |
+        //      |          ,,''                                   |
+        //  300 |      ,·''                                       |
+        //      |  ,·''                                           |
+        //  200 A''                                               |
         //      |                                                 |
         //  100 |                                                 |
         //      |                                                 |
@@ -20087,14 +20083,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, 0, 200, 1000, 800), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 1000, 800, 1000, 0), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, 1000, 0, 0, 0), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, 0, 0, 0, 200), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 1000, 1000, 1000, 800), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 1000, 800, 0, 200), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, 0, 200, 0, 1000), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, 0, 1000, 1000, 1000), Is.True, "Expected: has edge W-Z"); // W-Z
 
@@ -20140,19 +20135,19 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         //      |                                                 |
         //  400 |                                                 |
         //      |                                                 |
-        //  300 |                                               ##B
-        //      |                                           ####  |
-        //  200 |                                       ####      |
-        //      |                                   ####          |
-        //  100 |                               ####              |
-        //      |                           ####                  |
-        //    0 |                      #####                      |
-        //      |                  ####                           |
-        // -100 |              ####                               |
-        //      |          ####                                   |
-        // -200 |      ####                                       |
-        //      |  ####                                           |
-        // -300 A##                                               |
+        //  300 |                                               ,,B
+        //      |                                           ,,·'  |
+        //  200 |                                       ,,·'      |
+        //      |                                   ,,''          |
+        //  100 |                               ,·''              |
+        //      |                           ,·''                  |
+        //    0 |                      ,,·''                      |
+        //      |                  ,,·'                           |
+        // -100 |              ,,·'                               |
+        //      |          ,,''                                   |
+        // -200 |      ,·''                                       |
+        //      |  ,·''                                           |
+        // -300 A''                                               |
         //      |                                                 |
         // -400 |                                                 |
         //      |                                                 |
@@ -20165,14 +20160,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, -500, -300, 500, 300), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 500, 300, 500, -500), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, 500, -500, -500, -500), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, -500, -500, -500, -300), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 500, 500, 500, 300), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 500, 300, -500, -300), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, -500, -300, -500, 500), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, -500, 500, 500, 500), Is.True, "Expected: has edge W-Z"); // W-Z
 
@@ -20218,19 +20212,19 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         //      |                                                 |
         //  700 |                                                 |
         //      |                                                 |
-        //  600 |                                               ##B
-        //      |                                           ####  |
-        //  500 |                                       ####      |
-        //      |                                   ####          |
-        //  400 |                               ####              |
-        //      |                           ####                  |
-        //  300 |                      #####                      |
-        //      |                  ####                           |
-        //  200 |              ####                               |
-        //      |          ####                                   |
-        //  100 |      ####                                       |
-        //      |  ####                                           |
-        //    0 A##       ●                                       |
+        //  600 |                                               ,,B
+        //      |                                           ,,·'  |
+        //  500 |                                       ,,·'      |
+        //      |                                   ,,''          |
+        //  400 |                               ,·''              |
+        //      |                           ,·''                  |
+        //  300 |                      ,,·''                      |
+        //      |                  ,,·'                           |
+        //  200 |              ,,·'                               |
+        //      |          ,,''                                   |
+        //  100 |      ,·''                                       |
+        //      |  ,·''                                           |
+        //    0 A''       ●                                       |
         //      |                                                 |
         // -100 |                                                 |
         //      |                                                 |
@@ -20243,14 +20237,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, -200, 0, 800, 600), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 800, 600, 800, -200), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, 800, -200, -200, -200), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, -200, -200, -200, 0), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 800, 800, 800, 600), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 800, 600, -200, 0), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, -200, 0, -200, 800), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, -200, 800, 800, 800), Is.True, "Expected: has edge W-Z"); // W-Z
 
@@ -20296,19 +20289,19 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
         //      |                                                 |
         // 1100 |                                                 |
         //      |                                                 |
-        // 1000 |                                               ##B
-        //      |                                           ####  |
-        //  900 |                                       ####      |
-        //      |                                   ####          |
-        //  800 |                               ####              |
-        //      |                           ####                  |
-        //  700 |                      #####                      |
-        //      |                  ####                           |
-        //  600 |              ####                               |
-        //      |          ####                                   |
-        //  500 |      ####                                       |
-        //      |  ####                                           |
-        //  400 A##                                               |
+        // 1000 |                                               ,,B
+        //      |                                           ,,·'  |
+        //  900 |                                       ,,·'      |
+        //      |                                   ,,''          |
+        //  800 |                               ,·''              |
+        //      |                           ,·''                  |
+        //  700 |                      ,,·''                      |
+        //      |                  ,,·'                           |
+        //  600 |              ,,·'                               |
+        //      |          ,,''                                   |
+        //  500 |      ,·''                                       |
+        //      |  ,·''                                           |
+        //  400 A''                                               |
         //      |                                                 |
         //  300 |                                                 |
         //      |                                                 |
@@ -20321,14 +20314,13 @@ public class GeneratedTest_LiesOnEdgeOrCorner_ClosedBorders
 
         // Assume
 
-        Assume.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assume.That(edges.Count, Is.EqualTo(7), "Expected: edge count 7");
         Assume.That(edges, Is.Not.Null);
         Assume.That(HasEdge(edges, 200, 400, 1200, 1000), Is.True, "Expected: has edge A-B"); // A-B
         Assume.That(HasEdge(edges, 1200, 1000, 1200, 200), Is.True, "Expected: has edge B-X"); // B-X
         Assume.That(HasEdge(edges, 1200, 200, 200, 200), Is.True, "Expected: has edge X-Y"); // X-Y
         Assume.That(HasEdge(edges, 200, 200, 200, 400), Is.True, "Expected: has edge Y-A"); // Y-A
         Assume.That(HasEdge(edges, 1200, 1200, 1200, 1000), Is.True, "Expected: has edge Z-B"); // Z-B
-        Assume.That(HasEdge(edges, 1200, 1000, 200, 400), Is.True, "Expected: has edge B-A"); // B-A
         Assume.That(HasEdge(edges, 200, 400, 200, 1200), Is.True, "Expected: has edge A-W"); // A-W
         Assume.That(HasEdge(edges, 200, 1200, 1200, 1200), Is.True, "Expected: has edge W-Z"); // W-Z
 
