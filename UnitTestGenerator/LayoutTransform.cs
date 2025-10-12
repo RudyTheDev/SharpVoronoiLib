@@ -4,7 +4,7 @@
 /// How the layout should be transformed and repeated in the generated tests.
 /// Basically, if the test is not symmetric, then we can also easily test the other rotations and mirrors of the layout.
 /// </summary>
-public enum LayoutRepeat
+public enum LayoutTransform
 {
     Rotate90,
     Rotate180,

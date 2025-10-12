@@ -12,7 +12,7 @@ public static class UnitTestGenerator
         IEnumerable<TestCaseLayouts.RawTestLayout> layouts = TestCaseLayouts.GetLayouts();
 
         foreach (TestCaseLayouts.RawTestLayout layout in layouts)
-            testLayoutParser.AddTestLayout(layout.Name, layout.Layout, layout.Repeat);
+            testLayoutParser.AddTestLayout(layout.Name, layout.Layout, layout.Transform);
 
         List<(string, TestPurpose)> variants =
         [
