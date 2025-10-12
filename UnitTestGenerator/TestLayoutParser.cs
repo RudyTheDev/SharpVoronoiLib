@@ -69,7 +69,7 @@ public class TestLayoutParser
                         // Filler
                         break;
 
-                    case ' ' or 'x':
+                    case ' ':
                         if (x % 2 != 1) throw new ArgumentException();
                         // Spacing
                         break;
@@ -851,7 +851,7 @@ public class TestLayoutParser
                                                    e != edge &&
                                                    EdgeMatchesBorderLogic(e, borderLogic) &&
                                                    e.Points()
-                                                    .Any<Point>(p => p == edge.FromPoint || p == edge.ToPoint)
+                                                    .Any(p => p == edge.FromPoint || p == edge.ToPoint)
                                         ).ToList();
 
                 strings.Add((first ? nameof(VoronoiEdge) + @" " : "") + @"edge = FindEdge(edges, " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @"); // " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id);
@@ -1167,7 +1167,7 @@ public class TestLayoutParser
 
                 return (
                     (c1!.X + c2!.X) / 2.0,
-                    (c1!.Y + c2!.Y) / 2.0
+                    (c1.Y + c2.Y) / 2.0
                 );
             }
 
@@ -1853,16 +1853,16 @@ public class TestLayoutParser
 
     private class Test
     {
-        public int MinX { get; protected init; }
-        public int MinY { get; protected init; }
-        public int MaxX { get; protected init; }
-        public int MaxY { get; protected init; }
-        public int Width { get; protected init; }
-        public int Height { get; protected init; }
-        public List<Site> Sites { get; protected init; } = null!;
-        public List<Point> Points { get; protected init; } = null!;
-        public List<Edge> Edges { get; protected init; } = null!;
-        public string Name { get; protected init; } = null!;
+        public int MinX { get; }
+        public int MinY { get; }
+        public int MaxX { get; }
+        public int MaxY { get; }
+        public int Width { get; }
+        public int Height { get; }
+        public List<Site> Sites { get; }
+        public List<Point> Points { get; }
+        public List<Edge> Edges { get; }
+        public string Name { get; }
         
         public LayoutTransform? Transformed { get; }
         public string? OriginalName { get; }
@@ -2084,7 +2084,7 @@ public class TestLayoutParser
                 }
             }
 
-            string TransformName(string givenName, LayoutTransform transform)
+            static string TransformName(string givenName, LayoutTransform transform)
             {
                 if (transform == LayoutTransform.Rotate90)
                     if (givenName.Contains("Horizontal"))
