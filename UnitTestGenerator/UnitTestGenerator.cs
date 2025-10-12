@@ -29,13 +29,16 @@ public static class UnitTestGenerator
             ("GeneratedTest_LiesOnEdgeOrCorner", TestPurpose.AssertLiesOnEdgeOrCorner),
             ("GeneratedTest_SiteCentroids", TestPurpose.AssertSiteCentroids)
         ];
+        
+        List<TestBorderLogic> borderLogics = [ 
+            TestBorderLogic.UnclosedBorders, 
+            TestBorderLogic.ClosedBorders 
+        ];
 
         // todo: edge length
 
-        for (int i = 0; i < 2; i++)
+        foreach (TestBorderLogic borderLogic in borderLogics)
         {
-            TestBorderLogic borderLogic = i == 0 ? TestBorderLogic.UnclosedBorders : TestBorderLogic.ClosedBorders;
-
             foreach ((string testName, TestPurpose testPurpose) in variants)
             {
                 string fullTestName = testName + "_" + (borderLogic == TestBorderLogic.UnclosedBorders ? "OpenBorders" : "ClosedBorders");
