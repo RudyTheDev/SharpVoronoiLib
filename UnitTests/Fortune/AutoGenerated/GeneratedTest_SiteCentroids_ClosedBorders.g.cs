@@ -8166,7 +8166,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
     }
 
     [Test]
-    public void FivePointsInAKite()
+    public void FivePointsInARegularKite()
     {
         // Arrange
 
@@ -8263,7 +8263,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
     }
 
     [Test]
-    public void FivePointsInABorderTouchingKite()
+    public void FivePointsInABorderTouchingRegularKite()
     {
         // Arrange
 
@@ -8349,6 +8349,390 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         // Centroid of #5 in D-A-B-C is at ~(500, 500) (using quadrilateral formula)
         Assert.That(sites[4].Centroid.X, Is.EqualTo(500.00).Within(0.01));
         Assert.That(sites[4].Centroid.Y, Is.EqualTo(500.00).Within(0.01));
+    }
+
+    [Test]
+    public void FivePointsInASkewedKite()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(200, 600), // #1
+            new VoronoiSite(200, 200), // #2
+            new VoronoiSite(600, 200), // #3
+            new VoronoiSite(600, 600), // #4
+            new VoronoiSite(500, 300), // #5
+        };
+
+        //  800 X-------------------A-------------------Z
+        //      |                   |                   |
+        //  700 |                   |                   |
+        //      |                   |                   |
+        //  600 |         1         |         4         |
+        //      |                   |                   |
+        //  500 |                  ,E,,,                |
+        //      |                ,'     '''··,,,        |
+        //  400 B--------------F'               ''#H----D
+        //      |               ·               ,'      |
+        //  300 |                ·       5   ,·'        |
+        //      |                ·         ,'           |
+        //  200 |         2       ·     ,·'   3         |
+        //      |                  ·  ,'                |
+        //  100 |                   G'                  |
+        //      |                   |                   |
+        //    0 Y-------------------C-------------------W
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 400, 800), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 400, 500), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 300, 400), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 0, 800), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 300, 400), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 400, 100), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 0, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 800, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 400, 100), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 700, 400), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 800, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 400, 800), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 800, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 400, 500), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 700, 400), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 800, 800), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 400, 500), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 300, 400), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 400, 100), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 700, 400), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        // Centroid of #1 in A-X-B-F-E is at ~(195, 605) (using generic closed polygon formula)
+        Assert.That(sites[0].Centroid.X, Is.EqualTo(194.62).Within(0.01));
+        Assert.That(sites[0].Centroid.Y, Is.EqualTo(605.38).Within(0.01));
+        // Centroid of #2 in F-B-Y-C-G is at ~(183, 190) (using generic closed polygon formula)
+        Assert.That(sites[1].Centroid.X, Is.EqualTo(182.76).Within(0.01));
+        Assert.That(sites[1].Centroid.Y, Is.EqualTo(189.66).Within(0.01));
+        // Centroid of #3 in D-H-G-C-W is at ~(639, 161) (using generic closed polygon formula)
+        Assert.That(sites[2].Centroid.X, Is.EqualTo(639.13).Within(0.01));
+        Assert.That(sites[2].Centroid.Y, Is.EqualTo(160.87).Within(0.01));
+        // Centroid of #4 in Z-A-E-H-D is at ~(610, 617) (using generic closed polygon formula)
+        Assert.That(sites[3].Centroid.X, Is.EqualTo(610.34).Within(0.01));
+        Assert.That(sites[3].Centroid.Y, Is.EqualTo(617.24).Within(0.01));
+        // Centroid of #5 in H-E-F-G is at ~(467, 333) (using quadrilateral formula)
+        Assert.That(sites[4].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+        Assert.That(sites[4].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 90° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated90()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(600, 600), // #1
+            new VoronoiSite(200, 600), // #2
+            new VoronoiSite(200, 200), // #3
+            new VoronoiSite(600, 200), // #4
+            new VoronoiSite(300, 300), // #5
+        };
+
+        //  800 Y-------------------B-------------------X
+        //      |                   |                   |
+        //  700 |                   |                   |
+        //      |                   |                   |
+        //  600 |         2         |         1         |
+        //      |                   |                   |
+        //  500 |                ,,,F,                  |
+        //      |        ,,,··'''     ',                |
+        //  400 C----G#''               'E--------------A
+        //      |      ',               ·               |
+        //  300 |        '·,   5       ·                |
+        //      |           ',        ·                 |
+        //  200 |         3   '·,     ·       4         |
+        //      |                ',  ·                  |
+        //  100 |                  'H                   |
+        //      |                   |                   |
+        //    0 W-------------------D-------------------Z
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 800, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 400, 800), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 500, 400), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 400, 500), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 800, 800), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 400, 800), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 0, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 400, 500), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 100, 400), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 0, 800), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 400, 0), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 100, 400), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 400, 100), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 0, 0), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 800, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 500, 400), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 400, 100), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 800, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 500, 400), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 400, 500), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 100, 400), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 400, 100), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        // Centroid of #1 in X-B-F-E-A is at ~(605, 605) (using generic closed polygon formula)
+        Assert.That(sites[0].Centroid.X, Is.EqualTo(605.38).Within(0.01));
+        Assert.That(sites[0].Centroid.Y, Is.EqualTo(605.38).Within(0.01));
+        // Centroid of #2 in B-Y-C-G-F is at ~(190, 617) (using generic closed polygon formula)
+        Assert.That(sites[1].Centroid.X, Is.EqualTo(189.66).Within(0.01));
+        Assert.That(sites[1].Centroid.Y, Is.EqualTo(617.24).Within(0.01));
+        // Centroid of #3 in G-C-W-D-H is at ~(161, 161) (using generic closed polygon formula)
+        Assert.That(sites[2].Centroid.X, Is.EqualTo(160.87).Within(0.01));
+        Assert.That(sites[2].Centroid.Y, Is.EqualTo(160.87).Within(0.01));
+        // Centroid of #4 in A-E-H-D-Z is at ~(617, 190) (using generic closed polygon formula)
+        Assert.That(sites[3].Centroid.X, Is.EqualTo(617.24).Within(0.01));
+        Assert.That(sites[3].Centroid.Y, Is.EqualTo(189.66).Within(0.01));
+        // Centroid of #5 in E-F-G-H is at ~(333, 333) (using quadrilateral formula)
+        Assert.That(sites[4].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+        Assert.That(sites[4].Centroid.Y, Is.EqualTo(333.33).Within(0.01));
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 180° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated180()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(600, 200), // #1
+            new VoronoiSite(600, 600), // #2
+            new VoronoiSite(200, 600), // #3
+            new VoronoiSite(200, 200), // #4
+            new VoronoiSite(300, 500), // #5
+        };
+
+        //  800 W-------------------C-------------------Y
+        //      |                   |                   |
+        //  700 |                  ,G                   |
+        //      |                ,'  ·                  |
+        //  600 |         3   ,·'     ·       2         |
+        //      |           ,'         ·                |
+        //  500 |        ,·'   5       ·                |
+        //      |      ,'               ·               |
+        //  400 D----H#,,               ,F--------------B
+        //      |        '''··,,,     ,'                |
+        //  300 |                '''E'                  |
+        //      |                   |                   |
+        //  200 |         4         |         1         |
+        //      |                   |                   |
+        //  100 |                   |                   |
+        //      |                   |                   |
+        //    0 Z-------------------A-------------------X
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 800, 400), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 400, 300), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 500, 400), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 800, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 800, 400), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 400, 800), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 500, 400), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 400, 700), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 800, 800), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 400, 800), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 0, 400), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 400, 700), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 100, 400), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 0, 800), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 400, 0), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 0, 400), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 400, 300), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 100, 400), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 0, 0), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 400, 300), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 500, 400), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 400, 700), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 100, 400), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        // Centroid of #1 in B-F-E-A-X is at ~(605, 195) (using generic closed polygon formula)
+        Assert.That(sites[0].Centroid.X, Is.EqualTo(605.38).Within(0.01));
+        Assert.That(sites[0].Centroid.Y, Is.EqualTo(194.62).Within(0.01));
+        // Centroid of #2 in Y-C-G-F-B is at ~(617, 610) (using generic closed polygon formula)
+        Assert.That(sites[1].Centroid.X, Is.EqualTo(617.24).Within(0.01));
+        Assert.That(sites[1].Centroid.Y, Is.EqualTo(610.34).Within(0.01));
+        // Centroid of #3 in G-C-W-D-H is at ~(161, 639) (using generic closed polygon formula)
+        Assert.That(sites[2].Centroid.X, Is.EqualTo(160.87).Within(0.01));
+        Assert.That(sites[2].Centroid.Y, Is.EqualTo(639.13).Within(0.01));
+        // Centroid of #4 in E-H-D-Z-A is at ~(190, 183) (using generic closed polygon formula)
+        Assert.That(sites[3].Centroid.X, Is.EqualTo(189.66).Within(0.01));
+        Assert.That(sites[3].Centroid.Y, Is.EqualTo(182.76).Within(0.01));
+        // Centroid of #5 in G-H-E-F is at ~(333, 467) (using quadrilateral formula)
+        Assert.That(sites[4].Centroid.X, Is.EqualTo(333.33).Within(0.01));
+        Assert.That(sites[4].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 270° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated270()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(200, 200), // #1
+            new VoronoiSite(600, 200), // #2
+            new VoronoiSite(600, 600), // #3
+            new VoronoiSite(200, 600), // #4
+            new VoronoiSite(500, 500), // #5
+        };
+
+        //  800 Z-------------------D-------------------W
+        //      |                   |                   |
+        //  700 |                   H,                  |
+        //      |                  ·  ',                |
+        //  600 |         4       ·     '·,   3         |
+        //      |                 ·        ',           |
+        //  500 |                ·       5   '·,        |
+        //      |               ·               ',      |
+        //  400 A--------------E,               ,,#G----C
+        //      |                ',     ,,,··'''        |
+        //  300 |                  'F'''                |
+        //      |                   |                   |
+        //  200 |         1         |         2         |
+        //      |                   |                   |
+        //  100 |                   |                   |
+        //      |                   |                   |
+        //    0 X-------------------B-------------------Y
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+
+        // Assume
+
+        Assume.That(sites[0].Points, Is.Not.Null);
+        Assume.That(sites[0].Points.Count(), Is.EqualTo(5), "Expected: site #1 point count 5"); // #1
+        Assume.That(HasPoint(sites[0].Points, 0, 400), Is.True, "Expected: site #1 has A"); // #1 has A
+        Assume.That(HasPoint(sites[0].Points, 400, 0), Is.True, "Expected: site #1 has B"); // #1 has B
+        Assume.That(HasPoint(sites[0].Points, 300, 400), Is.True, "Expected: site #1 has E"); // #1 has E
+        Assume.That(HasPoint(sites[0].Points, 400, 300), Is.True, "Expected: site #1 has F"); // #1 has F
+        Assume.That(HasPoint(sites[0].Points, 0, 0), Is.True, "Expected: site #1 has X"); // #1 has X
+        Assume.That(sites[1].Points, Is.Not.Null);
+        Assume.That(sites[1].Points.Count(), Is.EqualTo(5), "Expected: site #2 point count 5"); // #2
+        Assume.That(HasPoint(sites[1].Points, 400, 0), Is.True, "Expected: site #2 has B"); // #2 has B
+        Assume.That(HasPoint(sites[1].Points, 800, 400), Is.True, "Expected: site #2 has C"); // #2 has C
+        Assume.That(HasPoint(sites[1].Points, 400, 300), Is.True, "Expected: site #2 has F"); // #2 has F
+        Assume.That(HasPoint(sites[1].Points, 700, 400), Is.True, "Expected: site #2 has G"); // #2 has G
+        Assume.That(HasPoint(sites[1].Points, 800, 0), Is.True, "Expected: site #2 has Y"); // #2 has Y
+        Assume.That(sites[2].Points, Is.Not.Null);
+        Assume.That(sites[2].Points.Count(), Is.EqualTo(5), "Expected: site #3 point count 5"); // #3
+        Assume.That(HasPoint(sites[2].Points, 800, 400), Is.True, "Expected: site #3 has C"); // #3 has C
+        Assume.That(HasPoint(sites[2].Points, 400, 800), Is.True, "Expected: site #3 has D"); // #3 has D
+        Assume.That(HasPoint(sites[2].Points, 700, 400), Is.True, "Expected: site #3 has G"); // #3 has G
+        Assume.That(HasPoint(sites[2].Points, 400, 700), Is.True, "Expected: site #3 has H"); // #3 has H
+        Assume.That(HasPoint(sites[2].Points, 800, 800), Is.True, "Expected: site #3 has W"); // #3 has W
+        Assume.That(sites[3].Points, Is.Not.Null);
+        Assume.That(sites[3].Points.Count(), Is.EqualTo(5), "Expected: site #4 point count 5"); // #4
+        Assume.That(HasPoint(sites[3].Points, 0, 400), Is.True, "Expected: site #4 has A"); // #4 has A
+        Assume.That(HasPoint(sites[3].Points, 400, 800), Is.True, "Expected: site #4 has D"); // #4 has D
+        Assume.That(HasPoint(sites[3].Points, 300, 400), Is.True, "Expected: site #4 has E"); // #4 has E
+        Assume.That(HasPoint(sites[3].Points, 400, 700), Is.True, "Expected: site #4 has H"); // #4 has H
+        Assume.That(HasPoint(sites[3].Points, 0, 800), Is.True, "Expected: site #4 has Z"); // #4 has Z
+        Assume.That(sites[4].Points, Is.Not.Null);
+        Assume.That(sites[4].Points.Count(), Is.EqualTo(4), "Expected: site #5 point count 4"); // #5
+        Assume.That(HasPoint(sites[4].Points, 300, 400), Is.True, "Expected: site #5 has E"); // #5 has E
+        Assume.That(HasPoint(sites[4].Points, 400, 300), Is.True, "Expected: site #5 has F"); // #5 has F
+        Assume.That(HasPoint(sites[4].Points, 700, 400), Is.True, "Expected: site #5 has G"); // #5 has G
+        Assume.That(HasPoint(sites[4].Points, 400, 700), Is.True, "Expected: site #5 has H"); // #5 has H
+
+        // Assert
+
+        // Centroid of #1 in F-E-A-X-B is at ~(195, 195) (using generic closed polygon formula)
+        Assert.That(sites[0].Centroid.X, Is.EqualTo(194.62).Within(0.01));
+        Assert.That(sites[0].Centroid.Y, Is.EqualTo(194.62).Within(0.01));
+        // Centroid of #2 in C-G-F-B-Y is at ~(610, 183) (using generic closed polygon formula)
+        Assert.That(sites[1].Centroid.X, Is.EqualTo(610.34).Within(0.01));
+        Assert.That(sites[1].Centroid.Y, Is.EqualTo(182.76).Within(0.01));
+        // Centroid of #3 in W-D-H-G-C is at ~(639, 639) (using generic closed polygon formula)
+        Assert.That(sites[2].Centroid.X, Is.EqualTo(639.13).Within(0.01));
+        Assert.That(sites[2].Centroid.Y, Is.EqualTo(639.13).Within(0.01));
+        // Centroid of #4 in H-D-Z-A-E is at ~(183, 610) (using generic closed polygon formula)
+        Assert.That(sites[3].Centroid.X, Is.EqualTo(182.76).Within(0.01));
+        Assert.That(sites[3].Centroid.Y, Is.EqualTo(610.34).Within(0.01));
+        // Centroid of #5 in H-E-F-G is at ~(467, 467) (using quadrilateral formula)
+        Assert.That(sites[4].Centroid.X, Is.EqualTo(466.67).Within(0.01));
+        Assert.That(sites[4].Centroid.Y, Is.EqualTo(466.67).Within(0.01));
     }
 
     [Test]

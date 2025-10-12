@@ -902,7 +902,7 @@ public static class UnitTestGenerator
                 6: FAEY
             ", Repeat.Rotate90);
 
-        testGenerator.AddTest("FivePointsInAKite", @"
+        testGenerator.AddTest("FivePointsInARegularKite", @"
                 10
                 X · · · · A · · · · Z 10
                 · · · · · x · · · · · 9
@@ -939,7 +939,7 @@ public static class UnitTestGenerator
                 5: HEFG
             ");
 
-        testGenerator.AddTest("FivePointsInABorderTouchingKite", @"
+        testGenerator.AddTest("FivePointsInABorderTouchingRegularKite", @"
                 10
                 1X· · · · A · · · · 4Z10
                 · · · · x · x · · · · 9
@@ -971,6 +971,41 @@ public static class UnitTestGenerator
                 4: ZAD !
                 5: DABC 
             ");
+
+        testGenerator.AddTest("FivePointsInASkewedKite", @"
+                8
+                X · · · A · · · Z 8
+                · · · · x · · · · 7
+                · · 1 · x · 4 · · 6
+                · · · · E x · · · 5
+                B x x F · · x H D 4
+                · · · ·x· 5 x · · 3
+                · · 2 ·x· x 3 · · 2
+                · · · · G · · · · 1
+                Y · · · C · · · W 0
+                0 1 2 3 4 5 6 7 8
+                A-E: 1,4
+                D-H: 4,3
+                C-G: 3,2
+                B-F: 2,1
+                E-H: 4,5
+                H-G: 3,5
+                G-F: 2,5
+                F-E: 1,5
+                X-A: 1
+                A-Z: 4
+                Z-D: 4
+                D-W: 3
+                W-C: 3
+                C-Y: 2
+                Y-B: 2
+                B-X: 1
+                1: AXBFE
+                2: FBYCG
+                3: DHGCW
+                4: ZAEHD
+                5: HEFG
+            ", Repeat.RotateAll);
 
         testGenerator.AddTest("ThreePointsMeetingAtBorderPerpendicularly", @"
                 10

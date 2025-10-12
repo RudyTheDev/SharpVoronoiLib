@@ -5579,7 +5579,7 @@ public class GeneratedTest_Edges_OpenBorders
     }
 
     [Test]
-    public void FivePointsInAKite()
+    public void FivePointsInARegularKite()
     {
         // Arrange
 
@@ -5634,7 +5634,7 @@ public class GeneratedTest_Edges_OpenBorders
     }
 
     [Test]
-    public void FivePointsInABorderTouchingKite()
+    public void FivePointsInABorderTouchingRegularKite()
     {
         // Arrange
 
@@ -5682,6 +5682,222 @@ public class GeneratedTest_Edges_OpenBorders
         Assert.That(HasEdge(edges, 0, 500, 500, 0), Is.True, "Expected: has edge B-C"); // B-C
         Assert.That(HasEdge(edges, 500, 0, 1000, 500), Is.True, "Expected: has edge C-D"); // C-D
         Assert.That(HasEdge(edges, 1000, 500, 500, 1000), Is.True, "Expected: has edge D-A"); // D-A
+    }
+
+    [Test]
+    public void FivePointsInASkewedKite()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(200, 600), // #1
+            new VoronoiSite(200, 200), // #2
+            new VoronoiSite(600, 200), // #3
+            new VoronoiSite(600, 600), // #4
+            new VoronoiSite(500, 300), // #5
+        };
+
+        //  800 ↑                   A                    
+        //      |                   |                    
+        //  700 |                   |                    
+        //      |                   |                    
+        //  600 |         1         |         4          
+        //      |                   |                    
+        //  500 |                  ,E,,,                 
+        //      |                ,'     '''··,,,         
+        //  400 B--------------F'               ''#H----D
+        //      |               ·               ,'       
+        //  300 |                ·       5   ,·'         
+        //      |                ·         ,'            
+        //  200 |         2       ·     ,·'   3          
+        //      |                  ·  ,'                 
+        //  100 |                   G'                   
+        //      |                   |                    
+        //    0 └-------------------C-------------------→
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+
+        // Assert
+
+        Assert.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assert.That(edges, Is.Not.Null);
+        Assert.That(HasEdge(edges, 400, 800, 400, 500), Is.True, "Expected: has edge A-E"); // A-E
+        Assert.That(HasEdge(edges, 800, 400, 700, 400), Is.True, "Expected: has edge D-H"); // D-H
+        Assert.That(HasEdge(edges, 400, 0, 400, 100), Is.True, "Expected: has edge C-G"); // C-G
+        Assert.That(HasEdge(edges, 0, 400, 300, 400), Is.True, "Expected: has edge B-F"); // B-F
+        Assert.That(HasEdge(edges, 400, 500, 700, 400), Is.True, "Expected: has edge E-H"); // E-H
+        Assert.That(HasEdge(edges, 700, 400, 400, 100), Is.True, "Expected: has edge H-G"); // H-G
+        Assert.That(HasEdge(edges, 400, 100, 300, 400), Is.True, "Expected: has edge G-F"); // G-F
+        Assert.That(HasEdge(edges, 300, 400, 400, 500), Is.True, "Expected: has edge F-E"); // F-E
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 90° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated90()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(600, 600), // #1
+            new VoronoiSite(200, 600), // #2
+            new VoronoiSite(200, 200), // #3
+            new VoronoiSite(600, 200), // #4
+            new VoronoiSite(300, 300), // #5
+        };
+
+        //  800 ↑                   B                    
+        //      |                   |                    
+        //  700 |                   |                    
+        //      |                   |                    
+        //  600 |         2         |         1          
+        //      |                   |                    
+        //  500 |                ,,,F,                   
+        //      |        ,,,··'''     ',                 
+        //  400 C----G#''               'E--------------A
+        //      |      ',               ·                
+        //  300 |        '·,   5       ·                 
+        //      |           ',        ·                  
+        //  200 |         3   '·,     ·       4          
+        //      |                ',  ·                   
+        //  100 |                  'H                    
+        //      |                   |                    
+        //    0 └-------------------D-------------------→
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+
+        // Assert
+
+        Assert.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assert.That(edges, Is.Not.Null);
+        Assert.That(HasEdge(edges, 800, 400, 500, 400), Is.True, "Expected: has edge A-E"); // A-E
+        Assert.That(HasEdge(edges, 400, 0, 400, 100), Is.True, "Expected: has edge D-H"); // D-H
+        Assert.That(HasEdge(edges, 0, 400, 100, 400), Is.True, "Expected: has edge C-G"); // C-G
+        Assert.That(HasEdge(edges, 400, 800, 400, 500), Is.True, "Expected: has edge B-F"); // B-F
+        Assert.That(HasEdge(edges, 500, 400, 400, 100), Is.True, "Expected: has edge E-H"); // E-H
+        Assert.That(HasEdge(edges, 400, 100, 100, 400), Is.True, "Expected: has edge H-G"); // H-G
+        Assert.That(HasEdge(edges, 100, 400, 400, 500), Is.True, "Expected: has edge G-F"); // G-F
+        Assert.That(HasEdge(edges, 400, 500, 500, 400), Is.True, "Expected: has edge F-E"); // F-E
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 180° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated180()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(600, 200), // #1
+            new VoronoiSite(600, 600), // #2
+            new VoronoiSite(200, 600), // #3
+            new VoronoiSite(200, 200), // #4
+            new VoronoiSite(300, 500), // #5
+        };
+
+        //  800 ↑                   C                    
+        //      |                   |                    
+        //  700 |                  ,G                    
+        //      |                ,'  ·                   
+        //  600 |         3   ,·'     ·       2          
+        //      |           ,'         ·                 
+        //  500 |        ,·'   5       ·                 
+        //      |      ,'               ·                
+        //  400 D----H#,,               ,F--------------B
+        //      |        '''··,,,     ,'                 
+        //  300 |                '''E'                   
+        //      |                   |                    
+        //  200 |         4         |         1          
+        //      |                   |                    
+        //  100 |                   |                    
+        //      |                   |                    
+        //    0 └-------------------A-------------------→
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+
+        // Assert
+
+        Assert.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assert.That(edges, Is.Not.Null);
+        Assert.That(HasEdge(edges, 400, 0, 400, 300), Is.True, "Expected: has edge A-E"); // A-E
+        Assert.That(HasEdge(edges, 0, 400, 100, 400), Is.True, "Expected: has edge D-H"); // D-H
+        Assert.That(HasEdge(edges, 400, 800, 400, 700), Is.True, "Expected: has edge C-G"); // C-G
+        Assert.That(HasEdge(edges, 800, 400, 500, 400), Is.True, "Expected: has edge B-F"); // B-F
+        Assert.That(HasEdge(edges, 400, 300, 100, 400), Is.True, "Expected: has edge E-H"); // E-H
+        Assert.That(HasEdge(edges, 100, 400, 400, 700), Is.True, "Expected: has edge H-G"); // H-G
+        Assert.That(HasEdge(edges, 400, 700, 500, 400), Is.True, "Expected: has edge G-F"); // G-F
+        Assert.That(HasEdge(edges, 500, 400, 400, 300), Is.True, "Expected: has edge F-E"); // F-E
+    }
+
+    /// <summary>
+    /// This test basically repeats <see cref="FivePointsInASkewedKite"/> above,
+    /// but all coordinates are rotated 270° around the center of the boundary.
+    /// </summary>
+    [Test]
+    public void FivePointsInASkewedKite_Rotated270()
+    {
+        // Arrange
+
+        List<VoronoiSite> sites = new List<VoronoiSite>
+        {
+            new VoronoiSite(200, 200), // #1
+            new VoronoiSite(600, 200), // #2
+            new VoronoiSite(600, 600), // #3
+            new VoronoiSite(200, 600), // #4
+            new VoronoiSite(500, 500), // #5
+        };
+
+        //  800 ↑                   D                    
+        //      |                   |                    
+        //  700 |                   H,                   
+        //      |                  ·  ',                 
+        //  600 |         4       ·     '·,   3          
+        //      |                 ·        ',            
+        //  500 |                ·       5   '·,         
+        //      |               ·               ',       
+        //  400 A--------------E,               ,,#G----C
+        //      |                ',     ,,,··'''         
+        //  300 |                  'F'''                 
+        //      |                   |                    
+        //  200 |         1         |         2          
+        //      |                   |                    
+        //  100 |                   |                    
+        //      |                   |                    
+        //    0 └-------------------B-------------------→
+        //       0  100  200  300  400  500  600  700  800 
+
+        // Act
+
+        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+
+        // Assert
+
+        Assert.That(edges.Count, Is.EqualTo(8), "Expected: edge count 8");
+        Assert.That(edges, Is.Not.Null);
+        Assert.That(HasEdge(edges, 0, 400, 300, 400), Is.True, "Expected: has edge A-E"); // A-E
+        Assert.That(HasEdge(edges, 400, 800, 400, 700), Is.True, "Expected: has edge D-H"); // D-H
+        Assert.That(HasEdge(edges, 800, 400, 700, 400), Is.True, "Expected: has edge C-G"); // C-G
+        Assert.That(HasEdge(edges, 400, 0, 400, 300), Is.True, "Expected: has edge B-F"); // B-F
+        Assert.That(HasEdge(edges, 300, 400, 400, 700), Is.True, "Expected: has edge E-H"); // E-H
+        Assert.That(HasEdge(edges, 400, 700, 700, 400), Is.True, "Expected: has edge H-G"); // H-G
+        Assert.That(HasEdge(edges, 700, 400, 400, 300), Is.True, "Expected: has edge G-F"); // G-F
+        Assert.That(HasEdge(edges, 400, 300, 300, 400), Is.True, "Expected: has edge F-E"); // F-E
     }
 
     [Test]
