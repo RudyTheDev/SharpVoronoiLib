@@ -1708,7 +1708,7 @@ public class TestLayoutParser
                         }
                         else
                         {
-                            if (x == 0)
+                            if (x == 0) // left border
                             {
                                 if (y == 0)
                                     str += @"└";
@@ -1717,12 +1717,16 @@ public class TestLayoutParser
                                 else
                                     str += @"|";
                             }
-                            else if (y == 0)
+                            else if (y == 0) // bottom border
                             {
                                 if (x == horPreviewSteps - 1)
                                     str += "→";
                                 else
                                     str += "-";
+                            }
+                            else if (horValue == 0 && verValue == 0) // origin
+                            {
+                                str += "●";
                             }
                             else
                             {
