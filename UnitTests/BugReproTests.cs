@@ -80,4 +80,29 @@ public class BugReproTests
 
         plane.Relax();
     }
+
+    /// <summary>
+    /// Issue #11
+    /// </summary>
+    [Test]
+    public void MissingNeighbour()
+    {
+        List<VoronoiSite> sites =
+        [
+            new VoronoiSite(-8, -8),
+            new VoronoiSite(8, -8),
+            new VoronoiSite(-8, 8),
+            new VoronoiSite(6.282, 6.282),
+            new VoronoiSite(8, 5.427),
+            new VoronoiSite(5.427, 8),
+        ];
+
+        VoronoiPlane plane = new VoronoiPlane(-8, -8, 272, 272);
+            
+        plane.SetSites(sites);
+            
+        plane.Tessellate();
+
+        Assert.That(sites[0].Neighbours.Count(), Is.EqualTo(3));
+    }
 }
