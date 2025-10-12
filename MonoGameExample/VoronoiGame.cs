@@ -373,7 +373,8 @@ public class VoronoiGame : Game
     private void Generate()
     {
         //List<VoronoiSite> sites = MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY);
-        List<VoronoiSite> sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
+        //List<VoronoiSite> sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
+        List<VoronoiSite> sites = MakeBug11Repro(out float minX, out float minY, out float maxX, out float maxY);
         
         _plane = new VoronoiPlane(minX, minY, maxX, maxY);
         
@@ -455,6 +456,26 @@ public class VoronoiGame : Game
         minY = 0;
         maxX = width;
         maxY = height;
+        
+        return sites;
+    }
+    
+    private List<VoronoiSite> MakeBug11Repro(out float minX, out float minY, out float maxX, out float maxY)
+    {
+        List<VoronoiSite> sites =
+        [
+            new VoronoiSite(-8, -8),
+            new VoronoiSite(8, -8),
+            new VoronoiSite(-8, 8),
+            new VoronoiSite(6.282, 6.282),
+            new VoronoiSite(8, 5.427),
+            new VoronoiSite(5.427, 8),
+        ];
+
+        minX = -8;
+        minY = -8;
+        maxX = 272;
+        maxY = 272;
         
         return sites;
     }
