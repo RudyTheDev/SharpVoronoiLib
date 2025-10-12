@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -25,7 +24,7 @@ public class TestLayoutParser
     }
 
 
-    public void AddTest(string name, string layout, LayoutRepeat? repeat = null)
+    public void AddTestLayout(string name, string layout, LayoutRepeat? repeat = null)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name cannot be empty", nameof(name));
         if (string.IsNullOrWhiteSpace(layout)) throw new ArgumentException("Layout cannot be empty", nameof(layout));

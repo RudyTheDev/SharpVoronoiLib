@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace SharpVoronoiLib.UnitTestGenerator;
@@ -12,8 +11,11 @@ public static class UnitTestGenerator
             50, 100,
             20, 50
         );
-        
-        TestCaseLayouts.AddLayouts(testLayoutParser);
+
+        IEnumerable<TestCaseLayouts.RawTestLayout> layouts = TestCaseLayouts.GetLayouts();
+
+        foreach (TestCaseLayouts.RawTestLayout layout in layouts)
+            testLayoutParser.AddTestLayout(layout.Name, layout.Layout, layout.Repeat);
 
         List<(string, TestPurpose)> variants =
         [
