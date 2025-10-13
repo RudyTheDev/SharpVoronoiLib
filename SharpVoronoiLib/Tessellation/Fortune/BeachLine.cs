@@ -211,14 +211,11 @@ internal class BeachLine
         section.Next.Data.Edge.End = vertex;
         section.Data.CircleEvent = null;
 
-        // TODO: what does this mean - this sounds like a bug or something
-        // Odds are this double writes a few edges but this is clean...
         foreach (RBTreeNode<BeachSection> remove in toBeRemoved)
         {
             remove.Data.Edge.End = vertex;
             remove.Next.Data.Edge.End = vertex;
-            if (!deleted.Add(remove.Data.CircleEvent))
-                throw new Exception();
+            deleted.Add(remove.Data.CircleEvent);
             remove.Data.CircleEvent = null;
         }
 
