@@ -26,8 +26,6 @@ internal class FortunesTessellation : ITessellationAlgorithm
                 continue;
             }
 
-            if (site == null) throw new ArgumentNullException(nameof(sites));
-
             FortuneSiteEvent siteEvent = new FortuneSiteEvent(site);
 
             eventQueue.Insert(siteEvent);
