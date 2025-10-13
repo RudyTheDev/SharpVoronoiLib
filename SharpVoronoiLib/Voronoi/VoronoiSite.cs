@@ -8,7 +8,7 @@ namespace SharpVoronoiLib;
 /// This has a list of <see cref="Points"/> of <see cref="VoronoiPoint"/>s that are the edge end points, i.e. the cell's vertices.
 /// This also has a list of <see cref="Neighbours"/>, i.e. <see cref="VoronoiSite"/>s across the <see cref="VoronoiEdge"/>s.
 /// </summary>
-public class VoronoiSite
+public class VoronoiSite : IEquatable<VoronoiSite>
 {
     [PublicAPI]
     public double X { get; private set; }
@@ -582,18 +582,50 @@ public class VoronoiSite
         }
     }
 
+    #region Equality
+    
+    public bool Equals(VoronoiSite? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        return X.ApproxEqual(other.X) && Y.ApproxEqual(other.Y);
+    }
 
+    public override bool Equals(object? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        if (other.GetType() != GetType()) return false;
+        return Equals((VoronoiSite)other);
+    }
+    
+    public static bool operator ==(VoronoiSite? left, VoronoiSite? right)
+    {
+        if (left is null) return right is null;
+        return left.Equals(right);
+    }
+    
+    public static bool operator !=(VoronoiSite? left, VoronoiSite? right)
+    {
+        return !(left == right);
+    }
+
+    /// <summary>
+    /// <inheritdoc cref="object.GetHashCode()"/>
+    /// Takes float precision and epsilon into account.
+    /// </summary>
     public override int GetHashCode()
     {
-#if NET8_0_OR_GREATER
-        return HashCode.Combine(X, Y);
-#else
+        object qx = EpsilonUtils.Quantize(X);
+        object qy = EpsilonUtils.Quantize(Y);
+        
         unchecked
         {
-            return (X.GetHashCode() * 397) ^ Y.GetHashCode();
+            return (qx.GetHashCode() * 397) ^ qy.GetHashCode();
         }
-#endif
     }
+    
+    #endregion
 
 
     public override string ToString() => ToString("F3");
@@ -604,4 +636,3 @@ public class VoronoiSite
         return "(" + X.ToString(floatFormat) + "," + Y.ToString(floatFormat) + ")";
     }
 }
-

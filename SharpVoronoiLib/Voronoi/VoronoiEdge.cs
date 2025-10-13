@@ -7,7 +7,7 @@
 /// This has the two <see cref="VoronoiSite"/>s they separate, i.e. <see cref="Right"/> and <see cref="Left"/>.
 /// This connects in a <see cref="Neighbours"/> node graph to other <see cref="VoronoiEdge"/>s, i.e. shares end points with them.
 /// </summary>
-public class VoronoiEdge
+public class VoronoiEdge : IEquatable<VoronoiEdge>
 {
     /// <summary>
     /// One of the two points making up this line segment, the other being <see cref="End"/>.
@@ -89,11 +89,11 @@ public class VoronoiEdge
                 //               \         /                                   
                 //                 \     /                                    
                 //                   \ /                                       
-                //                    A                                        
-                //                    #                                        
-                //          1         #         2                              
-                //                    #                                        
-                //                    #                                        
+                //                    A
+                //                    #
+                //          1         #         2
+                //                    #
+                //                    #
                 //   E----------------B-----------------G                                        
                 //                    |                                       
                 //                    |                                       
@@ -122,11 +122,11 @@ public class VoronoiEdge
                 //               \         /                                   
                 //                 \     /                                    
                 //                   \ /                                       
-                //                    A                                        
-                //                    #                                        
-                //          1         #         2                              
-                //                    #                                        
-                //                    #                                        
+                //                    A
+                //                    #
+                //          1         #         2
+                //                    #
+                //                    #
                 //   E----------------B-----------------G 
                 // This time, we loop around B starting at 2.
                 // At site 2, we find A-B and B-G; we dismiss A-B and we record B-G.
@@ -280,22 +280,55 @@ public class VoronoiEdge
     }
 
 
+    #region Equality
+    
+    public bool Equals(VoronoiEdge? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        return Start.X.ApproxEqual(other.Start.X) && 
+               Start.Y.ApproxEqual(other.Start.Y) &&
+               End.X.ApproxEqual(other.End.X) && 
+               End.Y.ApproxEqual(other.End.Y);
+    }
+
+    public override bool Equals(object? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        if (other.GetType() != GetType()) return false;
+        return Equals((VoronoiEdge)other);
+    }
+    
+    public static bool operator ==(VoronoiEdge? left, VoronoiEdge? right)
+    {
+        if (left is null) return right is null;
+        return left.Equals(right);
+    }
+    
+    public static bool operator !=(VoronoiEdge? left, VoronoiEdge? right)
+    {
+        return !(left == right);
+    }
+
+    /// <summary>
+    /// <inheritdoc cref="object.GetHashCode()"/>
+    /// Takes float precision and epsilon into account.
+    /// </summary>
     public override int GetHashCode()
     {
-#if NET8_0_OR_GREATER
-        return HashCode.Combine(Start.X, Start.Y, End.X, End.Y);
-#else
+        object sx = EpsilonUtils.Quantize(Start.X);
+        object sy = EpsilonUtils.Quantize(Start.Y);
+        object ex = EpsilonUtils.Quantize(End.X);
+        object ey = EpsilonUtils.Quantize(End.Y);
+        
         unchecked
         {
-            int hash = 17;
-            hash = hash * 31 + Start.X.GetHashCode();
-            hash = hash * 31 + Start.Y.GetHashCode();
-            hash = hash * 31 + End.X.GetHashCode();
-            hash = hash * 31 + End.Y.GetHashCode();
-            return hash;
+            return (sx.GetHashCode() * 397) ^ (sy.GetHashCode() * 397) ^ (ex.GetHashCode() * 397) ^ ey.GetHashCode();
         }
-#endif
     }
+    
+    #endregion
 
 
     public override string ToString() => ToString("F3");
