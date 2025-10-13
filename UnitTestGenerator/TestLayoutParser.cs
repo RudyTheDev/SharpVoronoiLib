@@ -1698,8 +1698,11 @@ public class TestLayoutParser
                     {
                         List<Edge>? edges = edgeLines[x, y];
 
-                        if (edges != null &&
-                            edges.Count > 0)
+                        if (horValue == 0 && verValue == 0) // origin
+                        {
+                            str += "●";
+                        }
+                        else if (edges != null && edges.Count > 0)
                         {
                             if (edges.Count > 1)
                                 str += "#";
@@ -1723,10 +1726,6 @@ public class TestLayoutParser
                                     str += "→";
                                 else
                                     str += "-";
-                            }
-                            else if (horValue == 0 && verValue == 0) // origin
-                            {
-                                str += "●";
                             }
                             else
                             {
