@@ -65,9 +65,9 @@ internal static class EpsilonUtils
     /// For use by hashing to avoid precision issues when elements report equality but cannot have different hash codes.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static double Quantize(double value)
+    public static int Quantize(double value)
     {
-        return Math.Round(value / quantizer) * quantizer;
+        return (int)(Math.Round(value / quantizer) * quantizer);
         
         // Note that we can't use epsilon directly since it will still clash.
         
