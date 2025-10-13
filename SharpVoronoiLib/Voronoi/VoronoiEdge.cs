@@ -21,7 +21,7 @@ public class VoronoiEdge
     /// Note that the order of <see cref="Start"/>/end points is random.
     /// </summary>
     [PublicAPI]
-    public VoronoiPoint End { get; internal set; } = null!; // it will be set eventually if not immediatelly from constructor
+    public VoronoiPoint End { get; internal set; } = null!; // it will be set eventually if not immediately from constructor
 
     /// <summary>
     /// One of the two sites that this edge separates, the other being <see cref="Left"/>.
@@ -63,7 +63,7 @@ public class VoronoiEdge
         {
             if (_neighbours == null)
             {
-                _neighbours = new List<VoronoiEdge>();
+                _neighbours = [ ];
 
                 // Special case - we are a border edge with no sites on the plane
                 if (Left == null && Right == null)

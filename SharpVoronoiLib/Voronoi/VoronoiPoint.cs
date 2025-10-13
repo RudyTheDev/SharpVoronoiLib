@@ -18,13 +18,15 @@ public class VoronoiPoint
     /// Specifies if this point is on the border of the bounds and where.
     /// </summary>
     /// <remarks>
-    /// Using this would be preferrable to comparing against the X/Y values due to possible precision issues.
+    /// Using this would be preferable to comparing against the X/Y values due to possible precision issues.
     /// </remarks>
     [PublicAPI]
     public PointBorderLocation BorderLocation { get; internal set; }
 
     // TODO: Edges
-        
+
+    // TODO: Sites
+    
         
     internal VoronoiPoint(double x, double y, PointBorderLocation borderLocation = PointBorderLocation.NotOnBorder)
     {
