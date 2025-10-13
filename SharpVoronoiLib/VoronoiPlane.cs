@@ -9,7 +9,7 @@ namespace SharpVoronoiLib;
 public class VoronoiPlane
 {
     [PublicAPI]
-    public List<VoronoiSite>? Sites
+    public List<VoronoiSite> Sites
     {
         get
         {
@@ -20,7 +20,7 @@ public class VoronoiPlane
     }
 
     [PublicAPI]
-    public List<VoronoiEdge>? Edges
+    public List<VoronoiEdge> Edges
     {
         get
         {
@@ -32,7 +32,7 @@ public class VoronoiPlane
     }
 
     [PublicAPI]
-    public List<VoronoiPoint>? Points
+    public List<VoronoiPoint> Points
     {
         get
         {
