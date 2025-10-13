@@ -5890,7 +5890,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                                 |
         //  100 |                                                 |
         //      |                                                 |
-        //    0 A-------------------------------------------------B
+        //    0 A------------------------●------------------------B
         //      |                                                 |
         // -100 |                                                 |
         //      |                                                 |
@@ -6150,7 +6150,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |              2         |         1              |
+        //    0 |              2         ●         1              |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -7552,7 +7552,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                                 |
         //  100 |                        2                        |
         //      |                                                 |
-        //    0 C-------------------------------------------------D
+        //    0 C------------------------●------------------------D
         //      |                                                 |
         // -100 |                        3                        |
         //      |                                                 |
@@ -7892,7 +7892,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |              |         |         |              |
         //  100 |              |         |         |              |
         //      |              |         |         |              |
-        //    0 |         4    |    3    |    2    |    1         |
+        //    0 |         4    |    3    ●    2    |    1         |
         //      |              |         |         |              |
         // -100 |              |         |         |              |
         //      |              |         |         |              |
@@ -8208,7 +8208,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                               ,'                |
         //  100 |                            ,·'                  |
         //      |                          ,'                     |
-        //    0 |                       ,·'                       |
+        //    0 |                       ,●'                       |
         //      |                     ,'                          |
         // -100 |                  ,·'                            |
         //      |                ,'                               |
@@ -8275,7 +8275,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                               |
         //  100 |             ,·'                  2              |
         //      |           ,'                                    |
-        //    0 |        ,·'                                      |
+        //    0 |        ,●'                                      |
         //      |      ,'                                         |
         // -100 |   ,·'                                           |
         //      | ,'                                              |
@@ -8460,7 +8460,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                               |
         //  100 |                  '·,                            |
         //      |                     ',                          |
-        //    0 |                       '·,                       |
+        //    0 |                       '●,                       |
         //      |                          ',                     |
         // -100 |                            '·,                  |
         //      |                               ',                |
@@ -9768,7 +9768,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                               |
         //  100 |                  '·,                            |
         //      |                     ',                          |
-        //    0 |                       '·,                       |
+        //    0 |                       '●,                       |
         //      |                          ',                     |
         // -100 |         1                  '·,                  |
         //      |                               ',                |
@@ -10020,7 +10020,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                               ,'                |
         //  100 |                            ,·'                  |
         //      |                          ,'                     |
-        //    0 |                       ,·'                       |
+        //    0 |                       ,●'                       |
         //      |                     ,'                          |
         // -100 |                  ,·'                  2         |
         //      |                ,'                               |
@@ -10091,7 +10091,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                               |
         //  100 |             ,·'                                 |
         //      |           ,'                                    |
-        //    0 |        ,·'                                      |
+        //    0 |        ,●'                                      |
         //      |      ,'                                         |
         // -100 |   ,·'                                           |
         //      | ,'                                              |
@@ -10280,7 +10280,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                               |
         //  100 |                  '·,                  1         |
         //      |                     ',                          |
-        //    0 |                       '·,                       |
+        //    0 |                       '●,                       |
         //      |                          ',                     |
         // -100 |                            '·,                  |
         //      |                               ',                |
@@ -10540,7 +10540,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                               ,'                |
         //  100 |         2                  ,·'                  |
         //      |                          ,'                     |
-        //    0 |                       ,·'                       |
+        //    0 |                       ,●'                       |
         //      |                     ,'                          |
         // -100 |                  ,·'                            |
         //      |                ,'                               |
@@ -10611,7 +10611,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                               |
         //  100 |             ,·'                                 |
         //      |           ,'                                    |
-        //    0 |        ,·'                  1                   |
+        //    0 |        ,●'                  1                   |
         //      |      ,'                                         |
         // -100 |   ,·'                                           |
         //      | ,'                                              |
@@ -12890,7 +12890,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                                 |
         //  100 |                                                 |
         //      |                                                 |
-        //    0 A-------------------------------------------------B
+        //    0 A------------------------●------------------------B
         //      |                                                 |
         // -100 |                                                 |
         //      |                                                 |
@@ -13150,7 +13150,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -13418,7 +13418,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                                 |
         //  100 |                                                 |
         //      |                                                 |
-        //    0 B-------------------------------------------------A
+        //    0 B------------------------●------------------------A
         //      |                                                 |
         // -100 |                                                 |
         //      |                                                 |
@@ -13686,7 +13686,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -13946,7 +13946,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                                 |
         //  100 |                                                 |
         //      |                                                 |
-        //    0 A-------------------------------------------------B
+        //    0 A------------------------●------------------------B
         //      |                                                 |
         // -100 |                                                 |
         //      |                                                 |
@@ -14206,7 +14206,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -14474,7 +14474,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                                 |
         //  100 |                                                 |
         //      |                                                 |
-        //    0 B-------------------------------------------------A
+        //    0 B------------------------●------------------------A
         //      |                                                 |
         // -100 |                                                 |
         //      |                                                 |
@@ -14742,7 +14742,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -17128,7 +17128,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                               ,'                |
         //  100 |                            ,·'                  |
         //      |                          ,'                     |
-        //    0 |                       ,·'                       |
+        //    0 |                       ,●'                       |
         //      |                     ,'                          |
         // -100 |                  ,·'                            |
         //      |                ,'                               |
@@ -17195,7 +17195,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                               |
         //  100 |             ,·'                                 |
         //      |           ,'                                    |
-        //    0 |        ,·'                                      |
+        //    0 |        ,●'                                      |
         //      |      ,'                                         |
         // -100 |   ,·'                                           |
         //      | ,'                                              |
@@ -17380,7 +17380,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                               |
         //  100 |                  '·,                            |
         //      |                     ',                          |
-        //    0 |                       '·,                       |
+        //    0 |                       '●,                       |
         //      |                          ',                     |
         // -100 |                            '·,                  |
         //      |                               ',                |
@@ -17634,7 +17634,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                            ,'                   |
         //  100 |                           ·                     |
         //      |                         ,'                      |
-        //    0 |                        ·                        |
+        //    0 |                        ●                        |
         //      |                      ,'                         |
         // -100 |                     ·                           |
         //      |                   ,'                            |
@@ -17894,7 +17894,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                   ,,''          |
         //  100 |                               ,·''              |
         //      |                           ,·''                  |
-        //    0 |                      ,,·''                      |
+        //    0 |                      ,,●''                      |
         //      |                  ,,·'                           |
         // -100 |              ,,·'                               |
         //      |          ,,''                                   |
@@ -18763,7 +18763,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |           ,'                  ,'                |
         //  100 |        ,·'        2        ,·'                  |
         //      |      ,'                  ,'                     |
-        //    0 |   ,·'                 ,·'                       |
+        //    0 |   ,·'                 ,●'                       |
         //      | ,'                  ,'                          |
         // -100 A'                 ,·'        3                   |
         //      |                ,'                               |
@@ -18840,7 +18840,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                               |
         //  100 |             ,·'                                 |
         //      |           ,'                                    |
-        //    0 |        ,·'                                      |
+        //    0 |        ,●'                                      |
         //      |      ,'                                         |
         // -100 |   ,·'                                           |
         //      | ,'                                              |
@@ -19055,7 +19055,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                  ',           |
         //  100 |                  '·,        2        '·,        |
         //      |                     ',                  ',      |
-        //    0 |                       '·,                 '·,   |
+        //    0 |                       '●,                 '·,   |
         //      |                          ',                  ', |
         // -100 |                   3        '·,                 'D
         //      |                               ',                |
@@ -19355,7 +19355,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                               ,'                |
         //  100 |                   3        ,·'                 ,A
         //      |                          ,'                  ,' |
-        //    0 |                       ,·'                 ,·'   |
+        //    0 |                       ,●'                 ,·'   |
         //      |                     ,'                  ,'      |
         // -100 |                  ,·'        2        ,·'        |
         //      |                ,'                  ,'           |
@@ -19436,7 +19436,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                  ,'           |
         //  100 |             ,·'                 ,·'             |
         //      |           ,'                  ,'                |
-        //    0 |        ,·'                 ,·'        1         |
+        //    0 |        ,●'                 ,·'        1         |
         //      |      ,'                  ,'                     |
         // -100 |   ,·'                 ,·'                       |
         //      | ,'                  ,'                          |
@@ -19655,7 +19655,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                               |
         //  100 D,                 '·,        3                   |
         //      | ',                  ',                          |
-        //    0 |   '·,                 '·,                       |
+        //    0 |   '·,                 '●,                       |
         //      |      ',                  ',                     |
         // -100 |        '·,        2        '·,                  |
         //      |           ',                  ',                |
@@ -19958,7 +19958,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |           ,'                  ,'                |
         //  100 |        ,·'        2        ,·'                 ,D
         //      |      ,'                  ,'                  ,' |
-        //    0 |   ,·'                 ,·'                 ,·'   |
+        //    0 |   ,·'                 ,●'                 ,·'   |
         //      | ,'                  ,'                  ,'      |
         // -100 A'                 ,·'        3        ,·'        |
         //      |                ,'                  ,'           |
@@ -20045,7 +20045,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                  ,'           |
         //  100 |             ,·'                 ,·'             |
         //      |           ,'                  ,'                |
-        //    0 |        ,·'                 ,·'        4         |
+        //    0 |        ,●'                 ,·'        4         |
         //      |      ,'                  ,'                     |
         // -100 |   ,·'                 ,·'                       |
         //      | ,'                  ,'                          |
@@ -20290,7 +20290,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                  ',           |
         //  100 C,                 '·,        2        '·,        |
         //      | ',                  ',                  ',      |
-        //    0 |   '·,                 '·,                 '·,   |
+        //    0 |   '·,                 '●,                 '·,   |
         //      |      ',                  ',                  ', |
         // -100 |        '·,        3        '·,                 'F
         //      |           ',                  ',                |
@@ -20613,7 +20613,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                               ,'                |
         //  100 |                            ,·'                  |
         //      |                          ,'                     |
-        //    0 |              1        ,·'                       |
+        //    0 |              1        ,●'                       |
         //      |                     ,'                          |
         // -100 B-------------------A'                            |
         //      |                   |                             |
@@ -20913,7 +20913,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                   |                             |
         //  100 C-------------------A,                            |
         //      |                     ',                          |
-        //    0 |              3        '·,                       |
+        //    0 |              3        '●,                       |
         //      |                          ',                     |
         // -100 |                            '·,                  |
         //      |                               ',                |
@@ -21221,7 +21221,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                             |                   |
         //  100 |                            ,A-------------------B
         //      |                          ,'                     |
-        //    0 |                       ,·'        1              |
+        //    0 |                       ,●'        1              |
         //      |                     ,'                          |
         // -100 |                  ,·'                            |
         //      |                ,'                               |
@@ -21304,7 +21304,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                               |
         //  100 |             ,·'                                 |
         //      |           ,'                                    |
-        //    0 |        ,·'                                      |
+        //    0 |        ,●'                                      |
         //      |      ,'                                         |
         // -100 |   ,·'                                           |
         //      | ,'                                              |
@@ -21529,7 +21529,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ',                               |
         //  100 |                  '·,                            |
         //      |                     ',                          |
-        //    0 |                       '·,        3              |
+        //    0 |                       '●,        3              |
         //      |                          ',                     |
         // -100 |                            'A-------------------C
         //      |                             |                   |
@@ -24386,7 +24386,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'             ',                |
         //  100 |             ,·'        1        '·,             |
         //      |           ,'                       ',           |
-        //    0 |        ,·'                           '·,        |
+        //    0 |        ,●'                           '·,        |
         //      |      ,'                                 ',      |
         // -100 |   ,·'                                     '·,   |
         //      | ,'                                           ', |
@@ -24686,7 +24686,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                               |
         //  100 |             ,·'        2                        |
         //      |           ,'                                    |
-        //    0 |        ,·'                                      |
+        //    0 |        ,●'                                      |
         //      |      ,'                                         |
         // -100 |   ,·'                                           |
         //      | ,'                                              |
@@ -25510,7 +25510,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -25814,7 +25814,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |      ',                                         |
         //  100 |        '·,                                      |
         //      |           ',                                    |
-        //    0 |    1        #A----------------------------------D
+        //    0 |    1        #A---------●------------------------D
         //      |           ,'                                    |
         // -100 |        ,·'                                      |
         //      |      ,'                                         |
@@ -26126,7 +26126,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -26438,7 +26438,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                                         ,'      |
         //  100 |                                      ,·'        |
         //      |                                    ,'           |
-        //    0 D----------------------------------A#        1    |
+        //    0 D------------------------●---------A#        1    |
         //      |                                    ',           |
         // -100 |                                      '·,        |
         //      |                                         ',      |
@@ -30590,7 +30590,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'             ',                |
         //  100 |             ,·'        3        '·,             |
         //      |           ,'                       ',           |
-        //    0 |        ,·'                           '·,        |
+        //    0 |        ,●'                           '·,        |
         //      |      ,'                                 ',      |
         // -100 |   ,·'                                     '·,   |
         //      | ,'                                           ', |
@@ -33545,7 +33545,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'             ',                |
         //  100 |             ,·'        3        '·,             |
         //      |           ,'                       ',           |
-        //    0 |        ,·'                           '·,        |
+        //    0 |        ,●'                           '·,        |
         //      |      ,'                                 ',      |
         // -100 |   ,·'                                     '·,   |
         //      | ,'                                           ', |
@@ -34909,7 +34909,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                      ,,·''   '                  |
         //  100 |                 ,,·''         ',           2    |
         //      |            ,,·''                ,               |
-        //    0 |       ,,·''                      ·              |
+        //    0 |       ,,●''                      ·              |
         //      |  ,,·''                            '             |
         // -100 B''                      1           ',           |
         //      |                                      ,          |
@@ -35953,7 +35953,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |             '                            ''·,,  |
         //  100 |           ,'           4                      ''E
         //      |          ,                                      |
-        //    0 |         ·                                       |
+        //    0 |         ●                                       |
         //      |        '                                        |
         // -100 |      ,'                                         |
         //      |     ,                                           |
@@ -36560,7 +36560,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 E------------------------A------------------------F
         //      |                        |                        |
@@ -36944,7 +36944,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                   |                     ,'      |
         //  100 |                   |                  ,·'        |
         //      |                   |                ,'           |
-        //    0 G-------------------A--------------B#        1    |
+        //    0 G-------------------A----●---------B#        1    |
         //      |                   |                ',           |
         // -100 |                   |                  '·,        |
         //      |                   |                     ',      |
@@ -37336,7 +37336,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 F------------------------A------------------------E
         //      |                        |                        |
-        //    0 |                        |                        |
+        //    0 |                        ●                        |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -37728,7 +37728,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |      ',                     |                   |
         //  100 |        '·,                  |                   |
         //      |           ',                |                   |
-        //    0 |    1        #B--------------A-------------------G
+        //    0 |    1        #B---------●----A-------------------G
         //      |           ,'                |                   |
         // -100 |        ,·'                  |                   |
         //      |      ,'                     |                   |
@@ -38972,7 +38972,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'             ',                |
         //  100 |             ,·'        1        '·,             |
         //      |           ,'                       ',           |
-        //    0 |        ,·'                           '·,        |
+        //    0 |        ,●'                           '·,        |
         //      |      ,'                                 ',      |
         // -100 |   ,·'                                     '·,   |
         //      | ,'                                           ', |
@@ -39356,7 +39356,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                |              |
         //  100 |             ,·'        2         |         3    |
         //      |           ,'                     |              |
-        //    0 |        ,·'                       |              |
+        //    0 |        ,●'                       |              |
         //      |      ,'                          |              |
         // -100 |   ,·'                            |              |
         //      | ,'                               |              |
@@ -39642,7 +39642,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                        |                        |
         //  100 |                        |                        |
         //      |                        |                        |
-        //    0 |              3         |         4              |
+        //    0 |              3         ●         4              |
         //      |                        |                        |
         // -100 |                        |                        |
         //      |                        |                        |
@@ -40062,7 +40062,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |              |                   |              |
         //  100 |              |                   |              |
         //      |              |                   |              |
-        //    0 E--------------A-------------------B--------------H
+        //    0 E--------------A---------●---------B--------------H
         //      |              |                   |              |
         // -100 |              |                   |              |
         //      |              |                   |              |
@@ -53757,7 +53757,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |         ·                  ··             | 
         //  100 |        ·                ,,'               | 
         //      |       ·               ··                  | 
-        //    0 |       ·            ,''                    | 
+        //    0 |       ·            ,●'                    | 
         //      |      ·           ··                       | 
         // -100 |     ·         ,,'                         | 
         //      |    ·        ··                         ,,,# 
@@ -53839,7 +53839,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |     ·          ,'                          |
         //  100 |    ·        ,·'                         ,,,D
         //      |   ·       ,'                    ,,,··'''   |
-        //    0 |  ·     ,·'               ,,,·'''           |
+        //    0 |  ·     ,●'               ,,,·'''           |
         //      |  ·   ,'          ,,,··'''                  |
         // -100 | · ,·'     ,,,·'''                     4    |
         //      |·,',,,··'''                                 |
@@ -54073,7 +54073,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |    ·        ··                         '''# 
         //  100 |     ·         '',                         | 
         //      |      ·           ··                       | 
-        //    0 |       ·            ',,                    | 
+        //    0 |       ·            '●,                    | 
         //      |       ·               ··                  | 
         // -100 |        ·                '',               | 
         //      |         ·                  ··             | 
@@ -54397,7 +54397,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      #'''                         ··        ·    | 
         //  100 |                         ,''         ·     | 
         //      |                       ··           ·      | 
-        //    0 |                    ,,'            ·       | 
+        //    0 |                    ,●'            ·       | 
         //      |                  ··               ·       | 
         // -100 |               ,''                ·        | 
         //      |             ··                  ·         | 
@@ -54483,7 +54483,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |                ,'                 ·        |
         //  100 |             ,·'                  ·         |
         //      |           ,'                    ·          |
-        //    0 |        ,·'             2       ·           |
+        //    0 |        ,●'             2       ·           |
         //      |      ,'                       ·            |
         // -100 |   ,·'                         ·       1    |
         //      | ,'                           ·             |
@@ -54721,7 +54721,7 @@ public class GeneratedTest_SiteCentroids_ClosedBorders
         //      |             ··                  ·         | 
         //  100 |               ',,                ·        | 
         //      |                  ··               ·       | 
-        //    0 |                    '',            ·       | 
+        //    0 |                    '●,            ·       | 
         //      |                       ··           ·      | 
         // -100 |                         ',,         ·     | 
         //      #,,,                         ··        ·    | 
