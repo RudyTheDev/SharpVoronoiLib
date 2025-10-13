@@ -6,7 +6,7 @@
 /// These are the <see cref="VoronoiSite.Points"/>.
 /// Also used for some other derived locations.
 /// </summary>
-public class VoronoiPoint
+public class VoronoiPoint : IEquatable<VoronoiPoint>
 {
     [PublicAPI]
     public double X { get; }
@@ -47,17 +47,50 @@ public class VoronoiPoint
     }
 
 
+    #region Equality
+    
+    public bool Equals(VoronoiPoint? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        return X.ApproxEqual(other.X) && Y.ApproxEqual(other.Y);
+    }
+
+    public override bool Equals(object? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        if (other.GetType() != GetType()) return false;
+        return Equals((VoronoiPoint)other);
+    }
+    
+    public static bool operator ==(VoronoiPoint? left, VoronoiPoint? right)
+    {
+        if (left is null) return right is null;
+        return left.Equals(right);
+    }
+    
+    public static bool operator !=(VoronoiPoint? left, VoronoiPoint? right)
+    {
+        return !(left == right);
+    }
+    
+    /// <summary>
+    /// <inheritdoc cref="object.GetHashCode()"/>
+    /// Takes float precision and epsilon into account.
+    /// </summary>
     public override int GetHashCode()
     {
-#if NET8_0_OR_GREATER
-        return HashCode.Combine(X, Y);
-#else
+        object qx = EpsilonUtils.Quantize(X);
+        object qy = EpsilonUtils.Quantize(Y);
+        
         unchecked
         {
-            return (X.GetHashCode() * 397) ^ Y.GetHashCode();
+            return (qx.GetHashCode() * 397) ^ qy.GetHashCode();
         }
-#endif
     }
+    
+    #endregion
 
 
     public override string ToString() => ToString("F3");

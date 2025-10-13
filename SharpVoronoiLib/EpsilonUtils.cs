@@ -8,12 +8,14 @@ internal static class EpsilonUtils
     // Even with multiplier it's still like 4.94E-224, which is ridiculously beyond the loss of precision threshold.
     // For example, beach line edge intercept stuff would only capture precision to something like:
     // 999.99999999999989 vs 1000
-    // In fact, anything less than e^-12 will immediatelly fail some coordinate comparisons because of all the compounding precision losses.
+    // In fact, anything less than e^-12 will immediately fail some coordinate comparisons because of all the compounding precision losses.
     // Of course, numbers too large will start failing again since we can't exactly compare significant digits (cheaply).
 
     internal const double epsilon = 1E-12;
     // todo: make ParabolaTest use this too
 
+    internal const double quantizer = epsilon * 10; // for hashing, see Quantize()
+    
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool ApproxEqual(this double value1, double value2)
@@ -56,5 +58,20 @@ internal static class EpsilonUtils
             return -1;
 
         return 0;
+    }
+
+    /// <summary>
+    /// Rounds a floating point value to the nearest epsilon multiple.
+    /// For use by hashing to avoid precision issues when elements report equality but cannot have different hash codes.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static double Quantize(double value)
+    {
+        return Math.Round(value / quantizer) * quantizer;
+        
+        // Note that we can't use epsilon directly since it will still clash.
+        
+        // Larger "epsilon" is fine though since with e^-12 epsilon, it's still e^-11,
+        // so hash collisions are extremely unlikely for reasonable coordinates
     }
 }
