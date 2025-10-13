@@ -12,15 +12,5 @@ public class VoronoiPointComparer : IEqualityComparer<VoronoiPoint>
         return point1!.X.ApproxEqual(point2!.X) && point1.Y.ApproxEqual(point2.Y);
     }
 
-    public int GetHashCode(VoronoiPoint point)
-    {
-#if NET8_0_OR_GREATER
-        return HashCode.Combine(point.X, point.Y);
-#else
-        unchecked
-        {
-            return (point.X.GetHashCode() * 397) ^ point.Y.GetHashCode();
-        }
-#endif
-    }
+    public int GetHashCode(VoronoiPoint point) => point.GetHashCode();
 }
