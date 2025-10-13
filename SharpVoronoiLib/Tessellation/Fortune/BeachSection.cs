@@ -1,4 +1,6 @@
-﻿namespace SharpVoronoiLib;
+﻿#nullable disable // This code hasn't been converted to nullable yet
+
+namespace SharpVoronoiLib;
 
 /// <summary>
 /// Represents a single arc (parabolic segment) on the beach line associated with a <see cref="VoronoiSite"/>.

@@ -1,4 +1,6 @@
-﻿namespace SharpVoronoiLib;
+﻿#nullable disable // This code hasn't been converted to nullable yet
+
+namespace SharpVoronoiLib;
 
 internal class FortuneCircleEvent : FortuneEvent
 {
