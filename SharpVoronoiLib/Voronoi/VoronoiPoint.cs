@@ -47,6 +47,12 @@ public class VoronoiPoint
     }
 
 
+    public override int GetHashCode()
+    {
+        return VoronoiPointComparer.Instance.GetHashCode(this);
+    }
+
+
     public override string ToString() => ToString("F3");
 
     [PublicAPI]

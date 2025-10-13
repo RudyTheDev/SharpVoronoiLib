@@ -583,6 +583,12 @@ public class VoronoiSite
     }
 
 
+    public override int GetHashCode()
+    {
+        return VoronoiSiteComparer.Instance.GetHashCode(this);
+    }
+
+
     public override string ToString() => ToString("F3");
 
     [PublicAPI]
