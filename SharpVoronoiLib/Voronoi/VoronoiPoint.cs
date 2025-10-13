@@ -49,7 +49,14 @@ public class VoronoiPoint
 
     public override int GetHashCode()
     {
-        return VoronoiPointComparer.Instance.GetHashCode(this);
+#if NET8_0_OR_GREATER
+        return HashCode.Combine(X, Y);
+#else
+        unchecked
+        {
+            return (X.GetHashCode() * 397) ^ Y.GetHashCode();
+        }
+#endif
     }
 
 

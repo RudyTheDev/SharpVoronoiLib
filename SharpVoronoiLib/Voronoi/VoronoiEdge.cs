@@ -282,7 +282,19 @@ public class VoronoiEdge
 
     public override int GetHashCode()
     {
-        return VoronoiEdgeComparer.Instance.GetHashCode(this);
+#if NET8_0_OR_GREATER
+        return HashCode.Combine(Start.X, Start.Y, End.X, End.Y);
+#else
+        unchecked
+        {
+            int hash = 17;
+            hash = hash * 31 + Start.X.GetHashCode();
+            hash = hash * 31 + Start.Y.GetHashCode();
+            hash = hash * 31 + End.X.GetHashCode();
+            hash = hash * 31 + End.Y.GetHashCode();
+            return hash;
+        }
+#endif
     }
 
 

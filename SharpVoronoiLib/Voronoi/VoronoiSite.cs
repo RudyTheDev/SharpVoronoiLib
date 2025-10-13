@@ -585,7 +585,14 @@ public class VoronoiSite
 
     public override int GetHashCode()
     {
-        return VoronoiSiteComparer.Instance.GetHashCode(this);
+#if NET8_0_OR_GREATER
+        return HashCode.Combine(X, Y);
+#else
+        unchecked
+        {
+            return (X.GetHashCode() * 397) ^ Y.GetHashCode();
+        }
+#endif
     }
 
 
