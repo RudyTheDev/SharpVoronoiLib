@@ -338,12 +338,21 @@ public class TestLayoutParser
 
             stringBuilder.AppendPaddedLine(2, @"// Arrange", true);
 
-            stringBuilder.AppendPaddedLine(2, @"List<VoronoiSite> sites = new List<VoronoiSite>");
-            stringBuilder.AppendPaddedLine(2, @"{");
-            List<string> siteDefinitions = BuildSiteDefinitions(test.Sites);
-            foreach (string siteDefinition in siteDefinitions)
-                stringBuilder.AppendPaddedLine(3, siteDefinition);
-            stringBuilder.AppendPaddedLine(2, @"};");
+            stringBuilder.AppendPaddedLine(2, @"VoronoiPlane plane = new VoronoiPlane(" + test.MinX + @", " + test.MinY + @", " + test.MaxX + @", " + test.MaxY + @");");
+            if (test.Sites.Count > 0)
+            {
+                stringBuilder.AppendPaddedLine(2, @"List<VoronoiSite> sites =");
+                stringBuilder.AppendPaddedLine(2, @"[");
+                List<string> siteDefinitions = BuildSiteDefinitions(test.Sites);
+                foreach (string siteDefinition in siteDefinitions)
+                    stringBuilder.AppendPaddedLine(3, siteDefinition);
+                stringBuilder.AppendPaddedLine(2, @"];");
+            }
+            else
+            {
+                stringBuilder.AppendPaddedLine(2, @"List<VoronoiSite> sites = [ ];");
+            }
+            stringBuilder.AppendPaddedLine(2, @"plane.SetSites(sites);");
             stringBuilder.AppendLine();
 
             List<string> visualLayout = BuildVisualLayout(test, borderLogic);
@@ -355,7 +364,12 @@ public class TestLayoutParser
 
             stringBuilder.AppendPaddedLine(2, @"// Act", true);
 
-            stringBuilder.AppendPaddedLine(2, @"List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, " + test.MinX + @", " + test.MinY + @", " + test.MaxX + @", " + test.MaxY + BorderLogicToRealEnumParam(borderLogic) + @");");
+            stringBuilder.AppendPaddedLine(2, @"plane.Tessellate(" + BorderLogicToRealEnumParam(borderLogic).TrimStart(',', ' ') + @");");
+            stringBuilder.AppendPaddedLine(2, @"List<VoronoiEdge> edges = plane.Edges;");
+            
+            if (purpose is TestPurpose.AssertPoints or TestPurpose.AssertSitePoints)
+                stringBuilder.AppendPaddedLine(2, @"List<VoronoiPoint> points = plane.Points;");
+            
             stringBuilder.AppendLine();
 
             // Assume + Assert
@@ -367,7 +381,16 @@ public class TestLayoutParser
                     AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, true));
                     break;
 
+                case TestPurpose.AssertPoints:
+                    stringBuilder.AppendPaddedLine(2, @"// Assert", true);
+                    AppendAssertions(BuildPointsAssertions(test.Points, borderLogic, true));
+                    break;
+
                 case TestPurpose.AssertSitePoints:
+                    stringBuilder.AppendPaddedLine(2, @"// Assume", true);
+                    AppendAssertions(BuildPointsAssertions(test.Points, borderLogic, false));
+                    stringBuilder.AppendLine();
+                    
                     stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                     AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, true));
                     break;
@@ -605,6 +628,11 @@ public class TestLayoutParser
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiEdge) + @"""/>`s are returned as expected");
                 strings.Add(@"/// Specifically, that the result of <see cref=""" + nameof(VoronoiPlane) + @"." + nameof(VoronoiPlane.Tessellate) + @"""/>() contains the expected edges.");
                 break;
+            
+            case TestPurpose.AssertPoints:
+                strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiPoint) + @"""/>`s are provided as expected");
+                strings.Add(@"/// Specifically, that the result of <see cref=""" + nameof(VoronoiPlane) + @"." + nameof(VoronoiPlane.Points) + @"""/>() contains the expected points.");
+                break;
 
             case TestPurpose.AssertSiteEdges:
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected <see cref=""" + nameof(VoronoiEdge) + @"""/>`s.");
@@ -760,6 +788,46 @@ public class TestLayoutParser
                     @"Expected: has edge " + comment
                 ) +
                 @" // " + comment
+            );
+        }
+
+        return strings;
+    }
+
+    private List<string> BuildPointsAssertions(List<Point> allPoints, TestBorderLogic borderLogic, bool assert)
+    {
+        List<string> strings = [ ];
+
+        List<Point> points = allPoints
+                             .Where(p => PointMatchesBorderLogic(p, borderLogic))
+                             .OrderBy(p => p.Id)
+                             .ToList();
+
+        strings.Add(
+            GetAssertNotNullText(
+                assert,
+                @"points"
+            )
+        );
+
+        strings.Add(
+            GetAssertEqualsText(
+                assert,
+                points.Count,
+                @"points.Count",
+                "Expected: point count " + points.Count
+            )
+        );
+
+        foreach (Point point in points)
+        {
+            strings.Add(
+                GetAssertTrueText(
+                    assert,
+                    @"HasPoint(points, " + point.X + @", " + point.Y + @")",
+                    @"Expected: has point " + (char)point.Id
+                ) +
+                @" // " + (char)point.Id
             );
         }
 

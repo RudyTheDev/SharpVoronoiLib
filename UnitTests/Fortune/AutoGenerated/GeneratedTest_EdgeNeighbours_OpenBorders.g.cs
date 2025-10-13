@@ -27,9 +27,9 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -56,7 +56,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74,9 +75,9 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -103,7 +104,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -121,9 +123,9 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -150,7 +152,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -168,9 +171,9 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -197,7 +200,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -215,10 +219,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -245,7 +251,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -263,10 +270,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -293,7 +302,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -311,10 +321,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -341,7 +353,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -359,10 +372,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -389,7 +404,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -407,10 +423,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -437,7 +455,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -455,10 +474,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -485,7 +506,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -503,10 +525,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -533,7 +557,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -551,10 +576,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -581,7 +608,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -603,10 +631,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -633,7 +663,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -655,10 +686,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -685,7 +718,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -707,10 +741,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 600), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -737,7 +773,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -759,10 +796,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -789,7 +828,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -811,10 +851,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -841,7 +883,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -863,10 +906,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -893,7 +938,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -915,10 +961,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -945,7 +993,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -967,10 +1016,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -997,7 +1048,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1019,10 +1071,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -1049,7 +1103,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1071,10 +1126,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -1101,7 +1158,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1123,10 +1181,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -1153,7 +1213,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1175,10 +1236,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 400), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -1205,7 +1268,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1223,10 +1287,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -1253,7 +1319,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1271,10 +1338,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -1301,7 +1370,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1319,10 +1389,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -1349,7 +1421,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1367,10 +1440,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 900), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -1397,7 +1472,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1419,10 +1495,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -1449,7 +1527,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1471,10 +1550,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -1501,7 +1582,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1523,10 +1605,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 600), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -1553,7 +1637,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1575,10 +1660,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -1605,7 +1692,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1627,10 +1715,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -1657,7 +1747,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1679,10 +1770,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -1709,7 +1802,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1731,10 +1825,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 100), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -1761,7 +1857,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1783,10 +1880,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -1813,7 +1912,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1835,10 +1935,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -1865,7 +1967,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1887,10 +1990,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -1917,7 +2022,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1939,10 +2045,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -1969,7 +2077,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1991,10 +2100,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 400), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -2021,7 +2132,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2039,10 +2151,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -2069,7 +2183,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2087,10 +2202,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -2117,7 +2234,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2135,10 +2253,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -2165,7 +2285,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2183,10 +2304,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -2213,7 +2336,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2235,10 +2359,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        1                         
         //      |                                                  
@@ -2265,7 +2391,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2287,10 +2414,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        1                         
         //      |                                                  
@@ -2317,7 +2446,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2339,10 +2469,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        1                         
         //      |                                                  
@@ -2369,7 +2501,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2391,10 +2524,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        1                         
         //      |                                                  
@@ -2421,7 +2556,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2443,10 +2579,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -2473,7 +2611,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2495,10 +2634,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -2525,7 +2666,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2547,10 +2689,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -2577,7 +2721,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2599,10 +2744,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -2629,7 +2776,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2651,10 +2799,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -2681,7 +2831,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2703,10 +2854,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -2733,7 +2886,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2755,10 +2909,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -2785,7 +2941,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2807,10 +2964,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -2837,7 +2996,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2855,10 +3015,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -2885,7 +3047,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2903,10 +3066,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -2933,7 +3098,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2951,10 +3117,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -2981,7 +3149,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2999,10 +3168,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 900), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -3029,7 +3200,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3051,10 +3223,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                  1               
         //      |                                                  
@@ -3081,7 +3255,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3103,10 +3278,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                  1               
         //      |                                                  
@@ -3133,7 +3310,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3155,10 +3333,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                  1               
         //      |                                                  
@@ -3185,7 +3365,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3207,10 +3388,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                  1               
         //      |                                                  
@@ -3237,7 +3420,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3259,10 +3443,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -3289,7 +3475,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3311,10 +3498,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -3341,7 +3530,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3363,10 +3553,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 100), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -3393,7 +3585,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3415,10 +3608,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -3445,7 +3640,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3467,10 +3663,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -3497,7 +3695,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3519,10 +3718,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -3549,7 +3750,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3571,10 +3773,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -3601,7 +3805,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3623,10 +3828,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -3653,7 +3860,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3675,10 +3883,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -3705,7 +3915,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3727,10 +3938,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -3757,7 +3970,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3779,10 +3993,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -3809,7 +4025,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3831,10 +4048,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 900), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -3861,7 +4080,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3883,10 +4103,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -3913,7 +4135,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3935,10 +4158,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -3965,7 +4190,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3987,10 +4213,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -4017,7 +4245,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4039,10 +4268,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -4069,7 +4300,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4091,10 +4323,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -4121,7 +4355,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4143,10 +4378,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -4173,7 +4410,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4195,10 +4433,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 100), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -4225,7 +4465,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4247,10 +4488,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -4277,7 +4520,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4299,10 +4543,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              1                                   
         //      |                                                  
@@ -4329,7 +4575,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4351,10 +4598,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              1                                   
         //      |                                                  
@@ -4381,7 +4630,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4403,10 +4653,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              1                                   
         //      |                                                  
@@ -4433,7 +4685,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4455,10 +4708,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              1                                   
         //      |                                                  
@@ -4485,7 +4740,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4503,10 +4759,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -4533,7 +4791,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4551,10 +4810,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -4581,7 +4842,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4599,10 +4861,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -4629,7 +4893,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4647,10 +4912,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -4677,7 +4944,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4699,10 +4967,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1                                                  
         //      |                                                  
@@ -4729,7 +4999,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4751,10 +5022,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1                                                  
         //      |                                                  
@@ -4781,7 +5054,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4803,10 +5077,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1                                                  
         //      |                                                  
@@ -4833,7 +5109,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4855,10 +5132,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1                                                  
         //      |                                                  
@@ -4885,7 +5164,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4907,10 +5187,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                 1
         //      |                                                  
@@ -4937,7 +5219,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4959,10 +5242,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                 1
         //      |                                                  
@@ -4989,7 +5274,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5011,10 +5297,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                 1
         //      |                                                  
@@ -5041,7 +5329,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5063,10 +5352,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                 1
         //      |                                                  
@@ -5093,7 +5384,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5115,10 +5407,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -5145,7 +5439,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5167,10 +5462,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -5197,7 +5494,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5219,10 +5517,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -5249,7 +5549,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5271,10 +5572,12 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -5301,7 +5604,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5319,11 +5623,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -5350,7 +5656,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5370,11 +5677,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(0, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -5401,7 +5710,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5421,11 +5731,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(300, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -5452,7 +5764,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5472,11 +5785,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(700, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -5503,7 +5818,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5527,11 +5843,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        A                         
         //      |                        |                         
@@ -5558,7 +5876,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5582,11 +5901,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(-200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        A                         
         //      |                        |                         
@@ -5613,7 +5934,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5637,11 +5959,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(100, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        A                         
         //      |                        |                         
@@ -5668,7 +5992,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5692,11 +6017,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(500, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        A                         
         //      |                        |                         
@@ -5723,7 +6050,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5743,11 +6071,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -5774,7 +6104,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5794,11 +6125,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -5825,7 +6158,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5845,11 +6179,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(300, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -5876,7 +6212,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5896,11 +6233,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(700, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -5927,7 +6266,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5951,11 +6291,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                  A               
         //      |                                  |               
@@ -5982,7 +6324,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6006,11 +6349,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                  A               
         //      |                                  |               
@@ -6037,7 +6382,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6061,11 +6407,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                  A               
         //      |                                  |               
@@ -6092,7 +6440,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6116,11 +6465,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(700, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                  A               
         //      |                                  |               
@@ -6147,7 +6498,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6167,12 +6519,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(500, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -6199,7 +6553,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6223,12 +6578,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(0, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -6255,7 +6612,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6279,12 +6637,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(300, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -6311,7 +6671,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6335,12 +6696,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(700, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -6367,7 +6730,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6395,12 +6759,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              C                   A               
         //      |              |                   |               
@@ -6427,7 +6793,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6455,12 +6822,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-400, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              C                   A               
         //      |              |                   |               
@@ -6487,7 +6856,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6515,12 +6885,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(-100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              C                   A               
         //      |              |                   |               
@@ -6547,7 +6919,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6575,12 +6948,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              C                   A               
         //      |              |                   |               
@@ -6607,7 +6982,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6631,13 +7007,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 800), // #1
             new VoronoiSite(500, 600), // #2
             new VoronoiSite(500, 400), // #3
             new VoronoiSite(500, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -6664,7 +7042,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6692,13 +7071,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
             new VoronoiSite(0, 100), // #2
             new VoronoiSite(0, -100), // #3
             new VoronoiSite(0, -300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -6725,7 +7106,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6753,13 +7135,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 600), // #1
             new VoronoiSite(300, 400), // #2
             new VoronoiSite(300, 200), // #3
             new VoronoiSite(300, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -6786,7 +7170,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6814,13 +7199,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1000), // #1
             new VoronoiSite(700, 800), // #2
             new VoronoiSite(700, 600), // #3
             new VoronoiSite(700, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -6847,7 +7234,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6879,13 +7267,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 500), // #1
             new VoronoiSite(600, 500), // #2
             new VoronoiSite(400, 500), // #3
             new VoronoiSite(200, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              E         C         A               
         //      |              |         |         |               
@@ -6912,7 +7302,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6944,13 +7335,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
             new VoronoiSite(100, 0), // #2
             new VoronoiSite(-100, 0), // #3
             new VoronoiSite(-300, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              E         C         A               
         //      |              |         |         |               
@@ -6977,7 +7370,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7009,13 +7403,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 300), // #1
             new VoronoiSite(400, 300), // #2
             new VoronoiSite(200, 300), // #3
             new VoronoiSite(0, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              E         C         A               
         //      |              |         |         |               
@@ -7042,7 +7438,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7074,13 +7471,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 700), // #1
             new VoronoiSite(800, 700), // #2
             new VoronoiSite(600, 700), // #3
             new VoronoiSite(400, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              E         C         A               
         //      |              |         |         |               
@@ -7107,7 +7506,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7135,11 +7535,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(700, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                ,B
         //      |                                              ,'  
@@ -7166,7 +7568,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7186,11 +7589,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                ,B
         //      |                                              ,'  
@@ -7217,7 +7622,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7237,11 +7643,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(500, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                ,B
         //      |                                              ,'  
@@ -7268,7 +7676,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7288,11 +7697,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(900, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                ,B
         //      |                                              ,'  
@@ -7319,7 +7730,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7343,11 +7755,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A,                                                 
         //      | ',                                               
@@ -7374,7 +7788,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7398,11 +7813,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(-200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A,                                                 
         //      | ',                                               
@@ -7429,7 +7846,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7453,11 +7871,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A,                                                 
         //      | ',                                               
@@ -7484,7 +7904,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7508,11 +7929,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A,                                                 
         //      | ',                                               
@@ -7539,7 +7962,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7559,11 +7983,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(600, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                      ,B          
         //      |                                    ,'            
@@ -7590,7 +8016,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7610,11 +8037,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(100, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                      ,B          
         //      |                                    ,'            
@@ -7641,7 +8070,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7661,11 +8091,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                      ,B          
         //      |                                    ,'            
@@ -7692,7 +8124,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7712,11 +8145,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(800, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                      ,B          
         //      |                                    ,'            
@@ -7743,7 +8178,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7767,11 +8203,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(400, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         A,                                       
         //      |           ',                                     
@@ -7798,7 +8236,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7822,11 +8261,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(-100, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         A,                                       
         //      |           ',                                     
@@ -7853,7 +8294,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7877,11 +8319,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         A,                                       
         //      |           ',                                     
@@ -7908,7 +8352,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7932,11 +8377,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(600, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         A,                                       
         //      |           ',                                     
@@ -7963,7 +8410,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7987,11 +8435,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 200), // #1
             new VoronoiSite(400, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -8018,7 +8468,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8042,11 +8493,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -300), // #1
             new VoronoiSite(-100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -8073,7 +8526,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8097,11 +8551,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 0), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -8128,7 +8584,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8152,11 +8609,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 400), // #1
             new VoronoiSite(600, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -8183,7 +8642,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8207,11 +8667,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(600, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -8238,7 +8700,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8262,11 +8725,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -300), // #1
             new VoronoiSite(100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -8293,7 +8758,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8317,11 +8783,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -8348,7 +8816,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8372,11 +8841,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(800, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -8403,7 +8874,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8423,11 +8895,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 400), // #1
             new VoronoiSite(600, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A,                                                 
         //      | ',                                               
@@ -8454,7 +8928,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8474,11 +8949,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -100), // #1
             new VoronoiSite(100, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A,                                                 
         //      | ',                                               
@@ -8505,7 +8982,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8525,11 +9003,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(400, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A,                                                 
         //      | ',                                               
@@ -8556,7 +9036,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8576,11 +9057,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 600), // #1
             new VoronoiSite(800, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A,                                                 
         //      | ',                                               
@@ -8607,7 +9090,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8631,11 +9115,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(800, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                ,A
         //      |                                              ,'  
@@ -8662,7 +9148,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8686,11 +9173,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(300, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                ,A
         //      |                                              ,'  
@@ -8717,7 +9206,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8741,11 +9231,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(600, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                ,A
         //      |                                              ,'  
@@ -8772,7 +9264,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8796,11 +9289,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 1000), // #1
             new VoronoiSite(1000, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                ,A
         //      |                                              ,'  
@@ -8827,7 +9322,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8851,11 +9347,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 600), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B,                                                 
         //      | ',                                               
@@ -8882,7 +9380,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8906,11 +9405,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(-100, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B,                                                 
         //      | ',                                               
@@ -8937,7 +9438,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8961,11 +9463,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 400), // #1
             new VoronoiSite(200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B,                                                 
         //      | ',                                               
@@ -8992,7 +9496,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9016,11 +9521,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 800), // #1
             new VoronoiSite(600, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B,                                                 
         //      | ',                                               
@@ -9047,7 +9554,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9071,11 +9579,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 200), // #1
             new VoronoiSite(200, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                ,B
         //      |                                              ,'  
@@ -9102,7 +9612,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9126,11 +9637,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, -300), // #1
             new VoronoiSite(-300, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                ,B
         //      |                                              ,'  
@@ -9157,7 +9670,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9181,11 +9695,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(0, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                ,B
         //      |                                              ,'  
@@ -9212,7 +9728,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9236,11 +9753,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(400, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                ,B
         //      |                                              ,'  
@@ -9267,7 +9786,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9287,11 +9807,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A,,                                                
         //      |  ''·,,                                           
@@ -9318,7 +9840,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9338,11 +9861,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A,,                                                
         //      |  ''·,,                                           
@@ -9369,7 +9894,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9389,11 +9915,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A,,                                                
         //      |  ''·,,                                           
@@ -9420,7 +9948,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9440,11 +9969,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 1100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A,,                                                
         //      |  ''·,,                                           
@@ -9471,7 +10002,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9495,11 +10027,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(900, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                 A
         //      |                                                ' 
@@ -9526,7 +10060,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9550,11 +10085,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                 A
         //      |                                                ' 
@@ -9581,7 +10118,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9605,11 +10143,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                 A
         //      |                                                ' 
@@ -9636,7 +10176,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9660,11 +10201,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(1100, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                 A
         //      |                                                ' 
@@ -9691,7 +10234,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9715,11 +10259,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -9746,7 +10292,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9770,11 +10317,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, -400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -9801,7 +10350,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9825,11 +10375,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -9856,7 +10408,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9880,11 +10433,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -9911,7 +10466,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9935,11 +10491,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B                         
         //      |                       '                          
@@ -9966,7 +10524,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9990,11 +10549,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B                         
         //      |                       '                          
@@ -10021,7 +10582,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10045,11 +10607,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(-100, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B                         
         //      |                       '                          
@@ -10076,7 +10640,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10100,11 +10665,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B                         
         //      |                       '                          
@@ -10131,7 +10698,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10155,11 +10723,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                               ,,A
         //      |                                          ,,·''   
@@ -10186,7 +10756,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10210,11 +10781,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                               ,,A
         //      |                                          ,,·''   
@@ -10241,7 +10814,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10265,11 +10839,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                               ,,A
         //      |                                          ,,·''   
@@ -10296,7 +10872,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10320,11 +10897,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 1100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                               ,,A
         //      |                                          ,,·''   
@@ -10351,7 +10930,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10375,11 +10955,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(900, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B                         
         //      |                         '                        
@@ -10406,7 +10988,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10430,11 +11013,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B                         
         //      |                         '                        
@@ -10461,7 +11046,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10485,11 +11071,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B                         
         //      |                         '                        
@@ -10516,7 +11104,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10540,11 +11129,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(1100, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B                         
         //      |                         '                        
@@ -10571,7 +11162,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10595,11 +11187,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -10626,7 +11220,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10650,11 +11245,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, -400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -10681,7 +11278,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10705,11 +11303,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -10736,7 +11336,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10760,11 +11361,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -10791,7 +11394,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10815,11 +11419,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A                                                  
         //      |'                                                 
@@ -10846,7 +11452,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10870,11 +11477,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-400, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A                                                  
         //      |'                                                 
@@ -10901,7 +11510,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10925,11 +11535,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(-100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A                                                  
         //      |'                                                 
@@ -10956,7 +11568,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10980,11 +11593,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A                                                  
         //      |'                                                 
@@ -11011,7 +11626,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11031,11 +11647,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 800), // #1
             new VoronoiSite(0, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -11062,7 +11680,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11082,11 +11701,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 300), // #1
             new VoronoiSite(-500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -11113,7 +11734,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11133,11 +11755,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 600), // #1
             new VoronoiSite(-200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -11164,7 +11788,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11184,11 +11809,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1000), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -11215,7 +11842,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11239,11 +11867,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1000), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         2              A              1          
         //      |                        |                         
@@ -11270,7 +11900,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11294,11 +11925,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(-300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         2              A              1          
         //      |                        |                         
@@ -11325,7 +11958,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11349,11 +11983,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 800), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         2              A              1          
         //      |                        |                         
@@ -11380,7 +12016,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11404,11 +12041,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1200), // #1
             new VoronoiSite(400, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         2              A              1          
         //      |                        |                         
@@ -11435,7 +12074,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11459,11 +12099,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 200), // #1
             new VoronoiSite(1000, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -11490,7 +12132,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11514,11 +12157,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -300), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -11545,7 +12190,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11569,11 +12215,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 0), // #1
             new VoronoiSite(800, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -11600,7 +12248,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11624,11 +12273,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 400), // #1
             new VoronoiSite(1200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -11655,7 +12306,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11679,11 +12331,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B                         
         //      |                        |                         
@@ -11710,7 +12364,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11734,11 +12389,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -500), // #1
             new VoronoiSite(300, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B                         
         //      |                        |                         
@@ -11765,7 +12422,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11789,11 +12447,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(600, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B                         
         //      |                        |                         
@@ -11820,7 +12480,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11844,11 +12505,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B                         
         //      |                        |                         
@@ -11875,7 +12538,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11895,11 +12559,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1                                                  
         //      |                                                  
@@ -11926,7 +12592,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11946,11 +12613,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(-500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1                                                  
         //      |                                                  
@@ -11977,7 +12646,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11997,11 +12667,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1                                                  
         //      |                                                  
@@ -12028,7 +12700,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12048,11 +12721,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1                                                  
         //      |                                                  
@@ -12079,7 +12754,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12103,11 +12779,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(0, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 2                        A                        1
         //      |                        |                         
@@ -12134,7 +12812,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12158,11 +12837,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(-500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 2                        A                        1
         //      |                        |                         
@@ -12189,7 +12870,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12213,11 +12895,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(-200, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 2                        A                        1
         //      |                        |                         
@@ -12244,7 +12928,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12268,11 +12953,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(200, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 2                        A                        1
         //      |                        |                         
@@ -12299,7 +12986,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12323,11 +13011,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(1000, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                 2
         //      |                                                  
@@ -12354,7 +13044,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12378,11 +13069,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                 2
         //      |                                                  
@@ -12409,7 +13102,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12433,11 +13127,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
             new VoronoiSite(800, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                 2
         //      |                                                  
@@ -12464,7 +13160,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12488,11 +13185,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(1200, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                 2
         //      |                                                  
@@ -12519,7 +13218,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12543,11 +13243,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(1000, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B                         
         //      |                        |                         
@@ -12574,7 +13276,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12598,11 +13301,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B                         
         //      |                        |                         
@@ -12629,7 +13334,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12653,11 +13359,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(800, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B                         
         //      |                        |                         
@@ -12684,7 +13392,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12708,11 +13417,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(1200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B                         
         //      |                        |                         
@@ -12739,7 +13450,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12759,11 +13471,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1                                                  
         //      |                                                  
@@ -12790,7 +13504,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12810,11 +13525,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(-500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1                                                  
         //      |                                                  
@@ -12841,7 +13558,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12861,11 +13579,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1                                                  
         //      |                                                  
@@ -12892,7 +13612,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12912,11 +13633,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1                                                  
         //      |                                                  
@@ -12943,7 +13666,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12967,11 +13691,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         2                   A                   1
         //      |                             |                    
@@ -12998,7 +13724,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13022,11 +13749,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(-300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         2                   A                   1
         //      |                             |                    
@@ -13053,7 +13782,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13077,11 +13807,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         2                   A                   1
         //      |                             |                    
@@ -13108,7 +13840,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13132,11 +13865,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(400, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         2                   A                   1
         //      |                             |                    
@@ -13163,7 +13898,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13187,11 +13923,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(1000, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -13218,7 +13956,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13242,11 +13981,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -13273,7 +14014,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13297,11 +14039,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
             new VoronoiSite(800, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -13328,7 +14072,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13352,11 +14097,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(1200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -13383,7 +14130,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13407,11 +14155,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   B                              
         //      |                   |                              
@@ -13438,7 +14188,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13462,11 +14213,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(300, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   B                              
         //      |                   |                              
@@ -13493,7 +14246,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13517,11 +14271,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(600, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   B                              
         //      |                   |                              
@@ -13548,7 +14304,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13572,11 +14329,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   B                              
         //      |                   |                              
@@ -13603,7 +14362,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13627,11 +14387,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                 1
         //      |                                                  
@@ -13658,7 +14420,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13682,11 +14445,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                 1
         //      |                                                  
@@ -13713,7 +14478,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13737,11 +14503,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                 1
         //      |                                                  
@@ -13768,7 +14536,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13792,11 +14561,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(1200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                 1
         //      |                                                  
@@ -13823,7 +14594,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13847,11 +14619,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             B                    
         //      |                             |                    
@@ -13878,7 +14652,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13902,11 +14677,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(-300, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                             B                    
         //      |                             |                    
@@ -13933,7 +14710,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13957,11 +14735,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
             new VoronoiSite(0, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                             B                    
         //      |                             |                    
@@ -13988,7 +14768,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14012,11 +14793,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             B                    
         //      |                             |                    
@@ -14043,7 +14826,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14067,11 +14851,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -14098,7 +14884,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14122,11 +14909,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(-500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -14153,7 +14942,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14177,11 +14967,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(-200, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -14208,7 +15000,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14232,11 +15025,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -14263,7 +15058,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14287,11 +15083,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(800, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1                   A                   2          
         //      |                   |                              
@@ -14318,7 +15116,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14342,11 +15141,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1                   A                   2          
         //      |                   |                              
@@ -14373,7 +15174,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14397,11 +15199,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(600, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1                   A                   2          
         //      |                   |                              
@@ -14428,7 +15232,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14452,11 +15257,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(1000, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1                   A                   2          
         //      |                   |                              
@@ -14483,7 +15290,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14503,11 +15311,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(1000, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1                                                ,B
         //      |                                              ,'  
@@ -14534,7 +15344,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14554,11 +15365,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1                                                ,B
         //      |                                              ,'  
@@ -14585,7 +15398,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14605,11 +15419,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(800, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1                                                ,B
         //      |                                              ,'  
@@ -14636,7 +15452,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14656,11 +15473,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(1200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1                                                ,B
         //      |                                              ,'  
@@ -14687,7 +15506,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14711,11 +15531,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A,                                                1
         //      | ',                                               
@@ -14742,7 +15564,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14766,11 +15589,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(-500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A,                                                1
         //      | ',                                               
@@ -14797,7 +15622,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14821,11 +15647,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(-200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A,                                                1
         //      | ',                                               
@@ -14852,7 +15680,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14876,11 +15705,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A,                                                1
         //      | ',                                               
@@ -14907,7 +15738,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14927,11 +15759,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 800), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                       B          
         //      |                                     ,'           
@@ -14958,7 +15792,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14978,11 +15813,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 300), // #1
             new VoronoiSite(500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                       B          
         //      |                                     ,'           
@@ -15009,7 +15846,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15029,11 +15867,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 600), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                       B          
         //      |                                     ,'           
@@ -15060,7 +15900,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15080,11 +15921,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1000), // #1
             new VoronoiSite(1200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                       B          
         //      |                                     ,'           
@@ -15111,7 +15954,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15135,11 +15979,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 0), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         2                                        
         //      |                                                  
@@ -15166,7 +16012,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15190,11 +16037,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -500), // #1
             new VoronoiSite(-300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         2                                        
         //      |                                                  
@@ -15221,7 +16070,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15245,11 +16095,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -200), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         2                                        
         //      |                                                  
@@ -15276,7 +16128,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15300,11 +16153,13 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 200), // #1
             new VoronoiSite(400, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         2                                        
         //      |                                                  
@@ -15331,7 +16186,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15351,12 +16207,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(800, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                 ,D               
         //      |                               ,'                 
@@ -15383,7 +16241,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15407,12 +16266,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(300, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                 ,D               
         //      |                               ,'                 
@@ -15439,7 +16300,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15463,12 +16325,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(600, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                 ,D               
         //      |                               ,'                 
@@ -15495,7 +16359,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15519,12 +16384,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(1000, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                 ,D               
         //      |                               ,'                 
@@ -15551,7 +16418,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15579,12 +16447,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              A,                                  
         //      |                ',                                
@@ -15611,7 +16481,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15639,12 +16510,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-300, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              A,                                  
         //      |                ',                                
@@ -15671,7 +16544,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15699,12 +16573,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              A,                                  
         //      |                ',                                
@@ -15731,7 +16607,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15759,12 +16636,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              A,                                  
         //      |                ',                                
@@ -15791,7 +16670,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15815,12 +16695,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(400, 600), // #2
             new VoronoiSite(600, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                            ,D                  ,C
         //      |                          ,'                  ,'  
@@ -15847,7 +16729,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15871,12 +16754,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                            ,D                  ,C
         //      |                          ,'                  ,'  
@@ -15903,7 +16788,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15927,12 +16813,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                            ,D                  ,C
         //      |                          ,'                  ,'  
@@ -15959,7 +16847,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15983,12 +16872,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(600, 800), // #2
             new VoronoiSite(800, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                            ,D                  ,C
         //      |                          ,'                  ,'  
@@ -16015,7 +16906,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16043,12 +16935,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B,                  A,                             
         //      | ',                  ',                           
@@ -16075,7 +16969,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16103,12 +16998,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B,                  A,                             
         //      | ',                  ',                           
@@ -16135,7 +17032,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16163,12 +17061,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B,                  A,                             
         //      | ',                  ',                           
@@ -16195,7 +17095,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16223,12 +17124,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(800, 800), // #2
             new VoronoiSite(600, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B,                  A,                             
         //      | ',                  ',                           
@@ -16255,7 +17158,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16283,12 +17187,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 200), // #1
             new VoronoiSite(600, 400), // #2
             new VoronoiSite(400, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                ,B
         //      |                                              ,'  
@@ -16315,7 +17221,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16343,12 +17250,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -300), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(-100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                ,B
         //      |                                              ,'  
@@ -16375,7 +17284,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16403,12 +17313,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 0), // #1
             new VoronoiSite(400, 200), // #2
             new VoronoiSite(200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                ,B
         //      |                                              ,'  
@@ -16435,7 +17347,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16463,12 +17376,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 400), // #1
             new VoronoiSite(800, 600), // #2
             new VoronoiSite(600, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                ,B
         //      |                                              ,'  
@@ -16495,7 +17410,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16523,12 +17439,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(600, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C,                                                 
         //      | ',                                               
@@ -16555,7 +17473,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16583,12 +17502,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -300), // #1
             new VoronoiSite(-100, -100), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C,                                                 
         //      | ',                                               
@@ -16615,7 +17536,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16643,12 +17565,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C,                                                 
         //      | ',                                               
@@ -16675,7 +17599,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16703,12 +17628,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(800, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C,                                                 
         //      | ',                                               
@@ -16735,7 +17662,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16759,13 +17687,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(400, 600), // #2
             new VoronoiSite(600, 400), // #3
             new VoronoiSite(800, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                            ,F                  ,E
         //      |                          ,'                  ,'  
@@ -16792,7 +17722,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16820,13 +17751,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(100, -100), // #3
             new VoronoiSite(300, -300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                            ,F                  ,E
         //      |                          ,'                  ,'  
@@ -16853,7 +17786,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16881,13 +17815,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(400, 200), // #3
             new VoronoiSite(600, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                            ,F                  ,E
         //      |                          ,'                  ,'  
@@ -16914,7 +17850,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16942,13 +17879,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(600, 800), // #2
             new VoronoiSite(800, 600), // #3
             new VoronoiSite(1000, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                            ,F                  ,E
         //      |                          ,'                  ,'  
@@ -16975,7 +17914,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17007,13 +17947,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(400, 400), // #3
             new VoronoiSite(200, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B,                  A,                             
         //      | ',                  ',                           
@@ -17040,7 +17982,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17072,13 +18015,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(-100, -100), // #3
             new VoronoiSite(-300, -300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B,                  A,                             
         //      | ',                  ',                           
@@ -17105,7 +18050,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17137,13 +18083,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(0, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B,                  A,                             
         //      | ',                  ',                           
@@ -17170,7 +18118,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17202,13 +18151,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(800, 800), // #2
             new VoronoiSite(600, 600), // #3
             new VoronoiSite(400, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B,                  A,                             
         //      | ',                  ',                           
@@ -17235,7 +18186,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17263,12 +18215,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                ,D
         //      |                                              ,'  
@@ -17295,7 +18249,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17329,12 +18284,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                ,D
         //      |                                              ,'  
@@ -17361,7 +18318,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17395,12 +18353,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                ,D
         //      |                                              ,'  
@@ -17427,7 +18387,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17461,12 +18422,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                ,D
         //      |                                              ,'  
@@ -17493,7 +18456,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17531,12 +18495,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   B                              
         //      |                   |                              
@@ -17563,7 +18529,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17601,12 +18568,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   B                              
         //      |                   |                              
@@ -17633,7 +18602,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17671,12 +18641,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   B                              
         //      |                   |                              
@@ -17703,7 +18675,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17741,12 +18714,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   B                              
         //      |                   |                              
@@ -17773,7 +18748,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17811,12 +18787,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             C                    
         //      |                             |                    
@@ -17843,7 +18821,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17881,12 +18860,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                             C                    
         //      |                             |                    
@@ -17913,7 +18894,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17951,12 +18933,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                             C                    
         //      |                             |                    
@@ -17983,7 +18967,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18021,12 +19006,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             C                    
         //      |                             |                    
@@ -18053,7 +19040,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18091,12 +19079,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 D,                                                 
         //      | ',                                               
@@ -18123,7 +19113,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18161,12 +19152,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 D,                                                 
         //      | ',                                               
@@ -18193,7 +19186,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18231,12 +19225,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 D,                                                 
         //      | ',                                               
@@ -18263,7 +19259,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18301,12 +19298,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 D,                                                 
         //      | ',                                               
@@ -18333,7 +19332,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18367,12 +19367,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 800), // #1
             new VoronoiSite(100, 400), // #2
             new VoronoiSite(500, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                 ,D               
         //      |                               ,'                 
@@ -18399,7 +19401,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18433,12 +19436,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 300), // #1
             new VoronoiSite(-400, -100), // #2
             new VoronoiSite(0, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                 ,D               
         //      |                               ,'                 
@@ -18465,7 +19470,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18499,12 +19505,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 600), // #1
             new VoronoiSite(-100, 200), // #2
             new VoronoiSite(300, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                 ,D               
         //      |                               ,'                 
@@ -18531,7 +19539,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18565,12 +19574,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1000), // #1
             new VoronoiSite(300, 600), // #2
             new VoronoiSite(700, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                 ,D               
         //      |                               ,'                 
@@ -18597,7 +19608,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18635,12 +19647,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 900), // #1
             new VoronoiSite(400, 900), // #2
             new VoronoiSite(400, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             B                    
         //      |                             |                    
@@ -18667,7 +19681,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18705,12 +19720,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 400), // #1
             new VoronoiSite(-100, 400), // #2
             new VoronoiSite(-100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                             B                    
         //      |                             |                    
@@ -18737,7 +19754,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18775,12 +19793,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 700), // #1
             new VoronoiSite(200, 700), // #2
             new VoronoiSite(200, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                             B                    
         //      |                             |                    
@@ -18807,7 +19827,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18845,12 +19866,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1100), // #1
             new VoronoiSite(600, 1100), // #2
             new VoronoiSite(600, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             B                    
         //      |                             |                    
@@ -18877,7 +19900,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18915,12 +19939,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 200), // #1
             new VoronoiSite(900, 600), // #2
             new VoronoiSite(500, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                  C               
         //      |                                  |               
@@ -18947,7 +19973,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18985,12 +20012,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, -300), // #1
             new VoronoiSite(400, 100), // #2
             new VoronoiSite(0, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                  C               
         //      |                                  |               
@@ -19017,7 +20046,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19055,12 +20085,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 0), // #1
             new VoronoiSite(700, 400), // #2
             new VoronoiSite(300, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                  C               
         //      |                                  |               
@@ -19087,7 +20119,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19125,12 +20158,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 400), // #1
             new VoronoiSite(1100, 800), // #2
             new VoronoiSite(700, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                  C               
         //      |                                  |               
@@ -19157,7 +20192,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19195,12 +20231,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 100), // #1
             new VoronoiSite(600, 100), // #2
             new VoronoiSite(600, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -19227,7 +20265,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19265,12 +20304,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -400), // #1
             new VoronoiSite(100, -400), // #2
             new VoronoiSite(100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -19297,7 +20338,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19335,12 +20377,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -100), // #1
             new VoronoiSite(400, -100), // #2
             new VoronoiSite(400, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -19367,7 +20411,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19405,12 +20450,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 300), // #1
             new VoronoiSite(800, 300), // #2
             new VoronoiSite(800, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -19437,7 +20484,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19475,12 +20523,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 800), // #1
             new VoronoiSite(900, 400), // #2
             new VoronoiSite(500, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              D,                                  
         //      |                ',                                
@@ -19507,7 +20557,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19545,12 +20596,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 300), // #1
             new VoronoiSite(400, -100), // #2
             new VoronoiSite(0, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              D,                                  
         //      |                ',                                
@@ -19577,7 +20630,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19615,12 +20669,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 600), // #1
             new VoronoiSite(700, 200), // #2
             new VoronoiSite(300, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              D,                                  
         //      |                ',                                
@@ -19647,7 +20703,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19685,12 +20742,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 1000), // #1
             new VoronoiSite(1100, 600), // #2
             new VoronoiSite(700, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              D,                                  
         //      |                ',                                
@@ -19717,7 +20776,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19755,12 +20815,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 100), // #1
             new VoronoiSite(400, 100), // #2
             new VoronoiSite(400, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -19787,7 +20849,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19825,12 +20888,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -400), // #1
             new VoronoiSite(-100, -400), // #2
             new VoronoiSite(-100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -19857,7 +20922,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19895,12 +20961,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -100), // #1
             new VoronoiSite(200, -100), // #2
             new VoronoiSite(200, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -19927,7 +20995,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19965,12 +21034,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 300), // #1
             new VoronoiSite(600, 300), // #2
             new VoronoiSite(600, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -19997,7 +21068,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20035,12 +21107,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 200), // #1
             new VoronoiSite(100, 600), // #2
             new VoronoiSite(500, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              C                                   
         //      |              |                                   
@@ -20067,7 +21141,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20105,12 +21180,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -300), // #1
             new VoronoiSite(-400, 100), // #2
             new VoronoiSite(0, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              C                                   
         //      |              |                                   
@@ -20137,7 +21214,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20175,12 +21253,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 0), // #1
             new VoronoiSite(-100, 400), // #2
             new VoronoiSite(300, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              C                                   
         //      |              |                                   
@@ -20207,7 +21287,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20245,12 +21326,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 400), // #1
             new VoronoiSite(300, 800), // #2
             new VoronoiSite(700, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              C                                   
         //      |              |                                   
@@ -20277,7 +21360,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20315,12 +21399,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 900), // #1
             new VoronoiSite(600, 900), // #2
             new VoronoiSite(600, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   B                              
         //      |                   |                              
@@ -20347,7 +21433,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20385,12 +21472,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 400), // #1
             new VoronoiSite(100, 400), // #2
             new VoronoiSite(100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   B                              
         //      |                   |                              
@@ -20417,7 +21506,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20455,12 +21545,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 700), // #1
             new VoronoiSite(400, 700), // #2
             new VoronoiSite(400, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   B                              
         //      |                   |                              
@@ -20487,7 +21579,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20525,12 +21618,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1100), // #1
             new VoronoiSite(800, 1100), // #2
             new VoronoiSite(800, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   B                              
         //      |                   |                              
@@ -20557,7 +21652,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20591,12 +21687,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        D                         
         //      |                        |                         
@@ -20623,7 +21721,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20657,12 +21756,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        D                         
         //      |                        |                         
@@ -20689,7 +21790,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20723,12 +21825,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        D                         
         //      |                        |                         
@@ -20755,7 +21859,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20789,12 +21894,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        D                         
         //      |                        |                         
@@ -20821,7 +21928,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20859,12 +21967,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B,                                                 
         //      | ',                                               
@@ -20891,7 +22001,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20929,12 +22040,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B,                                                 
         //      | ',                                               
@@ -20961,7 +22074,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20999,12 +22113,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B,                                                 
         //      | ',                                               
@@ -21031,7 +22147,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21069,12 +22186,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B,                                                 
         //      | ',                                               
@@ -21101,7 +22220,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21139,12 +22259,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C,                                               ,B
         //      | ',                                           ,'  
@@ -21171,7 +22293,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21209,12 +22332,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C,                                               ,B
         //      | ',                                           ,'  
@@ -21241,7 +22366,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21279,12 +22405,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C,                                               ,B
         //      | ',                                           ,'  
@@ -21311,7 +22439,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21349,12 +22478,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C,                                               ,B
         //      | ',                                           ,'  
@@ -21381,7 +22512,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21419,12 +22551,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                ,C
         //      |                                              ,'  
@@ -21451,7 +22585,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21489,12 +22624,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                ,C
         //      |                                              ,'  
@@ -21521,7 +22658,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21559,12 +22697,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                ,C
         //      |                                              ,'  
@@ -21591,7 +22731,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21629,12 +22770,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                ,C
         //      |                                              ,'  
@@ -21661,7 +22804,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21695,12 +22839,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        D                         
         //      |                        |                         
@@ -21727,7 +22873,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21761,12 +22908,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(-200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        D                         
         //      |                        |                         
@@ -21793,7 +22942,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21827,12 +22977,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        D                         
         //      |                        |                         
@@ -21859,7 +23011,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21893,12 +23046,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        D                         
         //      |                        |                         
@@ -21925,7 +23080,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21963,12 +23119,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(300, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -21995,7 +23153,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22033,12 +23192,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(-200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -22065,7 +23226,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22103,12 +23265,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -22135,7 +23299,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22173,12 +23338,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(500, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -22205,7 +23372,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22243,12 +23411,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         C,                           ,B          
         //      |           ',                       ,'            
@@ -22275,7 +23445,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22313,12 +23484,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         C,                           ,B          
         //      |           ',                       ,'            
@@ -22345,7 +23518,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22383,12 +23557,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         C,                           ,B          
         //      |           ',                       ,'            
@@ -22415,7 +23591,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22453,12 +23630,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         C,                           ,B          
         //      |           ',                       ,'            
@@ -22485,7 +23664,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22523,12 +23703,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(700, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -22555,7 +23737,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22593,12 +23776,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -22625,7 +23810,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22663,12 +23849,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(500, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -22695,7 +23883,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22733,12 +23922,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(900, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -22765,7 +23956,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22799,12 +23991,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        D                         
         //      |                        |                         
@@ -22831,7 +24025,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22865,12 +24060,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(-200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        D                         
         //      |                        |                         
@@ -22897,7 +24094,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22931,12 +24129,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        D                         
         //      |                        |                         
@@ -22963,7 +24163,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22997,12 +24198,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(500, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        D                         
         //      |                        |                         
@@ -23029,7 +24232,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23067,12 +24271,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         B,                                       
         //      |           ',                                     
@@ -23099,7 +24305,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23137,12 +24344,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         B,                                       
         //      |           ',                                     
@@ -23169,7 +24378,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23207,12 +24417,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         B,                                       
         //      |           ',                                     
@@ -23239,7 +24451,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23277,12 +24490,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         B,                                       
         //      |           ',                                     
@@ -23309,7 +24524,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23347,12 +24563,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(700, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -23379,7 +24597,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23417,12 +24636,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -23449,7 +24670,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23487,12 +24709,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(500, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -23519,7 +24743,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23557,12 +24782,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -23589,7 +24816,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23627,12 +24855,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                      ,C          
         //      |                                    ,'            
@@ -23659,7 +24889,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23697,12 +24928,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                      ,C          
         //      |                                    ,'            
@@ -23729,7 +24962,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23767,12 +25001,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                      ,C          
         //      |                                    ,'            
@@ -23799,7 +25035,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23837,12 +25074,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                      ,C          
         //      |                                    ,'            
@@ -23869,7 +25108,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23903,12 +25143,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(800, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             D                              
         //      |                            '                               
@@ -23939,7 +25181,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23973,12 +25216,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-600, 400), // #1
             new VoronoiSite(-600, -400), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                             D                              
         //      |                            '                               
@@ -24009,7 +25254,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24043,12 +25289,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(600, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             D                              
         //      |                            '                               
@@ -24079,7 +25327,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24113,12 +25362,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(1000, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                             D                              
         //      |                            '                               
@@ -24149,7 +25400,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24187,12 +25439,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1200), // #1
             new VoronoiSite(200, 1200), // #2
             new VoronoiSite(600, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         2                   A                   1          
         //      |                             |                              
@@ -24223,7 +25477,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24261,12 +25516,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 600), // #1
             new VoronoiSite(-400, 600), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑         2                   A                   1          
         //      |                             |                              
@@ -24297,7 +25554,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24335,12 +25593,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1000), // #1
             new VoronoiSite(0, 1000), // #2
             new VoronoiSite(400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         2                   A                   1          
         //      |                             |                              
@@ -24371,7 +25631,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24409,12 +25670,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1400), // #1
             new VoronoiSite(400, 1400), // #2
             new VoronoiSite(800, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑         2                   A                   1          
         //      |                             |                              
@@ -24445,7 +25708,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24483,12 +25747,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(1200, 1000), // #2
             new VoronoiSite(400, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             C                              
         //      |                              '                             
@@ -24519,7 +25785,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24557,12 +25824,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -400), // #1
             new VoronoiSite(600, 400), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                             C                              
         //      |                              '                             
@@ -24593,7 +25862,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24631,12 +25901,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(1000, 800), // #2
             new VoronoiSite(200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             C                              
         //      |                              '                             
@@ -24667,7 +25939,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24705,12 +25978,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1400, 400), // #1
             new VoronoiSite(1400, 1200), // #2
             new VoronoiSite(600, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                             C                              
         //      |                              '                             
@@ -24741,7 +26016,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24779,12 +26055,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(1000, 0), // #2
             new VoronoiSite(600, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                            
         //      |                                                            
@@ -24815,7 +26093,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24853,12 +26132,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -600), // #1
             new VoronoiSite(400, -600), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                                                            
         //      |                                                            
@@ -24889,7 +26170,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24927,12 +26209,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(800, -200), // #2
             new VoronoiSite(400, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                            
         //      |                                                            
@@ -24963,7 +26247,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25001,12 +26286,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(1200, 200), // #2
             new VoronoiSite(800, 1000), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                                                            
         //      |                                                            
@@ -25037,7 +26324,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25071,12 +26359,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 800), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                       ,C                         
         //      |                     ,'                           
@@ -25103,7 +26393,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25129,12 +26420,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 300), // #1
             new VoronoiSite(-500, -300), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                       ,C                         
         //      |                     ,'                           
@@ -25161,7 +26454,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25187,12 +26481,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 600), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                       ,C                         
         //      |                     ,'                           
@@ -25219,7 +26515,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25245,12 +26542,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1000), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                       ,C                         
         //      |                     ,'                           
@@ -25277,7 +26576,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25307,12 +26607,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1000), // #1
             new VoronoiSite(200, 1000), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         2             ,A,             1          
         //      |                     ,'   ',                      
@@ -25339,7 +26641,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25369,12 +26672,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(-300, 500), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         2             ,A,             1          
         //      |                     ,'   ',                      
@@ -25401,7 +26706,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25431,12 +26737,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 800), // #1
             new VoronoiSite(0, 800), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         2             ,A,             1          
         //      |                     ,'   ',                      
@@ -25463,7 +26771,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25493,12 +26802,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1200), // #1
             new VoronoiSite(400, 1200), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         2             ,A,             1          
         //      |                     ,'   ',                      
@@ -25525,7 +26836,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25555,12 +26867,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 200), // #1
             new VoronoiSite(1000, 800), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B,                        
         //      |                          ',                      
@@ -25587,7 +26901,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25617,12 +26932,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -300), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B,                        
         //      |                          ',                      
@@ -25649,7 +26966,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25679,12 +26997,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 0), // #1
             new VoronoiSite(800, 600), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B,                        
         //      |                          ',                      
@@ -25711,7 +27031,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25741,12 +27062,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 400), // #1
             new VoronoiSite(1200, 1000), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B,                        
         //      |                          ',                      
@@ -25773,7 +27096,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25803,12 +27127,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(800, 0), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -25835,7 +27161,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25865,12 +27192,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -500), // #1
             new VoronoiSite(300, -500), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -25897,7 +27226,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25927,12 +27257,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(600, -200), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -25959,7 +27291,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25989,12 +27322,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(1000, 200), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -26021,7 +27356,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26047,14 +27383,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 E,                                               ,H
         //      | ',                                           ,'  
@@ -26081,7 +27419,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26153,14 +27492,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(0, -200), // #3
             new VoronoiSite(200, 0), // #4
             new VoronoiSite(0, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 E,                                               ,H
         //      | ',                                           ,'  
@@ -26187,7 +27528,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26259,14 +27601,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(500, 300), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 E,                                               ,H
         //      | ',                                           ,'  
@@ -26293,7 +27637,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26365,14 +27710,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(700, 500), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(700, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 E,                                               ,H
         //      | ',                                           ,'  
@@ -26399,7 +27746,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26471,14 +27819,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(700, 300), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -26505,7 +27855,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26577,14 +27928,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(0, -400), // #3
             new VoronoiSite(200, -200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -26611,7 +27964,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26683,14 +28037,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(300, -100), // #3
             new VoronoiSite(500, 100), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -26717,7 +28073,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26789,14 +28146,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(900, 500), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -26823,7 +28182,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26899,14 +28259,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(100, 500), // #3
             new VoronoiSite(300, 300), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                      ,E          
         //      |                                    ,'            
@@ -26933,7 +28295,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27009,14 +28372,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-400, 0), // #3
             new VoronoiSite(-200, -200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                      ,E          
         //      |                                    ,'            
@@ -27043,7 +28408,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27119,14 +28485,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(-100, 300), // #3
             new VoronoiSite(100, 100), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                      ,E          
         //      |                                    ,'            
@@ -27153,7 +28521,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27229,14 +28598,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(500, 500), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                      ,E          
         //      |                                    ,'            
@@ -27263,7 +28634,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27339,14 +28711,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 900), // #3
             new VoronoiSite(300, 700), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         G,                           ,F          
         //      |           ',                       ,'            
@@ -27373,7 +28747,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27449,14 +28824,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(0, 400), // #3
             new VoronoiSite(-200, 200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         G,                           ,F          
         //      |           ',                       ,'            
@@ -27483,7 +28860,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27559,14 +28937,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(100, 500), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         G,                           ,F          
         //      |           ',                       ,'            
@@ -27593,7 +28973,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27669,14 +29050,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(700, 1100), // #3
             new VoronoiSite(500, 900), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         G,                           ,F          
         //      |           ',                       ,'            
@@ -27703,7 +29086,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27779,14 +29163,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(700, 700), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         H,                                       
         //      |           ',                                     
@@ -27813,7 +29199,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27889,14 +29276,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(400, 0), // #3
             new VoronoiSite(200, 200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         H,                                       
         //      |           ',                                     
@@ -27923,7 +29312,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27999,14 +29389,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(500, 500), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         H,                                       
         //      |           ',                                     
@@ -28033,7 +29425,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28109,14 +29502,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(1100, 700), // #3
             new VoronoiSite(900, 900), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         H,                                       
         //      |           ',                                     
@@ -28143,7 +29538,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28215,13 +29611,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(700, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B                         
         //      |                        |                         
@@ -28248,7 +29646,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28292,13 +29691,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(200, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B                         
         //      |                        |                         
@@ -28325,7 +29726,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28369,13 +29771,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(500, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B                         
         //      |                        |                         
@@ -28402,7 +29806,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28446,13 +29851,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(900, 900), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B                         
         //      |                        |                         
@@ -28479,7 +29886,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28523,13 +29931,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(400, 200), // #2
             new VoronoiSite(600, 200), // #3
             new VoronoiSite(600, 800), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B                         
         //      |                        |                         
@@ -28556,7 +29966,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28600,13 +30011,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(-100, -300), // #2
             new VoronoiSite(100, -300), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B                         
         //      |                        |                         
@@ -28633,7 +30046,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28677,13 +30091,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(400, 0), // #3
             new VoronoiSite(400, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B                         
         //      |                        |                         
@@ -28710,7 +30126,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28754,13 +30171,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 1000), // #1
             new VoronoiSite(600, 400), // #2
             new VoronoiSite(800, 400), // #3
             new VoronoiSite(800, 1000), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B                         
         //      |                        |                         
@@ -28787,7 +30206,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28835,13 +30255,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 600), // #1
             new VoronoiSite(200, 600), // #2
             new VoronoiSite(200, 400), // #3
             new VoronoiSite(800, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        C                         
         //      |                        |                         
@@ -28868,7 +30290,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28916,13 +30339,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(-300, 100), // #2
             new VoronoiSite(-300, -100), // #3
             new VoronoiSite(300, -100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        C                         
         //      |                        |                         
@@ -28949,7 +30374,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28997,13 +30423,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 400), // #1
             new VoronoiSite(0, 400), // #2
             new VoronoiSite(0, 200), // #3
             new VoronoiSite(600, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        C                         
         //      |                        |                         
@@ -29030,7 +30458,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29078,13 +30507,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 800), // #1
             new VoronoiSite(400, 800), // #2
             new VoronoiSite(400, 600), // #3
             new VoronoiSite(1000, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        C                         
         //      |                        |                         
@@ -29111,7 +30542,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29155,13 +30587,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B,                                               ,E
         //      | ',                                           ,'  
@@ -29188,7 +30622,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29232,13 +30667,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(0, -200), // #3
             new VoronoiSite(-200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B,                                               ,E
         //      | ',                                           ,'  
@@ -29265,7 +30702,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29309,13 +30747,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B,                                               ,E
         //      | ',                                           ,'  
@@ -29342,7 +30782,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29386,13 +30827,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(700, 500), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B,                                               ,E
         //      | ',                                           ,'  
@@ -29419,7 +30862,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29463,13 +30907,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑    B                                             
         //      |     '                                            
@@ -29496,7 +30942,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29540,13 +30987,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, -400), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(0, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑    B                                             
         //      |     '                                            
@@ -29573,7 +31022,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29617,13 +31067,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑    B                                             
         //      |     '                                            
@@ -29650,7 +31102,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29694,13 +31147,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(700, 900), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑    B                                             
         //      |     '                                            
@@ -29727,7 +31182,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29775,13 +31231,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(100, 700), // #2
             new VoronoiSite(300, 300), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         C                                        
         //      |          '                                       
@@ -29808,7 +31266,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29856,13 +31315,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-400, 200), // #2
             new VoronoiSite(-200, -200), // #3
             new VoronoiSite(200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         C                                        
         //      |          '                                       
@@ -29889,7 +31350,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29937,13 +31399,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(-100, 500), // #2
             new VoronoiSite(100, 100), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         C                                        
         //      |          '                                       
@@ -29970,7 +31434,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30018,13 +31483,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(300, 900), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(900, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         C                                        
         //      |          '                                       
@@ -30051,7 +31518,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30099,13 +31567,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   D                              
         //      |                    '                             
@@ -30132,7 +31602,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30180,13 +31651,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(-200, 200), // #3
             new VoronoiSite(0, -200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   D                              
         //      |                    '                             
@@ -30213,7 +31686,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30261,13 +31735,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 500), // #3
             new VoronoiSite(300, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   D                              
         //      |                    '                             
@@ -30294,7 +31770,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30342,13 +31819,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(500, 900), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   D                              
         //      |                    '                             
@@ -30375,7 +31854,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30423,13 +31903,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(700, 700), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              E                                   
         //      |               '                                  
@@ -30456,7 +31938,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30504,13 +31987,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(400, -200), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(-200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              E                                   
         //      |               '                                  
@@ -30537,7 +32022,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30585,13 +32071,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              E                                   
         //      |               '                                  
@@ -30618,7 +32106,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30666,13 +32155,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(1100, 500), // #2
             new VoronoiSite(900, 900), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              E                                   
         //      |               '                                  
@@ -30699,7 +32190,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30747,13 +32239,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(300, 300), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                            B     
         //      |                                           '      
@@ -30780,7 +32274,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30828,13 +32323,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, -400), // #2
             new VoronoiSite(-200, -200), // #3
             new VoronoiSite(0, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                            B     
         //      |                                           '      
@@ -30861,7 +32358,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30909,13 +32407,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, -100), // #2
             new VoronoiSite(100, 100), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                            B     
         //      |                                           '      
@@ -30942,7 +32442,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30990,13 +32491,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(700, 900), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                            B     
         //      |                                           '      
@@ -31023,7 +32526,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31071,13 +32575,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                  E               
         //      |                                 '                
@@ -31104,7 +32610,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31152,13 +32659,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(-400, -200), // #2
             new VoronoiSite(-200, 200), // #3
             new VoronoiSite(200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                  E               
         //      |                                 '                
@@ -31185,7 +32694,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31233,13 +32743,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(100, 500), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                  E               
         //      |                                 '                
@@ -31266,7 +32778,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31314,13 +32827,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(500, 900), // #3
             new VoronoiSite(900, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                  E               
         //      |                                 '                
@@ -31347,7 +32862,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31395,13 +32911,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 900), // #2
             new VoronoiSite(700, 700), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             D                    
         //      |                            '                     
@@ -31428,7 +32946,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31476,13 +32995,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, 400), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(0, -200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                             D                    
         //      |                            '                     
@@ -31509,7 +33030,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31557,13 +33079,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, 700), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(300, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                             D                    
         //      |                            '                     
@@ -31590,7 +33114,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31638,13 +33163,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 1100), // #2
             new VoronoiSite(900, 900), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             D                    
         //      |                            '                     
@@ -31671,7 +33198,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31719,13 +33247,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                       C          
         //      |                                      '           
@@ -31752,7 +33282,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31800,13 +33331,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(400, 200), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(-200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                       C          
         //      |                                      '           
@@ -31833,7 +33366,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31881,13 +33415,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                       C          
         //      |                                      '           
@@ -31914,7 +33450,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31962,13 +33499,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(1100, 900), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                       C          
         //      |                                      '           
@@ -31995,7 +33534,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32039,14 +33579,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(700, 100), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         C,                           ,D          
         //      |           ',                       ,'            
@@ -32073,7 +33615,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32131,14 +33674,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, -400), // #3
             new VoronoiSite(200, -400), // #4
             new VoronoiSite(200, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         C,                           ,D          
         //      |           ',                       ,'            
@@ -32165,7 +33710,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32223,14 +33769,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(100, -100), // #3
             new VoronoiSite(500, -100), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         C,                           ,D          
         //      |           ',                       ,'            
@@ -32257,7 +33805,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32315,14 +33864,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(900, 300), // #4
             new VoronoiSite(900, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         C,                           ,D          
         //      |           ',                       ,'            
@@ -32349,7 +33900,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32411,14 +33963,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(100, 700), // #3
             new VoronoiSite(100, 300), // #4
             new VoronoiSite(700, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   E                              
         //      |                   |                              
@@ -32445,7 +33999,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32507,14 +34062,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(-400, 200), // #3
             new VoronoiSite(-400, -200), // #4
             new VoronoiSite(200, -200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   E                              
         //      |                   |                              
@@ -32541,7 +34098,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32603,14 +34161,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(-100, 500), // #3
             new VoronoiSite(-100, 100), // #4
             new VoronoiSite(500, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   E                              
         //      |                   |                              
@@ -32637,7 +34197,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32699,14 +34260,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(300, 900), // #3
             new VoronoiSite(300, 500), // #4
             new VoronoiSite(900, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   E                              
         //      |                   |                              
@@ -32733,7 +34296,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32795,14 +34359,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(300, 900), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        G                         
         //      |                        |                         
@@ -32829,7 +34395,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32891,14 +34458,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 400), // #3
             new VoronoiSite(-200, 400), // #4
             new VoronoiSite(-200, -200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        G                         
         //      |                        |                         
@@ -32925,7 +34494,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32987,14 +34557,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(100, 700), // #4
             new VoronoiSite(100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        G                         
         //      |                        |                         
@@ -33021,7 +34593,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33083,14 +34656,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(900, 1100), // #3
             new VoronoiSite(500, 1100), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        G                         
         //      |                        |                         
@@ -33117,7 +34692,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33179,14 +34755,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(900, 300), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(300, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             F                    
         //      |                             |                    
@@ -33213,7 +34791,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33275,14 +34854,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(400, -200), // #3
             new VoronoiSite(400, 200), // #4
             new VoronoiSite(-200, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                             F                    
         //      |                             |                    
@@ -33309,7 +34890,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33371,14 +34953,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(700, 100), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(100, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                             F                    
         //      |                             |                    
@@ -33405,7 +34989,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33467,14 +35052,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(1100, 500), // #3
             new VoronoiSite(1100, 900), // #4
             new VoronoiSite(500, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             F                    
         //      |                             |                    
@@ -33501,7 +35088,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33559,14 +35147,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(700, 100), // #4
             new VoronoiSite(700, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C,                                               ,D
         //      | ',                                           ,'  
@@ -33593,7 +35183,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33651,14 +35242,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(-200, -400), // #3
             new VoronoiSite(200, -400), // #4
             new VoronoiSite(200, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C,                                               ,D
         //      | ',                                           ,'  
@@ -33685,7 +35278,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33743,14 +35337,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(100, -100), // #3
             new VoronoiSite(500, -100), // #4
             new VoronoiSite(500, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C,                                               ,D
         //      | ',                                           ,'  
@@ -33777,7 +35373,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33835,14 +35432,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(900, 300), // #4
             new VoronoiSite(900, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C,                                               ,D
         //      | ',                                           ,'  
@@ -33869,7 +35468,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33931,14 +35531,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 700), // #3
             new VoronoiSite(100, 300), // #4
             new VoronoiSite(500, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              E                                 ,C
         //      |              |                               ,'  
@@ -33965,7 +35567,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34027,14 +35630,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(-400, 200), // #3
             new VoronoiSite(-400, -200), // #4
             new VoronoiSite(0, -200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              E                                 ,C
         //      |              |                               ,'  
@@ -34061,7 +35666,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34123,14 +35729,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(-100, 500), // #3
             new VoronoiSite(-100, 100), // #4
             new VoronoiSite(300, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              E                                 ,C
         //      |              |                               ,'  
@@ -34157,7 +35765,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34219,14 +35828,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 900), // #3
             new VoronoiSite(300, 500), // #4
             new VoronoiSite(700, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              E                                 ,C
         //      |              |                               ,'  
@@ -34253,7 +35864,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34315,14 +35927,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(300, 900), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        G                         
         //      |                        |                         
@@ -34349,7 +35963,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34411,14 +36026,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(200, 400), // #3
             new VoronoiSite(-200, 400), // #4
             new VoronoiSite(-200, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        G                         
         //      |                        |                         
@@ -34445,7 +36062,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34507,14 +36125,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(100, 700), // #4
             new VoronoiSite(100, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        G                         
         //      |                        |                         
@@ -34541,7 +36161,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34603,14 +36224,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(900, 1100), // #3
             new VoronoiSite(500, 1100), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        G                         
         //      |                        |                         
@@ -34637,7 +36260,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34699,14 +36323,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(900, 300), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 D,                                 F               
         //      | ',                               |               
@@ -34733,7 +36359,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34795,14 +36422,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(400, -200), // #3
             new VoronoiSite(400, 200), // #4
             new VoronoiSite(0, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 D,                                 F               
         //      | ',                               |               
@@ -34829,7 +36458,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34891,14 +36521,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(700, 100), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 D,                                 F               
         //      | ',                               |               
@@ -34925,7 +36557,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34987,14 +36620,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(1100, 500), // #3
             new VoronoiSite(1100, 900), // #4
             new VoronoiSite(700, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 D,                                 F               
         //      | ',                               |               
@@ -35021,7 +36656,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35079,15 +36715,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 500), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(300, 100), // #5
             new VoronoiSite(700, 100), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        H                         
         //      |                        |                         
@@ -35114,7 +36752,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35182,15 +36821,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 400), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(-200, 0), // #3
             new VoronoiSite(200, 0), // #4
             new VoronoiSite(-200, -400), // #5
             new VoronoiSite(200, -400), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        H                         
         //      |                        |                         
@@ -35217,7 +36858,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35285,15 +36927,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 300), // #3
             new VoronoiSite(500, 300), // #4
             new VoronoiSite(100, -100), // #5
             new VoronoiSite(500, -100), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        H                         
         //      |                        |                         
@@ -35320,7 +36964,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35388,15 +37033,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1100), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(500, 300), // #5
             new VoronoiSite(900, 300), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        H                         
         //      |                        |                         
@@ -35423,7 +37070,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35495,15 +37143,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(500, 300), // #4
             new VoronoiSite(100, 700), // #5
             new VoronoiSite(100, 300), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              D                   C               
         //      |              |                   |               
@@ -35530,7 +37180,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35602,15 +37253,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(400, -200), // #2
             new VoronoiSite(0, 200), // #3
             new VoronoiSite(0, -200), // #4
             new VoronoiSite(-400, 200), // #5
             new VoronoiSite(-400, -200), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              D                   C               
         //      |              |                   |               
@@ -35637,7 +37290,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35709,15 +37363,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(300, 500), // #3
             new VoronoiSite(300, 100), // #4
             new VoronoiSite(-100, 500), // #5
             new VoronoiSite(-100, 100), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              D                   C               
         //      |              |                   |               
@@ -35744,7 +37400,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35816,15 +37473,17 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 900), // #1
             new VoronoiSite(1100, 500), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(300, 900), // #5
             new VoronoiSite(300, 500), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              D                   C               
         //      |              |                   |               
@@ -35851,7 +37510,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35919,14 +37579,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(800, 200), // #3
             new VoronoiSite(800, 800), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        A                         
         //      |                        |                         
@@ -35953,7 +37615,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36025,14 +37688,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(-300, -300), // #2
             new VoronoiSite(300, -300), // #3
             new VoronoiSite(300, 300), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        A                         
         //      |                        |                         
@@ -36059,7 +37724,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36131,14 +37797,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(600, 0), // #3
             new VoronoiSite(600, 600), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        A                         
         //      |                        |                         
@@ -36165,7 +37833,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36237,14 +37906,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(1000, 400), // #3
             new VoronoiSite(1000, 1000), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        A                         
         //      |                        |                         
@@ -36271,7 +37942,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36343,14 +38015,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(1000, 0), // #3
             new VoronoiSite(1000, 1000), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1                       ,A,                       4
         //      |                     ,'   ',                      
@@ -36377,7 +38051,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36417,14 +38092,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(-500, -500), // #2
             new VoronoiSite(500, -500), // #3
             new VoronoiSite(500, 500), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1                       ,A,                       4
         //      |                     ,'   ',                      
@@ -36451,7 +38128,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36491,14 +38169,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(800, -200), // #3
             new VoronoiSite(800, 800), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1                       ,A,                       4
         //      |                     ,'   ',                      
@@ -36525,7 +38205,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36565,14 +38246,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(1200, 200), // #3
             new VoronoiSite(1200, 1200), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1                       ,A,                       4
         //      |                     ,'   ',                      
@@ -36599,7 +38282,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36639,14 +38323,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(600, 200), // #3
             new VoronoiSite(600, 600), // #4
             new VoronoiSite(500, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   A                    
         //      |                   |                    
@@ -36669,7 +38355,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36741,14 +38428,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(200, 200), // #4
             new VoronoiSite(100, -100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 ↑                   A                    
         //      |                   |                    
@@ -36771,7 +38460,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36843,14 +38533,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(400, 0), // #3
             new VoronoiSite(400, 400), // #4
             new VoronoiSite(300, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                   A                    
         //      |                   |                    
@@ -36873,7 +38565,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36945,14 +38638,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(800, 400), // #3
             new VoronoiSite(800, 800), // #4
             new VoronoiSite(700, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   A                    
         //      |                   |                    
@@ -36975,7 +38670,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37051,14 +38747,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(200, 600), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(600, 200), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   B                    
         //      |                   |                    
@@ -37081,7 +38779,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37157,14 +38856,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, -200), // #3
             new VoronoiSite(200, -200), // #4
             new VoronoiSite(-100, -100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 ↑                   B                    
         //      |                   |                    
@@ -37187,7 +38888,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37263,14 +38965,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(0, 400), // #2
             new VoronoiSite(0, 0), // #3
             new VoronoiSite(400, 0), // #4
             new VoronoiSite(100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                   B                    
         //      |                   |                    
@@ -37293,7 +38997,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37369,14 +39074,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(400, 800), // #2
             new VoronoiSite(400, 400), // #3
             new VoronoiSite(800, 400), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   B                    
         //      |                   |                    
@@ -37399,7 +39106,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37475,14 +39183,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 200), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(200, 600), // #3
             new VoronoiSite(200, 200), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   C                    
         //      |                   |                    
@@ -37505,7 +39215,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37581,14 +39292,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -200), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(-200, 200), // #3
             new VoronoiSite(-200, -200), // #4
             new VoronoiSite(-100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 ↑                   C                    
         //      |                   |                    
@@ -37611,7 +39324,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37687,14 +39401,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(0, 400), // #3
             new VoronoiSite(0, 0), // #4
             new VoronoiSite(100, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                   C                    
         //      |                   |                    
@@ -37717,7 +39433,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37793,14 +39510,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(800, 800), // #2
             new VoronoiSite(400, 800), // #3
             new VoronoiSite(400, 400), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   C                    
         //      |                   |                    
@@ -37823,7 +39542,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37899,14 +39619,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(600, 200), // #2
             new VoronoiSite(600, 600), // #3
             new VoronoiSite(200, 600), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   D                    
         //      |                   |                    
@@ -37929,7 +39651,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38005,14 +39728,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(-200, 200), // #4
             new VoronoiSite(100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 ↑                   D                    
         //      |                   |                    
@@ -38035,7 +39760,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38111,14 +39837,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, 0), // #2
             new VoronoiSite(400, 400), // #3
             new VoronoiSite(0, 400), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                   D                    
         //      |                   |                    
@@ -38141,7 +39869,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38217,14 +39946,16 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(800, 400), // #2
             new VoronoiSite(800, 800), // #3
             new VoronoiSite(400, 800), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   D                    
         //      |                   |                    
@@ -38247,7 +39978,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38319,12 +40051,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                               ,,B
         //      |                                          ,,·''   
@@ -38351,7 +40085,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38377,12 +40112,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 400), // #1
             new VoronoiSite(-200, -400), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                               ,,B
         //      |                                          ,,·''   
@@ -38409,7 +40146,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38435,12 +40173,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                               ,,B
         //      |                                          ,,·''   
@@ -38467,7 +40207,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38493,12 +40234,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                               ,,B
         //      |                                          ,,·''   
@@ -38525,7 +40268,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38555,12 +40299,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(100, 700), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        A                         
         //      |                       ' '                        
@@ -38587,7 +40333,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38617,12 +40364,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(-400, 200), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        A                         
         //      |                       ' '                        
@@ -38649,7 +40398,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38679,12 +40429,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(-100, 500), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        A                         
         //      |                       ' '                        
@@ -38711,7 +40463,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38741,12 +40494,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 900), // #1
             new VoronoiSite(300, 900), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        A                         
         //      |                       ' '                        
@@ -38773,7 +40528,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38803,12 +40559,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 100), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C,,                                                
         //      |  ''·,,                                           
@@ -38835,7 +40593,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38865,12 +40624,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -400), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C,,                                                
         //      |  ''·,,                                           
@@ -38897,7 +40658,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38927,12 +40689,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -100), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C,,                                                
         //      |  ''·,,                                           
@@ -38959,7 +40723,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38989,12 +40754,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 300), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C,,                                                
         //      |  ''·,,                                           
@@ -39021,7 +40788,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39051,12 +40819,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B                                                 C
         //      |'                                               ' 
@@ -39083,7 +40853,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39113,12 +40884,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -200), // #1
             new VoronoiSite(400, -200), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B                                                 C
         //      |'                                               ' 
@@ -39145,7 +40918,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39175,12 +40949,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 100), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B                                                 C
         //      |'                                               ' 
@@ -39207,7 +40983,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39237,12 +41014,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(1100, 500), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B                                                 C
         //      |'                                               ' 
@@ -39269,7 +41048,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39295,12 +41075,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 900), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                     ,,B          
         //      |                                ,,·''             
@@ -39327,7 +41109,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39351,12 +41134,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 400), // #1
             new VoronoiSite(-400, -400), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                     ,,B          
         //      |                                ,,·''             
@@ -39383,7 +41168,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39407,12 +41193,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 700), // #1
             new VoronoiSite(-100, -100), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                     ,,B          
         //      |                                ,,·''             
@@ -39439,7 +41227,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39463,12 +41252,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                     ,,B          
         //      |                                ,,·''             
@@ -39495,7 +41286,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39523,12 +41315,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(100, 900), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   D         A                    
         //      |                  '           '                   
@@ -39555,7 +41349,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39583,12 +41378,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(-400, 400), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   D         A                    
         //      |                  '           '                   
@@ -39615,7 +41412,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39643,12 +41441,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(-100, 700), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   D         A                    
         //      |                  '           '                   
@@ -39675,7 +41475,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39703,12 +41504,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 1100), // #1
             new VoronoiSite(300, 1100), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   D         A                    
         //      |                  '           '                   
@@ -39735,7 +41538,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39763,12 +41567,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 100), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         C,,                                      
         //      |            ''·,,                                 
@@ -39795,7 +41601,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39823,12 +41630,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, -400), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         C,,                                      
         //      |            ''·,,                                 
@@ -39855,7 +41664,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39883,12 +41693,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, -100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         C,,                                      
         //      |            ''·,,                                 
@@ -39915,7 +41727,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39943,12 +41756,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 300), // #1
             new VoronoiSite(1100, 1100), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         C,,                                      
         //      |            ''·,,                                 
@@ -39975,7 +41790,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40003,12 +41819,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(900, 100), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -40035,7 +41853,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40063,12 +41882,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -400), // #1
             new VoronoiSite(400, -400), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -40095,7 +41916,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40123,12 +41945,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, -100), // #1
             new VoronoiSite(700, -100), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -40155,7 +41979,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40183,12 +42008,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(1100, 300), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -40215,7 +42042,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40239,12 +42067,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 600), // #1
             new VoronoiSite(400, 900), // #2
             new VoronoiSite(400, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                            
         //      |                                                            
@@ -40275,7 +42105,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40301,12 +42132,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 0), // #1
             new VoronoiSite(-200, 300), // #2
             new VoronoiSite(-200, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                                                            
         //      |                                                            
@@ -40337,7 +42170,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40363,12 +42197,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 400), // #1
             new VoronoiSite(200, 700), // #2
             new VoronoiSite(200, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                            
         //      |                                                            
@@ -40399,7 +42235,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40425,12 +42262,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 800), // #1
             new VoronoiSite(600, 1100), // #2
             new VoronoiSite(600, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                                                            
         //      |                                                            
@@ -40461,7 +42300,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40491,12 +42331,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 700), // #1
             new VoronoiSite(900, 800), // #2
             new VoronoiSite(300, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             A                              
         //      |                            · ·                             
@@ -40527,7 +42369,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40557,12 +42400,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 100), // #1
             new VoronoiSite(300, 200), // #2
             new VoronoiSite(-300, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                             A                              
         //      |                            · ·                             
@@ -40593,7 +42438,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40623,12 +42469,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 500), // #1
             new VoronoiSite(700, 600), // #2
             new VoronoiSite(100, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             A                              
         //      |                            · ·                             
@@ -40659,7 +42507,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40689,12 +42538,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 900), // #1
             new VoronoiSite(1100, 1000), // #2
             new VoronoiSite(500, 1000), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                             A                              
         //      |                            · ·                             
@@ -40725,7 +42576,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40755,12 +42607,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 600), // #1
             new VoronoiSite(800, 300), // #2
             new VoronoiSite(800, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                            
         //      |                                                            
@@ -40791,7 +42645,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40821,12 +42676,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 0), // #1
             new VoronoiSite(200, -300), // #2
             new VoronoiSite(200, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                                                            
         //      |                                                            
@@ -40857,7 +42714,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40887,12 +42745,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 400), // #1
             new VoronoiSite(600, 100), // #2
             new VoronoiSite(600, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                            
         //      |                                                            
@@ -40923,7 +42783,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40953,12 +42814,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 800), // #1
             new VoronoiSite(1000, 500), // #2
             new VoronoiSite(1000, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                                                            
         //      |                                                            
@@ -40989,7 +42852,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41019,12 +42883,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 500), // #1
             new VoronoiSite(300, 400), // #2
             new VoronoiSite(900, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         C                                       B          
         //      |          ·                                     ·           
@@ -41055,7 +42921,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41085,12 +42952,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -100), // #1
             new VoronoiSite(-300, -200), // #2
             new VoronoiSite(300, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑         C                                       B          
         //      |          ·                                     ·           
@@ -41121,7 +42990,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41151,12 +43021,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 300), // #1
             new VoronoiSite(100, 200), // #2
             new VoronoiSite(700, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         C                                       B          
         //      |          ·                                     ·           
@@ -41187,7 +43059,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41217,12 +43090,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 700), // #1
             new VoronoiSite(500, 600), // #2
             new VoronoiSite(1100, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑         C                                       B          
         //      |          ·                                     ·           
@@ -41253,7 +43128,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41279,12 +43155,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(100, 900), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                            
         //      |                                                            
@@ -41315,7 +43193,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41339,12 +43218,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-500, 300), // #2
             new VoronoiSite(-500, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                                                            
         //      |                                                            
@@ -41375,7 +43256,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41399,12 +43281,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-100, 700), // #2
             new VoronoiSite(-100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                            
         //      |                                                            
@@ -41435,7 +43319,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41459,12 +43344,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(300, 1100), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                                                            
         //      |                                                            
@@ -41495,7 +43382,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41523,12 +43411,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 1000), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        D         A                         
         //      |                       ·           ·                        
@@ -41559,7 +43449,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41587,12 +43478,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(-300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                        D         A                         
         //      |                       ·           ·                        
@@ -41623,7 +43516,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41651,12 +43545,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        D         A                         
         //      |                       ·           ·                        
@@ -41687,7 +43583,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41715,12 +43612,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1200), // #1
             new VoronoiSite(1100, 1300), // #2
             new VoronoiSite(500, 1300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                        D         A                         
         //      |                       ·           ·                        
@@ -41751,7 +43650,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41779,12 +43679,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 600), // #1
             new VoronoiSite(1100, 300), // #2
             new VoronoiSite(1100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                            
         //      |                                                            
@@ -41815,7 +43717,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41843,12 +43746,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(500, -300), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                                                            
         //      |                                                            
@@ -41879,7 +43784,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41907,12 +43813,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(900, 100), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                            
         //      |                                                            
@@ -41943,7 +43851,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41971,12 +43880,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 800), // #1
             new VoronoiSite(1300, 500), // #2
             new VoronoiSite(1300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                                                            
         //      |                                                            
@@ -42007,7 +43918,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42035,12 +43947,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 200), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(900, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑    B                                                 C     
         //      |     ·                                               ·      
@@ -42071,7 +43985,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42099,12 +44014,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(-300, -500), // #2
             new VoronoiSite(300, -500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑    B                                                 C     
         //      |     ·                                               ·      
@@ -42135,7 +44052,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42163,12 +44081,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(700, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑    B                                                 C     
         //      |     ·                                               ·      
@@ -42199,7 +44119,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42227,12 +44148,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(1100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑    B                                                 C     
         //      |     ·                                               ·      
@@ -42263,7 +44186,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42287,12 +44211,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(900, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             B                    
         //      |                            '                     
@@ -42319,7 +44245,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42353,12 +44280,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 400), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(400, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                             B                    
         //      |                            '                     
@@ -42385,7 +44314,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42419,12 +44349,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                             B                    
         //      |                            '                     
@@ -42451,7 +44383,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42485,12 +44418,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1100), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(1100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             B                    
         //      |                            '                     
@@ -42517,7 +44452,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42555,12 +44491,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 D,                                                 
         //      | ',                                               
@@ -42587,7 +44525,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42625,12 +44564,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(-200, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 D,                                                 
         //      | ',                                               
@@ -42657,7 +44598,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42695,12 +44637,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 D,                                                 
         //      | ',                                               
@@ -42727,7 +44671,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42765,12 +44710,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 900), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 D,                                                 
         //      | ',                                               
@@ -42797,7 +44744,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42835,12 +44783,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                ,D
         //      |                                              ,'  
@@ -42867,7 +44817,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42905,12 +44856,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -400), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(-400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                ,D
         //      |                                              ,'  
@@ -42937,7 +44890,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42975,12 +44929,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -100), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(-100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                ,D
         //      |                                              ,'  
@@ -43007,7 +44963,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43045,12 +45002,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                ,D
         //      |                                              ,'  
@@ -43077,7 +45036,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43115,12 +45075,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   C                              
         //      |                    '                             
@@ -43147,7 +45109,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43185,12 +45148,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -200), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   C                              
         //      |                    '                             
@@ -43217,7 +45182,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43255,12 +45221,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 100), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   C                              
         //      |                    '                             
@@ -43287,7 +45255,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43325,12 +45294,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(900, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   C                              
         //      |                    '                             
@@ -43357,7 +45328,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43391,12 +45363,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        B                         
         //      |                       '                          
@@ -43423,7 +45397,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43449,12 +45424,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 200), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(200, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        B                         
         //      |                       '                          
@@ -43481,7 +45458,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43507,12 +45485,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        B                         
         //      |                       '                          
@@ -43539,7 +45519,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43565,12 +45546,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(900, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        B                         
         //      |                       '                          
@@ -43597,7 +45580,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43627,12 +45611,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A,,                                                
         //      |' ''·,,                                           
@@ -43659,7 +45645,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43689,12 +45676,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-400, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A,,                                                
         //      |' ''·,,                                           
@@ -43721,7 +45710,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43751,12 +45741,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(-100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A,,                                                
         //      |' ''·,,                                           
@@ -43783,7 +45775,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43813,12 +45806,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 1100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A,,                                                
         //      |' ''·,,                                           
@@ -43845,7 +45840,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43875,12 +45871,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                               ,,A
         //      |                                          ,,·'' ' 
@@ -43907,7 +45905,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43937,12 +45936,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, -200), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                               ,,A
         //      |                                          ,,·'' ' 
@@ -43969,7 +45970,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43999,12 +46001,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                               ,,A
         //      |                                          ,,·'' ' 
@@ -44031,7 +46035,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44061,12 +46066,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                               ,,A
         //      |                                          ,,·'' ' 
@@ -44093,7 +46100,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44123,12 +46131,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                        C                         
         //      |                         '                        
@@ -44155,7 +46165,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44185,12 +46196,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                        C                         
         //      |                         '                        
@@ -44217,7 +46230,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44247,12 +46261,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, -100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                        C                         
         //      |                         '                        
@@ -44279,7 +46295,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44309,12 +46326,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(1100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                        C                         
         //      |                         '                        
@@ -44341,7 +46360,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44367,12 +46387,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(900, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                  B               
         //      |                                 '                
@@ -44399,7 +46421,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44425,12 +46448,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                  B               
         //      |                                 '                
@@ -44457,7 +46482,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44483,12 +46509,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(700, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                  B               
         //      |                                 '                
@@ -44515,7 +46543,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44541,12 +46570,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(1100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                  B               
         //      |                                 '                
@@ -44573,7 +46604,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44603,12 +46635,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -44635,7 +46669,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44665,12 +46700,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(-400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -44697,7 +46734,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44727,12 +46765,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -44759,7 +46799,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44789,12 +46830,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -44821,7 +46864,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44851,12 +46895,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                     ,,A          
         //      |                                ,,·'' '           
@@ -44883,7 +46929,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44913,12 +46960,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(-400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                     ,,A          
         //      |                                ,,·'' '           
@@ -44945,7 +46994,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44975,12 +47025,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(-100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                     ,,A          
         //      |                                ,,·'' '           
@@ -45007,7 +47059,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45037,12 +47090,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                     ,,A          
         //      |                                ,,·'' '           
@@ -45069,7 +47124,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45099,12 +47155,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             C                    
         //      |                              '                   
@@ -45131,7 +47189,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45161,12 +47220,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                             C                    
         //      |                              '                   
@@ -45193,7 +47254,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45223,12 +47285,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                             C                    
         //      |                              '                   
@@ -45255,7 +47319,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45285,12 +47350,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(1100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             C                    
         //      |                              '                   
@@ -45317,7 +47384,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45347,12 +47415,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              B                                   
         //      |               '                                  
@@ -45379,7 +47449,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45409,12 +47480,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(-400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑              B                                   
         //      |               '                                  
@@ -45441,7 +47514,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45471,12 +47545,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑              B                                   
         //      |               '                                  
@@ -45503,7 +47579,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45533,12 +47610,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              B                                   
         //      |               '                                  
@@ -45565,7 +47644,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45595,12 +47675,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                   C                              
         //      |                  '                               
@@ -45627,7 +47709,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45657,12 +47740,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -200), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(-400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                   C                              
         //      |                  '                               
@@ -45689,7 +47774,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45719,12 +47805,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(-100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                   C                              
         //      |                  '                               
@@ -45751,7 +47839,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45781,12 +47870,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                   C                              
         //      |                  '                               
@@ -45813,7 +47904,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45843,12 +47935,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑         A,,                                      
         //      |          ' ''·,,                                 
@@ -45875,7 +47969,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45905,12 +48000,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑         A,,                                      
         //      |          ' ''·,,                                 
@@ -45937,7 +48034,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45967,12 +48065,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑         A,,                                      
         //      |          ' ''·,,                                 
@@ -45999,7 +48099,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46029,12 +48130,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(1100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑         A,,                                      
         //      |          ' ''·,,                                 
@@ -46061,7 +48164,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46091,12 +48195,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(900, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                                  
         //      |                                                  
@@ -46123,7 +48229,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46153,12 +48260,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 ↑                                                  
         //      |                                                  
@@ -46185,7 +48294,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46215,12 +48325,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(700, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 ↑                                                  
         //      |                                                  
@@ -46247,7 +48359,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46277,12 +48390,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(1100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                                  
         //      |                                                  
@@ -46309,7 +48424,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46335,12 +48451,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 1100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(1100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             C                              
         //      |                           ,'                               
@@ -46371,7 +48489,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46395,12 +48514,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(500, -500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                             C                              
         //      |                           ,'                               
@@ -46431,7 +48552,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46455,12 +48577,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             C                              
         //      |                           ,'                               
@@ -46491,7 +48615,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46515,12 +48640,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1300), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(1300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                             C                              
         //      |                           ,'                               
@@ -46551,7 +48678,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46579,12 +48707,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 1100), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑              A,                                            
         //      |                ''·,                                        
@@ -46615,7 +48745,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46643,12 +48774,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(-500, -500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑              A,                                            
         //      |                ''·,                                        
@@ -46679,7 +48812,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46707,12 +48841,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑              A,                                            
         //      |                ''·,                                        
@@ -46743,7 +48879,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46771,12 +48908,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1300, 1300), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑              A,                                            
         //      |                ''·,                                        
@@ -46807,7 +48946,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46835,12 +48975,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 100), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                                           ,B               
         //      |                                       ,·''                 
@@ -46871,7 +49013,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46899,12 +49042,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(-100, -100), // #2
             new VoronoiSite(-500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                                           ,B               
         //      |                                       ,·''                 
@@ -46935,7 +49080,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46963,12 +49109,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, -100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(-100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                                           ,B               
         //      |                                       ,·''                 
@@ -46999,7 +49147,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47027,12 +49176,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1300, 300), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 1300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                                           ,B               
         //      |                                       ,·''                 
@@ -47063,7 +49214,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47091,12 +49243,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(1100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 ↑                             D                              
         //      |                              ',                            
@@ -47127,7 +49281,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47155,12 +49310,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 ↑                             D                              
         //      |                              ',                            
@@ -47191,7 +49348,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47219,12 +49377,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, -100), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 ↑                             D                              
         //      |                              ',                            
@@ -47255,7 +49415,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47283,12 +49444,14 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(1300, 1300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 ↑                             D                              
         //      |                              ',                            
@@ -47319,7 +49482,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47343,13 +49507,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 800), // #1
             new VoronoiSite(400, 700), // #2
             new VoronoiSite(700, 400), // #3
             new VoronoiSite(800, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 ↑              C                            ,B
         //      |             ·                           ,'  
@@ -47374,7 +49540,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47408,13 +49575,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-350, 350), // #1
             new VoronoiSite(-50, 250), // #2
             new VoronoiSite(250, -50), // #3
             new VoronoiSite(350, -350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      ↑              ·                           ,· 
         //  400 |             ·                          ,,   
@@ -47439,7 +49608,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47473,13 +49643,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 600), // #1
             new VoronoiSite(200, 500), // #2
             new VoronoiSite(500, 200), // #3
             new VoronoiSite(600, -100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 ↑              C                            ,B
         //      |             ·                           ,'  
@@ -47504,7 +49676,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47538,13 +49711,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1000), // #1
             new VoronoiSite(600, 900), // #2
             new VoronoiSite(900, 600), // #3
             new VoronoiSite(1000, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 ↑              C                            ,B
         //      |             ·                           ,'  
@@ -47569,7 +49744,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47607,13 +49783,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(400, 200), // #3
             new VoronoiSite(100, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 A#,,                                          
         //      |·','''··,,,                                  
@@ -47638,7 +49816,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47676,13 +49855,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(350, 350), // #1
             new VoronoiSite(250, 50), // #2
             new VoronoiSite(-50, -250), // #3
             new VoronoiSite(-350, -350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      ##,,                                          
         //  400 |·',''···,,                                   
@@ -47707,7 +49888,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47745,13 +49927,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(200, 0), // #3
             new VoronoiSite(-100, -100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 A#,,                                          
         //      |·','''··,,,                                  
@@ -47776,7 +49960,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47814,13 +49999,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(600, 400), // #3
             new VoronoiSite(300, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 A#,,                                          
         //      |·','''··,,,                                  
@@ -47845,7 +50032,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47883,13 +50071,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 100), // #1
             new VoronoiSite(500, 200), // #2
             new VoronoiSite(200, 500), // #3
             new VoronoiSite(100, 800), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 ↑                                         ,,#A
         //      |                                 ,,,··''','· 
@@ -47914,7 +50104,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47952,13 +50143,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(350, -350), // #1
             new VoronoiSite(50, -250), // #2
             new VoronoiSite(-250, 50), // #3
             new VoronoiSite(-350, 350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      ↑                                        ,,## 
         //  400 |                                 ,,···'','·  
@@ -47983,7 +50176,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48021,13 +50215,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -100), // #1
             new VoronoiSite(300, 0), // #2
             new VoronoiSite(0, 300), // #3
             new VoronoiSite(-100, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 ↑                                         ,,#A
         //      |                                 ,,,··''','· 
@@ -48052,7 +50248,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48090,13 +50287,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 300), // #1
             new VoronoiSite(700, 400), // #2
             new VoronoiSite(400, 700), // #3
             new VoronoiSite(300, 1000), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 ↑                                         ,,#A
         //      |                                 ,,,··''','· 
@@ -48121,7 +50320,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48159,13 +50359,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(800, 800), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 B,                            D               
         //      | ',                           ·              
@@ -48190,7 +50392,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48228,13 +50431,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-350, -350), // #1
             new VoronoiSite(-250, -50), // #2
             new VoronoiSite(50, 250), // #3
             new VoronoiSite(350, 350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      ·,                           ·                
         //  400 | ,,                          ·               
@@ -48259,7 +50464,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48297,13 +50503,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, -100), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(300, 500), // #3
             new VoronoiSite(600, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 B,                            D               
         //      | ',                           ·              
@@ -48328,7 +50536,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48366,13 +50575,15 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(400, 600), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(1000, 1000), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 B,                            D               
         //      | ',                           ·              
@@ -48397,7 +50608,8 @@ public class GeneratedTest_EdgeNeighbours_OpenBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100, BorderEdgeGeneration.DoNotMakeBorderEdges);
+        plane.Tessellate(BorderEdgeGeneration.DoNotMakeBorderEdges);
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 

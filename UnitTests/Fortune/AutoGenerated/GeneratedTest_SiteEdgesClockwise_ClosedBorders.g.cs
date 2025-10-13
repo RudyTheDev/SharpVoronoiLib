@@ -27,9 +27,9 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -56,7 +56,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -79,9 +80,9 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -108,7 +109,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -131,9 +133,9 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -160,7 +162,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -183,9 +186,9 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
-        };
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites = [ ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -212,7 +215,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -235,10 +239,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -265,7 +271,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -302,10 +309,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -332,7 +341,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -369,10 +379,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -399,7 +411,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -436,10 +449,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -466,7 +481,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -503,10 +519,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -533,7 +551,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -570,10 +589,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -600,7 +621,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -637,10 +659,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -667,7 +691,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -704,10 +729,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -734,7 +761,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -775,10 +803,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------------------------------------X
         //      |                                                 |
@@ -805,7 +835,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -846,10 +877,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------------------------------------X
         //      |                                                 |
@@ -876,7 +909,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -917,10 +951,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 600), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------------------------------------X
         //      |                                                 |
@@ -947,7 +983,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -988,10 +1025,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------------------------------------X
         //      |                                                 |
@@ -1018,7 +1057,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1059,10 +1099,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -1089,7 +1131,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1130,10 +1173,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -1160,7 +1205,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1201,10 +1247,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -1231,7 +1279,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1272,10 +1321,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -1302,7 +1353,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1343,10 +1395,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -1373,7 +1427,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1414,10 +1469,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -1444,7 +1501,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1485,10 +1543,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -1515,7 +1575,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1556,10 +1617,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 400), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -1586,7 +1649,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1623,10 +1687,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -1653,7 +1719,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1690,10 +1757,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -1720,7 +1789,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1757,10 +1827,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -1787,7 +1859,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1824,10 +1897,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 900), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -1854,7 +1929,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1895,10 +1971,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------------------------------------X
         //      |                                                 |
@@ -1925,7 +2003,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -1966,10 +2045,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------------------------------------X
         //      |                                                 |
@@ -1996,7 +2077,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2037,10 +2119,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 600), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------------------------------------X
         //      |                                                 |
@@ -2067,7 +2151,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2108,10 +2193,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------------------------------------X
         //      |                                                 |
@@ -2138,7 +2225,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2179,10 +2267,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -2209,7 +2299,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2250,10 +2341,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -2280,7 +2373,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2321,10 +2415,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 100), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -2351,7 +2447,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2392,10 +2489,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -2422,7 +2521,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2463,10 +2563,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -2493,7 +2595,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2534,10 +2637,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -2564,7 +2669,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2605,10 +2711,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -2635,7 +2743,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2676,10 +2785,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 400), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -2706,7 +2817,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2743,10 +2855,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -2773,7 +2887,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2811,10 +2926,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -2841,7 +2958,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2879,10 +2997,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -2909,7 +3029,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -2947,10 +3068,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -2977,7 +3100,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3019,10 +3143,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------1------------------------X
         //      |                                                 |
@@ -3049,7 +3175,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3091,10 +3218,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------1------------------------X
         //      |                                                 |
@@ -3121,7 +3250,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3163,10 +3293,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------1------------------------X
         //      |                                                 |
@@ -3193,7 +3325,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3235,10 +3368,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------1------------------------X
         //      |                                                 |
@@ -3265,7 +3400,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3307,10 +3443,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -3337,7 +3475,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3379,10 +3518,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -3409,7 +3550,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3451,10 +3593,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -3481,7 +3625,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3523,10 +3668,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -3553,7 +3700,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3595,10 +3743,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -3625,7 +3775,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3667,10 +3818,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -3697,7 +3850,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3739,10 +3893,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -3769,7 +3925,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3811,10 +3968,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -3841,7 +4000,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3879,10 +4039,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -3909,7 +4071,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -3947,10 +4110,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -3977,7 +4142,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4015,10 +4181,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -4045,7 +4213,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4083,10 +4252,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 900), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -4113,7 +4284,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4155,10 +4327,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y----------------------------------1--------------X
         //      |                                                 |
@@ -4185,7 +4359,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4227,10 +4402,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y----------------------------------1--------------X
         //      |                                                 |
@@ -4257,7 +4434,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4299,10 +4477,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y----------------------------------1--------------X
         //      |                                                 |
@@ -4329,7 +4509,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4371,10 +4552,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y----------------------------------1--------------X
         //      |                                                 |
@@ -4401,7 +4584,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4443,10 +4627,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -4473,7 +4659,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4515,10 +4702,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -4545,7 +4734,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4587,10 +4777,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 100), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -4617,7 +4809,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4659,10 +4852,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -4689,7 +4884,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4731,10 +4927,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -4761,7 +4959,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4803,10 +5002,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -4833,7 +5034,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4875,10 +5077,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -4905,7 +5109,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -4947,10 +5152,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -4977,7 +5184,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5019,10 +5227,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 700), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------X
         //      |                                                 |
@@ -5049,7 +5259,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5091,10 +5302,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------X
         //      |                                                 |
@@ -5121,7 +5334,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5163,10 +5377,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------X
         //      |                                                 |
@@ -5193,7 +5409,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5235,10 +5452,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 900), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------X
         //      |                                                 |
@@ -5265,7 +5484,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5307,10 +5527,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Z
         //      |                                                 |
@@ -5337,7 +5559,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5379,10 +5602,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Z
         //      |                                                 |
@@ -5409,7 +5634,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5451,10 +5677,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Z
         //      |                                                 |
@@ -5481,7 +5709,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5523,10 +5752,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Z
         //      |                                                 |
@@ -5553,7 +5784,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5595,10 +5827,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------------------------------------W
         //      |                                                 |
@@ -5625,7 +5859,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5667,10 +5902,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------------------------------------W
         //      |                                                 |
@@ -5697,7 +5934,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5739,10 +5977,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 100), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------------------------------------W
         //      |                                                 |
@@ -5769,7 +6009,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5811,10 +6052,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------------------------------------W
         //      |                                                 |
@@ -5841,7 +6084,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5883,10 +6127,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X--------------1----------------------------------Y
         //      |                                                 |
@@ -5913,7 +6159,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -5955,10 +6202,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X--------------1----------------------------------Y
         //      |                                                 |
@@ -5985,7 +6234,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6027,10 +6277,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X--------------1----------------------------------Y
         //      |                                                 |
@@ -6057,7 +6309,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6099,10 +6352,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X--------------1----------------------------------Y
         //      |                                                 |
@@ -6129,7 +6384,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6167,10 +6423,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -6197,7 +6455,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6235,10 +6494,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -6265,7 +6526,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6303,10 +6565,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -6333,7 +6597,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6371,10 +6636,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -6401,7 +6668,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6443,10 +6711,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1-------------------------------------------------X
         //      |                                                 |
@@ -6473,7 +6743,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6515,10 +6786,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1-------------------------------------------------X
         //      |                                                 |
@@ -6545,7 +6818,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6587,10 +6861,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1-------------------------------------------------X
         //      |                                                 |
@@ -6617,7 +6893,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6659,10 +6936,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1-------------------------------------------------X
         //      |                                                 |
@@ -6689,7 +6968,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6731,10 +7011,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------1
         //      |                                                 |
@@ -6761,7 +7043,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6803,10 +7086,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------1
         //      |                                                 |
@@ -6833,7 +7118,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6875,10 +7161,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------1
         //      |                                                 |
@@ -6905,7 +7193,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -6947,10 +7236,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------1
         //      |                                                 |
@@ -6977,7 +7268,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7019,10 +7311,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -7049,7 +7343,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7091,10 +7386,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -7121,7 +7418,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7163,10 +7461,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -7193,7 +7493,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7235,10 +7536,12 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -7265,7 +7568,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7303,11 +7607,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -7334,7 +7640,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7390,11 +7697,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(0, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -7421,7 +7730,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7477,11 +7787,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(300, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -7508,7 +7820,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7564,11 +7877,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(700, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -7595,7 +7910,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7655,11 +7971,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------A------------------------X
         //      |                        |                        |
@@ -7686,7 +8004,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7746,11 +8065,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(-200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------A------------------------X
         //      |                        |                        |
@@ -7777,7 +8098,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7837,11 +8159,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(100, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------A------------------------X
         //      |                        |                        |
@@ -7868,7 +8192,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -7928,11 +8253,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(500, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------A------------------------X
         //      |                        |                        |
@@ -7959,7 +8286,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8015,11 +8343,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -8046,7 +8376,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8102,11 +8433,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -8133,7 +8466,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8189,11 +8523,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(300, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -8220,7 +8556,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8276,11 +8613,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(700, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -8307,7 +8646,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8367,11 +8707,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y----------------------------------A--------------X
         //      |                                  |              |
@@ -8398,7 +8740,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8458,11 +8801,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y----------------------------------A--------------X
         //      |                                  |              |
@@ -8489,7 +8834,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8549,11 +8895,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y----------------------------------A--------------X
         //      |                                  |              |
@@ -8580,7 +8928,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8640,11 +8989,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(700, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y----------------------------------A--------------X
         //      |                                  |              |
@@ -8671,7 +9022,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8727,12 +9079,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(500, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -8759,7 +9113,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8834,12 +9189,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(0, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -8866,7 +9223,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -8941,12 +9299,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(300, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -8973,7 +9333,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9048,12 +9409,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(700, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -9080,7 +9443,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9159,12 +9523,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y--------------C-------------------A--------------X
         //      |              |                   |              |
@@ -9191,7 +9557,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9270,12 +9637,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-400, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y--------------C-------------------A--------------X
         //      |              |                   |              |
@@ -9302,7 +9671,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9381,12 +9751,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(-100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y--------------C-------------------A--------------X
         //      |              |                   |              |
@@ -9413,7 +9785,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9492,12 +9865,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y--------------C-------------------A--------------X
         //      |              |                   |              |
@@ -9524,7 +9899,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9599,13 +9975,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 800), // #1
             new VoronoiSite(500, 600), // #2
             new VoronoiSite(500, 400), // #3
             new VoronoiSite(500, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -9632,7 +10010,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9726,13 +10105,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 300), // #1
             new VoronoiSite(0, 100), // #2
             new VoronoiSite(0, -100), // #3
             new VoronoiSite(0, -300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -9759,7 +10140,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9853,13 +10235,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 600), // #1
             new VoronoiSite(300, 400), // #2
             new VoronoiSite(300, 200), // #3
             new VoronoiSite(300, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -9886,7 +10270,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -9980,13 +10365,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1000), // #1
             new VoronoiSite(700, 800), // #2
             new VoronoiSite(700, 600), // #3
             new VoronoiSite(700, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -10013,7 +10400,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10111,13 +10499,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 500), // #1
             new VoronoiSite(600, 500), // #2
             new VoronoiSite(400, 500), // #3
             new VoronoiSite(200, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y--------------E---------C---------A--------------X
         //      |              |         |         |              |
@@ -10144,7 +10534,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10242,13 +10633,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 0), // #1
             new VoronoiSite(100, 0), // #2
             new VoronoiSite(-100, 0), // #3
             new VoronoiSite(-300, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y--------------E---------C---------A--------------X
         //      |              |         |         |              |
@@ -10275,7 +10668,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10373,13 +10767,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 300), // #1
             new VoronoiSite(400, 300), // #2
             new VoronoiSite(200, 300), // #3
             new VoronoiSite(0, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y--------------E---------C---------A--------------X
         //      |              |         |         |              |
@@ -10406,7 +10802,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10504,13 +10901,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 700), // #1
             new VoronoiSite(800, 700), // #2
             new VoronoiSite(600, 700), // #3
             new VoronoiSite(400, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y--------------E---------C---------A--------------X
         //      |              |         |         |              |
@@ -10537,7 +10936,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10631,11 +11031,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(700, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------------------------------#B
         //      |                                              ,' |
@@ -10662,7 +11064,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10710,11 +11113,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------------------------------#B
         //      |                                              ,' |
@@ -10741,7 +11146,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10789,11 +11195,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(500, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------------------------------#B
         //      |                                              ,' |
@@ -10820,7 +11228,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10868,11 +11277,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(900, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------------------------------#B
         //      |                                              ,' |
@@ -10899,7 +11310,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -10951,11 +11363,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A#------------------------------------------------X
         //      | ',                                              |
@@ -10982,7 +11396,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11034,11 +11449,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(-200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A#------------------------------------------------X
         //      | ',                                              |
@@ -11065,7 +11482,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11117,11 +11535,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A#------------------------------------------------X
         //      | ',                                              |
@@ -11148,7 +11568,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11200,11 +11621,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A#------------------------------------------------X
         //      | ',                                              |
@@ -11231,7 +11654,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11279,11 +11703,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(600, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X--------------------------------------#B---------Z
         //      |                                    ,'           |
@@ -11310,7 +11736,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11366,11 +11793,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(100, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X--------------------------------------#B---------Z
         //      |                                    ,'           |
@@ -11397,7 +11826,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11453,11 +11883,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X--------------------------------------#B---------Z
         //      |                                    ,'           |
@@ -11484,7 +11916,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11540,11 +11973,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(800, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X--------------------------------------#B---------Z
         //      |                                    ,'           |
@@ -11571,7 +12006,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11631,11 +12067,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(400, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------A#--------------------------------------X
         //      |           ',                                    |
@@ -11662,7 +12100,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11722,11 +12161,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(-100, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y---------A#--------------------------------------X
         //      |           ',                                    |
@@ -11753,7 +12194,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11813,11 +12255,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y---------A#--------------------------------------X
         //      |           ',                                    |
@@ -11844,7 +12288,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11904,11 +12349,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(600, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------A#--------------------------------------X
         //      |           ',                                    |
@@ -11935,7 +12382,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -11995,11 +12443,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 200), // #1
             new VoronoiSite(400, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -12026,7 +12476,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12086,11 +12537,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -300), // #1
             new VoronoiSite(-100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -12117,7 +12570,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12177,11 +12631,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 0), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -12208,7 +12664,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12268,11 +12725,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 400), // #1
             new VoronoiSite(600, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -12299,7 +12758,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12359,11 +12819,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(600, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -12390,7 +12852,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12450,11 +12913,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -300), // #1
             new VoronoiSite(100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -12481,7 +12946,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12541,11 +13007,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -12572,7 +13040,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12632,11 +13101,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(800, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -12663,7 +13134,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12719,11 +13191,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 400), // #1
             new VoronoiSite(600, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A#------------------------------------------------Y
         //      | ',                                              |
@@ -12750,7 +13224,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12798,11 +13273,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -100), // #1
             new VoronoiSite(100, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A#------------------------------------------------Y
         //      | ',                                              |
@@ -12829,7 +13306,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12877,11 +13355,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(400, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A#------------------------------------------------Y
         //      | ',                                              |
@@ -12908,7 +13388,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -12956,11 +13437,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 600), // #1
             new VoronoiSite(800, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A#------------------------------------------------Y
         //      | ',                                              |
@@ -12987,7 +13470,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13039,11 +13523,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(800, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------------------------------#A
         //      |                                              ,' |
@@ -13070,7 +13556,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13122,11 +13609,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(300, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------------------------------#A
         //      |                                              ,' |
@@ -13153,7 +13642,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13205,11 +13695,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(600, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------------------------------#A
         //      |                                              ,' |
@@ -13236,7 +13728,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13288,11 +13781,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 1000), // #1
             new VoronoiSite(1000, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------------------------------#A
         //      |                                              ,' |
@@ -13319,7 +13814,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13371,11 +13867,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 600), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B#------------------------------------------------X
         //      | ',                                              |
@@ -13402,7 +13900,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13454,11 +13953,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(-100, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B#------------------------------------------------X
         //      | ',                                              |
@@ -13485,7 +13986,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13537,11 +14039,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 400), // #1
             new VoronoiSite(200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B#------------------------------------------------X
         //      | ',                                              |
@@ -13568,7 +14072,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13620,11 +14125,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 800), // #1
             new VoronoiSite(600, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B#------------------------------------------------X
         //      | ',                                              |
@@ -13651,7 +14158,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13703,11 +14211,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 200), // #1
             new VoronoiSite(200, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -13734,7 +14244,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13786,11 +14297,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, -300), // #1
             new VoronoiSite(-300, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -13817,7 +14330,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13869,11 +14383,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(0, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -13900,7 +14416,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -13952,11 +14469,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(400, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -13983,7 +14502,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14031,11 +14551,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A##-----------------------------------------------Z
         //      |  ''·,,                                          |
@@ -14062,7 +14584,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14114,11 +14637,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A##-----------------------------------------------Z
         //      |  ''·,,                                          |
@@ -14145,7 +14670,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14197,11 +14723,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A##-----------------------------------------------Z
         //      |  ''·,,                                          |
@@ -14228,7 +14756,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14280,11 +14809,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 1100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A##-----------------------------------------------Z
         //      |  ''·,,                                          |
@@ -14311,7 +14842,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14367,11 +14899,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(900, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------A
         //      |                                                '|
@@ -14398,7 +14932,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14454,11 +14989,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------A
         //      |                                                '|
@@ -14485,7 +15022,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14541,11 +15079,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------A
         //      |                                                '|
@@ -14572,7 +15112,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14628,11 +15169,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(1100, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------A
         //      |                                                '|
@@ -14659,7 +15202,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14715,11 +15259,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------------------------------------X
         //      |                                                 |
@@ -14746,7 +15292,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14802,11 +15349,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, -400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------------------------------------X
         //      |                                                 |
@@ -14833,7 +15382,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14889,11 +15439,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------------------------------------X
         //      |                                                 |
@@ -14920,7 +15472,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -14976,11 +15529,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------------------------------------X
         //      |                                                 |
@@ -15007,7 +15562,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15063,11 +15619,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z------------------------B------------------------Y
         //      |                       '                         |
@@ -15094,7 +15652,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15150,11 +15709,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z------------------------B------------------------Y
         //      |                       '                         |
@@ -15181,7 +15742,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15237,11 +15799,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(-100, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z------------------------B------------------------Y
         //      |                       '                         |
@@ -15268,7 +15832,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15324,11 +15889,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z------------------------B------------------------Y
         //      |                       '                         |
@@ -15355,7 +15922,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15411,11 +15979,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-----------------------------------------------##A
         //      |                                          ,,·''  |
@@ -15442,7 +16012,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15498,11 +16069,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-----------------------------------------------##A
         //      |                                          ,,·''  |
@@ -15529,7 +16102,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15585,11 +16159,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-----------------------------------------------##A
         //      |                                          ,,·''  |
@@ -15616,7 +16192,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15672,11 +16249,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 1100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-----------------------------------------------##A
         //      |                                          ,,·''  |
@@ -15703,7 +16282,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15759,11 +16339,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(900, 700), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------B------------------------Z
         //      |                         '                       |
@@ -15790,7 +16372,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15846,11 +16429,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------B------------------------Z
         //      |                         '                       |
@@ -15877,7 +16462,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -15933,11 +16519,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------B------------------------Z
         //      |                         '                       |
@@ -15964,7 +16552,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16020,11 +16609,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(1100, 900), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------B------------------------Z
         //      |                         '                       |
@@ -16051,7 +16642,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16107,11 +16699,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Y
         //      |                                                 |
@@ -16138,7 +16732,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16194,11 +16789,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, -400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Y
         //      |                                                 |
@@ -16225,7 +16822,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16281,11 +16879,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, -100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Y
         //      |                                                 |
@@ -16312,7 +16912,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16368,11 +16969,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Y
         //      |                                                 |
@@ -16399,7 +17002,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16455,11 +17059,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A-------------------------------------------------X
         //      |'                                                |
@@ -16486,7 +17092,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16542,11 +17149,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-400, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A-------------------------------------------------X
         //      |'                                                |
@@ -16573,7 +17182,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16629,11 +17239,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(-100, 100), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A-------------------------------------------------X
         //      |'                                                |
@@ -16660,7 +17272,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16716,11 +17329,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A-------------------------------------------------X
         //      |'                                                |
@@ -16747,7 +17362,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16799,11 +17415,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 800), // #1
             new VoronoiSite(0, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -16830,7 +17448,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16888,11 +17507,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 300), // #1
             new VoronoiSite(-500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -16919,7 +17540,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -16977,11 +17599,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 600), // #1
             new VoronoiSite(-200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -17008,7 +17632,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17066,11 +17691,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1000), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -17097,7 +17724,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17159,11 +17787,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1000), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------2--------------A--------------1---------X
         //      |                        |                        |
@@ -17190,7 +17820,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17252,11 +17883,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(-300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y---------2--------------A--------------1---------X
         //      |                        |                        |
@@ -17283,7 +17916,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17345,11 +17979,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 800), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y---------2--------------A--------------1---------X
         //      |                        |                        |
@@ -17376,7 +18012,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17438,11 +18075,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1200), // #1
             new VoronoiSite(400, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------2--------------A--------------1---------X
         //      |                        |                        |
@@ -17469,7 +18108,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17531,11 +18171,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 200), // #1
             new VoronoiSite(1000, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -17562,7 +18204,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17624,11 +18267,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -300), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -17655,7 +18300,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17717,11 +18363,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 0), // #1
             new VoronoiSite(800, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -17748,7 +18396,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17810,11 +18459,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 400), // #1
             new VoronoiSite(1200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -17841,7 +18492,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17903,11 +18555,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z------------------------B------------------------W
         //      |                        |                        |
@@ -17934,7 +18588,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -17996,11 +18651,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -500), // #1
             new VoronoiSite(300, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z------------------------B------------------------W
         //      |                        |                        |
@@ -18027,7 +18684,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18089,11 +18747,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(600, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z------------------------B------------------------W
         //      |                        |                        |
@@ -18120,7 +18780,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18182,11 +18843,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z------------------------B------------------------W
         //      |                        |                        |
@@ -18213,7 +18876,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18271,11 +18935,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1-------------------------------------------------Z
         //      |                                                 |
@@ -18302,7 +18968,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18360,11 +19027,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(-500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1-------------------------------------------------Z
         //      |                                                 |
@@ -18391,7 +19060,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18449,11 +19119,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1-------------------------------------------------Z
         //      |                                                 |
@@ -18480,7 +19152,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18538,11 +19211,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1-------------------------------------------------Z
         //      |                                                 |
@@ -18569,7 +19244,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18631,11 +19307,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(0, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 2------------------------A------------------------1
         //      |                        |                        |
@@ -18662,7 +19340,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18724,11 +19403,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(-500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 2------------------------A------------------------1
         //      |                        |                        |
@@ -18755,7 +19436,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18817,11 +19499,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(-200, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 2------------------------A------------------------1
         //      |                        |                        |
@@ -18848,7 +19532,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -18910,11 +19595,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(200, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 2------------------------A------------------------1
         //      |                        |                        |
@@ -18941,7 +19628,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19003,11 +19691,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(1000, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------2
         //      |                                                 |
@@ -19034,7 +19724,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19096,11 +19787,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(500, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------2
         //      |                                                 |
@@ -19127,7 +19820,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19189,11 +19883,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
             new VoronoiSite(800, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------2
         //      |                                                 |
@@ -19220,7 +19916,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19282,11 +19979,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(1200, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------2
         //      |                                                 |
@@ -19313,7 +20012,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19375,11 +20075,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(1000, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z------------------------B------------------------W
         //      |                        |                        |
@@ -19406,7 +20108,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19468,11 +20171,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z------------------------B------------------------W
         //      |                        |                        |
@@ -19499,7 +20204,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19561,11 +20267,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(800, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z------------------------B------------------------W
         //      |                        |                        |
@@ -19592,7 +20300,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19654,11 +20363,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(1200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z------------------------B------------------------W
         //      |                        |                        |
@@ -19685,7 +20396,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19743,11 +20455,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1-------------------------------------------------Z
         //      |                                                 |
@@ -19774,7 +20488,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19832,11 +20547,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(-500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1-------------------------------------------------Z
         //      |                                                 |
@@ -19863,7 +20580,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -19921,11 +20639,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1-------------------------------------------------Z
         //      |                                                 |
@@ -19952,7 +20672,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20010,11 +20731,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1-------------------------------------------------Z
         //      |                                                 |
@@ -20041,7 +20764,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20103,11 +20827,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------2-------------------A-------------------1
         //      |                             |                   |
@@ -20134,7 +20860,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20196,11 +20923,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(-300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y---------2-------------------A-------------------1
         //      |                             |                   |
@@ -20227,7 +20956,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20289,11 +21019,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y---------2-------------------A-------------------1
         //      |                             |                   |
@@ -20320,7 +21052,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20382,11 +21115,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(400, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------2-------------------A-------------------1
         //      |                             |                   |
@@ -20413,7 +21148,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20475,11 +21211,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(1000, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -20506,7 +21244,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20568,11 +21307,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -20599,7 +21340,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20661,11 +21403,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
             new VoronoiSite(800, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -20692,7 +21436,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20754,11 +21499,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(1200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -20785,7 +21532,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20847,11 +21595,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------B-----------------------------W
         //      |                   |                             |
@@ -20878,7 +21628,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -20940,11 +21691,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(300, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------B-----------------------------W
         //      |                   |                             |
@@ -20971,7 +21724,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21033,11 +21787,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(600, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------B-----------------------------W
         //      |                   |                             |
@@ -21064,7 +21820,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21126,11 +21883,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------B-----------------------------W
         //      |                   |                             |
@@ -21157,7 +21916,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21219,11 +21979,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------1
         //      |                                                 |
@@ -21250,7 +22012,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21312,11 +22075,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------1
         //      |                                                 |
@@ -21343,7 +22108,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21405,11 +22171,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------1
         //      |                                                 |
@@ -21436,7 +22204,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21498,11 +22267,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(1200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------1
         //      |                                                 |
@@ -21529,7 +22300,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21591,11 +22363,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(200, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-----------------------------B-------------------Z
         //      |                             |                   |
@@ -21622,7 +22396,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21684,11 +22459,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(-300, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-----------------------------B-------------------Z
         //      |                             |                   |
@@ -21715,7 +22492,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21777,11 +22555,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, -200), // #1
             new VoronoiSite(0, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-----------------------------B-------------------Z
         //      |                             |                   |
@@ -21808,7 +22588,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21870,11 +22651,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(400, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-----------------------------B-------------------Z
         //      |                             |                   |
@@ -21901,7 +22684,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -21963,11 +22747,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------------------------------------W
         //      |                                                 |
@@ -21994,7 +22780,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22056,11 +22843,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(-500, 300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------------------------------------W
         //      |                                                 |
@@ -22087,7 +22876,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22149,11 +22939,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(-200, 600), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------------------------------------W
         //      |                                                 |
@@ -22180,7 +22972,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22242,11 +23035,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------------------------------------W
         //      |                                                 |
@@ -22273,7 +23068,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22335,11 +23131,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(800, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1-------------------A-------------------2---------Y
         //      |                   |                             |
@@ -22366,7 +23164,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22428,11 +23227,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1-------------------A-------------------2---------Y
         //      |                   |                             |
@@ -22459,7 +23260,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22521,11 +23323,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(600, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1-------------------A-------------------2---------Y
         //      |                   |                             |
@@ -22552,7 +23356,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22614,11 +23419,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(1000, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1-------------------A-------------------2---------Y
         //      |                   |                             |
@@ -22645,7 +23452,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22703,11 +23511,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(1000, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1------------------------------------------------#B
         //      |                                              ,' |
@@ -22734,7 +23544,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22784,11 +23595,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1------------------------------------------------#B
         //      |                                              ,' |
@@ -22815,7 +23628,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22865,11 +23679,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(800, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1------------------------------------------------#B
         //      |                                              ,' |
@@ -22896,7 +23712,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -22946,11 +23763,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(1200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1------------------------------------------------#B
         //      |                                              ,' |
@@ -22977,7 +23796,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23031,11 +23851,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(0, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A#------------------------------------------------1
         //      | ',                                              |
@@ -23062,7 +23884,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23116,11 +23939,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(-500, -500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A#------------------------------------------------1
         //      | ',                                              |
@@ -23147,7 +23972,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23201,11 +24027,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(-200, -200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A#------------------------------------------------1
         //      | ',                                              |
@@ -23232,7 +24060,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23286,11 +24115,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1200), // #1
             new VoronoiSite(200, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A#------------------------------------------------1
         //      | ',                                              |
@@ -23317,7 +24148,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23367,11 +24199,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 800), // #1
             new VoronoiSite(1000, 200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X---------------------------------------B---------Z
         //      |                                     ,'          |
@@ -23398,7 +24232,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23456,11 +24291,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 300), // #1
             new VoronoiSite(500, -300), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X---------------------------------------B---------Z
         //      |                                     ,'          |
@@ -23487,7 +24324,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23545,11 +24383,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 600), // #1
             new VoronoiSite(800, 0), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X---------------------------------------B---------Z
         //      |                                     ,'          |
@@ -23576,7 +24416,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23634,11 +24475,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1000), // #1
             new VoronoiSite(1200, 400), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X---------------------------------------B---------Z
         //      |                                     ,'          |
@@ -23665,7 +24508,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23727,11 +24571,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 0), // #1
             new VoronoiSite(200, 1000), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W---------2---------------------------------------Z
         //      |                                                 |
@@ -23758,7 +24604,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23820,11 +24667,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -500), // #1
             new VoronoiSite(-300, 500), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W---------2---------------------------------------Z
         //      |                                                 |
@@ -23851,7 +24700,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -23913,11 +24763,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -200), // #1
             new VoronoiSite(0, 800), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W---------2---------------------------------------Z
         //      |                                                 |
@@ -23944,7 +24796,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24006,11 +24859,13 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 200), // #1
             new VoronoiSite(400, 1200), // #2
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W---------2---------------------------------------Z
         //      |                                                 |
@@ -24037,7 +24892,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24095,12 +24951,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(800, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -24127,7 +24985,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24202,12 +25061,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(300, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -24234,7 +25095,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24309,12 +25171,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(600, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -24341,7 +25205,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24416,12 +25281,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(1000, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -24448,7 +25315,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24527,12 +25395,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y--------------A#---------------------------------X
         //      |                ',                               |
@@ -24559,7 +25429,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24638,12 +25509,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-300, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y--------------A#---------------------------------X
         //      |                ',                               |
@@ -24670,7 +25543,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24749,12 +25623,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y--------------A#---------------------------------X
         //      |                ',                               |
@@ -24781,7 +25657,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24860,12 +25737,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y--------------A#---------------------------------X
         //      |                ',                               |
@@ -24892,7 +25771,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -24967,12 +25847,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(400, 600), // #2
             new VoronoiSite(600, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X----------------------------#D------------------#C
         //      |                          ,'                  ,' |
@@ -24999,7 +25881,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25066,12 +25949,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X----------------------------#D------------------#C
         //      |                          ,'                  ,' |
@@ -25098,7 +25983,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25165,12 +26051,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X----------------------------#D------------------#C
         //      |                          ,'                  ,' |
@@ -25197,7 +26085,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25264,12 +26153,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(600, 800), // #2
             new VoronoiSite(800, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X----------------------------#D------------------#C
         //      |                          ,'                  ,' |
@@ -25296,7 +26187,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25367,12 +26259,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -25399,7 +26293,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25470,12 +26365,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -25502,7 +26399,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25573,12 +26471,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -25605,7 +26505,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25676,12 +26577,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(800, 800), // #2
             new VoronoiSite(600, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -25708,7 +26611,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25779,12 +26683,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 200), // #1
             new VoronoiSite(600, 400), // #2
             new VoronoiSite(400, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -25811,7 +26717,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25882,12 +26789,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -300), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(-100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -25914,7 +26823,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -25985,12 +26895,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 0), // #1
             new VoronoiSite(400, 200), // #2
             new VoronoiSite(200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -26017,7 +26929,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26088,12 +27001,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 400), // #1
             new VoronoiSite(800, 600), // #2
             new VoronoiSite(600, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------------------------------#B
         //      |                                              ,' |
@@ -26120,7 +27035,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26191,12 +27107,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(600, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C#------------------------------------------------Y
         //      | ',                                              |
@@ -26223,7 +27141,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26294,12 +27213,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -300), // #1
             new VoronoiSite(-100, -100), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C#------------------------------------------------Y
         //      | ',                                              |
@@ -26326,7 +27247,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26397,12 +27319,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C#------------------------------------------------Y
         //      | ',                                              |
@@ -26429,7 +27353,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26500,12 +27425,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(800, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C#------------------------------------------------Y
         //      | ',                                              |
@@ -26532,7 +27459,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26599,13 +27527,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(400, 600), // #2
             new VoronoiSite(600, 400), // #3
             new VoronoiSite(800, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X----------------------------#F------------------#E
         //      |                          ,'                  ,' |
@@ -26632,7 +27562,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26718,13 +27649,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(100, -100), // #3
             new VoronoiSite(300, -300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X----------------------------#F------------------#E
         //      |                          ,'                  ,' |
@@ -26751,7 +27684,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26837,13 +27771,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(400, 200), // #3
             new VoronoiSite(600, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X----------------------------#F------------------#E
         //      |                          ,'                  ,' |
@@ -26870,7 +27806,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -26956,13 +27893,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(600, 800), // #2
             new VoronoiSite(800, 600), // #3
             new VoronoiSite(1000, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X----------------------------#F------------------#E
         //      |                          ,'                  ,' |
@@ -26989,7 +27928,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27079,13 +28019,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(400, 400), // #3
             new VoronoiSite(200, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -27112,7 +28054,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27202,13 +28145,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(-100, -100), // #3
             new VoronoiSite(-300, -300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -27235,7 +28180,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27325,13 +28271,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(0, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -27358,7 +28306,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27448,13 +28397,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(800, 800), // #2
             new VoronoiSite(600, 600), // #3
             new VoronoiSite(400, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B#------------------A#----------------------------X
         //      | ',                  ',                          |
@@ -27481,7 +28432,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27567,12 +28519,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------------------------------#D
         //      |                                              ,' |
@@ -27599,7 +28553,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27673,12 +28628,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------------------------------#D
         //      |                                              ,' |
@@ -27705,7 +28662,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27779,12 +28737,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------------------------------#D
         //      |                                              ,' |
@@ -27811,7 +28771,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27885,12 +28846,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------------------------------#D
         //      |                                              ,' |
@@ -27917,7 +28880,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -27995,12 +28959,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------B-----------------------------X
         //      |                   |                             |
@@ -28027,7 +28993,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28105,12 +29072,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------B-----------------------------X
         //      |                   |                             |
@@ -28137,7 +29106,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28215,12 +29185,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------B-----------------------------X
         //      |                   |                             |
@@ -28247,7 +29219,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28325,12 +29298,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------B-----------------------------X
         //      |                   |                             |
@@ -28357,7 +29332,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28435,12 +29411,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-----------------------------C-------------------Y
         //      |                             |                   |
@@ -28467,7 +29445,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28545,12 +29524,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-----------------------------C-------------------Y
         //      |                             |                   |
@@ -28577,7 +29558,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28655,12 +29637,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-----------------------------C-------------------Y
         //      |                             |                   |
@@ -28687,7 +29671,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28765,12 +29750,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-----------------------------C-------------------Y
         //      |                             |                   |
@@ -28797,7 +29784,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28875,12 +29863,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 D#------------------------------------------------W
         //      | ',                                              |
@@ -28907,7 +29897,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -28985,12 +29976,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 D#------------------------------------------------W
         //      | ',                                              |
@@ -29017,7 +30010,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29095,12 +30089,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 D#------------------------------------------------W
         //      | ',                                              |
@@ -29127,7 +30123,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29205,12 +30202,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 D#------------------------------------------------W
         //      | ',                                              |
@@ -29237,7 +30236,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29311,12 +30311,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 800), // #1
             new VoronoiSite(100, 400), // #2
             new VoronoiSite(500, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -29343,7 +30345,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29421,12 +30424,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 300), // #1
             new VoronoiSite(-400, -100), // #2
             new VoronoiSite(0, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -29453,7 +30458,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29531,12 +30537,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 600), // #1
             new VoronoiSite(-100, 200), // #2
             new VoronoiSite(300, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -29563,7 +30571,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29641,12 +30650,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1000), // #1
             new VoronoiSite(300, 600), // #2
             new VoronoiSite(700, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X---------------------------------#D--------------Z
         //      |                               ,'                |
@@ -29673,7 +30684,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29755,12 +30767,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 900), // #1
             new VoronoiSite(400, 900), // #2
             new VoronoiSite(400, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-----------------------------B-------------------X
         //      |                             |                   |
@@ -29787,7 +30801,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29869,12 +30884,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 400), // #1
             new VoronoiSite(-100, 400), // #2
             new VoronoiSite(-100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-----------------------------B-------------------X
         //      |                             |                   |
@@ -29901,7 +30918,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -29983,12 +31001,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 700), // #1
             new VoronoiSite(200, 700), // #2
             new VoronoiSite(200, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-----------------------------B-------------------X
         //      |                             |                   |
@@ -30015,7 +31035,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30097,12 +31118,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1100), // #1
             new VoronoiSite(600, 1100), // #2
             new VoronoiSite(600, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-----------------------------B-------------------X
         //      |                             |                   |
@@ -30129,7 +31152,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30211,12 +31235,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 200), // #1
             new VoronoiSite(900, 600), // #2
             new VoronoiSite(500, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W----------------------------------C--------------Y
         //      |                                  |              |
@@ -30243,7 +31269,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30325,12 +31352,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, -300), // #1
             new VoronoiSite(400, 100), // #2
             new VoronoiSite(0, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W----------------------------------C--------------Y
         //      |                                  |              |
@@ -30357,7 +31386,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30439,12 +31469,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 0), // #1
             new VoronoiSite(700, 400), // #2
             new VoronoiSite(300, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W----------------------------------C--------------Y
         //      |                                  |              |
@@ -30471,7 +31503,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30553,12 +31586,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 400), // #1
             new VoronoiSite(1100, 800), // #2
             new VoronoiSite(700, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W----------------------------------C--------------Y
         //      |                                  |              |
@@ -30585,7 +31620,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30667,12 +31703,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 100), // #1
             new VoronoiSite(600, 100), // #2
             new VoronoiSite(600, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -30699,7 +31737,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30781,12 +31820,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -400), // #1
             new VoronoiSite(100, -400), // #2
             new VoronoiSite(100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -30813,7 +31854,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -30895,12 +31937,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -100), // #1
             new VoronoiSite(400, -100), // #2
             new VoronoiSite(400, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -30927,7 +31971,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31009,12 +32054,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 300), // #1
             new VoronoiSite(800, 300), // #2
             new VoronoiSite(800, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -31041,7 +32088,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31123,12 +32171,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 800), // #1
             new VoronoiSite(900, 400), // #2
             new VoronoiSite(500, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z--------------D#---------------------------------X
         //      |                ',                               |
@@ -31155,7 +32205,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31237,12 +32288,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 300), // #1
             new VoronoiSite(400, -100), // #2
             new VoronoiSite(0, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z--------------D#---------------------------------X
         //      |                ',                               |
@@ -31269,7 +32322,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31351,12 +32405,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 600), // #1
             new VoronoiSite(700, 200), // #2
             new VoronoiSite(300, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z--------------D#---------------------------------X
         //      |                ',                               |
@@ -31383,7 +32439,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31465,12 +32522,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 1000), // #1
             new VoronoiSite(1100, 600), // #2
             new VoronoiSite(700, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z--------------D#---------------------------------X
         //      |                ',                               |
@@ -31497,7 +32556,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31579,12 +32639,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 100), // #1
             new VoronoiSite(400, 100), // #2
             new VoronoiSite(400, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Z
         //      |                                                 |
@@ -31611,7 +32673,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31693,12 +32756,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -400), // #1
             new VoronoiSite(-100, -400), // #2
             new VoronoiSite(-100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Z
         //      |                                                 |
@@ -31725,7 +32790,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31807,12 +32873,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -100), // #1
             new VoronoiSite(200, -100), // #2
             new VoronoiSite(200, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Z
         //      |                                                 |
@@ -31839,7 +32907,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -31921,12 +32990,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 300), // #1
             new VoronoiSite(600, 300), // #2
             new VoronoiSite(600, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Z
         //      |                                                 |
@@ -31953,7 +33024,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32035,12 +33107,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 200), // #1
             new VoronoiSite(100, 600), // #2
             new VoronoiSite(500, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y--------------C----------------------------------W
         //      |              |                                  |
@@ -32067,7 +33141,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32149,12 +33224,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -300), // #1
             new VoronoiSite(-400, 100), // #2
             new VoronoiSite(0, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y--------------C----------------------------------W
         //      |              |                                  |
@@ -32181,7 +33258,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32263,12 +33341,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 0), // #1
             new VoronoiSite(-100, 400), // #2
             new VoronoiSite(300, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y--------------C----------------------------------W
         //      |              |                                  |
@@ -32295,7 +33375,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32377,12 +33458,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 400), // #1
             new VoronoiSite(300, 800), // #2
             new VoronoiSite(700, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y--------------C----------------------------------W
         //      |              |                                  |
@@ -32409,7 +33492,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32491,12 +33575,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 900), // #1
             new VoronoiSite(600, 900), // #2
             new VoronoiSite(600, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------B-----------------------------Y
         //      |                   |                             |
@@ -32523,7 +33609,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32605,12 +33692,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 400), // #1
             new VoronoiSite(100, 400), // #2
             new VoronoiSite(100, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------B-----------------------------Y
         //      |                   |                             |
@@ -32637,7 +33726,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32719,12 +33809,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 700), // #1
             new VoronoiSite(400, 700), // #2
             new VoronoiSite(400, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------B-----------------------------Y
         //      |                   |                             |
@@ -32751,7 +33843,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32833,12 +33926,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1100), // #1
             new VoronoiSite(800, 1100), // #2
             new VoronoiSite(800, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------B-----------------------------Y
         //      |                   |                             |
@@ -32865,7 +33960,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -32943,12 +34039,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------D------------------------Y
         //      |                        |                        |
@@ -32975,7 +34073,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33045,12 +34144,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------D------------------------Y
         //      |                        |                        |
@@ -33077,7 +34178,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33147,12 +34249,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------D------------------------Y
         //      |                        |                        |
@@ -33179,7 +34283,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33249,12 +34354,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------D------------------------Y
         //      |                        |                        |
@@ -33281,7 +34388,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33355,12 +34463,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B#------------------------------------------------X
         //      | ',                                              |
@@ -33387,7 +34497,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33461,12 +34572,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B#------------------------------------------------X
         //      | ',                                              |
@@ -33493,7 +34606,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33567,12 +34681,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B#------------------------------------------------X
         //      | ',                                              |
@@ -33599,7 +34715,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33673,12 +34790,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B#------------------------------------------------X
         //      | ',                                              |
@@ -33705,7 +34824,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33779,12 +34899,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C#-----------------------------------------------#B
         //      | ',                                           ,' |
@@ -33811,7 +34933,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33885,12 +35008,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C#-----------------------------------------------#B
         //      | ',                                           ,' |
@@ -33917,7 +35042,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -33991,12 +35117,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C#-----------------------------------------------#B
         //      | ',                                           ,' |
@@ -34023,7 +35151,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34097,12 +35226,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C#-----------------------------------------------#B
         //      | ',                                           ,' |
@@ -34129,7 +35260,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34203,12 +35335,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------------------------------#C
         //      |                                              ,' |
@@ -34235,7 +35369,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34309,12 +35444,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------------------------------#C
         //      |                                              ,' |
@@ -34341,7 +35478,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34415,12 +35553,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------------------------------#C
         //      |                                              ,' |
@@ -34447,7 +35587,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34521,12 +35662,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------------------------------#C
         //      |                                              ,' |
@@ -34553,7 +35696,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34623,12 +35767,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------D------------------------Z
         //      |                        |                        |
@@ -34655,7 +35801,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34733,12 +35880,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(-200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------D------------------------Z
         //      |                        |                        |
@@ -34765,7 +35914,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34843,12 +35993,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------D------------------------Z
         //      |                        |                        |
@@ -34875,7 +36027,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -34953,12 +36106,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------D------------------------Z
         //      |                        |                        |
@@ -34985,7 +36140,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35067,12 +36223,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(300, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------------------------------------X
         //      |                                                 |
@@ -35099,7 +36257,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35181,12 +36340,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(-200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------------------------------------X
         //      |                                                 |
@@ -35213,7 +36374,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35295,12 +36457,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------------------------------------X
         //      |                                                 |
@@ -35327,7 +36491,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35409,12 +36574,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(500, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------------------------------------X
         //      |                                                 |
@@ -35441,7 +36608,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35523,12 +36691,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W---------C#---------------------------#B---------Y
         //      |           ',                       ,'           |
@@ -35555,7 +36725,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35637,12 +36808,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W---------C#---------------------------#B---------Y
         //      |           ',                       ,'           |
@@ -35669,7 +36842,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35751,12 +36925,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W---------C#---------------------------#B---------Y
         //      |           ',                       ,'           |
@@ -35783,7 +36959,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35865,12 +37042,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W---------C#---------------------------#B---------Y
         //      |           ',                       ,'           |
@@ -35897,7 +37076,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -35979,12 +37159,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(700, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -36011,7 +37193,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36093,12 +37276,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -36125,7 +37310,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36207,12 +37393,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(500, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -36239,7 +37427,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36321,12 +37510,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(900, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -36353,7 +37544,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36431,12 +37623,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------D------------------------Z
         //      |                        |                        |
@@ -36463,7 +37657,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36541,12 +37736,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(-200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------D------------------------Z
         //      |                        |                        |
@@ -36573,7 +37770,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36651,12 +37849,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------D------------------------Z
         //      |                        |                        |
@@ -36683,7 +37883,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36761,12 +37962,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(500, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------D------------------------Z
         //      |                        |                        |
@@ -36793,7 +37996,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36875,12 +38079,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------B#--------------------------------------X
         //      |           ',                                    |
@@ -36907,7 +38113,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -36989,12 +38196,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y---------B#--------------------------------------X
         //      |           ',                                    |
@@ -37021,7 +38230,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37103,12 +38313,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y---------B#--------------------------------------X
         //      |           ',                                    |
@@ -37135,7 +38347,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37217,12 +38430,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------B#--------------------------------------X
         //      |           ',                                    |
@@ -37249,7 +38464,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37331,12 +38547,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(700, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Y
         //      |                                                 |
@@ -37363,7 +38581,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37445,12 +38664,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Y
         //      |                                                 |
@@ -37477,7 +38698,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37559,12 +38781,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(500, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Y
         //      |                                                 |
@@ -37591,7 +38815,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37673,12 +38898,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Y
         //      |                                                 |
@@ -37705,7 +38932,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37787,12 +39015,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z--------------------------------------#C---------W
         //      |                                    ,'           |
@@ -37819,7 +39049,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -37901,12 +39132,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z--------------------------------------#C---------W
         //      |                                    ,'           |
@@ -37933,7 +39166,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38015,12 +39249,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z--------------------------------------#C---------W
         //      |                                    ,'           |
@@ -38047,7 +39283,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38129,12 +39366,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z--------------------------------------#C---------W
         //      |                                    ,'           |
@@ -38161,7 +39400,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38239,12 +39479,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(800, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-----------------------------D-----------------------------Z
         //      |                            '                              |
@@ -38275,7 +39517,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38355,12 +39598,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-600, 400), // #1
             new VoronoiSite(-600, -400), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 X-----------------------------D-----------------------------Z
         //      |                            '                              |
@@ -38391,7 +39636,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38471,12 +39717,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(600, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-----------------------------D-----------------------------Z
         //      |                            '                              |
@@ -38507,7 +39755,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38587,12 +39836,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(1000, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 X-----------------------------D-----------------------------Z
         //      |                            '                              |
@@ -38623,7 +39874,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38707,12 +39959,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1200), // #1
             new VoronoiSite(200, 1200), // #2
             new VoronoiSite(600, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------2-------------------A-------------------1---------X
         //      |                             |                             |
@@ -38743,7 +39997,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38827,12 +40082,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 600), // #1
             new VoronoiSite(-400, 600), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Y---------2-------------------A-------------------1---------X
         //      |                             |                             |
@@ -38863,7 +40120,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -38947,12 +40205,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1000), // #1
             new VoronoiSite(0, 1000), // #2
             new VoronoiSite(400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------2-------------------A-------------------1---------X
         //      |                             |                             |
@@ -38983,7 +40243,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39067,12 +40328,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 1400), // #1
             new VoronoiSite(400, 1400), // #2
             new VoronoiSite(800, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Y---------2-------------------A-------------------1---------X
         //      |                             |                             |
@@ -39103,7 +40366,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39187,12 +40451,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 200), // #1
             new VoronoiSite(1200, 1000), // #2
             new VoronoiSite(400, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-----------------------------C-----------------------------Y
         //      |                              '                            |
@@ -39223,7 +40489,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39307,12 +40574,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -400), // #1
             new VoronoiSite(600, 400), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 W-----------------------------C-----------------------------Y
         //      |                              '                            |
@@ -39343,7 +40612,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39427,12 +40697,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 0), // #1
             new VoronoiSite(1000, 800), // #2
             new VoronoiSite(200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-----------------------------C-----------------------------Y
         //      |                              '                            |
@@ -39463,7 +40735,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39547,12 +40820,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1400, 400), // #1
             new VoronoiSite(1400, 1200), // #2
             new VoronoiSite(600, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 W-----------------------------C-----------------------------Y
         //      |                              '                            |
@@ -39583,7 +40858,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39667,12 +40943,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(1000, 0), // #2
             new VoronoiSite(600, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-----------------------------------------------------------W
         //      |                                                           |
@@ -39703,7 +40981,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39787,12 +41066,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -600), // #1
             new VoronoiSite(400, -600), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Z-----------------------------------------------------------W
         //      |                                                           |
@@ -39823,7 +41104,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -39907,12 +41189,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(800, -200), // #2
             new VoronoiSite(400, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-----------------------------------------------------------W
         //      |                                                           |
@@ -39943,7 +41227,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40027,12 +41312,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(1200, 200), // #2
             new VoronoiSite(800, 1000), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Z-----------------------------------------------------------W
         //      |                                                           |
@@ -40063,7 +41350,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40143,12 +41431,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 800), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-----------------------#C------------------------Z
         //      |                     ,'                          |
@@ -40175,7 +41465,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40248,12 +41539,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 300), // #1
             new VoronoiSite(-500, -300), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-----------------------#C------------------------Z
         //      |                     ,'                          |
@@ -40280,7 +41573,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40353,12 +41647,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 600), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-----------------------#C------------------------Z
         //      |                     ,'                          |
@@ -40385,7 +41681,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40458,12 +41755,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1000), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-----------------------#C------------------------Z
         //      |                     ,'                          |
@@ -40490,7 +41789,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40567,12 +41867,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1000), // #1
             new VoronoiSite(200, 1000), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------2-------------#A#-------------1---------X
         //      |                     ,'   ',                     |
@@ -40599,7 +41901,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40676,12 +41979,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(-300, 500), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y---------2-------------#A#-------------1---------X
         //      |                     ,'   ',                     |
@@ -40708,7 +42013,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40785,12 +42091,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 800), // #1
             new VoronoiSite(0, 800), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y---------2-------------#A#-------------1---------X
         //      |                     ,'   ',                     |
@@ -40817,7 +42125,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -40894,12 +42203,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1200), // #1
             new VoronoiSite(400, 1200), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------2-------------#A#-------------1---------X
         //      |                     ,'   ',                     |
@@ -40926,7 +42237,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41003,12 +42315,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 200), // #1
             new VoronoiSite(1000, 800), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W------------------------B#-----------------------Y
         //      |                          ',                     |
@@ -41035,7 +42349,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41112,12 +42427,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -300), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W------------------------B#-----------------------Y
         //      |                          ',                     |
@@ -41144,7 +42461,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41221,12 +42539,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 0), // #1
             new VoronoiSite(800, 600), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W------------------------B#-----------------------Y
         //      |                          ',                     |
@@ -41253,7 +42573,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41330,12 +42651,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 400), // #1
             new VoronoiSite(1200, 1000), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W------------------------B#-----------------------Y
         //      |                          ',                     |
@@ -41362,7 +42685,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41439,12 +42763,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(800, 0), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------------------------------------W
         //      |                                                 |
@@ -41471,7 +42797,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41548,12 +42875,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, -500), // #1
             new VoronoiSite(300, -500), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------------------------------------W
         //      |                                                 |
@@ -41580,7 +42909,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41657,12 +42987,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(600, -200), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------------------------------------W
         //      |                                                 |
@@ -41689,7 +43021,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41766,12 +43099,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(1000, 200), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------------------------------------W
         //      |                                                 |
@@ -41798,7 +43133,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -41871,14 +43207,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 E#-----------------------------------------------#H
         //      | ',                                           ,' |
@@ -41905,7 +43243,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42014,14 +43353,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(0, -200), // #3
             new VoronoiSite(200, 0), // #4
             new VoronoiSite(0, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 E#-----------------------------------------------#H
         //      | ',                                           ,' |
@@ -42048,7 +43389,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42157,14 +43499,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(500, 300), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 E#-----------------------------------------------#H
         //      | ',                                           ,' |
@@ -42191,7 +43535,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42300,14 +43645,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(700, 500), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(700, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 E#-----------------------------------------------#H
         //      | ',                                           ,' |
@@ -42334,7 +43681,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42443,14 +43791,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(700, 300), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Z
         //      |                                                 |
@@ -42477,7 +43827,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42602,14 +43953,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(0, -400), // #3
             new VoronoiSite(200, -200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Z
         //      |                                                 |
@@ -42636,7 +43989,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42761,14 +44115,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(300, -100), // #3
             new VoronoiSite(500, 100), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Z
         //      |                                                 |
@@ -42795,7 +44151,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -42920,14 +44277,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(900, 500), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Z
         //      |                                                 |
@@ -42954,7 +44313,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43083,14 +44443,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(100, 500), // #3
             new VoronoiSite(300, 300), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y--------------------------------------#E---------X
         //      |                                    ,'           |
@@ -43117,7 +44479,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43246,14 +44609,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-400, 0), // #3
             new VoronoiSite(-200, -200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y--------------------------------------#E---------X
         //      |                                    ,'           |
@@ -43280,7 +44645,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43409,14 +44775,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(-100, 300), // #3
             new VoronoiSite(100, 100), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y--------------------------------------#E---------X
         //      |                                    ,'           |
@@ -43443,7 +44811,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43572,14 +44941,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(500, 500), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y--------------------------------------#E---------X
         //      |                                    ,'           |
@@ -43606,7 +44977,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43735,14 +45107,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 900), // #3
             new VoronoiSite(300, 700), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W---------G#---------------------------#F---------Y
         //      |           ',                       ,'           |
@@ -43769,7 +45143,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -43898,14 +45273,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(0, 400), // #3
             new VoronoiSite(-200, 200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W---------G#---------------------------#F---------Y
         //      |           ',                       ,'           |
@@ -43932,7 +45309,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44061,14 +45439,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(100, 500), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W---------G#---------------------------#F---------Y
         //      |           ',                       ,'           |
@@ -44095,7 +45475,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44224,14 +45605,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(700, 1100), // #3
             new VoronoiSite(500, 900), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W---------G#---------------------------#F---------Y
         //      |           ',                       ,'           |
@@ -44258,7 +45641,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44387,14 +45771,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(700, 700), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z---------H#--------------------------------------W
         //      |           ',                                    |
@@ -44421,7 +45807,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44550,14 +45937,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(400, 0), // #3
             new VoronoiSite(200, 200), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z---------H#--------------------------------------W
         //      |           ',                                    |
@@ -44584,7 +45973,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44713,14 +46103,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(500, 500), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z---------H#--------------------------------------W
         //      |           ',                                    |
@@ -44747,7 +46139,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -44876,14 +46269,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(1100, 700), // #3
             new VoronoiSite(900, 900), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z---------H#--------------------------------------W
         //      |           ',                                    |
@@ -44910,7 +46305,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45035,13 +46431,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(700, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45068,7 +46466,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45161,13 +46560,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(200, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45194,7 +46595,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45287,13 +46689,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(500, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45320,7 +46724,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45413,13 +46818,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(900, 900), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45446,7 +46853,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45539,13 +46947,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(400, 200), // #2
             new VoronoiSite(600, 200), // #3
             new VoronoiSite(600, 800), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45572,7 +46982,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45665,13 +47076,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(-100, -300), // #2
             new VoronoiSite(100, -300), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45698,7 +47111,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45791,13 +47205,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(400, 0), // #3
             new VoronoiSite(400, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45824,7 +47240,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -45917,13 +47334,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 1000), // #1
             new VoronoiSite(600, 400), // #2
             new VoronoiSite(800, 400), // #3
             new VoronoiSite(800, 1000), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------B------------------------Z
         //      |                        |                        |
@@ -45950,7 +47369,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46047,13 +47467,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 600), // #1
             new VoronoiSite(200, 600), // #2
             new VoronoiSite(200, 400), // #3
             new VoronoiSite(800, 400), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------C------------------------X
         //      |                        |                        |
@@ -46080,7 +47502,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46177,13 +47600,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(-300, 100), // #2
             new VoronoiSite(-300, -100), // #3
             new VoronoiSite(300, -100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------C------------------------X
         //      |                        |                        |
@@ -46210,7 +47635,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46307,13 +47733,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 400), // #1
             new VoronoiSite(0, 400), // #2
             new VoronoiSite(0, 200), // #3
             new VoronoiSite(600, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------C------------------------X
         //      |                        |                        |
@@ -46340,7 +47768,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46437,13 +47866,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 800), // #1
             new VoronoiSite(400, 800), // #2
             new VoronoiSite(400, 600), // #3
             new VoronoiSite(1000, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------C------------------------X
         //      |                        |                        |
@@ -46470,7 +47901,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46563,13 +47995,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B#-----------------------------------------------#E
         //      | ',                                           ,' |
@@ -46596,7 +48030,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46673,13 +48108,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(0, -200), // #3
             new VoronoiSite(-200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B#-----------------------------------------------#E
         //      | ',                                           ,' |
@@ -46706,7 +48143,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46783,13 +48221,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B#-----------------------------------------------#E
         //      | ',                                           ,' |
@@ -46816,7 +48256,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -46893,13 +48334,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(700, 500), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B#-----------------------------------------------#E
         //      | ',                                           ,' |
@@ -46926,7 +48369,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47003,13 +48447,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X----B--------------------------------------------Z
         //      |     '                                           |
@@ -47036,7 +48482,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47129,13 +48576,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, -400), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(0, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X----B--------------------------------------------Z
         //      |     '                                           |
@@ -47162,7 +48611,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47255,13 +48705,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X----B--------------------------------------------Z
         //      |     '                                           |
@@ -47288,7 +48740,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47381,13 +48834,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(700, 900), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X----B--------------------------------------------Z
         //      |     '                                           |
@@ -47414,7 +48869,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47511,13 +48967,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(100, 700), // #2
             new VoronoiSite(300, 300), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------C---------------------------------------X
         //      |          '                                      |
@@ -47544,7 +49002,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47641,13 +49100,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-400, 200), // #2
             new VoronoiSite(-200, -200), // #3
             new VoronoiSite(200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y---------C---------------------------------------X
         //      |          '                                      |
@@ -47674,7 +49135,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47771,13 +49233,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(-100, 500), // #2
             new VoronoiSite(100, 100), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y---------C---------------------------------------X
         //      |          '                                      |
@@ -47804,7 +49268,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -47901,13 +49366,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(300, 900), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(900, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------C---------------------------------------X
         //      |          '                                      |
@@ -47934,7 +49401,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48031,13 +49499,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------D-----------------------------Y
         //      |                    '                            |
@@ -48064,7 +49534,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48161,13 +49632,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(-200, 200), // #3
             new VoronoiSite(0, -200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------D-----------------------------Y
         //      |                    '                            |
@@ -48194,7 +49667,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48291,13 +49765,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 500), // #3
             new VoronoiSite(300, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------D-----------------------------Y
         //      |                    '                            |
@@ -48324,7 +49800,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48421,13 +49898,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(500, 900), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------D-----------------------------Y
         //      |                    '                            |
@@ -48454,7 +49933,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48551,13 +50031,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(700, 700), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z--------------E----------------------------------W
         //      |               '                                 |
@@ -48584,7 +50066,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48681,13 +50164,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(400, -200), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(-200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z--------------E----------------------------------W
         //      |               '                                 |
@@ -48714,7 +50199,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48811,13 +50297,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z--------------E----------------------------------W
         //      |               '                                 |
@@ -48844,7 +50332,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -48941,13 +50430,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(1100, 500), // #2
             new VoronoiSite(900, 900), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z--------------E----------------------------------W
         //      |               '                                 |
@@ -48974,7 +50465,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49071,13 +50563,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(300, 300), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z--------------------------------------------B----X
         //      |                                           '     |
@@ -49104,7 +50598,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49201,13 +50696,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, -400), // #2
             new VoronoiSite(-200, -200), // #3
             new VoronoiSite(0, 200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z--------------------------------------------B----X
         //      |                                           '     |
@@ -49234,7 +50731,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49331,13 +50829,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, -100), // #2
             new VoronoiSite(100, 100), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z--------------------------------------------B----X
         //      |                                           '     |
@@ -49364,7 +50864,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49461,13 +50962,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(700, 900), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z--------------------------------------------B----X
         //      |                                           '     |
@@ -49494,7 +50997,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49591,13 +51095,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(300, 700), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W----------------------------------E--------------Z
         //      |                                 '               |
@@ -49624,7 +51130,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49721,13 +51228,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(-400, -200), // #2
             new VoronoiSite(-200, 200), // #3
             new VoronoiSite(200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W----------------------------------E--------------Z
         //      |                                 '               |
@@ -49754,7 +51263,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49851,13 +51361,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(100, 500), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W----------------------------------E--------------Z
         //      |                                 '               |
@@ -49884,7 +51396,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -49981,13 +51494,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(500, 900), // #3
             new VoronoiSite(900, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W----------------------------------E--------------Z
         //      |                                 '               |
@@ -50014,7 +51529,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -50111,13 +51627,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 900), // #2
             new VoronoiSite(700, 700), // #3
             new VoronoiSite(500, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-----------------------------D-------------------W
         //      |                            '                    |
@@ -50144,7 +51662,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -50241,13 +51760,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, 400), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(0, -200), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-----------------------------D-------------------W
         //      |                            '                    |
@@ -50274,7 +51795,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -50371,13 +51893,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, 700), // #2
             new VoronoiSite(500, 500), // #3
             new VoronoiSite(300, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-----------------------------D-------------------W
         //      |                            '                    |
@@ -50404,7 +51928,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -50501,13 +52026,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 1100), // #2
             new VoronoiSite(900, 900), // #3
             new VoronoiSite(700, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-----------------------------D-------------------W
         //      |                            '                    |
@@ -50534,7 +52061,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -50631,13 +52159,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(700, 300), // #3
             new VoronoiSite(300, 500), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X---------------------------------------C---------Y
         //      |                                      '          |
@@ -50664,7 +52194,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -50761,13 +52292,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(400, 200), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(-200, 0), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X---------------------------------------C---------Y
         //      |                                      '          |
@@ -50794,7 +52327,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -50891,13 +52425,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(500, 100), // #3
             new VoronoiSite(100, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X---------------------------------------C---------Y
         //      |                                      '          |
@@ -50924,7 +52460,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -51021,13 +52558,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(1100, 900), // #2
             new VoronoiSite(900, 500), // #3
             new VoronoiSite(500, 700), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X---------------------------------------C---------Y
         //      |                                      '          |
@@ -51054,7 +52593,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -51147,14 +52687,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(700, 100), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W---------C#---------------------------#D---------Z
         //      |           ',                       ,'           |
@@ -51181,7 +52723,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -51296,14 +52839,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, -400), // #3
             new VoronoiSite(200, -400), // #4
             new VoronoiSite(200, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W---------C#---------------------------#D---------Z
         //      |           ',                       ,'           |
@@ -51330,7 +52875,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -51445,14 +52991,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(100, -100), // #3
             new VoronoiSite(500, -100), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W---------C#---------------------------#D---------Z
         //      |           ',                       ,'           |
@@ -51479,7 +53027,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -51594,14 +53143,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 1100), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(900, 300), // #4
             new VoronoiSite(900, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W---------C#---------------------------#D---------Z
         //      |           ',                       ,'           |
@@ -51628,7 +53179,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -51747,14 +53299,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(100, 700), // #3
             new VoronoiSite(100, 300), // #4
             new VoronoiSite(700, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------E-----------------------------W
         //      |                   |                             |
@@ -51781,7 +53335,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -51900,14 +53455,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(-400, 200), // #3
             new VoronoiSite(-400, -200), // #4
             new VoronoiSite(200, -200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------E-----------------------------W
         //      |                   |                             |
@@ -51934,7 +53491,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -52053,14 +53611,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(-100, 500), // #3
             new VoronoiSite(-100, 100), // #4
             new VoronoiSite(500, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------E-----------------------------W
         //      |                   |                             |
@@ -52087,7 +53647,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -52206,14 +53767,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 700), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(300, 900), // #3
             new VoronoiSite(300, 500), // #4
             new VoronoiSite(900, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------E-----------------------------W
         //      |                   |                             |
@@ -52240,7 +53803,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -52359,14 +53923,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(300, 900), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------G------------------------X
         //      |                        |                        |
@@ -52393,7 +53959,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -52512,14 +54079,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 400), // #3
             new VoronoiSite(-200, 400), // #4
             new VoronoiSite(-200, -200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------G------------------------X
         //      |                        |                        |
@@ -52546,7 +54115,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -52665,14 +54235,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, -100), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(100, 700), // #4
             new VoronoiSite(100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------G------------------------X
         //      |                        |                        |
@@ -52699,7 +54271,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -52818,14 +54391,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(900, 1100), // #3
             new VoronoiSite(500, 1100), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------G------------------------X
         //      |                        |                        |
@@ -52852,7 +54427,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -52971,14 +54547,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(900, 300), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(300, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-----------------------------F-------------------Y
         //      |                             |                   |
@@ -53005,7 +54583,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -53124,14 +54703,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(400, -200), // #3
             new VoronoiSite(400, 200), // #4
             new VoronoiSite(-200, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-----------------------------F-------------------Y
         //      |                             |                   |
@@ -53158,7 +54739,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -53277,14 +54859,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 300), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(700, 100), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(100, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-----------------------------F-------------------Y
         //      |                             |                   |
@@ -53311,7 +54895,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -53430,14 +55015,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(1100, 500), // #3
             new VoronoiSite(1100, 900), // #4
             new VoronoiSite(500, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-----------------------------F-------------------Y
         //      |                             |                   |
@@ -53464,7 +55051,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -53579,14 +55167,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(300, 100), // #3
             new VoronoiSite(700, 100), // #4
             new VoronoiSite(700, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C#-----------------------------------------------#D
         //      | ',                                           ,' |
@@ -53613,7 +55203,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -53720,14 +55311,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(-200, -400), // #3
             new VoronoiSite(200, -400), // #4
             new VoronoiSite(200, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C#-----------------------------------------------#D
         //      | ',                                           ,' |
@@ -53754,7 +55347,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -53861,14 +55455,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(100, -100), // #3
             new VoronoiSite(500, -100), // #4
             new VoronoiSite(500, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C#-----------------------------------------------#D
         //      | ',                                           ,' |
@@ -53895,7 +55491,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -54002,14 +55599,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(500, 300), // #3
             new VoronoiSite(900, 300), // #4
             new VoronoiSite(900, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C#-----------------------------------------------#D
         //      | ',                                           ,' |
@@ -54036,7 +55635,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -54147,14 +55747,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 700), // #3
             new VoronoiSite(100, 300), // #4
             new VoronoiSite(500, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X--------------E---------------------------------#C
         //      |              |                               ,' |
@@ -54181,7 +55783,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -54292,14 +55895,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 0), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(-400, 200), // #3
             new VoronoiSite(-400, -200), // #4
             new VoronoiSite(0, -200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X--------------E---------------------------------#C
         //      |              |                               ,' |
@@ -54326,7 +55931,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -54437,14 +56043,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(-100, 500), // #3
             new VoronoiSite(-100, 100), // #4
             new VoronoiSite(300, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X--------------E---------------------------------#C
         //      |              |                               ,' |
@@ -54471,7 +56079,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -54582,14 +56191,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 900), // #3
             new VoronoiSite(300, 500), // #4
             new VoronoiSite(700, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X--------------E---------------------------------#C
         //      |              |                               ,' |
@@ -54616,7 +56227,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -54727,14 +56339,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(300, 900), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------G------------------------X
         //      |                        |                        |
@@ -54761,7 +56375,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -54872,14 +56487,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(200, 400), // #3
             new VoronoiSite(-200, 400), // #4
             new VoronoiSite(-200, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------G------------------------X
         //      |                        |                        |
@@ -54906,7 +56523,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -55017,14 +56635,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(100, 700), // #4
             new VoronoiSite(100, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------G------------------------X
         //      |                        |                        |
@@ -55051,7 +56671,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -55162,14 +56783,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(900, 1100), // #3
             new VoronoiSite(500, 1100), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------G------------------------X
         //      |                        |                        |
@@ -55196,7 +56819,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -55307,14 +56931,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(900, 300), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 D#---------------------------------F--------------Y
         //      | ',                               |              |
@@ -55341,7 +56967,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -55452,14 +57079,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 0), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(400, -200), // #3
             new VoronoiSite(400, 200), // #4
             new VoronoiSite(0, 200), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 D#---------------------------------F--------------Y
         //      | ',                               |              |
@@ -55486,7 +57115,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -55597,14 +57227,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(700, 100), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 D#---------------------------------F--------------Y
         //      | ',                               |              |
@@ -55631,7 +57263,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -55742,14 +57375,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(1100, 500), // #3
             new VoronoiSite(1100, 900), // #4
             new VoronoiSite(700, 900), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 D#---------------------------------F--------------Y
         //      | ',                               |              |
@@ -55776,7 +57411,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -55883,15 +57519,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 500), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(300, 100), // #5
             new VoronoiSite(700, 100), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W------------------------H------------------------Z
         //      |                        |                        |
@@ -55918,7 +57556,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -56048,15 +57687,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 400), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(-200, 0), // #3
             new VoronoiSite(200, 0), // #4
             new VoronoiSite(-200, -400), // #5
             new VoronoiSite(200, -400), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W------------------------H------------------------Z
         //      |                        |                        |
@@ -56083,7 +57724,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -56213,15 +57855,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 300), // #3
             new VoronoiSite(500, 300), // #4
             new VoronoiSite(100, -100), // #5
             new VoronoiSite(500, -100), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W------------------------H------------------------Z
         //      |                        |                        |
@@ -56248,7 +57892,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -56378,15 +58023,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1100), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(900, 700), // #4
             new VoronoiSite(500, 300), // #5
             new VoronoiSite(900, 300), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W------------------------H------------------------Z
         //      |                        |                        |
@@ -56413,7 +58060,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -56547,15 +58195,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(500, 300), // #4
             new VoronoiSite(100, 700), // #5
             new VoronoiSite(100, 300), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X--------------D-------------------C--------------W
         //      |              |                   |              |
@@ -56582,7 +58232,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -56716,15 +58367,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(400, -200), // #2
             new VoronoiSite(0, 200), // #3
             new VoronoiSite(0, -200), // #4
             new VoronoiSite(-400, 200), // #5
             new VoronoiSite(-400, -200), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X--------------D-------------------C--------------W
         //      |              |                   |              |
@@ -56751,7 +58404,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -56885,15 +58539,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(300, 500), // #3
             new VoronoiSite(300, 100), // #4
             new VoronoiSite(-100, 500), // #5
             new VoronoiSite(-100, 100), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X--------------D-------------------C--------------W
         //      |              |                   |              |
@@ -56920,7 +58576,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -57054,15 +58711,17 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 900), // #1
             new VoronoiSite(1100, 500), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(700, 500), // #4
             new VoronoiSite(300, 900), // #5
             new VoronoiSite(300, 500), // #6
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X--------------D-------------------C--------------W
         //      |              |                   |              |
@@ -57089,7 +58748,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -57219,14 +58879,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 800), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(800, 200), // #3
             new VoronoiSite(800, 800), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------A------------------------Z
         //      |                        |                        |
@@ -57253,7 +58915,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -57378,14 +59041,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-300, 300), // #1
             new VoronoiSite(-300, -300), // #2
             new VoronoiSite(300, -300), // #3
             new VoronoiSite(300, 300), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------A------------------------Z
         //      |                        |                        |
@@ -57412,7 +59077,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -57537,14 +59203,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 600), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(600, 0), // #3
             new VoronoiSite(600, 600), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------A------------------------Z
         //      |                        |                        |
@@ -57571,7 +59239,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -57696,14 +59365,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 1000), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(1000, 400), // #3
             new VoronoiSite(1000, 1000), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------A------------------------Z
         //      |                        |                        |
@@ -57730,7 +59401,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -57855,14 +59527,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 1000), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(1000, 0), // #3
             new VoronoiSite(1000, 1000), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 1-----------------------#A#-----------------------4
         //      |                     ,'   ',                     |
@@ -57889,7 +59563,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -57990,14 +59665,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(-500, -500), // #2
             new VoronoiSite(500, -500), // #3
             new VoronoiSite(500, 500), // #4
             new VoronoiSite(0, 0), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 1-----------------------#A#-----------------------4
         //      |                     ,'   ',                     |
@@ -58024,7 +59701,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -58125,14 +59803,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 800), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(800, -200), // #3
             new VoronoiSite(800, 800), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 1-----------------------#A#-----------------------4
         //      |                     ,'   ',                     |
@@ -58159,7 +59839,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -58260,14 +59941,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 1200), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(1200, 200), // #3
             new VoronoiSite(1200, 1200), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 1-----------------------#A#-----------------------4
         //      |                     ,'   ',                     |
@@ -58294,7 +59977,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -58395,14 +60079,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(600, 200), // #3
             new VoronoiSite(600, 600), // #4
             new VoronoiSite(500, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------A-------------------Z
         //      |                   |                   |
@@ -58425,7 +60111,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -58550,14 +60237,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(200, -200), // #3
             new VoronoiSite(200, 200), // #4
             new VoronoiSite(100, -100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 X-------------------A-------------------Z
         //      |                   |                   |
@@ -58580,7 +60269,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -58705,14 +60395,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(400, 0), // #3
             new VoronoiSite(400, 400), // #4
             new VoronoiSite(300, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 X-------------------A-------------------Z
         //      |                   |                   |
@@ -58735,7 +60427,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -58860,14 +60553,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(800, 400), // #3
             new VoronoiSite(800, 800), // #4
             new VoronoiSite(700, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------A-------------------Z
         //      |                   |                   |
@@ -58890,7 +60585,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -59019,14 +60715,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(200, 600), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(600, 200), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------B-------------------X
         //      |                   |                   |
@@ -59049,7 +60747,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -59178,14 +60877,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(-200, -200), // #3
             new VoronoiSite(200, -200), // #4
             new VoronoiSite(-100, -100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 Y-------------------B-------------------X
         //      |                   |                   |
@@ -59208,7 +60909,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -59337,14 +61039,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(0, 400), // #2
             new VoronoiSite(0, 0), // #3
             new VoronoiSite(400, 0), // #4
             new VoronoiSite(100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Y-------------------B-------------------X
         //      |                   |                   |
@@ -59367,7 +61071,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -59496,14 +61201,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(400, 800), // #2
             new VoronoiSite(400, 400), // #3
             new VoronoiSite(800, 400), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------B-------------------X
         //      |                   |                   |
@@ -59526,7 +61233,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -59655,14 +61363,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 200), // #1
             new VoronoiSite(600, 600), // #2
             new VoronoiSite(200, 600), // #3
             new VoronoiSite(200, 200), // #4
             new VoronoiSite(300, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------C-------------------Y
         //      |                   |                   |
@@ -59685,7 +61395,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -59814,14 +61525,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -200), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(-200, 200), // #3
             new VoronoiSite(-200, -200), // #4
             new VoronoiSite(-100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 W-------------------C-------------------Y
         //      |                   |                   |
@@ -59844,7 +61557,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -59973,14 +61687,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(0, 400), // #3
             new VoronoiSite(0, 0), // #4
             new VoronoiSite(100, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 W-------------------C-------------------Y
         //      |                   |                   |
@@ -60003,7 +61719,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -60132,14 +61849,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(800, 800), // #2
             new VoronoiSite(400, 800), // #3
             new VoronoiSite(400, 400), // #4
             new VoronoiSite(500, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------C-------------------Y
         //      |                   |                   |
@@ -60162,7 +61881,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -60291,14 +62011,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(600, 200), // #2
             new VoronoiSite(600, 600), // #3
             new VoronoiSite(200, 600), // #4
             new VoronoiSite(500, 500), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------D-------------------W
         //      |                   |                   |
@@ -60321,7 +62043,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -60450,14 +62173,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-400, -400, 400, 400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(200, 200), // #3
             new VoronoiSite(-200, 200), // #4
             new VoronoiSite(100, 100), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  400 Z-------------------D-------------------W
         //      |                   |                   |
@@ -60480,7 +62205,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -400, -400, 400, 400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -60609,14 +62335,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 0), // #1
             new VoronoiSite(400, 0), // #2
             new VoronoiSite(400, 400), // #3
             new VoronoiSite(0, 400), // #4
             new VoronoiSite(300, 300), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Z-------------------D-------------------W
         //      |                   |                   |
@@ -60639,7 +62367,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -60768,14 +62497,16 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(800, 400), // #2
             new VoronoiSite(800, 800), // #3
             new VoronoiSite(400, 800), // #4
             new VoronoiSite(700, 700), // #5
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------D-------------------W
         //      |                   |                   |
@@ -60798,7 +62529,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -60923,12 +62655,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-----------------------------------------------##B
         //      |                                          ,,·''  |
@@ -60955,7 +62689,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61018,12 +62753,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 400), // #1
             new VoronoiSite(-200, -400), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-----------------------------------------------##B
         //      |                                          ,,·''  |
@@ -61050,7 +62787,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61113,12 +62851,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-----------------------------------------------##B
         //      |                                          ,,·''  |
@@ -61145,7 +62885,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61208,12 +62949,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-----------------------------------------------##B
         //      |                                          ,,·''  |
@@ -61240,7 +62983,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61307,12 +63051,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(100, 700), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------A------------------------X
         //      |                       ' '                       |
@@ -61339,7 +63085,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61406,12 +63153,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(-400, 200), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y------------------------A------------------------X
         //      |                       ' '                       |
@@ -61438,7 +63187,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61505,12 +63255,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(-100, 500), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y------------------------A------------------------X
         //      |                       ' '                       |
@@ -61537,7 +63289,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61604,12 +63357,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 900), // #1
             new VoronoiSite(300, 900), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------A------------------------X
         //      |                       ' '                       |
@@ -61636,7 +63391,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61703,12 +63459,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 100), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 C##-----------------------------------------------Y
         //      |  ''·,,                                          |
@@ -61735,7 +63493,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61802,12 +63561,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -400), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 C##-----------------------------------------------Y
         //      |  ''·,,                                          |
@@ -61834,7 +63595,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -61901,12 +63663,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -100), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 C##-----------------------------------------------Y
         //      |  ''·,,                                          |
@@ -61933,7 +63697,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62000,12 +63765,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 300), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 C##-----------------------------------------------Y
         //      |  ''·,,                                          |
@@ -62032,7 +63799,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62099,12 +63867,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(900, 300), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 B-------------------------------------------------C
         //      |'                                               '|
@@ -62131,7 +63901,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62198,12 +63969,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -200), // #1
             new VoronoiSite(400, -200), // #2
             new VoronoiSite(0, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 B-------------------------------------------------C
         //      |'                                               '|
@@ -62230,7 +64003,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62297,12 +64071,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 100), // #1
             new VoronoiSite(700, 100), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 B-------------------------------------------------C
         //      |'                                               '|
@@ -62329,7 +64105,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62396,12 +64173,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(1100, 500), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 B-------------------------------------------------C
         //      |'                                               '|
@@ -62428,7 +64207,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62491,12 +64271,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 900), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------##B---------W
         //      |                                ,,·''            |
@@ -62523,7 +64305,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62598,12 +64381,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 400), // #1
             new VoronoiSite(-400, -400), // #2
             new VoronoiSite(-200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------##B---------W
         //      |                                ,,·''            |
@@ -62630,7 +64415,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62705,12 +64491,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 700), // #1
             new VoronoiSite(-100, -100), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------##B---------W
         //      |                                ,,·''            |
@@ -62737,7 +64525,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62812,12 +64601,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------##B---------W
         //      |                                ,,·''            |
@@ -62844,7 +64635,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -62923,12 +64715,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(100, 900), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------D---------A-------------------X
         //      |                  '           '                  |
@@ -62955,7 +64749,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63034,12 +64829,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 400), // #1
             new VoronoiSite(-400, 400), // #2
             new VoronoiSite(0, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------D---------A-------------------X
         //      |                  '           '                  |
@@ -63066,7 +64863,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63145,12 +64943,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(-100, 700), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------D---------A-------------------X
         //      |                  '           '                  |
@@ -63177,7 +64977,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63256,12 +65057,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 1100), // #1
             new VoronoiSite(300, 1100), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------D---------A-------------------X
         //      |                  '           '                  |
@@ -63288,7 +65091,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63367,12 +65171,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 100), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z---------C##-------------------------------------Y
         //      |            ''·,,                                |
@@ -63399,7 +65205,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63478,12 +65285,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, -400), // #1
             new VoronoiSite(400, 400), // #2
             new VoronoiSite(200, 0), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z---------C##-------------------------------------Y
         //      |            ''·,,                                |
@@ -63510,7 +65319,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63589,12 +65399,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, -100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z---------C##-------------------------------------Y
         //      |            ''·,,                                |
@@ -63621,7 +65433,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63700,12 +65513,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 300), // #1
             new VoronoiSite(1100, 1100), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z---------C##-------------------------------------Y
         //      |            ''·,,                                |
@@ -63732,7 +65547,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63811,12 +65627,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(900, 100), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------------Z
         //      |                                                 |
@@ -63843,7 +65661,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -63922,12 +65741,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -400), // #1
             new VoronoiSite(400, -400), // #2
             new VoronoiSite(0, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------------------Z
         //      |                                                 |
@@ -63954,7 +65775,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64033,12 +65855,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, -100), // #1
             new VoronoiSite(700, -100), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------------------Z
         //      |                                                 |
@@ -64065,7 +65889,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64144,12 +65969,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(1100, 300), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------------Z
         //      |                                                 |
@@ -64176,7 +66003,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64251,12 +66079,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 600), // #1
             new VoronoiSite(400, 900), // #2
             new VoronoiSite(400, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -64287,7 +66117,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64358,12 +66189,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 0), // #1
             new VoronoiSite(-200, 300), // #2
             new VoronoiSite(-200, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -64394,7 +66227,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64465,12 +66299,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 400), // #1
             new VoronoiSite(200, 700), // #2
             new VoronoiSite(200, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -64501,7 +66337,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64572,12 +66409,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 800), // #1
             new VoronoiSite(600, 1100), // #2
             new VoronoiSite(600, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -64608,7 +66447,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64683,12 +66523,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 700), // #1
             new VoronoiSite(900, 800), // #2
             new VoronoiSite(300, 800), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-----------------------------A-----------------------------X
         //      |                            · ·                            |
@@ -64719,7 +66561,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64794,12 +66637,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 100), // #1
             new VoronoiSite(300, 200), // #2
             new VoronoiSite(-300, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Y-----------------------------A-----------------------------X
         //      |                            · ·                            |
@@ -64830,7 +66675,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -64905,12 +66751,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 500), // #1
             new VoronoiSite(700, 600), // #2
             new VoronoiSite(100, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-----------------------------A-----------------------------X
         //      |                            · ·                            |
@@ -64941,7 +66789,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65016,12 +66865,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 900), // #1
             new VoronoiSite(1100, 1000), // #2
             new VoronoiSite(500, 1000), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Y-----------------------------A-----------------------------X
         //      |                            · ·                            |
@@ -65052,7 +66903,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65127,12 +66979,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 600), // #1
             new VoronoiSite(800, 300), // #2
             new VoronoiSite(800, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -65163,7 +67017,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65238,12 +67093,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 0), // #1
             new VoronoiSite(200, -300), // #2
             new VoronoiSite(200, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -65274,7 +67131,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65349,12 +67207,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 400), // #1
             new VoronoiSite(600, 100), // #2
             new VoronoiSite(600, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -65385,7 +67245,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65460,12 +67321,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 800), // #1
             new VoronoiSite(1000, 500), // #2
             new VoronoiSite(1000, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -65496,7 +67359,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65571,12 +67435,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 500), // #1
             new VoronoiSite(300, 400), // #2
             new VoronoiSite(900, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z---------C---------------------------------------B---------W
         //      |          ·                                     ·          |
@@ -65607,7 +67473,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65682,12 +67549,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -100), // #1
             new VoronoiSite(-300, -200), // #2
             new VoronoiSite(300, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Z---------C---------------------------------------B---------W
         //      |          ·                                     ·          |
@@ -65718,7 +67587,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65793,12 +67663,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 300), // #1
             new VoronoiSite(100, 200), // #2
             new VoronoiSite(700, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z---------C---------------------------------------B---------W
         //      |          ·                                     ·          |
@@ -65829,7 +67701,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -65904,12 +67777,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 700), // #1
             new VoronoiSite(500, 600), // #2
             new VoronoiSite(1100, 600), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Z---------C---------------------------------------B---------W
         //      |          ·                                     ·          |
@@ -65940,7 +67815,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66011,12 +67887,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 600), // #1
             new VoronoiSite(100, 900), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -66047,7 +67925,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66122,12 +68001,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 0), // #1
             new VoronoiSite(-500, 300), // #2
             new VoronoiSite(-500, -300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -66158,7 +68039,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66233,12 +68115,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(-100, 700), // #2
             new VoronoiSite(-100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -66269,7 +68153,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66344,12 +68229,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(300, 1100), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 X-----------------------------------------------------------Z
         //      |                                                           |
@@ -66380,7 +68267,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66459,12 +68347,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 1000), // #1
             new VoronoiSite(900, 1100), // #2
             new VoronoiSite(300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y------------------------D---------A------------------------X
         //      |                       ·           ·                       |
@@ -66495,7 +68385,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66574,12 +68465,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, 400), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(-300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Y------------------------D---------A------------------------X
         //      |                       ·           ·                       |
@@ -66610,7 +68503,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66689,12 +68583,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 800), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y------------------------D---------A------------------------X
         //      |                       ·           ·                       |
@@ -66725,7 +68621,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66804,12 +68701,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 1200), // #1
             new VoronoiSite(1100, 1300), // #2
             new VoronoiSite(500, 1300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Y------------------------D---------A------------------------X
         //      |                       ·           ·                       |
@@ -66840,7 +68739,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -66919,12 +68819,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 600), // #1
             new VoronoiSite(1100, 300), // #2
             new VoronoiSite(1100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -66955,7 +68857,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67034,12 +68937,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(500, -300), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -67070,7 +68975,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67149,12 +69055,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(900, 100), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -67185,7 +69093,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67264,12 +69173,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1200, 800), // #1
             new VoronoiSite(1300, 500), // #2
             new VoronoiSite(1300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 W-----------------------------------------------------------Y
         //      |                                                           |
@@ -67300,7 +69211,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67379,12 +69291,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 200), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(900, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z----B-------------------------------------------------C----W
         //      |     ·                                               ·     |
@@ -67415,7 +69329,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67494,12 +69409,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(0, -400), // #1
             new VoronoiSite(-300, -500), // #2
             new VoronoiSite(300, -500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Z----B-------------------------------------------------C----W
         //      |     ·                                               ·     |
@@ -67530,7 +69447,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67609,12 +69527,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 0), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(700, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z----B-------------------------------------------------C----W
         //      |     ·                                               ·     |
@@ -67645,7 +69565,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67724,12 +69645,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 400), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(1100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Z----B-------------------------------------------------C----W
         //      |     ·                                               ·     |
@@ -67760,7 +69683,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67835,12 +69759,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(900, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-----------------------------B-------------------Z
         //      |                            '                    |
@@ -67867,7 +69793,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -67941,12 +69868,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 400), // #1
             new VoronoiSite(200, 200), // #2
             new VoronoiSite(400, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-----------------------------B-------------------Z
         //      |                            '                    |
@@ -67973,7 +69902,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68047,12 +69977,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-----------------------------B-------------------Z
         //      |                            '                    |
@@ -68079,7 +70011,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68153,12 +70086,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 1100), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(1100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-----------------------------B-------------------Z
         //      |                            '                    |
@@ -68185,7 +70120,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68263,12 +70199,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 700), // #1
             new VoronoiSite(700, 300), // #2
             new VoronoiSite(300, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 D#------------------------------------------------X
         //      | ',                                              |
@@ -68295,7 +70233,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68373,12 +70312,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, 200), // #1
             new VoronoiSite(200, -200), // #2
             new VoronoiSite(-200, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 D#------------------------------------------------X
         //      | ',                                              |
@@ -68405,7 +70346,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68483,12 +70425,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 500), // #1
             new VoronoiSite(500, 100), // #2
             new VoronoiSite(100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 D#------------------------------------------------X
         //      | ',                                              |
@@ -68515,7 +70459,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68593,12 +70538,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 900), // #1
             new VoronoiSite(900, 500), // #2
             new VoronoiSite(500, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 D#------------------------------------------------X
         //      | ',                                              |
@@ -68625,7 +70572,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68703,12 +70651,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W------------------------------------------------#D
         //      |                                              ,' |
@@ -68735,7 +70685,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68813,12 +70764,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -400), // #1
             new VoronoiSite(-200, -200), // #2
             new VoronoiSite(-400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W------------------------------------------------#D
         //      |                                              ,' |
@@ -68845,7 +70798,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -68923,12 +70877,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -100), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(-100, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W------------------------------------------------#D
         //      |                                              ,' |
@@ -68955,7 +70911,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69033,12 +70990,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W------------------------------------------------#D
         //      |                                              ,' |
@@ -69065,7 +71024,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69143,12 +71103,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 300), // #1
             new VoronoiSite(300, 700), // #2
             new VoronoiSite(700, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-------------------C-----------------------------W
         //      |                    '                            |
@@ -69175,7 +71137,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69253,12 +71216,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, -200), // #1
             new VoronoiSite(-200, 200), // #2
             new VoronoiSite(200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-------------------C-----------------------------W
         //      |                    '                            |
@@ -69285,7 +71250,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69363,12 +71329,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 100), // #1
             new VoronoiSite(100, 500), // #2
             new VoronoiSite(500, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-------------------C-----------------------------W
         //      |                    '                            |
@@ -69395,7 +71363,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69473,12 +71442,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 500), // #1
             new VoronoiSite(500, 900), // #2
             new VoronoiSite(900, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-------------------C-----------------------------W
         //      |                    '                            |
@@ -69505,7 +71476,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69579,12 +71551,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 700), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(700, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X------------------------B------------------------Z
         //      |                       '                         |
@@ -69611,7 +71585,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69678,12 +71653,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-400, 200), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(200, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X------------------------B------------------------Z
         //      |                       '                         |
@@ -69710,7 +71687,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69777,12 +71755,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 500), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(500, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X------------------------B------------------------Z
         //      |                       '                         |
@@ -69809,7 +71789,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69876,12 +71857,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 900), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(900, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X------------------------B------------------------Z
         //      |                       '                         |
@@ -69908,7 +71891,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -69979,12 +71963,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 A##-----------------------------------------------X
         //      |' ''·,,                                          |
@@ -70011,7 +71997,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70082,12 +72069,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-400, -200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 A##-----------------------------------------------X
         //      |' ''·,,                                          |
@@ -70114,7 +72103,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70185,12 +72175,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 700), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(-100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 A##-----------------------------------------------X
         //      |' ''·,,                                          |
@@ -70217,7 +72209,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70288,12 +72281,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 1100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 A##-----------------------------------------------X
         //      |' ''·,,                                          |
@@ -70320,7 +72315,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70391,12 +72387,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 300), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(300, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-----------------------------------------------##A
         //      |                                          ,,·'' '|
@@ -70423,7 +72421,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70494,12 +72493,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(400, -200), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(-200, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-----------------------------------------------##A
         //      |                                          ,,·'' '|
@@ -70526,7 +72527,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70597,12 +72599,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-----------------------------------------------##A
         //      |                                          ,,·'' '|
@@ -70629,7 +72633,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70700,12 +72705,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 500), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(500, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-----------------------------------------------##A
         //      |                                          ,,·'' '|
@@ -70732,7 +72739,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70803,12 +72811,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 100), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z------------------------C------------------------W
         //      |                         '                       |
@@ -70835,7 +72845,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -70906,12 +72917,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -400), // #1
             new VoronoiSite(0, 0), // #2
             new VoronoiSite(400, 200), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z------------------------C------------------------W
         //      |                         '                       |
@@ -70938,7 +72951,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71009,12 +73023,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, -100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(700, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z------------------------C------------------------W
         //      |                         '                       |
@@ -71041,7 +73057,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71112,12 +73129,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 300), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(1100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z------------------------C------------------------W
         //      |                         '                       |
@@ -71144,7 +73163,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71211,12 +73231,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(900, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X----------------------------------B--------------Z
         //      |                                 '               |
@@ -71243,7 +73265,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71314,12 +73337,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X----------------------------------B--------------Z
         //      |                                 '               |
@@ -71346,7 +73371,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71417,12 +73443,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(700, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X----------------------------------B--------------Z
         //      |                                 '               |
@@ -71449,7 +73477,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71520,12 +73549,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(1100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X----------------------------------B--------------Z
         //      |                                 '               |
@@ -71552,7 +73583,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71627,12 +73659,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y-------------------------------------------------X
         //      |                                                 |
@@ -71659,7 +73693,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71734,12 +73769,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(-400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y-------------------------------------------------X
         //      |                                                 |
@@ -71766,7 +73803,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71841,12 +73879,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y-------------------------------------------------X
         //      |                                                 |
@@ -71873,7 +73913,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -71948,12 +73989,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y-------------------------------------------------X
         //      |                                                 |
@@ -71980,7 +74023,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72055,12 +74099,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------##A---------Y
         //      |                                ,,·'' '          |
@@ -72087,7 +74133,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72162,12 +74209,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(-400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------------------------##A---------Y
         //      |                                ,,·'' '          |
@@ -72194,7 +74243,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72269,12 +74319,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(-100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------------------------##A---------Y
         //      |                                ,,·'' '          |
@@ -72301,7 +74353,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72376,12 +74429,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------##A---------Y
         //      |                                ,,·'' '          |
@@ -72408,7 +74463,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72483,12 +74539,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-----------------------------C-------------------W
         //      |                              '                  |
@@ -72515,7 +74573,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72590,12 +74649,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z-----------------------------C-------------------W
         //      |                              '                  |
@@ -72622,7 +74683,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72697,12 +74759,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z-----------------------------C-------------------W
         //      |                              '                  |
@@ -72729,7 +74793,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72804,12 +74869,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(1100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-----------------------------C-------------------W
         //      |                              '                  |
@@ -72836,7 +74903,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -72911,12 +74979,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 700), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z--------------B----------------------------------X
         //      |               '                                 |
@@ -72943,7 +75013,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73018,12 +75089,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, 200), // #1
             new VoronoiSite(-200, 0), // #2
             new VoronoiSite(-400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Z--------------B----------------------------------X
         //      |               '                                 |
@@ -73050,7 +75123,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73125,12 +75199,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, 300), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Z--------------B----------------------------------X
         //      |               '                                 |
@@ -73157,7 +75233,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73232,12 +75309,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z--------------B----------------------------------X
         //      |               '                                 |
@@ -73264,7 +75343,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73339,12 +75419,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(700, 300), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------C-----------------------------Z
         //      |                  '                              |
@@ -73371,7 +75453,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73446,12 +75529,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(200, -200), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(-400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 W-------------------C-----------------------------Z
         //      |                  '                              |
@@ -73478,7 +75563,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73553,12 +75639,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 100), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(-100, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 W-------------------C-----------------------------Z
         //      |                  '                              |
@@ -73585,7 +75673,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73660,12 +75749,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 500), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(300, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------C-----------------------------Z
         //      |                  '                              |
@@ -73692,7 +75783,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73767,12 +75859,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y---------A##-------------------------------------W
         //      |          ' ''·,,                                |
@@ -73799,7 +75893,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73874,12 +75969,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, -200), // #1
             new VoronoiSite(200, 0), // #2
             new VoronoiSite(400, 400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 Y---------A##-------------------------------------W
         //      |          ' ''·,,                                |
@@ -73906,7 +76003,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -73981,12 +76079,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(700, 700), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 Y---------A##-------------------------------------W
         //      |          ' ''·,,                                |
@@ -74013,7 +76113,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74088,12 +76189,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(1100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y---------A##-------------------------------------W
         //      |          ' ''·,,                                |
@@ -74120,7 +76223,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74195,12 +76299,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 700), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(900, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-------------------------------------------------Y
         //      |                                                 |
@@ -74227,7 +76333,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74302,12 +76409,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-500, -500, 500, 500);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-200, 200), // #1
             new VoronoiSite(0, -200), // #2
             new VoronoiSite(400, -400), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  500 X-------------------------------------------------Y
         //      |                                                 |
@@ -74334,7 +76443,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -500, -500, 500, 500);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74409,12 +76519,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 800, 800);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 500), // #1
             new VoronoiSite(300, 100), // #2
             new VoronoiSite(700, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  800 X-------------------------------------------------Y
         //      |                                                 |
@@ -74441,7 +76553,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 800, 800);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74516,12 +76629,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 900), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(1100, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-------------------------------------------------Y
         //      |                                                 |
@@ -74548,7 +76663,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74619,12 +76735,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 1100), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(1100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 X-----------------------------C-----------------------------Z
         //      |                           ,'                              |
@@ -74655,7 +76773,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74730,12 +76849,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, 500), // #1
             new VoronoiSite(100, 100), // #2
             new VoronoiSite(500, -500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 X-----------------------------C-----------------------------Z
         //      |                           ,'                              |
@@ -74766,7 +76887,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74841,12 +76963,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 900), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(900, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 X-----------------------------C-----------------------------Z
         //      |                           ,'                              |
@@ -74877,7 +77001,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -74952,12 +77077,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1300), // #1
             new VoronoiSite(900, 900), // #2
             new VoronoiSite(1300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 X-----------------------------C-----------------------------Z
         //      |                           ,'                              |
@@ -74988,7 +77115,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75067,12 +77195,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 1100), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(100, 100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Y--------------A#-------------------------------------------X
         //      |                ''·,                                       |
@@ -75103,7 +77233,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75182,12 +77313,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, 500), // #1
             new VoronoiSite(100, -100), // #2
             new VoronoiSite(-500, -500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Y--------------A#-------------------------------------------X
         //      |                ''·,                                       |
@@ -75218,7 +77351,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75297,12 +77431,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, 900), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(-100, -100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Y--------------A#-------------------------------------------X
         //      |                ''·,                                       |
@@ -75333,7 +77469,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75412,12 +77549,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1300, 1300), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(300, 300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Y--------------A#-------------------------------------------X
         //      |                ''·,                                       |
@@ -75448,7 +77587,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75527,12 +77667,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1100, 100), // #1
             new VoronoiSite(500, 500), // #2
             new VoronoiSite(100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 W-------------------------------------------#B--------------Y
         //      |                                       ,·''                |
@@ -75563,7 +77705,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75642,12 +77785,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(500, -500), // #1
             new VoronoiSite(-100, -100), // #2
             new VoronoiSite(-500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 W-------------------------------------------#B--------------Y
         //      |                                       ,·''                |
@@ -75678,7 +77823,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75757,12 +77903,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(900, -100), // #1
             new VoronoiSite(300, 300), // #2
             new VoronoiSite(-100, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 W-------------------------------------------#B--------------Y
         //      |                                       ,·''                |
@@ -75793,7 +77941,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75872,12 +78021,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1300, 300), // #1
             new VoronoiSite(700, 700), // #2
             new VoronoiSite(300, 1300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 W-------------------------------------------#B--------------Y
         //      |                                       ,·''                |
@@ -75908,7 +78059,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -75987,12 +78139,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 1200, 1200);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(500, 700), // #2
             new VoronoiSite(1100, 1100), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1200 Z-----------------------------D-----------------------------W
         //      |                              ',                           |
@@ -76023,7 +78177,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 1200, 1200);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76102,12 +78257,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-600, -600, 600, 600);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-500, -500), // #1
             new VoronoiSite(-100, 100), // #2
             new VoronoiSite(500, 500), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         //  600 Z-----------------------------D-----------------------------W
         //      |                              ',                           |
@@ -76138,7 +78295,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -600, -600, 600, 600);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76217,12 +78375,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 1000, 1000);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, -100), // #1
             new VoronoiSite(300, 500), // #2
             new VoronoiSite(900, 900), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1000 Z-----------------------------D-----------------------------W
         //      |                              ',                           |
@@ -76253,7 +78413,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 1000, 1000);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76332,12 +78493,14 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1400, 1400);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(700, 900), // #2
             new VoronoiSite(1300, 1300), // #3
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1400 Z-----------------------------D-----------------------------W
         //      |                              ',                           |
@@ -76368,7 +78531,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1400, 1400);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76443,13 +78607,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 800), // #1
             new VoronoiSite(400, 700), // #2
             new VoronoiSite(700, 400), // #3
             new VoronoiSite(800, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 X--------------C----------------------------#B
         //      |             ·                           ,' |
@@ -76474,7 +78640,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76552,13 +78719,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-350, 350), // #1
             new VoronoiSite(-50, 250), // #2
             new VoronoiSite(250, -50), // #3
             new VoronoiSite(350, -350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      #--------------#---------------------------## 
         //  400 |             ·                          ,, | 
@@ -76583,7 +78752,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76661,13 +78831,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, 600), // #1
             new VoronoiSite(200, 500), // #2
             new VoronoiSite(500, 200), // #3
             new VoronoiSite(600, -100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 X--------------C----------------------------#B
         //      |             ·                           ,' |
@@ -76692,7 +78864,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76770,13 +78943,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 1000), // #1
             new VoronoiSite(600, 900), // #2
             new VoronoiSite(900, 600), // #3
             new VoronoiSite(1000, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 X--------------C----------------------------#B
         //      |             ·                           ,' |
@@ -76801,7 +78976,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76883,13 +79059,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 800), // #1
             new VoronoiSite(700, 500), // #2
             new VoronoiSite(400, 200), // #3
             new VoronoiSite(100, 100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 A###-----------------------------------------X
         //      |·','''··,,,                                 |
@@ -76914,7 +79092,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -76996,13 +79175,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(350, 350), // #1
             new VoronoiSite(250, 50), // #2
             new VoronoiSite(-50, -250), // #3
             new VoronoiSite(-350, -350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      ####----------------------------------------# 
         //  400 |·',''···,,                                 | 
@@ -77027,7 +79208,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77109,13 +79291,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, 600), // #1
             new VoronoiSite(500, 300), // #2
             new VoronoiSite(200, 0), // #3
             new VoronoiSite(-100, -100), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 A###-----------------------------------------X
         //      |·','''··,,,                                 |
@@ -77140,7 +79324,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77222,13 +79407,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 1000), // #1
             new VoronoiSite(900, 700), // #2
             new VoronoiSite(600, 400), // #3
             new VoronoiSite(300, 300), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 A###-----------------------------------------X
         //      |·','''··,,,                                 |
@@ -77253,7 +79440,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77335,13 +79523,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(800, 100), // #1
             new VoronoiSite(500, 200), // #2
             new VoronoiSite(200, 500), // #3
             new VoronoiSite(100, 800), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 W-----------------------------------------###A
         //      |                                 ,,,··''','·|
@@ -77366,7 +79556,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77448,13 +79639,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(350, -350), // #1
             new VoronoiSite(50, -250), // #2
             new VoronoiSite(-250, 50), // #3
             new VoronoiSite(-350, 350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      #----------------------------------------#### 
         //  400 |                                 ,,···'','·| 
@@ -77479,7 +79672,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77561,13 +79755,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(600, -100), // #1
             new VoronoiSite(300, 0), // #2
             new VoronoiSite(0, 300), // #3
             new VoronoiSite(-100, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 W-----------------------------------------###A
         //      |                                 ,,,··''','·|
@@ -77592,7 +79788,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77674,13 +79871,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(1000, 300), // #1
             new VoronoiSite(700, 400), // #2
             new VoronoiSite(400, 700), // #3
             new VoronoiSite(300, 1000), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 W-----------------------------------------###A
         //      |                                 ,,,··''','·|
@@ -77705,7 +79904,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77787,13 +79987,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 900, 900);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(100, 100), // #1
             new VoronoiSite(200, 400), // #2
             new VoronoiSite(500, 700), // #3
             new VoronoiSite(800, 800), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  900 B#----------------------------D--------------W
         //      | ',                           ·             |
@@ -77818,7 +80020,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 0, 0, 900, 900);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -77900,13 +80103,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-450, -450, 450, 450);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-350, -350), // #1
             new VoronoiSite(-250, -50), // #2
             new VoronoiSite(50, 250), // #3
             new VoronoiSite(350, 350), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //      ##---------------------------#--------------# 
         //  400 | ,,                          ·             | 
@@ -77931,7 +80136,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -450, -450, 450, 450);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -78013,13 +80219,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(-200, -200, 700, 700);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(-100, -100), // #1
             new VoronoiSite(0, 200), // #2
             new VoronoiSite(300, 500), // #3
             new VoronoiSite(600, 600), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         //  700 B#----------------------------D--------------W
         //      | ',                           ·             |
@@ -78044,7 +80252,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, -200, -200, 700, 700);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 
@@ -78126,13 +80335,15 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
     {
         // Arrange
 
-        List<VoronoiSite> sites = new List<VoronoiSite>
-        {
+        VoronoiPlane plane = new VoronoiPlane(200, 200, 1100, 1100);
+        List<VoronoiSite> sites =
+        [
             new VoronoiSite(300, 300), // #1
             new VoronoiSite(400, 600), // #2
             new VoronoiSite(700, 900), // #3
             new VoronoiSite(1000, 1000), // #4
-        };
+        ];
+        plane.SetSites(sites);
 
         // 1100 B#----------------------------D--------------W
         //      | ',                           ·             |
@@ -78157,7 +80368,8 @@ public class GeneratedTest_SiteEdgesClockwise_ClosedBorders
 
         // Act
 
-        List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(sites, 200, 200, 1100, 1100);
+        plane.Tessellate();
+        List<VoronoiEdge> edges = plane.Edges;
 
         // Assume
 

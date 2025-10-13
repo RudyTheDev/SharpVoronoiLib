@@ -17,6 +17,7 @@ public static class UnitTestGenerator
         List<(string, TestPurpose)> variants =
         [
             ("GeneratedTest_Edges", TestPurpose.AssertEdges),
+            ("GeneratedTest_Points", TestPurpose.AssertPoints),
             ("GeneratedTest_SiteEdges", TestPurpose.AssertSiteEdges),
             ("GeneratedTest_SiteEdgesClockwise", TestPurpose.AssertSiteEdgesClockwise),
             ("GeneratedTest_EdgeSites", TestPurpose.AssertEdgeSites),

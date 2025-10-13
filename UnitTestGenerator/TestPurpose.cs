@@ -6,6 +6,7 @@
 public enum TestPurpose
 {
     AssertEdges,
+    AssertPoints,
     AssertSiteEdges,
     AssertEdgeSites,
     AssertSitePoints,
