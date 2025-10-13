@@ -1,24 +1,25 @@
 ﻿namespace SharpVoronoiLib;
 
-internal class VoronoiSiteComparer : IEqualityComparer<VoronoiSite>
+public class VoronoiSiteComparer : IEqualityComparer<VoronoiSite>
 {
+    [PublicAPI]
     public static VoronoiSiteComparer Instance { get; } = new VoronoiSiteComparer();
     private VoronoiSiteComparer() { }
 
 
-    public bool Equals(VoronoiSite? a, VoronoiSite? b)
+    public bool Equals(VoronoiSite? site1, VoronoiSite? site2)
     {
-        return a!.X.ApproxEqual(b!.X) && a.Y.ApproxEqual(b.Y);
+        return site1!.X.ApproxEqual(site2!.X) && site1.Y.ApproxEqual(site2.Y);
     }
 
-    public int GetHashCode(VoronoiSite obj)
+    public int GetHashCode(VoronoiSite site)
     {
 #if NET8_0_OR_GREATER
-        return HashCode.Combine(obj.X, obj.Y);
+        return HashCode.Combine(site.X, site.Y);
 #else
         unchecked
         {
-            return (obj.X.GetHashCode() * 397) ^ obj.Y.GetHashCode();
+            return (site.X.GetHashCode() * 397) ^ site.Y.GetHashCode();
         }
 #endif
     }

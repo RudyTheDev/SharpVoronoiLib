@@ -9,21 +9,54 @@ namespace SharpVoronoiLib;
 public class VoronoiPlane
 {
     [PublicAPI]
-    public List<VoronoiSite>? Sites { get; private set; }
+    public List<VoronoiSite>? Sites
+    {
+        get
+        {
+            if (_sites == null) throw new VoronoiDoesntHaveSitesException();
+            
+            return _sites;
+        }
+    }
 
     [PublicAPI]
     public List<VoronoiEdge>? Edges
     {
         get
         {
-            if (_edges == null)
-                throw new VoronoiNotTessellatedException();
+            if (Sites == null) throw new VoronoiDoesntHaveSitesException();
+            if (_edges == null) throw new VoronoiNotTessellatedException();
                 
             return _edges;
         }
     }
 
-    // todo: add Points
+    [PublicAPI]
+    public List<VoronoiPoint>? Points
+    {
+        get
+        {
+            if (Sites == null) throw new VoronoiDoesntHaveSitesException();
+            if (_edges == null) throw new VoronoiNotTessellatedException();
+
+            if (_points == null)
+            {
+                HashSet<VoronoiPoint> points = new HashSet<VoronoiPoint>(VoronoiPointComparer.Instance);
+
+                foreach (VoronoiEdge edge in _edges)
+                {
+                    points.Add(edge.Start);
+                    points.Add(edge.End);
+                }
+
+                _points = points.ToList();
+                
+                // This is not efficient but tracking points both during tessellation and clipping/closing is way too complex to bother with
+            }
+            
+            return _points;
+        }
+    }
 
     [PublicAPI]
     public double MinX { get; }
@@ -48,12 +81,19 @@ public class VoronoiPlane
 
             return _duplicateSitesCount;
         }
-    }
+    }    
+    
+    [PublicAPI]
+    public bool Tesselated => _edges != null;
 
 
     private int _version;
 
+    private List<VoronoiSite>? _sites;
+    
     private List<VoronoiEdge>? _edges;
+    
+    private List<VoronoiPoint>? _points;
 
     private RandomUniformPointGeneration? _randomUniformPointGeneration;
     private RandomGaussianPointGeneration? _randomGaussianPointGeneration;
@@ -93,7 +133,7 @@ public class VoronoiPlane
     {
         if (sites == null) throw new ArgumentNullException(nameof(sites));
 
-        Sites = sites;
+        _sites = sites;
 
         _edges = null;
         _duplicateSitesCount = 0; // will be recomputed on tessellation
@@ -115,7 +155,7 @@ public class VoronoiPlane
 
         List<VoronoiSite> sites = algorithm.Generate(MinX, MinY, MaxX, MaxY, amount);
             
-        Sites = sites;
+        _sites = sites;
 
         _edges = null;
         _duplicateSitesCount = 0; // will be recomputed on tessellation
