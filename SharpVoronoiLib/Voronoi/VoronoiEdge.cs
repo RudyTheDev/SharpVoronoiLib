@@ -280,6 +280,12 @@ public class VoronoiEdge
     }
 
 
+    public override int GetHashCode()
+    {
+        return VoronoiEdgeComparer.Instance.GetHashCode(this);
+    }
+
+
     public override string ToString() => ToString("F3");
 
     [PublicAPI]
