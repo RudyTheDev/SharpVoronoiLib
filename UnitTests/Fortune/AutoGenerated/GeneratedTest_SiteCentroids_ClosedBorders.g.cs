@@ -10,7 +10,7 @@ namespace SharpVoronoiLib.UnitTests;
 
 /// <summary>
 /// These tests assert that <see cref="VoronoiSite"/>`s have expected the expected centroid point.
-/// Specifically, that the <see cref="VoronoiSite.Centroid"/> matches the centroid of its closed polygon <see cref="VoronoiSite.Cell"/>.
+/// Specifically, that the <see cref="VoronoiSite.Centroid"/> matches the centroid of its closed polygon <see cref="VoronoiSite.Edges"/>.
 /// These tests are run with generating the border edges, i.e. <see cref="BorderEdgeGeneration.MakeBorderEdges"/>.
 /// </summary>
 /// <remarks>

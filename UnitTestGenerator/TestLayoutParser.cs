@@ -636,12 +636,12 @@ public class TestLayoutParser
 
             case TestPurpose.AssertSiteEdges:
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected <see cref=""" + nameof(VoronoiEdge) + @"""/>`s.");
-                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Cell) + @"""/> contains the expected edges.");
+                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Edges) + @"""/> contains the expected edges.");
                 break;
 
             case TestPurpose.AssertSiteEdgesClockwise:
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected clockwise-sorted <see cref=""" + nameof(VoronoiEdge) + @"""/>`s.");
-                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.ClockwiseCell) + @"""/> contains the expected edges in clockwise order.");
+                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.ClockwiseEdges) + @"""/> contains the expected edges in clockwise order.");
                 break;
 
             case TestPurpose.AssertEdgeSites:
@@ -671,8 +671,8 @@ public class TestLayoutParser
 
             case TestPurpose.AssertLiesOnEdgeOrCorner:
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected flags for being on an edge or corner.");
-                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.LiesOnEdge) + @"""/> is set when the site is on exactly one of its <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Cell) + @"""/> edges.");
-                strings.Add(@"/// And that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.LiesOnCorner) + @"""/> is set when the site is on exactly two of its <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Cell) + @"""/> edges, i.e. the point between them.");
+                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.LiesOnEdge) + @"""/> is set when the site is on exactly one of its <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Edges) + @"""/>.");
+                strings.Add(@"/// And that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.LiesOnCorner) + @"""/> is set when the site is on exactly two of its <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Edges) + @"""/>, i.e. the point between them.");
                 break;
 
             case TestPurpose.AssertPointBorderLocation:
@@ -682,7 +682,7 @@ public class TestLayoutParser
 
             case TestPurpose.AssertSiteCentroids:
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected the expected centroid point.");
-                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Centroid) + @"""/> matches the centroid of its closed polygon <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Cell) + @"""/>.");
+                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Centroid) + @"""/> matches the centroid of its closed polygon <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Edges) + @"""/>.");
                 break;
 
             default:
@@ -1610,7 +1610,7 @@ public class TestLayoutParser
                                        .Where(e => e.EdgeSites.Contains(site))
                                        .ToList();
 
-                string listName = clockwise ? nameof(VoronoiSite.ClockwiseCell) : nameof(VoronoiSite.Cell);
+                string listName = clockwise ? nameof(VoronoiSite.ClockwiseEdges) : nameof(VoronoiSite.Edges);
 
                 strings.Add(
                     GetAssertNotNullText(
@@ -1654,7 +1654,7 @@ public class TestLayoutParser
                                 strings.Add(
                                     GetAssertTrueText(
                                         assert,
-                                        @"EdgeIs(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseCell) + @".ElementAt(" + i + @"), " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")"
+                                        @"EdgeIs(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseEdges) + @".ElementAt(" + i + @"), " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")"
                                     ) +
                                     @" // #" + site.Id + @" " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id
                                 );
@@ -1672,7 +1672,7 @@ public class TestLayoutParser
                                 strings.Add(
                                     GetAssertTrueText(
                                         assert,
-                                        @"EdgesAreSequential(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseCell) + @", " + edge1.FromPoint.X + @", " + edge1.FromPoint.Y + @", " + edge1.ToPoint.X + @", " + edge1.ToPoint.Y + @", " + edge2.FromPoint.X + @", " + edge2.FromPoint.Y + @", " + edge2.ToPoint.X + @", " + edge2.ToPoint.Y + @")"
+                                        @"EdgesAreSequential(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseEdges) + @", " + edge1.FromPoint.X + @", " + edge1.FromPoint.Y + @", " + edge1.ToPoint.X + @", " + edge1.ToPoint.Y + @", " + edge2.FromPoint.X + @", " + edge2.FromPoint.Y + @", " + edge2.ToPoint.X + @", " + edge2.ToPoint.Y + @")"
                                     ) +
                                     @" // #" + site.Id + @" " + (char)edge1.FromPoint.Id + @"-" + (char)edge1.ToPoint.Id + @" > " + (char)edge2.FromPoint.Id + @"-" + (char)edge2.ToPoint.Id
                                 );

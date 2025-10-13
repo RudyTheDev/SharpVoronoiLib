@@ -314,7 +314,7 @@ public class VoronoiGame : Game
         [
             "Site " + _hoveredSite,
             "Points " + string.Join(", ", pointLabels.Select(kv => kv.Value + " " + kv.Key.ToString(floatFormat))),
-            "Edges " + string.Join(", ", _hoveredSite.Cell.Select(e => pointLabels[e.Start] + "-" + pointLabels[e.End])),
+            "Edges " + string.Join(", ", _hoveredSite.Edges.Select(e => pointLabels[e.Start] + "-" + pointLabels[e.End])),
             "Neighbours " + string.Join(", ", _hoveredSite.Neighbours.Select(n => n.ToString(floatFormat)))
         ];
 
