@@ -50,7 +50,10 @@ internal class BeachLine
             // If the arc has a circle event, it was a false alarm: remove it
             if (leftSection.Data.CircleEvent != null)
             {
-                CancelCircleEventIfPresent(leftSection, deleted);
+                if (leftSection.Data.CircleEvent != null)
+                    deleted.Add(leftSection.Data.CircleEvent);
+
+                leftSection.Data.CircleEvent = null;
             }
 
             // We leave the existing arc as the left section in the tree, however we need to insert the
@@ -108,12 +111,18 @@ internal class BeachLine
             // Remove false alarms.
             if (leftSection.Data.CircleEvent != null)
             {
-                CancelCircleEventIfPresent(leftSection, deleted);
+                if (leftSection.Data.CircleEvent != null)
+                    deleted.Add(leftSection.Data.CircleEvent);
+
+                leftSection.Data.CircleEvent = null;
             }
 
             if (rightSection.Data.CircleEvent != null)
             {
-                CancelCircleEventIfPresent(rightSection, deleted);
+                if (rightSection.Data.CircleEvent != null)
+                    deleted.Add(rightSection.Data.CircleEvent);
+
+                rightSection.Data.CircleEvent = null;
             }
 
             // The breakpoint will disappear if we add this site which means we will create an edge.
@@ -222,11 +231,17 @@ internal class BeachLine
         // Need to delete all upcoming circle events with this node
         if (prev.Data.CircleEvent != null)
         {
-            CancelCircleEventIfPresent(prev, deleted);
+            if (prev.Data.CircleEvent != null)
+                deleted.Add(prev.Data.CircleEvent);
+
+            prev.Data.CircleEvent = null;
         }
         if (next.Data.CircleEvent != null)
         {
-            CancelCircleEventIfPresent(next, deleted);
+            if (next.Data.CircleEvent != null)
+                deleted.Add(next.Data.CircleEvent);
+
+            next.Data.CircleEvent = null;
         }
 
         // Create a new edge with start point at the vertex and assign it to next
@@ -403,20 +418,5 @@ internal class BeachLine
             // distanceRight < 0 and distanceLeft < 0 => this section is above the new site.
             leftSection = rightSection = node;
         }
-    }
-
-    /// <summary>
-    /// Cancel and null the circle event on a beach section, marking it as deleted in the global set.
-    /// </summary>
-    private static void CancelCircleEventIfPresent(RBTreeNode<BeachSection> section, HashSet<FortuneCircleEvent> deleted)
-    {
-        if (section.Data.CircleEvent == null)
-            return;
-
-        // TODO: why is this in realease build
-        if (!deleted.Add(section.Data.CircleEvent))
-            throw new Exception();
-
-        section.Data.CircleEvent = null;
     }
 }
