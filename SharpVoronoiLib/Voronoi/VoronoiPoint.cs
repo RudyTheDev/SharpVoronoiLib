@@ -81,8 +81,8 @@ public class VoronoiPoint : IEquatable<VoronoiPoint>
     /// </summary>
     public override int GetHashCode()
     {
-        object qx = EpsilonUtils.Quantize(X);
-        object qy = EpsilonUtils.Quantize(Y);
+        int qx = EpsilonUtils.Quantize(X);
+        int qy = EpsilonUtils.Quantize(Y);
         
         unchecked
         {

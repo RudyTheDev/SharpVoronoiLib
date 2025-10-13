@@ -317,10 +317,10 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
     /// </summary>
     public override int GetHashCode()
     {
-        object sx = EpsilonUtils.Quantize(Start.X);
-        object sy = EpsilonUtils.Quantize(Start.Y);
-        object ex = EpsilonUtils.Quantize(End.X);
-        object ey = EpsilonUtils.Quantize(End.Y);
+        int sx = EpsilonUtils.Quantize(Start.X);
+        int sy = EpsilonUtils.Quantize(Start.Y);
+        int ex = EpsilonUtils.Quantize(End.X);
+        int ey = EpsilonUtils.Quantize(End.Y);
         
         unchecked
         {
