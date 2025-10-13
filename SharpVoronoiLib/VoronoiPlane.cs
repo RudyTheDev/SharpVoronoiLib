@@ -44,7 +44,7 @@ public class VoronoiPlane
         get
         {
             if (Sites == null) throw new VoronoiDoesntHaveSitesException();
-            if (Edges == null) throw new VoronoiNotTessellatedException();
+            if (_edges == null) throw new VoronoiNotTessellatedException();
 
             return _duplicateSitesCount;
         }
@@ -68,7 +68,7 @@ public class VoronoiPlane
         
     private ISiteMergingAlgorithm? _siteMergingAlgorithm;
         
-    private BruteForceNearestSiteLookup? _nearestSiteLookupAlgorithm;
+    private BruteForceNearestSiteLookup? _bruteForceNearestSiteLookup;
     private KDTreeNearestSiteLookup? _kdTreeNearestSiteLookupAlgorithm;
         
     private BorderEdgeGeneration _lastBorderGeneration;
@@ -173,7 +173,7 @@ public class VoronoiPlane
     public List<VoronoiEdge> Relax(int iterations = 1, float strength = 1.0f, bool reTessellate = true)
     {
         if (Sites == null) throw new VoronoiDoesntHaveSitesException();
-        if (Edges == null) throw new VoronoiNotTessellatedException();
+        if (_edges == null) throw new VoronoiNotTessellatedException();
         if (iterations < 1) throw new ArgumentOutOfRangeException(nameof(iterations));
         if (strength <= 0f || strength > 1f) throw new ArgumentOutOfRangeException(nameof(strength));
 
@@ -196,21 +196,21 @@ public class VoronoiPlane
             
         _version++;
 
-        return Edges;
+        return _edges;
     }
 
     [PublicAPI]
     public List<VoronoiSite> MergeSites(VoronoiSiteMergeQuery mergeQuery)
     {
         if (Sites == null) throw new VoronoiDoesntHaveSitesException();
-        if (Edges == null) throw new VoronoiNotTessellatedException();
+        if (_edges == null) throw new VoronoiNotTessellatedException();
         if (mergeQuery == null) throw new ArgumentNullException(nameof(mergeQuery));
             
 
         if (_siteMergingAlgorithm == null)
             _siteMergingAlgorithm = new GenericSiteMergingAlgorithm();
 
-        _siteMergingAlgorithm.MergeSites(Sites, Edges, mergeQuery);
+        _siteMergingAlgorithm.MergeSites(Sites, _edges, mergeQuery);
             
         _version++;
 
@@ -221,7 +221,7 @@ public class VoronoiPlane
     public VoronoiSite GetNearestSiteTo(double x, double y, NearestSiteLookupMethod lookupMethod = NearestSiteLookupMethod.KDTree)
     {
         if (Sites == null) throw new VoronoiDoesntHaveSitesException();
-        if (Edges == null) throw new VoronoiNotTessellatedException();
+        if (_edges == null) throw new VoronoiNotTessellatedException();
             
             
         INearestSiteLookup algorithm = GetNearestSiteLookupAlgorithm(lookupMethod);
@@ -272,7 +272,7 @@ public class VoronoiPlane
     {
         return nearestSiteLookupMethod switch
         {
-            NearestSiteLookupMethod.BruteForce => _nearestSiteLookupAlgorithm ??= new BruteForceNearestSiteLookup(),
+            NearestSiteLookupMethod.BruteForce => _bruteForceNearestSiteLookup ??= new BruteForceNearestSiteLookup(),
             NearestSiteLookupMethod.KDTree      => _kdTreeNearestSiteLookupAlgorithm ??= new KDTreeNearestSiteLookup(),
 
             _ => throw new ArgumentOutOfRangeException()
@@ -289,7 +289,7 @@ public class VoronoiPlane
         return
             "(" + MinX.ToString(floatFormat) + "," + MinY.ToString(floatFormat) + ") -> (" + MaxX.ToString(floatFormat) + "," + MaxY.ToString(floatFormat) + ")" +
             (Sites != null ? " with " + Sites.Count + " sites" : "") +
-            (Edges != null ? (Sites != null ? ", " : " with ") + Edges.Count + " edges" : "");
+            (_edges != null ? (Sites != null ? ", " : " with ") + _edges.Count + " edges" : "");
     }
 }
 
