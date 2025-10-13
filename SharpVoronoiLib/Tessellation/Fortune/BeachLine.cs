@@ -1,4 +1,6 @@
-﻿namespace SharpVoronoiLib;
+﻿#nullable disable // This code hasn't been converted to nullable yet
+
+namespace SharpVoronoiLib;
 
 /// <summary>
 /// The dynamic structure (implemented as a red-black tree) that stores the sequence of arcs in Fortune's algorithm.

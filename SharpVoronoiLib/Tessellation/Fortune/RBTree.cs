@@ -1,5 +1,7 @@
 ﻿// credit https://github.com/mdally/Voronoi/blob/master/src/RBTree.h MIT LICENSE
 
+#nullable disable // This code hasn't been converted to nullable yet
+
 namespace SharpVoronoiLib;
 
 internal class RBTreeNode<T>
