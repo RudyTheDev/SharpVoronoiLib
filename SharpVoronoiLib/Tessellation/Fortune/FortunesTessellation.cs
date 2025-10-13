@@ -43,20 +43,20 @@ internal class FortunesTessellation : ITessellationAlgorithm
         //init edge list
         while (eventQueue.Count != 0)
         {
-            FortuneEvent fEvent = eventQueue.Pop();
-                
-            if (fEvent is FortuneSiteEvent)
-                beachLine.AddBeachSection((FortuneSiteEvent)fEvent, eventQueue, deleted, edges);
-            else
+            FortuneEvent nextEvent = eventQueue.Pop();
+
+            switch (nextEvent)
             {
-                if (deleted.Contains((FortuneCircleEvent)fEvent))
-                {
-                    deleted.Remove((FortuneCircleEvent)fEvent);
-                }
-                else
-                {
-                    beachLine.RemoveBeachSection((FortuneCircleEvent)fEvent, eventQueue, deleted, edges);
-                }
+                case FortuneSiteEvent siteEvent:
+                    beachLine.AddBeachSection(siteEvent, eventQueue, deleted, edges);
+                    break;
+                
+                case FortuneCircleEvent circleEvent:
+                    if (deleted.Contains(circleEvent))
+                        deleted.Remove(circleEvent);
+                    else
+                        beachLine.RemoveBeachSection(circleEvent, eventQueue, deleted, edges);
+                    break;
             }
         }
 
