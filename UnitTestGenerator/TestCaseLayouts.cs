@@ -714,6 +714,65 @@ public static class TestCaseLayouts
                 2: ZDAC
                 3: ADXB
             ", LayoutTransforms.RotateAll);
+        
+        yield return new RawTestLayout("ThreePointsForkedFromEdgePoints", @"
+                12
+                X · · · · · D · · · · · Z 12
+                · · · · · ·x· · · · · · · 11
+                1 · · · · x · · · · · · · 10
+                · · · · ·x· · · · · · · · 9
+                · · · · x · · · · · · · · 8
+                · · · ·x· · · · · · · · · 7
+                A x x B · · · · 3 · · · · 6
+                · · · ·x· · · · · · · · · 5
+                · · · · x · · · · · · · · 4
+                · · · · ·x· · · · · · · · 3
+                2 · · · · x · · · · · · · 2
+                · · · · · ·x· · · · · · · 1
+                Y · · · · · C · · · · · W 0
+                0 1 2 3 4 5 6 7 8 9 0 1 12
+                A-B: 1,2
+                B-D: 1,3
+                B-C: 2,3
+                X-A: 1
+                X-D: 1
+                A-Y: 2
+                Y-C: 2
+                C-W: 3
+                W-Z: 3
+                Z-D: 3
+                1: DXAB !
+                2: BAYC !
+                3: ZDBCW
+            ", LayoutTransforms.RotateAll);
+        
+        yield return new RawTestLayout("ThreePointsForkedAgainstEdgePoints", @"
+                10
+                X · · · · C · · · · Z 10
+                · · · · x · · · · · · 9
+                1 · · x · · · · · · · 8
+                · · x · · · · · · · · 7
+                · x · · · · · · · · · 6
+                A · · 3 · · · · · · · 5
+                · x · · · · · · · · · 4
+                · · x · · · · · · · · 3
+                2 · · x · · · · · · · 2
+                · · · · x · · · · · · 1
+                Y · · · · B · · · · W 0
+                0 1 2 3 4 5 6 7 8 9 10
+                A-B: 2,3
+                A-C: 1,3
+                X-A: 1
+                X-C: 1
+                A-Y: 2
+                Y-B: 2
+                B-W: 3
+                W-Z: 3
+                Z-C: 3
+                1: CXA !
+                2: AYB !
+                3: ZCABW
+            ", LayoutTransforms.RotateAll);
 
         yield return new RawTestLayout("FourPointsSurroundingAPointInMiddle", @"
                 10
