@@ -2,7 +2,7 @@
 
 /// <summary>
 /// The line segment making the Voronoi cells, i.e. the points equidistant to the two nearest Voronoi sites.
-/// These are the lines in the <see cref="VoronoiSite.Cell"/>.
+/// These are the lines in the <see cref="VoronoiSite.Edges"/>.
 /// This has <see cref="VoronoiPoint"/> end points, i.e. <see cref="Start"/> and <see cref="End"/>.
 /// This has the two <see cref="VoronoiSite"/>s they separate, i.e. <see cref="Right"/> and <see cref="Left"/>.
 /// This connects in a <see cref="Neighbours"/> node graph to other <see cref="VoronoiEdge"/>s, i.e. shares end points with them.
@@ -150,7 +150,7 @@ public class VoronoiEdge
 
                 bool GatherNeighbours(VoronoiPoint aroundPoint, VoronoiEdge comingFromEdge, VoronoiSite comingIntoSite, VoronoiSite? ultimateSite)
                 {
-                    foreach (VoronoiEdge edge in comingIntoSite.Cell)
+                    foreach (VoronoiEdge edge in comingIntoSite.Edges)
                     {
                         if (edge == comingFromEdge)
                             continue; // this would be the edge we came from, we need the other edge

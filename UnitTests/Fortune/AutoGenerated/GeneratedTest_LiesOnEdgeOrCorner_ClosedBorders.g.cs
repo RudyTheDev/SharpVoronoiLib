@@ -10,8 +10,8 @@ namespace SharpVoronoiLib.UnitTests;
 
 /// <summary>
 /// These tests assert that <see cref="VoronoiSite"/>`s have expected flags for being on an edge or corner.
-/// Specifically, that the <see cref="VoronoiSite.LiesOnEdge"/> is set when the site is on exactly one of its <see cref="VoronoiSite.Cell"/> edges.
-/// And that the <see cref="VoronoiSite.LiesOnCorner"/> is set when the site is on exactly two of its <see cref="VoronoiSite.Cell"/> edges, i.e. the point between them.
+/// Specifically, that the <see cref="VoronoiSite.LiesOnEdge"/> is set when the site is on exactly one of its <see cref="VoronoiSite.Edges"/>.
+/// And that the <see cref="VoronoiSite.LiesOnCorner"/> is set when the site is on exactly two of its <see cref="VoronoiSite.Edges"/>, i.e. the point between them.
 /// These tests are run with generating the border edges, i.e. <see cref="BorderEdgeGeneration.MakeBorderEdges"/>.
 /// </summary>
 /// <remarks>

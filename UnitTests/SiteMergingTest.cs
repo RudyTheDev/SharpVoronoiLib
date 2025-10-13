@@ -46,7 +46,7 @@ public class SiteMergingTest
         Assert.That(newSites, Has.Count.EqualTo(1));
         Assert.That(newSites[0], Is.SameAs(originalSites[expectedRemainingSite]));
         Assert.That(newSites[0].Points.Count(), Is.EqualTo(6));
-        Assert.That(newSites[0].Cell.Count(), Is.EqualTo(6));
+        Assert.That(newSites[0].Edges.Count(), Is.EqualTo(6));
     }
         
     [TestCase(new[] { 0,1 }, new[] { 1, 2 }, new[] { 6, 4 }, new[] { 6, 4 })]
@@ -91,7 +91,7 @@ public class SiteMergingTest
         for (int i = 0; i < expectedRemainingPoints.Length; i++)
             Assert.That(originalSites[expectedRemainingSites[i]].Points.Count(), Is.EqualTo(expectedRemainingPoints[i]));
         for (int i = 0; i < expectedRemainingEdges.Length; i++)
-            Assert.That(originalSites[expectedRemainingSites[i]].Cell.Count(), Is.EqualTo(expectedRemainingEdges[i]));
+            Assert.That(originalSites[expectedRemainingSites[i]].Edges.Count(), Is.EqualTo(expectedRemainingEdges[i]));
     }
         
     [TestCase(new[] { 0,1 }, new[] { 1, 2 }, new[] { 6, 4 }, new[] { 6, 4 })]
@@ -161,7 +161,7 @@ public class SiteMergingTest
         for (int i = 0; i < expectedRemainingPoints.Length; i++)
             Assert.That(originalSites[expectedRemainingSites[i]].Points.Count(), Is.EqualTo(expectedRemainingPoints[i]));
         for (int i = 0; i < expectedRemainingEdges.Length; i++)
-            Assert.That(originalSites[expectedRemainingSites[i]].Cell.Count(), Is.EqualTo(expectedRemainingEdges[i]));
+            Assert.That(originalSites[expectedRemainingSites[i]].Edges.Count(), Is.EqualTo(expectedRemainingEdges[i]));
     }
 
 

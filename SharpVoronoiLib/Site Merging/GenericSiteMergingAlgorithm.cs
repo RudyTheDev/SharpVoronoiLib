@@ -86,8 +86,8 @@ public class GenericSiteMergingAlgorithm : ISiteMergingAlgorithm
         foreach (VoronoiEdge commonEdge in commonEdges)
         {
             edges.Remove(commonEdge);
-            target.cell.Remove(commonEdge);
-            source.cell.Remove(commonEdge); // we will need to process source cells list later
+            target.edges.Remove(commonEdge);
+            source.edges.Remove(commonEdge); // we will need to process source cells list later
         }
 
         // Unlink sites from each other
@@ -116,45 +116,45 @@ public class GenericSiteMergingAlgorithm : ISiteMergingAlgorithm
             
         do
         {
-            for (int s = 0; s < source.cell.Count; s++)
+            for (int s = 0; s < source.edges.Count; s++)
             {
-                VoronoiEdge sourceEdge = source.cell[s];
+                VoronoiEdge sourceEdge = source.edges[s];
                     
-                for (int t = 0; t < target.cell.Count; t++)
+                for (int t = 0; t < target.edges.Count; t++)
                 {
-                    VoronoiEdge targetEdge = target.cell[t];
+                    VoronoiEdge targetEdge = target.edges[t];
 
                     if (targetEdge.End == sourceEdge.Start)
                     {
-                        target.cell.Insert(t + 1, sourceEdge);
-                        source.cell.RemoveAt(s);
+                        target.edges.Insert(t + 1, sourceEdge);
+                        source.edges.RemoveAt(s);
                         s--;
                         break;
                     }
                     else if (targetEdge.End == sourceEdge.End)
                     {
-                        target.cell.Insert(t + 1, sourceEdge.Reversed());
-                        source.cell.RemoveAt(s);
+                        target.edges.Insert(t + 1, sourceEdge.Reversed());
+                        source.edges.RemoveAt(s);
                         s--;
                         break;
                     }
                     else if (targetEdge.Start == sourceEdge.End)
                     {
-                        target.cell.Insert(t, sourceEdge);
-                        source.cell.RemoveAt(s);
+                        target.edges.Insert(t, sourceEdge);
+                        source.edges.RemoveAt(s);
                         s--;
                         break;
                     }
                     else if (targetEdge.Start == sourceEdge.Start)
                     {
-                        target.cell.Insert(t, sourceEdge.Reversed());
-                        source.cell.RemoveAt(s);
+                        target.edges.Insert(t, sourceEdge.Reversed());
+                        source.edges.RemoveAt(s);
                         s--;
                         break;
                     }
                 }
             }
-        } while (source.cell.Count > 0);
+        } while (source.edges.Count > 0);
 
         // Invalidate source site completely - it's no longer part of the plane
         source.Invalidated();
@@ -175,9 +175,9 @@ public class GenericSiteMergingAlgorithm : ISiteMergingAlgorithm
         if (_tempEdges.Count != 0) throw new NotImplementedException("Didn't clean up " + nameof(_tempEdges));
 #endif
             
-        foreach (VoronoiEdge edge1 in site1.cell)
+        foreach (VoronoiEdge edge1 in site1.edges)
         {
-            foreach (VoronoiEdge edge2 in site2.cell)
+            foreach (VoronoiEdge edge2 in site2.edges)
             {
                 if (edge1 == edge2)
                     _tempEdges.Add(edge1);

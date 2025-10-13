@@ -41,7 +41,7 @@ public class FortuneAlgorithmTest
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
         Assert.That(edges, Is.Empty);
-        Assert.That(points[0].Cell.Count(), Is.EqualTo(0));
+        Assert.That(points[0].Edges.Count(), Is.EqualTo(0));
     }
 
     [TestCase(-100, 300)]
@@ -63,8 +63,8 @@ public class FortuneAlgorithmTest
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
         Assert.That(edges, Has.Count.EqualTo(1));
-        Assert.That(points[0].Cell.Count(), Is.EqualTo(1));
-        Assert.That(points[1].Cell.Count(), Is.EqualTo(1));
+        Assert.That(points[0].Edges.Count(), Is.EqualTo(1));
+        Assert.That(points[1].Edges.Count(), Is.EqualTo(1));
     }
 
     [TestCase(-1000, 300)]
@@ -86,8 +86,8 @@ public class FortuneAlgorithmTest
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
         Assert.That(edges, Is.Empty);
-        Assert.That(points[0].Cell.Count(), Is.EqualTo(0));
-        Assert.That(points[1].Cell.Count(), Is.EqualTo(0));
+        Assert.That(points[0].Edges.Count(), Is.EqualTo(0));
+        Assert.That(points[1].Edges.Count(), Is.EqualTo(0));
     }
 
     [TestCase(0, 300)]
@@ -105,7 +105,7 @@ public class FortuneAlgorithmTest
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
         Assert.That(edges, Is.Empty);
-        Assert.That(points[0].Cell.Count(), Is.EqualTo(0));
+        Assert.That(points[0].Edges.Count(), Is.EqualTo(0));
     }
 
     [TestCase(0, 300)]
@@ -127,8 +127,8 @@ public class FortuneAlgorithmTest
         List<VoronoiEdge> edges = VoronoiPlane.TessellateOnce(points, 0, 0, 600, 600, BorderEdgeGeneration.DoNotMakeBorderEdges).ToList();
 
         Assert.That(edges, Has.Count.EqualTo(1));
-        Assert.That(points[0].Cell.Count(), Is.EqualTo(1));
-        Assert.That(points[1].Cell.Count(), Is.EqualTo(1));
+        Assert.That(points[0].Edges.Count(), Is.EqualTo(1));
+        Assert.That(points[1].Edges.Count(), Is.EqualTo(1));
     }
         
     [Test]

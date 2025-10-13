@@ -45,8 +45,8 @@ public class ExceptionTest
             
         // Act - Assert
 
-        Assert.Throws<VoronoiNotTessellatedException>(() => _ = sites[0].Cell);
-        Assert.Throws<VoronoiNotTessellatedException>(() => _ = sites[0].ClockwiseCell);
+        Assert.Throws<VoronoiNotTessellatedException>(() => _ = sites[0].Edges);
+        Assert.Throws<VoronoiNotTessellatedException>(() => _ = sites[0].ClockwiseEdges);
         Assert.Throws<VoronoiNotTessellatedException>(() => _ = sites[0].Neighbours);
         Assert.Throws<VoronoiNotTessellatedException>(() => _ = sites[0].Points);
         Assert.Throws<VoronoiNotTessellatedException>(() => _ = sites[0].ClockwisePoints);
@@ -81,8 +81,8 @@ public class ExceptionTest
         Assert.That(sites[1].Tesselated, Is.False);
         Assert.That(sites[1].SkippedAsDuplicate, Is.True);
 
-        Assert.Throws<VoronoiSiteSkippedAsDuplicateException>(() => _ = sites[1].Cell);
-        Assert.Throws<VoronoiSiteSkippedAsDuplicateException>(() => _ = sites[1].ClockwiseCell);
+        Assert.Throws<VoronoiSiteSkippedAsDuplicateException>(() => _ = sites[1].Edges);
+        Assert.Throws<VoronoiSiteSkippedAsDuplicateException>(() => _ = sites[1].ClockwiseEdges);
         Assert.Throws<VoronoiSiteSkippedAsDuplicateException>(() => _ = sites[1].Neighbours);
         Assert.Throws<VoronoiSiteSkippedAsDuplicateException>(() => _ = sites[1].Points);
         Assert.Throws<VoronoiSiteSkippedAsDuplicateException>(() => _ = sites[1].ClockwisePoints);

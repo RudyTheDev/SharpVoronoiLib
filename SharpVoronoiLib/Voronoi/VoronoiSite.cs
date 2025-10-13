@@ -4,9 +4,9 @@ namespace SharpVoronoiLib;
 
 /// <summary>
 /// The point/site/seed on the Voronoi plane.
-/// This has a <see cref="Cell"/> of <see cref="VoronoiEdge"/>s.
-/// This has <see cref="Points"/> of <see cref="VoronoiPoint"/>s that are the edge end points, i.e. the cell's vertices.
-/// This also has <see cref="Neighbours"/>, i.e. <see cref="VoronoiSite"/>s across the <see cref="VoronoiEdge"/>s.
+/// This has a list of <see cref="Edges"/> of <see cref="VoronoiEdge"/>s.
+/// This has a list of <see cref="Points"/> of <see cref="VoronoiPoint"/>s that are the edge end points, i.e. the cell's vertices.
+/// This also has a list of <see cref="Neighbours"/>, i.e. <see cref="VoronoiSite"/>s across the <see cref="VoronoiEdge"/>s.
 /// </summary>
 public class VoronoiSite
 {
@@ -31,38 +31,33 @@ public class VoronoiSite
     [PublicAPI]
     public bool SkippedAsDuplicate => _skippedAsDuplicate;
 
-    /// <summary> <inheritdoc cref="Cell"/> </summary>
-    /// <seealso cref="ClockwiseEdges"/>
-    [PublicAPI]
-    public IEnumerable<VoronoiEdge> Edges => Cell;
-    
     /// <summary>
-    /// The edges that make up this cell.
+    /// The edges that make up this site's cell.
     /// The vertices of these edges are the <see cref="Points"/>.
     /// These are also known as Thiessen polygons.
     /// </summary>
-    /// <seealso cref="ClockwiseCell"/>
+    /// <seealso cref="ClockwiseEdges"/>
     [PublicAPI]
-    public IEnumerable<VoronoiEdge> Cell
+    public IEnumerable<VoronoiEdge> Edges
     {
         get
         {
             ThrowIfUnavailable();
                 
-            return cell;
+            return edges;
         }
     }
-
-    /// <summary> <inheritdoc cref="ClockwiseCell"/> </summary>
-    [PublicAPI]
-    public IEnumerable<VoronoiEdge> ClockwiseEdges => ClockwiseCell;
     
+    [PublicAPI]
+    [Obsolete("Use Edges instead", false)]
+    public IEnumerable<VoronoiEdge> Cell => Edges;
+
     /// <summary>
-    /// Same as <see cref="Cell"/>, but sorted in clockwise order around the site.
+    /// Same as <see cref="Edges"/>, but sorted in clockwise order around the site.
     /// If the site lies on any of the edges (or corners), then the starting order is not defined.
     /// </summary>
     [PublicAPI]
-    public IEnumerable<VoronoiEdge> ClockwiseCell
+    public IEnumerable<VoronoiEdge> ClockwiseEdges
     {
         get
         {
@@ -70,13 +65,18 @@ public class VoronoiSite
                 
             if (_clockwiseCell == null)
             {
-                _clockwiseCell = new List<VoronoiEdge>(cell);
+                _clockwiseCell = new List<VoronoiEdge>(edges);
                 _clockwiseCell.Sort(SortCellEdgesClockwise);
             }
 
             return _clockwiseCell;
         }
     }
+    
+
+    [PublicAPI]
+    [Obsolete("Use ClockwiseEdges instead", false)]
+    public IEnumerable<VoronoiEdge> ClockwiseCell => ClockwiseEdges;
 
     /// <summary>
     /// The sites across the edges.
@@ -93,7 +93,7 @@ public class VoronoiSite
     }
 
     /// <summary>
-    /// The vertices of the <see cref="Cell"/>.
+    /// The vertices of the <see cref="Edges"/>.
     /// </summary>
     /// <seealso cref="ClockwisePoints"/>
     [PublicAPI]
@@ -107,7 +107,7 @@ public class VoronoiSite
             {
                 _points = [ ];
 
-                foreach (VoronoiEdge edge in cell)
+                foreach (VoronoiEdge edge in edges)
                 {
                     if (!_points.Contains(edge.Start))
                     {
@@ -151,7 +151,7 @@ public class VoronoiSite
     }
 
     /// <summary>
-    /// Whether this site lies directly on exactly one of its <see cref="Cell"/>'s edges.
+    /// Whether this site lies directly on exactly one of its <see cref="Edges"/>'s edges.
     /// This happens when sites overlap or are on the border.
     /// This won't be set if instead <see cref="LiesOnCorner"/> is set, i.e. the site lies on the intersection of 2 of its edges.
     /// </summary>
@@ -167,7 +167,7 @@ public class VoronoiSite
     }
 
     /// <summary>
-    /// Whether this site lies directly on the intersection point of two of its <see cref="Cell"/>'s edges.
+    /// Whether this site lies directly on the intersection point of two of its <see cref="Edges"/>'s.
     /// This happens when sites overlap or are on the border's corner.
     /// </summary>
     [PublicAPI]
@@ -182,7 +182,7 @@ public class VoronoiSite
     }
 
     /// <summary>
-    /// The center of our <see cref="Cell"/>.
+    /// The center of our cell bounded by <see cref="Edges"/>.
     /// Specifically, the geometric center aka center of mass, i.e. the arithmetic mean position of all the <see cref="Points"/>.
     /// This is assuming a non-self-intersecting closed polygon of our cell.
     /// If we don't have a closed cell (i.e. unclosed "polygon"), then this will produce approximate results that aren't mathematically sound, but work for most purposes. 
@@ -203,7 +203,7 @@ public class VoronoiSite
     }
 
         
-    internal readonly List<VoronoiEdge> cell;
+    internal readonly List<VoronoiEdge> edges;
     internal readonly List<VoronoiSite> neighbours;
 
 
@@ -230,7 +230,7 @@ public class VoronoiSite
         X = x;
         Y = y;
             
-        cell = [ ];
+        edges = [ ];
         neighbours = [ ];
     }
 
@@ -272,7 +272,7 @@ public class VoronoiSite
 
     internal void AddEdge(VoronoiEdge newEdge)
     {
-        cell.Add(newEdge);
+        edges.Add(newEdge);
 
         // Set the "flags" whether we are on an edge or corner
 
@@ -325,7 +325,7 @@ public class VoronoiSite
             
         // Clear all the values we used before
             
-        cell.Clear();
+        edges.Clear();
         neighbours.Clear();
         _points = null;
         _clockwisePoints = null;
@@ -474,14 +474,14 @@ public class VoronoiSite
     [Pure]
     private double GetCenterShiftedX()
     {
-        double target = cell.Sum(c => c.Start.X + c.End.X) / cell.Count / 2;
+        double target = edges.Sum(c => c.Start.X + c.End.X) / edges.Count / 2;
         return X + (target - X) * shiftAmount;
     }
 
     [Pure]
     private double GetCenterShiftedY()
     {
-        double target = cell.Sum(c => c.Start.Y + c.End.Y) / cell.Count / 2;
+        double target = edges.Sum(c => c.Start.Y + c.End.Y) / edges.Count / 2;
         return Y + (target - Y) * shiftAmount;
     }
         
@@ -561,7 +561,7 @@ public class VoronoiSite
     {
         _tessellated = false;
             
-        cell.Clear(); // don't cling to any references
+        edges.Clear(); // don't cling to any references
         neighbours.Clear(); // don't cling to any references
         _centroid = null; // don't cling to any references
         _liesOnEdge = null; // don't cling to any references
