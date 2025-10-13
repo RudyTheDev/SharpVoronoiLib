@@ -31,11 +31,17 @@ public class VoronoiSite
     [PublicAPI]
     public bool SkippedAsDuplicate => _skippedAsDuplicate;
 
+    /// <summary> <inheritdoc cref="Cell"/> </summary>
+    /// <seealso cref="ClockwiseEdges"/>
+    [PublicAPI]
+    public IEnumerable<VoronoiEdge> Edges => Cell;
+    
     /// <summary>
     /// The edges that make up this cell.
     /// The vertices of these edges are the <see cref="Points"/>.
     /// These are also known as Thiessen polygons.
     /// </summary>
+    /// <seealso cref="ClockwiseCell"/>
     [PublicAPI]
     public IEnumerable<VoronoiEdge> Cell
     {
@@ -47,8 +53,12 @@ public class VoronoiSite
         }
     }
 
+    /// <summary> <inheritdoc cref="ClockwiseCell"/> </summary>
+    [PublicAPI]
+    public IEnumerable<VoronoiEdge> ClockwiseEdges => ClockwiseCell;
+    
     /// <summary>
-    ///
+    /// Same as <see cref="Cell"/>, but sorted in clockwise order around the site.
     /// If the site lies on any of the edges (or corners), then the starting order is not defined.
     /// </summary>
     [PublicAPI]
@@ -85,6 +95,7 @@ public class VoronoiSite
     /// <summary>
     /// The vertices of the <see cref="Cell"/>.
     /// </summary>
+    /// <seealso cref="ClockwisePoints"/>
     [PublicAPI]
     public IEnumerable<VoronoiPoint> Points
     {
@@ -119,7 +130,7 @@ public class VoronoiSite
     }
         
     /// <summary>
-    /// 
+    /// Same as <see cref="Points"/>, but sorted in clockwise order around the site.
     /// If the site lies on any of the edges (or corners), then the starting order is not defined.
     /// </summary>
     [PublicAPI]
@@ -171,8 +182,8 @@ public class VoronoiSite
     }
 
     /// <summary>
-    /// The center of our cell.
-    /// Specifically, the geometric center aka center of mass, i.e. the arithmetic mean position of all the edge end points.
+    /// The center of our <see cref="Cell"/>.
+    /// Specifically, the geometric center aka center of mass, i.e. the arithmetic mean position of all the <see cref="Points"/>.
     /// This is assuming a non-self-intersecting closed polygon of our cell.
     /// If we don't have a closed cell (i.e. unclosed "polygon"), then this will produce approximate results that aren't mathematically sound, but work for most purposes. 
     /// </summary>
