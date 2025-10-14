@@ -142,7 +142,8 @@ public class VoronoiPlane
     }
 
     /// <summary>
-    ///
+    /// Creates a bunch of randomly-placed sites within the bounds of the plane with the given algorithm.
+    /// The generated sites are guaranteed to not repeat (they may be close, but they at least will not have a hash collision).
     /// The generated sites are guaranteed not to lie on the border of the plane (although they may be very close).
     /// </summary>
     [PublicAPI]

@@ -4,7 +4,7 @@ internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
 {
     public List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count)
     {
-        HashSet<VoronoiSite> sites = new HashSet<VoronoiSite>(VoronoiSiteComparer.Instance);
+        HashSet<VoronoiSite> sites = [ ];
 
         Random random = new Random();
 
@@ -24,6 +24,15 @@ internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
             //         site = new VoronoiSite(other.X, other.Y);
             //     }
             // }
+
+            if (site.X.ApproxEqual(minX) ||
+                site.X.ApproxEqual(maxX) ||
+                site.Y.ApproxEqual(minY) ||
+                site.Y.ApproxEqual(maxY))
+            {
+                i--;
+                continue;
+            }
 
             if (!sites.Add(site))
                 i--;
