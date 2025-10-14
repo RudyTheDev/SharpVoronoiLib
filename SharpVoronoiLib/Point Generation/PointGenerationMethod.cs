@@ -3,5 +3,9 @@
 public enum PointGenerationMethod
 {
     Uniform,
-    Gaussian
+    Gaussian,
+    
+#if DEBUG
+    Naughty
+#endif
 }
