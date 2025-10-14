@@ -5,7 +5,7 @@
 public class RandomPointsTest
 {
     [Test]
-    public void TestUniform()
+    public void TestUniformBanding()
     {
         // Arrange
 
@@ -54,7 +54,7 @@ public class RandomPointsTest
     }
         
     [Test]
-    public void TestGaussian()
+    public void TestGaussianBanding()
     {
         // Arrange
 
