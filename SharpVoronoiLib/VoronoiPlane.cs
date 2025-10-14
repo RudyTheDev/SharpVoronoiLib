@@ -304,6 +304,10 @@ public class VoronoiPlane
         {
             PointGenerationMethod.Uniform  => _randomUniformPointGeneration ??= new RandomUniformPointGeneration(),
             PointGenerationMethod.Gaussian => _randomGaussianPointGeneration ??= new RandomGaussianPointGeneration(),
+            
+#if DEBUG
+            PointGenerationMethod.Naughty    => new RandomNaughtyPointGeneration(),
+#endif
 
             _ => throw new ArgumentOutOfRangeException()
         };
@@ -329,8 +333,8 @@ public class VoronoiPlane
     {
         return
             "(" + MinX.ToString(floatFormat) + "," + MinY.ToString(floatFormat) + ") -> (" + MaxX.ToString(floatFormat) + "," + MaxY.ToString(floatFormat) + ")" +
-            (Sites != null ? " with " + Sites.Count + " sites" : "") +
-            (_edges != null ? (Sites != null ? ", " : " with ") + _edges.Count + " edges" : "");
+            (_sites != null ? " with " + Sites.Count + " sites" : "") +
+            (_edges != null ? (_sites != null ? ", " : " with ") + _edges.Count + " edges" : "");
     }
 }
 

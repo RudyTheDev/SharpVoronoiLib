@@ -2,7 +2,12 @@
 
 internal class RandomUniformPointGeneration : RandomPointGeneration
 {
-    protected override double GetNextRandomValue(Random random, double min, double max)
+    public override void Prepare(double minX, double minY, double maxX, double maxY, int count)
+    {
+        // Don't need to do anything
+    }
+
+    protected override double GetNextRandomValue(Random random, double min, double max, int index, ValuePurpose valuePurpose)
     {
         do
         {
@@ -12,5 +17,10 @@ internal class RandomUniformPointGeneration : RandomPointGeneration
                 return value;
                 
         } while (true);
+    }
+
+    public override void Conclude()
+    {
+        // Don't need to do anything
     }
 }

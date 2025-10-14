@@ -123,4 +123,40 @@ public class RandomPointsTest
             Assert.That(countsY[i], Is.EqualTo(expected).Within(expected * tolerance));
         }
     }
+
+    [Test]
+    public void TestNaughtyGeneratorSkipsBordersAndDuplicates()
+    {
+#if DEBUG
+        
+        // Arrange
+
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 100, 100);
+
+        // Act
+
+        List<VoronoiSite> sites = plane.GenerateRandomSites(1000, PointGenerationMethod.Naughty);
+
+        // Assert
+
+        Assert.That(sites, Is.Not.Null);
+        Assert.That(sites, Has.Count.EqualTo(1000));
+
+        HashSet<VoronoiSite> set = new HashSet<VoronoiSite>(VoronoiSiteComparer.Instance);
+        
+        foreach (VoronoiSite site in sites)
+        {
+            Assert.That(site.Y.ApproxGreaterThan(0), Is.True);
+            Assert.That(site.X.ApproxLessThan(100), Is.True);
+            Assert.That(site.Y.ApproxGreaterThan(0), Is.True);
+            Assert.That(site.Y.ApproxLessThan(100), Is.True);
+            
+            bool added = set.Add(site);
+            Assert.That(added, Is.True);
+        }
+        
+#else
+        Assert.Ignore("This test can only run in debug builds.");
+#endif
+    }
 }
