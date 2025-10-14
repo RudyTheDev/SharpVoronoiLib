@@ -5,6 +5,7 @@ public class EqualityTests
 {
     private const double tinyDelta = EpsilonUtils.epsilon * 9 / 10; // smaller than epsilon - should be considered equal by ApproxEqual
     private const double largeDelta = EpsilonUtils.epsilon * 10 / 9; // larger than epsilon but not by much, but should be considered different by ApproxEqual
+    private const double largeHashDelta = (1 / EpsilonUtils.quantizer) * 10 / 9; // larger than quantizer to "jump buckets"
 
     
     #region Point
@@ -220,12 +221,17 @@ public class EqualityTests
         Assert.That(firstHash, Is.EqualTo(secondHash));
     }
 
-    [Test]
-    public void TestPoint_GetHashCode_Equals_ForApproxEqualValues()
+    [TestCase(10.0, -5.0)]
+    [TestCase(0.0, -5.0)]
+    [TestCase(EpsilonUtils.quantizer, -5.0)]
+    [TestCase(EpsilonUtils.quantizer * 10, -5.0)]
+    [TestCase(EpsilonUtils.quantizer / 10, -5.0)]
+    [TestCase(-EpsilonUtils.quantizer, -5.0)]
+    public void TestPoint_GetHashCode_Equals_ForApproxEqualValues(double x, double y)
     {
         // Arrange
-        VoronoiPoint basePoint = new VoronoiPoint(10.0, -5.0);
-        VoronoiPoint approxPoint = new VoronoiPoint(10.0 + tinyDelta, -5.0 - tinyDelta);
+        VoronoiPoint basePoint = new VoronoiPoint(x, y);
+        VoronoiPoint approxPoint = new VoronoiPoint(x + tinyDelta, y - tinyDelta);
 
         // Assume
         Assume.That(basePoint.Equals(approxPoint), Is.True);
@@ -236,6 +242,29 @@ public class EqualityTests
 
         // Assert
         Assert.That(baseHash, Is.EqualTo(approxHash));
+    }
+
+    [TestCase(10.0, -5.0)]
+    [TestCase(0.0, -5.0)]
+    [TestCase(EpsilonUtils.quantizer, -5.0)]
+    [TestCase(EpsilonUtils.quantizer * 10, -5.0)]
+    [TestCase(EpsilonUtils.quantizer / 10, -5.0)]
+    [TestCase(-EpsilonUtils.quantizer, -5.0)]
+    public void TestPoint_GetHashCode_Differs_ForSignificantlyDifferentValues(double x, double y)
+    {
+        // Arrange
+        VoronoiPoint firstPoint = new VoronoiPoint(x, y);
+        VoronoiPoint secondPoint = new VoronoiPoint(x + largeHashDelta, y - largeHashDelta);
+
+        // Assume
+        Assume.That(firstPoint.Equals(secondPoint), Is.False);
+
+        // Act
+        int firstHash = firstPoint.GetHashCode();
+        int secondHash = secondPoint.GetHashCode();
+
+        // Assert
+        Assert.That(firstHash, Is.Not.EqualTo(secondHash));
     }
 
     [Test]
@@ -496,12 +525,17 @@ public class EqualityTests
         Assert.That(firstHash, Is.EqualTo(secondHash));
     }
 
-    [Test]
-    public void TestSite_GetHashCode_Equals_ForApproxEqualValues()
+    [TestCase(10.0, -5.0)]
+    [TestCase(0.0, -5.0)]
+    [TestCase(EpsilonUtils.quantizer, -5.0)]
+    [TestCase(EpsilonUtils.quantizer * 10, -5.0)]
+    [TestCase(EpsilonUtils.quantizer / 10, -5.0)]
+    [TestCase(-EpsilonUtils.quantizer, -5.0)]
+    public void TestSite_GetHashCode_Equals_ForApproxEqualValues(double x, double y)
     {
         // Arrange
-        VoronoiSite baseSite = new VoronoiSite(10.0, -5.0);
-        VoronoiSite approxSite = new VoronoiSite(10.0 + tinyDelta, -5.0 - tinyDelta);
+        VoronoiSite baseSite = new VoronoiSite(x, y);
+        VoronoiSite approxSite = new VoronoiSite(x + tinyDelta, y - tinyDelta);
 
         // Assume
         Assume.That(baseSite.Equals(approxSite), Is.True);
@@ -512,6 +546,29 @@ public class EqualityTests
 
         // Assert
         Assert.That(baseHash, Is.EqualTo(approxHash));
+    }
+    
+    [TestCase(10.0, -5.0)]
+    [TestCase(0.0, -5.0)]
+    [TestCase(EpsilonUtils.quantizer, -5.0)]
+    [TestCase(EpsilonUtils.quantizer * 10, -5.0)]
+    [TestCase(EpsilonUtils.quantizer / 10, -5.0)]
+    [TestCase(-EpsilonUtils.quantizer, -5.0)]
+    public void TestSite_GetHashCode_Differs_ForSignificantlyDifferentValues(double x, double y)
+    {
+        // Arrange
+        VoronoiSite firstSite = new VoronoiSite(x, y);
+        VoronoiSite secondSite = new VoronoiSite(x + largeHashDelta, y - largeHashDelta);
+
+        // Assume
+        Assume.That(firstSite.Equals(secondSite), Is.False);
+
+        // Act
+        int firstHash = firstSite.GetHashCode();
+        int secondHash = secondSite.GetHashCode();
+
+        // Assert
+        Assert.That(firstHash, Is.Not.EqualTo(secondHash));
     }
 
     [Test]
@@ -756,14 +813,23 @@ public class EqualityTests
         Assert.That(firstHash, Is.EqualTo(secondHash));
     }
 
-    [Test]
-    public void TestEdge_GetHashCode_Equals_ForApproxEqualValues()
+    [TestCase(10.0, -5.0)]
+    [TestCase(0.0, -5.0)]
+    [TestCase(EpsilonUtils.quantizer, -5.0)]
+    [TestCase(EpsilonUtils.quantizer * 10, -5.0)]
+    [TestCase(EpsilonUtils.quantizer / 10, -5.0)]
+    [TestCase(-EpsilonUtils.quantizer, -5.0)]
+    public void TestEdge_GetHashCode_Equals_ForApproxEqualValues(double x, double y)
     {
         // Arrange
-        VoronoiSite leftSite = new VoronoiSite(0.0, 0.0);
-        VoronoiSite rightSite = new VoronoiSite(10.0, 0.0);
-        VoronoiEdge baseEdge = new VoronoiEdge(new VoronoiPoint(2.0, 3.0), new VoronoiPoint(4.0, 5.0), rightSite, leftSite);
-        VoronoiEdge approxEdge = new VoronoiEdge(new VoronoiPoint(2.0 + tinyDelta, 3.0 - tinyDelta), new VoronoiPoint(4.0 + tinyDelta, 5.0 - tinyDelta), rightSite, leftSite);
+        VoronoiSite leftSite = new VoronoiSite(0.0, 0.0); // value doesn't matter
+        VoronoiSite rightSite = new VoronoiSite(10.0, 0.0); // value doesn't matter
+        VoronoiPoint baseStartPoint = new VoronoiPoint(x, y);
+        VoronoiPoint baseEndPoint = new VoronoiPoint(x, y);
+        VoronoiEdge baseEdge = new VoronoiEdge(baseStartPoint, baseEndPoint, rightSite, leftSite);
+        VoronoiPoint approxStartPoint = new VoronoiPoint(x + 10 + tinyDelta, y - 10 - tinyDelta);
+        VoronoiPoint approxEndPoint = new VoronoiPoint(x + 10 + tinyDelta, y - 10 - tinyDelta);
+        VoronoiEdge approxEdge = new VoronoiEdge(approxStartPoint, approxEndPoint, rightSite, leftSite);
 
         // Assume
         Assume.That(baseEdge.Equals(approxEdge), Is.True);
@@ -774,6 +840,35 @@ public class EqualityTests
 
         // Assert
         Assert.That(baseHash, Is.EqualTo(approxHash));
+    }
+    
+    [TestCase(10.0, -5.0)]
+    [TestCase(0.0, -5.0)]
+    [TestCase(EpsilonUtils.quantizer, -5.0)]
+    [TestCase(EpsilonUtils.quantizer * 10, -5.0)]
+    [TestCase(EpsilonUtils.quantizer / 10, -5.0)]
+    [TestCase(-EpsilonUtils.quantizer, -5.0)]
+    public void TestEdge_GetHashCode_Differs_ForSignificantlyDifferentValues(double x, double y)
+    {
+        // Arrange
+        VoronoiSite leftSite = new VoronoiSite(0.0, 0.0); // value doesn't matter
+        VoronoiSite rightSite = new VoronoiSite(10.0, 0.0); // value doesn't matter
+        VoronoiPoint firstStartPoint = new VoronoiPoint(x, y);
+        VoronoiPoint firstEndPoint = new VoronoiPoint(x, y);
+        VoronoiEdge firstEdge = new VoronoiEdge(firstStartPoint, firstEndPoint, rightSite, leftSite);
+        VoronoiPoint secondStartPoint = new VoronoiPoint(x + largeHashDelta, y - largeHashDelta);
+        VoronoiPoint secondEndPoint = new VoronoiPoint(x + largeHashDelta, y - largeHashDelta);
+        VoronoiEdge secondEdge = new VoronoiEdge(secondStartPoint, secondEndPoint, rightSite, leftSite);
+
+        // Assume
+        Assume.That(firstEdge.Equals(secondEdge), Is.False);
+
+        // Act
+        int firstHash = firstEdge.GetHashCode();
+        int secondHash = secondEdge.GetHashCode();
+
+        // Assert
+        Assert.That(firstHash, Is.Not.EqualTo(secondHash));
     }
 
     [Test]

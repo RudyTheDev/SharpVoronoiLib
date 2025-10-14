@@ -14,7 +14,7 @@ internal static class EpsilonUtils
     internal const double epsilon = 1E-12;
     // todo: make ParabolaTest use this too
 
-    internal const double quantizer = epsilon * 10; // for hashing, see Quantize()
+    internal const double quantizer = 100000; // for hashing, see Quantize()
     
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,11 +67,6 @@ internal static class EpsilonUtils
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int Quantize(double value)
     {
-        return (int)(Math.Round(value / quantizer) * quantizer);
-        
-        // Note that we can't use epsilon directly since it will still clash.
-        
-        // Larger "epsilon" is fine though since with e^-12 epsilon, it's still e^-11,
-        // so hash collisions are extremely unlikely for reasonable coordinates
+        return (int)(value * quantizer);
     }
 }
