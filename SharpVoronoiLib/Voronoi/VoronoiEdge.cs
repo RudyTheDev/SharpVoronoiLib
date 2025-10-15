@@ -21,7 +21,7 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
     /// Note that the order of <see cref="Start"/>/end points is random.
     /// </summary>
     [PublicAPI]
-    public VoronoiPoint End { get; internal set; } = null!; // it will be set eventually if not immediately from constructor
+    public VoronoiPoint End { get; internal set; }
 
     /// <summary>
     /// One of the two sites that this edge separates, the other being <see cref="Left"/>.
@@ -49,7 +49,7 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
             // todo: make null/undefined when the End is infinite
                 
             if (_mid == null)
-                _mid = new VoronoiPoint((Start.X + End!.X) / 2, (Start.Y + End.Y) / 2);
+                _mid = new VoronoiPoint((Start.X + End.X) / 2, (Start.Y + End.Y) / 2);
             // Note that .End is guaranteed to be set since we don't expose edges extrenally that aren't clipped in bounds
 
             return _mid;
@@ -238,6 +238,7 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
     internal VoronoiEdge(VoronoiPoint start, VoronoiSite left, VoronoiSite right)
     {
         Start = start;
+        End = null!; // it will be set eventually
         Left = left;
         Right = right;
             
@@ -273,6 +274,20 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
         Right = right;
         Left = left;
     }
+    
+    [PublicAPI]
+    [Pure]
+    public VoronoiPoint? CommonPointWith(VoronoiEdge other)
+    {
+        if (ReferenceEquals(Start, other.Start) || ReferenceEquals(Start, other.End))
+            return Start;
+        
+        if (ReferenceEquals(End, other.Start) || ReferenceEquals(End, other.End))
+            return End;
+
+        return null;
+    }
+    
         
     internal VoronoiEdge Reversed()
     {
