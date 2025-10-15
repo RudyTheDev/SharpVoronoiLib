@@ -38,7 +38,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// </summary>
     /// <seealso cref="ClockwiseEdges"/>
     [PublicAPI]
-    public IEnumerable<VoronoiEdge> Edges
+    public IReadOnlyList<VoronoiEdge> Edges
     {
         get
         {
@@ -50,7 +50,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     
     [PublicAPI]
     [Obsolete("Use Edges instead", false)]
-    public IEnumerable<VoronoiEdge> Cell => Edges;
+    public IReadOnlyList<VoronoiEdge> Cell => Edges;
 
     /// <summary>
     /// Same as <see cref="Edges"/>, but sorted in clockwise order around the site.
@@ -58,7 +58,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// Note that edge direction is undefined and their start/end points aren't sorted (see <see cref="ClockwiseEdgesWound"/>). 
     /// </summary>
     [PublicAPI]
-    public IEnumerable<VoronoiEdge> ClockwiseEdges
+    public IReadOnlyList<VoronoiEdge> ClockwiseEdges
     {
         get
         {
@@ -76,7 +76,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
 
     [PublicAPI]
     [Obsolete("Use ClockwiseEdges instead", false)]
-    public IEnumerable<VoronoiEdge> ClockwiseCell => ClockwiseEdges;
+    public IReadOnlyList<VoronoiEdge> ClockwiseCell => ClockwiseEdges;
 
     /// <summary>
     /// Similar to <see cref="ClockwiseEdges"/>, but each edge is "wound" so that its start point is the previous edge's end point.
@@ -85,7 +85,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// This will fail if the site is not properly <see cref="Closed"/>.
     /// </summary>
     [PublicAPI]
-    public IEnumerable<WoundVoronoiEdge> ClockwiseEdgesWound
+    public IReadOnlyList<WoundVoronoiEdge> ClockwiseEdgesWound
     {
         get
         {
@@ -98,8 +98,8 @@ public class VoronoiSite : IEquatable<VoronoiSite>
                 
             if (_clockwiseEdgesWound == null)
             {
-                IEnumerable<VoronoiEdge> _ = ClockwiseEdges; // this will initialize if not yet done
-                IEnumerable<VoronoiPoint> __ = ClockwisePoints; // this will initialize if not yet done
+                IReadOnlyList<VoronoiEdge> _ = ClockwiseEdges; // this will initialize if not yet done
+                IReadOnlyList<VoronoiPoint> __ = ClockwisePoints; // this will initialize if not yet done
 
                 _clockwiseEdgesWound = WindEdges(_clockwiseEdges!, _clockwisePoints!); 
             }
@@ -112,7 +112,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// The sites across the edges.
     /// </summary>
     [PublicAPI]
-    public IEnumerable<VoronoiSite> Neighbours
+    public IReadOnlyList<VoronoiSite> Neighbours
     {
         get
         {
@@ -127,7 +127,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// </summary>
     /// <seealso cref="ClockwisePoints"/>
     [PublicAPI]
-    public IEnumerable<VoronoiPoint> Points
+    public IReadOnlyList<VoronoiPoint> Points
     {
         get
         {
@@ -164,7 +164,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// If the site lies on any of the edges (or corners), then the starting order is not defined.
     /// </summary>
     [PublicAPI]
-    public IEnumerable<VoronoiPoint> ClockwisePoints
+    public IReadOnlyList<VoronoiPoint> ClockwisePoints
     {
         get
         {
@@ -280,7 +280,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
         // If we don't have points generated yet, do so now (by calling the property that does so when read)
         if (_clockwisePoints == null)
         {
-            IEnumerable<VoronoiPoint> _ = ClockwisePoints;
+            IReadOnlyList<VoronoiPoint> _ = ClockwisePoints;
         }
 
         // helper method to determine if a point is inside the cell
@@ -573,7 +573,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
         // If we don't have points generated yet, do so now (by calling the property that does so when read)
         if (_clockwisePoints == null)
         {
-            IEnumerable<VoronoiPoint> _ = ClockwisePoints;
+            IReadOnlyList<VoronoiPoint> _ = ClockwisePoints;
         }
             
         // Cx = (1 / 6A) * ∑ (x1 + x2) * (x1 * y2 - x2 + y1)

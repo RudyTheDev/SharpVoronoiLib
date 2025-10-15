@@ -57,7 +57,7 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
     }
         
     [PublicAPI]
-    public IEnumerable<VoronoiEdge> Neighbours
+    public IReadOnlyList<VoronoiEdge> Neighbours
     {
         get
         {
