@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using SharpVoronoiLib.Exceptions;
 
 namespace SharpVoronoiLib.UnitTestGenerator;
 
@@ -153,7 +154,7 @@ public class TestLayoutParser
 
                     string siteString = line.Substring(5);
 
-                    string[] siteSymbolStrings = siteString.Split(",");
+                    string[] siteSymbolStrings = siteString.Split(",", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
                     if (siteSymbolStrings.Length > 2) throw new ArgumentException();
 
@@ -195,7 +196,7 @@ public class TestLayoutParser
 
                 string pointString = line.Substring(3);
 
-                string[] pointStringSections = pointString.Split(' ');
+                string[] pointStringSections = pointString.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
                 if (pointStringSections.Length > 2) throw new ArgumentException();
 
@@ -304,6 +305,7 @@ public class TestLayoutParser
         stringBuilder.AppendLine(@"using NUnit.Framework;");
         stringBuilder.AppendLine(@"using System.Collections.Generic;");
         stringBuilder.AppendLine(@"using System.Linq;");
+        stringBuilder.AppendLine(@"using SharpVoronoiLib.Exceptions;");
         stringBuilder.AppendLine(@"using static SharpVoronoiLib.UnitTests.CommonTestUtilities;");
         stringBuilder.AppendLine();
         stringBuilder.AppendLine(@"#pragma warning disable");
@@ -419,9 +421,29 @@ public class TestLayoutParser
                     stringBuilder.AppendLine();
 
                     stringBuilder.AppendPaddedLine(2, @"// Assert", true);
-                    AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, false, true));
+                    AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, EdgeSelection.Regular, true));
                     break;
 
+                case TestPurpose.AssertSiteEdgesClockwise:
+                    stringBuilder.AppendPaddedLine(2, @"// Assume", true);
+                    AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
+                    AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, EdgeSelection.Regular, false));
+                    stringBuilder.AppendLine();
+
+                    stringBuilder.AppendPaddedLine(2, @"// Assert", true);
+                    AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, EdgeSelection.Clockwise, true));
+                    break;
+
+                case TestPurpose.AssertSiteEdgesClockwiseWound:
+                    stringBuilder.AppendPaddedLine(2, @"// Assume", true);
+                    AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
+                    AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, EdgeSelection.Regular, false));
+                    stringBuilder.AppendLine();
+
+                    stringBuilder.AppendPaddedLine(2, @"// Assert", true);
+                    AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, EdgeSelection.ClockwiseWound, true));
+                    break;
+                
                 case TestPurpose.AssertSiteCentroids:
                     stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                     AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, false));
@@ -429,17 +451,6 @@ public class TestLayoutParser
 
                     stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                     AppendAssertions(BuildSiteCentroidsAssertions(test.Sites, borderLogic, true));
-                    break;
-
-                case TestPurpose.AssertSiteEdgesClockwise:
-                    stringBuilder.AppendPaddedLine(2, @"// Assume", true);
-                    AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
-                    stringBuilder.AppendLine();
-                    AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, false));
-                    stringBuilder.AppendLine();
-
-                    stringBuilder.AppendPaddedLine(2, @"// Assert", true);
-                    AppendAssertions(BuildSiteEdgeAssertions(test.Edges, test.Sites, borderLogic, true, true));
                     break;
 
                 case TestPurpose.AssertSiteNeighbours:
@@ -642,6 +653,11 @@ public class TestLayoutParser
             case TestPurpose.AssertSiteEdgesClockwise:
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected clockwise-sorted <see cref=""" + nameof(VoronoiEdge) + @"""/>`s.");
                 strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.ClockwiseEdges) + @"""/> contains the expected edges in clockwise order.");
+                break;
+
+            case TestPurpose.AssertSiteEdgesClockwiseWound:
+                strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected clockwise-sorted <see cref=""" + nameof(VoronoiEdge) + @"""/>`s, with winding enforced.");
+                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.ClockwiseEdgesWound) + @"""/> contains the expected edges in clockwise order and forms a continuous loop.");
                 break;
 
             case TestPurpose.AssertEdgeSites:
@@ -871,6 +887,15 @@ public class TestLayoutParser
             (assert ? @"Assert" : @"Assume") + @".That(" + 
             actual + 
             @", Is.True" +
+            (message != null ? @", """ + message + @"""" : null) +
+            @");";
+    }
+
+    private string GetAssertThrows(bool assert, object actual, string exception, string? message = null)
+    {
+        return
+            (assert ? @"Assert" : @"Assume") + @".Throws<" + exception + @">(" +
+            @"() => { var _ = " + actual + @"; }" +
             (message != null ? @", """ + message + @"""" : null) +
             @");";
     }
@@ -1595,7 +1620,7 @@ public class TestLayoutParser
         }
     }
 
-    private List<string> BuildSiteEdgeAssertions(List<Edge> edges, List<Site> allSites, TestBorderLogic borderLogic, bool clockwise, bool assert)
+    private List<string> BuildSiteEdgeAssertions(List<Edge> edges, List<Site> allSites, TestBorderLogic borderLogic, EdgeSelection selection, bool assert)
     {
         List<string> strings = [ ];
 
@@ -1603,19 +1628,59 @@ public class TestLayoutParser
 
         if (sites.Count > 0)
         {
-            foreach (Site site in sites)
+            bool definedSublist = false;
+            
+            for (int s = 0; s < sites.Count; s++)
             {
-                List<Edge> siteEdges = edges
-                                       .Where(e => EdgeMatchesBorderLogic(e, borderLogic))
+                Site site = sites[s];
+                
+                List<Edge> potentialSiteEdges = edges
                                        .Where(e => e.EdgeSites.Contains(site))
                                        .ToList();
+                
+                List<Edge> siteEdges = potentialSiteEdges
+                                       .Where(e => EdgeMatchesBorderLogic(e, borderLogic))
+                                       .ToList();
 
-                string listName = clockwise ? nameof(VoronoiSite.ClockwiseEdges) : nameof(VoronoiSite.Edges);
+                string siteIndex = allSites.IndexOf(site).ToString();
+                
+                string fullListName = selection switch
+                {
+                    EdgeSelection.Regular        => @"sites[" + siteIndex + @"]." + nameof(VoronoiSite.Edges),
+                    EdgeSelection.Clockwise      => @"sites[" + siteIndex + @"]." + nameof(VoronoiSite.ClockwiseEdges),
+                    EdgeSelection.ClockwiseWound => @"sites[" + siteIndex + @"]." + nameof(VoronoiSite.ClockwiseEdgesWound),
+                    _                            => throw new InvalidOperationException()
+                };
+                
+                string inlinedListName = selection switch
+                {
+                    EdgeSelection.Regular        => fullListName,
+                    EdgeSelection.Clockwise      => fullListName,
+                    EdgeSelection.ClockwiseWound => @"woundEdges",
+                    _                            => throw new InvalidOperationException()
+                };
+                
+                bool closed = site.Points.Sum(p => p.Count) == siteEdges.Count;
+                
+                if (selection == EdgeSelection.ClockwiseWound && !closed)
+                {
+                    strings.Add("// Site's edges are not closed, so winding is undefined");
+
+                    strings.Add(
+                        GetAssertThrows(
+                            assert,
+                            fullListName,
+                            nameof(VoronoiSiteNotClosedException)
+                        )
+                    );
+                    
+                    continue;
+                }
 
                 strings.Add(
                     GetAssertNotNullText(
                         assert,
-                        @"sites[" + allSites.IndexOf(site) + @"]" + @"." + listName
+                        fullListName
                     )
                 );
 
@@ -1623,60 +1688,101 @@ public class TestLayoutParser
                     GetAssertEqualsText(
                         assert,
                         siteEdges.Count,
-                        @"sites[" + allSites.IndexOf(site) + @"]" + @"." + listName + @".Count()"
+                        fullListName + @".Count()"
                     ) +
                     @" // #" + site.Id
                 );
+                
+                if (siteEdges.Count == 0)
+                    continue; // no per-edge checking possible
 
-                foreach (Edge siteEdge in siteEdges)
+                if (selection == EdgeSelection.Regular)
                 {
-                    strings.Add(
-                        GetAssertTrueText(
-                            assert,
-                            @"HasEdge(sites[" + allSites.IndexOf(site) + @"]." + listName + @", " + siteEdge.FromPoint.X + @", " + siteEdge.FromPoint.Y + @", " + siteEdge.ToPoint.X + @", " + siteEdge.ToPoint.Y + @")"
-                        ) + 
-                        @" // #" + site.Id + @" has " + (char)siteEdge.FromPoint.Id + @"-" + (char)siteEdge.ToPoint.Id
-                    );
-                }
-
-                if (clockwise)
-                {
-                    if (siteEdges.Count > 0)
+                    foreach (Edge siteEdge in siteEdges)
                     {
-                        List<Edge> orderedEdges = siteEdges.OrderBy(e => GetEdgeSoftIndex(e, site.Points)).ToList();
+                        strings.Add(
+                            GetAssertTrueText(
+                                assert,
+                                @"HasEdge(" + inlinedListName + @", " + siteEdge.FromPoint.X + @", " + siteEdge.FromPoint.Y + @", " + siteEdge.ToPoint.X + @", " + siteEdge.ToPoint.Y + @")"
+                            ) +
+                            @" // #" + site.Id + @" has " + (char)siteEdge.FromPoint.Id + @"-" + (char)siteEdge.ToPoint.Id
+                        );
+                    }
+                }
+                else if (selection == EdgeSelection.Clockwise)
+                {
+                    List<Point> sitePoints = FlattenSitePoints(site.Points);
+                    List<Edge> orderedEdges = siteEdges.OrderBy(e => GetEdgeSoftIndex(e, sitePoints)).ToList();
+
+                    for (int i = 0; i < orderedEdges.ToList().Count; i++)
+                    {
+                        Edge edge = orderedEdges.ToList()[i];
+                        int nextI = i == orderedEdges.ToList().Count - 1 ? 0 : i + 1;
+                        Edge nextEdge = orderedEdges.ToList()[nextI];
 
                         if (!site.UndefinedPointOrder)
                         {
-                            for (int i = 0; i < orderedEdges.Count; i++)
-                            {
-                                Edge edge = orderedEdges[i];
-
-                                strings.Add(
-                                    GetAssertTrueText(
-                                        assert,
-                                        @"EdgeIs(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseEdges) + @".ElementAt(" + i + @"), " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")"
-                                    ) +
-                                    @" // #" + site.Id + @" " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id
-                                );
-                            }
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"EdgeIs(" + fullListName + @".ElementAt(" + i + @"), " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")"
+                                ) +
+                                @" // #" + site.Id + @" " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id
+                            );
                         }
                         else
                         {
-                            strings.Add("// Exact starting edge is undefined, so we only check that edges are sequential");
+                            // Exact starting edge is undefined, so we only check that edges are sequential
 
-                            for (int i = 0; i < orderedEdges.Count; i++)
-                            {
-                                Edge edge1 = orderedEdges[i];
-                                Edge edge2 = orderedEdges[i == orderedEdges.Count - 1 ? 0 : i + 1];
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"EdgesAreSequential(" + fullListName + @", " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @", " + nextEdge.FromPoint.X + @", " + nextEdge.FromPoint.Y + @", " + nextEdge.ToPoint.X + @", " + nextEdge.ToPoint.Y + @")"
+                                ) +
+                                @" // #" + site.Id + @" " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id + " > " + (char)nextEdge.FromPoint.Id + @"-" + (char)nextEdge.ToPoint.Id
+                            );
+                        }
+                    }
+                }
+                else if (selection == EdgeSelection.ClockwiseWound)
+                {
+                    // Wound edges are wrapped into a subclass, so we need to unwrap it
+                    strings.Add(
+                        (!definedSublist ? "List<VoronoiEdge> " : "") +
+                        inlinedListName + @" = sites[" + siteIndex + @"]." + nameof(VoronoiSite.ClockwiseEdgesWound) + @".Select(we => we.Edge).ToList();"
+                    );
+                    definedSublist = true;
+                    
+                    List<Point> sitePoints = FlattenSitePoints(site.Points);
+                    List<Edge> orderedEdges = siteEdges.OrderBy(e => GetEdgeSoftIndex(e, sitePoints)).ToList();
+                    List<Edge> woundEdges = WindEdges(orderedEdges, sitePoints);
+                    
+                    for (int i = 0; i < woundEdges.Count; i++)
+                    {
+                        Edge edge = woundEdges[i];
+                        int nextI = i == woundEdges.Count - 1 ? 0 : i + 1;
 
-                                strings.Add(
-                                    GetAssertTrueText(
-                                        assert,
-                                        @"EdgesAreSequential(sites[" + allSites.IndexOf(site) + @"]" + @"." + nameof(VoronoiSite.ClockwiseEdges) + @", " + edge1.FromPoint.X + @", " + edge1.FromPoint.Y + @", " + edge1.ToPoint.X + @", " + edge1.ToPoint.Y + @", " + edge2.FromPoint.X + @", " + edge2.FromPoint.Y + @", " + edge2.ToPoint.X + @", " + edge2.ToPoint.Y + @")"
-                                    ) +
-                                    @" // #" + site.Id + @" " + (char)edge1.FromPoint.Id + @"-" + (char)edge1.ToPoint.Id + @" > " + (char)edge2.FromPoint.Id + @"-" + (char)edge2.ToPoint.Id
-                                );
-                            }
+                        if (!site.UndefinedPointOrder)
+                        {
+                            strings.Add(
+                                GetAssertTrueText(
+                                    assert,
+                                    @"EdgeIsExactly(" + fullListName + @".ElementAt(" + i + @"), " + edge.FromPoint.X + @", " + edge.FromPoint.Y + @", " + edge.ToPoint.X + @", " + edge.ToPoint.Y + @")"
+                                ) +
+                                @" // #" + site.Id + @" " + (char)edge.FromPoint.Id + @"-" + (char)edge.ToPoint.Id
+                            );
+                        }
+                        else
+                        {
+                            // Exact starting edge is undefined, so we only check that edges are sequential
+
+                            strings.Add(
+                                GetAssertEqualsText(
+                                    assert,
+                                    fullListName + @".ElementAt(" + nextI + @").Start",
+                                    fullListName + @".ElementAt(" + i + @").End"
+                                )
+                            );
                         }
                     }
                 }
@@ -1694,24 +1800,65 @@ public class TestLayoutParser
         return strings;
     }
 
-    private int GetEdgeSoftIndex(Edge edge, List<Point>[] sitePoints)
+    [Pure]
+    private static List<Edge> WindEdges(List<Edge> edges, List<Point> points)
     {
-        List<Point> flatPoints = sitePoints.SelectMany(sp => sp).Reverse().ToList();
+        // This is (unfortunately) the same as VoronoiSite.WindEdges(),
+        // but I am not sure how to write this any other way
+        // other than to manually enter the clockwise point and edge (winding) order for every test layout...
+        
+        List<Edge> list = [ ];
+        
+        int edgeOffset = 0;
+        
+        for (int i = 0; i < edges.Count; i++)
+        {
+            if ((points[0] == edges[i].FromPoint && points[1] == edges[i].ToPoint) ||
+                points[0] == edges[i].ToPoint && points[1] == edges[i].FromPoint)
+            {
+                edgeOffset = i;
+                break;
+            }
+        }
+        
+        for (int i = 0; i < edges.Count; i++)
+        {
+            Point point = points[i];
+            
+            int edgeIndex = (i + edgeOffset) % edges.Count;
+            Edge edge = edges[edgeIndex];
 
-        int fromIndex = flatPoints.IndexOf(edge.FromPoint);
-        int toIndex = flatPoints.IndexOf(edge.ToPoint);
+            bool flipped = point == edge.ToPoint;
+
+            list.Add(flipped ? edge.Reversed() : edge);
+        }
+
+        return list;
+    }
+
+    [Pure]
+    private static List<Point> FlattenSitePoints(List<Point>[] sitePoints)
+    {
+        return sitePoints.Reverse().SelectMany(sp => sp.AsEnumerable().Reverse()).ToList();
+    }
+
+    [Pure]
+    private static int GetEdgeSoftIndex(Edge edge, List<Point> points)
+    {
+        int fromIndex = points.IndexOf(edge.FromPoint);
+        int toIndex = points.IndexOf(edge.ToPoint);
 
         // Points are sequential
         if (Math.Abs(toIndex - fromIndex) == 1)
             return Math.Min(fromIndex, toIndex); // select previous index (going to next)
 
         // Points wrap around
-        if (Math.Abs(toIndex - fromIndex) == flatPoints.Count - 1)
+        if (Math.Abs(toIndex - fromIndex) == points.Count - 1)
             return Math.Max(fromIndex, toIndex); // select last index (going to first)
 
         throw new InvalidOperationException(
             "Points " +
-            string.Join(",", flatPoints.Select(p => (char)p.Id).ToArray()) +
+            string.Join(",", points.Select(p => (char)p.Id).ToArray()) +
             " not in order for edge " + (char)edge.FromPoint.Id + " " + (char)edge.ToPoint.Id);
     }
 
@@ -2311,7 +2458,7 @@ public class TestLayoutParser
         public int X { get; }
         public int Y { get; }
         public int Id { get; }
-        public List<Point>[] Points { get; set; } = null!;
+        public List<Point>[] Points { get; set; } = null!; // split by axis/quadrant unless undefined order
         public bool UndefinedPointOrder { get; set; }
 
 
@@ -2375,10 +2522,22 @@ public class TestLayoutParser
             yield return ToPoint;
         }
 
+        public Edge Reversed()
+        {
+            return new Edge(ToPoint, FromPoint, EdgeSites, Border);
+        }
+
 
         public override string ToString()
         {
             return FromPoint + "-" + ToPoint;
         }
+    }
+
+    private enum EdgeSelection
+    {
+        Regular,
+        Clockwise,
+        ClockwiseWound
     }
 }

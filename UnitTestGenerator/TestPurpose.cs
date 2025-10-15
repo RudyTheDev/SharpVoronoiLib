@@ -14,6 +14,7 @@ public enum TestPurpose
     AssertEdgeNeighbours,
     AssertSiteNeighbours,
     AssertSiteEdgesClockwise,
+    AssertSiteEdgesClockwiseWound,
     AssertSitePointsClockwise,
     AssertLiesOnEdgeOrCorner,
     AssertSiteCentroids

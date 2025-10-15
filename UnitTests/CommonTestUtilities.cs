@@ -1,5 +1,8 @@
-﻿namespace SharpVoronoiLib.UnitTests;
+﻿using JetBrains.Annotations;
 
+namespace SharpVoronoiLib.UnitTests;
+
+[UsedImplicitly] // by generated tests
 internal static class CommonTestUtilities
 {
     internal static VoronoiPoint FindPoint(IEnumerable<VoronoiEdge> edges, double x, double y)
@@ -51,6 +54,12 @@ internal static class CommonTestUtilities
             edge.End != null! &&
             (edge.Start.X.ApproxEqual(x1) && edge.Start.Y.ApproxEqual(y1) && edge.End.X.ApproxEqual(x2) && edge.End.Y.ApproxEqual(y2) ||
              edge.Start.X.ApproxEqual(x2) && edge.Start.Y.ApproxEqual(y2) && edge.End.X.ApproxEqual(x1) && edge.End.Y.ApproxEqual(y1));
+    }
+
+    internal static bool EdgeIsExactly(WoundVoronoiEdge edge, double x1, double y1, double x2, double y2)
+    {
+        return
+            edge.Start.X.ApproxEqual(x1) && edge.Start.Y.ApproxEqual(y1) && edge.End.X.ApproxEqual(x2) && edge.End.Y.ApproxEqual(y2);
     }
 
     internal static bool HasEdge(IEnumerable<VoronoiEdge> edges, double x1, double y1, double x2, double y2)

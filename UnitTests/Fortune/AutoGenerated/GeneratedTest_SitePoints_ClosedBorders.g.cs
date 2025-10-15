@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using SharpVoronoiLib.Exceptions;
 using static SharpVoronoiLib.UnitTests.CommonTestUtilities;
 
 #pragma warning disable

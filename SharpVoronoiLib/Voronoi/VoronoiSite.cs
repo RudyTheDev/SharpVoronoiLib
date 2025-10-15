@@ -55,6 +55,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// <summary>
     /// Same as <see cref="Edges"/>, but sorted in clockwise order around the site.
     /// If the site lies on any of the edges (or corners), then the starting order is not defined.
+    /// Note that edge direction is undefined and their start/end points aren't sorted (see <see cref="ClockwiseEdgesWound"/>). 
     /// </summary>
     [PublicAPI]
     public IEnumerable<VoronoiEdge> ClockwiseEdges
@@ -63,20 +64,49 @@ public class VoronoiSite : IEquatable<VoronoiSite>
         {
             ThrowIfUnavailable();
                 
-            if (_clockwiseCell == null)
+            if (_clockwiseEdges == null)
             {
-                _clockwiseCell = new List<VoronoiEdge>(edges);
-                _clockwiseCell.Sort(SortCellEdgesClockwise);
+                _clockwiseEdges = new List<VoronoiEdge>(edges);
+                _clockwiseEdges.Sort(SortCellEdgesClockwise);
             }
 
-            return _clockwiseCell;
+            return _clockwiseEdges;
         }
     }
-    
 
     [PublicAPI]
     [Obsolete("Use ClockwiseEdges instead", false)]
     public IEnumerable<VoronoiEdge> ClockwiseCell => ClockwiseEdges;
+
+    /// <summary>
+    /// Similar to <see cref="ClockwiseEdges"/>, but each edge is "wound" so that its start point is the previous edge's end point.
+    /// In other words, the edges form a directional loop (assuming the site is not on the border with unclosed edges).
+    /// This will match the order of <see cref="ClockwisePoints"/>.
+    /// This will fail if the site is not properly <see cref="Closed"/>.
+    /// </summary>
+    [PublicAPI]
+    public IEnumerable<WoundVoronoiEdge> ClockwiseEdgesWound
+    {
+        get
+        {
+            ThrowIfUnavailable();
+
+            if (!Closed)
+                throw new VoronoiSiteNotClosedException();
+            // todo: technically this is not REQUIRED logically, but it's just a mess to handle such disjoint edges
+            // not sure what the use case even is for "winding" edges of unclosed cells...
+                
+            if (_clockwiseEdgesWound == null)
+            {
+                IEnumerable<VoronoiEdge> _ = ClockwiseEdges; // this will initialize if not yet done
+                IEnumerable<VoronoiPoint> __ = ClockwisePoints; // this will initialize if not yet done
+
+                _clockwiseEdgesWound = WindEdges(_clockwiseEdges!, _clockwisePoints!); 
+            }
+
+            return _clockwiseEdgesWound;
+        }
+    }
 
     /// <summary>
     /// The sites across the edges.
@@ -202,6 +232,12 @@ public class VoronoiSite : IEquatable<VoronoiSite>
         }
     }
 
+    /// <summary>
+    /// Whether our site's cell is closed, i.e. all edges connect and form a closed polygon.
+    /// This is only not true for sites touching edges when tesselation is set to <see cref="BorderEdgeGeneration.DoNotMakeBorderEdges"/>.
+    /// </summary>
+    public bool Closed => edges.Count > 0 && edges.Count == Points.Count();
+
         
     internal readonly List<VoronoiEdge> edges;
     internal readonly List<VoronoiSite> neighbours;
@@ -212,7 +248,8 @@ public class VoronoiSite : IEquatable<VoronoiSite>
 
     private List<VoronoiPoint>? _points;
     private List<VoronoiPoint>? _clockwisePoints;
-    private List<VoronoiEdge>? _clockwiseCell;
+    private List<VoronoiEdge>? _clockwiseEdges;
+    private List<WoundVoronoiEdge>? _clockwiseEdgesWound;
     private VoronoiEdge? _liesOnEdge;
     private VoronoiPoint? _liesOnCorner;
     private VoronoiPoint? _centroid;
@@ -329,7 +366,8 @@ public class VoronoiSite : IEquatable<VoronoiSite>
         neighbours.Clear();
         _points = null;
         _clockwisePoints = null;
-        _clockwiseCell = null;
+        _clockwiseEdges = null;
+        _clockwiseEdgesWound = null;
         _liesOnEdge = null;
         _liesOnCorner = null;
         _centroid = null;
@@ -338,6 +376,46 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     internal void MarkSkippedAsDuplicate()
     {
         _skippedAsDuplicate = true;
+    }
+
+    internal static List<WoundVoronoiEdge> WindEdges(List<VoronoiEdge> edges, List<VoronoiPoint> points)
+    {
+        List<WoundVoronoiEdge> list = new List<WoundVoronoiEdge>(edges.Count);
+        
+        // Find an edge with the first point
+        // This may be not the first edge even in a sorted list due to border edge/point ambiguity
+
+        int edgeOffset = 0;
+        
+        for (int i = 0; i < edges.Count; i++)
+        {
+            // Edge must be between the first two points
+            // (we can't check just one point, because this could be a neighbouring edge)
+            if ((ReferenceEquals(points[0], edges[i].Start) && ReferenceEquals(points[1], edges[i].End)) ||
+                ReferenceEquals(points[0], edges[i].End) && ReferenceEquals(points[1], edges[i].Start))
+            {
+                edgeOffset = i;
+                break;
+            }
+        }
+        
+        // We check each edge
+        for (int i = 0; i < edges.Count; i++)
+        {
+            // The starting point should match the edge
+            VoronoiPoint point = points[i];
+            
+            // Edge that should be starting at this point
+            int edgeIndex = (i + edgeOffset) % edges.Count;
+            VoronoiEdge edge = edges[edgeIndex];
+
+            // We need to flip if it doesn't
+            bool flipped = ReferenceEquals(point, edge.End);
+
+            list.Add(new WoundVoronoiEdge(edge, flipped));
+        }
+
+        return list;
     }
 
     [Pure]
@@ -554,7 +632,8 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     {
         _points = null;
         _clockwisePoints = null;
-        _clockwiseCell = null;
+        _clockwiseEdges = null;
+        _clockwiseEdgesWound = null;
     }
         
     internal void Invalidated()
