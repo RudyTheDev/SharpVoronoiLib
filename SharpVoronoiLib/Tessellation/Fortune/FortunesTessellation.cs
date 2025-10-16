@@ -35,8 +35,8 @@ internal class FortunesTessellation : ITessellationAlgorithm
             
         //init tree
         BeachLine beachLine = new BeachLine();
-        LinkedList<VoronoiEdge> edges = new LinkedList<VoronoiEdge>();
-        HashSet<FortuneCircleEvent> deleted = new HashSet<FortuneCircleEvent>();
+        List<VoronoiEdge> edges = [ ];
+        HashSet<FortuneCircleEvent> deleted = [ ];
 
         //init edge list
         while (eventQueue.Count != 0)
@@ -57,9 +57,7 @@ internal class FortunesTessellation : ITessellationAlgorithm
                     break;
             }
         }
-
-        return edges.ToList(); 
-        // Note: I attempted to make an optimized linked list with item caching, but this didn't gain any performance until 100K sites.
-        // I suspect the small number of edge removals and the overhead of the linked list management just doesn't beat a single .ToList() here.
+        
+        return edges; 
     }
 }

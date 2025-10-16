@@ -19,16 +19,15 @@ public class Benchmarks
             
             
         BenchmarkRunner.Run<TesselationBenchmark>();
-            
+        
         // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error     | StdDev      | Median     |
         // |----------- |-------------- |--------------------- |-----------:|----------:|------------:|-----------:|
-        // | Tessellate | 100           | DoNotMakeBorderEdges |   389.9 us |   7.71 us |    10.81 us |   386.8 us |
-        // | Tessellate | 100           | MakeBorderEdges      |   414.0 us |   7.99 us |    11.96 us |   412.4 us |
-        // | Tessellate | 500           | DoNotMakeBorderEdges | 2,125.4 us |  42.02 us |    48.39 us | 2,113.4 us |
-        // | Tessellate | 500           | MakeBorderEdges      | 2,179.2 us |  43.25 us |    59.20 us | 2,189.1 us |
-        // | Tessellate | 2000          | DoNotMakeBorderEdges | 4,965.0 us | 748.51 us | 2,111.19 us | 3,916.7 us |
-        // | Tessellate | 2000          | MakeBorderEdges      | 4,304.5 us | 276.50 us |   713.73 us | 3,997.8 us |
-            
+        // | Tessellate | 100           | DoNotMakeBorderEdges |   453.1 us |   8.94 us |    10.98 us |   450.6 us |
+        // | Tessellate | 100           | MakeBorderEdges      |   483.6 us |   9.03 us |     9.27 us |   483.0 us |
+        // | Tessellate | 500           | DoNotMakeBorderEdges | 2,457.1 us |  48.57 us |    61.43 us | 2,449.5 us |
+        // | Tessellate | 500           | MakeBorderEdges      | 2,365.4 us |  46.92 us |    71.66 us | 2,341.8 us |
+        // | Tessellate | 2000          | DoNotMakeBorderEdges | 5,139.8 us | 587.55 us | 1,647.54 us | 4,348.9 us |
+        // | Tessellate | 2000          | MakeBorderEdges      | 4,835.6 us | 230.55 us |   676.16 us | 4,534.8 us |
             
         //BenchmarkRunner.Run<RandomPointGenerationBenchmark>();
             
