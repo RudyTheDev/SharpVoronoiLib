@@ -27,7 +27,7 @@ public class VoronoiGame : Game
 
     // Zoom configuration
     private const float minZoom = 0.2f;
-    private const float maxZoom = 10.0f;
+    private const float maxZoom = 20.0f;
     private const float zoomStep = 1.3f; // per wheel notch
 
     // Click vs drag threshold
@@ -62,6 +62,8 @@ public class VoronoiGame : Game
 
     private bool _drawEdges = true;
     private bool _drawSiteToSiteLines = true;
+    
+    private PointGenerationMethod _pointGenerationMethod = PointGenerationMethod.Uniform;
 
 
     public VoronoiGame()
@@ -146,6 +148,12 @@ public class VoronoiGame : Game
         
         if (keyboardState.IsKeyDown(Keys.D2) && _lastKeyboardState.IsKeyUp(Keys.D2))
             _drawSiteToSiteLines = !_drawSiteToSiteLines;
+
+        if (keyboardState.IsKeyDown(Keys.Tab) && _lastKeyboardState.IsKeyUp(Keys.Tab))
+        {
+            _pointGenerationMethod = _pointGenerationMethod == PointGenerationMethod.Uniform ? PointGenerationMethod.Gaussian : PointGenerationMethod.Uniform;
+            Generate();
+        }
 
         // Press Space to (re)generate and reset camera
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
@@ -449,15 +457,39 @@ public class VoronoiGame : Game
     
     private void Generate()
     {
-        List<VoronoiSite> sites = MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY);
+        // Set to current screen (minus visual margin)
+        int width = GraphicsDevice.Viewport.Width - viewportMargin * 2;
+        int height = GraphicsDevice.Viewport.Height - viewportMargin * 2;
+
+        double minX;
+        double minY;
+        double maxX;
+        double maxY;
+        
+        if (width <= 0 || height <= 0) // prevent exception
+        {
+            minX = 0;
+            minY = 0;
+            maxX = 0;
+            maxY = 0;
+        }
+        else
+        {
+            minX = 0;
+            minY = 0;
+            maxX = width;
+            maxY = height;
+        }
+        
+        int numPoints = width * height / 400; // about 2000 points at 1280 x 720
         
         _plane = new VoronoiPlane(minX, minY, maxX, maxY);
-        
-        _plane.SetSites(sites);
+
+        _plane.GenerateRandomSites(numPoints, _pointGenerationMethod);
         
         _plane.Tessellate();
         
-        //_plane.Relax();
+        _plane.Relax();
 
         // Reset camera after generating new content
         ResetCamera();
@@ -466,61 +498,7 @@ public class VoronoiGame : Game
         _hoveredSite = null;
         _selectedSite = null;
     }
-
     
-    private List<VoronoiSite> MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY)
-    {
-        // Set to current screen
-        int width = GraphicsDevice.Viewport.Width - viewportMargin * 2;
-        int height = GraphicsDevice.Viewport.Height - viewportMargin * 2;
-        
-        if (width <= 0 || height <= 0) // prevent exception
-        {
-            minX = 0;
-            minY = 0;
-            maxX = 0;
-            maxY = 0;
-            return [];
-        }
-
-        int numPoints = width * height / 400; // about 2000 points at 1280 x 720
-        
-        List<VoronoiSite> sites = new List<VoronoiSite>(numPoints);
-        
-        int seed = Random.Shared.Next();
-        //Console.WriteLine("Seed: " + seed);
-        
-        Random rand = new Random(seed);
-        for (int i = 0; i < numPoints; i++)
-        {
-            sites.Add(
-                new VoronoiSite(
-                    rand.Next(width), 
-                    rand.Next(height)
-                )
-            );
-        }
-        
-        int duplicates = Random.Shared.Next(numPoints / 20);
-        
-        for (int i = 0; i < duplicates; i++)
-        {
-            int i1 = Random.Shared.Next(numPoints);
-            int i2 = Random.Shared.Next(numPoints);
-            
-            // "Duplicate"
-            sites[i1] = new VoronoiSite(sites[i2].X, sites[i2].Y);
-        }
-
-        minX = 0;
-        minY = 0;
-        maxX = width;
-        maxY = height;
-        
-        return sites;
-    }
-
-
     /// <summary>
     /// Recalculates camera transform based on current viewport, world bounds, and camera state.
     /// </summary>
