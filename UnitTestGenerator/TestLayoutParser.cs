@@ -368,8 +368,8 @@ public class TestLayoutParser
 
             stringBuilder.AppendPaddedLine(2, @"plane.Tessellate(" + BorderLogicToRealEnumParam(borderLogic).TrimStart(',', ' ') + @");");
             stringBuilder.AppendPaddedLine(2, @"List<VoronoiEdge> edges = plane.Edges;");
-            
-            if (purpose is TestPurpose.AssertPoints or TestPurpose.AssertSitePoints)
+
+            if (purpose is TestPurpose.AssertPoints or TestPurpose.AssertSitePoints or TestPurpose.AssertPointEdges or TestPurpose.AssertPointSites)
                 stringBuilder.AppendPaddedLine(2, @"List<VoronoiPoint> points = plane.Points;");
             
             stringBuilder.AppendLine();
@@ -396,7 +396,27 @@ public class TestLayoutParser
                     stringBuilder.AppendPaddedLine(2, @"// Assert", true);
                     AppendAssertions(BuildSitePointsAssertions(test.Edges, test.Sites, borderLogic, false, true));
                     break;
-
+                
+                case TestPurpose.AssertPointEdges:
+                    stringBuilder.AppendPaddedLine(2, @"// Assume", true);
+                    AppendAssertions(BuildPointsAssertions(test.Points, borderLogic, false));
+                    AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
+                    stringBuilder.AppendLine();
+                    
+                    stringBuilder.AppendPaddedLine(2, @"// Assert", true);
+                    AppendAssertions(BuildPointEdgeAssertions(test.Points, test.Edges, borderLogic, true));
+                    break;
+                
+                case TestPurpose.AssertPointSites:
+                    stringBuilder.AppendPaddedLine(2, @"// Assume", true);
+                    AppendAssertions(BuildPointsAssertions(test.Points, borderLogic, false));
+                    AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
+                    stringBuilder.AppendLine();
+                    
+                    stringBuilder.AppendPaddedLine(2, @"// Assert", true);
+                    AppendAssertions(BuildPointSiteAssertions(test.Points, test.Sites, borderLogic, true));
+                    break;
+                    
                 case TestPurpose.AssertEdgeSites:
                     stringBuilder.AppendPaddedLine(2, @"// Assume", true);
                     AppendAssertions(BuildEdgeAssertions(test.Edges, borderLogic, false));
@@ -679,6 +699,16 @@ public class TestLayoutParser
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected <see cref=""" + nameof(VoronoiPoint) + @"""/>`s.");
                 strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiSite) + @"." + nameof(VoronoiSite.Points) + @"""/> contains the expected points.");
                 break;
+            
+            case TestPurpose.AssertPointEdges:
+                strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiPoint) + @"""/>`s have expected <see cref=""" + nameof(VoronoiEdge) + @"""/>`s.");
+                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiPoint) + @"." + nameof(VoronoiPoint.Edges) + @"""/> contains the expected edges.");
+                break;
+            
+            case TestPurpose.AssertPointSites:
+                strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiPoint) + @"""/>`s have expected <see cref=""" + nameof(VoronoiSite) + @"""/>`s.");
+                strings.Add(@"/// Specifically, that the <see cref=""" + nameof(VoronoiPoint) + @"." + nameof(VoronoiPoint.Sites) + @"""/> contains the expected sites.");
+                break;
 
             case TestPurpose.AssertSitePointsClockwise:
                 strings.Add(@"/// These tests assert that <see cref=""" + nameof(VoronoiSite) + @"""/>`s have expected clockwise-sorted <see cref=""" + nameof(VoronoiPoint) + @"""/>`s.");
@@ -849,7 +879,120 @@ public class TestLayoutParser
 
         return strings;
     }
+    
+    private List<string> BuildPointEdgeAssertions(List<Point> allPoints, List<Edge> edges, TestBorderLogic borderLogic, bool assert)
+    {
+        List<string> strings = [ ];
 
+        List<Point> points = allPoints.Where(p => PointMatchesBorderLogic(p, borderLogic)).ToList();
+
+        if (points.Count > 0)
+        {
+            for (int i = 0; i < points.Count; i++)
+            {
+                List<Edge> expectedEdges = edges
+                                           .Where(e => EdgeMatchesBorderLogic(e, borderLogic))
+                                           .Where(e => e.FromPoint == points[i] || e.ToPoint == points[i])
+                                           .ToList();
+
+                strings.Add((i == 0 ? "VoronoiPoint " : "") + "point" + " = FindPoint(points, " + points[i].X + ", " + points[i].Y + "); // " + (char)points[i].Id);
+                
+                strings.Add(
+                    GetAssertNotNullText(
+                        assert,
+                        "point" + "." + nameof(VoronoiPoint.Edges)
+                    )
+                );
+
+                strings.Add(
+                    GetAssertEqualsText(
+                        assert,
+                        expectedEdges.Count,
+                        "point" + "." + nameof(VoronoiPoint.Edges) + ".Count()"
+                    )
+                );
+
+                foreach (Edge edge in expectedEdges)
+                {
+                    strings.Add(
+                        GetAssertTrueText(
+                            assert,
+                            "PointHasEdge(point, FindEdge(edges, " + edge.FromPoint.X + ", " + edge.FromPoint.Y + ", " + edge.ToPoint.X + ", " + edge.ToPoint.Y + "))",
+                            "Expected: point " + (char)points[i].Id + " has edge " + (char)edge.FromPoint.Id + "-" + (char)edge.ToPoint.Id
+                        ) +
+                        " // " + ((char)points[i].Id + " on " + (char)edge.FromPoint.Id + "-" + (char)edge.ToPoint.Id)
+                    );
+                }
+            }
+        }
+        else
+        {
+            if (assert)
+            {
+                strings.Add("// There are no points, so nothing to check");
+                strings.Add("Assert.Pass();");
+            }
+        }
+
+        return strings;
+    }
+
+    private List<string> BuildPointSiteAssertions(List<Point> allPoints, List<Site> sites, TestBorderLogic borderLogic, bool assert)
+    {
+        List<string> strings = [ ];
+
+        List<Point> points = allPoints.Where(p => PointMatchesBorderLogic(p, borderLogic)).ToList();
+
+        if (points.Count > 0)
+        {
+            for (int i = 0; i < points.Count; i++)
+            {
+                List<Site> expectedSites = sites
+                                           .Where(s => s.Points.Any(sp => sp.Any(p => p == points[i])))
+                                           .ToList();
+
+                strings.Add((i == 0 ? "VoronoiPoint " : "") + "point" + " = FindPoint(points, " + points[i].X + ", " + points[i].Y + "); // " + (char)points[i].Id);
+                
+                strings.Add(
+                    GetAssertNotNullText(
+                        assert,
+                        "point" + "." + nameof(VoronoiPoint.Sites)
+                    )
+                );
+
+                strings.Add(
+                    GetAssertEqualsText(
+                        assert,
+                        expectedSites.Count,
+                        "point" + "." + nameof(VoronoiPoint.Sites) + ".Count()"
+                    )
+                );
+
+                foreach (Site site in expectedSites)
+                {
+                    strings.Add(
+                        GetAssertTrueText(
+                            assert,
+                            "PointHasSite(point, FindSite(sites, " + site.X + ", " + site.Y + "))",
+                            "Expected: point " + (char)points[i].Id + " has site #" + site.Id
+                        ) +
+                        " // " + ((char)points[i].Id + " for site #" + site.Id)
+                    );
+                }
+            }
+        }
+        else
+        {
+            if (assert)
+            {
+                strings.Add("// There are no points, so nothing to check");
+                strings.Add("Assert.Pass();");
+            }
+        }
+
+        return strings;
+    }
+    
     private string GetAssertEqualsText(bool assert, object expected, object actual, string? message = null, object? within = null)
     {
         return

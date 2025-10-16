@@ -10,6 +10,8 @@ public enum TestPurpose
     AssertSiteEdges,
     AssertEdgeSites,
     AssertSitePoints,
+    AssertPointEdges,
+    AssertPointSites,
     AssertPointBorderLocation,
     AssertEdgeNeighbours,
     AssertSiteNeighbours,

@@ -154,6 +154,7 @@ internal class BeachLine
                 vertex = rightSection.Data.Edge.Start;
 
                 // Discard the edge
+                rightSection.Data.Edge.Discard();
                 edges.Remove(rightSection.Data.Edge);
 
                 // Disconnect (Delaunay) neighbours

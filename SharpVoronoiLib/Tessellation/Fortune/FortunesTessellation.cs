@@ -30,7 +30,7 @@ internal class FortunesTessellation : ITessellationAlgorithm
 
             eventQueue.Insert(siteEvent);
                 
-            site.Tessellating();
+            site.Tessellated();
         }
             
         //init tree

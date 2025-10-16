@@ -25,6 +25,8 @@ public static class UnitTestGenerator
             ("GeneratedTest_EdgeNeighbours", TestPurpose.AssertEdgeNeighbours),
             ("GeneratedTest_SiteNeighbours", TestPurpose.AssertSiteNeighbours),
             ("GeneratedTest_SitePoints", TestPurpose.AssertSitePoints),
+            ("GeneratedTest_PointEdges", TestPurpose.AssertPointEdges),
+            ("GeneratedTest_PointSites", TestPurpose.AssertPointSites),
             ("GeneratedTest_SitePointsClockwise", TestPurpose.AssertSitePointsClockwise),
             ("GeneratedTest_PointBorderLocation", TestPurpose.AssertPointBorderLocation),
             ("GeneratedTest_LiesOnEdgeOrCorner", TestPurpose.AssertLiesOnEdgeOrCorner),
