@@ -20,15 +20,18 @@ public class Benchmarks
             
         BenchmarkRunner.Run<TesselationBenchmark>();
             
-        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error     | StdDev      | Median     |
-        // |----------- |-------------- |--------------------- |-----------:|----------:|------------:|-----------:|
-        // | Tessellate | 100           | DoNotMakeBorderEdges |   389.9 us |   7.71 us |    10.81 us |   386.8 us |
-        // | Tessellate | 100           | MakeBorderEdges      |   414.0 us |   7.99 us |    11.96 us |   412.4 us |
-        // | Tessellate | 500           | DoNotMakeBorderEdges | 2,125.4 us |  42.02 us |    48.39 us | 2,113.4 us |
-        // | Tessellate | 500           | MakeBorderEdges      | 2,179.2 us |  43.25 us |    59.20 us | 2,189.1 us |
-        // | Tessellate | 2000          | DoNotMakeBorderEdges | 4,965.0 us | 748.51 us | 2,111.19 us | 3,916.7 us |
-        // | Tessellate | 2000          | MakeBorderEdges      | 4,304.5 us | 276.50 us |   713.73 us | 3,997.8 us |
-            
+        // EdgeLinkedList
+        // ...
+        
+        // LinkedList + edges.ToList();
+        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean      | Error     | StdDev    | Median    |
+        // |----------- |-------------- |--------------------- |----------:|----------:|----------:|----------:|
+        // | Tessellate | 300           | DoNotMakeBorderEdges |  1.520 ms | 0.0259 ms | 0.0354 ms |  1.515 ms |
+        // | Tessellate | 300           | MakeBorderEdges      |  2.026 ms | 0.1809 ms | 0.5333 ms |  1.832 ms |
+        // | Tessellate | 1000          | DoNotMakeBorderEdges |  4.643 ms | 0.8075 ms | 2.3810 ms |  3.618 ms |
+        // | Tessellate | 1000          | MakeBorderEdges      |  4.546 ms | 0.8015 ms | 2.3633 ms |  3.500 ms |
+        // | Tessellate | 10000         | DoNotMakeBorderEdges | 51.933 ms | 1.1274 ms | 3.3063 ms | 51.067 ms |
+        // | Tessellate | 10000         | MakeBorderEdges      | 52.544 ms | 1.0392 ms | 2.7376 ms | 51.883 ms |
             
         //BenchmarkRunner.Run<RandomPointGenerationBenchmark>();
             
