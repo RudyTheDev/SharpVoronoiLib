@@ -15,11 +15,12 @@ public class VoronoiGame : Game
 {
     private readonly Color _backgroundColor = new Color(147, 145, 133);
     
-    private readonly Color _lineColor = new Color(26, 31, 41);
+    private readonly Color _edgeColor = new Color(26, 31, 41);
     private readonly Color _hoveredLineColor = new Color(240, 24, 222);
     private readonly Color _selectedLineColor = new Color(255, 196, 0);
     private readonly Color _selectedNeighbouringLineColor = new Color(255, 140, 0);
     private readonly Color _neighbourLinkColor = new Color(133, 133, 130);
+    private readonly Color _neighbourLinkColorProminent = new Color(80, 80, 78);
 
     /// <summary> Small margin from viewport edge to not have the map right at the edge </summary>
     private const int viewportMargin = 10;
@@ -57,8 +58,10 @@ public class VoronoiGame : Game
 
     private InteractionState _interactionState = new IdleState();
 
-    // Track whether mouse is inside the world bounds for tooltip display
     private bool _isMouseInsideWorld;
+
+    private bool _drawEdges = true;
+    private bool _drawSiteToSiteLines = true;
 
 
     public VoronoiGame()
@@ -133,8 +136,16 @@ public class VoronoiGame : Game
             return;
         }
         
+        // Keyboard interaction
+        
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
             Exit();
+        
+        if (keyboardState.IsKeyDown(Keys.D1) && _lastKeyboardState.IsKeyUp(Keys.D1))
+            _drawEdges = !_drawEdges;
+        
+        if (keyboardState.IsKeyDown(Keys.D2) && _lastKeyboardState.IsKeyUp(Keys.D2))
+            _drawSiteToSiteLines = !_drawSiteToSiteLines;
 
         // Press Space to (re)generate and reset camera
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
@@ -172,18 +183,26 @@ public class VoronoiGame : Game
         }
 
         // Mouse interaction
+        
         switch (_interactionState)
         {
             case IdleState:
                 if (mouseState.LeftButton == ButtonState.Pressed && _lastMouseState.LeftButton == ButtonState.Released && isMouseInsideViewport)
                     _interactionState = new PressedState(mouseState.X, mouseState.Y);
+
+                if (mouseState.RightButton == ButtonState.Pressed && _lastMouseState.RightButton == ButtonState.Released && isMouseInsideViewport)
+                    _selectedSite = null;
                 break;
 
             case PressedState pressed:
                 if (mouseState.LeftButton == ButtonState.Released && _lastMouseState.LeftButton == ButtonState.Pressed)
                 {
                     if (isMouseInsideViewport)
-                        SelectNearestSiteUnder(mouseState.X, mouseState.Y);
+                    {
+                        Vector2 world = ScreenToWorld(mouseState.X, mouseState.Y);
+                        _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
+                    }
+
                     _interactionState = new IdleState();
                 }
                 else
@@ -234,6 +253,8 @@ public class VoronoiGame : Game
             _isMouseInsideWorld = false;
             _hoveredSite = null;
         }
+        
+        // Done with inputs
 
         _lastKeyboardState = keyboardState;
         _lastMouseState = mouseState;
@@ -247,7 +268,7 @@ public class VoronoiGame : Game
 
         _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap);
         
-        DrawOutStuff();
+        DrawOurStuff();
 
         _spriteBatch.End();
 
@@ -255,9 +276,10 @@ public class VoronoiGame : Game
     }
 
     
-    private void DrawOutStuff()
+    private void DrawOurStuff()
     {
-        DrawSiteToSiteLines();
+        if (_drawSiteToSiteLines)
+            DrawSiteToSiteLines();
         
         DrawSiteEdgeLines();
 
@@ -296,7 +318,7 @@ public class VoronoiGame : Game
                     _pixelTexture,
                     new Vector2((float)siteCoord.X, (float)siteCoord.Y),
                     null,
-                    _neighbourLinkColor,
+                    _drawEdges ? _neighbourLinkColor : _neighbourLinkColorProminent,
                     (float)rotation,
                     Vector2.Zero,
                     new Vector2((float)dist, 1f),
@@ -324,7 +346,10 @@ public class VoronoiGame : Game
             bool isSelectedEdge = _selectedSite != null && (edge.Left == _selectedSite || edge.Right == _selectedSite);
             bool isSelectionNeighbouringEdge = _selectedSite != null && (_selectedSite.Neighbours.Contains(edge.Left) || _selectedSite.Neighbours.Contains(edge.Right));
 
-            Color lineColor = _lineColor;
+            if (!_drawEdges && !isHoveredEdge && !isSelectedEdge && !isSelectionNeighbouringEdge)
+                continue; // skip drawing this edge if it's not important and edges are disabled
+            
+            Color lineColor = _edgeColor;
             float lineThickness = 1f; // without anti-aliasing this won't look good no matter what, so stick to 1 pixel
 
             if (isSelectedEdge)
@@ -436,6 +461,10 @@ public class VoronoiGame : Game
 
         // Reset camera after generating new content
         ResetCamera();
+        
+        // Clear any dangling interaction stuff
+        _hoveredSite = null;
+        _selectedSite = null;
     }
 
     
@@ -562,16 +591,7 @@ public class VoronoiGame : Game
         return new ScreenCoord(screenX, screenY);
     }
 
-    /// <summary>
-    /// Selects the nearest site under a screen-space coordinate (if any).
-    /// </summary>
-    private void SelectNearestSiteUnder(int screenX, int screenY)
-    {
-        Vector2 world = ScreenToWorld(screenX, screenY);
-        _selectedSite = _plane.GetNearestSiteTo(world.X, world.Y);
-    }
 
-    
     private struct CameraTransform
     {
         /// <summary> World-space X coordinate of the view center </summary>
