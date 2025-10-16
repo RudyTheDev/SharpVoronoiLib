@@ -65,6 +65,8 @@ public class VoronoiGame : Game
     
     private PointGenerationMethod _pointGenerationMethod = PointGenerationMethod.Uniform;
 
+    private bool _showHelp = true;
+
 
     public VoronoiGame()
     {
@@ -103,9 +105,9 @@ public class VoronoiGame : Game
         FontSystemSettings debugFontSettings = new FontSystemSettings
         {
             PremultiplyAlpha = true,
-            FontResolutionFactor = 8f,
-            KernelWidth = 3,
-            KernelHeight = 3
+            FontResolutionFactor = 3f,
+            KernelWidth = 2,
+            KernelHeight = 2,
         };
 
         FontSystem fontSystem = new FontSystem(debugFontSettings);
@@ -154,6 +156,9 @@ public class VoronoiGame : Game
             _pointGenerationMethod = _pointGenerationMethod == PointGenerationMethod.Uniform ? PointGenerationMethod.Gaussian : PointGenerationMethod.Uniform;
             Generate();
         }
+
+        if (keyboardState.IsKeyDown(Keys.OemTilde) && _lastKeyboardState.IsKeyUp(Keys.OemTilde))
+            _showHelp = !_showHelp;
 
         // Press Space to (re)generate and reset camera
         if (keyboardState.IsKeyDown(Keys.Space) && _lastKeyboardState.IsKeyUp(Keys.Space))
@@ -291,6 +296,9 @@ public class VoronoiGame : Game
         
         DrawSiteEdgeLines();
 
+        if (_showHelp)
+            DrawHelpOverlay();
+
         if (_isMouseInsideWorld)
             DrawTooltip(GetHoveredSiteTooltipLines());
     }
@@ -393,14 +401,14 @@ public class VoronoiGame : Game
             .Select((p, i) => new { Point = p, Label = (char)('A' + i) })
             .ToDictionary(x => x.Point, x => x.Label);
 
-        string floatFormat = "F2";
+        int siteIndex = _plane.Sites.IndexOf(_hoveredSite);
         
         List<string> lines =
         [
-            "Site " + _hoveredSite,
-            "Points " + string.Join(", ", pointLabels.Select(kv => kv.Value + " " + kv.Key.ToString(floatFormat))),
+            "Site #" + siteIndex + " " + _hoveredSite.ToString("F3"),
+            "Points " + string.Join(", ", pointLabels.Select(kv => kv.Value + " " + kv.Key.ToString("F1"))),
             "Edges " + string.Join(", ", _hoveredSite.Edges.Select(e => pointLabels[e.Start] + "-" + pointLabels[e.End])),
-            "Neighbours " + string.Join(", ", _hoveredSite.Neighbours.Select(n => n.ToString(floatFormat)))
+            "Neighbours " + string.Join(", ", _hoveredSite.Neighbours.Select(n => n.ToString("F1")))
         ];
 
         return lines;
@@ -448,6 +456,46 @@ public class VoronoiGame : Game
         // Text
         
         Vector2 textPos = new Vector2(pos.X + paddingHorizontal, pos.Y + paddingVertical);
+        for (int i = 0; i < lines.Count; i++)
+        {
+            _spriteBatch.DrawString(_font, lines[i], textPos, _tooltipTextColor);
+            textPos.Y += i == lines.Count - 1 ? _font.MeasureString(lines[i]).Y : _font.LineHeight;
+        }
+    }
+
+    private void DrawHelpOverlay()
+    {
+        List<string> lines =
+        [
+            "Controls (~ to toggle):",
+            "Mouse: left click select (right clear), wheel zoom, left drag pan",
+            "Space: regenerate",
+            "Tab: toggle uniform/gaussian",
+            "1: toggle edges, 2: toggle site links"
+        ];
+
+        // Measure
+        float width = 0f;
+        float height = 0f;
+        for (int i = 0; i < lines.Count; i++)
+        {
+            Vector2 size = _font.MeasureString(lines[i]);
+            if (size.X > width) width = size.X;
+            height += i == lines.Count - 1 ? size.Y : _font.LineHeight;
+        }
+
+        // Position in top-left within margin
+        const int paddingHorizontal = 4;
+        const int paddingVertical = 2;
+        const float x = viewportMargin + 2;
+        const float y = viewportMargin + 2;
+        Rectangle rectangle = new Rectangle((int)x, (int)y, (int)(width + paddingHorizontal * 2), (int)(height + paddingVertical * 2));
+
+        // Background box
+        _spriteBatch.Draw(_pixelTexture, rectangle, _tooltipBackgroundColor);
+
+        // Text
+        Vector2 textPos = new Vector2(x + paddingHorizontal, y + paddingVertical);
         for (int i = 0; i < lines.Count; i++)
         {
             _spriteBatch.DrawString(_font, lines[i], textPos, _tooltipTextColor);
