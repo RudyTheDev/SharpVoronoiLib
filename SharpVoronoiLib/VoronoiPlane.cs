@@ -240,6 +240,9 @@ public class VoronoiPlane
         return _edges;
     }
 
+    /// <summary>
+    /// WARNING: Work in progress, use at your own risk, see https://github.com/RudyTheDev/SharpVoronoiLib/issues/5.
+    /// </summary>
     [PublicAPI]
     public List<VoronoiSite> MergeSites(VoronoiSiteMergeQuery mergeQuery)
     {
