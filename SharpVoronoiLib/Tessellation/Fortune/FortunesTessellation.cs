@@ -35,7 +35,7 @@ internal class FortunesTessellation : ITessellationAlgorithm
             
         //init tree
         BeachLine beachLine = new BeachLine();
-        EdgeLinkedList<VoronoiEdge> edges = new EdgeLinkedList<VoronoiEdge>();
+        LinkedList<VoronoiEdge> edges = new LinkedList<VoronoiEdge>();
         HashSet<FortuneCircleEvent> deleted = new HashSet<FortuneCircleEvent>();
 
         //init edge list
@@ -59,6 +59,5 @@ internal class FortunesTessellation : ITessellationAlgorithm
         }
 
         return edges.ToList(); 
-        // TODO: Build the list directly
     }
 }
