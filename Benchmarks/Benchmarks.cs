@@ -20,15 +20,16 @@ public class Benchmarks
             
         BenchmarkRunner.Run<TesselationBenchmark>();
         
-        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error     | StdDev      | Median     |
-        // |----------- |-------------- |--------------------- |-----------:|----------:|------------:|-----------:|
-        // | Tessellate | 100           | DoNotMakeBorderEdges |   453.1 us |   8.94 us |    10.98 us |   450.6 us |
-        // | Tessellate | 100           | MakeBorderEdges      |   483.6 us |   9.03 us |     9.27 us |   483.0 us |
-        // | Tessellate | 500           | DoNotMakeBorderEdges | 2,457.1 us |  48.57 us |    61.43 us | 2,449.5 us |
-        // | Tessellate | 500           | MakeBorderEdges      | 2,365.4 us |  46.92 us |    71.66 us | 2,341.8 us |
-        // | Tessellate | 2000          | DoNotMakeBorderEdges | 5,139.8 us | 587.55 us | 1,647.54 us | 4,348.9 us |
-        // | Tessellate | 2000          | MakeBorderEdges      | 4,835.6 us | 230.55 us |   676.16 us | 4,534.8 us |
+        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error     | StdDev    | Median     |
+        // |----------- |-------------- |--------------------- |-----------:|----------:|----------:|-----------:|
+        // | Tessellate | 100           | DoNotMakeBorderEdges |   448.4 us |   8.32 us |  13.90 us |   446.9 us |
+        // | Tessellate | 100           | MakeBorderEdges      |   448.2 us |   7.41 us |  10.38 us |   447.7 us |
+        // | Tessellate | 500           | DoNotMakeBorderEdges | 2,313.3 us |  44.43 us |  45.62 us | 2,315.0 us |
+        // | Tessellate | 500           | MakeBorderEdges      | 2,370.0 us |  46.04 us |  59.87 us | 2,359.2 us |
+        // | Tessellate | 2000          | DoNotMakeBorderEdges | 4,128.1 us | 236.19 us | 642.58 us | 3,900.2 us |
+        // | Tessellate | 2000          | MakeBorderEdges      | 4,330.0 us | 210.65 us | 614.46 us | 4,030.8 us |
             
+        
         //BenchmarkRunner.Run<RandomPointGenerationBenchmark>();
             
         // |   Method | NumberOfSites | PointGenerationMethod |        Mean |      Error |     StdDev |      Median |

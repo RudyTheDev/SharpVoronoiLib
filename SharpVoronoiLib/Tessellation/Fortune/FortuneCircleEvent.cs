@@ -7,6 +7,7 @@ internal class FortuneCircleEvent : FortuneEvent
     internal VoronoiPoint Lowest { get; }
     internal double YCenter { get; }
     internal RBTreeNode<BeachSection> ToDelete { get; }
+    internal bool Discarded { get; set; }
 
     public double X => Lowest.X;
     public double Y => Lowest.Y;
