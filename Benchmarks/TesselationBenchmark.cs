@@ -7,7 +7,7 @@ namespace SharpVoronoiLib.Benchmarks;
 [SimpleJob]
 public class TesselationBenchmark
 {
-    [Params(300, 1000, 10000)]
+    [Params(1000, 10000, 100000)]
     [UsedImplicitly]
     public int NumberOfSites { get; set; }
 
