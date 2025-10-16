@@ -50,9 +50,7 @@ internal class BeachLine
             // If the arc has a circle event, it was a false alarm: remove it
             if (leftSection.Data.CircleEvent != null)
             {
-                if (leftSection.Data.CircleEvent != null)
-                    leftSection.Data.CircleEvent.Discarded = true;
-
+                leftSection.Data.CircleEvent.Discarded = true;
                 leftSection.Data.CircleEvent = null;
             }
 
@@ -111,17 +109,13 @@ internal class BeachLine
             // Remove false alarms.
             if (leftSection.Data.CircleEvent != null)
             {
-                if (leftSection.Data.CircleEvent != null)
-                    leftSection.Data.CircleEvent.Discarded = true;
-
+                leftSection.Data.CircleEvent.Discarded = true;
                 leftSection.Data.CircleEvent = null;
             }
 
             if (rightSection.Data.CircleEvent != null)
             {
-                if (rightSection.Data.CircleEvent != null)
-                    rightSection.Data.CircleEvent.Discarded = true;
-
+                rightSection.Data.CircleEvent.Discarded = true;
                 rightSection.Data.CircleEvent = null;
             }
 
@@ -233,16 +227,12 @@ internal class BeachLine
         // Need to delete all upcoming circle events with this node
         if (prev.Data.CircleEvent != null)
         {
-            if (prev.Data.CircleEvent != null)
-                prev.Data.CircleEvent.Discarded = true;
-
+            prev.Data.CircleEvent.Discarded = true;
             prev.Data.CircleEvent = null;
         }
         if (next.Data.CircleEvent != null)
         {
-            if (next.Data.CircleEvent != null)
-                next.Data.CircleEvent.Discarded = true;
-
+            next.Data.CircleEvent.Discarded = true;
             next.Data.CircleEvent = null;
         }
 
