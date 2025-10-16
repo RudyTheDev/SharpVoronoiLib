@@ -59,5 +59,6 @@ internal class FortunesTessellation : ITessellationAlgorithm
         }
 
         return edges.ToList(); 
+        // TODO: Build the list directly
     }
 }

@@ -7,7 +7,7 @@
 /// This has the two <see cref="VoronoiSite"/>s they separate, i.e. <see cref="Right"/> and <see cref="Left"/>.
 /// This connects in a <see cref="Neighbours"/> node graph to other <see cref="VoronoiEdge"/>s, i.e. shares end points with them.
 /// </summary>
-public class VoronoiEdge : IEquatable<VoronoiEdge>, CachedLinkedList<VoronoiEdge>.ICachedLinkedListItem
+public class VoronoiEdge : IEquatable<VoronoiEdge>
 {
     /// <summary>
     /// One of the two points making up this line segment, the other being <see cref="End"/>.
@@ -408,8 +408,4 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>, CachedLinkedList<VoronoiEdge
         
         // ReSharper restore ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
     }
-
-
-    /// <summary> Helper for custom linked list for internal processing to avoid lookups </summary>
-    CachedLinkedList<VoronoiEdge>.LinkedNode? CachedLinkedList<VoronoiEdge>.ICachedLinkedListItem.CachedLinkedListNode { get; set; }
 }
