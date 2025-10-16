@@ -15,13 +15,14 @@ public class VoronoiGame : Game
 {
     private readonly Color _backgroundColor = new Color(147, 145, 133);
     
-    private readonly Color _lineColor = new Color(47, 54, 69);
+    private readonly Color _lineColor = new Color(26, 31, 41);
     private readonly Color _hoveredLineColor = new Color(240, 24, 222);
     private readonly Color _selectedLineColor = new Color(255, 196, 0);
     private readonly Color _selectedNeighbouringLineColor = new Color(255, 140, 0);
+    private readonly Color _neighbourLinkColor = new Color(133, 133, 130);
 
     /// <summary> Small margin from viewport edge to not have the map right at the edge </summary>
-    private const int viewportMargin = 15;
+    private const int viewportMargin = 10;
 
     // Zoom configuration
     private const float minZoom = 0.2f;
@@ -245,20 +246,79 @@ public class VoronoiGame : Game
         GraphicsDevice.Clear(_backgroundColor);
 
         _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap);
+        
+        DrawOutStuff();
 
-        // Draw edges using current camera transform (center + zoom)
+        _spriteBatch.End();
+
+        base.Draw(gameTime);
+    }
+
+    
+    private void DrawOutStuff()
+    {
+        DrawSiteToSiteLines();
+        
+        DrawSiteEdgeLines();
+
+        if (_isMouseInsideWorld)
+            DrawTooltip(GetHoveredSiteTooltipLines());
+    }
+
+    private void DrawSiteToSiteLines()
+    {
+        Dictionary<VoronoiSite, int> siteIndex = new Dictionary<VoronoiSite, int>(_plane.Sites.Count);
+        for (int i = 0; i < _plane.Sites.Count; i++)
+            siteIndex[_plane.Sites[i]] = i;
+
+        for (int i = 0; i < _plane.Sites.Count; i++)
+        {
+            VoronoiSite site = _plane.Sites[i];
+            if (site.SkippedAsDuplicate) continue;
+
+            foreach (VoronoiSite neighbour in site.Neighbours)
+            {
+                if (!neighbour.Tesselated || neighbour.SkippedAsDuplicate) continue;
+
+                // draw each pair once
+                if (!siteIndex.TryGetValue(neighbour, out int j)) continue;
+                if (j <= i) continue;
+
+                ScreenCoord siteCoord = WorldToScreen(site.X, site.Y);
+                ScreenCoord neighCoord = WorldToScreen(neighbour.X, neighbour.Y);
+
+                double dx = neighCoord.X - siteCoord.X;
+                double dy = neighCoord.Y - siteCoord.Y;
+                double dist = Math.Sqrt(dx * dx + dy * dy);
+                double rotation = Math.Atan2(dy, dx);
+
+                _spriteBatch.Draw(
+                    _pixelTexture,
+                    new Vector2((float)siteCoord.X, (float)siteCoord.Y),
+                    null,
+                    _neighbourLinkColor,
+                    (float)rotation,
+                    Vector2.Zero,
+                    new Vector2((float)dist, 1f),
+                    SpriteEffects.None,
+                    0.0f
+                );
+            }
+        }
+    }
+
+    private void DrawSiteEdgeLines()
+    {
         foreach (VoronoiEdge edge in _plane.Edges)
         {
-            float sx1 = _cameraTransform.screenCenterX + (float)((edge.Start.X - _cameraTransform.centerX) * _cameraTransform.scale);
-            float sy1 = _cameraTransform.screenCenterY + (float)((edge.Start.Y - _cameraTransform.centerY) * _cameraTransform.scale);
-            float sx2 = _cameraTransform.screenCenterX + (float)((edge.End.X   - _cameraTransform.centerX) * _cameraTransform.scale);
-            float sy2 = _cameraTransform.screenCenterY + (float)((edge.End.Y   - _cameraTransform.centerY) * _cameraTransform.scale);
+            ScreenCoord p1 = WorldToScreen(edge.Start.X, edge.Start.Y);
+            ScreenCoord p2 = WorldToScreen(edge.End.X, edge.End.Y);
 
-            Vector2 start = new Vector2(sx1, sy1);
-            Vector2 end = new Vector2(sx2, sy2);
+            double dx = p2.X - p1.X;
+            double dy = p2.Y - p1.Y;
             
-            float dist = Vector2.Distance(start, end);
-            float rotation = (float)Math.Atan2(end.Y - start.Y, end.X - start.X);
+            double dist = Math.Sqrt(dx * dx + dy * dy);
+            double rotation = Math.Atan2(dy, dx);
 
             bool isHoveredEdge = _isMouseInsideWorld && _hoveredSite != null && (edge.Left == _hoveredSite || edge.Right == _hoveredSite);
             bool isSelectedEdge = _selectedSite != null && (edge.Left == _selectedSite || edge.Right == _selectedSite);
@@ -281,24 +341,16 @@ public class VoronoiGame : Game
             
             _spriteBatch.Draw(
                 _pixelTexture,
-                start,
+                new Vector2((float)p1.X, (float)p1.Y),
                 null,
                 lineColor,
-                rotation,
+                (float)rotation,
                 Vector2.Zero,
-                new Vector2(dist, lineThickness),
+                new Vector2((float)dist, lineThickness),
                 SpriteEffects.None,
                 0.0f
             );
         }
-
-        if (_isMouseInsideWorld)
-            DrawTooltip(GetHoveredSiteTooltipLines());
-        
-        
-        _spriteBatch.End();
-
-        base.Draw(gameTime);
     }
 
     private List<string> GetHoveredSiteTooltipLines()
@@ -495,9 +547,19 @@ public class VoronoiGame : Game
     private Vector2 ScreenToWorld(int screenX, int screenY)
     {
         float safeScale = _cameraTransform.scale <= 0.0001f ? 0.0001f : _cameraTransform.scale;
-        float wx = (float)(_cameraTransform.centerX + (screenX - _cameraTransform.screenCenterX) / safeScale);
-        float wy = (float)(_cameraTransform.centerY + (screenY - _cameraTransform.screenCenterY) / safeScale);
-        return new Vector2(wx, wy);
+        float worldX = (float)(_cameraTransform.centerX + (screenX - _cameraTransform.screenCenterX) / safeScale);
+        float worldY = (float)(_cameraTransform.centerY + (screenY - _cameraTransform.screenCenterY) / safeScale);
+        return new Vector2(worldX, worldY);
+    }
+
+    /// <summary>
+    /// Converts world coordinates to screen coordinates using current camera transform.
+    /// </summary>
+    private ScreenCoord WorldToScreen(double worldX, double worldY)
+    {
+        double screenX = _cameraTransform.screenCenterX + (worldX - _cameraTransform.centerX) * _cameraTransform.scale;
+        double screenY = _cameraTransform.screenCenterY + (worldY - _cameraTransform.centerY) * _cameraTransform.scale;
+        return new ScreenCoord(screenX, screenY);
     }
 
     /// <summary>
@@ -532,6 +594,18 @@ public class VoronoiGame : Game
         
         /// <summary> Screen-space Y of the drawable area's center (inside margins) </summary>
         public float screenCenterY;
+    }
+
+    private readonly struct ScreenCoord
+    {
+        public readonly double X;
+        public readonly double Y;
+
+        public ScreenCoord(double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 
     
