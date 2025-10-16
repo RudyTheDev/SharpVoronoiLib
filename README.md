@@ -43,7 +43,7 @@ The tesselation result for the given `VoronoiSite`s contains `VoronoiEdge`s and 
 * `VoronoiSite.Edges` (aka cell) contains the edges that enclose the site (the order is not guaranteed).
 * `VoronoiSite.ClockwiseEdges` (on-demand) contains these edges sorted clockwise (starting from the bottom-right "corner" end point).
 * `VoronoiSite.ClockwiseEdgesWound` (on-demand) contains these edges also "wound" in the clockwise order so their start/end points form a loop.
-* `VoronoiSite.Neighbors` contains the site's neighbors (in the Delaunay Triangulation), that is, other sites across its edges.
+* `VoronoiSite.Neighbours` contains the site's neighbours (in the Delaunay Triangulation), that is, other sites across its edges.
 * `VoronoiSite.Points` (on-demand) contains points of the site's cell, that is, edge end points / edge nodes.
 * `VoronoiSite.ClockwisePoints` (on-demand) contains these points sorted clockwise (starting from the bottom-right "corner").
 * `VoronoiPoint.Edges` are edges emerging from this point.
