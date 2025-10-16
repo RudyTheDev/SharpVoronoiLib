@@ -20,30 +20,15 @@ public class Benchmarks
             
         BenchmarkRunner.Run<TesselationBenchmark>();
             
-        // HashedLinkedList
-        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error      | StdDev    | Median     |
-        // |----------- |-------------- |--------------------- |-----------:|-----------:|----------:|-----------:|
-        // | Tessellate | 1000          | DoNotMakeBorderEdges |   3.275 ms |  0.5887 ms |  1.727 ms |   2.339 ms |
-        // | Tessellate | 1000          | MakeBorderEdges      |   3.769 ms |  0.7245 ms |  2.136 ms |   3.021 ms |
-        // | Tessellate | 10000         | DoNotMakeBorderEdges |  47.504 ms |  0.9489 ms |  1.873 ms |  46.981 ms |
-        // | Tessellate | 10000         | MakeBorderEdges      |  47.501 ms |  0.9471 ms |  1.825 ms |  47.173 ms |
-        // | Tessellate | 100000        | DoNotMakeBorderEdges | 891.820 ms | 18.6315 ms | 54.935 ms | 894.322 ms |
-        // | Tessellate | 100000        | MakeBorderEdges      | 889.135 ms | 17.7824 ms | 19.027 ms | 889.210 ms |
-
-        
-        // LinkedList + edges.ToList();
-        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error      | StdDev    | Median     |
-        // |----------- |-------------- |--------------------- |-----------:|-----------:|----------:|-----------:|
-        // | Tessellate | 1000          | DoNotMakeBorderEdges |   3.666 ms |  0.6253 ms |  1.844 ms |   2.460 ms |
-        // | Tessellate | 1000          | MakeBorderEdges      |   3.771 ms |  0.6869 ms |  2.025 ms |   2.182 ms |
-        // | Tessellate | 10000         | DoNotMakeBorderEdges |  40.164 ms |  0.7984 ms |  1.613 ms |  39.832 ms |
-        // | Tessellate | 10000         | MakeBorderEdges      |  40.438 ms |  0.8063 ms |  1.255 ms |  40.507 ms |
-        // | Tessellate | 100000        | DoNotMakeBorderEdges | 924.920 ms | 18.1821 ms | 36.729 ms | 928.722 ms |
-        // | Tessellate | 100000        | MakeBorderEdges      | 927.620 ms | 18.3575 ms | 37.912 ms | 928.387 ms |
-        
-        // so it's better at insane number of points but not better at normal...
-        // I think random removals just happen so rarely that all the "optimization" overhead I add doesn't overcome
-        // the simple final ToList of the built-in LinkedList.
+        // | Method     | NumberOfSites | BorderEdgeGeneration | Mean       | Error     | StdDev      | Median     |
+        // |----------- |-------------- |--------------------- |-----------:|----------:|------------:|-----------:|
+        // | Tessellate | 100           | DoNotMakeBorderEdges |   389.9 us |   7.71 us |    10.81 us |   386.8 us |
+        // | Tessellate | 100           | MakeBorderEdges      |   414.0 us |   7.99 us |    11.96 us |   412.4 us |
+        // | Tessellate | 500           | DoNotMakeBorderEdges | 2,125.4 us |  42.02 us |    48.39 us | 2,113.4 us |
+        // | Tessellate | 500           | MakeBorderEdges      | 2,179.2 us |  43.25 us |    59.20 us | 2,189.1 us |
+        // | Tessellate | 2000          | DoNotMakeBorderEdges | 4,965.0 us | 748.51 us | 2,111.19 us | 3,916.7 us |
+        // | Tessellate | 2000          | MakeBorderEdges      | 4,304.5 us | 276.50 us |   713.73 us | 3,997.8 us |
+            
             
         //BenchmarkRunner.Run<RandomPointGenerationBenchmark>();
             
