@@ -139,10 +139,10 @@ public class VoronoiSite : IEquatable<VoronoiSite>
 
                 foreach (VoronoiEdge edge in edges)
                 {
-                    if (!_points.Contains(edge.Start))
+                    if (!_points.ContainsAsReference(edge.Start))
                         _points.Add(edge.Start);
 
-                    if (!_points.Contains(edge.End))
+                    if (!_points.ContainsAsReference(edge.End))
                         _points.Add(edge.End);
                     
                     // Note that .End is guaranteed to be set since we don't expose edges externally that aren't clipped in bounds
