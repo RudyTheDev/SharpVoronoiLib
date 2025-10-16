@@ -61,7 +61,7 @@ public class VoronoiGame : Game
     private bool _isMouseInsideWorld;
 
     private bool _drawEdges = true;
-    private bool _drawSiteToSiteLines = true;
+    private bool _drawSiteToSiteLines = false;
     
     private PointGenerationMethod _pointGenerationMethod = PointGenerationMethod.Uniform;
 
@@ -161,7 +161,14 @@ public class VoronoiGame : Game
 
         if (keyboardState.IsKeyDown(Keys.R) && _lastKeyboardState.IsKeyUp(Keys.R))
         {
-            _relaxIterations = (_relaxIterations + 1) % 3;
+            _relaxIterations = _relaxIterations switch
+            {
+                0 => 1,
+                1 => 2,
+                2 => 10,
+                _ => 0
+            };
+            
             Generate();
         }
 
@@ -481,7 +488,7 @@ public class VoronoiGame : Game
             "Mouse: left click select (right clear), wheel zoom, left drag pan",
             "Space: regenerate",
             "Tab: toggle uniform/gaussian (currently " + _pointGenerationMethod.ToString().ToLower() + ")",
-            "R: toggle relax × 0/1/2 (currently " + _relaxIterations + ")",
+            "R: toggle relax × 0/1/2/10 (currently " + _relaxIterations + ")",
             "1: toggle edges, 2: toggle site links",
             $"Currently: {_plane.Sites.Count} sites, {_plane.Edges.Count} edges ({perSiteEdges:F3} per site), {_plane.Points.Count} points"
         ];
@@ -541,7 +548,7 @@ public class VoronoiGame : Game
             maxY = height;
         }
         
-        int numPoints = width * height / 400; // about 2000 points at 1280 x 720
+        int numPoints = width * height / 1600;
         
         _plane = new VoronoiPlane(minX, minY, maxX, maxY);
 
