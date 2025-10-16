@@ -21,7 +21,6 @@ internal class BeachLine
     /// </summary>
     /// <param name="siteEvent">The new site event</param>
     /// <param name="eventQueue">Global event queue to which new circle events are added</param>
-    /// <param name="deleted">A set of circle events that have been invalidated and must be ignored when popped</param>
     /// <param name="edges">A list of Voronoi edges under construction (head contains most recent edges)</param>
     internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, List<VoronoiEdge> edges)
     {
