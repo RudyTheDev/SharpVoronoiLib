@@ -552,6 +552,34 @@ public class VoronoiGame : Game
         if (_relaxIterations > 0)
             _plane.Relax(_relaxIterations);
 
+        // Dump stats
+        Console.WriteLine($"Generated {_plane.Sites.Count} sites, {_plane.Edges.Count} edges, {_plane.Points.Count} points");
+        
+        float edgesPerSite = _plane.Sites.Count > 0 ? _plane.Sites.Sum(s => s.Edges.Count) / (float)_plane.Sites.Count : 0f;
+        Console.WriteLine($"Edges per site: {edgesPerSite:F3}");
+        int sitesWithMoreThan8Edges = _plane.Sites.Count(s => s.Edges.Count > 8);
+        Console.WriteLine($"Sites with >8 edges: {sitesWithMoreThan8Edges}");
+        
+        float neighboursPerSite = _plane.Sites.Count > 0 ? _plane.Sites.Sum(s => s.Neighbours.Count) / (float)_plane.Sites.Count : 0f;
+        Console.WriteLine($"Neighbours per site: {neighboursPerSite:F3}");
+        int sitesWithMoreThan8Neighbours = _plane.Sites.Count(s => s.Neighbours.Count > 8);
+        Console.WriteLine($"Sites with >8 neighbours: {sitesWithMoreThan8Neighbours}");
+        
+        float pointsPerSite = _plane.Sites.Count > 0 ? _plane.Sites.Sum(s => s.Points.Count) / (float)_plane.Sites.Count : 0f;
+        Console.WriteLine($"Points per site: {pointsPerSite:F3}");
+        int sitesWithMoreThan8Points = _plane.Sites.Count(s => s.Points.Count > 8);
+        Console.WriteLine($"Sites with >8 points: {sitesWithMoreThan8Points}");
+        
+        float sitesPerPoint = _plane.Points.Count > 0 ? _plane.Sites.Sum(s => s.Points.Count) / (float)_plane.Points.Count : 0f;
+        Console.WriteLine($"Sites per point: {sitesPerPoint:F3}");
+        int pointsWithMoreThan3Sites = _plane.Points.Count(p => p.Sites.Count > 3);
+        Console.WriteLine($"Points with >3 sites: {pointsWithMoreThan3Sites}");
+        
+        float edgesPerPoint = _plane.Points.Count > 0 ? _plane.Points.Sum(p => p.Edges.Count) / (float)_plane.Points.Count : 0f;
+        Console.WriteLine($"Edges per point: {edgesPerPoint:F3}");
+        int pointsWithMoreThan3Edges = _plane.Points.Count(p => p.Edges.Count > 3);
+        Console.WriteLine($"Points with >3 edges: {pointsWithMoreThan3Edges}");
+        
         // Reset camera after generating new content
         ResetCamera();
         

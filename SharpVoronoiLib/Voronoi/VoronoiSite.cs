@@ -135,7 +135,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
                 
             if (_points == null)
             {
-                _points = [ ];
+                _points = new List<VoronoiPoint>(edges.Count); // afaik only unclosed cells will have more points than edges
 
                 foreach (VoronoiEdge edge in edges)
                 {
@@ -233,7 +233,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     /// Whether our site's cell is closed, i.e. all edges connect and form a closed polygon.
     /// This is only not true for sites touching edges when tesselation is set to <see cref="BorderEdgeGeneration.DoNotMakeBorderEdges"/>.
     /// </summary>
-    public bool Closed => edges.Count > 0 && edges.Count == Points.Count();
+    public bool Closed => edges.Count > 0 && edges.Count == Points.Count;
 
         
     internal readonly List<VoronoiEdge> edges;
@@ -264,8 +264,27 @@ public class VoronoiSite : IEquatable<VoronoiSite>
         X = x;
         Y = y;
             
-        edges = [ ];
-        neighbours = [ ];
+        edges = new List<VoronoiEdge>(8);
+        neighbours = new List<VoronoiSite>(8);
+
+        // Average random site graphs are something like:
+        
+        // Generated 8343 sites, 25030 edges, 16688 points
+        // Edges per site: 5.958
+        // Sites with >8 edges: 111
+        // Neighbours per site: 5.916
+        // Sites with >8 neighbours: 111
+        // Points per site: 5.958
+        // Sites with >8 points: 111
+        // Sites per point: 2.979
+        // Points with >3 sites: 0
+        // Edges per point: 3.000
+        // Points with >3 edges: 0
+
+        // So capacity 8 will occasionally underallocate,
+        // but much rarer than allowing the default (4)
+        // while basically being what the default would have been after it doubled internally.
+        // Same reasoning is true for other places in code that use custom capacities.
     }
 
         

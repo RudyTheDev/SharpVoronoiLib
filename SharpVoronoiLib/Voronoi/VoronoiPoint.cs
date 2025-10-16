@@ -39,7 +39,7 @@ public class VoronoiPoint : IEquatable<VoronoiPoint>
         {
             if (_sites == null)
             {
-                List<VoronoiSite> sites = [ ];
+                List<VoronoiSite> sites = new List<VoronoiSite>(4);
 
                 // Collect distinct non-null sites touching this point via its edges
                 foreach (VoronoiEdge edge in _edges)
@@ -61,8 +61,8 @@ public class VoronoiPoint : IEquatable<VoronoiPoint>
         }
     }
 
-    
-    private readonly List<VoronoiEdge> _edges = [ ];
+
+    private readonly List<VoronoiEdge> _edges = new List<VoronoiEdge>(3);
     private List<VoronoiSite>? _sites;
         
         
