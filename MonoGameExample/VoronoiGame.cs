@@ -247,7 +247,7 @@ public class VoronoiGame : Game
         _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap);
 
         // Draw edges using current camera transform (center + zoom)
-        foreach (VoronoiEdge edge in _plane.Edges!)
+        foreach (VoronoiEdge edge in _plane.Edges)
         {
             float sx1 = _cameraTransform.screenCenterX + (float)((edge.Start.X - _cameraTransform.centerX) * _cameraTransform.scale);
             float sy1 = _cameraTransform.screenCenterY + (float)((edge.Start.Y - _cameraTransform.centerY) * _cameraTransform.scale);
@@ -301,7 +301,7 @@ public class VoronoiGame : Game
         base.Draw(gameTime);
     }
 
-    private IReadOnlyList<string> GetHoveredSiteTooltipLines()
+    private List<string> GetHoveredSiteTooltipLines()
     {
         // Assign labels to points (A, B, C, ...)
         Dictionary<VoronoiPoint, char> pointLabels = _hoveredSite!.Points
@@ -321,7 +321,7 @@ public class VoronoiGame : Game
         return lines;
     }
 
-    private void DrawTooltip(IReadOnlyList<string> lines)
+    private void DrawTooltip(List<string> lines)
     {
         // Text measurement
         
@@ -372,9 +372,7 @@ public class VoronoiGame : Game
     
     private void Generate()
     {
-        //List<VoronoiSite> sites = MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY);
-        //List<VoronoiSite> sites = LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY);
-        List<VoronoiSite> sites = MakeBug11Repro(out float minX, out float minY, out float maxX, out float maxY);
+        List<VoronoiSite> sites = MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY);
         
         _plane = new VoronoiPlane(minX, minY, maxX, maxY);
         
@@ -388,25 +386,6 @@ public class VoronoiGame : Game
         ResetCamera();
     }
 
-
-    private List<VoronoiSite> LoadDebugSites(out float minX, out float minY, out float maxX, out float maxY)
-    {
-        string meta = File.ReadAllText("meta.txt");
-        string[] metaParts = meta.Split(',');
-        minX = float.Parse(metaParts[0]);
-        minY = float.Parse(metaParts[1]);
-        maxX = float.Parse(metaParts[2]);
-        maxY = float.Parse(metaParts[3]);
-        
-        string[] sitesRaw = File.ReadAllLines("out.txt");
-        List<VoronoiSite> sites = sitesRaw.Select(line =>
-        {
-            string[] parts = line.Split(',');
-            return new VoronoiSite(float.Parse(parts[0]), float.Parse(parts[1]));
-        }).ToList();
-
-        return sites;
-    }
     
     private List<VoronoiSite> MakeRandomSites(out float minX, out float minY, out float maxX, out float maxY)
     {
@@ -456,26 +435,6 @@ public class VoronoiGame : Game
         minY = 0;
         maxX = width;
         maxY = height;
-        
-        return sites;
-    }
-    
-    private List<VoronoiSite> MakeBug11Repro(out float minX, out float minY, out float maxX, out float maxY)
-    {
-        List<VoronoiSite> sites =
-        [
-            new VoronoiSite(0, 0),
-            //new VoronoiSite(8, -8),
-            new VoronoiSite(0, 6),
-            //new VoronoiSite(6, 6),
-            //new VoronoiSite(8, 5),
-            //new VoronoiSite(5, 8),
-        ];
-
-        minX = 0;
-        minY = 0;
-        maxX = 10;
-        maxY = 10;
         
         return sites;
     }
