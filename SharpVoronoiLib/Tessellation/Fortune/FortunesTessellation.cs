@@ -59,6 +59,7 @@ internal class FortunesTessellation : ITessellationAlgorithm
         }
 
         return edges.ToList(); 
-        // TODO: Build the list directly
+        // Note: I attempted to make an optimized linked list with item caching, but this didn't gain any performance until 100K sites.
+        // I suspect the small number of edge removals and the overhead of the linked list management just doesn't beat a single .ToList() here.
     }
 }
