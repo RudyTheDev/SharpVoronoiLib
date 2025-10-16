@@ -23,7 +23,7 @@ internal class BeachLine
     /// <param name="eventQueue">Global event queue to which new circle events are added</param>
     /// <param name="deleted">A set of circle events that have been invalidated and must be ignored when popped</param>
     /// <param name="edges">A list of Voronoi edges under construction (head contains most recent edges)</param>
-    internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, List<VoronoiEdge> edges)
+    internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, List<VoronoiEdge> edges)
     {
         VoronoiSite site = siteEvent.Site;
         double x = site.X;
@@ -51,7 +51,7 @@ internal class BeachLine
             if (leftSection.Data.CircleEvent != null)
             {
                 if (leftSection.Data.CircleEvent != null)
-                    deleted.Add(leftSection.Data.CircleEvent);
+                    leftSection.Data.CircleEvent.Discarded = true;
 
                 leftSection.Data.CircleEvent = null;
             }
@@ -112,7 +112,7 @@ internal class BeachLine
             if (leftSection.Data.CircleEvent != null)
             {
                 if (leftSection.Data.CircleEvent != null)
-                    deleted.Add(leftSection.Data.CircleEvent);
+                    leftSection.Data.CircleEvent.Discarded = true;
 
                 leftSection.Data.CircleEvent = null;
             }
@@ -120,7 +120,7 @@ internal class BeachLine
             if (rightSection.Data.CircleEvent != null)
             {
                 if (rightSection.Data.CircleEvent != null)
-                    deleted.Add(rightSection.Data.CircleEvent);
+                    rightSection.Data.CircleEvent.Discarded = true;
 
                 rightSection.Data.CircleEvent = null;
             }
@@ -189,7 +189,7 @@ internal class BeachLine
     /// <summary>
     /// Removes the disappearing arc at a circle event from the beach line and finalizes edges
     /// </summary>
-    internal void RemoveBeachSection(FortuneCircleEvent circle, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, List<VoronoiEdge> edges)
+    internal void RemoveBeachSection(FortuneCircleEvent circle, MinHeap<FortuneEvent> eventQueue, List<VoronoiEdge> edges)
     {
         RBTreeNode<BeachSection> section = circle.ToDelete;
         double x = circle.X;
@@ -226,7 +226,7 @@ internal class BeachLine
         {
             remove.Data.Edge.End = vertex;
             remove.Next.Data.Edge.End = vertex;
-            deleted.Add(remove.Data.CircleEvent);
+            remove.Data.CircleEvent.Discarded = true;
             remove.Data.CircleEvent = null;
         }
 
@@ -234,14 +234,14 @@ internal class BeachLine
         if (prev.Data.CircleEvent != null)
         {
             if (prev.Data.CircleEvent != null)
-                deleted.Add(prev.Data.CircleEvent);
+                prev.Data.CircleEvent.Discarded = true;
 
             prev.Data.CircleEvent = null;
         }
         if (next.Data.CircleEvent != null)
         {
             if (next.Data.CircleEvent != null)
-                deleted.Add(next.Data.CircleEvent);
+                next.Data.CircleEvent.Discarded = true;
 
             next.Data.CircleEvent = null;
         }

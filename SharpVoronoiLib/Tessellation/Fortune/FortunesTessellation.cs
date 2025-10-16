@@ -36,7 +36,6 @@ internal class FortunesTessellation : ITessellationAlgorithm
         //init tree
         BeachLine beachLine = new BeachLine();
         List<VoronoiEdge> edges = new List<VoronoiEdge>((int)(sites.Count * 3.05f)); // slight over-allocation, but it's basically ~3 unique per cell (~6 total per cell) for random sites
-        HashSet<FortuneCircleEvent> deleted = [ ];
 
         //init edge list
         while (eventQueue.Count != 0)
@@ -46,14 +45,12 @@ internal class FortunesTessellation : ITessellationAlgorithm
             switch (nextEvent)
             {
                 case FortuneSiteEvent siteEvent:
-                    beachLine.AddBeachSection(siteEvent, eventQueue, deleted, edges);
+                    beachLine.AddBeachSection(siteEvent, eventQueue, edges);
                     break;
                 
                 case FortuneCircleEvent circleEvent:
-                    if (deleted.Contains(circleEvent))
-                        deleted.Remove(circleEvent);
-                    else
-                        beachLine.RemoveBeachSection(circleEvent, eventQueue, deleted, edges);
+                    if (!circleEvent.Discarded)
+                        beachLine.RemoveBeachSection(circleEvent, eventQueue, edges);
                     break;
             }
         }
