@@ -44,10 +44,10 @@ public class VoronoiPoint : IEquatable<VoronoiPoint>
                 // Collect distinct non-null sites touching this point via its edges
                 foreach (VoronoiEdge edge in _edges)
                 {
-                    if (edge.Left != null && !sites.Contains(edge.Left))
+                    if (edge.Left != null && !sites.ContainsAsReference(edge.Left))
                         sites.Add(edge.Left);
 
-                    if (edge.Right != null && !sites.Contains(edge.Right))
+                    if (edge.Right != null && !sites.ContainsAsReference(edge.Right))
                         sites.Add(edge.Right);
                     
                     // This isn't very efficient, but the number of edges per point is usually small,
@@ -91,9 +91,8 @@ public class VoronoiPoint : IEquatable<VoronoiPoint>
     /// </summary>
     internal void AttachEdge(VoronoiEdge edge)
     {
-        foreach (VoronoiEdge exEdge in _edges)
-            if (ReferenceEquals(exEdge, edge)) // not equality, because we won't even have point data yet
-                return;
+        if (_edges.ContainsAsReference(edge))
+            return;
         
         _edges.Add(edge);
     }

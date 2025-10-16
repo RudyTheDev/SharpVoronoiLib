@@ -103,7 +103,7 @@ public class GenericSiteMergingAlgorithm : ISiteMergingAlgorithm
             neighbour.neighbours.Remove(source);
                 
             // If we aren't already connected to the old site's neighbour...
-            if (!target.neighbours.Contains(neighbour))
+            if (!target.neighbours.ContainsAsReference(neighbour))
             {
                 target.neighbours.Add(neighbour); // new neighbour (prevously old site's neighbour)
                 neighbour.neighbours.Add(target); // backlink
