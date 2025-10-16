@@ -140,14 +140,11 @@ public class VoronoiSite : IEquatable<VoronoiSite>
                 foreach (VoronoiEdge edge in edges)
                 {
                     if (!_points.Contains(edge.Start))
-                    {
                         _points.Add(edge.Start);
-                    }
 
-                    if (!_points.Contains(edge.End!))
-                    {
+                    if (!_points.Contains(edge.End))
                         _points.Add(edge.End);
-                    }
+                    
                     // Note that .End is guaranteed to be set since we don't expose edges externally that aren't clipped in bounds
 
                     // Note that the order of .Start and .End is not guaranteed in VoronoiEdge,
@@ -302,7 +299,7 @@ public class VoronoiSite : IEquatable<VoronoiSite>
     }
 
         
-    internal void Tessellating()
+    internal void Tessellated()
     {
         _tessellated = true;
     }

@@ -22,11 +22,49 @@ public class VoronoiPoint : IEquatable<VoronoiPoint>
     /// </remarks>
     [PublicAPI]
     public PointBorderLocation BorderLocation { get; internal set; }
-
-    // TODO: Edges
-
-    // TODO: Sites
     
+    /// <summary>
+    /// Edges that have this point as their Start or End.
+    /// </summary>
+    [PublicAPI]
+    public IReadOnlyList<VoronoiEdge> Edges => _edges;
+
+    /// <summary>
+    /// Sites adjacent to this point, i.e. sites on whose corners this point lies.
+    /// </summary>
+    [PublicAPI]
+    public IReadOnlyList<VoronoiSite> Sites
+    {
+        get
+        {
+            if (_sites == null)
+            {
+                List<VoronoiSite> sites = [ ];
+
+                // Collect distinct non-null sites touching this point via its edges
+                foreach (VoronoiEdge edge in _edges)
+                {
+                    if (edge.Left != null && !sites.Contains(edge.Left))
+                        sites.Add(edge.Left);
+
+                    if (edge.Right != null && !sites.Contains(edge.Right))
+                        sites.Add(edge.Right);
+                    
+                    // This isn't very efficient, but the number of edges per point is usually small,
+                    // while doing something like a HashSet would be overhead overkill
+                }
+
+                _sites = sites;
+            }
+
+            return _sites;
+        }
+    }
+
+    
+    private readonly List<VoronoiEdge> _edges = [ ];
+    private List<VoronoiSite>? _sites;
+        
         
     internal VoronoiPoint(double x, double y, PointBorderLocation borderLocation = PointBorderLocation.NotOnBorder)
     {
@@ -41,9 +79,42 @@ public class VoronoiPoint : IEquatable<VoronoiPoint>
     }
         
         
+    [Pure]
     internal double AngleTo(VoronoiPoint other)
     {
         return Math.Atan2(other.Y - Y, other.X - X);
+    }
+
+    /// <summary>
+    /// Tells this point that it is attached to the given edge.
+    /// This is not final (before the tessellation is complete) and edges may be <see cref="DetachEdge"/> later.
+    /// </summary>
+    internal void AttachEdge(VoronoiEdge edge)
+    {
+        foreach (VoronoiEdge exEdge in _edges)
+            if (ReferenceEquals(exEdge, edge)) // not equality, because we won't even have point data yet
+                return;
+        
+        _edges.Add(edge);
+    }
+
+    /// <summary>
+    /// Tells this point that it is actually not attached to the given edge.
+    /// This is due to the particulars of Fortune's algorithm,
+    /// but it's still more efficient to do it this way than to somehow gather edges (or sites) afterwards.
+    /// </summary>
+    internal void DetachEdge(VoronoiEdge edge)
+    {
+        for (int i = 0; i < _edges.Count; i++)
+        {
+            if (ReferenceEquals(_edges[i], edge))
+            {
+                _edges.RemoveAt(i);
+                return;
+            }
+        }
+
+        throw new Exception(); // should never happen
     }
 
 

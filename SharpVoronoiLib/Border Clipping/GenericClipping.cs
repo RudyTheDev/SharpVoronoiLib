@@ -22,6 +22,8 @@ internal class GenericClipping : IBorderClippingAlgorithm
                 // Technically, the sites are neighbours on an infinite place, but clipping at borders means foregoing such neighbouring.
                 edge.Left!.RemoveNeighbour(edge.Right!);
                 edge.Right!.RemoveNeighbour(edge.Left!);
+
+                edge.Discard();
                     
                 edges.RemoveAt(i);
                 i--;
@@ -162,6 +164,9 @@ internal class GenericClipping : IBorderClippingAlgorithm
                 edge.End = edge.LastBeachLineNeighbor.Start;
                 accept = true;
             }
+
+            edge.LastBeachLineNeighbor.Discard();
+            edge.LastBeachLineNeighbor = null;
         }
             
         return accept;

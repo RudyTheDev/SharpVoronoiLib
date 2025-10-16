@@ -14,14 +14,46 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
     /// Note that the order of start/<see cref="End"/> points is random.
     /// </summary>
     [PublicAPI]
-    public VoronoiPoint Start { get; internal set; }
+    public VoronoiPoint Start
+    {
+        get => _start!; // never null publicly
+        internal set
+        {
+            if (ReferenceEquals(_start, value))
+                return;
+
+            // If we previously thought we are attached to a different point, we need to tell the point we "changed our mind"
+            _start?.DetachEdge(this);
+
+            _start = value;
+
+            // Tell the point it is attached to this edge, so it can keep track of its edges
+            _start?.AttachEdge(this);
+        }
+    }
         
     /// <summary>
     /// One of the two points making up this line segment, the other being <see cref="Start"/>.
     /// Note that the order of <see cref="Start"/>/end points is random.
     /// </summary>
     [PublicAPI]
-    public VoronoiPoint End { get; internal set; }
+    public VoronoiPoint End
+    {
+        get => _end!; // never null publicly
+        internal set
+        {
+            if (ReferenceEquals(_end, value))
+                return;
+
+            // If we previously thought we are attached to a different point, we need to tell the point we "changed our mind"
+            _end?.DetachEdge(this);
+            
+            _end = value;
+            
+            // Tell the point it is attached to this edge, so it can keep track of its edges
+            _end?.AttachEdge(this);
+        }
+    }
 
     /// <summary>
     /// One of the two sites that this edge separates, the other being <see cref="Left"/>.
@@ -229,7 +261,9 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
     internal double? Intercept { get; }
     internal VoronoiEdge? LastBeachLineNeighbor { get; set; } // I am not entirely sure this is the right name for this, but I just want to make it clear it's not something usable publicly
 
-        
+    
+    private VoronoiPoint? _start;
+    private VoronoiPoint? _end;
     private VoronoiPoint? _mid;
     private List<VoronoiEdge>? _neighbours;
     private double? _length;
@@ -292,6 +326,22 @@ public class VoronoiEdge : IEquatable<VoronoiEdge>
     internal VoronoiEdge Reversed()
     {
         return new VoronoiEdge(End, Start, Left, Right);
+    }
+
+    /// <summary>
+    /// Mark this edge instance as discarded, i.e. it won't be used in the tessellation result.
+    /// This is how the Fortune's algorithm works as it cannot predict if a certain edge will survive.
+    /// So this needs to do a bit of hackery because we need to keep track of edges in the points,
+    /// otherwise there is no other way for the points to know which elements (edges/sites) they belong to.
+    /// </summary>
+    internal void Discard()
+    {
+        _start?.DetachEdge(this);
+        _end?.DetachEdge(this);
+
+        // We only build and discard during construction, so we only need to clear these two
+        _start = null;
+        _end = null;
     }
 
 

@@ -2,7 +2,7 @@
 
 namespace SharpVoronoiLib.UnitTests;
 
-[UsedImplicitly] // by generated tests
+[UsedImplicitly(ImplicitUseKindFlags.Access, ImplicitUseTargetFlags.WithMembers)] // by generated tests
 internal static class CommonTestUtilities
 {
     internal static VoronoiPoint FindPoint(IEnumerable<VoronoiEdge> edges, double x, double y)
@@ -13,6 +13,11 @@ internal static class CommonTestUtilities
 
         return edges.First(e => e.End != null && e.End.X.ApproxEqual(x) && e.End.Y.ApproxEqual(y))
                     .End;
+    }
+
+    internal static VoronoiPoint FindPoint(IEnumerable<VoronoiPoint> points, double x, double y)
+    {
+        return points.First(p => p.X.ApproxEqual(x) && p.Y.ApproxEqual(y));
     }
 
     internal static bool HasPoint(IEnumerable<VoronoiPoint> points, double x, double y)
@@ -45,6 +50,11 @@ internal static class CommonTestUtilities
                 (e.Start.X.ApproxEqual(x1) && e.Start.Y.ApproxEqual(y1) && e.End.X.ApproxEqual(x2) && e.End.Y.ApproxEqual(y2) ||
                  e.Start.X.ApproxEqual(x2) && e.Start.Y.ApproxEqual(y2) && e.End.X.ApproxEqual(x1) && e.End.Y.ApproxEqual(y1))
         );
+    }
+    
+    internal static VoronoiSite FindSite(IEnumerable<VoronoiSite> sites, double x, double y)
+    {
+        return sites.First(s => s.X.ApproxEqual(x) && s.Y.ApproxEqual(y));
     }
 
     internal static bool EdgeIs(VoronoiEdge edge, double x1, double y1, double x2, double y2)
@@ -105,5 +115,15 @@ internal static class CommonTestUtilities
             (edge.Right != null &&
              edge.Right.X.ApproxEqual(x) &&
              edge.Right.Y.ApproxEqual(y));
+    }
+    
+    internal static bool PointHasEdge(VoronoiPoint point, VoronoiEdge edge)
+    {
+        return point.Edges.Contains(edge);
+    }
+    
+    internal static bool PointHasSite(VoronoiPoint point, VoronoiSite site)
+    {
+        return point.Sites.Contains(site);
     }
 }
