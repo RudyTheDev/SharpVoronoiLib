@@ -473,6 +473,8 @@ public class VoronoiGame : Game
 
     private void DrawHelpOverlay()
     {
+        float perSiteEdges = _plane.Sites.Count > 0 ? _plane.Sites.Sum(s => s.Edges.Count) / (float)_plane.Sites.Count : 0f;
+        
         List<string> lines =
         [
             "Controls (~ to toggle):",
@@ -480,7 +482,8 @@ public class VoronoiGame : Game
             "Space: regenerate",
             "Tab: toggle uniform/gaussian (currently " + _pointGenerationMethod.ToString().ToLower() + ")",
             "R: toggle relax × 0/1/2 (currently " + _relaxIterations + ")",
-            "1: toggle edges, 2: toggle site links"
+            "1: toggle edges, 2: toggle site links",
+            $"Currently: {_plane.Sites.Count} sites, {_plane.Edges.Count} edges ({perSiteEdges:F3} per site), {_plane.Points.Count} points"
         ];
 
         // Measure
