@@ -23,7 +23,7 @@ internal class BeachLine
     /// <param name="eventQueue">Global event queue to which new circle events are added</param>
     /// <param name="deleted">A set of circle events that have been invalidated and must be ignored when popped</param>
     /// <param name="edges">A list of Voronoi edges under construction (head contains most recent edges)</param>
-    internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
+    internal void AddBeachSection(FortuneSiteEvent siteEvent, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, List<VoronoiEdge> edges)
     {
         VoronoiSite site = siteEvent.Site;
         double x = site.X;
@@ -71,7 +71,7 @@ internal class BeachLine
             leftEdge.LastBeachLineNeighbor = rightEdge;
 
             // Put the edge in the list
-            edges.AddFirst(leftEdge);
+            edges.Add(leftEdge);
 
             // Store the left edge on each arc section
             newSection.Data.Edge = leftEdge;
@@ -95,7 +95,7 @@ internal class BeachLine
             VoronoiEdge newEdge = new VoronoiEdge(start, site, leftSection.Data.Site);
 
             newEdge.LastBeachLineNeighbor = infEdge;
-            edges.AddFirst(newEdge);
+            edges.Add(newEdge);
 
             leftSection.Data.Site.AddNeighbour(newSection.Data.Site);
             newSection.Data.Site.AddNeighbour(leftSection.Data.Site);
@@ -155,7 +155,8 @@ internal class BeachLine
 
                 // Discard the edge
                 rightSection.Data.Edge.Discard();
-                edges.Remove(rightSection.Data.Edge);
+                edges.RemoveAsReference(rightSection.Data.Edge);
+                // Note that this is very rare and the only time we do this, so having a List<> is fine
 
                 // Disconnect (Delaunay) neighbours
                 leftSite.RemoveNeighbour(rightSite);
@@ -170,8 +171,8 @@ internal class BeachLine
             newSection.Data.Edge = new VoronoiEdge(vertex, site, leftSection.Data.Site);
             rightSection.Data.Edge = new VoronoiEdge(vertex, rightSection.Data.Site, site);
 
-            edges.AddFirst(newSection.Data.Edge);
-            edges.AddFirst(rightSection.Data.Edge);
+            edges.Add(newSection.Data.Edge);
+            edges.Add(rightSection.Data.Edge);
 
             // Add neighbors for Delaunay triangulation
             newSection.Data.Site.AddNeighbour(leftSection.Data.Site);
@@ -188,7 +189,7 @@ internal class BeachLine
     /// <summary>
     /// Removes the disappearing arc at a circle event from the beach line and finalizes edges
     /// </summary>
-    internal void RemoveBeachSection(FortuneCircleEvent circle, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, LinkedList<VoronoiEdge> edges)
+    internal void RemoveBeachSection(FortuneCircleEvent circle, MinHeap<FortuneEvent> eventQueue, HashSet<FortuneCircleEvent> deleted, List<VoronoiEdge> edges)
     {
         RBTreeNode<BeachSection> section = circle.ToDelete;
         double x = circle.X;
@@ -248,7 +249,7 @@ internal class BeachLine
         // Create a new edge with start point at the vertex and assign it to next
         VoronoiEdge newEdge = new VoronoiEdge(vertex, next.Data.Site, prev.Data.Site);
         next.Data.Edge = newEdge;
-        edges.AddFirst(newEdge);
+        edges.Add(newEdge);
 
         // Add neighbors for Delaunay triangulation
         prev.Data.Site.AddNeighbour(next.Data.Site);

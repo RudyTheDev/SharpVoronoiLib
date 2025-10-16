@@ -35,4 +35,19 @@ internal static class ContainsExtensions
 
         return false;
     }
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal static bool RemoveAsReference(this List<VoronoiEdge> edges, VoronoiEdge edge)
+    {
+        for (int i = 0; i < edges.Count; i++)
+        {
+            if (ReferenceEquals(edges[i], edge))
+            {
+                edges.RemoveAt(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
