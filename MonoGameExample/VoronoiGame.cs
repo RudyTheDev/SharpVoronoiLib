@@ -67,6 +67,8 @@ public class VoronoiGame : Game
 
     private bool _showHelp = true;
 
+    private int _relaxIterations = 1;
+
 
     public VoronoiGame()
     {
@@ -154,6 +156,12 @@ public class VoronoiGame : Game
         if (keyboardState.IsKeyDown(Keys.Tab) && _lastKeyboardState.IsKeyUp(Keys.Tab))
         {
             _pointGenerationMethod = _pointGenerationMethod == PointGenerationMethod.Uniform ? PointGenerationMethod.Gaussian : PointGenerationMethod.Uniform;
+            Generate();
+        }
+
+        if (keyboardState.IsKeyDown(Keys.R) && _lastKeyboardState.IsKeyUp(Keys.R))
+        {
+            _relaxIterations = (_relaxIterations + 1) % 3;
             Generate();
         }
 
@@ -470,7 +478,8 @@ public class VoronoiGame : Game
             "Controls (~ to toggle):",
             "Mouse: left click select (right clear), wheel zoom, left drag pan",
             "Space: regenerate",
-            "Tab: toggle uniform/gaussian",
+            "Tab: toggle uniform/gaussian (currently " + _pointGenerationMethod.ToString().ToLower() + ")",
+            "R: toggle relax × 0/1/2 (currently " + _relaxIterations + ")",
             "1: toggle edges, 2: toggle site links"
         ];
 
@@ -537,7 +546,8 @@ public class VoronoiGame : Game
         
         _plane.Tessellate();
         
-        _plane.Relax();
+        if (_relaxIterations > 0)
+            _plane.Relax(_relaxIterations);
 
         // Reset camera after generating new content
         ResetCamera();
