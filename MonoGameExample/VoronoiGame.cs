@@ -51,6 +51,8 @@ public class VoronoiGame : Game
 
     private VoronoiPlane _plane = null!;
 
+    private List<(double x, double y)> _startingCoords;
+    
     private VoronoiSite? _hoveredSite;
     private VoronoiSite? _selectedSite;
 
@@ -169,7 +171,7 @@ public class VoronoiGame : Game
                 _ => 0
             };
             
-            Generate();
+            Relax();
         }
 
         if (keyboardState.IsKeyDown(Keys.OemTilde) && _lastKeyboardState.IsKeyUp(Keys.OemTilde))
@@ -524,6 +526,31 @@ public class VoronoiGame : Game
     
     private void Generate()
     {
+        CreatePlane();
+
+        int numPoints = (int)((_plane.MaxX  - _plane.MinX) * (_plane.MaxY - _plane.MinY) / 1600);
+
+        _plane.GenerateRandomSites(numPoints, _pointGenerationMethod);
+
+        _startingCoords = _plane.Sites.Select(s => (s.X, s.Y)).ToList();
+        
+        _plane.Tessellate();
+        
+        if (_relaxIterations > 0)
+            _plane.Relax(_relaxIterations);
+
+        DumpPlaneStats();
+
+        // Reset camera after generating new content
+        ResetCamera();
+        
+        // Clear any dangling interaction stuff
+        _hoveredSite = null;
+        _selectedSite = null;
+    }
+
+    private void CreatePlane()
+    {
         // Set to current screen (minus visual margin)
         int width = GraphicsDevice.Viewport.Width - viewportMargin * 2;
         int height = GraphicsDevice.Viewport.Height - viewportMargin * 2;
@@ -547,18 +574,37 @@ public class VoronoiGame : Game
             maxX = width;
             maxY = height;
         }
-        
-        int numPoints = width * height / 1600;
-        
-        _plane = new VoronoiPlane(minX, minY, maxX, maxY);
 
-        _plane.GenerateRandomSites(numPoints, _pointGenerationMethod);
+        _plane = new VoronoiPlane(minX, minY, maxX, maxY);
+    }
+
+    private void Relax()
+    {
+        CreatePlane();
+
+        List<VoronoiSite> sites = _startingCoords.Select(coord => new VoronoiSite(coord.x, coord.y)).ToList();
+        
+        _plane.SetSites(sites);
+
+        _startingCoords = _startingCoords.ToList();
         
         _plane.Tessellate();
         
         if (_relaxIterations > 0)
             _plane.Relax(_relaxIterations);
+        
+        DumpPlaneStats();
+        
+        // Reset camera after generating new content
+        ResetCamera();
+        
+        // Clear any dangling interaction stuff
+        _hoveredSite = null;
+        _selectedSite = null;
+    }
 
+    private void DumpPlaneStats()
+    {
         // Dump stats
         Console.WriteLine($"Generated {_plane.Sites.Count} sites, {_plane.Edges.Count} edges, {_plane.Points.Count} points");
         
@@ -586,15 +632,8 @@ public class VoronoiGame : Game
         Console.WriteLine($"Edges per point: {edgesPerPoint:F3}");
         int pointsWithMoreThan3Edges = _plane.Points.Count(p => p.Edges.Count > 3);
         Console.WriteLine($"Points with >3 edges: {pointsWithMoreThan3Edges}");
-        
-        // Reset camera after generating new content
-        ResetCamera();
-        
-        // Clear any dangling interaction stuff
-        _hoveredSite = null;
-        _selectedSite = null;
     }
-    
+
     /// <summary>
     /// Recalculates camera transform based on current viewport, world bounds, and camera state.
     /// </summary>
