@@ -67,6 +67,8 @@ public class VoronoiGame : Game
     
     private PointGenerationMethod _pointGenerationMethod = PointGenerationMethod.Uniform;
 
+    private bool _closeBorders = true;
+
     private bool _showHelp = true;
 
     private int _relaxIterations = 1;
@@ -158,6 +160,12 @@ public class VoronoiGame : Game
         if (keyboardState.IsKeyDown(Keys.Tab) && _lastKeyboardState.IsKeyUp(Keys.Tab))
         {
             _pointGenerationMethod = _pointGenerationMethod == PointGenerationMethod.Uniform ? PointGenerationMethod.Gaussian : PointGenerationMethod.Uniform;
+            Generate();
+        }
+
+        if (keyboardState.IsKeyDown(Keys.B) && _lastKeyboardState.IsKeyUp(Keys.B))
+        {
+            _closeBorders = !_closeBorders;
             Generate();
         }
 
@@ -491,6 +499,7 @@ public class VoronoiGame : Game
             "Space: regenerate",
             "Tab: toggle uniform/gaussian (currently " + _pointGenerationMethod.ToString().ToLower() + ")",
             "R: toggle relax × 0/1/2/10 (currently " + _relaxIterations + ")",
+            "B: toggle border closing (currently " + (_closeBorders ? "on" : "off") + ")",
             "1: toggle edges, 2: toggle site links",
             $"Currently: {_plane.Sites.Count} sites, {_plane.Edges.Count} edges ({perSiteEdges:F3} per site), {_plane.Points.Count} points"
         ];
@@ -534,7 +543,7 @@ public class VoronoiGame : Game
 
         _startingCoords = _plane.Sites.Select(s => (s.X, s.Y)).ToList();
         
-        _plane.Tessellate();
+        _plane.Tessellate(_closeBorders ? BorderEdgeGeneration.MakeBorderEdges : BorderEdgeGeneration.DoNotMakeBorderEdges);
         
         if (_relaxIterations > 0)
             _plane.Relax(_relaxIterations);
