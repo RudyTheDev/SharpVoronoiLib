@@ -2,7 +2,7 @@
 
 internal class RandomGaussianPointGeneration : RandomPointGeneration
 {
-    public override void Prepare(double minX, double minY, double maxX, double maxY, int count)
+    public override void Prepare(Random random, double minX, double minY, double maxX, double maxY, int count)
     {
         // Don't need to do anything
     }
