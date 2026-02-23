@@ -2,15 +2,15 @@
 
 internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
 {
-    public abstract void Prepare(double minX, double minY, double maxX, double maxY, int count);
+    public abstract void Prepare(Random random, double minX, double minY, double maxX, double maxY, int count);
 
-    public List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count)
+    public List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count, Random? random = null)
     {
-        Prepare(minX, minY, maxX, maxY, count);
+        random ??= new Random();
+
+        Prepare(random, minX, minY, maxX, maxY, count);
         
         HashSet<VoronoiSite> sites = [ ];
-        
-        Random random = new Random();
 
         int failSafetyCounter = count * 3;
         

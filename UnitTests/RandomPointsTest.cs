@@ -5,6 +5,58 @@
 public class RandomPointsTest
 {
     [Test]
+    public void WhenSeededRandomProvidedThenResultsAreDeterministic()
+    {
+        // Arrange
+
+        const int seed = 42;
+        VoronoiPlane plane1 = new VoronoiPlane(0, 0, 100, 100);
+        VoronoiPlane plane2 = new VoronoiPlane(0, 0, 100, 100);
+
+        // Act
+
+        List<VoronoiSite> sites1 = plane1.GenerateRandomSites(50, PointGenerationMethod.Uniform, new Random(seed));
+        List<VoronoiSite> sites2 = plane2.GenerateRandomSites(50, PointGenerationMethod.Uniform, new Random(seed));
+
+        // Assert
+
+        Assert.That(sites1, Has.Count.EqualTo(50));
+        Assert.That(sites2, Has.Count.EqualTo(50));
+
+        for (int i = 0; i < sites1.Count; i++)
+        {
+            Assert.That(sites1[i].X, Is.EqualTo(sites2[i].X));
+            Assert.That(sites1[i].Y, Is.EqualTo(sites2[i].Y));
+        }
+    }
+
+    [Test]
+    public void WhenSeededRandomProvidedThenGaussianResultsAreDeterministic()
+    {
+        // Arrange
+
+        const int seed = 42;
+        VoronoiPlane plane1 = new VoronoiPlane(0, 0, 100, 100);
+        VoronoiPlane plane2 = new VoronoiPlane(0, 0, 100, 100);
+
+        // Act
+
+        List<VoronoiSite> sites1 = plane1.GenerateRandomSites(50, PointGenerationMethod.Gaussian, new Random(seed));
+        List<VoronoiSite> sites2 = plane2.GenerateRandomSites(50, PointGenerationMethod.Gaussian, new Random(seed));
+
+        // Assert
+
+        Assert.That(sites1, Has.Count.EqualTo(50));
+        Assert.That(sites2, Has.Count.EqualTo(50));
+
+        for (int i = 0; i < sites1.Count; i++)
+        {
+            Assert.That(sites1[i].X, Is.EqualTo(sites2[i].X));
+            Assert.That(sites1[i].Y, Is.EqualTo(sites2[i].Y));
+        }
+    }
+
+    [Test]
     public void TestUniformBanding()
     {
         // Arrange
