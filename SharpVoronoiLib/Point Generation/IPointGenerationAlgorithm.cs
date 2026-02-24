@@ -2,5 +2,5 @@
 
 internal interface IPointGenerationAlgorithm
 {
-    List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count, Random? random = null);
+    List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count, IRandomNumberGenerator? random = null);
 }

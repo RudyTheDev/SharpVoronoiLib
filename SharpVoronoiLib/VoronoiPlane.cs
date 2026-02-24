@@ -147,7 +147,7 @@ public class VoronoiPlane
     /// The generated sites are guaranteed not to lie on the border of the plane (although they may be very close).
     /// </summary>
     [PublicAPI]
-    public List<VoronoiSite> GenerateRandomSites(int amount, PointGenerationMethod method = PointGenerationMethod.Uniform, Random? random = null)
+    public List<VoronoiSite> GenerateRandomSites(int amount, PointGenerationMethod method = PointGenerationMethod.Uniform, IRandomNumberGenerator? random = null)
     {
         if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
 

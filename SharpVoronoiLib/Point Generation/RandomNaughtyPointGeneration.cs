@@ -11,7 +11,7 @@ internal sealed class RandomNaughtyPointGeneration : RandomPointGeneration
     private bool[]? _used;
 
 
-    public override void Prepare(Random random, double minX, double minY, double maxX, double maxY, int count)
+    public override void Prepare(IRandomNumberGenerator random, double minX, double minY, double maxX, double maxY, int count)
     {
         if (count < 40) throw new Exception();
         
@@ -46,7 +46,7 @@ internal sealed class RandomNaughtyPointGeneration : RandomPointGeneration
         _badYs[35] = _badYs[39] = 0.5;
     }
 
-    protected override double GetNextRandomValue(Random random, double min, double max, int index, ValuePurpose valuePurpose)
+    protected override double GetNextRandomValue(IRandomNumberGenerator random, double min, double max, int index, ValuePurpose valuePurpose)
     {
         double value = valuePurpose switch
         {
