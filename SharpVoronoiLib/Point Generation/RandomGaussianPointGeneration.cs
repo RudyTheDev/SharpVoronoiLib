@@ -16,6 +16,8 @@ internal class RandomGaussianPointGeneration : RandomPointGeneration
 
         double mid = (max + min) / 2;
 
+        int safetyCounter = 0;
+        
         do
         {
             double u1 = 1.0 - random.NextDouble(); //uniform(0,1] random doubles
@@ -30,6 +32,10 @@ internal class RandomGaussianPointGeneration : RandomPointGeneration
 
             if (coord > min && coord < max)
                 return coord;
+
+            safetyCounter++;
+            
+            if (safetyCounter > 100) throw new VoronoiRandomPointGenerationEncounteredTooManyInvalidSites();
 
         } while (true);
     }

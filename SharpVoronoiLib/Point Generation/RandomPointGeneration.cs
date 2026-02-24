@@ -1,6 +1,4 @@
-﻿using SharpVoronoiLib.Exceptions;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
 {

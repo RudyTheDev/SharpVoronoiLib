@@ -1,6 +1,4 @@
-﻿using SharpVoronoiLib.Exceptions;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 /// <summary>
 /// An Euclidean plane where a Voronoi diagram can be constructed from <see cref="VoronoiSite"/>s

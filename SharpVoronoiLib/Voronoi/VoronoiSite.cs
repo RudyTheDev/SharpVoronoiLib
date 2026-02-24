@@ -1,6 +1,4 @@
-﻿using SharpVoronoiLib.Exceptions;
-
-namespace SharpVoronoiLib;
+﻿namespace SharpVoronoiLib;
 
 /// <summary>
 /// The point/site/seed on the Voronoi plane.
