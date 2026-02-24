@@ -153,7 +153,11 @@ public class VoronoiPlane
 
 
         List<VoronoiSite> sites = algorithm.Generate(MinX, MinY, MaxX, MaxY, amount, random);
-            
+
+        if (sites == null) throw new VoronoiSiteGenerationProducedNull();
+        if (sites.Count != amount) throw new VoronoiSiteGenerationProducedWrongCount();
+        // Not checking each site for null or something as it's slow
+        
         _sites = sites;
 
         _edges = null;
