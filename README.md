@@ -93,7 +93,7 @@ Sites can be quickly randomly-generated (this will guarantee no duplicates and n
 ```
 VoronoiPlane plane = new VoronoiPlane(0, 0, 600, 600);
 
-plane.GenerateRandomSites(1000, PointGenerationMethod.Uniform); // also supports .Gaussian
+plane.GenerateRandomSites(1000, PointGenerationMethod.Uniform); // also supports .Gaussian or custom implementations
 
 plane.Tessellate();
 ```
@@ -102,6 +102,8 @@ Uniform and Gaussian:
 
 <img width="475" height="328" alt="random uniform" src="https://github.com/user-attachments/assets/cae69f77-c5cb-4005-ae40-e68f8bcfa868" />
 <img width="475" height="328" alt="random gaussian" src="https://github.com/user-attachments/assets/b1a1fea1-d804-4ea5-afd1-adb719894e1a" />
+
+A custom random number generator may also be provided.
 
 ### Site relaxation
 
@@ -137,7 +139,7 @@ A simple interactive [MonoGame](https://github.com/MonoGame/MonoGame) example is
 
 # Dependencies
 
-The main library targets .NET 9.0 and .NET Standard 2.0, 2.1 and targets compatible OSes - Windows, Linux & macOS - and .NET and Mono frameworks - Xamarin, Mono, UWP, Unity, etc.
+The main library targets .NET 10.0, 9.0 and .NET Standard 2.0, 2.1 and targets compatible OSes - Windows, Linux & macOS - and .NET and Mono frameworks - Xamarin, Mono, UWP, Unity, etc.
 
 # Original library
 
