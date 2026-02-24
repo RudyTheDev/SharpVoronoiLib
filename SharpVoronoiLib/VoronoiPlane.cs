@@ -147,12 +147,10 @@ public class VoronoiPlane
     /// The generated sites are guaranteed not to lie on the border of the plane (although they may be very close).
     /// </summary>
     [PublicAPI]
-    public List<VoronoiSite> GenerateRandomSites(int amount, PointGenerationMethod method = PointGenerationMethod.Uniform, IRandomNumberGenerator? random = null)
+    public List<VoronoiSite> GenerateRandomSites(int amount, IPointGenerationAlgorithm algorithm, IRandomNumberGenerator? random = null)
     {
         if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
 
-
-        IPointGenerationAlgorithm algorithm = GetPointGenerationAlgorithm(method);
 
         List<VoronoiSite> sites = algorithm.Generate(MinX, MinY, MaxX, MaxY, amount, random);
             
@@ -164,6 +162,15 @@ public class VoronoiPlane
         _version++;
         
         return sites;
+    }
+    
+    /// <summary> <inheritdoc cref="GenerateRandomSites(int, IPointGenerationAlgorithm, IRandomNumberGenerator)"/> </summary>
+    [PublicAPI]
+    public List<VoronoiSite> GenerateRandomSites(int amount, PointGenerationMethod method = PointGenerationMethod.Uniform, IRandomNumberGenerator? random = null)
+    {
+        IPointGenerationAlgorithm algorithm = GetKnownPointGenerationAlgorithm(method);
+        
+        return GenerateRandomSites(amount, algorithm, random);
     }
 
     [PublicAPI]
@@ -301,7 +308,7 @@ public class VoronoiPlane
     }
         
 
-    private IPointGenerationAlgorithm GetPointGenerationAlgorithm(PointGenerationMethod pointGenerationMethod)
+    private IPointGenerationAlgorithm GetKnownPointGenerationAlgorithm(PointGenerationMethod pointGenerationMethod)
     {
         return pointGenerationMethod switch
         {
