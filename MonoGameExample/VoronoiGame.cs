@@ -110,7 +110,7 @@ public class VoronoiGame : Game
         
         FontSystemSettings debugFontSettings = new FontSystemSettings
         {
-            PremultiplyAlpha = true,
+            GlyphRenderResult = GlyphRenderResult.Premultiplied,
             FontResolutionFactor = 3f,
             KernelWidth = 2,
             KernelHeight = 2,
