@@ -211,4 +211,40 @@ public class RandomPointsTest
         Assert.Ignore("This test can only run in debug builds.");
 #endif
     }
+    
+    [Test]
+    public void TestCustomGeneratorProvidesExpectedPoints()
+    {
+        // Arrange
+
+        VoronoiPlane plane = new VoronoiPlane(0, 0, 100, 100);
+
+        // Act
+
+        List<VoronoiSite> sites = plane.GenerateRandomSites(5, new CustomTestPointGenerationAlgorithm());
+
+        // Assert
+
+        Assert.That(sites, Is.Not.Null);
+        Assert.That(sites, Has.Count.EqualTo(5));
+
+        for (int i = 0; i < sites.Count; i++)
+        {
+            Assert.That(sites[i].X, Is.EqualTo(i * 10));
+            Assert.That(sites[i].Y, Is.EqualTo(i * 20));
+        }
+    }
+    
+    private class CustomTestPointGenerationAlgorithm : IPointGenerationAlgorithm
+    {
+        public List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count, IRandomNumberGenerator? random = null)
+        {
+            List<VoronoiSite> sites = [ ];
+
+            for (int i = 0; i < count; i++)
+                sites.Add(new VoronoiSite(i * 10, i * 20));
+
+            return sites;
+        }
+    }
 }
