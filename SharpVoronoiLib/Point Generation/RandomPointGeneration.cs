@@ -2,11 +2,11 @@
 
 internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
 {
-    public abstract void Prepare(Random random, double minX, double minY, double maxX, double maxY, int count);
+    public abstract void Prepare(IRandomNumberGenerator random, double minX, double minY, double maxX, double maxY, int count);
 
-    public List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count, Random? random = null)
+    public List<VoronoiSite> Generate(double minX, double minY, double maxX, double maxY, int count, IRandomNumberGenerator? random = null)
     {
-        random ??= new Random();
+        random ??= DefaultRandomNumberGenerator.Instance;
 
         Prepare(random, minX, minY, maxX, maxY, count);
         
@@ -48,7 +48,7 @@ internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
     public abstract void Conclude();
 
 
-    protected abstract double GetNextRandomValue(Random random, double min, double max, int index, ValuePurpose purpose);
+    protected abstract double GetNextRandomValue(IRandomNumberGenerator random, double min, double max, int index, ValuePurpose purpose);
 
 
     protected enum ValuePurpose

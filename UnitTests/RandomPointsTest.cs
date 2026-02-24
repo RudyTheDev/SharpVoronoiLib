@@ -15,8 +15,8 @@ public class RandomPointsTest
 
         // Act
 
-        List<VoronoiSite> sites1 = plane1.GenerateRandomSites(50, PointGenerationMethod.Uniform, new Random(seed));
-        List<VoronoiSite> sites2 = plane2.GenerateRandomSites(50, PointGenerationMethod.Uniform, new Random(seed));
+        List<VoronoiSite> sites1 = plane1.GenerateRandomSites(50, PointGenerationMethod.Uniform, new SeededRandomNumberGenerator(seed));
+        List<VoronoiSite> sites2 = plane2.GenerateRandomSites(50, PointGenerationMethod.Uniform, new SeededRandomNumberGenerator(seed));
 
         // Assert
 
@@ -41,8 +41,8 @@ public class RandomPointsTest
 
         // Act
 
-        List<VoronoiSite> sites1 = plane1.GenerateRandomSites(50, PointGenerationMethod.Gaussian, new Random(seed));
-        List<VoronoiSite> sites2 = plane2.GenerateRandomSites(50, PointGenerationMethod.Gaussian, new Random(seed));
+        List<VoronoiSite> sites1 = plane1.GenerateRandomSites(50, PointGenerationMethod.Gaussian, new SeededRandomNumberGenerator(seed));
+        List<VoronoiSite> sites2 = plane2.GenerateRandomSites(50, PointGenerationMethod.Gaussian, new SeededRandomNumberGenerator(seed));
 
         // Assert
 
