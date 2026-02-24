@@ -147,7 +147,7 @@ The key differences from the [original VoronoiLib repo](https://github.com/Zalgo
 * Borders can be closed, that is, edges generated along the boundary
 * Edges and points/sites contain additional useful data
 * Multiple critical and annoyingly-rare bugs and edge cases fixes
-* LOTS more unit testing
+* LOTS more unit testing!
 
 # Credits
 
