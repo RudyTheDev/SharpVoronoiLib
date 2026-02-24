@@ -2,7 +2,7 @@
 
 internal class RandomUniformPointGeneration : RandomPointGeneration
 {
-    public override void Prepare(IRandomNumberGenerator random, double minX, double minY, double maxX, double maxY, int count)
+    protected override void Prepare(IRandomNumberGenerator random, double minX, double minY, double maxX, double maxY, int count)
     {
         // Don't need to do anything
     }
@@ -19,7 +19,7 @@ internal class RandomUniformPointGeneration : RandomPointGeneration
         } while (true);
     }
 
-    public override void Conclude()
+    protected override void Conclude()
     {
         // Don't need to do anything
     }
