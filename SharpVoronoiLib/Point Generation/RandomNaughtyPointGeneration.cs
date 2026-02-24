@@ -11,7 +11,7 @@ internal sealed class RandomNaughtyPointGeneration : RandomPointGeneration
     private bool[]? _used;
 
 
-    public override void Prepare(IRandomNumberGenerator random, double minX, double minY, double maxX, double maxY, int count)
+    protected override void Prepare(IRandomNumberGenerator random, double minX, double minY, double maxX, double maxY, int count)
     {
         if (count < 40) throw new Exception();
         
@@ -61,7 +61,7 @@ internal sealed class RandomNaughtyPointGeneration : RandomPointGeneration
         return value;
     }
 
-    public override void Conclude()
+    protected override void Conclude()
     {
         // Don't need to do anything
     }
