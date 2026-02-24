@@ -1,4 +1,6 @@
-﻿namespace SharpVoronoiLib;
+﻿using SharpVoronoiLib.Exceptions;
+
+namespace SharpVoronoiLib;
 
 internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
 {
@@ -28,14 +30,14 @@ internal abstract class RandomPointGeneration : IPointGenerationAlgorithm
             {
                 i--;
                 failSafetyCounter--;
-                if (failSafetyCounter == 0) throw new Exception("Too many invalid points generated");
+                if (failSafetyCounter == 0) throw new VoronoiRandomPointGenerationEncounteredTooManyInvalidSites();
                 continue;
             }
 
             if (!sites.Add(site))
             {
                 failSafetyCounter--;
-                if (failSafetyCounter == 0) throw new Exception("Too many invalid points generated");
+                if (failSafetyCounter == 0) throw new VoronoiRandomPointGenerationEncounteredTooManyInvalidSites();
                 i--;
             }
         }
