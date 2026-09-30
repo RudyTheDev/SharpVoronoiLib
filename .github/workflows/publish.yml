@@ -9,6 +9,11 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read   # checkout
+      packages: write  # push to GitHub Packages with GITHUB_TOKEN
+      id-token: write  # OIDC token for NuGet trusted publishing
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -30,5 +35,11 @@ jobs:
     - name: Publish to GitHub Packages
       run: dotnet nuget push ./nupkg/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
 
+    - name: NuGet login (OIDC → temp API key)
+      uses: NuGet/login@v1
+      id: nuget-login
+      with:
+        user: RudyTheDev
+
     - name: Publish to NuGet.org
-      run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
