@@ -10,7 +10,7 @@ C# implementation of generating a Voronoi diagram from a set of points in a plan
 
 The library is available as `SharpVoronoiLib` [NuGet package](https://www.nuget.org/packages/SharpVoronoiLib): `dotnet add package SharpVoronoiLib` via CLI or via your preferred NuGet package manager.
 
-Alternatively, you can download the solution and either copy the `SharpVoronoiLib` project code or build the project and use the `SharpVoronoiLib.dll`.
+Alternatively, you can download a prebuilt `SharpVoronoiLib.dll` from the [Releases](https://github.com/RudyTheDev/SharpVoronoiLib/releases) page. There is a separate `.zip` for each target framework (`net10.0`, `net9.0`, `netstandard2.1`, `netstandard2.0`), each containing the DLL, XML docs and debug symbols.
 
 # Usage
 

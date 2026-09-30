@@ -19,6 +19,7 @@
         <PackageReleaseNotes></PackageReleaseNotes>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <CETCompat>false</CETCompat>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>

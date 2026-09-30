@@ -1,4 +1,4 @@
-name: Publish NuGet Package
+name: Publish NuGet Package and GitHub Release
 
 on:
   push:
@@ -10,30 +10,57 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read   # checkout
+      contents: write  # checkout + create GitHub Release and upload assets
       packages: write  # push to GitHub Packages with GITHUB_TOKEN
       id-token: write  # OIDC token for NuGet trusted publishing
 
+    env:
+      PROJECT: SharpVoronoiLib/SharpVoronoiLib.csproj
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '10.x'
 
+    - name: Verify tag matches project version
+      run: |
+        TAG_VERSION="${GITHUB_REF_NAME#v}"
+        PROJECT_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' "$PROJECT")
+        if [ "$TAG_VERSION" != "$PROJECT_VERSION" ]; then
+          echo "::error::Tag $GITHUB_REF_NAME does not match <Version>$PROJECT_VERSION</Version> in $PROJECT"
+          exit 1
+        fi
+        echo "VERSION=$TAG_VERSION" >> "$GITHUB_ENV"
+
     - name: Restore dependencies
-      run: dotnet restore SharpVoronoiLib/SharpVoronoiLib.csproj
+      run: dotnet restore "$PROJECT"
 
     - name: Build the project
-      run: dotnet build SharpVoronoiLib/SharpVoronoiLib.csproj --configuration Release --no-restore
+      run: dotnet build "$PROJECT" --configuration Release --no-restore
 
     - name: Pack the project
-      run: dotnet pack SharpVoronoiLib/SharpVoronoiLib.csproj --configuration Release --no-build --output ./nupkg
+      run: dotnet pack "$PROJECT" --configuration Release --no-build --output ./nupkg
+
+    - name: Assemble release archives
+      run: |
+        mkdir -p release
+        # One zip per target framework, each with the DLL, XML docs (IntelliSense) and PDB (debugging)
+        for dir in SharpVoronoiLib/bin/Release/*/; do
+          tfm=$(basename "$dir")
+          staging="staging/SharpVoronoiLib-$VERSION-$tfm"
+          mkdir -p "$staging"
+          cp "$dir"SharpVoronoiLib.dll "$dir"SharpVoronoiLib.xml "$dir"SharpVoronoiLib.pdb License.md README.md "$staging/"
+          (cd "$staging" && zip -r "$GITHUB_WORKSPACE/release/SharpVoronoiLib-$VERSION-$tfm.zip" .)
+        done
+        cp ./nupkg/*.nupkg release/
+        ls -l release
 
     - name: Publish to GitHub Packages
-      run: dotnet nuget push ./nupkg/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget push ./nupkg/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
 
     - name: NuGet login (OIDC → temp API key)
       uses: NuGet/login@v1
@@ -42,4 +69,15 @@ jobs:
         user: RudyTheDev
 
     - name: Publish to NuGet.org
-      run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
+      run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }} --skip-duplicate
+
+    - name: Create or update GitHub Release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # If the release was already created by hand (e.g. via the GitHub UI), just attach the assets
+        if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+          gh release upload "$GITHUB_REF_NAME" release/* --clobber
+        else
+          gh release create "$GITHUB_REF_NAME" release/* --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
+        fi
