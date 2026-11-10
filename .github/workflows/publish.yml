@@ -24,7 +24,7 @@ jobs:
     - name: Set up .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '10.x'
+        dotnet-version: '11.x'
 
     - name: Verify tag matches project version
       run: |
